@@ -3,6 +3,56 @@ include <Raspberry_Pi_Camera_Mount_with_Ball_Joint_for_Reprap/stroboscope.scad>
 include <azteegx5mini-box.scad>
 include <compact_direct_drive_extruder.scad>
 include <nanoplotter.scad>
+
+/*
+electronics_configuration();
+outside_frame(tcl,thcl);
+labbot3d_electronics_configuration();
+*/
+amplifier_brd_holder();
+
+
+module labbot3d_electronics_configuration(){
+translate([350,270,0])rotate([0,180,0])
+amplifier_brd_holder();
+//rotate([0,180,0])
+translate([163-55,205,6])difference(){
+rotate([0,180,-90])5stepper_brd_holder();
+//translate([-30,100-25,-20])#cube([130,50,40]);
+}
+
+
+//rotate([0,180,0])
+atzeeg_mount_to_plate();
+}
+
+
+
+module atzeeg_mount_to_plate(){
+translate([-60,120,0]){
+difference(){
+translate([305-80,26,4])cube([30,25,3]);
+translate([305-80+18-1,26+16.25,-13])#cylinder(r=4.7/2,h=30);
+}
+translate([-80,0,0])difference(){
+translate([305-80,26,4])cube([20,25,3]);
+translate([305-80+18-1-10,26+16.25,-13])#cylinder(r=4.7/2,h=30);
+}
+translate([0,-80,0])difference(){
+translate([305-80,26,4])cube([30,15,3]);
+translate([305-80+18-1,26+16.25-10,-13])#cylinder(r=4.7/2,h=30);
+}
+translate([-80,-80,0])difference(){
+translate([305-80,26,4])cube([30,15,3]);
+translate([305-80+18-1-10,26+16.25-10,-13])#cylinder(r=4.7/2,h=30);
+}
+
+translate([305,0,0])rotate([0,180,0])azteeg_controller();
+
+}
+}
+
+
 //include <waste_simple_hinge.scad>
 
 //rotate([0,90,0])lasermount_assy();
@@ -21,10 +71,10 @@ color("pink")translate([-80,36,4.85])rotate([0,-90,0])translate([0,0,0])nanoplot
 /*
 rotate([90,0,0]) lasermount_connector_cap();
 */
-
+/*
 translate([0,15,0])rotate([90,0,0])connectionarms2(0);
 translate([0,30,0])rotate([90,0,0])connectionarms2(0);
-
+*/
 
 //translate([-200,36-25+1.5,4])rotate([0,0,0])openmv_camera_base();
 
@@ -366,6 +416,8 @@ back_plate_x1();
 //translate([0,0,260+66])rotate([0,180,0])
 //conveyer_verticallinearpulleybearingbottom();
 
+
+//noconveyer_gantry_assy(20,-30,-45+50+100-50-100+150,-55,0,267,tcl,thcl);
 
 //gantry_assy(20,-30,-45+50+100-50-100+150,-55,0,267,tcl,thcl);
 //camera_assy();
@@ -1718,11 +1770,42 @@ translate([150-10,70,-30-0.1])cylinder(r=3.7/2,h=10);
 }
 }
 
+
+module amplifier_brd_holder(){
+solenoid_endstop_brd(92,62);
+translate([35+12-20+31,-24,0])difference(){
+translate([-10+20,2-2,0])#cube([20,20,5]);
+translate([10-9+20-1,10+1-3-2,-0.2])#cylinder(r=5.7/2,h=20);
+}
+/*
+translate([35+12-20+80,-24,0])difference(){
+translate([-10+20,2-2,0])#cube([30,20,5]);
+translate([10-9+20-1+10,10+1-3-0,-0.2])#cylinder(r=5.7/2,h=20);
+}
+*/
+translate([35+12-20+25,-24+90-2,0])difference(){
+translate([-10+20+5,2-2,0])#cube([30-10,20,5]);
+translate([10-9+20-1+10-4,10+1-3-0,-0.2])#cylinder(r=5.7/2,h=20);
+}
+}
+
+
+
+
+
 module 5stepper_brd_holder(){
 solenoid_endstop_brd(120,89);
-translate([35+12,-24,0])difference(){
-cube([20,20,5]);
-translate([10,10,-0.2])cylinder(r=5.7/2,h=20);
+translate([35+12-20,-24,0])difference(){
+translate([-10+20,2-2,0])#cube([20,20,5]);
+translate([10-9+20-1,10+1-3,-0.2])#cylinder(r=5.7/2,h=20);
+}
+translate([35+12-20+80,-24,0])difference(){
+translate([-10+20,2-2,0])#cube([30,20,5]);
+translate([10-9+20-1+10,10+1-3-0,-0.2])#cylinder(r=5.7/2,h=20);
+}
+translate([35+12-20+80,-24+90,0])difference(){
+translate([-10+20+5,2-2,0])#cube([30-10,20,5]);
+translate([10-9+20-1+10,10+1-3-0,-0.2])#cylinder(r=5.7/2,h=20);
 }
 }
 
@@ -3139,7 +3222,8 @@ translate([-0,27+380,-184])color("silver")rotate([-0,-90,180])tslot20innerbracke
 translate([-50,460-26,16-25])rotate([90,0,0])tslot20(484);
 }
 translate([360,250-260-33-1-85,10])rotate([180,180,-90]){
-translate([280,405,33-25+290])rotate([90,180,0])color("gainsboro")tslot20innerbracket();
+//this one I remove just for the noconveyer configuration
+// translate([280,405,33-25+290])rotate([90,180,0])color("gainsboro")tslot20innerbracket();
 //translate([280,405,33-25])rotate([90,180,0])tslot20innerbracket();
 //translate([75,-55+464,-50-125+165])tslot20(500);
 
@@ -4153,25 +4237,53 @@ module gantry_assy(x,y,z,xx,xp,sph,tcl,thcl){
  filament_driver_assy();
  xshuttle_assy(x,y);
  zbed_assy(z);
- slide_conveyer_caller(z,xx,xp,sph);
+ gantry();
+ outside_frame(tcl,thcl);
+ y_encoder_support(60);
+ xymotor_assy();
+ electronics_configuration();
+ //conveyer_connector_tslots();
+ //slide_conveyer_caller(z,xx,xp,sph);
  //slide_conveyer_frame();
  //noconveyer_backside_panel();
  //translate([-36.25+0.5-60+30+215,-33+580-4,90])rotate([-90,0,90])conveyer_solenoid_pcb();
- outside_frame(tcl,thcl);
+ //outside_frame(tcl,thcl);
+ //slide_conveyer_caller(z,xx,xp,sph);
+}
+
+module noconveyer_gantry_assy(x,y,z,xx,xp,sph,tcl,thcl){
+ zencoder_assy();
+ filament_driver_assy();
+ xshuttle_assy(x,y);
+ zbed_assy(z);
  gantry();
- slide_conveyer_caller(z,xx,xp,sph);
+ 
  outside_frame(tcl,thcl);
- gantry();
  y_encoder_support(60);
  xymotor_assy();
  electronics_configuration();
 }
 
+
+
+
+
+
+
+
 //47,63,23
 //SSR-25 DA DC-AC 25A/250V 3-32VDC/24-380VAC SSR Single Phase
+
+
+
+
 module fotek_solidstate_relay(){
 color("white")cube([47,58.5,23]);
 }
+
+
+
+
 
 module arduino_softpot_linearencoder_plate_washdry(){
 difference(){union(){
@@ -4268,7 +4380,10 @@ module electronics_configuration(){
 
 translate([130,3+7,-50])rotate([-90,180,0])kill_button_leds_panelmount();
 
-
+translate([400,55,0]){
+azteeg_raspi_plate();
+}
+/*
 translate([400,55,0]){
 arduino_softpot_linearencoder_plate_washdry();
 translate([-200,54,0])rotate([0,180,90])arduino_mega_base_template_bottomattach();
@@ -4289,6 +4404,8 @@ azteeg_raspi_plate();
 translate([300,160,-40]){
  color("blue")cube([115,216,40]);
 }
+
+*/
 
 }
 
@@ -4402,7 +4519,7 @@ cube([411.103,370.27,3]);
 translate([265+8-210,150-48-75+20,-100])cylinder(r=3.7/2,h=200);
 for(i=[0:3]){
 for(j=[0:3]){
-translate([265+8-210+j*90,150-48-75+20+90*i,-100])cylinder(r=3.7/2,h=200);
+translate([265+8-210+j*90,150-48-75+20+90*i,-100])#cylinder(r=3.7/2,h=200);
 }
 }
 //46
@@ -4912,6 +5029,34 @@ translate([25,38.94,0])translate([1,0,-6.1])cylinder(r=(5.9+0.8)/2,h=36);
 
 
 
+module conveyer_connector_tslots(){
+
+translate([0,0,20]){
+//1.5 -- HFS5-2020-56-TPW-Z5-XA28 //we got to add this one so this one needs to be changed
+translate([20+175,400-20,-5]){
+rotate([0,0,0])tslot20(56);
+//translate([15,0,28])rotate([-90,0,0])cylinder(r=5.7/2,h=400);
+}
+
+
+
+//3.1 This one is for supportng the back conveyer rail
+//this one needs to be changed 
+//HFS5-2020-160-TPW
+translate([20+200-25,400-20+186-1,320])rotate([90,90,0]){
+tslot20(160);
+}
+
+//3.2
+translate([20+200-25,400-20+186-1,320-280])rotate([90,90,0]){
+tslot20(160);
+}
+
+
+}
+}
+
+
 
 
 
@@ -4933,12 +5078,6 @@ translate([22+168,400-385,-15-200])rotate([0,0,0])cylinder(r=5.7/2,h=500);
 */
 }
 
-//1.5 -- HFS5-2020-56-TPW-Z5-XA28 //we got to add this one so this one needs to be changed
-translate([20+175,400-20,-5]){
-rotate([0,0,0])tslot20(56);
-//translate([15,0,28])rotate([-90,0,0])cylinder(r=5.7/2,h=400);
-}
-
 
 //3 -- 400 threaded profiles
 //HFS5-2020-400-TPW.stl
@@ -4956,20 +5095,9 @@ translate([15-10+10,70+200+40,22])rotate([90,0,0])cylinder(r=5.2/2,h=400);
 */
 }
 
-//3.1 This one is for supportng the back conveyer rail
-//this one needs to be changed 
-//HFS5-2020-160-TPW
-translate([20+200-25,400-20+186-1,320])rotate([90,90,0]){
-tslot20(160);
-}
 
-//3.2
-translate([20+200-25,400-20+186-1,320-280])rotate([90,90,0]){
-tslot20(160);
-}
 
 translate([20,0,320])rotate([0,90,0])tslot20(400);
-
 
 
 //2 -- 400 drilled profiles at 10mm

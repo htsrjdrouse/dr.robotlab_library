@@ -6,9 +6,9 @@ include <nanoplotter.scad>
 
 //translate([440,35,-4])rotate([0,90,0])binding_post_connector();
 //translate([440,35,-4])rotate([0,90,0])cover_connector();
-translate([50,80,0])binding_post_connector();
+//translate([50,80,0])binding_post_connector();
 
-cover_connector();
+//cover_connector();
 
 //syringe_pcb_holder_for_syringemodule();
  
@@ -876,6 +876,8 @@ back_plate_x1();
 
 
 //noconveyer_gantry_assy(20,-30,-45+50+100-50-100+150,-55,0,267,tcl,thcl);
+ gantry();
+ conveyer_connector_tslots();
 
 //gantry_assy(20,-30,-45+50+100-50-100+150,-55,0,267,tcl,thcl);
 //camera_assy();
@@ -4714,6 +4716,8 @@ translate([360+25,25,-60])rotate([0,0,180])XY_motor_x2higher();
 
 //washbowl_assy();
 //gantry_assy(140,-30,-45+50+100,-55,1,267);
+
+
 module gantry_assy(x,y,z,xx,xp,sph,tcl,thcl){
  zencoder_assy();
  filament_driver_assy();
@@ -4723,14 +4727,19 @@ module gantry_assy(x,y,z,xx,xp,sph,tcl,thcl){
  outside_frame(tcl,thcl);
  y_encoder_support(60);
  xymotor_assy();
- electronics_configuration();
- //conveyer_connector_tslots();
+
+ conveyer_connector_tslots();
+ slide_conveyer_caller(z,xx,xp,sph);
+
+ /*
+ noconveyer_backside_panel();
+ //electronics_configuration();
  //slide_conveyer_caller(z,xx,xp,sph);
  //slide_conveyer_frame();
- //noconveyer_backside_panel();
  //translate([-36.25+0.5-60+30+215,-33+580-4,90])rotate([-90,0,90])conveyer_solenoid_pcb();
  //outside_frame(tcl,thcl);
  //slide_conveyer_caller(z,xx,xp,sph);
+ */
 }
 
 module noconveyer_gantry_assy(x,y,z,xx,xp,sph,tcl,thcl){
@@ -4738,7 +4747,7 @@ module noconveyer_gantry_assy(x,y,z,xx,xp,sph,tcl,thcl){
  //filament_driver_assy();
  //xshuttle_assy(x,y);
  //zbed_assy(z);
- //gantry();
+ gantry();
  
  outside_frame(tcl,thcl);
  //y_encoder_support(60);
@@ -5182,11 +5191,13 @@ translate([77.5+30-50,20+3+0,5-6])rotate([0,0,90])translate([15/2,20,0]){
 j = 0.7;
 
 //here is the orginal which I want to replace this is just a temp 
+/*
 translate([-17/2+3,-90-17/2-space*j,-1])#cube([17,17+120,13]);
 for(j=[-4:2]){
 for(i=[0]){translate([0+20,-90-12.5-i/2-(25)*j+12,-1])#cylinder(r=3.7/2,h=10);}
 for(i=[0]){translate([0+20-36,-90-12.5-i/2-(25)*j+12,-1])#cylinder(r=3.7/2,h=10);}
 }
+*/
 //end tmp part
 
 //translate([0,-14.6,-1])cylinder(r=3.7/2,h=10);
@@ -5593,27 +5604,41 @@ rotate([0,0,0])tslot20(56);
 //translate([15,0,28])rotate([-90,0,0])cylinder(r=5.7/2,h=400);
 }
 
-
-
 //3.1 This one is for supportng the back conveyer rail
 //this one needs to be changed 
 //HFS5-2020-160-TPW
 translate([20+200-25,400-20+186-1,320])rotate([90,90,0]){
 tslot20(160);
 }
-
 //3.2
 translate([20+200-25,400-20+186-1,320-280])rotate([90,90,0]){
 tslot20(160);
 }
-
-
-}
 }
 
+//SCTL1
+//this one needs to be changed
+//HFS5-2020-400-TPW-Z5-XA108-XB173.5-XC224.5-XE275.5-XE326.5-XF390
+translate([145+30+25-5,560,-65])#tslot20(400);
+translate([145+30+25-5+15,560+200,-65+327+63])rotate([90,0,0])cylinder(r=5.7/2,h=400);
+translate([145+30+25-5+15,560+200,-65+327-.5])rotate([90,0,0])cylinder(r=5.7/2,h=1000);
+translate([145+30+25-5+15,560+200,-65+277-1.5])rotate([90,0,0])cylinder(r=5.7/2,h=1000);
+translate([145+30+25-5+15,560+200,-65+227-2.5])rotate([90,0,0])cylinder(r=5.7/2,h=1000);
+translate([145+30+25-5+15,560+200,-65+177-3.5])rotate([90,0,0])cylinder(r=5.7/2,h=1000);
+translate([145+30+25-5+15,560+200,-65+108])rotate([90,0,0])cylinder(r=5.7/2,h=1000);
 
+//SCTL1
 
-
+translate([20,380,105-3.5]){
+translate([0,0,-6]){
+//SCTL2 will be moved to conveyer_caller_tslots
+//SCTL2 -- this one needs to be changed
+//HFS5-2020-400-TPW-Z5-XA190 
+rotate([0,90,0])#tslot20(400);
+translate([190,15,-400])rotate([0,0,0])cylinder(r=5.7/2,h=1000);
+}
+}
+}
 
 
 
@@ -5625,7 +5650,7 @@ translate([0,0,20]){
 //1 -- HFS5-2020-400-TPW-XA22-XB370-YA168 //this one needs to be changed
 //blah
 translate([20,400-20,0]){
-rotate([0,90,0])tslot20(400);
+rotate([0,90,0])#tslot20(400);
 /*
 translate([22,400,-15])rotate([90,0,0])cylinder(r=5.7/2,h=500);
 translate([300+70,400,-15])rotate([90,0,0])cylinder(r=5.7/2,h=500);
@@ -5642,18 +5667,14 @@ translate([20,400-20,320])rotate([0,90,0]){
 // so this one needs to be changed
 
 //HFS5-2020-400-TPW-Z5-XA22-XB190-XC370
-tslot20(400);
+#tslot20(400);
 /*
 translate([15-10+10,70+200,190])rotate([90,0,0])cylinder(r=5.7/2,h=300);
 translate([15-10+10,70+200+40,370])rotate([90,0,0])cylinder(r=5.2/2,h=400);
 translate([15-10+10,70+200+40,22])rotate([90,0,0])cylinder(r=5.2/2,h=400);
 */
 }
-
-
-
 translate([20,0,320])rotate([0,90,0])tslot20(400);
-
 
 //2 -- 400 drilled profiles at 10mm
 //top 400mm rail
@@ -5666,10 +5687,14 @@ translate([-5+420,400-15+20,320])rotate([90,90,0])tslot20(400);
 translate([-5,400-15,0])rotate([90,90,0])tslot20(360);
 translate([-5+420,400-15,0])rotate([90,90,0])tslot20(360);
 
+//3.5 these need to be modified to connnect to  conveyer_connector_tslots();
+translate([-5,400-20,-25-60])rotate([0,0,0])#tslot20(380);
+translate([-5,400-20+15,-25-60+70+75])rotate([0,90,0])cylinder(r=5.7/2,h=600);
+translate([-5+420,400-20,-25-60])rotate([0,0,0])tslot20(380);
+
+
 //4 -- 380 threaded profiles at 70mm
 //HFS5-2020-380-TPW-XA70-YA70
-translate([-5,400-20,-25-60])rotate([0,0,0])tslot20(380);
-translate([-5+420,400-20,-25-60])rotate([0,0,0])tslot20(380);
 translate([-5+420,0,-25-60])rotate([0,0,0])tslot20(380);
 translate([-5,0,-25-60])rotate([0,0,0])tslot20(380);
 }
@@ -6121,10 +6146,12 @@ translate([11.45,20,16])rotate([90,0,0])cylinder(r=11.5/2,h=40);
 
 module slide_conveyer_caller(z,xx,xp,sph){
 translate([-36.25+0.5-60+30+215,-33+580-4,90])rotate([-90,0,90])conveyer_solenoid_pcb();
+
+//SCTL1 will be moved to conveyer_caller_tslots
 //SCTL1
 //this one needs to be changed
 //HFS5-2020-400-TPW-Z5-XA108-XB173.5-XC224.5-XE275.5-XE326.5-XF390
-translate([145+30+25-5,560,-65])tslot20(400);
+translate([145+30+25-5,560,-65])#tslot20(400);
 /*
 translate([145+30+25-5+15,560+200,-65+327+63])rotate([90,0,0])cylinder(r=5.7/2,h=400);
 translate([145+30+25-5+15,560+200,-65+327-.5])rotate([90,0,0])cylinder(r=5.7/2,h=1000);
@@ -6133,12 +6160,16 @@ translate([145+30+25-5+15,560+200,-65+227-2.5])rotate([90,0,0])cylinder(r=5.7/2,
 translate([145+30+25-5+15,560+200,-65+177-3.5])rotate([90,0,0])cylinder(r=5.7/2,h=1000);
 translate([145+30+25-5+15,560+200,-65+108])rotate([90,0,0])cylinder(r=5.7/2,h=1000);
 */
+
+
 translate([20,380,105-3.5]){
 translate([0,0,-6]){
+//SCTL2 will be moved to conveyer_caller_tslots
 //SCTL2 -- this one needs to be changed
-
 //HFS5-2020-400-TPW-Z5-XA190 
 rotate([0,90,0])tslot20(400);
+
+
 
 //translate([40+150,15-0,-100])cylinder(r=5.7/2,h=3000); //we need this screw
 translate([0,3,-205])rotate([0,-90,0])color("gainsboro")tslot20innerbracket();

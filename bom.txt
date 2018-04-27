@@ -1,0 +1,35 @@
+//This is the BASIC GANTRY STRUCTURE
+//This the conveyer connector tslots
+1.5 -- HFS5-2020-56-TPW-Z5-XA28
+
+3.1 -- HFS5-2020-160-TPW
+3.2 -- HFS5-2020-160-TPW
+
+SCTL1 -- HFS5-2020-400-TPW-Z5-XA108-XB173.5-XC224.5-XE275.5-XE326.5-XF390
+SCTL2 -- HFS5-2020-400-TPW-Z5-XA190
+
+
+Here are fixes for the gantry to do the connection
+
+1 -- HFS5-2020-400-TPW-XA22-XB370-YA190
+
+//This is part of basic gantry
+3.1 -- HFS5-2020-400-TPW-Z5-XA22-XB190-XC370
+
+3.5 -- HFS5-2020-380-TPW-Z5-XA145
+3.6 -- HFS5-2020-380-TPW-Z5-XA145
+// end conveyer connector
+
+3 -- HFS5-2020-400-TPW
+2 -- 2 units -- HFS5-2020-400-TPW-XA10-XB390-YA10-YB390
+3 -- 2 units -- HFS5-2020-360-TPW
+4 -- 2 units -- HFS5-2020-380-TPW-XA70-YA70
+
+//Top outside frame
+TOT2 -- 1 units -- HFS5-2020-548-TPW
+
+//Left outside frame
+// we need 2 of these but they need holes to work as guides for the axis holes
+LFTL1 -- 2 unit -- HFS5-2020-548-TPW
+LFTL3 -- here I am not sure if I need 1 or 2  HFS5-2020-480.5-TPW
+

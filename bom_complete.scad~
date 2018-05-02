@@ -1022,7 +1022,7 @@ back_plate_x1();
 
 //right here
 //outside_frame(tcl,thcl);
-//noconveyer_gantry_assy(20,-30,-45+50+100-50-100+150,-55,0,267,tcl,thcl);
+noconveyer_gantry_assy(20,-30,-45+50+100-50-100+150,-55,0,267,tcl,thcl);
 //projection(cut = false){
 //}
 //bottom_cover();
@@ -3850,7 +3850,7 @@ translate([7.68,15.2,3.3])cylinder(r=13.84/2,h=5);
 translate([41.04,15.2,-0.1])cylinder(r=6.36/2,h=30);
 translate([41.04,15.2,3.3])cylinder(r=13.84/2,h=5);
 }
-//translate([-32+3-0.6,35+2+5.5-0.2,400])nema17();
+translate([-32+3-0.6,35+2+5.5-0.2,400])nema17();
 }
 
 
@@ -5058,6 +5058,7 @@ module gantry_assy(x,y,z,xx,xp,sph,tcl,thcl){
 //noconveyer_gantry_assy(20,-30,-45+50+100-50-100+150,-55,0,267,tcl,thcl);
 module noconveyer_gantry_assy(x,y,z,xx,xp,sph,tcl,thcl){
  zencoder_assy();
+ z_encoder_inbetween();
  //filament_driver_assy();
  xshuttle_assy(x,y);
  zbed_assy(z);

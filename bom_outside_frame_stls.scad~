@@ -4,12 +4,24 @@ use<writescad/write.scad>
 bcl = [155/255,155/255,155/255];
 cl = [155/255,155/255,155/255];
 
-outside_frame_stls(bcl,cl);
 
+outside_frame_stls(bcl,cl);
+//translate([-100+50,405-210,277])rotate([0,0,90])color("gainsboro")z_encoder_inbetween();
+
+// zencoder_assy();
 
 module outside_frame_stls(){
  right_outside_frame_stls();
- translate([0,130,-0])left_outside_frame_stls();
+ translate([-10,130,-0])left_outside_frame_stls();
+ //start zencoder_assy()
+ translate([-22,-30,0])#z_encoder_inbetween();
+ translate([-72,-54,0])#z_encoder_inbetween();
+ //end zencoder_assy()
+ //start XY_motor_x2higher()
+translate([-20,125,-400])rotate([0,0,180])XY_motor_x2higher();
+translate([10+108-40,125,-400])rotate([0,0,0])mirror([0,1,0])XY_motor_x2higher();
+ //end XY_motor_x2higher()
+
 }
 
 

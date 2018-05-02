@@ -5,19 +5,11 @@ use<writescad/write.scad>
 bcl = [155/255,155/255,155/255];
 cl = [155/255,155/255,155/255];
 
-
-gantry();
-conveyer_connector_tslots();
-outside_frame(bcl,cl);
-
-//xshuttle_assy(x,y);
-xshuttle_assy(x=20,y=-30);
-
 /*
-gantry_nomenclature();
 zbed_smz_components_nomenclature(0,0);
 zbed_smz_components_nomenclature(0,10);
 gantry_nomenclature();
+outside_frame(bcl,cl);
 outside_frame_nomenclature();
 xshuttle_assy(x,y);
 xshuttle_assy_nomenclature(x,y);
@@ -26,7 +18,8 @@ y_encoder_support(60);
 
 /*
 conveyer_connector_tslots();
-//conveyer_connector_tslots_nomenclature();
+gantry();
+gantry_nomenclature();
 */
 //noconveyer_gantry_assy(20,-30,-45+50+100-50-100+150,-55,0,267,tcl,thcl);
 
@@ -40,6 +33,7 @@ outside_frame_nomenclature();
 xshuttle_assy_nomenclature(x,y);
 */
 
+conveyer_connector_tslots_nomenclature();
 
 module conveyer_connector_tslots_nomenclature(){
 

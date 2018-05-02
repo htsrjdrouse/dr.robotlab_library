@@ -3824,6 +3824,8 @@ translate([-32+3-0.6,35+2+5.5-0.2,400])nema17();
 
 module XY_motor_x2higher(){
 
+//bearings stuff
+/*
 translate([-50,0,400])translate([(62.8/2*0.65),(64.32*0.65),-15]){
   color("silver")translate([0,0,15])cylinder(r=(5.7)/2,h=25);
   color("silver")translate([0,0,30])cylinder(r=(13)/2,h=5);
@@ -3831,7 +3833,7 @@ translate([-50,0,400])translate([(62.8/2*0.65),(64.32*0.65),-15]){
   color("silver")translate([0,0,30])cylinder(r=(17)/2,h=1);
   color("silver")translate([0,0,35])cylinder(r=(17)/2,h=1);
 }
-
+*/
 
 translate([-50,0,400])scale([0.65,0.66,1])difference(){
 union(){
@@ -3850,7 +3852,8 @@ translate([7.68,15.2,3.3])cylinder(r=13.84/2,h=5);
 translate([41.04,15.2,-0.1])cylinder(r=6.36/2,h=30);
 translate([41.04,15.2,3.3])cylinder(r=13.84/2,h=5);
 }
-translate([-32+3-0.6,35+2+5.5-0.2,400])nema17();
+//nema motor
+//translate([-32+3-0.6,35+2+5.5-0.2,400])nema17();
 }
 
 
@@ -6434,9 +6437,9 @@ translate([25-2+16,15+9+10+26,3])rotate([0,0,-60])cube([25+6,13+16,3+7]);
 translate([0-3,-16-4,-0.3])cube([33+3,23,10]);
 translate([47,-9,-0.3])cube([33,23,10]);
 translate([32,32,-3]){
-cylinder(r=3.7/2,h=30,$fn=30);cylinder(r=7/2,h=3+6,$fn=6);
-translate([14,0,0]){cylinder(r=3.7/2,h=30,$fn=30);cylinder(r=7/2,h=3+6,$fn=6);}
-translate([7,14,0]){cylinder(r=3.7/2,h=30,$fn=30);cylinder(r=7/2,h=3+6,$fn=6);}
+cylinder(r=2.8/2,h=30,$fn=30);
+translate([14,0,0]){cylinder(r=2.8/2,h=30,$fn=30);}
+translate([7,14,0]){cylinder(r=2.8/2,h=30,$fn=30);}
 }
 //bearings screws
 translate([42-1.1,5.15,-4])cylinder(r=5.7/2,h=30, $fn=30);

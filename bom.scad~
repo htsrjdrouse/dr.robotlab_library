@@ -10,6 +10,8 @@ gantry();
 conveyer_connector_tslots();
 outside_frame(bcl,cl);
 
+//xshuttle_assy(x,y);
+xshuttle_assy(x=20,y=-30);
 
 /*
 gantry_nomenclature();

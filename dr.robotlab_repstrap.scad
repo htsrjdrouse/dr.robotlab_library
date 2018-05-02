@@ -14141,19 +14141,13 @@ translate([5,20+(a*10),-5]){cylinder(r=3/2,h=40);translate([0,0,5-4.5])cylinder(
 //translate([15,-27+(0*10),0]){cylinder(r=3.7/2,h=100);translate([0,0,2.6])cylinder(r=6.7/2,h=3.5+12);}
 translate([5,-36+(0*10),0]){cylinder(r=3.7/2,h=10);translate([0,0,2.6])cylinder(r=6.7/2,h=6.5);}
 //for(a=[0,4]){
-translate([5,-26+26,-0.0]){translate([0,0,-10.2])cylinder(r=3.7/2,h=200);}//translate([0,0,2.6])cylinder(r=6.7/2,h=6.5);}
-translate([12,-26+40,-0.0]){translate([0,0,-10.2])cylinder(r=3.7/2,h=200);}//translate([0,0,2.6])cylinder(r=6.7/2,h=6.5);}
-translate([5-7,-26+40,-0.0]){translate([0,0,-10.2])cylinder(r=3.7/2,h=200);}//translate([0,0,2.6])cylinder(r=6.7/2,h=6.5);}
+translate([5,-26+26,-0.0]){translate([0,0,-10.2])#cylinder(r=2.8/2,h=200);}//translate([0,0,2.6])cylinder(r=6.7/2,h=6.5);}
+translate([12,-26+40,-0.0]){translate([0,0,-10.2])cylinder(r=2.8/2,h=200);}//translate([0,0,2.6])cylinder(r=6.7/2,h=6.5);}
+translate([5-7,-26+40,-0.0]){translate([0,0,-10.2])cylinder(r=2.8/2,h=200);}//translate([0,0,2.6])cylinder(r=6.7/2,h=6.5);}
 //}
 }
 }//end translate
 }
-
-
-
-
-
-
 
 
 

@@ -1,11 +1,28 @@
 include <modparts.scad>
 use<writescad/write.scad>
 
+//wash_waste_panel();
+diaphragmpump_case_base();
+
+//then this one rotate([-90,0,0])translate([0,-3+70,0])mirror([0,1,0])diaphragmpump_longwall();
+
+//This is for the sparkfun vacuum pumps
+//module diaphragm_pump_printing_instructions(){
+//printed this first diaphragmpump_case_base();
+//then this one rotate([-90,0,0])translate([0,-3+70,0])mirror([0,1,0])diaphragmpump_longwall();
+//then this one rotate([0,90,0])diaphragmpump_end();
+//then this one rotate([0,90,0])translate([0,-50,0])mirror([0,1,0])diaphragmpump_end_justusb();
+//then this one diaphragmpump_lid();
+//then this onerotate([90,0,0])translate([0,-3+70,0])mirror([0,0,0])diaphragmpump_longwall_pumpports();
+//}
+
+
 
 //rightside_underneath_plate_x1();
 
+//washdry_pcv_pump_enclosure();
 
-xshuttle_assy_stls();
+//xshuttle_assy_stls();
 
 //corexy_beltsetup(30,-20);
 

@@ -16524,14 +16524,14 @@ module rj45jack(){
 difference(){
 cube([46,43,3]);
 translate([46/2-15.4/2,43/2-15.2/2,-1])cube([15.4,15.2,13]);
+translate([46/2-25/2,43/2,-1])cylinder(r=3.7/2,h=20);
+translate([46/2+25/2,43/2,-1])cylinder(r=3.7/2,h=20);
 /*
 translate([6,6,-1])cylinder(r=3.7/2,h=20);
 translate([46-6,6,-1])cylinder(r=3.7/2,h=20);
 translate([46-6,43-6,-1])cylinder(r=3.7/2,h=20);
 translate([6,43-6,-1])cylinder(r=3.7/2,h=20);
 */
-translate([46/2-25/2,43/2,-1])cylinder(r=3.7/2,h=20);
-translate([46/2+25/2,43/2,-1])cylinder(r=3.7/2,h=20);
 }
 }
 

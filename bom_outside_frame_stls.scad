@@ -21,7 +21,15 @@ module outside_frame_stls(){
 translate([-20,125,-400])rotate([0,0,180])XY_motor_x2higher();
 translate([10+108-35,125,-400])rotate([0,0,0])mirror([0,1,0])XY_motor_x2higher();
  //end XY_motor_x2higher()
-
+ //start foot_big()
+ //translate([-89,50,0])import("files/foot_big.stl");
+ for(i=[0:3]){
+ translate([-89+(22*i),50,0])import("files/foot_big.stl");
+ }
+ //end foot_big()
+ //start syringepump_tube_panel
+ translate([43,-10,0])rotate([0,0,0])syringepump_tube_panel();
+ //end syringepump tube panel
 }
 
 

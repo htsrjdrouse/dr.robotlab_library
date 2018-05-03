@@ -2309,13 +2309,62 @@ translate([-5,-5+10-8+3,-30-0.1+12+65+60])rotate([90,0,90])cylinder(r=3.7/2,h=50
 translate([-5,-5+10-8+71-4,-30-0.1+12+65+60])rotate([90,0,90])cylinder(r=3.7/2,h=50);
 
 translate([15/2-15,20+12,0+100])rotate([0,90,0]){
-translate([0,-14.6,-1])cylinder(r=3.3/2,h=10);
-translate([0,14.6,-1])cylinder(r=3.3/2,h=10);
+
+translate([0,-14.6,-1])#cylinder(r=3.3/2,h=10);
+translate([0,14.6,-1])#cylinder(r=3.3/2,h=10);
+translate([-10.7/2,-13.2/2,-1])#cube([10.7,13.2,13]);
+
+/*
+translate([46/2-15.4/2,43/2-15.2/2,-1])cube([15.4,15.2,13]);
+translate([46/2-25/2,43/2,-1])cylinder(r=3.7/2,h=20);
+translate([46/2+25/2,43/2,-1])cylinder(r=3.7/2,h=20);
+*/
+
+
 //translate([-15.2/2,-22.6/2,0])cube([15.2,22.6,3]);
-translate([-10.7/2,-13.2/2,-1])cube([10.7,13.2,13]);
 }
 }
 }
+
+
+module diaphragmpump_end_rj45(){
+difference(){
+translate([0-3,-10-3,-30])cube([3,85+6,83+3+60]);
+translate([0-3-2,-10-3+20,-30+20])cube([3,85+6-40,83+3-40+60]);
+//1
+translate([-5,-5+10-8,-30-0.1+12])rotate([90,0,90])cylinder(r=3.7/2,h=50);
+//2
+translate([-5,-5+10-8+71,-30-0.1+12])rotate([90,0,90])cylinder(r=3.7/2,h=50);
+//3
+translate([-5,-5+10-8+3,-30-0.1+12+65+60])rotate([90,0,90])cylinder(r=3.7/2,h=50);
+//4
+translate([-5,-5+10-8+71-4,-30-0.1+12+65+60])rotate([90,0,90])cylinder(r=3.7/2,h=50);
+
+translate([15/2-15,20+12,0+100])rotate([0,90,0]){
+
+/*
+translate([0,-14.6,-1])#cylinder(r=3.3/2,h=10);
+translate([0,14.6,-1])#cylinder(r=3.3/2,h=10);
+translate([-10.7/2,-13.2/2,-1])#cube([10.7,13.2,13]);
+*/
+translate([21,-22,0])rotate([0,0,90]){
+translate([46/2-15.4/2,43/2-15.2/2,-1])#cube([15.4,15.2,13]);
+translate([46/2-25/2,43/2,-1])#cylinder(r=3.7/2,h=20);
+translate([46/2+25/2,43/2,-1])#cylinder(r=3.7/2,h=20);
+}
+//translate([-15.2/2,-22.6/2,0])cube([15.2,22.6,3]);
+}
+}
+}
+
+
+
+
+
+
+
+
+
 
 module diaphragmpump_lid(){
 difference(){
@@ -2416,10 +2465,12 @@ translate([0,-10,-30])cube([10,14,18]);
 translate([0,-10+71,-30])cube([10,14,18]);
 
 }
-translate([0+30,-5+20,-30-0.1])cylinder(r=5.7/2,h=10);
-translate([0+30,-5+40,-30-0.1])cylinder(r=5.7/2,h=10);
-translate([0+30+80,-5+20,-30-0.1])cylinder(r=5.7/2,h=10);
-translate([0+30+80,-5+40,-30-0.1])cylinder(r=5.7/2,h=10);
+/*
+translate([0+30,-5+20,-30-0.1])cylinder(r=2.8/2,h=10);
+translate([0+30,-5+40,-30-0.1])cylinder(r=2.8/2,h=10);
+translate([0+30+80,-5+20,-30-0.1])cylinder(r=2.8/2,h=10);
+translate([0+30+80,-5+40,-30-0.1])cylinder(r=2.8/2,h=10);
+*/
 /*
 translate([10,-5,-30-0.1])cylinder(r=3.7/2,h=10);
 translate([10+60,-5,-30-0.1])cylinder(r=3.7/2,h=10);
@@ -2994,6 +3045,7 @@ cube([50,20,20]);
 cube([50,50,5]);
 translate([15,-18,0])cube([20,18,5]);
 }
+translate([12,5,-0.1])cube([26,30,5.5]);
 translate([0,-0.1,0])translate([(50-39)/2,0,5])cube([39,22,20]);
 translate([4,40,-2])cylinder(r=4.7/2,h=20);
 translate([50-4,40,-2])cylinder(r=4.7/2,h=20);
@@ -6576,10 +6628,12 @@ translate([38,15,-0.1])cylinder(r=6.5/2,h=20);
 }
 
 module syringepump_tube_panel(){
+/*
 color("white"){
 translate([30,15,-0.1-10])cylinder(r=11.5/2,h=23);
 //translate([38,15,-0.1])cylinder(r=11.5/2,h=13);
 }
+*/
 difference(){
 color("gray")cube([60,30,3]);
 translate([7,15,-0.1])cylinder(r=3.7/2,h=4);

@@ -2,7 +2,7 @@ include <modparts.scad>
 use<writescad/write.scad>
 
 
-
+/*
 projection(cut = false){
 //rotate([-90,0,0])translate([-100-56,-3+70-76,-150])mirror([0,1,0])diaphragmpump_longwall();
 //translate([-162,168,-57])rotate([90,0,0])translate([0,-3+70,0])mirror([0,0,0])diaphragmpump_longwall_pumpports();
@@ -10,7 +10,7 @@ projection(cut = false){
 translate([28,-92,0])rotate([0,90,0])
 diaphragmpump_end_justusb();
 }
-
+*/
 /*
 translate([0,-3+70,0])mirror([0,1,0])diaphragmpump_longwall();
 diaphragmpump_lid();
@@ -19,7 +19,7 @@ diaphragmpump_end();
 //diaphragmpump_longwall_pumpports();
 
 
-//diaphragmpump_boxassy();
+diaphragmpump_boxassy();
 
 //diagphragm_pump_case_to_be_lasercut();
 //diagphragm_pump_case();

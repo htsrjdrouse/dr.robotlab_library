@@ -684,26 +684,21 @@ translate([0,30,0])rotate([90,0,0])connectionarms2(0);
 //filtermount();
 
 module openmv_set(){
-//filtermount();
-//openmv_camera_base_justclip_otherend();
-/*
-rotate([90,0,0])connectionarms2(0);
-translate([0,15,0])rotate([90,0,0])connectionarms2(0);
+translate([-45,60,0])filtermount();
+translate([-80,90,13])openmv_camera_base_justclip_otherend();
+translate([-30,0,0]){
+//rotate([90,0,0])connectionarms2(0);
+//translate([0,15,0])rotate([90,0,0])connectionarms2(0);
 translate([0,30,0])rotate([90,0,0])connectionarms2(0);
 translate([0,45,0])rotate([90,0,0])connectionarms2(0);
-openmv_camera_base_justclip();
-*/
-
-/*
-translate([-200,36-25+1.5,4])rotate([0,0,0])openmv_camera_base();
+}
+translate([-70,36-20,-2])rotate([0,0,0])openmv_camera_base();
 difference(){
-import("../openmv/files/OpenMV_rev_6_Camera_Bottom_cover.stl");
+translate([-85,115,0])rotate([0,0,90])import("openmv/files/OpenMV_rev_6_Camera_Bottom_cover.stl");
 translate([-130,40,1.85])cube([50,50,20]);
 }
-*/
-//import("../openmv/files/OpenMV_rev_6_Camera_Top_cover.stl");
-//openmv_camera_lensmount();
-//translate([-135,80-30,3.35])translate([5+25,-10+6-15-2+2,-1.5])rotate([0,0,0])m12lens_screwshim_spacer(12,21.95);
+translate([0,0,-2])openmv_camera_lensmount();
+translate([-135,80-30,3.35])translate([5+25,-10+6-15-2+2,-1.5])rotate([0,0,0])m12lens_screwshim_spacer(12,21.95);
 }
 
 

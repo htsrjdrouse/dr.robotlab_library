@@ -18213,6 +18213,7 @@ cl = 0.6;color([cl,cl,cl])translate([1,232,61.3])rotate([0,0,90])valveconnectpar
 
 translate([7,585,-22])rotate([90,0,0]){
 translate([4,34,363])rotate([0,90,90])servo();
+//this one is for show
 wcl = 0.9;color([wcl,wcl,wcl]) translate([-6,83.5,353])rotate([0,90,90])actualvalve_for_syringe();
 }
 
@@ -18590,13 +18591,18 @@ translate([-70+8,-80,30-5])rotate([-90,0,0])cylinder(r=6.7/2,h=200);
 module igus_slidermount_encoder_TW_04_12_motormount_assy_m8(){
 //color("lightgrey")
 bg = 0.5;
-color([bg,bg,bg])igus_slidermount_encoder_TW_04_12(); 
+color([bg,bg,bg])
+igus_slidermount_encoder_TW_04_12(); 
 translate([1,0,0]){
 //color("lightgrey")
 color([bg,bg,bg])translate([-22,-90,4])rotate([90,-90,0])motormount();
 color([bg,bg,bg])translate([-110+27,-81.5+1.5,-4])cube([42,8.5,10]);
+
+//This is for display purposes
+/*
 translate([-70+8,-80,30-5])rotate([-90,0,0])nema17();
 rbg=0.85;color([rbg,rbg,rbg])translate([-70+8,-80,30-5])rotate([-90,0,0])cylinder(r=8.7/2,h=200);
+*/
 }
 }
 

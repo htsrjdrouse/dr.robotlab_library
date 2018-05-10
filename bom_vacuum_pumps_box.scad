@@ -19,10 +19,10 @@ diaphragmpump_end();
 //diaphragmpump_longwall_pumpports();
 
 
-diaphragmpump_boxassy();
+//diaphragmpump_boxassy();
 
 //diagphragm_pump_case_to_be_lasercut();
-//diagphragm_pump_case();
+diagphragm_pump_case();
 
 
 module diaphragmpump_boxassy(){

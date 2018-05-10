@@ -490,8 +490,8 @@ module zbedslot_516_smz_zbed(){
    }
    translate([31,7.5,-22])cylinder(r=31/2,h=30);
    translate([0,-0.5,0]){
-   translate([45*0.25-0.75-6+9-2.5-44,13/2+9-5+2+4,-2]){cylinder(r=4.7/2,h=20);translate([0,0,2])cylinder(r=9.7/2,h=5);}
-   translate([45*0.25-0.75-6+9-2.5-44,13/2-5+2-3,-2]){cylinder(r=4.7/2,h=20);translate([0,0,2])cylinder(r=9.7/2,h=5);}
+   translate([45*0.25-0.75-6+9-2.5-44,13/2+9-5+2+4,-20]){#cylinder(r=3.8/2,h=100);}//translate([0,0,2])#cylinder(r=9.7/2,h=5);
+   translate([45*0.25-0.75-6+9-2.5-44,13/2-5+2-3,-20]){#cylinder(r=3.8/2,h=20);} //translate([0,0,2])#cylinder(r=9.7/2,h=5);
    }
   }
   }
@@ -11919,13 +11919,17 @@ translate([19,-13,5-3])cylinder(r=4.7/2,h=10+10);
 module washbowl_1tip(){
 xd=5.5;
 xdd=1.5;
-
 translate([0,-43,0])difference(){
 union(){
-translate([0,2,0])difference(){translate([0,-21,5])cube([25,20,5]);
-translate([6,-13,5-3]){translate([0,0,-0])cylinder(r=10/2,h=4);translate([0,0,4])cylinder(r=4.7/2,h=10+6);}
-translate([19,-13,5-3]){translate([0,0,-0])cylinder(r=10/2,h=4);translate([0,0,4])cylinder(r=4.7/2,h=10+6);}
+translate([-20,2,0])rotate([0,0,90])difference(){
+translate([0,-21,5])cube([25,20+13,5]);
+translate([0,3,0])for(i=[0:15]){
+translate([6,-13,5-3]){translate([0,i,-0])cylinder(r=10/2,h=4);translate([0,i,4])cylinder(r=4.7/2,h=10+6);}
+translate([19,-13,5-3]){translate([0,i,-0])cylinder(r=10/2,h=4);translate([0,i,4])cylinder(r=4.7/2,h=10+6);}
 }
+}
+
+
 cube([25,40,10]);
 }
 

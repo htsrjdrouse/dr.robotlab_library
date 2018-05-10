@@ -17,19 +17,19 @@ module xshuttle_assy_stls(){
 
   //start slider_assy(x);
   //start slider_front_assy();
-   translate([20,-40,-28])linearactuator_filament_encodershuttle_filamentclamp();
+   translate([20+0,-40-0,-28])linearactuator_filament_encodershuttle_filamentclamp();
    translate([-5,-6,26])rotate([0,180,0])inductivesensorcap();
     //start filament_linearactuator
-    translate([0,-70,0])shuttle_front();
-    translate([-55,5,37])rotate([-90,0,0])import("files/gt2belt_holder.stl");
-    translate([-55,42,37])rotate([-90,0,0])import("files/gt2belt_holder.stl");
+    translate([0,-70+0,0])#shuttle_front();
+    translate([-55,5+0,37.34])rotate([-90,0,0])import("files/gt2belt_holder.stl");
+    translate([-55,42,37.34])rotate([-90,0,0])import("files/gt2belt_holder.stl");
     translate([48.47-80+4-25,92+3-130-2,16.0-10])rotate([0,0,180])smaller_igus_slidermount();
-    translate([-50,0,0])filament_linearactuator_shuttle();
+    translate([-50+0,0,0])filament_linearactuator_shuttle();
     //end filament_linearactuator
   //end slider_front_assy();
 
   //start slider_back_assy();
-   translate([-85,-45,0])shuttle_back();
+   translate([-85+0,-45,0])shuttle_back();
    translate([39,0,6])rotate([0,180,0])wiper_clamp();
   //end slider_back_assy();
   //end slider_assy(x);

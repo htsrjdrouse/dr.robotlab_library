@@ -11,8 +11,8 @@ outside_frame_stls(bcl,cl);
 // zencoder_assy();
 
 module outside_frame_stls(){
- right_outside_frame_stls();
- translate([-10,130,-0])left_outside_frame_stls();
+ translate([0,0,0])right_outside_frame_stls();
+ translate([-10,130-30,-0])left_outside_frame_stls();
  //start zencoder_assy()
  translate([-22,-30,0])#z_encoder_inbetween();
  translate([-72,-54,0])#z_encoder_inbetween();
@@ -28,7 +28,7 @@ translate([10+108-35,125,-400])rotate([0,0,0])mirror([0,1,0])XY_motor_x2higher()
  }
  //end foot_big()
  //start syringepump_tube_panel
- translate([43,-10,0])rotate([0,0,90])syringepump_tube_panel();
+ translate([43,-10,0])rotate([0,0,0])syringepump_tube_panel();
  //end syringepump tube panel
 }
 

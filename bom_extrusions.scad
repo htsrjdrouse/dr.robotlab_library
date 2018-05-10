@@ -6,8 +6,7 @@ bcl = [155/255,155/255,155/255];
 cl = [155/255,155/255,155/255];
 
 /*
-zbed_smz_components_nomenclature(0,0);
-zbed_smz_components_nomenclature(0,10);
+gantry();
 gantry_nomenclature();
 outside_frame(bcl,cl);
 outside_frame_nomenclature();
@@ -16,24 +15,30 @@ xshuttle_assy_nomenclature(x,y);
 y_encoder_support(60);
 */
 
+
 /*
-conveyer_connector_tslots();
 gantry();
-gantry_nomenclature();
+zbed_smz_components_nomenclature(0,0);
+zbed_smz_components_nomenclature(0,10);
 */
+conveyer_connector_tslots();
+conveyer_connector_tslots_nomenclature();
+//conveyer_connector_tslots();
+//conveyer_sliderwheel_assy();
+//slide_conveyer(-60,0,0,0,0);
 //noconveyer_gantry_assy(20,-30,-45+50+100-50-100+150,-55,0,267,tcl,thcl);
 
+//gantry();
 
 
-/*
+gantry_nomenclature();
 zbed_smz_components_nomenclature(0,0);
 zbed_smz_components_nomenclature(0,10);
 zencoder_assy_nomenclature();
 outside_frame_nomenclature();
 xshuttle_assy_nomenclature(x,y);
-*/
 
-conveyer_connector_tslots_nomenclature();
+
 
 module conveyer_connector_tslots_nomenclature(){
 
@@ -55,7 +60,6 @@ c7 = "HFS5-2020-315-TPW";
 translate([170,560,155+55])rotate([90,0,90])mirror([1,0,0])color("black")write(c7,h=11);
 c8 = "HFS5-2020-315-TPW";
 translate([170,560,155+110])rotate([90,0,90])mirror([1,0,0])color("black")write(c8,h=11);
-
 
 }
 

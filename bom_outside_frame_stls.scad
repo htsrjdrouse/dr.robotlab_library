@@ -11,8 +11,8 @@ outside_frame_stls(bcl,cl);
 // zencoder_assy();
 
 module outside_frame_stls(){
- right_outside_frame_stls();
- translate([-10,130,-0])left_outside_frame_stls();
+ translate([0,0,0])right_outside_frame_stls();
+ translate([-10,130-0,-0])left_outside_frame_stls();
  //start zencoder_assy()
  translate([-22,-30,0])#z_encoder_inbetween();
  translate([-72,-54,0])#z_encoder_inbetween();

@@ -5,8 +5,15 @@ bcl = [155/255,155/255,155/255];
 cl = [155/255,155/255,155/255];
 
 
-outside_frame_stls(bcl,cl);
-//translate([-100+50,405-210,277])rotate([0,0,90])color("gainsboro")z_encoder_inbetween();
+//laser_zbed(144);
+
+/*projection(cut = false){
+import("laser_zbed_144.stl");
+//translate([-20,125,-400])rotate([0,0,180])XY_motor_x2higher();
+//translate([10+108-35,125,-400])rotate([0,0,0])mirror([0,1,0])XY_motor_x2higher();
+}
+*/
+outside_frame_stls(bcl,cl); //translate([-100+50,405-210,277])rotate([0,0,90])color("gainsboro")z_encoder_inbetween();
 
 // zencoder_assy();
 
@@ -18,8 +25,8 @@ module outside_frame_stls(){
  translate([-72,-54,0])#z_encoder_inbetween();
  //end zencoder_assy()
  //start XY_motor_x2higher()
-translate([-20,125,-400])rotate([0,0,180])XY_motor_x2higher();
-translate([10+108-35,125,-400])rotate([0,0,0])mirror([0,1,0])XY_motor_x2higher();
+//translate([-20,125,-400])rotate([0,0,180])XY_motor_x2higher();
+//translate([10+108-35,125,-400])rotate([0,0,0])mirror([0,1,0])XY_motor_x2higher();
  //end XY_motor_x2higher()
  //start foot_big()
  //translate([-89,50,0])import("files/foot_big.stl");

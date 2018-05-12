@@ -18,9 +18,9 @@ y_encoder_support(60);
 
 /*
 gantry();
-zbed_smz_components_nomenclature(0,0);
-zbed_smz_components_nomenclature(0,10);
 */
+gantry_nomenclature();
+gantry();
 conveyer_connector_tslots();
 conveyer_connector_tslots_nomenclature();
 //conveyer_connector_tslots();
@@ -30,14 +30,14 @@ conveyer_connector_tslots_nomenclature();
 
 //gantry();
 
-
+/*
 gantry_nomenclature();
 zbed_smz_components_nomenclature(0,0);
 zbed_smz_components_nomenclature(0,10);
 zencoder_assy_nomenclature();
 outside_frame_nomenclature();
 xshuttle_assy_nomenclature(x,y);
-
+*/
 
 
 module conveyer_connector_tslots_nomenclature(){
@@ -83,6 +83,7 @@ module xshuttle_assy_nomenclature(x,y){
 
 
 module zbed_smz_components_nomenclature(shim,modshim){
+ /* 
  if (modshim == 10){
  z2 = "HFS5-2020-300-TPW-Z5-XA21.5-XB141-XC239-YA110-YB230";
  translate([-50-40+530,240-50-100,140])rotate([90,0,90])mirror([0,0,0])color("black")write(z2,h=11);
@@ -95,7 +96,7 @@ module zbed_smz_components_nomenclature(shim,modshim){
  translate([-50-40+430,240-50+80,140])rotate([90,0,0])mirror([1,0,0])color("black")write(z4,h=11);
  z5 = "HFS5-2020-348.5-TPW";
  translate([-50-40+230,240-50+80-160,125])rotate([90,0,0])mirror([0,0,0])color("black")write(z5,h=11);
-
+*/
  z6 = "HFS5-2020-200-TPW";
  translate([-50-40+230,240-50+80-160,180])rotate([90,0,0])mirror([0,0,0])color("black")write(z6,h=11);
 
@@ -137,6 +138,8 @@ translate([-50+550,60,0])rotate([90,0,90])mirror([0,0,0])color("black")write(o7,
 
 
 module gantry_nomenclature(){
+zbed_smz_components_nomenclature(0,0);
+zbed_smz_components_nomenclature(0,10);
 g1 = "HFS5-2020-400-TPW-XA22-XB370-YA190";
 translate([380,440,0])rotate([90,0,0])mirror([1,0,0])color("black")write(g1,h=8);
 g2 = "HFS5-2020-400-TPW";

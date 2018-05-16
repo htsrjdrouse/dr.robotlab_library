@@ -119,10 +119,11 @@ translate([74,10,-18])rotate([-90,0,0])kill_button_leds_panelmount();
 
 //This is the syringe panel
 translate([440,200-0.8,-64])rotate([90,0,-90]){
-translate([28,21,5])syringe_pcb_holder_back();
-translate([40-12.5,-40+61,2])syringe_pcb_holder();
-translate([40-12.5,-40+61,6])syringe_pcb_holder_cover();
-
+/*
+translate([28,21,5])#syringe_pcb_holder_back();
+translate([40-12.5,-40+61,2])#syringe_pcb_holder();
+translate([40-12.5,-40+61,6])#syringe_pcb_holder_cover();
+*/
 translate([-260+250-142,200-0.8-150-13,443-15])rotate([180,0,0]){
 translate([0,-7,0])conveyer_pcb_holder_front();
 translate([0,-7,0])conveyer_pcb_holder_backsupport();
@@ -506,9 +507,13 @@ translate([81+13,-18,-2])cylinder(r=2.6/2,100);
 
 module barrierstrip_screws(){
 
-translate([370,270-40+100,0])rotate([0,180,0])
-color("white")translate([-42+114-40+10,6-55+13+2,2])rotate([0,0,90])cube([13,70,4]);
-
+translate([330,270-40+150,0])rotate([0,180,90])
+difference(){
+color("white")translate([-42+114-40+10,6-55+13+2,2])rotate([0,0,90])cube([13,96,4]);
+for(i=[0:11]){
+translate([i*8-54+4,-27.4,-10])#cylinder(r=3.7/2,h=60);
+}
+}
 // this is also the european connector design
 
 //translate([370,270-40+100,0])rotate([0,180,0])
@@ -622,10 +627,9 @@ translate([0,0,-6.3])atzeeg_mount_to_plate();
 translate([330,55,0]){
 rotate([0,180,0])wash_dry_pcv_brd();
 }
-solenoids_mosfets();
+translate([-100,20,0])solenoids_mosfets();
 translate([0,-90+13,0])barrierstrip_screws();
 }
-
 
 
 module atzeeg_mount_to_plate(){
@@ -2300,14 +2304,81 @@ translate([-5,-5+10-8+3-3.4,-30-0.1+12+65+60-2.8])rotate([90,0,90])cylinder(r=3.
 //4 
 translate([-5,-5+10-8+71-4+3.7,-30-0.1+12+65+60-2.8])rotate([90,0,90])cylinder(r=3.7/2,h=50);
 
+
 //2
+/*
 translate([-5,-5+10-8+71-13,-30-0.1+12+10])rotate([90,0,90])cylinder(r=5.5/2,h=50);
 translate([-5,-5+10-8+71-13-(1*15),-30-0.1+12+10])rotate([90,0,90])cylinder(r=5.5/2,h=50);
 translate([-5,-5+10-8+71-13-(2*15),-30-0.1+12+10])rotate([90,0,90])cylinder(r=5.5/2,h=50);
 translate([-5,-5+10-8+71-13-(3*15),-30-0.1+12+10])rotate([90,0,90])cylinder(r=5.5/2,h=50);
+*/
+}
+}
 
+
+module diaphragmpump_end_6pin_pcb(){
+
+difference(){
+cube([61.1,40.2,3]);
+translate([5.908,12.785,-0.1])#cylinder(r=4.2/2,h=100);
+translate([56.784,12.889,-0.1])#cylinder(r=4.2/2,h=100);
+translate([16.146,6.517,-0.1])#cylinder(r=6.5/2,h=100);
+translate([26.384,6.517,-0.1])#cylinder(r=6.5/2,h=100);
+translate([39.13,6.517,-0.1])#cylinder(r=6.5/2,h=100);
+translate([49.262,6.517,-0.1])#cylinder(r=6.5/2,h=100);
+translate([17.6,14-1,-0.1])#cube([17,4.5,50]);
 }
 }
+
+module diaphragmpump_end_6pin(){
+difference(){
+union(){
+translate([0-3,-10-3,-30])cube([3,85+6,83+3+60]);
+//translate([0,0,100])rotate([-90,0,90])diaphragmpump_end_6pin_pcb();
+}
+
+//pcb pins
+
+translate([0,0,100])rotate([-90,0,90]){
+translate([5.908,12.785,-0.1])#cylinder(r=4.2/2,h=100);
+translate([56.784,12.889,-0.1])#cylinder(r=4.2/2,h=100);
+translate([16.146,6.517,-0.1])#cylinder(r=6.5/2,h=100);
+translate([26.384,6.517,-0.1])#cylinder(r=6.5/2,h=100);
+translate([39.13,6.517,-0.1])#cylinder(r=6.5/2,h=100);
+translate([49.262,6.517,-0.1])#cylinder(r=6.5/2,h=100);
+translate([17.6,14-1,-0.1])#cube([17,4.5,50]);
+}
+
+//end pins
+
+
+//translate([0-3-2,-10-3+20,-30+20])#cube([3,85+6-40,83+3-40+60]);
+
+
+//1
+translate([-5,-5+10-8,-30-0.1+12])rotate([90,0,90])cylinder(r=3.7/2,h=50);
+//2
+translate([-5,-5+10-8+71,-30-0.1+12])rotate([90,0,90])cylinder(r=3.7/2,h=50);
+//3
+translate([-5,-5+10-8+3,-30-0.1+12+65+60])rotate([90,0,90])cylinder(r=3.7/2,h=50);
+//4
+translate([-5,-5+10-8+71-4,-30-0.1+12+65+60])rotate([90,0,90])cylinder(r=3.7/2,h=50);
+/*
+translate([15/2-15,20+12,0+100])rotate([0,90,0]){
+translate([0,-14.6,-1])#cylinder(r=3.3/2,h=10);
+translate([0,14.6,-1])#cylinder(r=3.3/2,h=10);
+translate([-10.7/2,-13.2/2,-1])#cube([10.7,13.2,13]);
+}
+*/
+/*
+translate([46/2-15.4/2,43/2-15.2/2,-1])cube([15.4,15.2,13]);
+translate([46/2-25/2,43/2,-1])cylinder(r=3.7/2,h=20);
+translate([46/2+25/2,43/2,-1])cylinder(r=3.7/2,h=20);
+*/
+//translate([-15.2/2,-22.6/2,0])cube([15.2,22.6,3]);
+}
+}
+
 
 
 
@@ -2323,20 +2394,15 @@ translate([-5,-5+10-8+71,-30-0.1+12])rotate([90,0,90])cylinder(r=3.7/2,h=50);
 translate([-5,-5+10-8+3,-30-0.1+12+65+60])rotate([90,0,90])cylinder(r=3.7/2,h=50);
 //4
 translate([-5,-5+10-8+71-4,-30-0.1+12+65+60])rotate([90,0,90])cylinder(r=3.7/2,h=50);
-
 translate([15/2-15,20+12,0+100])rotate([0,90,0]){
-
 translate([0,-14.6,-1])cylinder(r=3.3/2,h=10);
 translate([0,14.6,-1])cylinder(r=3.3/2,h=10);
 translate([-10.7/2,-13.2/2,-1])cube([10.7,13.2,13]);
-
 /*
 translate([46/2-15.4/2,43/2-15.2/2,-1])cube([15.4,15.2,13]);
 translate([46/2-25/2,43/2,-1])cylinder(r=3.7/2,h=20);
 translate([46/2+25/2,43/2,-1])cylinder(r=3.7/2,h=20);
 */
-
-
 //translate([-15.2/2,-22.6/2,0])cube([15.2,22.6,3]);
 }
 }
@@ -2567,7 +2633,6 @@ translate([-5-10,-5+10-8+71,-30-0.1+12])rotate([90,0,90])cylinder(r=3/2,h=50);
 
 
 
-
 module amplifier_brd_holder(){
 
 //translate([372,-217,0])rotate([0,180,0])solenoids_mosfets();
@@ -2609,10 +2674,23 @@ translate([10-9+22.5,10+1-3-2-0.8,-5.2])cylinder(r=4/2,h=120);
 
 
 
+module 5stepper_brd_holder_brd(){
 
+translate([118,100-10,3])rotate([0,0,180])
+difference(){
+color("green")cube([121.2,96.2,1]);
+translate([8.138,5.580,-20.5])#cylinder(r=4/2,h=50);
+translate([114.7,5.58,-20.5])#cylinder(r=4/2,h=50);
+translate([25.727,92,-20.5])#cylinder(r=4/2,h=50);
+translate([114.706,92,-20.5])#cylinder(r=4/2,h=50);
+}
 
+}
 module 5stepper_brd_holder(){
-color("green")cube([120,89,1]);
+
+5stepper_brd_holder_brd();
+
+/*
 solenoid_endstop_brd(120,89);
 translate([105,-14,0])difference(){
 translate([-10+25.5,6,0])cube([15,10,5]);
@@ -2630,6 +2708,7 @@ translate([105-140,-14+90,0])difference(){
 translate([-10+25.5,6,0])cube([15,10,5]);
 translate([10-9+22.75-2,10+2,-10.2])cylinder(r=4/2,h=200);
 }
+*/
 }
 
 module solenoid_2pin_connects_endstop_brd(){
@@ -3338,10 +3417,10 @@ translate([-13,-13+2,-3])cube([x+20,y+20-1,6]);
 translate([-28,5-10,-3])cube([20,20+20,6]);
 translate([62,5-10,-3])cube([20,20+20,6]);
 }
-translate([-20,15-15,-5])cylinder(r=3.7/2,h=120);
-translate([-20,15+15,-5])cylinder(r=3.7/2,h=120);
-translate([74,15-15,-5])cylinder(r=3.7/2,h=120);
-translate([74,15+15,-5])cylinder(r=3.7/2,h=120);
+translate([-20,15-15,-5])cylinder(r=2.8/2,h=120);
+translate([-20,15+15,-5])cylinder(r=2.8/2,h=120);
+translate([74,15-15,-5])cylinder(r=2.8/2,h=120);
+translate([74,15+15,-5])cylinder(r=2.8/2,h=120);
 //translate([-8,-8,-3.1])cube([x+10,y+10,7]);
 translate([-7,-7,-3.1])cube([x+8,y+8,7]);
 }
@@ -3350,15 +3429,29 @@ translate([-7,-7,-3.1])cube([x+8,y+8,7]);
 module kill_button_led_indicator_brd(x,y){
 //x = 47;
 //y = 52;
-/*
+//kill_button_led_indicator_brd(58,35);
 //for display
+/*
 translate([x-25.5+16/2+2,y-21+14/2,-5])color("red")cylinder(r=9/2,h=10);
 translate([x-25.5+16/2-19+2,y-21+14/2+2,-5])color("red")cylinder(r=5.5/2,h=10);
 translate([x-25.5+16/2-19-17.5+2,y-21+14/2+2,-5])color("lightgreen")cylinder(r=5.5/2,h=10);
 */
+//end for display
+
 difference(){
+union(){
 color("gray")translate([-6,-6,-3])cube([x+8,y+8,6]);
-translate([x-25.5+2,y-21,-1])cube([16,14,4.5]);
+//color("blue")translate([-4-(4.96/2),-4+(11.09/2),-3])cube([62,39,16]);
+}
+/*
+translate([4-4.96,-4.2+11.09,0]){
+color("blue")translate([-4+56.72,-4+31.12,-13])cylinder(r=4.7/2,h=30);
+color("blue")translate([-4+5.91,-4+31.12,-13])#cylinder(r=4.7/2,h=30);
+color("blue")translate([-4+5.91,-4+5.18,-13])cylinder(r=4.7/2,h=30);
+color("blue")translate([-4+57.94,-4+5.94,-13])cylinder(r=4.7/2,h=30);
+}*/
+
+translate([x-25.5+2,y-21,-1])#cube([16,14,4.5]);
 translate([x-25.5+16/2+2,y-21+14/2,-3])cylinder(r=9/2,h=10);
 translate([x-25.5+16/2-19+2,y-21+14/2+2,-3])cylinder(r=5.5/2,h=10);
 translate([x-25.5+16/2-19-17.5+2,y-21+14/2+2,-3])cylinder(r=5.5/2,h=10);
@@ -5342,6 +5435,7 @@ module gantry_assy(x,y,z,xx,xp,sph,tcl,thcl){
 
 //noconveyer_gantry_assy(20,-30,-45+50+100-50-100+150,-55,0,267,tcl,thcl);
 module noconveyer_gantry_assy(x,y,z,xx,xp,sph,tcl,thcl){
+ pcb_panels();
  zencoder_assy();
  //filament_driver_assy();
  xshuttle_assy(x,y);
@@ -6531,6 +6625,7 @@ translate([97.5,30.2+48,-10])cylinder(r=3.7/2,h=60);
 module azteeg_controller(){
 //to show PCB just this
 color("green")translate([51,-43,0])cube([108,70,4]);
+translate([40,-30,10])color("black")rotate([0,0,0])mirror([0,0,0])write("BOM_conveyer_solenoids",h=8);
 
 
 difference(){
@@ -6545,11 +6640,11 @@ translate([7+92,13+48,0])cylinder(r=6.7/2,h=8);
 }
 }
 translate([51+10,-43+10,-9])cube([108-25,70-20,14]);
-translate([51,-43,-7]){
-translate([7,13,0])cylinder(r=3.2/2,h=40);
-translate([7,13+48,0])cylinder(r=3.2/2,h=40);
-translate([7+92,13,0])cylinder(r=3.2/2,h=40);
-translate([7+92,13+48,0])cylinder(r=3.2/2,h=40);
+translate([51,-43,-17]){
+translate([7,13,0])#cylinder(r=4.2/2,h=40);
+translate([7,13+48,0])#cylinder(r=4.2/2,h=40);
+translate([7+92,13,0])#cylinder(r=4.2/2,h=40);
+translate([7+92,13+48,0])#cylinder(r=4.2/2,h=40);
 }
 }
 } 

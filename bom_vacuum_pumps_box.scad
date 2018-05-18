@@ -21,10 +21,12 @@ diaphragmpump_end();
 */
 //diaphragmpump_longwall_pumpports();
 
+/*
 projection(cut = false){
 rotate([0,90,0])diaphragmpump_end_6pin();
 }
-//diaphragmpump_boxassy();
+*/
+diaphragmpump_boxassy();
 
 //diagphragm_pump_case_to_be_lasercut();
 //diagphragm_pump_case();

@@ -12,9 +12,9 @@ use<writescad/write.scad>
 //zbed_smz();
 
 
-//projection(cut = false){
+projection(cut = false){
 laser_zbed(144);
-//}
+}
 /*
 wash_and_strobparts();
 laser_zbed_support_strobend();

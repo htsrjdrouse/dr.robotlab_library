@@ -18,12 +18,13 @@ electrics_panels_to_print();
 //p1 = "kill_button_leds_panelmount";
 //translate([100,-40,-40])color("black")rotate([90,0,0])write(p1,h=8);
 
+/*
 p2 = "syringe_pcb_holder";
 translate([300,-40,-40])color("black")rotate([90,0,0])write(p2,h=8);
 
 p3 = "BANANA JACKS";
 translate([500,80,-28])rotate([0,0,90])color("black")rotate([90,0,0])write(p3,h=8);
-
+*/
 //p4 = "pcv_sensor_usb_connect";
 //translate([500,225,-28])rotate([0,0,90])color("black")rotate([90,0,0])write(p4,h=8);
 p5 = "atx_power_sockets";
@@ -74,7 +75,7 @@ translate([-78,-116,-400+3])rotate([90,0,0])atx_power_connect_assy();
 translate([105,45,0])bom_controlpanel();
 translate([145,-230,0])rotate([0,0,90])usbs_socket_alu_support_lid_usbs_cover();
 
-translate([-90,-105,0])usbs_socket_alu_support_lid_usbs_simplier();
+translate([-95,-105,0])usbs_socket_alu_support_lid_usbs_simplier();
 /*
 
 */

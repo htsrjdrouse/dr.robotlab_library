@@ -18,14 +18,17 @@ electrics_panels_to_print();
 //p1 = "kill_button_leds_panelmount";
 //translate([100,-40,-40])color("black")rotate([90,0,0])write(p1,h=8);
 
+/*
 p2 = "syringe_pcb_holder";
 translate([300,-40,-40])color("black")rotate([90,0,0])write(p2,h=8);
 
 p3 = "BANANA JACKS";
 translate([500,80,-28])rotate([0,0,90])color("black")rotate([90,0,0])write(p3,h=8);
-
+*/
 //p4 = "pcv_sensor_usb_connect";
 //translate([500,225,-28])rotate([0,0,90])color("black")rotate([90,0,0])write(p4,h=8);
+
+/*
 p5 = "atx_power_sockets";
 translate([330,250+200,-28])rotate([0,0,180])color("black")rotate([90,0,0])write(p5,h=8);
 
@@ -40,7 +43,7 @@ translate([170-200,330,-28])rotate([0,0,270])color("black")rotate([90,0,0])write
 
 p9 = "fan";
 translate([170-200,40,-28])rotate([0,0,270])color("black")rotate([90,0,0])write(p9,h=8);
-
+*/
 /*
 translate([320,150,-3])rotate([0,180,90])color("blue")BOM_washdrypcv_kill();
 translate([176-0,190+130-6,-3])rotate([0,180,90])color("blue")BOM_conveyer_pcb();

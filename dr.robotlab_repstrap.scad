@@ -490,8 +490,8 @@ module zbedslot_516_smz_zbed(){
    }
    translate([31,7.5,-22])cylinder(r=31/2,h=30);
    translate([0,-0.5,0]){
-   translate([45*0.25-0.75-6+9-2.5-44,13/2+9-5+2+4,-20]){#cylinder(r=3.8/2,h=100);}//translate([0,0,2])#cylinder(r=9.7/2,h=5);
-   translate([45*0.25-0.75-6+9-2.5-44,13/2-5+2-3,-20]){#cylinder(r=3.8/2,h=20);} //translate([0,0,2])#cylinder(r=9.7/2,h=5);
+   translate([45*0.25-0.75-6+9-2.5-44,13/2+9-5+2+4,-20]){cylinder(r=3.8/2,h=100);}//translate([0,0,2])cylinder(r=9.7/2,h=5);
+   translate([45*0.25-0.75-6+9-2.5-44,13/2-5+2-3,-20]){cylinder(r=3.8/2,h=20);} //translate([0,0,2])cylinder(r=9.7/2,h=5);
    }
   }
   }
@@ -7525,7 +7525,7 @@ translate([-10+26,-29/2+5-6+2,0])cube([25,5,18]);
 translate([0,0,2])cylinder(r=13/2,h=40);
 translate([0,0,2+5])cylinder(r=22.5/2,h=40);
 translate([0,0,-10])cylinder(r=8.7/2,h=40);
-//translate([50.5,-5,5])rotate([90,90,0]){translate([0,0,-2])#cylinder(r=4.7/2,h=20);translate([0,0,8])#cylinder(r=10/2,h=5);}
+//translate([50.5,-5,5])rotate([90,90,0]){translate([0,0,-2])cylinder(r=4.7/2,h=20);translate([0,0,8])cylinder(r=10/2,h=5);}
 translate([50.5,-5,20])rotate([90,90,0]){cylinder(r=4.7/2,h=20);translate([0,0,8])cylinder(r=10/2,h=5);}
 }
 }
@@ -14145,7 +14145,7 @@ translate([5,20+(a*10),-5]){cylinder(r=3/2,h=40);translate([0,0,5-4.5])cylinder(
 //translate([15,-27+(0*10),0]){cylinder(r=3.7/2,h=100);translate([0,0,2.6])cylinder(r=6.7/2,h=3.5+12);}
 translate([5,-36+(0*10),0]){cylinder(r=3.7/2,h=10);translate([0,0,2.6])cylinder(r=6.7/2,h=6.5);}
 //for(a=[0,4]){
-translate([5,-26+26,-0.0]){translate([0,0,-10.2])#cylinder(r=2.8/2,h=200);}//translate([0,0,2.6])cylinder(r=6.7/2,h=6.5);}
+translate([5,-26+26,-0.0]){translate([0,0,-10.2])cylinder(r=2.8/2,h=200);}//translate([0,0,2.6])cylinder(r=6.7/2,h=6.5);}
 translate([12,-26+40,-0.0]){translate([0,0,-10.2])cylinder(r=2.8/2,h=200);}//translate([0,0,2.6])cylinder(r=6.7/2,h=6.5);}
 translate([5-7,-26+40,-0.0]){translate([0,0,-10.2])cylinder(r=2.8/2,h=200);}//translate([0,0,2.6])cylinder(r=6.7/2,h=6.5);}
 //}
@@ -18067,8 +18067,8 @@ translate([0+18.5+6,0,0])difference(){union(){translate([0,0,33])cylinder(h = 2.
 
 
 module igus_lowprofile_assy(){
-import("/Users/richard/Google\ Drive/009Reprapcatcube010715/igus_sliders/igus_20161020_215205/TS_04_09_100_2.stl");
-translate([0,-26,5])import("/Users/richard/Google\ Drive/009Reprapcatcube010715/igus_sliders/igus_20161020_215205/TW_04_07_1.stl");
+import("igus_sliders/igus_20161020_215205/TS_04_09_100_2.stl");
+translate([0,-26,5])import("igus_sliders/igus_20161020_215205/TW_04_07_1.stl");
 }
 
 

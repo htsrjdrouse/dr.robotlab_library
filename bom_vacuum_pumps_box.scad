@@ -1,9 +1,14 @@
 include <modparts.scad>
 use<writescad/write.scad>
 
+
+
+
 //diaphragmpump_end_justusb();
 //diaphragmpump_end_6pin();
 //diaphragmpump_end_6pin_pcb();
+//diaphragmpump_boxassy();
+diagphragm_pump_case();
 
 /*
 projection(cut = false){
@@ -26,7 +31,6 @@ projection(cut = false){
 rotate([0,90,0])diaphragmpump_end_6pin();
 }
 */
-diaphragmpump_boxassy();
 
 //diagphragm_pump_case_to_be_lasercut();
 //diagphragm_pump_case();
@@ -61,9 +65,6 @@ translate([28,-92,0])rotate([0,90,0])diaphragmpump_end();
 translate([28,-76,0])rotate([0,90,0])translate([0,-50,0])mirror([0,1,0])diaphragmpump_end_rj45();
 //then this one 
 translate([-162,168,-57])rotate([90,0,0])translate([0,-3+70,0])mirror([0,0,0])diaphragmpump_longwall_pumpports();
-
-
-
 
 }
 

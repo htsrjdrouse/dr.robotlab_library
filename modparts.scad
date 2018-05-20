@@ -175,9 +175,6 @@ translate([8+12.5,17.5+140,-61.4])rotate([90,180,-90]){
 color("pink")translate([2,0,12])usbs_socket_alu_support_lid_usbs_cover();
 }
 
-
-
-
 }
 
 
@@ -2102,7 +2099,7 @@ translate([92+34-53+6-2+100+17,410-10,-53+4+35+1])rotate([90,0,0])cylinder(r=3.7
 module usbs_socket_alu_support_lid(){
 difference(){
 union(){
-translate([92+34-53+10,410-10,-53-4])rotate([90,0,0])#cube([110-4,43+8,3]);
+translate([92+34-53+10,410-10,-53-4])rotate([90,0,0])cube([110-4,43+8,3]);
 translate([92+34-53+15-3,410-10,-53])rotate([90,0,0])cube([110-30+3,4,3]);
 translate([92+34-53+15-3,410-10,-53+39])rotate([90,0,0])cube([110-30+3,4,3]);
 translate([92+34-53+15-6,410-10,-53])rotate([90,0,0])cube([4,43,3]);
@@ -5573,7 +5570,6 @@ translate([57,400+9,200])rotate([0,0,90]){
 color("gainsboro")cable_support();
 translate([20,31,0])mirror([0,1,0])color("gainsboro")cable_support_lid();
 }
-
 }
 
 module xshuttle_assy(x,y){
@@ -6716,10 +6712,8 @@ rotate([0,0,0])cylinder(r=20/2,h=30);
 module linearactuator_endstop_encoder(){
 translate([-100+15,18-170,20]){
 translate([-4,-1,0])shorternema17();
-//cc = 0.8;color([cc,cc,cc])translate([-21+5-5-4,-40-1,20-1.5])color("grey")thinnermotormount();
 difference(){
 union(){
-
 //compact extruder
 translate([-21+20-3,-21+20,3+6-5])compact_extruder();
 //biqu extruder
@@ -6754,7 +6748,6 @@ translate([0,31+20-170,10.5+6])rotate([90-45,0,-45])color("white")cylinder(r=6/2
 rotate([0,0,0])cylinder(r=20/2,h=30);
 }
 }
-
 
 translate([-99,0,-1.5])rotate([0,90,0]){
 translate([-53,-114,-13])linearactuator_filament_encodershuttle();
@@ -7439,9 +7432,22 @@ translate([-20,10,10+i*0.5])rotate([0,90,0])cylinder(r=9.7/2,h=9);
 }
 }
 
-
-
-
+module filament_driver_assy_motormount(){
+difference(){
+color([cc,cc,cc])translate([-21-29+0.5,-21-1,3-48])cube([5,42,48]);
+translate([-21-29+0.5-2,-21+9,3-48+9])rotate([0,90,0])cylinder(r=4.7/2,h=30);
+translate([-21-29+0.5-2,-21+32,3-48+9])rotate([0,90,0])cylinder(r=4.7/2,h=30);
+}
+cc = 0.8;color([cc,cc,cc])translate([0,0-1,0])translate([-21-29+0.5,-21,3-20])cube([20+8+5-7.5,42,20+6-5]);
+difference(){
+cc = 0.8;color([cc,cc,cc])translate([0,0-1,0])translate([-21-29+0.5,-21,0])cube([28+2+5+32,42,9-5]);
+translate([-1,-1,-1])rotate([0,0,0])cylinder(r=26/2,h=30);
+translate([-21+35,-21+5.5-1.1,3+6-20])cylinder(r=4.7/2,h=200);
+translate([-21+35-30-1.1,-21+5.5-1.15,3+6-20])cylinder(r=4.7/2,h=200);
+translate([-21+35,-21+5.5+30-0.2,3+6-20])cylinder(r=4.7/2,h=200);
+translate([-21+35-30-1.2,-21+5.5+30,3+6-20])cylinder(r=4.7/2,h=200);
+}
+}
 
 
 

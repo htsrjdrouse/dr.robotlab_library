@@ -23,6 +23,17 @@ gantry_nomenclature();
 gantry();
 conveyer_connector_tslots();
 conveyer_connector_tslots_nomenclature();
+translate([195,565,90])rotate([90,0,0])tslot_show_conveyor();
+
+module tslot_show_conveyor(){
+tslot20(315);
+translate([0,56,0])tslot20(315);
+translate([0,55*2,0])tslot20(315);
+translate([0,55*3,0])tslot20(315);
+
+}
+
+
 //conveyer_connector_tslots();
 //conveyer_sliderwheel_assy();
 //slide_conveyer(-60,0,0,0,0);

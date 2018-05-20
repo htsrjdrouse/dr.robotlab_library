@@ -2,7 +2,7 @@ include <modparts.scad>
 use<writescad/write.scad>
 
 
-//zbed_smz_stls();
+zbed_smz_stls();
 
 //zbedslot_516_smz_zbed();
 //translate([0,3,0])washbowl_1tip();
@@ -11,10 +11,11 @@ use<writescad/write.scad>
 
 //zbed_smz();
 
-
+/*
 projection(cut = false){
 laser_zbed(144);
 }
+*/
 /*
 wash_and_strobparts();
 laser_zbed_support_strobend();

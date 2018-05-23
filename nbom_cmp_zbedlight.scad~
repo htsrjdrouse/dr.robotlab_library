@@ -1,7 +1,7 @@
 include <modparts.scad>
 use<writescad/write.scad>
 
-gantry_assy(20,-30,-45+50+100-50-100+150-169+169+20,-55,0,267,tcl,thcl);
+gantry_assy(20,-30,-45+50+100-50-100+150-169+169,-55,0,267,tcl,thcl);
 
 
 //module noconveyer_gantry_assy(x,y,z,xx,xp,sph,tcl,thcl){

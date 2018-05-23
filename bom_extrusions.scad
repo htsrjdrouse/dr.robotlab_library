@@ -19,18 +19,33 @@ y_encoder_support(60);
 /*
 gantry();
 */
-gantry_nomenclature();
+//gantry_nomenclature();
+
+
 gantry();
-conveyer_connector_tslots();
-conveyer_connector_tslots_nomenclature();
-translate([195,565,90])rotate([90,0,0])tslot_show_conveyor();
+outside_frame(bcl,cl);
+xshuttle_assy(x,y);
+y_encoder_support(60);
+
+
+//conveyer_connector_tslots();
+//conveyer_connector_tslots_nomenclature();
+//translate([195,565,90-16.5])rotate([90,0,0])tslot_show_conveyor();
+xx = 200-248+246-250;
+xp = -1;
+sph = 267;
+z = -5;
+
+//slide_conveyer_caller(z,xx,xp,sph);
 
 module tslot_show_conveyor(){
-tslot20(315);
-translate([0,56,0])tslot20(315);
-translate([0,55*2,0])tslot20(315);
-translate([0,55*3,0])tslot20(315);
 
+tslot20(315);
+//translate([0,100,170])rotate([90,0,0])cylinder(r=5.7/2,h=200);
+
+translate([0,56,0])tslot20(315);
+translate([0,56*2,0])tslot20(315);
+translate([0,56*3,0])tslot20(315);
 }
 
 
@@ -60,10 +75,10 @@ translate([170,560,328])rotate([90,0,90])mirror([1,0,0])color("black")write(c2,h
  c3 = "HFS5-2020-160-TPW";
 translate([170,560,40])rotate([90,0,90])mirror([1,0,0])color("black")write(c3,h=11);
 
-c4 = "HFS5-2020-400-TPW-Z5-XA110-XB173.5-XC224.5-XD275.5-XE326.5-XF390";
+c4 = "HFS5-2020-400-TPW-Z5-XA110-XB153.5-XC209.5-XD265.5-XE321.5-XF390";
 translate([170,600,-50])rotate([90,90,90])mirror([1,0,0])color("black")write(c4,h=11);
 
-c5 = "HFS5-2020-315-TPW";
+c5 = "HFS5-2020-315-TPW-Z5-XA170";
 translate([170,560,100])rotate([90,0,90])mirror([1,0,0])color("black")write(c5,h=11);
 c6 = "HFS5-2020-315-TPW";
 translate([170,560,155])rotate([90,0,90])mirror([1,0,0])color("black")write(c6,h=11);
@@ -85,9 +100,6 @@ module xshuttle_assy_nomenclature(x,y){
  translate([43-25+100,206.5-69+150,-60+430])rotate([90,0,-0])mirror([0,0,0])color("black")write(x2,h=11);
  x3 = "HFS5-2040-100-TPW";
  translate([43-25+100-60,206.5-69+75-20,-60+430+50])rotate([0,0,-0])mirror([0,0,0])color("black")write(x3,h=11);
-
-
-
 
 }
 }
@@ -163,9 +175,9 @@ g5 = "HFS5-2020-360-TPW";
 translate([445,140,0])rotate([90,0,90])mirror([0,0,0])color("black")write(g5,h=8);
 g6 = "HFS5-2020-360-TPW";
 translate([-10,240,0])rotate([90,0,90])mirror([1,0,0])color("black")write(g6,h=8);
-g7 = "HFS5-2020-380-TPW-Z5-XA145";
+g7 = "HFS5-2020-380-TPW-Z5-XA70-YA70";
 translate([-10,390,0])rotate([90,90,90])mirror([1,0,0])color("black")write(g7,h=8);
-g8 = "HFS5-2020-380-TPW-Z5-XA145";
+g8 = "HFS5-2020-380-TPW-Z5-XA70-YA70";
 translate([450,390,200])rotate([90,90,90])mirror([0,0,0])color("black")write(g8,h=8);
 g9 = "HFS5-2020-380-TPW-XA70-YA70";
 translate([450,0,200])rotate([90,90,90])mirror([0,0,0])color("black")write(g9,h=8);

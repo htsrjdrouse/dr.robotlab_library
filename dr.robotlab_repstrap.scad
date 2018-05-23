@@ -490,8 +490,9 @@ module zbedslot_516_smz_zbed(){
    }
    translate([31,7.5,-22])cylinder(r=31/2,h=30);
    translate([0,-0.5,0]){
-   translate([45*0.25-0.75-6+9-2.5-44,13/2+9-5+2+4,-20]){cylinder(r=3.8/2,h=100);}//translate([0,0,2])cylinder(r=9.7/2,h=5);
-   translate([45*0.25-0.75-6+9-2.5-44,13/2-5+2-3,-20]){cylinder(r=3.8/2,h=20);} //translate([0,0,2])cylinder(r=9.7/2,h=5);
+   translate([45*0.25-0.75-6+9-2.5-44,13/2+9-5+2+4,-20]){
+   cylinder(r=3.8/2,h=100);}//translate([0,0,2])cylinder(r=9.7/2,h=5);
+   translate([45*0.25-0.75-6+9-2.5-44,13/2-5+2-3,-20]){cylinder(r=3.8/2,h=100);} //translate([0,0,2])cylinder(r=9.7/2,h=5);
    }
   }
   }
@@ -7514,7 +7515,8 @@ color([100/255,100/255,100/255])translate([0,0,2+5])cylinder(r=23/2,h=10);
 translate([0,0,-10])cylinder(r=8.7/2,h=40);
 }
 */
-color([200/255,200/255,200/255])difference(){
+//color([200/255,200/255,200/255])
+difference(){
 union(){
 cylinder(r=29/2,h=15);
 translate([-10,-29/2+5-6-2,0])cube([70,7,18]);
@@ -13878,7 +13880,8 @@ translate([0,0,-10])cylinder(r=5/2,h=60);
 }
 */
 
-color([200/255,200/255,200/255])translate([0,-20-9,0])difference(){
+//color([200/255,200/255,200/255])
+translate([0,-20-9,0])difference(){
 union(){
 
 
@@ -13901,8 +13904,10 @@ translate([-38.25+14-13.9+13.7-27,-70+34+3,22.5+3.8-11+4]){cylinder(r=3.2/2,h=16
 
 module conveyer_stepper_linear_m8nut_coupler_b(){
 translate([-20-55-10+2+5-4,-70-2-15,20+0-3-3.25-3])rotate([0,-90,-90])ada_solenoid_2776();
-color([175/255,175/255,175/255])translate([-20-55-10+14+2+5-4,-70-2-15-2,20+10-3])cube([13-2-3-5+3,15,6]);
-color([175/255,175/255,175/255])translate([0,-20-9,0])difference(){
+//color([175/255,175/255,175/255])
+translate([-20-55-10+14+2+5-4,-70-2-15-2,20+10-3])cube([13-2-3-5+3,15,6]);
+//color([175/255,175/255,175/255])
+translate([0,-20-9,0])difference(){
 union(){
 translate([-38.25+14-13.9-24,-70+30.-5-15,22.5+3.8-2.3+6])cube([5+12,11+4+16,8]);
 }
@@ -18644,7 +18649,8 @@ module ada_solenoid_2776(){
 //color([100/255,100/255,100/255])translate([0-1-1.5+1,-0.15-0.5,0])cube([20.5+2,12+0.3+1,11+4+1]);
 
 
-color([175/255,175/255,175/255])difference(){
+//color([175/255,175/255,175/255])
+difference(){
 translate([-2,-2,-2])cube([20.5+4,12+4,11+4]);
 translate([0,-0.15,0])cube([20.5+3,12+0.3,11+4]);
 for(i=[0:8]){

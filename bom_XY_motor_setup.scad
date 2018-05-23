@@ -1,16 +1,7 @@
 include <modparts.scad>
 use<writescad/write.scad>
 
-
-
-//rightside_underneath_plate_x1();
-
-//washdry_pcv_pump_enclosure();
-
 xshuttle_assy_stls();
-
-//corexy_beltsetup(30,-20);
-
 
 module xshuttle_assy_stls(){
 //start x_axis(x)
@@ -42,6 +33,7 @@ translate([0,55,15])rotate([0,90,90])#backextruder_clamp();
 translate([20,55+10,15])rotate([0,90,90])#backextruder_clamp();
 //end x_encoder_support();
 }
+
 
 
 

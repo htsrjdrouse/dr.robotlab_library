@@ -35,12 +35,13 @@ module outside_frame_stls(){
  }
  //end foot_big()
  //start syringepump_tube_panel
- translate([43,-10,0])rotate([0,0,0])syringepump_tube_panel();
+ translate([43-50,-10+75,0])rotate([0,0,0])syringepump_tube_panel();
  //end syringepump tube panel
 }
 
 
 module right_outside_frame_stls(){
+translate([12,3,0])mirror([0,1,0])import("files/endstop_y.stl");
 //begin right_outside_frame();
  for(i=[0:3]){
   translate([-88-(i*28),0,0])rotate([0,0,0])simple_m8_smoothrodholder_for_z();

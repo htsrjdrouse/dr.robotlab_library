@@ -1,6 +1,8 @@
 include <modparts.scad>
 use<writescad/write.scad>
 
+translate([105,45,0])bom_controlpanel();
+//electrics_panels_to_print();
 
 //atx_power_connect_assy();
 
@@ -10,7 +12,6 @@ use<writescad/write.scad>
 //electronics_setup();
 
 
-electrics_panels_to_print();
 //electronics_stl();
 // labbot3d_electronics_configuration();
 //noconveyer_gantry_assy(20,-30,-45+50+100-50-100+150,-55,0,267,tcl,thcl);

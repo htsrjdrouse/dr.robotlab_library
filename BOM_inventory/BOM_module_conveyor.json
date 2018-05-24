@@ -1,0 +1,18 @@
+{
+"class":"LabBot3D",
+"productid":"BOM_module_conveyor",
+"title":"BOM module conveyor scaffold",
+"manufacturer":"HTS Resources",
+"cost":0,
+"price":0,
+"images":["box_gantry_conveyor_scaffold.PNG"],
+"parts":[{"vendor":"misumi", "openscad":{"file":"mod_parts.scad", "function":"conveyer_connector_tslots()"},
+	"lineitems":[
+		{"cost":"5.39", "sku":"HFS5-2020-315-TPW","quantity":3,"stl":"HFS5-2020-315-TPW.stl"},
+		{"cost":"17.88", "sku":"HFS5-2020-400-TPW-Z5-XA153.5-XB209.5-XC265.5-XD321.5-XE390","quantity":1,"stl":""},
+		{"cost":"6.63", "sku":"HFS5-2020-160-TPW","quantity":2,"stl":"HFS5-2020-160-TPW.stl"},
+		{"cost":"9.03", "sku":"HFS5-2020-63.5-TPW-Z5-XA30","quantity":1,"stl":"HFS5-2020-63.5-TPW-Z5-XA30.stl"},
+		{"cost":"7.79", "sku":"HFS5-2020-315-TPW-Z5-XA170","quantity":1,"stl":"HFS5-2020-315-TPW-Z5-XA170.stl"},
+		{"cost":"6.63", "sku":"HFS5-2020-200-TPW","quantity":1,"stl":"HFS5-2020-200-TPW.stl"}
+	]}]
+}

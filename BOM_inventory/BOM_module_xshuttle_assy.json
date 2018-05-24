@@ -1,0 +1,14 @@
+{
+"class":"LabBot3D",
+"productid":"BOM_module_xshuttle_assy",
+"title":"BOM module xshuttle assy extrusions",
+"manufacturer":"HTS Resources",
+"cost":0,
+"price":0,
+"images":["BOM_module_xshuttle_assy.PNG"],
+"parts":[{"vendor":"misumi", "openscad":{"file":"mod_parts.scad", "function":"xshuttle_assy(x,y)"},
+	"lineitems":[
+		{"cost":"10.06", "sku":"HFS5-2040-100-TPW","quantity":1, "stl":"HFS5-2040-100-TPW.pdf"},
+		{"cost":"5.88", "sku":"HFS5-2020-400-TPW","quantity":2,"stl":"HFS5-2020-400-TPW.stl"}
+	]}]
+}

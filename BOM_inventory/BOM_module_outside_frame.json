@@ -1,0 +1,30 @@
+{
+"class":"LabBot3D",
+"productid":"BOM_module_outside_frame",
+"title":"BOM module outside frame",
+"manufacturer":"HTS Resources",
+"cost":0,
+"price":0,
+"parts":[
+	{"vendor":"Misumi", "openscad":{"file":"mod_parts.scad", "function":"outside_frame()"},
+"images":["BOM_module_outside_frame.PNG","BOM_module_outside_frame_gantry_noplates.PNG"],
+	"lineitems":[
+		{"cost":11.15, "sku":"HFS5-2020-484-TPW-Z5-XA169.5-XB387.5","quantity":1, "stl":"HFS5-2020-484-TPW-Z5-XA169.5-XB387.5.pdf"},
+		{"cost":13.53, "sku":"HFS5-2020-480.5-TPW-Z5-XA96.5-XB195-XC314.5","quantity":1,"stl":"HFS5-2020-480.5-TPW-Z5-XA96.5-XB195-XC314.5.stl"},
+		{"cost":8.73, "sku":"HFS5-2020-480.5-TPW-Z5-XA470.5","quantity":3,"stl":""},
+		{"cost":11.15, "sku":"HFS5-2020-484-TPW-Z5-XA94.5-XB312.5","quantity":1,"stl":"HFS5-2020-484-TPW-Z5-XA94.5-XB312.5.pdf"},
+		{"cost":13.55, "sku":"HFS5-2020-484-TPW-Z5-XA135.5-XB230-XC353.5","quantity":1,"stl":"HFS5-2020-484-TPW-Z5-XA135.5-XB230-XC353.5.stl"},
+		{"cost":5.88, "sku":"HFS5-2020-400-TPW","quantity":1,"stl":"HFS5-2020-400-TPW.stl"}
+	]},
+	{"vendor":"Bigbluesaw", "openscad":{"file":"mod_parts.scad", "function":"outside_frame()"},
+	"images":["BOM_module_outside_frame_gantry_plates.PNG",	"BOM_module_outside_frame_just_plates.PNG"],
+	"lineitems":[
+		{"cost":317.5, "sku":"alu_complete_again.dxf","quantity":1, "stl":"","dxf":"alu_complete_again.dxf","png":""}
+	]},
+	{"vendor":"HTS Resources", "openscad":{"file":"mod_parts.scad", "function":"outside_frame()"},
+	"images":["BOM_module_outside_frame_gantry_plates_outside_vitamens.PNG","bom_outside_frame_stls.PNG"],
+	"lineitems":[
+		{"cost":8.21, "usedfilament":"234.60","sku":"bom_outside_frame_stls.stl","quantity":1, "stl":"bom_outside_frame_stls.stl","dxf":"","png":"","print":1}
+	]}
+]
+}

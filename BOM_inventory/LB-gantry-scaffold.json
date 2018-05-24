@@ -1,0 +1,19 @@
+{
+"class":"LabBot3D",
+"productid":"LB-gantry-scaffold",
+"title":"LabBot gantry scaffold",
+"manufacturer":"HTS Resources",
+"cost":0,
+"price":0,
+"images":["box_gantry.PNG"],
+"parts":[{"vendor":"misumi", "openscad":{"file":"mod_parts.scad", "function":"gantry()"},
+	"lineitems":[
+		{"cost":"15.48", "sku":"HFS5-2020-400-TPW-Z5-XA10-XB390-YA10-YB390","quantity":1},
+		{"cost":"10.56", "sku":"HFS5-2020-380-TPW-Z5-XA70-YA70","quantity":4,"stl":"HFS5-2020-380-TPW-Z5-XA70-YA70.stl"},
+		{"cost":"5.65", "sku":"HFS5-2020-360-TPW","quantity":2,"stl":"HFS5-2020-360-TPW.stl"},
+		{"cost":"15.48", "sku":"HFS5-2020-400-TPW-Z5-XA10-XB390-YA10-YB390","quantity":1,"stl":"HFS5-2020-360-TPW.stl"},
+		{"cost":"13.08", "sku":"HFS5-2020-400-TPW-Z5-XA22-XB190-XC370","quantity":1,"stl":"HFS5-2020-400-TPW-Z5-XA22-XB190-XC370.stl"},
+		{"cost":"5.88", "sku":"HFS5-2020-400-TPW","quantity":1,"stl":"HFS5-2020-400-TPW.stl"},
+		{"cost":"13.08", "sku":"HFS5-2020-400-TPW-Z5-XA22-XB370-YA190","quantity":1,"stl":"HFS5-2020-400-TPW-Z5-XA22-XB370-YA190.stl"}
+	]}]
+}

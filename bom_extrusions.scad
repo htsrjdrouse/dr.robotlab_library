@@ -16,16 +16,17 @@ y_encoder_support(60);
 */
 
 
-/*
 gantry();
-*/
 //gantry_nomenclature();
 
+xshuttle_assy(x=20,y=-30);
+ xymotor_assy();
 
-gantry();
+//gantry();
 outside_frame(bcl,cl);
-xshuttle_assy(x,y);
-y_encoder_support(60);
+zencoder_assy();
+//xshuttle_assy(x,y);
+//y_encoder_support(60);
 
 
 //conveyer_connector_tslots();
@@ -39,7 +40,7 @@ z = -5;
 //slide_conveyer_caller(z,xx,xp,sph);
 
 module tslot_show_conveyor(){
-
+translate([-0,-20,316])tslot20(200);
 tslot20(315);
 //translate([0,100,170])rotate([90,0,0])cylinder(r=5.7/2,h=200);
 
@@ -56,11 +57,11 @@ translate([0,56*3,0])tslot20(315);
 
 //gantry();
 
+//gantry_nomenclature();
+//zbed_smz_components_nomenclature(0,0);
+//zbed_smz_components_nomenclature(0,10);
+//zencoder_assy_nomenclature();
 /*
-gantry_nomenclature();
-zbed_smz_components_nomenclature(0,0);
-zbed_smz_components_nomenclature(0,10);
-zencoder_assy_nomenclature();
 outside_frame_nomenclature();
 xshuttle_assy_nomenclature(x,y);
 */

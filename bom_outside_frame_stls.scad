@@ -35,7 +35,7 @@ module outside_frame_stls(){
  }
  //end foot_big()
  //start syringepump_tube_panel
- translate([43-50,-10+75,0])rotate([0,0,0])syringepump_tube_panel();
+ //translate([43-50,-10+75,0])rotate([0,0,0])syringepump_tube_panel();
  //end syringepump tube panel
 }
 

@@ -1,24 +1,31 @@
 import json
+import base64
 
 
-ref = json.load(open('drrobotlab.json'))
+a = open("BOM_module_conveyor.json")
+refa = json.load(a)
 
-print ref['city']
+b = open("LB-gantry-scaffold.json")
+refb = json.load(b)
+
+c = open("BOM_module_outside_frame.json")
+refc = json.load(c) 
+
+d = open("BOM_module_xshuttle_assy.json")
+refd = json.load(d) 
 
 
 
-
-'''
-json_data = '{"name": "Brian", "city": "Seattle"}'
-#python_obj = json.loads(json_data)
-python_obj = json.loads(ref)
-#print python_obj["name"]
-#print python_obj["city"]
-
-for i in python_obj:
-    print python_obj[i]
+ref = []
+ref.append(refa)
+ref.append(refb)
+ref.append(refc)
+ref.append(refd)
+print(ref)
 
 with open('drrobotlab.json','w') as outfile:
-   json.dump(python_obj, outfile)
-'''
+   json.dump(ref, outfile)
+
+#$bg = $a['title']." | ".$a['price']." | ".$a['manufacturer']." | ".$a['page'];
+
 

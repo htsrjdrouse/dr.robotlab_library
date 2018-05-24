@@ -4,6 +4,9 @@ use<writescad/write.scad>
 bcl = [155/255,155/255,155/255];
 cl = [155/255,155/255,155/255];
 
+outside_frame_stls(bcl,cl); 
+
+//translate([-100+50,405-210,277])rotate([0,0,90])color("gainsboro")z_encoder_inbetween();
 
 //laser_zbed(144);
 
@@ -13,16 +16,18 @@ import("laser_zbed_144.stl");
 //translate([10+108-35,125,-400])rotate([0,0,0])mirror([0,1,0])XY_motor_x2higher();
 }
 */
-outside_frame_stls(bcl,cl); //translate([-100+50,405-210,277])rotate([0,0,90])color("gainsboro")z_encoder_inbetween();
 
 // zencoder_assy();
 
 module outside_frame_stls(){
- translate([0,0,0])right_outside_frame_stls();
- translate([-10,130-0,-0])left_outside_frame_stls();
+/*
  //start zencoder_assy()
  translate([-22,-30,0])#z_encoder_inbetween();
+
  translate([-72,-54,0])#z_encoder_inbetween();
+ translate([0,0,0])right_outside_frame_stls();
+ translate([-10,130-0,-0])left_outside_frame_stls();
+*/
  //end zencoder_assy()
  //start XY_motor_x2higher()
 //translate([-20,125,-400])rotate([0,0,180])XY_motor_x2higher();
@@ -33,10 +38,12 @@ module outside_frame_stls(){
  for(i=[0:3]){
  translate([-89+(22*i),50,0])import("files/foot_big.stl");
  }
+/*
  //end foot_big()
  //start syringepump_tube_panel
- translate([43-50,-10+75,0])rotate([0,0,0])syringepump_tube_panel();
+ //translate([43-50,-10+75,0])rotate([0,0,0])syringepump_tube_panel();
  //end syringepump tube panel
+*/
 }
 
 
@@ -47,6 +54,7 @@ translate([12,3,0])mirror([0,1,0])import("files/endstop_y.stl");
   translate([-88-(i*28),0,0])rotate([0,0,0])simple_m8_smoothrodholder_for_z();
   translate([-88-(i*28),-58,0])rotate([0,0,0])simple_m8_smoothrodholder_for_z();
  }
+
  translate([-6,50,180])rotate([0,90,90]) tslot20innerbracketlonger_smfrnz_back();
  translate([-30,50,180])rotate([0,90,90]) tslot20innerbracketlonger_smfrnz_back();
  //begin right_y_encoder_support(34);

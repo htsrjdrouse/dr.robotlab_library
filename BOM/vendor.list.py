@@ -93,11 +93,11 @@ for i in b:
  try:
   pr =  float(re.sub("\t| |\$", "", c[3]))
   un = int(re.sub(" |\t", "", c[4]))
-  print pr * un 
+  print(pr * un)
   psum = psum + (pr * un)
  except: 
-  print c
+  print(c)
 
-print psum
+print(psum)
 #print datr
 

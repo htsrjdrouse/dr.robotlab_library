@@ -5,8 +5,7 @@
 "manufacturer":"HTS Resources",
 "cost":0,
 "price":0,
-"images":["box_gantry_conveyor_scaffold.PNG"],
-"parts":[{"vendor":"misumi", "openscad":{"file":"mod_parts.scad", "function":"conveyer_connector_tslots()"},
+"parts":[{"vendor":"misumi", "openscad":{"file":"mod_parts.scad", "function":"conveyer_connector_tslots()"}, "images":["box_gantry_conveyor_scaffold.PNG"],
 	"lineitems":[
 		{"cost":"5.39", "sku":"HFS5-2020-315-TPW","quantity":3,"stl":"HFS5-2020-315-TPW.stl"},
 		{"cost":"17.88", "sku":"HFS5-2020-400-TPW-Z5-XA153.5-XB209.5-XC265.5-XD321.5-XE390","quantity":1,"stl":""},

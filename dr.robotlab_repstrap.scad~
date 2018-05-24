@@ -14136,8 +14136,12 @@ translate([2,-30,0]){
 translate([-45,-33-10,-6])difference(){
 union(){
 
-bgg=0.4;color([bgg,bgg,bgg])translate([0-7.5,-40+20+10+3-8,0])cube([10+15,10,6+3-5+25]);
-bg=0.4;color([bg,bg,bg])translate([0-7.5,-40+20+10+3,0])cube([10+15,68+40+23-30-15-20,6+3-5]);
+bgg=0.4;color([bgg,bgg,bgg])
+//color("pink")
+translate([0-7.5,-40+20+10+3-8,0])cube([10+15,10,6+3-5+25]);
+//bg=0.4;color([bg,bg,bg])
+color("pink")
+translate([0-7.5,-40+20+10+3,0])cube([10+15,68+40+23-30-15-20,6+3-5]);
 //color("yellow")translate([0-7.5,-40-1.0,0])cube([10+15+13,10,6+3]);
 //color("lime")translate([0-7.5-5-5.5-22,-40-1.3-20+20.3+31-5,0])cube([12+22,53-42.8+10,6+3]);
 }
@@ -18649,7 +18653,8 @@ module ada_solenoid_2776(){
 //color([100/255,100/255,100/255])translate([0-1-1.5+1,-0.15-0.5,0])cube([20.5+2,12+0.3+1,11+4+1]);
 
 
-color([175/255,175/255,175/255])difference(){
+//color([175/255,175/255,175/255])
+difference(){
 translate([-2,-2,-2])cube([20.5+4,12+4,11+4]);
 translate([0,-0.15,0])cube([20.5+3,12+0.3,11+4]);
 for(i=[0:8]){

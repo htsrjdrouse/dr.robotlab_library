@@ -24,7 +24,93 @@
 	{"vendor":"HTS Resources", "openscad":{"file":"mod_parts.scad", "function":"outside_frame()"},
 	"images":["BOM_module_outside_frame_gantry_plates_outside_vitamens.PNG","bom_outside_frame_stls.PNG"],
 	"lineitems":[
-		{"cost":8.21, "usedfilament":"234.60","sku":"bom_outside_frame_stls.stl","quantity":1, "stl":"bom_outside_frame_stls.stl","dxf":"","png":"","print":1}
-	]}
+		{"time":"21h 39m 49s","cost":6.62, "usedfilament_gm":"189.17","sku":"bom_outside_frame_stls.stl","quantity":1, "stl":"bom_outside_frame_stls.stl","dxf":"","png":"","print":1},
+		{"time":"37m 45s","cost":0.18, "usedfilament_gm":"5","sku":"z_encoder_inbetween","quantity":1, "stl":"z_encoder_inbetween.stl","dxf":"","png":"","print":0, "needunits":2},
+		{"time":"25m 35s","cost":0.15, "usedfilament_gm":"4.24","sku":"endstop_y","quantity":1, "stl":"endstop_y.stl","dxf":"","png":"","print":0,"needunits":1},
+		{"time":"37m 39s","cost":0.20, "usedfilament_gm":"5.71","sku":"simple_m8_smoothrodholder_for_z","quantity":1, "stl":"simple_m8_smoothrodholder_for_z.stl","dxf":"","png":"","print":0,"needunits":8},
+		{"time":"59m 46s","cost":0.31, "usedfilament_gm":"8.8","sku":"tslot20innerbracketlonger_smfrnz_back","quantity":1, "stl":"tslot20innerbracketlonger_smfrnz_back.stl","dxf":"","png":"","print":0,"needunits":4},
+		{"time":"36m 51s","cost":0.21, "usedfilament_gm":"5.92","sku":"backextruder_clamp","quantity":1, "stl":"backextruder_clamp.stl","dxf":"","png":"","print":0,"needunits":4},
+		{"time":"48m 38s","cost":0.23, "usedfilament_gm":"6.44","sku":"tslot20innerbracket","quantity":1, "stl":"tslot20innerbracket.stl","dxf":"","png":"","print":0,"needunits":4},
+		{"time":"57m 26s","cost":0.28, "usedfilament_gm":"8.1","sku":"bearing_mount_smz","quantity":1, "stl":"bearing_mount_smz.stl","dxf":"","png":"","print":0,"needunits":2},
+		{"time":"1h 13m 48s","cost":0.37, "usedfilament_gm":"10.65","sku":"motormount_smz_justcad","quantity":1, "stl":"motormount_smz_justcad.stl","dxf":"","png":"","print":0,"needunits":2},
+		{"time":"24m 10s","cost":0.11, "usedfilament_gm":"3.15","sku":"foot_big","quantity":1, "stl":"foot_big.stl","dxf":"","png":"","print":0,"needunits":4}
+	]},
+
+	{"vendor":"Bigbluesaw", "openscad":{"file":"mod_parts.scad", "function":"outside_frame()"},
+	"images":["BOM_module_outside_frame_gantry_plates.PNG",	"BOM_module_outside_frame_just_plates.PNG"],
+	"lineitems":[
+		{"cost":317.5, "sku":"alu_complete_again.dxf","quantity":1, "stl":"","dxf":"alu_complete_again.dxf","png":""}
+	]},
+	{"vendor":"Pololu", "openscad":{"file":"mod_parts.scad", "function":"outside_frame()"},
+	"images":["BOM_module_outside_frame_gantry_plates_zmotor.PNG", "name":"product list"],
+	"lineitems":[
+		{"cost":50, "sku":"2268","quantity":2, "stl":"", "web":"https://www.pololu.com/product/j2268", "comments":"Cut to 208mm"},
+		{"cost":6, "sku":"2688","quantity":2, "stl":"", "web":""https://www.pololu.com/product/2688", "comments":""}
+	]},
+	{"vendor":"HTS Resources", "openscad":{"file":"mod_parts.scad", "function":"outside_frame()"},
+	"images":["BOM_module_outside_frame_gantry_plates_zmotor_smoothrod.PNG", "name":"product list"],
+	"lineitems":[
+		{"cost":10, "sku":"smoothrod","quantity":4, "stl":"", "web":"", "comments":"8mm in diameter"}
+	]},
+	{"vendor":"HTS Resources", "openscad":{"file":"mod_parts.scad", "function":"outside_frame()"},
+	"images":["BOM_module_outside_frame_gantry_plates_zmotor.PNG", "name":"product list"],
+	"lineitems":[
+		{"cost":1, "sku":"608zz","quantity":1, "stl":"", "web":"", "comments":"Skateboard bearings work"}
+	]},
+	{"vendor":"Biqu", "openscad":{"file":"mod_parts.scad", "function":"outside_frame()"},
+	"images":["BOM_module_outside_frame_gantry_plates_zmotor_smoothrod_idlers.PNG", "name":"product list"],
+	"lineitems":[
+		{"cost":2.5, "sku":"WCL000007","quantity":9, "stl":"", "web":"https://www.biqu.equipment/products/biqu-cnc-openbuilds-pom-wheel-with-bearings-big-models-passive-round-wheel-idler-gear-perlin-wheel-for-v-slot?variant=32457817795", "name":"BIQU POM Pulley","comments":"You can get also at Othermachine, but they are around $5 a unit. Openscad: cylinder(r=23.9/2,h=10.23)"}
+	]},
+	{"vendor":"Phidgets", "openscad":{"file":"mod_parts.scad", "function":"outside_frame()"},
+	"images":["BOM_module_outside_frame_gantry_plates_zmotor_smoothrod_idlers_xymotor.PNG", "name":"XY motors"],
+	"lineitems":[
+		{"cost":20, "sku":"3340_0","quantity":2, "stl":"", "web":"https://www.phidgets.com/?tier=3&catid=24&pcid=21&prodid=359", "name":"42STH38 NEMA-17 Bipolar Precision Gearless Stepper","comments":""}
+	]},
+	{"vendor":"Biqu", "openscad":{"file":"mod_parts.scad", "function":"outside_frame()"},
+	"images":["BOM_module_outside_frame_gantry_plates_zmotor_smoothrod_idlers_xymotor_pulleys.PNG", "name":"This are both pulleys and idlers you can use a 5mm skateboard bearing"],
+	"lineitems":[
+		{"cost":8.99, "sku":"GT2 PULLEY","quantity":2, "stl":"", "web":"https://www.biqu.equipment/products/10-pcs-gt2-timing-pulley-16teeth-alumium-bore-5mm-fit-for-gt2-belt-width-6mm-16-teeth-for-3d-printer", "name":"GT2 PULLEY","comments":"The GT2 pulley with 16 teeth or grooves is one of the best choices for 3d printer construction. Compared with the T2.5 or MXL timing pulley, the GT2 pulley tooth profile is anti-backlash. Why? The rounded teeth of this tooth and belt are engaged together longer providing a smoother transition between teeth. Suitable for GT2 -6 mm belt. Also available at AliExpress"},
+		{"cost":1.00, "sku":"688ZZ 8*16*5","quantity":8, "stl":"", "web":"https://www.biqu.equipment/collections/coupling-bearing-spring/products/free-shipping-10pcs-lot-688zz-688z-688-abec-5-8-16-5-miniature-ball-radial-deep-groove-ball-bearings-fot-3d-printer-part", "name":"688ZZ 688Z 688 ABEC-5 8*16*5 Miniature Ball Radial Deep Groove Ball Bearings","comments":"Make a washer Openscad: difference(){cylinder(r=24/2,h=4);cylinder(r=5.1/2,h=5);}"}
+	]},
+	{"vendor":"HTS Resources", "openscad":{"file":"mod_parts.scad", "function":"filament_linearactuator()"},
+"images":["BOM_module_outside_frame_gantry_plates_x_shuttle_front.PNG","BOM_module_outside_frame_gantry_plates_x_shuttle_front_zoom.PNG","BOM_module_outside_frame_gantry_plates_x_shuttle_back_zoom.PNG","BOM_module_outside_frame_gantry_plates_backextruder_clamp.PNG","BOM_module_outside_frame_gantry_plates_x_shuttle_smaller_igus_slidermount_zoom.PNG","BOM_module_outside_frame_gantry_plates_wipers.PNG","BOM_module_outside_frame_gantry_plates_x_shuttle_filament_linearactuator_shuttle.PNG","BOM_module_x_shuttle_inductive_sensor_cap.PNG"],
+	"lineitems":[
+		{"time":"9h 20m 29s","cost":2.89, "usedfilament_gm":"82.45","sku":"xshuttle_assy_stls","quantity":1, "stl":"xshuttle_assy_stls.stl","dxf":"","png":"","print":1},
+		{"time":"1h 58m 27s","cost":0.62, "usedfilament_gm":"17.8","sku":"shuttle_front","quantity":1, "stl":"shuttle_front.stl","dxf":"","png":"","print":0},
+		{"time":"11m 43s","cost":0.04, "usedfilament_gm":"1.14","sku":"gt2belt_holder","quantity":4, "stl":"gt2belt_holder.stl","dxf":"","png":"","print":0},
+		{"time":"1h 33m 50s","cost":0.56, "usedfilament_gm":"16.11","sku":"shuttle_back","quantity":1, "stl":"shuttle_back.stl","dxf":"","png":"","print":0},
+		{"time":"36m 51s","cost":0.21, "usedfilament_gm":"5.92","sku":"backextruder_clamp","quantity":2, "stl":"backextruder_clamp.stl","dxf":"","png":"","print":0},
+		{"time":"1h 12m 39s","cost":0.37, "usedfilament_gm":"10.67","sku":"smaller_igus_slidermount","quantity":1, "stl":"smaller_igus_slidermount.stl","dxf":"","png":"","print":0},
+		{"time":"40m 27s","cost":0.23, "usedfilament_gm":"6.44","sku":"wiper_clamp","quantity":1, "stl":"wiper_clamp.stl","dxf":"","png":"","print":0},
+		{"time":"57m 24s","cost":0.31, "usedfilament_gm":"8.87","sku":"wiper_clamp_yaxis","quantity":1, "stl":"wiper_clamp_yaxis.stl","dxf":"","png":"","print":0},
+		{"time":"1h 2m 29s","cost":0.26, "usedfilament_gm":"7.37","sku":"filament_linearactuator_shuttle","quantity":1, "stl":"filament_linearactuator_shuttle.stl","dxf":"","png":"","print":0},
+		{"time":"9m 15s","cost":0.04, "usedfilament_gm":"1.22","sku":"linearactuator_filament_encodershuttle_filamentclamp","quantity":1, "stl":"linearactuator_filament_encodershuttle_filamentclamp.stl","dxf":"","png":"","print":0},
+		{"time":"9m 15s","cost":0.04, "usedfilament_gm":"1.22","sku":"linearactuator_filament_encodershuttle_filamentclamp","quantity":1, "stl":"linearactuator_filament_encodershuttle_filamentclamp.stl","dxf":"","png":"","print":0},
+		{"time":"17m 24s","cost":0.05, "usedfilament_gm":"1.35","sku":"inductivesensorcap","quantity":1, "stl":"inductivesensorcap.stl","dxf":"","png":"","print":0}
+	]},
+	{"vendor":"BIQU", "openscad":{"file":"mod_parts.scad", "function":"corexy_beltsetup()"},
+"images":["BOM_module_outside_frame_gantry_plates_x_shuttle_front_belt.PNG"],
+	"lineitems":[
+		{"cost":13.00, "sku":"GT2 PULLEY","quantity":2, "stl":"", "web":"https://www.amazon.com/BIQU-Meters-Timing-20Teeth-Printer/dp/B01GTGOD6U", "name":"BIQU GT2 10 Meters Timing Belt + 2Pcs Bore 5mm 20Teeth Timing Pulley Wheel for 3D Printer","comments":""}
+	]},
+	{"vendor":"Igus", "openscad":{"file":"mod_parts.scad", "function":"filament_linearactuator()"},
+"images":["BOM_module_outside_frame_gantry_plates_x_shuttle_igus_slider.PNG"],
+	"lineitems":[
+		{"cost":64.00, "sku":"TS-04-09","quantity":1, "stl":"", "web":"", "name":"DryLin T, miniature profile rail","comments":"Have to cut this piece to 100mm"},
+		{"cost":15.70, "sku":"TW-04-09","quantity":1, "stl":"", "web":"", "name":"DryLin T, miniature slide carriage","comments":""}
+	]},
+	{"vendor":"Uxcell", "openscad":{"file":"mod_parts.scad", "function":"slider_front_assy()"},
+"images":["BOM_module_x_shuttle_inductive_sensor_cap.PNG"],
+	"lineitems":[
+		{"cost":10.00, "sku":"LJ12A3-4-Z/BX","quantity":1, "stl":"", "web":"https://www.amazon.com/uxcell-DC6-36V-Inductive-Proximity-LJ12A3-4-Z-BX/dp/B008DG9FLS", "name":"DC 6-36V NPN NO 3-wire 4mm Noncontact Inductive Proximity Sensor Switch LJ12A3-4-Z/BX","comments":""}
+	]},
+	{"vendor":"Uxcell", "openscad":{"file":"mod_parts.scad", "function":"slider_front_assy()"},
+"images":["BOM_module_x_shuttle_bowden_tube_filament.PNG"],
+	"lineitems":[
+		{"cost":10.00, "sku":"Bowden tube","quantity":1, "stl":"", "web":"https://www.amazon.com/uxcell-DC6-36V-Inductive-Proximity-LJ12A3-4-Z-BX/dp/B008DG9FLS", "name":"PTFE Teflon Bowden Tube OD 4mm/0.16in. ID 2mm/0.08in. 1.75mm/0.07in.","comments":"Best to search Amazon for this"}
+	]},
+		{"cost":8.00, "sku":"PC4-MC6","quantity":1, "stl":"", "web":"https://www.amazon.com/uxcell-DC6-36V-Inductive-Proximity-LJ12A3-4-Z-BX/dp/B008DG9FLS", "name":"PC4-M6 Pneumatic Straight Fitting 4mm OD tubing,M6 6mm Applicable to 3D Printer, Witbot PC4-M6 Straight Fitting 4mm thread M6 Connector for 3D Printer (Pack of 10 pcs )","comments":"Best to search Amazon for this, the 3D printer filament is 1.75mm "}
+
 ]
 }

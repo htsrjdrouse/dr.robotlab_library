@@ -1,6 +1,7 @@
 include <modparts.scad>
 use<writescad/write.scad>
 
+xshuttle_assy_stls();
 
 module xshuttle_assy_stls(){
 //start x_axis(x)
@@ -12,7 +13,7 @@ module xshuttle_assy_stls(){
     translate([0,-70+0,0])shuttle_front();
     translate([-55,5+0,37.34])rotate([-90,0,0])import("files/gt2belt_holder.stl");
     translate([-55,42,37.34])rotate([-90,0,0])import("files/gt2belt_holder.stl");
-    translate([48.47-80+4-25,92+3-130-2,16.0-10])rotate([0,0,180])smaller_igus_slidermount();
+    //translate([48.47-80+4-25,92+3-130-2,16.0-10])rotate([0,0,180])smaller_igus_slidermount();
     translate([-50+0,0,0])filament_linearactuator_shuttle();
     //end filament_linearactuator
   //end slider_front_assy();

@@ -15,19 +15,21 @@ xshuttle_assy_nomenclature(x,y);
 y_encoder_support(60);
 */
 
-
-gantry();
+//gantry();
 //gantry_nomenclature();
 
-xshuttle_assy(x=20,y=-30);
- xymotor_assy();
+//xshuttle_assy(x=20,y=-30);
+// xymotor_assy();
 
-//gantry();
+
+
+gantry();
+gantry_nomenclature();
 outside_frame(bcl,cl);
 zencoder_assy();
-//xshuttle_assy(x,y);
+xshuttle_assy(x,y);
+filament_driver_assy();
 //y_encoder_support(60);
-
 
 //conveyer_connector_tslots();
 //conveyer_connector_tslots_nomenclature();

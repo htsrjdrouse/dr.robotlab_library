@@ -1,15 +1,16 @@
 include <modparts.scad>
 use<writescad/write.scad>
 
-translate([105,45,0])bom_controlpanel();
+//translate([105,45,0])bom_controlpanel();
 //electrics_panels_to_print();
 
 //atx_power_connect_assy();
 
-//pcb_panels();
-// outside_frame(tcl,thcl);
+gantry();
+pcb_panels();
+ outside_frame(tcl,thcl);
 // labbot3d_electronics_configuration();
-//electronics_setup();
+electronics_setup();
 
 
 //electronics_stl();
@@ -94,9 +95,8 @@ translate([200,300,-5])BOM_conveyer_solenoids();
 translate([105,220,0])rotate([0,180,90])azteeg_controller();
 translate([390,340,0])rotate([0,180,90])BOM_atxpowerconnect();
 translate([69.2,14,-52])rotate([90,0,0])BOM_controlpanel();
-
 translate([440-7,200-0.8+162,-63])rotate([90,0,-90]){
-translate([40,17,-2])color("blue")BOM_liquidlevel_pumps();
+translate([40,17,-2])BOM_liquidlevel_pumps();
 }
 }
 
@@ -187,7 +187,7 @@ translate([94.155,3.484,-20])cylinder(r=4/2,h=80);
 
 module BOM_amplifier_brd(){
 translate([70,40,6])color("black")rotate([0,0,180])mirror([0,0,0])write("BOM_amplifier_brd",h=8);
-difference(){
+color("pink")difference(){
 cube([65.3,94.1,3]);
 translate([4.5,31.88,-0.1])cylinder(r=3.5/2,h=20);
 translate([57.577,31.88,-0.1])cylinder(r=3.5/2,h=20);

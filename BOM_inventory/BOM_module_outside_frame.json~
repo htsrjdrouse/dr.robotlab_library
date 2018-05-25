@@ -15,6 +15,7 @@
 		{"cost":11.15, "sku":"HFS5-2020-484-TPW-Z5-XA94.5-XB312.5","quantity":1,"stl":"HFS5-2020-484-TPW-Z5-XA94.5-XB312.5.pdf"},
 		{"cost":13.55, "sku":"HFS5-2020-484-TPW-Z5-XA135.5-XB230-XC353.5","quantity":1,"stl":"HFS5-2020-484-TPW-Z5-XA135.5-XB230-XC353.5.stl"},
 		{"cost":5.88, "sku":"HFS5-2020-400-TPW","quantity":1,"stl":"HFS5-2020-400-TPW.stl"}
+		{"cost":3.88, "sku":"HFS5-2020-100-TPW","quantity":1,"stl":"HFS5-2020-100-TPW.stl"}
 	]},
 	{"vendor":"Bigbluesaw", "openscad":{"file":"mod_parts.scad", "function":"outside_frame()"},
 	"images":["BOM_module_outside_frame_gantry_plates.PNG",	"BOM_module_outside_frame_just_plates.PNG"],
@@ -110,7 +111,75 @@
 	"lineitems":[
 		{"cost":10.00, "sku":"Bowden tube","quantity":1, "stl":"", "web":"https://www.amazon.com/uxcell-DC6-36V-Inductive-Proximity-LJ12A3-4-Z-BX/dp/B008DG9FLS", "name":"PTFE Teflon Bowden Tube OD 4mm/0.16in. ID 2mm/0.08in. 1.75mm/0.07in.","comments":"Best to search Amazon for this"}
 	]},
-		{"cost":8.00, "sku":"PC4-MC6","quantity":1, "stl":"", "web":"https://www.amazon.com/uxcell-DC6-36V-Inductive-Proximity-LJ12A3-4-Z-BX/dp/B008DG9FLS", "name":"PC4-M6 Pneumatic Straight Fitting 4mm OD tubing,M6 6mm Applicable to 3D Printer, Witbot PC4-M6 Straight Fitting 4mm thread M6 Connector for 3D Printer (Pack of 10 pcs )","comments":"Best to search Amazon for this, the 3D printer filament is 1.75mm "}
+		{"cost":8.00, "sku":"PC4-MC6","quantity":1, "stl":"", "web":"https://www.amazon.com/uxcell-DC6-36V-Inductive-Proximity-LJ12A3-4-Z-BX/dp/B008DG9FLS", "name":"PC4-M6 Pneumatic Straight Fitting 4mm OD tubing,M6 6mm Applicable to 3D Printer, Witbot PC4-M6 Straight Fitting 4mm thread M6 Connector for 3D Printer (Pack of 10 pcs )","comments":"Best to search Amazon for this, the 3D printer filament is 1.75mm "},
+
+
+		{"vendor":"Mouser", "openscad":{"file":"mod_parts.scad", "function":"x_encoder_support(), y_encoder_support()"}, "images":["BOM_module_xy_softpot_linearencoders.PNG","softpot_linear_encoder.PNG"],
+	"lineitems":[
+		{"cost":8.1, "sku":"744-SP-L-0150-1033ST","quantity":2, "stl":"", "web":"https://www.mouser.com/ProductDetail/Spectra-Symbol/SP-L-0150-103-3-ST?qs=rVuZtzXoae6NmMGvuJPwKQ%3D%3D", "name":"Industrial Motion & Position Sensors SoftPot 150mm","comments":"You can also 3D print the wiper using, wipertip()"}
+	]},
+		{"cost":4.12, "sku":"744-WP-M1-01-03014DI","quantity":2, "stl":"", "web":"https://www.mouser.com/ProductDetail/Spectra-Symbol/WP-M1-01-03-014-DI?qs=rVuZtzXoae7CNjkhIS%252bC%2FQ%3D%3D", "name":"Sensor Hardware & Accessories Wiper 1Newton-3N","comments":"You can also 3D print the wiper using, wipertip()"},
+
+		{"vendor":"Adafruit", "openscad":{"file":"bom_electronics.scad", "function":"electronics_setup()"}, "images":["BOM_amplifier_brd_fritzing.PNG"],
+	"lineitems":[
+		{"cost":14.95, "sku":"1085","quantity":1, "stl":"", "web":"https://www.adafruit.com/product/1085", "name":"ADS1115 16-Bit ADC - 4 Channel with Programmable Gain Amplifier","comments":"This is used with the HTS Resources amplifier shield","images":"BOM_amplifier_brd_adafruit_amplifier.PNG"}
+	]},
+
+		{"vendor":"HTS Resources", "openscad":{"file":"bom_electronics.scad", "function":"electronics_setup()"}, "images":["BOM_amplifier_brd_fritzing.PNG","BOM_amplifier_brd_adafruit_amplifier.PNG"],"fritzing":"BOM_amplifier_brd_holder.fzz","arduino":"softpot_linearencoders_arduino_micro.ino","gerber":"BOM_amplifier_brd_holder_silkTop.zip",
+	"lineitems":[
+		{"cost":4.9, "sku":"1085","quantity":1, "stl":"", "web":"", "name":"FR-4 TG130 2 layers","comments":"This is used with the HTS Resources amplifier shield","fritzing":"BOM_amplifier_brd_holder.fzz","arduino":"softpot_linearencoders_arduino_micro.ino","gerber":"BOM_amplifier_brd_holder_silkTop.zip","mfg":"Seeed"}
+	]},
+	{"vendor":"HTS Resources", "openscad":{"file":"mod_parts.scad", "function":"encoder_ribboncable()"},
+"images":["BOM_module_filament_driver_assy_linearactuator_encoder_ribboncable.PNG"],
+	"lineitems":[
+		{"time":"37m 34s","cost":0.23, "usedfilament_gm":"6.69","sku":"encoder_ribboncable","quantity":1, "stl":"encoder_ribboncable.stl","dxf":"","png":"","print":1}
+	]},
+
+	{"vendor":"HTS Resources", "openscad":{"file":"mod_parts.scad", "function":"linearactuator_endstop_encoder()"},
+"images":["BOM_module_filament_driver_assy_linearactuator_endstop_encoder.PNG,BOM_module_filament_driver_assy_linearactuator_endstop_encoder_igus_slider_linearactuator_filament_encodershuttle.PNG","BOM_module_filament_driver_assy_linearactuator_endstop_encoder_igus_slider_linearactuator_endstop.PNG","BOM_module_filament_driver_assy_linearactuator_filament_driver_assy_motormount.PNG","BOM_module_cable_support.PNG"],
+	"lineitems":[
+		{"time":"11h 21m 36s","cost":3.88, "usedfilament_gm":"110.92","sku":"bom_filament_driver_assy","quantity":1, "stl":"bom_filament_driver_assy.stl","dxf":"","png":"","print":1},
+		{"time":"3h 27m 34s","cost":1.36, "usedfilament_gm":"38.93","sku":"linearactuator_igus_slidermount_encoder_and_igus_lowprofile_assy","quantity":1, "stl":"linearactuator_igus_slidermount_encoder_and_igus_lowprofile_assy.stl","dxf":"","png":"","print":0},
+		{"time":"1h 9m 29s","cost":0.32, "usedfilament_gm":"9.17","sku":"linearactuator_filament_encodershuttle","quantity":1, "stl":"linearactuator_filament_encodershuttle.stl","dxf":"","png":"","print":0},
+		{"time":"34m 36s","cost":0.11, "usedfilament_gm":"3.14","sku":"endstop_for_linearactuator","quantity":1, "stl":"endstop_for_linearactuator.stl","dxf":"","png":"","print":0},
+		{"time":"2h 4m 58s","cost":0.79, "usedfilament_gm":"22.53","sku":"filament_driver_assy_motormount","quantity":1, "stl":"filament_driver_assy_motormount.stl","dxf":"","png":"","print":0},
+		{"time":"1h 40m 5s","cost":0.48, "usedfilament_gm":"13.61","sku":"compact_extruder","quantity":1, "stl":"compact_extruder.stl","dxf":"","png":"","print":0},
+		{"time":"1h 22m 44s","cost":0.42, "usedfilament_gm":"11.93","sku":"cable_support","quantity":1, "stl":"cable_support.stl","dxf":"","png":"","print":0},
+		{"time":"37m 35s","cost":0.24, "usedfilament_gm":"6.97","sku":"cable_support_lid","quantity":1, "stl":"cable_support_lid.stl","dxf":"","png":"","print":0},
+		{"time":"48m 38s","cost":0.23, "usedfilament_gm":"6.44","sku":"tslot20innerbracket","quantity":1, "stl":"tslot20innerbracket.stl","dxf":"","png":"","print":0}
+
+	]},
+	{"vendor":"Igus", "openscad":{"file":"mod_parts.scad", "function":"linearactuator_endstop_encoder()"},
+"images":["BOM_module_filament_driver_assy_linearactuator_endstop_encoder_igus_slider.PNG"],
+	"lineitems":[
+		{"cost":64.00, "sku":"TS-04-09","quantity":1, "stl":"", "web":"", "name":"DryLin T, miniature profile rail","comments":"Have to cut this piece to 100mm"},
+		{"cost":15.70, "sku":"TW-04-09","quantity":1, "stl":"", "web":"", "name":"DryLin T, miniature slide carriage","comments":""}
+	]},
+	{"vendor":"Biqu", "openscad":{"file":"mod_parts.scad", "function":"filament_linearactuator()"},
+"images":["biqu_mechanical_endstop.PNG"],
+	"lineitems":[
+		{"cost":1, "sku":"","quantity":1, "stl":"", "web":"", "name":"10PCS Mechanical Endstop For Reprap ramps 1.4 3D for DIY printer","comments":""}
+	]},
+		{"vendor":"Mouser", "openscad":{"file":"mod_parts.scad", "function":"linearactuator_endstop_encoder()"}, "images":["BOM_module_xy_softpot_linearencoders.PNG","softpot_linear_encoder.PNG"],
+	"lineitems":[
+		{"cost":8.1, "sku":"744-SP-L-0100-1033ST","quantity":2, "stl":"", "web":"https://www.mouser.com/ProductDetail/Spectra-Symbol/SP-L-0100-103-3-ST?qs=rVuZtzXoae6NmMGvuJPwKQ%3D%3D", "name":"Industrial Motion & Position Sensors SoftPot 150mm","comments":"You can also 3D print the wiper using, wipertip()"}
+	]},
+		{"vendor":"Adafruit", "openscad":{"file":"mod_parts.scad", "function":"linearactuator_endstop_encoder()"}, "images":["BOM_module_filament_driver_assy_linearactuator_filament_driver_assy_motormount_nema17.PNG","nema_17_adafruit.PNG"],
+	"lineitems":[
+		{"cost":14, "sku":"324","quantity":1, "stl":"", "web":"https://www.adafruit.com/product/324", "name":"Stepper motor - NEMA-17 size - 200 steps/rev, 12V 350mA","comments":""}
+	]},
+	{"vendor":"Uxcell", "openscad":{"file":"mod_parts.scad", "function":"slider_front_assy()"},
+"images":["BOM_module_x_shuttle_bowden_tube_filament.PNG"],
+	"lineitems":[
+		{"cost":10.00, "sku":"Bowden tube","quantity":1, "stl":"", "web":"https://www.amazon.com/uxcell-DC6-36V-Inductive-Proximity-LJ12A3-4-Z-BX/dp/B008DG9FLS", "name":"PTFE Teflon Bowden Tube OD 4mm/0.16in. ID 2mm/0.08in. 1.75mm/0.07in.","comments":"Best to search Amazon for this"}
+	]},
+		{"cost":8.00, "sku":"PC4-MC6","quantity":2, "stl":"", "web":"https://www.amazon.com/uxcell-DC6-36V-Inductive-Proximity-LJ12A3-4-Z-BX/dp/B008DG9FLS", "name":"PC4-M6 Pneumatic Straight Fitting 4mm OD tubing,M6 6mm Applicable to 3D Printer, Witbot PC4-M6 Straight Fitting 4mm thread M6 Connector for 3D Printer (Pack of 10 pcs )","comments":"Best to search Amazon for this, the 3D printer filament is 1.75mm "}
+
+
+
+
+
+
 
 ]
 }

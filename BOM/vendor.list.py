@@ -83,7 +83,8 @@ phidgets --  3340_0 --  42STH38 NEMA-17 Bipolar Precision Gearless Stepper 0.9 s
 igus -- TS-04-12 --  DRYLIN T RAIL --  $64.50 --  1
 igus -- TW-04-12 --  DRYLIN T CARR --  $38.50 --  1 
 igus -- TS-04-09 --  DryLin T, miniature profile rail --  $63.99 --  1
-igus -- TW-04-09 --  DryLin T, miniature slide carriage --  $15.70 --  2"""
+igus -- TW-04-09 --  DryLin T, miniature slide carriage --  $15.70 --  2
+igus -- TW_04_07_1 --  DryLin T, miniature slide carriage --  $15.70 --  1"""
 
 b = re.split("\n", datr)
 

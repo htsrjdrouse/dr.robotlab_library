@@ -113,7 +113,7 @@ translate([10+10-60,105+30+5+20+0.5-50,-50+1])rotate([0,90,0])cylinder(r=2.9/2,h
 
 module pcb_panels(){
 coverpanel_screw();
-translate([-9,-9,-14+60])screen_cover();
+//translate([-9,-9,-14+60])screen_cover();
 //translate([74,10,-18])rotate([-90,0,0])kill_button_leds_panelmount();
 //translate([440-435,35+50+50,-4-50])rotate([0,-90,0])binding_post_connector();
 
@@ -167,12 +167,14 @@ translate([69.2,13,-52])rotate([90,0,0])bom_controlpanel();
 
 //usbs_socket
 translate([8+12.5,17.5,-61.4])rotate([90,180,-90]){
-color("gainsboro")translate([2,0,12])usbs_socket_alu_support_lid_usbs_simplier();
+//color("gainsboro")
+translate([2,0,12])usbs_socket_alu_support_lid_usbs_simplier();
 }
 
 //open slot for hacking
 translate([8+12.5,17.5+140,-61.4])rotate([90,180,-90]){
-color("gainsboro")translate([2,0,12])usbs_socket_alu_support_lid_usbs_cover();
+//color("gainsboro")
+translate([2,0,12])usbs_socket_alu_support_lid_usbs_cover();
 }
 
 }
@@ -4336,7 +4338,10 @@ translate([0,410,330])rotate([180,0,0]){
 
 translate([30-10,60-30-5,15])rotate([0,0,90])color("gainsboro")backextruder_clamp();
 translate([30-10,340+30,15])rotate([0,0,90])color("gainsboro")backextruder_clamp();
-translate([-44,sh,16])color("gainsboro")cube([18,300,3]);
+translate([-44,sh,16])
+//color("gainsboro")
+color("gainsboro")
+cube([18,300,3]);
 
 //LLYENC it has 2 screws commented out below
 //This needs to be updated fixed
@@ -4381,7 +4386,10 @@ tslot20(484);
 module x_encoder_support(){
 translate([30-10,30,15])rotate([0,0,90])color("gainsboro")backextruder_clamp();
 translate([30-10,350,15])rotate([0,0,90])color("gainsboro")backextruder_clamp();
-translate([-50+5,52,16+25])color("gainsboro")cube([18,300,3]);
+translate([-50+5,52,16+25])
+//color("gainsboro")
+color("gainsboro")
+cube([18,300,3]);
 translate([-50,400,16])rotate([90,0,0])tslot20(385);
 }
 
@@ -5588,11 +5596,22 @@ module filament_driver_assy(){
 //this is the filament driver assy
 translate([-48,280,100])rotate([-90,0,-90])linearactuator_endstop_encoder();
 translate([-48,364-75,330])rotate([0,-90,0])color("gainsboro")encoder_ribboncable();
-translate([-6.5,364,316])rotate([90,0,90])color("gainsboro")cables_wall();
+//translate([-6.5,364,316])rotate([90,0,90])color("gainsboro")cables_wall();
 translate([57,400+9,200])rotate([0,0,90]){
+translate([0,0,100])tslot20(100);
+color("pink")cable_support();
+translate([20,31,0])mirror([0,1,0])color("pink")cable_support_lid();
+translate([-5,-175,130])color("pink")rotate([-90,0,90])tslot20innerbracket();
+}
+}
+
+
+
+
+
+module zbed_assy(z){
 color("gainsboro")cable_support();
 translate([20,31,0])mirror([0,1,0])color("gainsboro")cable_support_lid();
-}
 }
 
 module xshuttle_assy(x,y){
@@ -5835,13 +5854,13 @@ module slider_front_assy(){
 
 translate([0,3,0]){
 //pagg = 0.88; color([pagg,pagg,pagg])
-color("lime")
-translate([208-16+33.5-7,188-16+16-70+0+11.5+31.5,342-35+30+150-70-80+45])rotate([-0,0,0])cylinder(r=6/1,h=300);
+//color("lime")
+//translate([208-16+33.5-7,188-16+16-70+0+11.5+31.5,342-35+30+150-70-80+45])rotate([-0,0,0])cylinder(r=6/1,h=300);
 //ptagg = 0.38; color([ptagg,ptagg,ptagg])
-color("pink")
-translate([208-16+33.5-7,188-16+16-70+0+11.5+31.5,342-35+30+150-70-80+53])rotate([-0,0,0])cylinder(r=10/1,h=10,$fn=6);
+//color("gainsboro")
+//translate([208-16+33.5-7,188-16+16-70+0+11.5+31.5,342-35+30+150-70-80+53])rotate([-0,0,0])cylinder(r=10/1,h=10,$fn=6);
 //agg = 0.2; color([agg,agg,agg])
-translate([208-16+33.5-7,188-16+16-70+0+11.5+31.5,342-35+30+150-70-80])rotate([-0,0,0])cylinder(r=2/1,h=1000);
+//translate([208-16+33.5-7,188-16+16-70+0+11.5+31.5,342-35+30+150-70-80])rotate([-0,0,0])cylinder(r=2/1,h=1000);
 sgg = 0.6; color([sgg,sgg,sgg])
 translate([208-16+16,188-16+16,342-35+30])rotate([90,0,0])inductivesensorcap();
 
@@ -6777,7 +6796,7 @@ translate([-4,-1,0])shorternema17();
 difference(){
 union(){
 //compact extruder
-translate([-21+20-3,-21+20,3+6-5])compact_extruder();
+color("gainsboro")translate([-21+20-3,-21+20,3+6-5])compact_extruder();
 //biqu extruder
 /*
 difference(){
@@ -6789,36 +6808,41 @@ translate([-21+35-30,-21+5.5+30,3+6-20])cylinder(r=3.7/2,h=200);
 }
 */
 //begin Other motor mount
-difference(){
-color([cc,cc,cc])translate([-21-29+0.5,-21-1,3-48])cube([5,42,48]);
+translate([-21-29+0.5+49.5,-21-1+23,3-48+45])filament_driver_assy_motormount();
+/*
+color("pink")difference(){
+//color([cc,cc,cc])
+translate([-21-29+0.5,-21-1,3-48])cube([5,42,48]);
 translate([-21-29+0.5-2,-21+9,3-48+9])rotate([0,90,0])cylinder(r=4.7/2,h=30);
 translate([-21-29+0.5-2,-21+32,3-48+9])rotate([0,90,0])cylinder(r=4.7/2,h=30);
 }
 cc = 0.8;color([cc,cc,cc])translate([0,0-1,0])translate([-21-29+0.5,-21,3-20])cube([20+8+5,42,20+6-5]);
 cc = 0.8;color([cc,cc,cc])translate([0,0-1,0])translate([-21-29+0.5,-21,0])cube([28+2+5+32,42,9-5]);
 //end Other motor mount
-
-
-translate([0,31,10.5+6])rotate([90,0,0])color("lightgrey")cylinder(r=10/2,h=30);
-translate([0,31+20,10.5+6])rotate([90,0,0])color("white")cylinder(r=6/2,h=50);
+*/
+/*
+//translate([0,31,10.5+6])rotate([90,0,0])color("lightgrey")cylinder(r=10/2,h=30);
+translate([0,31+20,10.5+6])rotate([90,0,0])color("white")cylinder(r=6/2,h=35);
 translate([0,31+100,10.5+6])rotate([90,0,0])color("black")cylinder(r=2/2,h=250);
-translate([0,31-31,10.5+6])rotate([90,0,0])color("lightgrey")cylinder(r=10/2,h=30);
+//translate([0,31-31,10.5+6])rotate([90,0,0])color("lightgrey")cylinder(r=10/2,h=30);
 translate([0,31+20-82+1,10.5+6])rotate([90,0,0])color("white")cylinder(r=6/2,h=90);
 translate([0,31+20-170,10.5+6])rotate([90-45,0,-45])color("white")cylinder(r=6/2,h=90);
+*/
 }
-//translate([42/2,42/2,0])
-rotate([0,0,0])cylinder(r=20/2,h=30);
+//rotate([0,0,0])cylinder(r=20/2,h=30);
 }
 }
 
+//this right here for annotation
 translate([-99,0,-1.5])rotate([0,90,0]){
 translate([-53,-114,-13])linearactuator_filament_encodershuttle();
 translate([-55-2.5,30-1,7])rotate([0,0,180])endstop_for_linearactuator();
 translate([0,-0,0])color("lightgrey")linearactuator_igus_slidermount_encoder();
 translate([-43+5.5+0.5,11-84,-3.6])color("lightgrey")linearactuator_igus_slidermount_encoder_part();
-ed = 0.4; color([ed,ed,ed])translate([-43+5.5+0.5,11-84-5,-3.6+3])cube([28,100,3]);
+ed = 0.4; color([ed,ed,ed])
+//color("pink")
+translate([-43+5.5+0.5,11-84-5,-3.6+3])cube([28,100,3]);
 translate([-38,-6,3])color("grey")igus_lowprofile_assy();
-
 }
 
 //spectra encoder
@@ -6896,8 +6920,7 @@ translate([20,217,400-50])rotate([0,0,-90])x_encoder_support();
 module filament_linearactuator(){
 
 //translate([-40+2,-25+18.8,3])import("igus_sliders/TS_04_09_50_3.stl");
-//translate([-40+2,-25+18.8,3])import("/Users/richard/Documents/009Reprapcatcube010715/igus_sliders/TS_04_09_50_3.stl");
-//translate([0,-10,3]){translate([-38,-40+18,4.5])import("/Users/richard/Documents/009Reprapcatcube010715/igus_sliders/TW_04_09_4.stl");}
+//translate([0,-10,3]){translate([-38,-40+18,4.5])import("igus_sliders/TW_04_09_4.stl");}
 //translate([-49,-30-8,6])syringeplunger_formed_modular_linearactuator_igus_TW_04_07();
 //translate([-38,-6,0])igus_lowprofile_assy();
 
@@ -6921,7 +6944,7 @@ color("silver")
 import("igus_sliders/TW_04_09_4.stl");}
 }
 shh = 0.9;color([shh,shh,shh])
-//color("pink")
+color("gainsboro")
 translate([-0.5,-37,22])filament_linearactuator_shuttle();
 }
 
@@ -6974,7 +6997,7 @@ translate([97.5,30.2+48,-10])cylinder(r=3.7/2,h=60);
 
 module azteeg_controller(){
 //to show PCB just this
-color("green")translate([51,-43,0])cube([108,70,4]);
+//color("green")translate([51,-43,0])cube([108,70,4]);
 translate([70,-30,10])color("black")rotate([0,0,0])mirror([0,0,0])write("BOM_azteeg",h=8);
 
 
@@ -7523,6 +7546,12 @@ translate([-21+35,-21+5.5+30-0.2,3+6-20])cylinder(r=4.7/2,h=200);
 translate([-21+35-30-1.2,-21+5.5+30,3+6-20])cylinder(r=4.7/2,h=200);
 }
 }
+
+
+
+
+
+
 
 
 

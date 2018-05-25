@@ -18076,8 +18076,9 @@ translate([0+18.5+6,0,0])difference(){union(){translate([0,0,33])cylinder(h = 2.
 
 
 module igus_lowprofile_assy(){
-import("igus_sliders/igus_20161020_215205/TS_04_09_100_2.stl");
-translate([0,-26,5])import("igus_sliders/igus_20161020_215205/TW_04_07_1.stl");
+import("igus_sliders/TS_04_09_100_2.stl");
+//translate([0,-26,5])import("igus_sliders/TW_04_07_1.stl");
+translate([0,-26,5])import("igus_sliders/TW_04_09_4.stl");
 }
 
 

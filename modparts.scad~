@@ -4252,7 +4252,7 @@ translate([60+16+i+52,109+7-3,80])cylinder(r=4.7/2,h=200);
 
 
 module wash_and_strobparts(){
-openmv_camera_mnt_zbed();
+//openmv_camera_mnt_zbed();
 color("silver"){laser_zbed_support_strobend();
 translate([219,-0,282])rotate([0,180,0])laser_zbed_support_strobend();
 translate([8,387,282])rotate([0,180,180])laser_zbed_support_strobend();
@@ -4260,12 +4260,11 @@ translate([219-50+263,387,0])rotate([0,0,180])laser_zbed_support_strobend();
 }
 translate([370,50,155])rotate([0,0,-90]){
 //translate([220-5-200-70-5-5+37+1,25+1.5+5-330+9,-10-2-12])rotate([0,0,90])color([230/255,230/255,230/255])stroboscope_assy();
-translate([0,-360,-95])rotate([90,-0,-90])openmv_nice_assy_stroboscope();
+//translate([0,-360,-95])rotate([90,-0,-90])openmv_nice_assy_stroboscope();
 translate([160-285,20-35,-3])rotate([0,180,90])color("DarkGray")washbowl_assy();
 translate([52-22-60-5,67-140+10,-10])rotate([0,0,90])color("gray")import("96_microwell_plate.STL.stl");
 microwell_plate_guide();
 }
-
 }
 
 //washbowl_assy();
@@ -5221,20 +5220,26 @@ module zbed_smz_components(shim,modshim){
  translate([-230+2+486-10,75.5,135+28])rotate([0,-90,0])color("gainsboro")zbedslot_516_smz_zbed();
  }
 if (modshim == 10){
+ /* the bed levelers */
+ color("gainsboro"){
  translate([25,7.5,16.5])rotate([0,-90,0])bed_leveler_better_lm8uu();
  translate([25,7.5,16.5+218])rotate([0,-90,0])bed_leveler_better_lm8uu();
+ }
  /*
- translate([15.5,15-30,110])rotate([-90,0,0])cylinder(r=5.7/2,h=100);
- translate([15.5,15-30,230])rotate([-90,0,0])cylinder(r=5.7/2,h=100);
- translate([0,15,21.5])rotate([90,0,90])cylinder(r=5.7/2,h=100);
- translate([0,15,141])rotate([90,0,90])cylinder(r=5.7/2,h=100);
- translate([0,15,239])rotate([90,0,90])cylinder(r=5.7/2,h=100);
+  translate([15.5,15-30,110])rotate([-90,0,0])cylinder(r=5.7/2,h=100);
+  translate([15.5,15-30,230])rotate([-90,0,0])cylinder(r=5.7/2,h=100);
+  translate([0,15,21.5])rotate([90,0,90])cylinder(r=5.7/2,h=100);
+  translate([0,15,141])rotate([90,0,90])cylinder(r=5.7/2,h=100);
+  translate([0,15,239])rotate([90,0,90])cylinder(r=5.7/2,h=100);
  */
 }
 
 if (modshim == 0){
+ /* the bed levelers */
+ color("gainsboro"){
  translate([25,7.5,26.5])rotate([0,-90,0])bed_leveler_better_lm8uu();
  translate([25,7.5,26.5+218])rotate([0,-90,0])bed_leveler_better_lm8uu();
+ }
   /*
   translate([15,15-30,63])rotate([-90,0,0])cylinder(r=5.7/2,h=400);
   translate([15,15-30,183])rotate([-90,0,0])cylinder(r=5.7/2,h=400);
@@ -5416,6 +5421,11 @@ module zbed_smz(){
  zbed_smz_components(0,0);
  translate([0,-340+1,293.5])rotate([180,0,0])zbed_smz_components(0,10);
  }
+ //right here also this is part of zbed modules
+ color("gainsboro")translate([0,0,-10])laser_zbed(144);
+ color("gainsboro")translate([25,130+120,118+10])rotate([0,-90,0])z_encoder_clamp_wiper();
+
+
  //translate([27,-175,40])rotate([0,0,90])tslot20innerbracket();
  translate([0,18-5,0]){
  //translate([48-2+178,95+192.5+5-200,140-4])rotate([-90,0,0])mirror([1,0,0])color("gainsboro")tslot20innerbracket();
@@ -5435,8 +5445,6 @@ module zbed_smz(){
  translate([200-265.5,10+193,135])rotate([0,0,0])color("gray")import("bed_leveler_foot.STL");
  translate([200+105,10+193,135])rotate([0,0,0])color("gray")import("bed_leveler_foot.STL");
  */
- translate([0,0,-10])laser_zbed(144);
- translate([25,130+120,118+10])rotate([0,-90,0])z_encoder_clamp_wiper();
 }
 
 /*
@@ -5599,21 +5607,26 @@ translate([-48,364-75,330])rotate([0,-90,0])color("gainsboro")encoder_ribboncabl
 //translate([-6.5,364,316])rotate([90,0,90])color("gainsboro")cables_wall();
 translate([57,400+9,200])rotate([0,0,90]){
 translate([0,0,100])tslot20(100);
-color("pink")cable_support();
-translate([20,31,0])mirror([0,1,0])color("pink")cable_support_lid();
-translate([-5,-175,130])color("pink")rotate([-90,0,90])tslot20innerbracket();
+color("gainsboro")
+cable_support();
+translate([20,31,0])mirror([0,1,0])
+color("gainsboro")
+cable_support_lid();
+translate([-5,-175,130])
+color("gainsboro")
+rotate([-90,0,90])tslot20innerbracket();
 }
 }
 
 
 
 
-
+/*
 module zbed_assy(z){
 color("gainsboro")cable_support();
 translate([20,31,0])mirror([0,1,0])color("gainsboro")cable_support_lid();
 }
-
+*/
 module xshuttle_assy(x,y){
 
 //x shuttle
@@ -5636,12 +5649,15 @@ translate([75,-55+464,9.5])tslot20(400);
 }
 }
 
+//right here base zbed modules
 module zbed_assy(z){
 translate([0,0,z]){
 zbed_smz();
-translate([0,0,-10])wash_and_strobparts();
-translate([145+25+25,315-65,172-10])rotate([90,90,0])tslot20(200);
+//translate([0,0,-10])wash_and_strobparts();
+//translate([145+25+25,315-65,172-10])rotate([90,90,0])tslot20(200);
 //laser_zbed(144);
+//translate([0,0,-10])laser_zbed(144);
+//translate([25,130+120,118+10])rotate([0,-90,0])z_encoder_clamp_wiper();
 }
 
 }
@@ -5853,6 +5869,7 @@ translate([300,160,-40]){
 module slider_front_assy(){
 
 translate([0,3,0]){
+//filament model
 //pagg = 0.88; color([pagg,pagg,pagg])
 //color("lime")
 //translate([208-16+33.5-7,188-16+16-70+0+11.5+31.5,342-35+30+150-70-80+45])rotate([-0,0,0])cylinder(r=6/1,h=300);

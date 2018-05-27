@@ -1,7 +1,10 @@
 include <modparts.scad>
 use<writescad/write.scad>
 
-//zbedslot_516_smz_zbed();
+//zbed_smz_stls();
+
+
+zbedslot_516_smz_zbed();
 
 //color([100,100,100])
 //zbed_smz_stls();
@@ -11,7 +14,7 @@ use<writescad/write.scad>
 //laser_zbed(144);
 //laser_zbed_support_strobened();
 
-zbed_smz();
+//zbed_smz();
 
 /*
 projection(cut = false){

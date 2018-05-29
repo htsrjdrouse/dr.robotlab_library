@@ -4,7 +4,13 @@ use<writescad/write.scad>
 //zbed_smz_stls();
 
 
-zbedslot_516_smz_zbed();
+ //zbed_wash_microwell_stls();
+// slidedeck_adjust_wheel();
+
+zbed_wash_microwell_stls();
+
+
+//zbedslot_516_smz_zbed();
 
 //color([100,100,100])
 //zbed_smz_stls();
@@ -53,11 +59,10 @@ translate([219-50+263,387,0])rotate([0,0,180])laser_zbed_support_strobened();
 //washbowl_shim();
 
 module zbed_smz_stls(){
- 
 //start zbed_smz_components
  translate([50,96,4])microwell_plate_guide();
- //translate([10,-108,-1])pololu_screw_nobacklash_cap();
- //translate([45,-108,-1])pololu_screw_nobacklash_cap();
+ translate([10,-108,-1])pololu_screw_nobacklash_cap();
+ translate([45,-108,-1])pololu_screw_nobacklash_cap();
  translate([0,0,35])rotate([0,90,0])lm8uu_smz_glider();
  translate([-45,0,35])rotate([0,90,0])lm8uu_smz_glider();
  translate([-45*2,0,35])rotate([0,90,0])lm8uu_smz_glider();
@@ -79,9 +84,26 @@ module zbed_smz_stls(){
  translate([-50,-28,29])rotate([0,180,90])washbowl_watervacinput();
  translate([40,-10,-1])rotate([0,0,90])drypad();
  translate([-110,-103+52,9])rotate([0,180,0])washbowl_1tip();
-
 //end washbowl_assy 
-
-
 }
+
+module zbed_wash_microwell_stls(){
+ //slidedeck_adjust_wheel();
+//start zbed_smz_components
+ translate([50,96,4])microwell_plate_guide();
+ //translate([45,-108,-1])pololu_screw_nobacklash_cap();
+//end zbed_smz_components
+//start washbowl_assy
+ //translate([-60,-26,-11])washbowl_shim();
+ translate([-50,-28,29])rotate([0,180,90])washbowl_watervacinput();
+ translate([40,-10,-1])rotate([0,0,90])drypad();
+ translate([-110,-103+52,9])rotate([0,180,0])washbowl_1tip();
+//end washbowl_assy 
+}
+
+
+
+
+
+
 

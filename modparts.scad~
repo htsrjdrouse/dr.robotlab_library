@@ -854,7 +854,7 @@ translate([-130,40,1.85])cube([50,50,20]);
 }
 translate([0,0,-2])openmv_camera_lensmount();
 translate([0,0,-2])openmv_camera_lensmount_lensepart();
-translate([-135,80-30,3.35])translate([5+25,-10+6-15-2+2,-1.5])rotate([0,0,0])m12lens_screwshim_spacer(12,21.95);
+//translate([-135,80-30-50,3.35])translate([5+25,-10+6-15-2+2,-1.5])rotate([0,0,0])m12lens_screwshim_spacer(12,21.95);
 }
 
 
@@ -1584,7 +1584,7 @@ module sm_connectors() {
 
 module sm_justclip(thickness){
 translate([0, 15]) rotate([90]) difference() {
-  color("blue")
+  //color("blue")
   cube([15, 15, 15]);
 
   //translate([0,4.5])
@@ -1992,15 +1992,17 @@ translate([0,-6,0])openmv_camera_lensmount();
 
 
 module openmv_nice_assy_stroboscope(){
-translate([0,36-25,0])color("gainsboro")openmv_camera_lensmount();
-translate([-200,36-25+1.5,4])rotate([0,180,0])openmv_camera_base();
-translate([-130,80+39,14+3])translate([5+25,-10+6-15-2+2,-1.5])rotate([0,0,0])m12lens_screwshim(12,21.2);
-translate([-130,80+39,10.35])translate([5+25,-10+6-15-2+2,-1.5])rotate([0,0,0])m12lens_screwshim_spacer(12,21.95);
-translate([0,12,-8])rotate([0,0,0])import("openmv/files/OpenMV_rev_6_Camera_Bottom_cover.stl");
-translate([-100,100,25+10])filtermount();
-translate([-111.7,30+4.5,3])rotate([0,90,90])connectionarms2(0);
-translate([-111.7+2.5,45,3])rotate([0,90,-90])connectionarms2(0);
-translate([-7,48,20])rotate([-90,0,0])openmv_camera_base_justclip_otherend();
+//color("gainsboro")
+col = "lightgrey";
+color(col)translate([0,36-25,0])openmv_camera_lensmount();
+color(col)translate([-200,36-25+1.5,4])rotate([0,180,0])openmv_camera_base();
+color(col)translate([-130,80+39,14+3])translate([5+25,-10+6-15-2+2,-1.5])rotate([0,0,0])m12lens_screwshim(12,21.2);
+color(col)translate([-130,80+39,10.35])translate([5+25,-10+6-15-2+2,-1.5])rotate([0,0,0])m12lens_screwshim_spacer(12,21.95);
+color(col)translate([0,12,-8])rotate([0,0,0])import("openmv/files/OpenMV_rev_6_Camera_Bottom_cover.stl");
+color(col)translate([-100,100,25+10])filtermount();
+color(col)translate([-111.7,30+4.5,3])rotate([0,90,90])connectionarms2(0);
+color(col)translate([-111.7+2.5,45,3])rotate([0,90,-90])connectionarms2(0);
+color(col)translate([-7,48,20])rotate([-90,0,0])openmv_camera_base_justclip_otherend();
 }
 
 
@@ -3757,7 +3759,7 @@ module slidedeck_adjust_wheel(){
 //for leveling bed works with bed level 
 difference(){
 cylinder(r=10,h=5);
-translate([0,0,0]){cylinder(r=3.7/2,h=8);translate([0,0,2])cylinder(r=6.6/2,h=3.5,$fn=6);}
+translate([0,0,0]){cylinder(r=3.7/2,h=80);translate([0,0,2])cylinder(r=6.6/2,h=3.5,$fn=6);}
 }
 }
 
@@ -4252,7 +4254,7 @@ translate([60+16+i+52,109+7-3,80])cylinder(r=4.7/2,h=200);
 
 
 module wash_and_strobparts(){
-//openmv_camera_mnt_zbed();
+color("pink")openmv_camera_mnt_zbed();
 color("silver"){laser_zbed_support_strobend();
 translate([219,-0,282])rotate([0,180,0])laser_zbed_support_strobend();
 translate([8,387,282])rotate([0,180,180])laser_zbed_support_strobend();
@@ -4260,9 +4262,12 @@ translate([219-50+263,387,0])rotate([0,0,180])laser_zbed_support_strobend();
 }
 translate([370,50,155])rotate([0,0,-90]){
 //translate([220-5-200-70-5-5+37+1,25+1.5+5-330+9,-10-2-12])rotate([0,0,90])color([230/255,230/255,230/255])stroboscope_assy();
-//translate([0,-360,-95])rotate([90,-0,-90])openmv_nice_assy_stroboscope();
-translate([160-285,20-35,-3])rotate([0,180,90])color("DarkGray")washbowl_assy();
-translate([52-22-60-5,67-140+10,-10])rotate([0,0,90])color("gray")import("96_microwell_plate.STL.stl");
+translate([0,-360,-95])rotate([90,-0,-90])openmv_nice_assy_stroboscope();
+translate([160-285,20-35,-3])rotate([0,180,90])
+//color("pink")
+washbowl_assy();
+translate([52-22-60-5,67-140+10,-10])rotate([0,0,90])color("grey")import("96_microwell_plate.STL.stl");
+color("darkgrey")
 microwell_plate_guide();
 }
 }
@@ -4271,9 +4276,9 @@ microwell_plate_guide();
 
 module washbowl_assy(){
 //washbowl_shim();
-washbowl_watervacinput();
-translate([0,0,1])rotate([0,0,180])drypad();
-translate([0,3,0-4])washbowl_1tip();
+color("darkgrey")washbowl_watervacinput();
+color("darkgrey")translate([0,0,1])rotate([0,0,180])drypad();
+color("darkgrey")translate([0,3,0-4])washbowl_1tip();
 }
 
 
@@ -5221,6 +5226,8 @@ module zbed_smz_components(shim,modshim){
  }
 if (modshim == 10){
  /* the bed levelers */
+ translate([25-30-6,7.5+7,16.5+17])rotate([0,90,0])color("gainsboro")slidedeck_adjust_wheel();
+ translate([25-30-6,7.5+7,16.5+17+218])rotate([0,90,0])color("gainsboro")slidedeck_adjust_wheel();
  color("gainsboro"){
  translate([25,7.5,16.5])rotate([0,-90,0])bed_leveler_better_lm8uu();
  translate([25,7.5,16.5+218])rotate([0,-90,0])bed_leveler_better_lm8uu();
@@ -5236,6 +5243,8 @@ if (modshim == 10){
 
 if (modshim == 0){
  /* the bed levelers */
+ translate([25-30-6,7.5+7,16.5+17])rotate([0,90,0])color("gainsboro")slidedeck_adjust_wheel();
+ translate([25-30-6,7.5+7,16.5+17+218])rotate([0,90,0])color("gainsboro")slidedeck_adjust_wheel();
  color("gainsboro"){
  translate([25,7.5,26.5])rotate([0,-90,0])bed_leveler_better_lm8uu();
  translate([25,7.5,26.5+218])rotate([0,-90,0])bed_leveler_better_lm8uu();
@@ -5423,8 +5432,7 @@ module zbed_smz(){
  }
  //right here also this is part of zbed modules
  color("gainsboro")translate([0,0,-10])laser_zbed(144);
- color("gainsboro")translate([25,130+120,118+10])rotate([0,-90,0])z_encoder_clamp_wiper();
-
+ //color("gainsboro")translate([25,130+120,118+10])rotate([0,-90,0])z_encoder_clamp_wiper();
 
  //translate([27,-175,40])rotate([0,0,90])tslot20innerbracket();
  translate([0,18-5,0]){
@@ -5653,7 +5661,7 @@ translate([75,-55+464,9.5])tslot20(400);
 module zbed_assy(z){
 translate([0,0,z]){
 zbed_smz();
-//translate([0,0,-10])wash_and_strobparts();
+translate([0,0,-10])wash_and_strobparts();
 //translate([145+25+25,315-65,172-10])rotate([90,90,0])tslot20(200);
 //laser_zbed(144);
 //translate([0,0,-10])laser_zbed(144);
@@ -6827,7 +6835,7 @@ translate([-21+35-30,-21+5.5+30,3+6-20])cylinder(r=3.7/2,h=200);
 //begin Other motor mount
 translate([-21-29+0.5+49.5,-21-1+23,3-48+45])filament_driver_assy_motormount();
 /*
-color("pink")difference(){
+color("gainsboro")difference(){
 //color([cc,cc,cc])
 translate([-21-29+0.5,-21-1,3-48])cube([5,42,48]);
 translate([-21-29+0.5-2,-21+9,3-48+9])rotate([0,90,0])cylinder(r=4.7/2,h=30);
@@ -7496,8 +7504,8 @@ module openmv_connector(w=2.5) {
       scale([1.7,1])
       cylinder(r=5, h=w);
     rotate([90])
-      translate([4,0])
-      cylinder(r=1.6, h=w, $fn=7);
+      translate([4,0,-2])
+      cylinder(r=1.6, h=w+10, $fn=7);
     translate([-11.5, -3, -5])
     cube([10,4,10]);
   }
@@ -7511,7 +7519,7 @@ module openmv_connectors() {
 
 module justclip(){
 translate([0, 15]) rotate([90]) difference() {
-  color("blue")
+  //color("blue")
   cube([15, 15, 15]);
   //translate([0,4.5])
   //cube([10, 6.2, 15]);

@@ -192,21 +192,65 @@
 		{"time":"1h 51m 25s","cost":0.7, "usedfilament_gm":"20.06","sku":"lm8uu_smz_glider","quantity":4, "stl":"lm8uu_smz_glider.stl","dxf":"","png":"","print":0,"image":"BOM_module_slide_deck_lm8uu_smz_glider.PNG"},
 		{"time":"1h 48m 36s","cost":0.69, "usedfilament_gm":"19.79","sku":"zbedslot_516_smz_zbed","quantity":2, "stl":"zbedslot_516_smz_zbed.stl","dxf":"","png":"","print":0,"image":"BOM_module_slide_deck_zbedslot_516_smz_zbed.PNG"},
 		{"time":"32m 49s","cost":0.15, "usedfilament_gm":"4.30","sku":"bed_leveler_better_lm8uu","quantity":1, "stl":"bed_leveler_better_lm8uu.stl","dxf":"","png":"","print":0,"image","BOM_module_slide_deck_bed_leveler_better_lm8uu.PNG"},
-		{"time":"1h 17m","cost":0.43, "usedfilament_gm":"4.10","sku":"z_encoder_clamp_wiper","quantity":1, "stl":"z_encoder_clamp_wiper.stl","dxf":"","png":"","print":0,"image","BOM_module_slide_deck_z_encoder_clamp_wiper.PNG"},
-
-
-
-		{"time":"1h 40m 5s","cost":0.48, "usedfilament_gm":"13.61","sku":"compact_extruder","quantity":1, "stl":"compact_extruder.stl","dxf":"","png":"thing_275593_compact_bowden_extruder.PNG","print":0,"comments":"Compact direct drive bowden extruder for 1.75mm filament, https://www.thingiverse.com/thing:275593","link":"https://www.thingiverse.com/thing:275593"},
-		{"time":"1h 22m 44s","cost":0.42, "usedfilament_gm":"11.93","sku":"cable_support","quantity":1, "stl":"cable_support.stl","dxf":"","png":"","print":0},
-		{"time":"37m 35s","cost":0.24, "usedfilament_gm":"6.97","sku":"cable_support_lid","quantity":1, "stl":"cable_support_lid.stl","dxf":"","png":"","print":0},
-		{"time":"48m 38s","cost":0.23, "usedfilament_gm":"6.44","sku":"tslot20innerbracket","quantity":1, "stl":"tslot20innerbracket.stl","dxf":"","png":"","print":0}
-
+		{"time":"1h 17m","cost":0.43, "usedfilament_gm":"4.10","sku":"z_encoder_clamp_wiper","quantity":1, "stl":"z_encoder_clamp_wiper.stl","dxf":"","png":"","print":0,"image","BOM_module_slide_deck_z_encoder_clamp_wiper.PNG"}
 	]},
 
 	{"vendor":"Ponoko", "openscad":{"file":"mod_parts.scad", "function":"laser_zbed(144)"},
 "images":["BOM_module_slide_deck_laser_zbed.PNG"],
 	"lineitems":[
 		{"cost":27.93, "sku":"acrylic_laser_zbed_383.5_350_ponoko_0.177_inches","quantity":1, "thick":"0.177 inches","stl":"", "svg":"acrylic_laser_zbed_383.5_350_ponoko.svg","web":"http://www.ponoko.com", "name":"Acrylic - Black0.177 inchesP2 - 15.100 inches long x 15.100 inches wide","comments":"Material and color is flexible"}
+	]
+	},
+	{"vendor":"HTS Resources", "openscad":{"file":"mod_parts.scad", "function":"zbed_smz()"},
+"images":["BOM_module_slide_deck.PNG","BOM_module_slide_deck_lm8uu_smz_glider.PNG","BOM_module_slide_deck_zbedslot_516_smz_zbed.PNG","BOM_module_slide_deck_bed_leveler_better_lm8uu.PNG","BOM_module_slide_deck_slidedeck_adjust_wheel.PNG"],
+	"lineitems":[
+		{"time":"15h 41m 8s","cost":5.45, "usedfilament_gm":"155.79","sku":"bom_zbed","quantity":1, "stl":"bom_zbed.stl","dxf":"","png":"","print":1},
+		{"time":"1h 51m 25s","cost":0.7, "usedfilament_gm":"20.06","sku":"lm8uu_smz_glider","quantity":4, "stl":"lm8uu_smz_glider.stl","dxf":"","png":"","print":0,"image":"BOM_module_slide_deck_lm8uu_smz_glider.PNG"},
+		{"time":"1h 48m 36s","cost":0.69, "usedfilament_gm":"19.79","sku":"zbedslot_516_smz_zbed","quantity":2, "stl":"zbedslot_516_smz_zbed.stl","dxf":"","png":"","print":0,"image":"BOM_module_slide_deck_zbedslot_516_smz_zbed.PNG"},
+		{"time":"32m 49s","cost":0.15, "usedfilament_gm":"4.30","sku":"bed_leveler_better_lm8uu","quantity":1, "stl":"bed_leveler_better_lm8uu.stl","dxf":"","png":"","print":0,"image","BOM_module_slide_deck_bed_leveler_better_lm8uu.PNG"},
+		{"time":"32m 49s","cost":0.15, "usedfilament_gm":"4.30","sku":"bed_leveler_better_lm8uu","quantity":1, "stl":"bed_leveler_better_lm8uu.stl","dxf":"","png":"","print":0,"image","BOM_module_slide_deck_bed_leveler_better_lm8uu.PNG"},
+		{"time":"10m 21s","cost":0.05, "usedfilament_gm":"1.5","sku":"slidedeck_adjust_wheel","quantity":1, "stl":"slidedeck_adjust_wheel.stl","dxf":"","png":"","print":0,"image","BOM_module_slide_deck_slidedeck_adjust_wheel.PNG"}
+	]
+	},
+	{"vendor":"HTS Resources", "openscad":{"file":"mod_parts.scad", "function":"wash_and_strobparts()"},
+"images":["BOM_module_slide_deck_wash_dry_station.PNG","BOM_module_slide_deck_wash_dry_station_washbowl_1tip.PNG","BOM_module_slide_deck_wash_dry_station_washbowl_watervacinput.PNG","BOM_module_slide_deck_wash_dry_station_microwell_plate_guide.PNG","BOM_module_slide_deck_wash_dry_station_microwell_plate_guide_microwellplate.PNG"],
+	"lineitems":[
+		{"time":"6h 53m 55s","cost":2.22, "usedfilament_gm":"63.45","sku":"bom_washdry","quantity":1, "stl":"bom_washdry.stl","dxf":"","png":"","print":1},
+		{"time":"1h 46m 11s","cost":0.57, "usedfilament_gm":"16.16","sku":"washbowl_1tip","quantity":1, "stl":"washbowl_1tip.stl","dxf":"","png":"","print":0,"image":"BOM_module_slide_deck_wash_dry_station_washbowl_1tip.PNG"},
+		{"time":"3h 29m 28s","cost":1.07, "usedfilament_gm":"30.62","sku":"washbowl_watervacinput","quantity":1, "stl":"washbowl_watervacinput.stl","dxf":"","png":"","print":0,"image":"BOM_module_slide_deck_wash_dry_station_washbowl_watervacinput.PNG"},
+		{"time":"3h 29m 28s","cost":1.07, "usedfilament_gm":"30.62","sku":"drypad","quantity":1, "stl":"drypad.stl","dxf":"","png":"","print":0,"image":"BOM_module_slide_deck_wash_dry_station_drypad.PNG"},
+		{"time":"31m 56s","cost":0.17, "usedfilament_gm":"4.98","sku":"microwell_plate_guide","quantity":1, "stl":"microwell_plate_guide.stl","dxf":"","png":"","print":0,"image":"BOM_module_slide_deck_wash_dry_station_microwell_plate_guide.PNG"}
+	]
+	},
+	{"vendor":"Cole-Parmer", "openscad":{"file":"mod_parts.scad", "function":""},
+"images":["tubing.PNG"],
+	"lineitems":[
+		{"cost":51, "sku":"Platinum-Cured Silicone Tubing, 1/8inchID x 1/4inchOD, 25ft per pack","quantity":1, "stl":"", "web":"https://www.coleparmer.com/i/cole-parmer-platinum-cured-silicone-tubing-1-8-id-x-1-4-od-25-ft-pack/9580205?pubid=SI", "name":"Stainless Steel GEAR MK7/MK8 Stainless Steel 10cm*10cm*10cm","comments":""},
+		{"cost":31, "sku":"Cole-Parmer Platinum-Cured Silicone Tubing, 1/16inchID x 1/8inchOD, 25ft per pack","quantity":1, "stl":"", "web":"https://www.coleparmer.com/i/cole-parmer-platinum-cured-silicone-tubing-1-16-id-x-1-8-od-25-ft-pack/9580202", "name":"Platinum-Cured Silicone Tubing, 1/16inchID x 1/8inchOD","comments":"Sources are many but not always reliable"}
+	]
+	},
+	{"vendor":"HTS Resources", "openscad":{"file":"mod_parts.scad", "function":"openmv_nice_assy_stroboscope()"},
+"images":["BOM_module_slide_deck_openmv_nice_assy_stroboscope.PNG"],
+	"lineitems":[
+		{"time":"5h 49m 10s","cost":1.9, "usedfilament_gm":"54.29","sku":"bom_openmv_camera","quantity":1, "stl":"bom_openmv_camera.stl","dxf":"","png":"","print":1},
+		{"time":"24m 42s","cost":0.14, "usedfilament_gm":"4.03","sku":"filtermount","quantity":1, "stl":"filtermount.stl","dxf":"","png":"","print":0,"image":"BOM_module_slide_deck_openmv_nice_assy_stroboscope_filtermount.PNG","comments":"This mount fits on M12 lenses. It is a bandpass filter."},
+		{"time":"43m 2s","cost":0.2, "usedfilament_gm":"5.74","sku":"openmv_camera_base_justclip_otherend","quantity":1, "stl":"openmv_camera_base_justclip_otherend.stl","dxf":"","png":"","print":0,"image":""},
+		{"time":"13m 23s","cost":0.07, "usedfilament_gm":"1.97","sku":"connectionarms2","quantity":2, "stl":"connectionarms2.stl","dxf":"","png":"","print":0},
+		{"time":"1h 42m 46s","cost":0.56, "usedfilament_gm":"16.13","sku":"openmv_camera_base","quantity":1, "stl":"openmv_camera_base.stl","dxf":"","png":"","print":0},
+		{"time":"14m 34s","cost":0.09, "usedfilament_gm":"2.52","sku":"OpenMV_rev_6_Camera_Bottom_cover","quantity":1, "stl":"OpenMV_rev_6_Camera_Bottom_cover.stl","dxf":"","png":"","print":0},
+		{"time":"18m 45s","cost":0.10, "usedfilament_gm":"2.98","sku":"openmv_camera_lensmount_lensepart","quantity":1, "stl":"openmv_camera_lensmount_lensepart.stl","dxf":"","png":"","print":0, "comments":"You screw the M12 lens in here"},
+		{"time":"38m 36s","cost":0.17, "usedfilament_gm":"4.99","sku":"m12lens_screwshim_spacer","quantity":1, "stl":"m12lens_screwshim_spacer.stl","dxf":"","png":"","print":0, "comments":"The openmv_camera_lensmount_lensepart fits inside and you can adjust its distance from the image sensor. So it makes it possible to work with different focal distance M12 lenses"}
+	]
+	},
+	{"vendor":"HTS Resources", "openscad":{"file":"mod_parts.scad", "function":"openmv_camera_mnt_zbed()"},
+"images":["BOM_module_slide_deck_openmv_openmv_camera_mnt_zbed.PNG","BOM_module_slide_deck_openmv_openmv_camera_mnt_zbed_underside_view.PNG"],
+	"lineitems":[
+		{"time":"1h 37m 28s","cost":0.59, "usedfilament_gm":"16.86","sku":"openmv_camera_mnt_zbed","quantity":1, "stl":"openmv_camera_mnt_zbed.stl","dxf":"","png":"","print":1}
+	]
+	}
+
+
+
 
 
 
@@ -214,3 +258,4 @@
 
 ]
 }
+

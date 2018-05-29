@@ -29,7 +29,7 @@ outside_frame(bcl,cl);
 zencoder_assy();
 xshuttle_assy(x,y);
 filament_driver_assy();
-//y_encoder_support(60);
+y_encoder_support(60);
 //color("pink")zbed_smz();
 //color("pink")
 zbed_assy(0);

@@ -22,8 +22,6 @@ y_encoder_support(60);
 // xymotor_assy();
 
 pcb_panels();
-
-
 gantry();
 //gantry_nomenclature();
 outside_frame(bcl,cl);
@@ -32,6 +30,8 @@ xshuttle_assy(x,y);
 filament_driver_assy();
 y_encoder_support(60);
 zbed_assy(0);
+
+electronics_setup();
 
 
 

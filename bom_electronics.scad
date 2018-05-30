@@ -6,7 +6,7 @@ use<writescad/write.scad>
 
 //atx_power_connect_assy();
 
-syringe_pcb_holder_placeholder();
+//syringe_pcb_holder_placeholder();
 /*
 syringe_pcb_holder_cover();
 syringe_pcb_holder_back();
@@ -19,9 +19,31 @@ syringe_pcb_holder();
 //bom_controlpanel();
 
 
+//bananajackpanel();
+//liquidlevel_pumps_pcb();
 
+//translate([-78,-116,-400+3])rotate([90,0,0])atx_power_connect_assy();
+//translate([28,21,5])conveyer_panel_pcb_holder();
+//translate([2,0,12])
+//color("pink")
+//usbs_socket_alu_support_lid_usbs_cover();
+//usbs_socket_alu_support_lid_usbs_simplier();
 
+//labbot3d_electronics_configuration();
 
+outside_frame(bcl,cl);
+pcb_panels();
+/*
+gantry();
+//gantry_nomenclature();
+outside_frame(bcl,cl);
+zencoder_assy();
+xshuttle_assy(x,y);
+filament_driver_assy();
+y_encoder_support(60);
+zbed_assy(0);
+electronics_setup();
+*/
 /*
 gantry();
 pcb_panels();
@@ -153,8 +175,11 @@ translate([240,-83,0])amplifier_brd_holder();
 translate([433,-103,0])rotate([0,0,90])5stepper_brd_holder();
 translate([610,100,7])rotate([0,180,90])atzeeg_mount_to_plate();
 */
-
 }
+
+
+
+
 
 module BOM_conveyer_solenoids(){
 translate([-20,20,-5])color("black")rotate([0,0,0])mirror([0,1,0])write("BOM_conveyer_solenoids",h=8);

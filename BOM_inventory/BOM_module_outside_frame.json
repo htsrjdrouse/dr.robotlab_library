@@ -226,7 +226,7 @@
 "images":["tubing.PNG"],
 	"lineitems":[
 		{"cost":51, "sku":"Platinum-Cured Silicone Tubing, 1/8inchID x 1/4inchOD, 25ft per pack","quantity":1, "stl":"", "web":"https://www.coleparmer.com/i/cole-parmer-platinum-cured-silicone-tubing-1-8-id-x-1-4-od-25-ft-pack/9580205?pubid=SI", "name":"Stainless Steel GEAR MK7/MK8 Stainless Steel 10cm*10cm*10cm","comments":""},
-		{"cost":31, "sku":"Cole-Parmer Platinum-Cured Silicone Tubing, 1/16inchID x 1/8inchOD, 25ft per pack","quantity":1, "stl":"", "web":"https://www.coleparmer.com/i/cole-parmer-platinum-cured-silicone-tubing-1-16-id-x-1-8-od-25-ft-pack/9580202", "name":"Platinum-Cured Silicone Tubing, 1/16inchID x 1/8inchOD","comments":"Sources are many but not always reliable"}
+		{"cost":31, "sku":"Cole-Parmer Platinum-Cured Silicone Tubing, 1/16inchID x 1/8inchOD, 25ft per pack","quantity":1, "stl":"", "web":"https://www.coleparmer.com/i/cole-parmer-platinum-cured-silicone-tubing-1-16-id-x-1-8-od-25-ft-pack/9580202", "name":"Platinum-Cured Silicone Tubing, 1/16inchID x 1/8inchOD","comments":""}
 	]
 	},
 	{"vendor":"HTS Resources", "openscad":{"file":"mod_parts.scad", "function":"openmv_nice_assy_stroboscope()"},
@@ -247,7 +247,53 @@
 	"lineitems":[
 		{"time":"1h 37m 28s","cost":0.59, "usedfilament_gm":"16.86","sku":"openmv_camera_mnt_zbed","quantity":1, "stl":"openmv_camera_mnt_zbed.stl","dxf":"","png":"","print":1}
 	]
+	},
+	{"vendor":"M12 Lenses", "openscad":{"file":"mod_parts.scad", "function":"openmv_nice_assy_stroboscope()"},
+"images":[""],
+	"lineitems":[
+		{"cost":3, "sku":"PT-LH008P","quantity":1, "stl":"", "web":"http://www.m12lenses.com/Plastic-M12-Lens-Holder-p/pt-lh008p.htm", "name":"Plastic M12 Lens Holder 18mm Hole spacing","comments":"","image":"m12_lens_holder.PNG"},
+		{"cost":13.23, "sku":"PT-2520","quantity":1, "stl":"", "web":"http://www.m12lenses.com/25mm-F2-0-Board-Lens-p/pt-2520.htm", "name":"25mm, F2.0 Board Lens","comments":"","image":"25mm_focal_length_lens.PNG"}
+	]
+	},
+	{"vendor":"OpenMV", "openscad":{"file":"mod_parts.scad", "function":"openmv_nice_assy_stroboscope()"},
+"images":[""],
+	"lineitems":[
+		{"cost":65, "sku":"OpenMV Cam M7","quantity":1, "stl":"", "web":"https://openmv.io/collections/cams/products/openmv-cam-m7", "name":"OpenMV Cam M7","comments":"OpenMV camera","image":"openmv.PNG"},
+		{"cost":35, "sku":"WiFi Shield","quantity":1, "stl":"", "web":"https://openmv.io/collections/shields/products/wifi-shield", "name":"WiFi Shield for OpenMV camera","comments":"","image":"openmv_wifi_shield.PNG"}
+	]
+	},
+
+		{"vendor":"HTS Resources", "openscad":{"file":"bom_electronics.scad", "function":"electronics_setup()"}, "images":["bom_controlpanel_fritzing.PNG",""],"fritzing":"BOM_controlpanel.fzz","arduino":"","gerber":"BOM_controlpanel_drill.zip",
+	"lineitems":[
+		{"cost":4.9, "sku":"1085","quantity":1, "stl":"", "web":"", "name":"FR-4 TG130 2 layers","comments":"This is used with the BOM_controlpanel","fritzing":"BOM_controlpanel.fzz","arduino":"","gerber":"BOM_controlpanel_drill.zip","mfg":"Seeed"}
+	]},
+	{"vendor":"HTS Resources", "openscad":{"file":"mod_parts.scad", "function":"bom_controlpanel()"},
+"images":["BOM_module_pcb_panels_bom_controlpanel.PNG"],
+	"lineitems":[
+		{"time":"41m 34s","cost":0.25, "usedfilament_gm":"7.06","sku":"bom_controlpanel","quantity":1, "stl":"bom_controlpanel.stl","dxf":"","png":"","print":1,"images":"BOM_module_pcb_panels_bom_controlpanel.PNG"}
+	]
+	},
+	{"vendor":"Amazon", "openscad":{"file":"mod_parts.scad", "function":"bom_controlpanel()"},
+"images":["BOM_module_pcb_panels_bom_controlpanel.PNG"],
+	"lineitems":[
+		{"cost":2, "sku":"red push button","quantity":1, "stl":"", "web":"https://openmv.io/collections/cams/products/openmv-cam-m7", "name":"SODIAL(R) Tactile Push Button Switch Momentary Tact LED 12X12 Round Cap red","comments":"Push button for kill motion controller","image":"pushbutton.PNG"},
+		{"cost":1, "sku":"10 kOhm resistor","quantity":3, "stl":"", "web":"https://www.amazon.com/uxcell%C2%AE-250V-Axial-Carbon-Resistors/dp/B0087ZDQQ0/ref=sr_1_2?s=industrial&ie=UTF8&qid=1527637926&sr=1-2&keywords=10k+ohm+resistor+1%2F4+watt", "name":"uxcell® 100 x 1/4W 250V 10K Ohm Axial Lead Carbon Film Resistors","comments":"","image":""},
+		{"cost":1, "sku":"red 5mm LED","quantity":1, "stl":"", "web":"https://www.amazon.com/100pcs-Ultra-Bright-Emitting-Diffused/dp/B01GE4WHK6/ref=sr_1_2?s=industrial&ie=UTF8&qid=1527638077&sr=1-2&keywords=red+led&dpID=31OPACMMn2L&preST=_SX342_QL70_&dpSrc=srch", "name":"Ultra Bright 5mm LED Light Emitting Diode Diffused Red","comments":"","image":""},
+		{"cost":1, "sku":"green 5mm LED","quantity":1, "stl":"", "web":"https://www.amazon.com/100pcs-Ultra-Bright-Emitting-Diffused/dp/B01GE4WGTS/ref=sr_1_1?s=industrial&ie=UTF8&qid=1527638250&sr=1-1&keywords=Ultra+Bright+5mm+LED+Light+Emitting+Diode+Diffused+Green", "name":"Ultra Bright 5mm LED Light Emitting Diode Diffused Green","comments":"","image":""}
+	]
+	},
+
+		{"vendor":"HTS Resources", "openscad":{"file":"bom_electronics.scad", "function":"syringe_pcb_holder()"}, "images":["BOM_module_pcb_panels_syringe_pcb_holder.PNG"],"fritzing":"BOM_10pin_syringe.fzz","arduino":"","gerber":"BOM_10pin_syringe_silkTop.zip",
+	"lineitems":[
+		{"cost":4.9, "sku":"1085","quantity":1, "stl":"", "web":"", "name":"FR-4 TG130 2 layers","comments":"","fritzing":"BOM_10pin_syringe.fzz","arduino":"","gerber":"BOM_controlpanel_drill.zip","mfg":"Seeed"}
+	]},
+	{"vendor":"HTS Resources", "openscad":{"file":"mod_parts.scad", "function":"syringe_pcb_holder()"},
+"images":["BOM_module_pcb_panels_syringe_pcb_holder.PNG"],
+	"lineitems":[
+		{"time":"2h 14m 50s","cost":0.75, "usedfilament_gm":"21.32","sku":"syringe_pcb_holder_set","quantity":1, "stl":"syringe_pcb_holder_set.stl","dxf":"","png":"","print":1,"images":""}
+	]
 	}
+
 
 
 

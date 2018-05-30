@@ -12,3 +12,4 @@ use<writescad/write.scad>
 openmv_nice_assy_stroboscope();
 
 
+

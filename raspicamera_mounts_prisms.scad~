@@ -26,9 +26,9 @@ color("red")adafruit_pantilt_connectionblock();
 */
 
 color("orange")translate([0,0,0])raspiholder();
+translate([96.6,-10,21.3])rotate([180,0,180])standoffkey_prismmountmod_bigger_rails();
 /*
 color("pink")cover_rails();
-translate([96.6,-10,21.3])rotate([180,0,180])standoffkey_prismmountmod_bigger_rails();
 */
 }
 

@@ -9,5 +9,8 @@ use<writescad/write.scad>
 //color("lime")
 //openmv_set();
 //translate([-85,115,0.39])rotate([0,0,90])import("openmv/files/OpenMV_rev_6_Camera_Bottom_cover.stl");
+openmv_nice_assy_stroboscope();
 
+
+//stroboscope_assy();
 

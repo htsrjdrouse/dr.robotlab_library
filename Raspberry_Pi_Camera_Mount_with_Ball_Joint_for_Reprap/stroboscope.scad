@@ -23,7 +23,7 @@ module stroboscope_assy(){
 stroboscope_base();
 stroboscope();
 stroboscope_wall();
-rotate([0,0,0])stroboscopelid();
+//rotate([0,0,0])stroboscopelid();
 }
 
 module ledmount_magnet(){

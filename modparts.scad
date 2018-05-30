@@ -112,6 +112,8 @@ translate([10+10-60,105+30+5+20+0.5-50,-50+1])rotate([0,90,0])cylinder(r=2.9/2,h
 
 
 module pcb_panels(){
+
+col = "lightgrey";
 coverpanel_screw();
 //translate([-9,-9,-14+60])screen_cover();
 //translate([74,10,-18])rotate([-90,0,0])kill_button_leds_panelmount();
@@ -132,6 +134,7 @@ translate([0,-7,0])conveyer_pcb_holder_backsupport();
 
 //This is the banana jack panel
 translate([440,200-0.8,-63])rotate([90,0,-90]){
+color(col)
 translate([28,21,5])bananajackpanel();
 //translate([40-12.5,-40+61,2])syringe_pcb_holder();
 //translate([40-12.5,-40+61,6])syringe_pcb_holder_cover();
@@ -139,6 +142,7 @@ translate([28,21,5])bananajackpanel();
 
 //This is the liquid level pcb
 translate([440,200-0.8+162,-63])rotate([90,0,-90]){
+color(col)
 translate([28,21,5])liquidlevel_pumps_pcb();
 
 //translate([40-12.5,-40+61,2])syringe_pcb_holder();
@@ -146,16 +150,20 @@ translate([28,21,5])liquidlevel_pumps_pcb();
 }
 
 //This is the power connect panel
+color(col)
 translate([424,0,-63])rotate([0,180,0])atx_power_connect_assy();
 
 
 //This is the conveyer pcb part
 translate([49,200-0.8+162+50-6,-63.5])rotate([90,0,-0]){
+color(col)
 translate([28,21,5])conveyer_panel_pcb_holder();
 }
 
 //This is the syringe panel
-translate([219,200-0.8+162+50-6-403,-2.2])rotate([-90,0,0]){
+
+color("pink")
+translate([219,200-0.8+162+50-6-403+3,-2.2+3.5])rotate([-90,0,0]){
 translate([28,21,5])syringe_pcb_holder_back();
 translate([40-12.5,-40+61,2])syringe_pcb_holder();
 translate([40-12.5,-40+61,6])syringe_pcb_holder_cover();
@@ -163,17 +171,20 @@ translate([40-12.5+53,-40+61,2])syringe_pcb_holder_placeholder();
 }
 
 //This is the control panel
+color(col)
 translate([69.2,13,-52])rotate([90,0,0])bom_controlpanel();
 
 //usbs_socket
 translate([8+12.5,17.5,-61.4])rotate([90,180,-90]){
 //color("gainsboro")
+color(col)
 translate([2,0,12])usbs_socket_alu_support_lid_usbs_simplier();
 }
 
 //open slot for hacking
 translate([8+12.5,17.5+140,-61.4])rotate([90,180,-90]){
 //color("gainsboro")
+color(col)
 translate([2,0,12])usbs_socket_alu_support_lid_usbs_cover();
 }
 
@@ -1998,7 +2009,7 @@ color(col)translate([0,36-25,0])openmv_camera_lensmount();
 color(col)translate([-200,36-25+1.5,4])rotate([0,180,0])openmv_camera_base();
 color(col)translate([-130,80+39,14+3])translate([5+25,-10+6-15-2+2,-1.5])rotate([0,0,0])m12lens_screwshim(12,21.2);
 color(col)translate([-130,80+39,10.35])translate([5+25,-10+6-15-2+2,-1.5])rotate([0,0,0])m12lens_screwshim_spacer(12,21.95);
-color(col)translate([0,12,-8])rotate([0,0,0])import("openmv/files/OpenMV_rev_6_Camera_Bottom_cover.stl");
+//color(col)translate([0,12,-8])rotate([0,0,0])import("openmv/files/OpenMV_rev_6_Camera_Bottom_cover.stl");
 color(col)translate([-100,100,25+10])filtermount();
 color(col)translate([-111.7,30+4.5,3])rotate([0,90,90])connectionarms2(0);
 color(col)translate([-111.7+2.5,45,3])rotate([0,90,-90])connectionarms2(0);
@@ -2149,7 +2160,7 @@ translate([92,410-10,-52])rotate([90,0,0])atx_power_socket_24pin();
 translate([92+34,410-10,-33])rotate([90,0,0])atx_power_socket_8pin();
 difference(){
 translate([92+34-53,410-10,-53])rotate([90,0,0])cube([110,43,3]);
-translate([92+34-53+6,410-10,-53+9])rotate([90,0,0])cube([110-18,23,3]);
+translate([92+34-53+6,410-10+1,-53+9])rotate([90,0,0])cube([110-18,23,3+5]);
 translate([92+34-53+6-2,410-10,-53+4])rotate([90,0,0])cylinder(r=3.7/2,h=30);
 translate([92+34-53+6-2,410-10,-53+4+35])rotate([90,0,0])cylinder(r=3.7/2,h=30);
 //translate([92+34-53+6-2+50,410-10,-53+4])rotate([90,0,0])cylinder(r=3.7/2,h=30);
@@ -4254,7 +4265,7 @@ translate([60+16+i+52,109+7-3,80])cylinder(r=4.7/2,h=200);
 
 
 module wash_and_strobparts(){
-color("pink")openmv_camera_mnt_zbed();
+color("grey")openmv_camera_mnt_zbed();
 color("silver"){laser_zbed_support_strobend();
 translate([219,-0,282])rotate([0,180,0])laser_zbed_support_strobend();
 translate([8,387,282])rotate([0,180,180])laser_zbed_support_strobend();

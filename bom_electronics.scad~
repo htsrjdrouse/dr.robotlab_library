@@ -6,12 +6,29 @@ use<writescad/write.scad>
 
 //atx_power_connect_assy();
 
+syringe_pcb_holder_cover();
+/*
+syringe_pcb_holder_placeholder();
+syringe_pcb_holder_back();
+syringe_pcb_holder();
+ translate([-0,-30,0])syringe_pcb_holder();
+ translate([60,-30,0])syringe_pcb_holder_cover();
+*/
+//conveyer_panel_pcb_holder();
+//translate([69.2,13,-52])rotate([90,0,0])
+//bom_controlpanel();
+
+
+
+
+
+/*
 gantry();
 pcb_panels();
  outside_frame(tcl,thcl);
 // labbot3d_electronics_configuration();
 electronics_setup();
-
+*/
 
 //electronics_stl();
 // labbot3d_electronics_configuration();

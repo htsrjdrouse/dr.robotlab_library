@@ -21,6 +21,7 @@ y_encoder_support(60);
 //xshuttle_assy(x=20,y=-30);
 // xymotor_assy();
 
+pcb_panels();
 
 
 gantry();
@@ -30,9 +31,13 @@ zencoder_assy();
 xshuttle_assy(x,y);
 filament_driver_assy();
 y_encoder_support(60);
+zbed_assy(0);
+
+
+
+
 //color("pink")zbed_smz();
 //color("pink")
-zbed_assy(0);
 
 //conveyer_connector_tslots();
 //conveyer_connector_tslots_nomenclature();

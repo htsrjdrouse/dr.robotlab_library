@@ -7482,36 +7482,73 @@ cylinder(r=diam/2,h=l);
 //translate([28,21,5])syringe_pcb_holder_back();
 
 module syringe_pcb_holder_for_syringemodule(){
-difference(){
+color("gainsboro")difference(){
 union(){
 translate([-0,0,20])solenoid_endstop_brd(49.5,29);
 translate([-25,6,20])cube([20,20,4]);
 }
 translate([-16.5,16,20-1])cylinder(r=5.4/2,h=20);
 }
-translate([-0,0,20])cube([36+12,31,1.5]);
+//translate([-0,0,20])cube([36+12,31,1.5]);
 
 }
 
 module nextgen_syringe10ml_assy(){
 
+
 //board mount here
-syringe_pcb_holder_for_syringemodule();
+color("gainsboro")syringe_pcb_holder_for_syringemodule();
 
-
-color("lightgrey")
+color("gainsboro")
 translate([0,98,0])syringe10mlmount_plungerfix_assy();
+
+//here is the luer lock
+color("white")translate([-70+8+27-6,178-3,30-5+10])rotate([90,0,0])cylinder(r=8/2,h=3);
+color("white")translate([-70+8+27-6,178,30-5+10])rotate([90,0,0])cylinder(r=12/2,h=3);
+color("white")translate([-70+8+27-6,178+3,30-5+10])rotate([90,0,0])cylinder(r=8/2,h=3);
+//end luer lock
+//tubing from valve to syringe
+color("lightblue")translate([-70+8+27-6,178+4,30-5+10])
+{
+for(i=[0:12]){translate([0,i/8,0])sphere(r=3.175/2,$fn=30);}
+for(i=[0:232]){translate([-i/30,i/8+12/8,i/7.75])sphere(r=3.175/2,$fn=30);}
+for(i=[0:80]){translate([-7.75,i/8+12/8+232/8,232/8+1])sphere(r=3.175/2,$fn=30);}
+}
+//end tubing
+//valve 1 direction tubing
+color("lightblue")translate([-70+8+27-6,178+4,30-5+10])
+{
+for(i=[0:200]){translate([-18-i/2,50,30])sphere(r=3.175/2,$fn=30);}
+}
+//end valve 1 direction tubing
+//valve 2 direction tubing
+color("lightblue")translate([-70+8+27-6,178+4,30-5+10])
+{
+for(i=[0:800]){translate([-7.75,i/8+12/8+232/8+30,232/8+1])sphere(r=3.175/2,$fn=30);}
+}
+
+
+//end valve 2 direction tubing
+translate([-70+8,-80,30-5])rotate([-90,0,0])nema17();
+color("silver")translate([-70+8,-80+40,30-5])rotate([-90,0,0])cylinder(r=8.7/2,h=200);
 translate([-41,-20+100,35])color("lightblue")rotate([0,90,90])syringe_10ml();
-color("lightgrey")translate([-56.5,200,104.45])rotate([90,90,0])syringe10ml_clipmount();
-translate([-34+5-9-3,20-3.5,3])igus_TW_04_12_slider();
-igus_slidermount_encoder_TW_04_12_motormount_assy_m8();
+color("gainsboro")translate([-56.5,200,104.45])rotate([90,90,0])syringe10ml_clipmount();
+color("gainsboro")translate([-34+5-9-3,20-3.5,3])igus_TW_04_12_slider();
+color("gainsboro")igus_slidermount_encoder_TW_04_12_motormount_assy_m8();
+
+
 translate([0,12,0]){
-sbg = 0.9;color([sbg,sbg,sbg])translate([0,-4,0])igus_TW_04_12_slider_plate();
-cbg = 0.55;color([cbg,cbg,cbg])translate([-25.75,123,-30])rotate([90,-90,0])syringeshuttle_clipbracket();
-nbg = 0.4;color([nbg,nbg,nbg])translate([-22.85,1,2.5])stepper_linear_m8nut_coupler();
+//sbg = 0.9;color([sbg,sbg,sbg])
+color("lightgrey")
+translate([0,-4,0])igus_TW_04_12_slider_plate();
+//cbg = 0.55;color([cbg,cbg,cbg])
+color("gainsboro")translate([-25.75,123,-30])rotate([90,-90,0])syringeshuttle_clipbracket();
+//nbg = 0.4;color([nbg,nbg,nbg])
+color("pink")translate([-22.85,1,2.5])stepper_linear_m8nut_coupler();
 }
 translate([-25-6.5,320,-4.6])rotate([90,0,0])tslot20(400);
 translate([-50,0,-13])valve_assy();
+
 }
 
 module openmv_connector(w=2.5) {
@@ -7660,6 +7697,7 @@ translate([58.584,4.277,-5.1])cylinder(r=3.7/2,h=90);
 module BOM_washdrypcv_kill(){
 translate([-10,30,6])color("black")rotate([0,0,0])mirror([0,0,0])write("BOM_washdrypcv_kill",h=8);
 
+color("")
 difference(){
 cube([99.3,95.7,3]);
 translate([28.235,90.424,-30])cylinder(r=3.7/2,h=50);
@@ -7671,6 +7709,7 @@ translate([91.698,4,-30])cylinder(r=3.7/2,h=50);
 
 module BOM_conveyer_pcb(){
 translate([10,30,6])color("black")rotate([0,0,0])mirror([0,0,0])write("BOM_conveyer_pcb",h=8);
+color("")
 difference(){
 cube([121,96.2,3]);
 translate([25.334,93.131,-20.1])cylinder(r=3.7/2,h=60);

@@ -372,14 +372,39 @@
 
 		{"vendor":"HTS Resources", "openscad":{"file":"modparts.scad", "function":"electronics_setup()"}, "images":["BOM_module_electronics_BOM_conveyer_solenoids.PNG","BOM_module_electronics_BOM_conveyer_solenoids_fz.PNG"],"fritzing":"BOM_conveyer_solenoids.fzz","arduino":"","gerber":"BOM_conveyer_solenoids_silkTop.zip",
 	"lineitems":[
-		{"cost":4.9, "sku":"conveyor solenoid","quantity":1, "stl":"", "web":"", "name":"FR-4 TG130 2 layers","comments":"","fritzing":"BOM_conveyer_solenoids.fzz","arduino":"","gerber":"BOM_conveyer_solenoids_silkTop.zip","mfg":"Seeed"}
+		{"cost":1, "sku":"conveyor solenoid","quantity":1, "stl":"", "web":"", "name":"FR-4 TG130 2 layers","comments":"","fritzing":"BOM_conveyer_solenoids.fzz","arduino":"","gerber":"BOM_conveyer_solenoids_silkTop.zip","mfg":"Seeed"}
 	]},
-
 		{"vendor":"Panucatt", "openscad":{"file":"modparts.scad", "function":"azteeg_controller()"}, "images":["BOM_module_electronics_BOM_azteeg.PNG"],
 	"lineitems":[
-		{"cost":120, "sku":"AX5MINI","quantity":1, "stl":"", "web":"http://www.panucatt.com/azteeg_X5_mini_reprap_3d_printer_controller_p/ax5mini.htm", "name":"Azteeg X5 mini WIFI 32BIT All-in-one Controller + 4 mechanical endstops","comments":"","images":"azteegx5mini.PNG"}
-	]}
+		{"cost":120, "sku":"AX5MINI","quantity":1, "stl":"", "web":"http://www.panucatt.com/azteeg_X5_mini_reprap_3d_printer_controller_p/ax5mini.htm", "name":"Azteeg X5 mini WIFI 32BIT All-in-one Controller + 4 mechanical endstops","comments":"","images":"azteegx5mini.PNG"},
+		{"cost":75, "sku":"VIKILCD2","quantity":1, "stl":"", "web":"http://www.panucatt.com/product_p/vikilcd2.htm", "name":"ViKi 2 Graphic LCD - Control Panel Interface","comments":"","images":"ViKi2Graphic_LCD.PNG"}
+	]},
+		{"vendor":"HTS Resources", "openscad":{"file":"modparts.scad", "function":"electronics_setup()"}, "images":["BOM_washdrypcv_kill.PNG","BOM_washdrypcv_kill_fz.PNG"],"fritzing":"BOM_washdrypcv_kill.fzz","arduino":"washdrypcv_servo_electrocaloric_kill.ino","gerber":"BOM_conveyer_solenoids_silkTop.zip",
+	"lineitems":[
+		{"cost":1, "sku":"microfluidic shield","quantity":1, "stl":"", "web":"", "name":"FR-4 TG130 2 layers","comments":"This runs the diaphragm pumps (wash, dry and pressure compensation vessel). It also runs the syringe pump valve servo. It can also halt the Azteeg.  It has connections to an electrocaloric liquid level sensor. ","fritzing":"BOM_washdrypcv_kill.fzz","arduino":"washdrypcv_servo_electrocaloric_kill.ino","gerber":"BOM_conveyer_solenoids_silkTop.zip","mfg":"Seeed"}
+	]},
+		{"vendor":"HTS Resources", "openscad":{"file":"modparts.scad", "function":"electronics_setup()"}, "images":["BOM_conveyer_pcb.PNG","BOM_conveyer_pcb_fz.PNG"],"fritzing":"BOM_conveyer_pcb.fzz","arduino":"conveyer_linearactuator_arduinomicro.ino","gerber":"BOM_conveyer_pcb_silkTop.zip",
+	"lineitems":[
+		{"cost":8, "sku":"conveyor shield","quantity":1, "stl":"", "web":"", "name":"FR-4 TG130 2 layers","comments":"This runs 5 stepper motors and also 4 solenoids. Its designed to work with the conveyor system but could be used for something else","fritzing":"BOM_conveyer_pcb.fzz","arduino":"conveyer_linearactuator_arduinomicro.ino","gerber":"BOM_conveyer_pcb_silkTop.zip","mfg":"Seeed"}
+	]},
 
+	{"vendor":"HTS Resources", "openscad":{"file":"mod_parts.scad", "function":"nextgen_syringe10ml_assy()"},
+"images":["syringe10ml_assy.PNG"],
+	"lineitems":[
+		{"time":"15h 49m 43s","cost":4.94, "usedfilament_gm":"141.19","sku":"bom_syringe pump and valve","quantity":1, "stl":"bom_syringe.stl","dxf":"","png":"","print":1,"images":"syringe10ml_assy.PNG"},
+		{"time":"35m 7s","cost":0.22, "usedfilament_gm":"6.25","sku":"syringe_pcb_holder_for_syringemodule","quantity":1, "stl":"syringe_pcb_holder_for_syringemodule.stl","dxf":"","png":"syringe10ml_assy_syringe_pcb_holder_for_syringemodule.PNG","print":1,"images":"syringe10ml_assy_syringe_pcb_holder_for_syringemodule.PNG"},
+		{"time":"1h 41m 25s","cost":0.47, "usedfilament_gm":"13.48","sku":"syringe10mlmount_plungerfix_assy","quantity":1, "stl":"syringe10mlmount_plungerfix_assy.stl","dxf":"","png":"syringe10mlmount_plungerfix_assy.PNG","print":1,"images":"syringe10mlmount_plungerfix_assy.PNG"},
+		{"time":"","cost":"", "usedfilament_gm":"","sku":"syringe10ml_clipmount","quantity":1, "stl":"syringe10ml_clipmount.stl","dxf":"","png":"","print":1,"images":"syringe10ml_clipmount.PNG"},
+		{"time":"","cost":"", "usedfilament_gm":"","sku":"igus_slidermount_encoder_TW_04_12_motormount_assy_m8","quantity":1, "stl":"igus_slidermount_encoder_TW_04_12_motormount_assy_m8.stl","dxf":"","png":"","print":1,"images":"igus_slidermount_encoder_TW_04_12_motormount_assy_m8.PNG"},
+		{"time":"","cost":"", "usedfilament_gm":"","sku":"igus_slidermount_encoder_TW_04_12_motormount_assy_m8","quantity":1, "stl":"igus_slidermount_encoder_TW_04_12_motormount_assy_m8.stl","dxf":"","png":"","print":1,"images":"igus_slidermount_encoder_TW_04_12_motormount_assy_m8.PNG"},
+		{"time":"","cost":"", "usedfilament_gm":"","sku":"valvemountplate_screwattach_smallersyringe_vertical_attach","quantity":1, "stl":"valvemountplate_screwattach_smallersyringe_vertical_attach.stl","dxf":"","png":"","print":1,"images":"valvemountplate_screwattach_smallersyringe_vertical_attach.PNG"},
+		{"time":"","cost":"", "usedfilament_gm":"","sku":"smallsyringe_valvesupportmodule_plate","quantity":1, "stl":"smallsyringe_valvesupportmodule_plate.stl","dxf":"","png":"","print":1,"images":"smallsyringe_valvesupportmodule_plate.PNG"}
+	],
+		{"time":"","cost":"", "usedfilament_gm":"","sku":"valveconnectpart","quantity":1, "stl":"valveconnectpart.stl","dxf":"","png":"","print":1,"images":"valveconnectpart.PNG"},
+		{"time":"","cost":"", "usedfilament_gm":"","sku":"igus_TW_04_12_slider_plate","quantity":1, "stl":"igus_TW_04_12_slider_plate.stl","dxf":"","png":"","print":1,"images":"igus_TW_04_12_slider_plate.PNG"},
+		{"time":"","cost":"", "usedfilament_gm":"","sku":"syringeshuttle_clipbracket","quantity":1, "stl":"syringeshuttle_clipbracket.stl","dxf":"","png":"","print":1,"images":"syringeshuttle_clipbracket.PNG"}
+
+	}
 
 
 

@@ -4,8 +4,9 @@ use<writescad/write.scad>
 //syringe_pcb_holder_for_syringemodule();
 //openmv_set();
 
-color("pink")syringe_pump_stls();
-
+//color("pink")
+//syringe_pump_stls();
+translate([-100,160,0])nextgen_syringe10ml_assy();
 
 
 module syringe_pump_stls(){

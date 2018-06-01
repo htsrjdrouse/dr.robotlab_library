@@ -18227,14 +18227,18 @@ module valve_assy(){
 //vvcl = 0.95;color([vvcl,vvcl,vvcl])translate([36,295.5,18])rotate([0,-90,90])valvemountplate_screwattach_smallersyringe_vertical_attach();
 //pcl = 0.65;color([pcl,pcl,pcl])translate([52,190,63])rotate([-90,90,0])smallsyringe_valvesupportmodule_plate();
 
-color("lightgrey")translate([52,190,63])rotate([-90,90,0])smallsyringe_valvesupportmodule_plate();
-color("lightgrey")translate([1,232,61.3])rotate([0,0,90])valveconnectpart();
+color("gainsboro")translate([52,190,63])rotate([-90,90,0])smallsyringe_valvesupportmodule_plate();
+color("black")translate([1,232,61.3])rotate([0,0,90])valveconnectpart();
+/*
+*/
 translate([7,585,-22])rotate([90,0,0]){
 color("black")translate([4,34,363])rotate([0,90,90])servo();
 color("white")translate([-6,83.5,353])rotate([0,90,90])actualvalve_for_syringe();
 }
-color("lightgrey")translate([36,295.5,18])rotate([0,-90,90])valvemountplate_screwattach_smallersyringe();
-color("lightgrey")translate([36,295.5,18])rotate([0,-90,90])valvemountplate_screwattach_smallersyringe_vertical_attach();
+color("gainsboro")translate([36,295.5,18])rotate([0,-90,90])valvemountplate_screwattach_smallersyringe_vertical_attach();
+color("gainsboro")translate([36,295.5,18])rotate([0,-90,90])valvemountplate_screwattach_smallersyringe();
+/*
+*/
 }
 module plunger_connector_assy(){
 translate([15,69+6,43])rotate([-90,180,0])plunger_connector();

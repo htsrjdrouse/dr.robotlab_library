@@ -66,7 +66,7 @@
 	{"vendor":"Phidgets", "openscad":{"file":"mod_parts.scad", "function":"outside_frame()"},
 	"images":["BOM_module_outside_frame_gantry_plates_zmotor_smoothrod_idlers_xymotor.PNG", "name":"XY motors"],
 	"lineitems":[
-		{"cost":20, "sku":"3340_0","quantity":2, "stl":"", "web":"https://www.phidgets.com/?tier=3&catid=24&pcid=21&prodid=359", "name":"42STH38 NEMA-17 Bipolar Precision Gearless Stepper","comments":""}
+		{"cost":20, "sku":"3340_0","quantity":2, "stl":"", "web":"https://www.phidgets.com/?tier=3&catid=24&pcid=21&prodid=359", "name":"42STH38 NEMA-17 Bipolar Precision Gearless Stepper","comments":"","image":""}
 	]},
 	{"vendor":"Biqu", "openscad":{"file":"mod_parts.scad", "function":"outside_frame()"},
 	"images":["BOM_module_outside_frame_gantry_plates_zmotor_smoothrod_idlers_xymotor_pulleys.PNG", "name":"This are both pulleys and idlers you can use a 5mm skateboard bearing"],
@@ -152,8 +152,8 @@
 	{"vendor":"Igus", "openscad":{"file":"mod_parts.scad", "function":"linearactuator_endstop_encoder()"},
 "images":["BOM_module_filament_driver_assy_linearactuator_endstop_encoder_igus_slider.PNG"],
 	"lineitems":[
-		{"cost":64.00, "sku":"TS-04-09","quantity":1, "stl":"", "web":"", "name":"DryLin T, miniature profile rail","comments":"Have to cut this piece to 100mm"},
-		{"cost":15.70, "sku":"TW-04-09","quantity":1, "stl":"", "web":"", "name":"DryLin T, miniature slide carriage","comments":""}
+		{"cost":64.00, "sku":"TS-04-09","quantity":1, "stl":"TS_04_09_50_3.stl", "web":"", "name":"DryLin T, miniature profile rail","comments":"Have to cut this piece to 100mm"},
+		{"cost":15.70, "sku":"TW-04-09","quantity":1, "stl":"TW_04_09_4.stl", "web":"", "name":"DryLin T, miniature slide carriage","comments":""}
 	]},
 	{"vendor":"Biqu", "openscad":{"file":"mod_parts.scad", "function":"filament_linearactuator()"},
 "images":["biqu_mechanical_endstop.PNG"],
@@ -225,8 +225,8 @@
 	{"vendor":"Cole-Parmer", "openscad":{"file":"mod_parts.scad", "function":""},
 "images":["tubing.PNG"],
 	"lineitems":[
-		{"cost":51, "sku":"Platinum-Cured Silicone Tubing, 1/8inchID x 1/4inchOD, 25ft per pack","quantity":1, "stl":"", "web":"https://www.coleparmer.com/i/cole-parmer-platinum-cured-silicone-tubing-1-8-id-x-1-4-od-25-ft-pack/9580205?pubid=SI", "name":"Stainless Steel GEAR MK7/MK8 Stainless Steel 10cm*10cm*10cm","comments":""},
-		{"cost":31, "sku":"Cole-Parmer Platinum-Cured Silicone Tubing, 1/16inchID x 1/8inchOD, 25ft per pack","quantity":1, "stl":"", "web":"https://www.coleparmer.com/i/cole-parmer-platinum-cured-silicone-tubing-1-16-id-x-1-8-od-25-ft-pack/9580202", "name":"Platinum-Cured Silicone Tubing, 1/16inchID x 1/8inchOD","comments":""}
+		{"cost":51, "sku":"Platinum-Cured Silicone Tubing, 1/8inchID x 1/4inchOD, 25ft per pack","quantity":1, "stl":"", "web":"https://www.coleparmer.com/i/cole-parmer-platinum-cured-silicone-tubing-1-8-id-x-1-4-od-25-ft-pack/9580205?pubid=SI", "name":"Stainless Steel GEAR MK7/MK8 Stainless Steel 10cm*10cm*10cm","comments":"","images":["tubing.PNG"]},
+		{"cost":31, "sku":"Cole-Parmer Platinum-Cured Silicone Tubing, 1/16inchID x 1/8inchOD, 25ft per pack","quantity":1, "stl":"", "web":"https://www.coleparmer.com/i/cole-parmer-platinum-cured-silicone-tubing-1-16-id-x-1-8-od-25-ft-pack/9580202", "name":"Platinum-Cured Silicone Tubing, 1/16inchID x 1/8inchOD","comments":"","images":["tubing.PNG","assy_19_Silicone Tubing1_16inchID.PNG"]}
 	]
 	},
 	{"vendor":"HTS Resources", "openscad":{"file":"mod_parts.scad", "function":"openmv_nice_assy_stroboscope()"},
@@ -285,7 +285,7 @@
 
 		{"vendor":"HTS Resources", "openscad":{"file":"bom_electronics.scad", "function":"syringe_pcb_holder()"}, "images":["BOM_module_pcb_panels_syringe_pcb_holder.PNG"],"fritzing":"BOM_10pin_syringe.fzz","arduino":"","gerber":"BOM_10pin_syringe_silkTop.zip",
 	"lineitems":[
-		{"cost":4.9, "sku":"1085","quantity":1, "stl":"", "web":"", "name":"FR-4 TG130 2 layers","comments":"","fritzing":"BOM_10pin_syringe.fzz","arduino":"","gerber":"BOM_controlpanel_drill.zip","mfg":"Seeed"}
+		{"cost":4.9, "sku":"1085","quantity":1, "stl":"", "web":"", "name":"FR-4 TG130 2 layers","comments":"","fritzing":"BOM_10pin_syringe.fzz","arduino":"","gerber":"BOM_10pin_syringe_silkTop.zip","mfg":"Seeed"}
 	]},
 	{"vendor":"HTS Resources", "openscad":{"file":"mod_parts.scad", "function":"syringe_pcb_holder()"},
 "images":["BOM_module_pcb_panels_syringe_pcb_holder.PNG"],
@@ -392,28 +392,72 @@
 "images":["syringe10ml_assy.PNG"],
 	"lineitems":[
 		{"time":"15h 49m 43s","cost":4.94, "usedfilament_gm":"141.19","sku":"bom_syringe pump and valve","quantity":1, "stl":"bom_syringe.stl","dxf":"","png":"","print":1,"images":"syringe10ml_assy.PNG"},
-		{"time":"35m 7s","cost":0.22, "usedfilament_gm":"6.25","sku":"syringe_pcb_holder_for_syringemodule","quantity":1, "stl":"syringe_pcb_holder_for_syringemodule.stl","dxf":"","png":"syringe10ml_assy_syringe_pcb_holder_for_syringemodule.PNG","print":1,"images":"syringe10ml_assy_syringe_pcb_holder_for_syringemodule.PNG"},
-		{"time":"1h 41m 25s","cost":0.47, "usedfilament_gm":"13.48","sku":"syringe10mlmount_plungerfix_assy","quantity":1, "stl":"syringe10mlmount_plungerfix_assy.stl","dxf":"","png":"syringe10mlmount_plungerfix_assy.PNG","print":1,"images":"syringe10mlmount_plungerfix_assy.PNG"},
-		{"time":"","cost":"", "usedfilament_gm":"","sku":"syringe10ml_clipmount","quantity":1, "stl":"syringe10ml_clipmount.stl","dxf":"","png":"","print":1,"images":"syringe10ml_clipmount.PNG"},
-		{"time":"","cost":"", "usedfilament_gm":"","sku":"igus_slidermount_encoder_TW_04_12_motormount_assy_m8","quantity":1, "stl":"igus_slidermount_encoder_TW_04_12_motormount_assy_m8.stl","dxf":"","png":"","print":1,"images":"igus_slidermount_encoder_TW_04_12_motormount_assy_m8.PNG"},
-		{"time":"","cost":"", "usedfilament_gm":"","sku":"igus_slidermount_encoder_TW_04_12_motormount_assy_m8","quantity":1, "stl":"igus_slidermount_encoder_TW_04_12_motormount_assy_m8.stl","dxf":"","png":"","print":1,"images":"igus_slidermount_encoder_TW_04_12_motormount_assy_m8.PNG"},
-		{"time":"","cost":"", "usedfilament_gm":"","sku":"valvemountplate_screwattach_smallersyringe_vertical_attach","quantity":1, "stl":"valvemountplate_screwattach_smallersyringe_vertical_attach.stl","dxf":"","png":"","print":1,"images":"valvemountplate_screwattach_smallersyringe_vertical_attach.PNG"},
-		{"time":"","cost":"", "usedfilament_gm":"","sku":"smallsyringe_valvesupportmodule_plate","quantity":1, "stl":"smallsyringe_valvesupportmodule_plate.stl","dxf":"","png":"","print":1,"images":"smallsyringe_valvesupportmodule_plate.PNG"}
+		{"time":"35m 7s","cost":0.22, "usedfilament_gm":"6.25","sku":"syringe_pcb_holder_for_syringemodule","quantity":1, "stl":"syringe_pcb_holder_for_syringemodule.stl","dxf":"","png":"syringe10ml_assy_syringe_pcb_holder_for_syringemodule.PNG","print":0,"images":["syringe10ml_assy_syringe_pcb_holder_for_syringemodule.PNG","assy_20_syringe_pcb_holder_for_syringemodule.PNG"],"comments":"Here you glue in the BOM_10pin_syringe"},
+		{"time":"1h 41m 25s","cost":0.47, "usedfilament_gm":"13.48","sku":"syringe10mlmount_plungerfix_assy","quantity":1, "stl":"syringe10mlmount_plungerfix_assy.stl","dxf":"","png":"syringe10mlmount_plungerfix_assy.PNG","print":0,"images":["syringe10mlmount_plungerfix_assy.PNG","assy_9_syringe10mlmount_plungerfix_assy.PNG"]},
+		{"time":"","cost":"", "usedfilament_gm":"","sku":"syringe10ml_clipmount","quantity":1, "stl":"syringe10ml_clipmount.stl","dxf":"","png":"","print":0,"images":["syringe10ml_clipmount.PNG","assy_11_syringe10ml_clipmount.PNG"]},
+		{"time":"","cost":"", "usedfilament_gm":"","sku":"igus_slidermount_encoder_TW_04_12_motormount_assy_m8","quantity":1, "stl":"igus_slidermount_encoder_TW_04_12_motormount_assy_m8.stl","dxf":"","png":"","print":0,"images":"igus_slidermount_encoder_TW_04_12_motormount_assy_m8.PNG","assy_1_igus_slidermount_encoder_TW_04_12_motormount_assy_m8"},
+		{"time":"","cost":"", "usedfilament_gm":"","sku":"igus_slidermount_encoder_TW_04_12_motormount_assy_m8","quantity":1, "stl":"igus_slidermount_encoder_TW_04_12_motormount_assy_m8.stl","dxf":"","png":"","print":0,"images":"igus_slidermount_encoder_TW_04_12_motormount_assy_m8.PNG"},
+		{"time":"","cost":"", "usedfilament_gm":"","sku":"valvemountplate_screwattach_smallersyringe_vertical_attach","quantity":1, "stl":"valvemountplate_screwattach_smallersyringe_vertical_attach.stl","dxf":"","png":"","print":0,"images":["valvemountplate_screwattach_smallersyringe_vertical_attach.PNG","assy_16_valvemountplate_screwattach_smallersyringe_vertical_attach.PNG"]},
+		{"time":"","cost":"", "usedfilament_gm":"","sku":"valvemountplate_screwattach_smallersyringe","quantity":1, "stl":"valvemountplate_screwattach_smallersyringe.stl","dxf":"","png":"","print":0,"images":["valvemountplate_screwattach_smallersyringe.PNG","assy_17_valvemountplate_screwattach_smallersyringe.PNG"]},
+
+		{"time":"","cost":"", "usedfilament_gm":"","sku":"smallsyringe_valvesupportmodule_plate","quantity":1, "stl":"smallsyringe_valvesupportmodule_plate.stl","dxf":"","png":"","print":0,"images":["smallsyringe_valvesupportmodule_plate.PNG","assy_12_smallsyringe_valvesupportmodule_plate.PNG"]},
+		{"time":"","cost":"", "usedfilament_gm":"","sku":"valveconnectpart","quantity":1, "stl":"valveconnectpart.stl","dxf":"","png":"","print":0,"images":"valveconnectpart.PNG"},
+		{"time":"","cost":"", "usedfilament_gm":"","sku":"igus_TW_04_12_slider_plate","quantity":1, "stl":"igus_TW_04_12_slider_plate.stl","dxf":"","png":"","print":0,"images":"igus_TW_04_12_slider_plate.PNG"},
+		{"time":"","cost":"", "usedfilament_gm":"","sku":"syringeshuttle_clipbracket","quantity":1, "stl":"syringeshuttle_clipbracket.stl","dxf":"","png":"","print":0,"images":["syringeshuttle_clipbracket.PNG","assy_7_syringeshuttle_clipbracket"]},
+
+		{"time":"","cost":"", "usedfilament_gm":"","sku":"igus_TW_04_12_slider","quantity":1, "stl":"igus_TW_04_12_slider.stl","dxf":"","png":"","print":0,"images":["igus_TW_04_12_slider.PNG","assy_6_igus_TW_04_12_slider_plate.PNG"]},
+		{"time":"","cost":"", "usedfilament_gm":"","sku":"stepper_linear_m8nut_coupler","quantity":1, "stl":"stepper_linear_m8nut_coupler.stl","dxf":"","png":"","print":0,"images":"stepper_linear_m8nut_coupler.PNG"}
+	]
+	},
+		{"vendor":"HTS Resources", "openscad":{"file":"bom_electronics.scad", "function":"syringe_pcb_holder()"}, "images":["BOM_module_pcb_panels_syringe_pcb_holder.PNG"],"fritzing":"BOM_10pin_syringe.fzz","arduino":"","gerber":"BOM_10pin_syringe_silkTop.zip",
+	"lineitems":[
+		{"cost":4.9, "sku":"1085","quantity":1, "stl":"", "web":"", "name":"FR-4 TG130 2 layers","comments":"","fritzing":"BOM_10pin_syringe.fzz","arduino":"","gerber":"BOM_10pin_syringe_silkTop.zip","mfg":"Seeed"}
+	]},
+
+		{"vendor":"Adafruit", "openscad":{"file":"mod_parts.scad", "function":"compact_extruder()"}, "images":["BOM_module_filament_driver_assy_linearactuator_filament_driver_assy_motormount_nema17.PNG","nema_17_adafruit.PNG"],
+	"lineitems":[
+		{"cost":14, "sku":"324","quantity":1, "stl":"", "web":"https://www.adafruit.com/product/324", "name":"Stepper motor - NEMA-17 size - 200 steps/rev, 12V 350mA","comments":"","image":"adafruit_stepper_motor_324.PNG","assy_3_stepper_motor.PNG"},
+		{"cost":4.95, "sku":"1176","quantity":1, "stl":"", "web":"https://www.adafruit.com/product/1176", "name":"Aluminum Flex Shaft Coupler - 5mm to 8mm","comments":"","image":"adafruit_ShaftCoupler-5mm-to-8mm-1176.PNG","assy_3_stepper_motor.PNG"}
+
+	]},
+	{"vendor":"Amazon", "openscad":{"file":"mod_parts.scad", "function":"nextgen_syringe10ml_assy()"},
+"images":[""],
+	"lineitems":[
+		{"cost":1, "sku":"10 ml syringe luer-lok","quantity":1, "stl":"", "web":"https://www.amazon.com/gp/product/B000M802RG/ref=oh_aui_detailpage_o06_s00?ie=UTF8&psc=1", "name":"BD 10 mL Syringe without Needle, Luer-Lok Tip, REF 309604","comments":"","images":["10ml_syringe.PNG","assy_10_10ml_syringe.PNG"]},
+		{"cost":20, "sku":"Male luer-lok ring 1/16inch","quantity":1, "stl":"", "web":"https://www.amazon.com/Cole-Parmer-Male-luer-lock-ring/dp/B003NV4EA0/ref=sr_1_4?s=industrial&ie=UTF8&qid=1527864613&sr=1-4&keywords=luer+lock+1%2F16%22+hose+barb&dpID=216klmMIAIL&preST=_SX342_QL70_&dpSrc=srch", "name":"Cole-Parmer AO-45505-04 Male luer with lock ring x 1/16inch hose barb, Nylon, 25/pk","comments":"","image":"male_luerlock_ring_1_16_inch.PNG"},
+		{"cost":20, "sku":"Female luer-lok ring 1/16inch","quantity":1, "stl":"", "web":"https://www.amazon.com/Cole-Parmer-Female-luer-adapter-Nylon/dp/B003NUYLIG/ref=sr_1_1?s=industrial&ie=UTF8&qid=1527865097&sr=1-1&keywords=Cole-Parmer+female+luer+with+lock+ring+x+1%2F16%22&dpID=11y6b3zhtaL&preST=_SX342_QL70_&dpSrc=srch", "name":"Cole-Parmer AO-45505-04 Female luer with lock ring x 1/16inch hose barb, Nylon, 25/pk","comments":"","images":["female_luerlock_ring_1_16_inch.PNG","assy_18_female_luer_with_lock_ring_1_16.PNG"]},
+		{"cost":14, "sku":"Male luer-lok ring 1/8inch","quantity":1, "stl":"", "web":"https://www.amazon.com/Cole-Parmer-AO-45505-04-Male-luer-Nylon/dp/B003NV2T34/ref=sr_1_3?s=industrial&ie=UTF8&qid=1527864613&sr=1-3&keywords=luer+lock+1%2F16%22+hose+barb&dpID=216klmMIAIL&preST=_SX342_QL70_&dpSrc=srch", "name":"Cole-Parmer AO-45505-04 Male luer with lock ring x 1/8inch hose barb, Nylon, 25/pk","comments":"","image":"male_luerlock_ring_1_8_inch.PNG"},
+		{"cost":14, "sku":"Female luer-lok ring 1/8inch","quantity":1, "stl":"", "web":"https://www.amazon.com/Cole-Parmer-AO-45502-04-Female-adapter-Nylon/dp/B003NV2RYA/ref=sr_1_2?s=industrial&ie=UTF8&qid=1527865492&sr=1-2&keywords=Cole-Parmer+female+luer+with+lock+ring+x+1%2F8%22&dpID=11y6b3zhtaL&preST=_SX342_QL70_&dpSrc=srch", "name":"Cole-Parmer AO-45502-04 Female luer x 1/8inch hose barb adapter, Nylon, 25/pk","comments":"","image":"female_luerlock_ring_1_8_inch.PNG"},
+		{"cost":1, "sku":"5/16inch brass nut","quantity":1, "stl":"", "web":"https://www.amazon.com/Speck-5829340800-Brass-Casing-Flange/dp/B074RGPGQ4/ref=sr_1_1?s=lawn-garden&ie=UTF8&qid=1527865805&sr=1-1&keywords=m8+brass+nut&dpID=4122WPzN%252BvL&preST=_SY300_QL70_&dpSrc=srch", "name":"Brass nut - 5/16inch","comments":"","image":"brass_m8_nut.PNG"},
+		{"cost":1, "sku":"m9 compression spring","quantity":1, "stl":"", "web":"https://www.amazon.com/uxcell-0-8mmx9mmx30mm-Stainless-Compression-Springs/dp/B076M4RLGN/ref=sr_1_11?ie=UTF8&qid=1527866790&sr=8-11&keywords=9mm+compression+spring", "name":"uxcell 0.8mmx9mmx30mm 304 Stainless Steel Compression Springs Silver Tone 20pcs","comments":"","image":"0.8mmx9mmx30mm_304_Stainless_Steel_Compression_Spring.PNG"},
+		{"cost":1, "sku":"155","quantity":1, "stl":"", "web":"https://www.adafruit.com/product/155", "name":"Standard servo - TowerPro SG-5010 - 5010","comments":"","images":["Standard_servo-TowerPro_SG-5010.PNG","assy_13_servo.PNG"]}
 	],
-		{"time":"","cost":"", "usedfilament_gm":"","sku":"valveconnectpart","quantity":1, "stl":"valveconnectpart.stl","dxf":"","png":"","print":1,"images":"valveconnectpart.PNG"},
-		{"time":"","cost":"", "usedfilament_gm":"","sku":"igus_TW_04_12_slider_plate","quantity":1, "stl":"igus_TW_04_12_slider_plate.stl","dxf":"","png":"","print":1,"images":"igus_TW_04_12_slider_plate.PNG"},
-		{"time":"","cost":"", "usedfilament_gm":"","sku":"igus_TW_04_12_slider_plate","quantity":1, "stl":"igus_TW_04_12_slider_plate.stl","dxf":"","png":"","print":1,"images":"igus_TW_04_12_slider_plate.PNG"}
-
-	}
-
-
-
-
-
-
+	{"vendor":"Misumi", "openscad":{"file":"mod_parts.scad", "function":"nextgen_syringe10ml_assy()"},
+"images":["BOM_module_outside_frame.PNG","BOM_module_outside_frame_gantry_noplates.PNG"],
+	"lineitems":[
+		{"cost":6.63, "sku":"HFS5-2020-200-TPW","quantity":1,"stl":"HFS5-2020-200-TPW.stl"}
+	]},
+	{"vendor":"Igus", "openscad":{"file":"mod_parts.scad", "function":"igus_TW_04_12_slider()"},
+"images":["assy_2_HFS5-2020-200-TPW.PNG"],
+	"lineitems":[
+		{"cost":64.50, "sku":"TS_04_12_150_2","quantity":1, "stl":"TS_04_12_150_2.stl", "web":"", "name":"DryLin T, miniature profile rail unit/meter","comments":"Have to cut this piece to 150mm"},
+		{"cost":38.50, "sku":"TW-04-12","quantity":1, "stl":"TW_04_12_1.stl", "web":"", "name":"DRYLIN T CARR","comments":""}
+	]},
+	{"vendor":"HTS Resources", "openscad":{"file":"mod_parts.scad", "function":"nextgen_syringe10ml_assy()"},
+	"images":["assy_5_threadedrod.PNG"],
+	"lineitems":[
+		{"cost":5, "sku":"treadedrod","quantity":4, "stl":"", "web":"", "name":"Threaded Rod 5/16inch","comments":"5/16inch in diameter in stainless steel","image":"assy_5_threadedrod.PNG"}
+	]},
+	{"vendor":"BD", "openscad":{"file":"mod_parts.scad", "function":"valve_assy()"},
+	"images":["assy_15_stopcock_valve_for_syringe.PNG"],
+	"lineitems":[
+		{"cost":25, "sku":"stopcock valve","quantity":1, "stl":"", "web":"https://catalog1.bd.com/infusiondisposables/extension-35666.html", "name":"BD Connecta 3-way stop cock valve REF394910","comments":"","images":["assy_15_stopcock_valve_for_syringe.PNG","stopcock_valve_REF_394910.PNG"]}
+	]}
 
 
 
 ]
 }
+
+
 

@@ -426,8 +426,6 @@
 		{"cost":1, "sku":"10 ml syringe luer-lok","quantity":1, "stl":"", "web":"https://www.amazon.com/gp/product/B000M802RG/ref=oh_aui_detailpage_o06_s00?ie=UTF8&psc=1", "name":"BD 10 mL Syringe without Needle, Luer-Lok Tip, REF 309604","comments":"","images":["10ml_syringe.PNG","assy_10_10ml_syringe.PNG"]},
 		{"cost":20, "sku":"Male luer-lok ring 1/16inch","quantity":1, "stl":"", "web":"https://www.amazon.com/Cole-Parmer-Male-luer-lock-ring/dp/B003NV4EA0/ref=sr_1_4?s=industrial&ie=UTF8&qid=1527864613&sr=1-4&keywords=luer+lock+1%2F16%22+hose+barb&dpID=216klmMIAIL&preST=_SX342_QL70_&dpSrc=srch", "name":"Cole-Parmer AO-45505-04 Male luer with lock ring x 1/16inch hose barb, Nylon, 25/pk","comments":"","image":"male_luerlock_ring_1_16_inch.PNG"},
 		{"cost":20, "sku":"Female luer-lok ring 1/16inch","quantity":1, "stl":"", "web":"https://www.amazon.com/Cole-Parmer-Female-luer-adapter-Nylon/dp/B003NUYLIG/ref=sr_1_1?s=industrial&ie=UTF8&qid=1527865097&sr=1-1&keywords=Cole-Parmer+female+luer+with+lock+ring+x+1%2F16%22&dpID=11y6b3zhtaL&preST=_SX342_QL70_&dpSrc=srch", "name":"Cole-Parmer AO-45505-04 Female luer with lock ring x 1/16inch hose barb, Nylon, 25/pk","comments":"","images":["female_luerlock_ring_1_16_inch.PNG","assy_18_female_luer_with_lock_ring_1_16.PNG"]},
-		{"cost":14, "sku":"Male luer-lok ring 1/8inch","quantity":1, "stl":"", "web":"https://www.amazon.com/Cole-Parmer-AO-45505-04-Male-luer-Nylon/dp/B003NV2T34/ref=sr_1_3?s=industrial&ie=UTF8&qid=1527864613&sr=1-3&keywords=luer+lock+1%2F16%22+hose+barb&dpID=216klmMIAIL&preST=_SX342_QL70_&dpSrc=srch", "name":"Cole-Parmer AO-45505-04 Male luer with lock ring x 1/8inch hose barb, Nylon, 25/pk","comments":"","image":"male_luerlock_ring_1_8_inch.PNG"},
-		{"cost":14, "sku":"Female luer-lok ring 1/8inch","quantity":1, "stl":"", "web":"https://www.amazon.com/Cole-Parmer-AO-45502-04-Female-adapter-Nylon/dp/B003NV2RYA/ref=sr_1_2?s=industrial&ie=UTF8&qid=1527865492&sr=1-2&keywords=Cole-Parmer+female+luer+with+lock+ring+x+1%2F8%22&dpID=11y6b3zhtaL&preST=_SX342_QL70_&dpSrc=srch", "name":"Cole-Parmer AO-45502-04 Female luer x 1/8inch hose barb adapter, Nylon, 25/pk","comments":"","image":"female_luerlock_ring_1_8_inch.PNG"},
 		{"cost":1, "sku":"5/16inch brass nut","quantity":1, "stl":"", "web":"https://www.amazon.com/Speck-5829340800-Brass-Casing-Flange/dp/B074RGPGQ4/ref=sr_1_1?s=lawn-garden&ie=UTF8&qid=1527865805&sr=1-1&keywords=m8+brass+nut&dpID=4122WPzN%252BvL&preST=_SY300_QL70_&dpSrc=srch", "name":"Brass nut - 5/16inch","comments":"","image":"brass_m8_nut.PNG"},
 		{"cost":1, "sku":"m9 compression spring","quantity":1, "stl":"", "web":"https://www.amazon.com/uxcell-0-8mmx9mmx30mm-Stainless-Compression-Springs/dp/B076M4RLGN/ref=sr_1_11?ie=UTF8&qid=1527866790&sr=8-11&keywords=9mm+compression+spring", "name":"uxcell 0.8mmx9mmx30mm 304 Stainless Steel Compression Springs Silver Tone 20pcs","comments":"","image":"0.8mmx9mmx30mm_304_Stainless_Steel_Compression_Spring.PNG"},
 		{"cost":1, "sku":"155","quantity":1, "stl":"", "web":"https://www.adafruit.com/product/155", "name":"Standard servo - TowerPro SG-5010 - 5010","comments":"","images":["Standard_servo-TowerPro_SG-5010.PNG","assy_13_servo.PNG"]}
@@ -452,8 +450,44 @@
 	"images":["assy_15_stopcock_valve_for_syringe.PNG"],
 	"lineitems":[
 		{"cost":25, "sku":"stopcock valve","quantity":1, "stl":"", "web":"https://catalog1.bd.com/infusiondisposables/extension-35666.html", "name":"BD Connecta 3-way stop cock valve REF394910","comments":"","images":["assy_15_stopcock_valve_for_syringe.PNG","stopcock_valve_REF_394910.PNG"]}
-	]}
+	]},
 
+	{"vendor":"HTS Resources", "openscad":{"file":"bom_vacuum_pumps_box.scad", "function":"diaphragmpump_boxassy()"},
+"images":["step_1_diaphragmpump_boxassy.PNG.PNG","step_2_tslot20.PNG","step_3_boxcouplersbottom.PNG","step_4_diaphragmpump_end_6pin.PNG","step_5_diaphragmpump_longwall.PNG","step_6_diaphragmpump_end.PNG","step_7_diaphragmpump_longwall_pumpports.PNG","step_8_boxcouplerstop.PNG","step_9_diaphragmpump_case_lid_from_base.PNG"],
+	"lineitems":[
+		{"time":"","cost":"", "usedfilament_gm":"","sku":"bom_vacuum_pumps_box","quantity":1, "stl":"bom_vacuum_pumps_box.stl","dxf":"","png":"","print":1,"images":[""]},
+		{"time":"","cost":"", "usedfilament_gm":"","sku":"airpo_d2028B_pump_mount_assy","quantity":1, "stl":"airpo_d2028B_pump_mount_assy.stl","dxf":"","png":"","print":0,"images":[""]},
+		{"time":"","cost":"", "usedfilament_gm":"","sku":"boxstandoff","quantity":1, "stl":"boxstandoff.stl","dxf":"","png":"","print":1,"images":[""]},
+		{"time":"","cost":"", "usedfilament_gm":"","sku":"boxcouplers","quantity":1, "stl":"boxcouplers.stl","dxf":"","png":"","print":1,"images":[""]}
+	]},
+
+	{"vendor":"Ponoko", "openscad":{"file":"bom_vacuum_pumps.scad", "function":"diaphragmpump_boxassy()"},
+"images":[""],
+	"lineitems":[
+		{"cost":38.57, "sku":"acrylic_diaphragm_box_ponoko","quantity":1, "thick":"0.177 inches","stl":"", "svg":"acrylic_diaphragm_box_ponoko.svg","web":"http://www.ponoko.com", "name":"Acrylic - Black0.177 inchesP2 -31.100 inches long x 15.100 inches wide","comments":"Material and color is flexible"}
+	]
+	},
+		{"vendor":"HTS Resources", "openscad":{"file":"bom_vacuum_pumps.scad", "function":"diaphragmpump_boxassy()"}, "images":["BOM_diaphragm_washpumps_fz.PNG"],"fritzing":"BOM_diaphragm_washpumps.fzz","arduino":"","gerber":"BOM_diaphragm_washpumps_silkTop.zip",
+	"lineitems":[
+		{"cost":4.9, "sku":"1085","quantity":1, "stl":"", "web":"", "name":"FR-4 TG130 2 layers","comments":"","fritzing":"BOM_diaphragm_washpumps.fzz","arduino":"","gerber":"BOM_diaphragm_washpumps_silkTop.zip","mfg":"Seeed"}
+	]},
+
+	{"vendor":"Amazon", "openscad":{"file":"bom_vacuum_pumps.scad", "function":"diaphragmpump_boxassay()"},
+"images":[""],
+	"lineitems":[
+		{"cost":1, "sku":"10 ml syringe luer-lok","quantity":1, "stl":"", "web":"https://www.amazon.com/gp/product/B000M802RG/ref=oh_aui_detailpage_o06_s00?ie=UTF8&psc=1", "name":"BD 10 mL Syringe without Needle, Luer-Lok Tip, REF 309604","comments":"","images":["10ml_syringe.PNG","assy_10_10ml_syringe.PNG"]},
+		{"cost":12.45, "sku":"Male luer-lok ring 1/16inch","quantity":1, "stl":"", "web":"https://www.amazon.com/Cole-Parmer-Male-luer-10-32-polycarbonate/dp/B003LYWUEG/ref=sr_1_5?s=industrial&ie=UTF8&qid=1528034447&sr=1-5&keywords=luer+10-32+Male+UNF&dpID=219B%252Bt7SVXL&preST=_SX342_QL70_&dpSrc=srch", "name":"Cole-Parmer Male luer x 10-32 UNF, polycarbonate, 10 Pack","comments":"","image":"luer_10-32_UNF_polycarbonate.PNG"},
+		{"cost":14, "sku":"Male luer-lok ring 1/8inch","quantity":1, "stl":"", "web":"https://www.amazon.com/Cole-Parmer-AO-45505-04-Male-luer-Nylon/dp/B003NV2T34/ref=sr_1_3?s=industrial&ie=UTF8&qid=1527864613&sr=1-3&keywords=luer+lock+1%2F16%22+hose+barb&dpID=216klmMIAIL&preST=_SX342_QL70_&dpSrc=srch", "name":"Cole-Parmer AO-45505-04 Male luer with lock ring x 1/8inch hose barb, Nylon, 25/pk","comments":"","image":"male_luerlock_ring_1_8_inch.PNG"},
+		{"cost":14, "sku":"Female luer-lok ring 1/8inch","quantity":1, "stl":"", "web":"https://www.amazon.com/Cole-Parmer-AO-45502-04-Female-adapter-Nylon/dp/B003NV2RYA/ref=sr_1_2?s=industrial&ie=UTF8&qid=1527865492&sr=1-2&keywords=Cole-Parmer+female+luer+with+lock+ring+x+1%2F8%22&dpID=11y6b3zhtaL&preST=_SX342_QL70_&dpSrc=srch", "name":"Cole-Parmer AO-45502-04 Female luer x 1/8inch hose barb adapter, Nylon, 25/pk","comments":"","image":"female_luerlock_ring_1_8_inch.PNG"}
+	]
+	},
+
+	{"vendor":"Sparkfun", "openscad":{"file":"bom_vacuum_pumps.scad", "function":"diaphragmpump_boxassay()"},
+"images":[""],
+	"lineitems":[
+		{"cost":14.95, "sku":"ROB-10398","quantity":3, "stl":"", "web":"https://www.sparkfun.com/products/10398", "name":"VACUUM PUMP - 12V","comments":"","image":"vacuum_pump.PNG"}
+	]
+	}
 
 
 ]

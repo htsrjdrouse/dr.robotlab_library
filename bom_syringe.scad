@@ -5,8 +5,10 @@ use<writescad/write.scad>
 //openmv_set();
 
 //color("pink")
-//syringe_pump_stls();
-translate([-100,160,0])nextgen_syringe10ml_assy();
+syringe_pump_stls();
+
+//diagphragm_pump_case();
+//translate([-100,160,0])nextgen_syringe10ml_assy();
 
 
 module syringe_pump_stls(){

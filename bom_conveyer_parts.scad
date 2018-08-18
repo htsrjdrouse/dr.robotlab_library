@@ -12,8 +12,17 @@ translate([-55,410,400])rotate([0,90,0])tslot20_2060(150);
 
 gantry();
 */
-slide_conveyer_caller(z,xx,xp,sph);
+i = 0;
+
+//conveyer_slider_x4();
+//projection(cut=false)
+//slidedeck(3);
+
+slide_conveyer_caller(z,xx-100,xp,sph);
+//rotate([0,180,0])solenoid_flag();
 //translate([-40,-53,0])color("lightgrey")adafruit_lplate_1259();
+
+//gantry_assy(20,-30,-45+50+100-50-100+150,-55,0,267,tcl,thcl);
 
 //conveyer_totalset();
 //conveyer_totalset_just1();

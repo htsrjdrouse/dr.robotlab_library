@@ -22,6 +22,8 @@
 	"lineitems":[
 		{"cost":317.5, "sku":"alu_complete_again.dxf","quantity":1, "stl":"","dxf":"alu_complete_again.dxf","png":""}
 	]},
+
+
 	{"vendor":"HTS Resources", "openscad":{"file":"mod_parts.scad", "function":"outside_frame()"},
 	"images":["BOM_module_outside_frame_gantry_plates_outside_vitamens.PNG","bom_outside_frame_stls.PNG"],
 	"lineitems":[
@@ -37,43 +39,96 @@
 		{"time":"24m 10s","cost":0.11, "usedfilament_gm":"3.15","sku":"foot_big","quantity":1, "stl":"foot_big.stl","dxf":"","png":"","print":0,"needunits":4}
 	]},
 
+
+
+
+
+
+
+
 	{"vendor":"Bigbluesaw", "openscad":{"file":"mod_parts.scad", "function":"outside_frame()"},
 	"images":["BOM_module_outside_frame_gantry_plates.PNG",	"BOM_module_outside_frame_just_plates.PNG"],
 	"lineitems":[
 		{"cost":317.5, "sku":"alu_complete_again.dxf","quantity":1, "stl":"","dxf":"alu_complete_again.dxf","png":""}
 	]},
+
+
+
+
+
+
+
+
+
 	{"vendor":"Pololu", "openscad":{"file":"mod_parts.scad", "function":"outside_frame()"},
 	"images":["BOM_module_outside_frame_gantry_plates_zmotor.PNG", "name":"product list"],
 	"lineitems":[
 		{"cost":50, "sku":"2268","quantity":2, "stl":"", "web":"https://www.pololu.com/product/j2268", "comments":"Cut to 208mm"},
 		{"cost":6, "sku":"2688","quantity":2, "stl":"", "web":""https://www.pololu.com/product/2688", "comments":""}
 	]},
+
+
+
+
+
 	{"vendor":"HTS Resources", "openscad":{"file":"mod_parts.scad", "function":"outside_frame()"},
 	"images":["BOM_module_outside_frame_gantry_plates_zmotor_smoothrod.PNG", "name":"product list"],
 	"lineitems":[
 		{"cost":10, "sku":"smoothrod","quantity":4, "stl":"", "web":"", "comments":"8mm in diameter"}
 	]},
+
+
+
+
 	{"vendor":"HTS Resources", "openscad":{"file":"mod_parts.scad", "function":"outside_frame()"},
 	"images":["BOM_module_outside_frame_gantry_plates_zmotor.PNG", "name":"product list"],
 	"lineitems":[
 		{"cost":1, "sku":"608zz","quantity":1, "stl":"", "web":"", "comments":"Skateboard bearings work"}
 	]},
+
+
+
+
+
 	{"vendor":"Biqu", "openscad":{"file":"mod_parts.scad", "function":"outside_frame()"},
 	"images":["BOM_module_outside_frame_gantry_plates_zmotor_smoothrod_idlers.PNG", "name":"product list"],
 	"lineitems":[
 		{"cost":2.5, "sku":"WCL000007","quantity":9, "stl":"", "web":"https://www.biqu.equipment/products/biqu-cnc-openbuilds-pom-wheel-with-bearings-big-models-passive-round-wheel-idler-gear-perlin-wheel-for-v-slot?variant=32457817795", "name":"BIQU POM Pulley","comments":"You can get also at Othermachine, but they are around $5 a unit. Openscad: cylinder(r=23.9/2,h=10.23)"}
 	]},
+
+
+
+
+
 	{"vendor":"Phidgets", "openscad":{"file":"mod_parts.scad", "function":"outside_frame()"},
 	"images":["BOM_module_outside_frame_gantry_plates_zmotor_smoothrod_idlers_xymotor.PNG", "name":"XY motors"],
 	"lineitems":[
 		{"cost":20, "sku":"3340_0","quantity":2, "stl":"", "web":"https://www.phidgets.com/?tier=3&catid=24&pcid=21&prodid=359", "name":"42STH38 NEMA-17 Bipolar Precision Gearless Stepper","comments":"","image":""}
 	]},
+
+
+
+
 	{"vendor":"Biqu", "openscad":{"file":"mod_parts.scad", "function":"outside_frame()"},
 	"images":["BOM_module_outside_frame_gantry_plates_zmotor_smoothrod_idlers_xymotor_pulleys.PNG", "name":"This are both pulleys and idlers you can use a 5mm skateboard bearing"],
 	"lineitems":[
 		{"cost":8.99, "sku":"GT2 PULLEY","quantity":2, "stl":"", "web":"https://www.biqu.equipment/products/10-pcs-gt2-timing-pulley-16teeth-alumium-bore-5mm-fit-for-gt2-belt-width-6mm-16-teeth-for-3d-printer", "name":"GT2 PULLEY","comments":"The GT2 pulley with 16 teeth or grooves is one of the best choices for 3d printer construction. Compared with the T2.5 or MXL timing pulley, the GT2 pulley tooth profile is anti-backlash. Why? The rounded teeth of this tooth and belt are engaged together longer providing a smoother transition between teeth. Suitable for GT2 -6 mm belt. Also available at AliExpress"},
 		{"cost":1.00, "sku":"688ZZ 8*16*5","quantity":8, "stl":"", "web":"https://www.biqu.equipment/collections/coupling-bearing-spring/products/free-shipping-10pcs-lot-688zz-688z-688-abec-5-8-16-5-miniature-ball-radial-deep-groove-ball-bearings-fot-3d-printer-part", "name":"688ZZ 688Z 688 ABEC-5 8*16*5 Miniature Ball Radial Deep Groove Ball Bearings","comments":"Make a washer Openscad: difference(){cylinder(r=24/2,h=4);cylinder(r=5.1/2,h=5);}"}
 	]},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	{"vendor":"HTS Resources", "openscad":{"file":"mod_parts.scad", "function":"filament_linearactuator()"},
 "images":["BOM_module_outside_frame_gantry_plates_x_shuttle_front.PNG","BOM_module_outside_frame_gantry_plates_x_shuttle_front_zoom.PNG","BOM_module_outside_frame_gantry_plates_x_shuttle_back_zoom.PNG","BOM_module_outside_frame_gantry_plates_backextruder_clamp.PNG","BOM_module_outside_frame_gantry_plates_x_shuttle_smaller_igus_slidermount_zoom.PNG","BOM_module_outside_frame_gantry_plates_wipers.PNG","BOM_module_outside_frame_gantry_plates_x_shuttle_filament_linearactuator_shuttle.PNG","BOM_module_x_shuttle_inductive_sensor_cap.PNG"],
 	"lineitems":[
@@ -90,28 +145,67 @@
 		{"time":"9m 15s","cost":0.04, "usedfilament_gm":"1.22","sku":"linearactuator_filament_encodershuttle_filamentclamp","quantity":1, "stl":"linearactuator_filament_encodershuttle_filamentclamp.stl","dxf":"","png":"","print":0},
 		{"time":"17m 24s","cost":0.05, "usedfilament_gm":"1.35","sku":"inductivesensorcap","quantity":1, "stl":"inductivesensorcap.stl","dxf":"","png":"","print":0}
 	]},
+
+
+
+
+
+
+
+
+
+
+
+
+
 	{"vendor":"BIQU", "openscad":{"file":"mod_parts.scad", "function":"corexy_beltsetup()"},
 "images":["BOM_module_outside_frame_gantry_plates_x_shuttle_front_belt.PNG"],
 	"lineitems":[
 		{"cost":13.00, "sku":"GT2 PULLEY","quantity":2, "stl":"", "web":"https://www.amazon.com/BIQU-Meters-Timing-20Teeth-Printer/dp/B01GTGOD6U", "name":"BIQU GT2 10 Meters Timing Belt + 2Pcs Bore 5mm 20Teeth Timing Pulley Wheel for 3D Printer","comments":""}
 	]},
+
+
+
+
+
+
 	{"vendor":"Igus", "openscad":{"file":"mod_parts.scad", "function":"filament_linearactuator()"},
 "images":["BOM_module_outside_frame_gantry_plates_x_shuttle_igus_slider.PNG"],
 	"lineitems":[
 		{"cost":64.00, "sku":"TS-04-09","quantity":1, "stl":"", "web":"", "name":"DryLin T, miniature profile rail","comments":"Have to cut this piece to 100mm"},
 		{"cost":15.70, "sku":"TW-04-09","quantity":1, "stl":"", "web":"", "name":"DryLin T, miniature slide carriage","comments":""}
 	]},
+
+
+
+
 	{"vendor":"Uxcell", "openscad":{"file":"mod_parts.scad", "function":"slider_front_assy()"},
 "images":["BOM_module_x_shuttle_inductive_sensor_cap.PNG"],
 	"lineitems":[
 		{"cost":10.00, "sku":"LJ12A3-4-Z/BX","quantity":1, "stl":"", "web":"https://www.amazon.com/uxcell-DC6-36V-Inductive-Proximity-LJ12A3-4-Z-BX/dp/B008DG9FLS", "name":"DC 6-36V NPN NO 3-wire 4mm Noncontact Inductive Proximity Sensor Switch LJ12A3-4-Z/BX","comments":""}
 	]},
+
+
+
+
+
 	{"vendor":"Uxcell", "openscad":{"file":"mod_parts.scad", "function":"slider_front_assy()"},
 "images":["BOM_module_x_shuttle_bowden_tube_filament.PNG"],
 	"lineitems":[
-		{"cost":10.00, "sku":"Bowden tube","quantity":1, "stl":"", "web":"https://www.amazon.com/uxcell-DC6-36V-Inductive-Proximity-LJ12A3-4-Z-BX/dp/B008DG9FLS", "name":"PTFE Teflon Bowden Tube OD 4mm/0.16in. ID 2mm/0.08in. 1.75mm/0.07in.","comments":"Best to search Amazon for this"}
+		{"cost":10.00, "sku":"Bowden tube","quantity":1, "stl":"", "web":"https://www.amazon.com/uxcell-DC6-36V-Inductive-Proximity-LJ12A3-4-Z-BX/dp/B008DG9FLS", "name":"PTFE Teflon Bowden Tube OD 4mm/0.16in. ID 2mm/0.08in. 1.75mm/0.07in.","comments":"Best to search Amazon for this"},
+		{"cost":8.00, "sku":"PC4-MC6","quantity":1, "stl":"", "web":"https://www.amazon.com/uxcell-DC6-36V-Inductive-Proximity-LJ12A3-4-Z-BX/dp/B008DG9FLS", "name":"PC4-M6 Pneumatic Straight Fitting 4mm OD tubing,M6 6mm Applicable to 3D Printer, Witbot PC4-M6 Straight Fitting 4mm thread M6 Connector for 3D Printer (Pack of 10 pcs )","comments":"Best to search Amazon for this, the 3D printer filament is 1.75mm "}
 	]},
-		{"cost":8.00, "sku":"PC4-MC6","quantity":1, "stl":"", "web":"https://www.amazon.com/uxcell-DC6-36V-Inductive-Proximity-LJ12A3-4-Z-BX/dp/B008DG9FLS", "name":"PC4-M6 Pneumatic Straight Fitting 4mm OD tubing,M6 6mm Applicable to 3D Printer, Witbot PC4-M6 Straight Fitting 4mm thread M6 Connector for 3D Printer (Pack of 10 pcs )","comments":"Best to search Amazon for this, the 3D printer filament is 1.75mm "},
+
+
+
+
+
+
+
+
+
+
+
 
 
 		{"vendor":"Mouser", "openscad":{"file":"mod_parts.scad", "function":"x_encoder_support(), y_encoder_support()"}, "images":["BOM_module_xy_softpot_linearencoders.PNG","softpot_linear_encoder.PNG"],
@@ -120,20 +214,44 @@
 	]},
 		{"cost":4.12, "sku":"744-WP-M1-01-03014DI","quantity":2, "stl":"", "web":"https://www.mouser.com/ProductDetail/Spectra-Symbol/WP-M1-01-03-014-DI?qs=rVuZtzXoae7CNjkhIS%252bC%2FQ%3D%3D", "name":"Sensor Hardware & Accessories Wiper 1Newton-3N","comments":"You can also 3D print the wiper using, wipertip()"},
 
+
+
+
+
+
+
+
+
+
 		{"vendor":"Adafruit", "openscad":{"file":"bom_electronics.scad", "function":"electronics_setup()"}, "images":["BOM_amplifier_brd_fritzing.PNG"],
 	"lineitems":[
 		{"cost":14.95, "sku":"1085","quantity":1, "stl":"", "web":"https://www.adafruit.com/product/1085", "name":"ADS1115 16-Bit ADC - 4 Channel with Programmable Gain Amplifier","comments":"This is used with the HTS Resources amplifier shield","images":"BOM_amplifier_brd_adafruit_amplifier.PNG"}
 	]},
 
+
+
+
+
+
 		{"vendor":"HTS Resources", "openscad":{"file":"bom_electronics.scad", "function":"electronics_setup()"}, "images":["BOM_amplifier_brd_fritzing.PNG","BOM_amplifier_brd_adafruit_amplifier.PNG"],"fritzing":"BOM_amplifier_brd_holder.fzz","arduino":"softpot_linearencoders_arduino_micro.ino","gerber":"BOM_amplifier_brd_holder_silkTop.zip",
 	"lineitems":[
 		{"cost":4.9, "sku":"1085","quantity":1, "stl":"", "web":"", "name":"FR-4 TG130 2 layers","comments":"This is used with the HTS Resources amplifier shield","fritzing":"BOM_amplifier_brd_holder.fzz","arduino":"softpot_linearencoders_arduino_micro.ino","gerber":"BOM_amplifier_brd_holder_silkTop.zip","mfg":"Seeed"}
 	]},
+
+
+
+
+
+
+
 	{"vendor":"HTS Resources", "openscad":{"file":"mod_parts.scad", "function":"encoder_ribboncable()"},
 "images":["BOM_module_filament_driver_assy_linearactuator_encoder_ribboncable.PNG"],
 	"lineitems":[
 		{"time":"37m 34s","cost":0.23, "usedfilament_gm":"6.69","sku":"encoder_ribboncable","quantity":1, "stl":"encoder_ribboncable.stl","dxf":"","png":"","print":1}
 	]},
+
+
+
 
 	{"vendor":"HTS Resources", "openscad":{"file":"mod_parts.scad", "function":"linearactuator_endstop_encoder()"},
 "images":["BOM_module_filament_driver_assy_linearactuator_endstop_encoder.PNG,BOM_module_filament_driver_assy_linearactuator_endstop_encoder_igus_slider_linearactuator_filament_encodershuttle.PNG","BOM_module_filament_driver_assy_linearactuator_endstop_encoder_igus_slider_linearactuator_endstop.PNG","BOM_module_filament_driver_assy_linearactuator_filament_driver_assy_motormount.PNG","BOM_module_cable_support.PNG"],
@@ -147,43 +265,71 @@
 		{"time":"1h 22m 44s","cost":0.42, "usedfilament_gm":"11.93","sku":"cable_support","quantity":1, "stl":"cable_support.stl","dxf":"","png":"","print":0},
 		{"time":"37m 35s","cost":0.24, "usedfilament_gm":"6.97","sku":"cable_support_lid","quantity":1, "stl":"cable_support_lid.stl","dxf":"","png":"","print":0},
 		{"time":"48m 38s","cost":0.23, "usedfilament_gm":"6.44","sku":"tslot20innerbracket","quantity":1, "stl":"tslot20innerbracket.stl","dxf":"","png":"","print":0}
-
 	]},
+
+
+
+
+
+
 	{"vendor":"Igus", "openscad":{"file":"mod_parts.scad", "function":"linearactuator_endstop_encoder()"},
 "images":["BOM_module_filament_driver_assy_linearactuator_endstop_encoder_igus_slider.PNG"],
 	"lineitems":[
 		{"cost":64.00, "sku":"TS-04-09","quantity":1, "stl":"TS_04_09_50_3.stl", "web":"", "name":"DryLin T, miniature profile rail","comments":"Have to cut this piece to 100mm"},
 		{"cost":15.70, "sku":"TW-04-09","quantity":1, "stl":"TW_04_09_4.stl", "web":"", "name":"DryLin T, miniature slide carriage","comments":""}
 	]},
+
+
+
+
 	{"vendor":"Biqu", "openscad":{"file":"mod_parts.scad", "function":"filament_linearactuator()"},
 "images":["biqu_mechanical_endstop.PNG"],
 	"lineitems":[
 		{"cost":1, "sku":"","quantity":1, "stl":"", "web":"", "name":"10PCS Mechanical Endstop For Reprap ramps 1.4 3D for DIY printer","comments":""}
 	]},
+
+
+
 		{"vendor":"Mouser", "openscad":{"file":"mod_parts.scad", "function":"linearactuator_endstop_encoder()"}, "images":["BOM_module_xy_softpot_linearencoders.PNG","softpot_linear_encoder.PNG"],
 	"lineitems":[
 		{"cost":8.1, "sku":"744-SP-L-0100-1033ST","quantity":2, "stl":"", "web":"https://www.mouser.com/ProductDetail/Spectra-Symbol/SP-L-0100-103-3-ST?qs=rVuZtzXoae6NmMGvuJPwKQ%3D%3D", "name":"Industrial Motion & Position Sensors SoftPot 150mm","comments":"You can also 3D print the wiper using, wipertip()"}
 	]},
+
+
+
 		{"vendor":"Adafruit", "openscad":{"file":"mod_parts.scad", "function":"compact_extruder()"}, "images":["BOM_module_filament_driver_assy_linearactuator_filament_driver_assy_motormount_nema17.PNG","nema_17_adafruit.PNG"],
 	"lineitems":[
 		{"cost":14, "sku":"324","quantity":1, "stl":"", "web":"https://www.adafruit.com/product/324", "name":"Stepper motor - NEMA-17 size - 200 steps/rev, 12V 350mA","comments":""}
 	]},
+
+
+
 	{"vendor":"Uxcell", "openscad":{"file":"mod_parts.scad", "function":"compact_extruder()"},
 "images":["BOM_module_x_shuttle_bowden_tube_filament.PNG"],
 	"lineitems":[
 		{"cost":10.00, "sku":"Bowden tube","quantity":1, "stl":"", "web":"https://www.amazon.com/uxcell-DC6-36V-Inductive-Proximity-LJ12A3-4-Z-BX/dp/B008DG9FLS", "name":"PTFE Teflon Bowden Tube OD 4mm/0.16in. ID 2mm/0.08in. 1.75mm/0.07in.","comments":"Best to search Amazon for this"},
 		{"cost":8.00, "sku":"PC4-MC6","quantity":2, "stl":"", "web":"https://www.amazon.com/uxcell-DC6-36V-Inductive-Proximity-LJ12A3-4-Z-BX/dp/B008DG9FLS", "name":"PC4-M6 Pneumatic Straight Fitting 4mm OD tubing,M6 6mm Applicable to 3D Printer, Witbot PC4-M6 Straight Fitting 4mm thread M6 Connector for 3D Printer (Pack of 10 pcs )","comments":"Best to search Amazon for this, the 3D printer filament is 1.75mm "}
 	]},
+
+
+
 	{"vendor":"biqu", "openscad":{"file":"mod_parts.scad", "function":"compact_extruder()"},
 "images":["BOM_module_x_shuttle_bowden_tube_filament.PNG","36teeth_mk7_mk8_stainless_steel_planetary_gear_feed_extrusion_wheel.PNG","comments":"Compact direct drive bowden extruder for 1.75mm filament"],
 	"lineitems":[
 		{"cost":1, "sku":"36 teeth MK7 / MK 8 stainless steel planetary gear wheel","quantity":1, "stl":"", "web":"https://www.amazon.com/uxcell-DC6-36V-Inductive-Proximity-LJ12A3-4-Z-BX/dp/B008DG9FLS", "name":"Stainless Steel GEAR MK7/MK8 Stainless Steel 10cm*10cm*10cm","comments":"Sources are many but not always reliable"}
 	]},
+
+
+
+
 	{"vendor":"HTS Resources", "openscad":{"file":"mod_parts.scad", "function":"outside_frame()"},
 "images":["BOM_module_x_shuttle_bowden_tube_filament.PNG","36teeth_mk7_mk8_stainless_steel_planetary_gear_feed_extrusion_wheel.PNG"],
 	"lineitems":[
 		{"cost":1, "sku":"extruder hardware","quantity":1, "stl":"", "web":"", "comments":"Skateboard bearings work","comments":"<br>1x M5 push-fit bowden connector (5mm thread) for 4mm OD bowden tubes (add another one for bowden inlet version)<br>1x 608zz bearing<br>1x M5 washer<br>1x M5x10mm allen head screw (M5x14mm for altenative idler)<be>3x M3x8mm allen head screws<br>1x M3x16mm allen head screw (M3x20mm for alternative idler)<br>1x M3 nut<br>2x M3 washers<br>1x compression spring 3mm ID<br>1x M3 allen head screw with suitable length for the selected spring"}
 	]},
+
+
+
 
 	{"vendor":"HTS Resources", "openscad":{"file":"mod_parts.scad", "function":"zbed_smz()"},
 "images":["BOM_module_slide_deck.PNG","BOM_module_slide_deck_lm8uu_smz_glider.PNG","BOM_module_slide_deck_zbedslot_516_smz_zbed.PNG","BOM_module_slide_deck_bed_leveler_better_lm8uu.PNG"],
@@ -195,12 +341,20 @@
 		{"time":"1h 17m","cost":0.43, "usedfilament_gm":"4.10","sku":"z_encoder_clamp_wiper","quantity":1, "stl":"z_encoder_clamp_wiper.stl","dxf":"","png":"","print":0,"image","BOM_module_slide_deck_z_encoder_clamp_wiper.PNG"}
 	]},
 
+
+
+
+
 	{"vendor":"Ponoko", "openscad":{"file":"mod_parts.scad", "function":"laser_zbed(144)"},
 "images":["BOM_module_slide_deck_laser_zbed.PNG"],
 	"lineitems":[
 		{"cost":27.93, "sku":"acrylic_laser_zbed_383.5_350_ponoko_0.177_inches","quantity":1, "thick":"0.177 inches","stl":"", "svg":"acrylic_laser_zbed_383.5_350_ponoko.svg","web":"http://www.ponoko.com", "name":"Acrylic - Black0.177 inchesP2 - 15.100 inches long x 15.100 inches wide","comments":"Material and color is flexible"}
 	]
 	},
+
+
+
+
 	{"vendor":"HTS Resources", "openscad":{"file":"mod_parts.scad", "function":"zbed_smz()"},
 "images":["BOM_module_slide_deck.PNG","BOM_module_slide_deck_lm8uu_smz_glider.PNG","BOM_module_slide_deck_zbedslot_516_smz_zbed.PNG","BOM_module_slide_deck_bed_leveler_better_lm8uu.PNG","BOM_module_slide_deck_slidedeck_adjust_wheel.PNG"],
 	"lineitems":[
@@ -212,6 +366,9 @@
 		{"time":"10m 21s","cost":0.05, "usedfilament_gm":"1.5","sku":"slidedeck_adjust_wheel","quantity":1, "stl":"slidedeck_adjust_wheel.stl","dxf":"","png":"","print":0,"image","BOM_module_slide_deck_slidedeck_adjust_wheel.PNG"}
 	]
 	},
+
+
+
 	{"vendor":"HTS Resources", "openscad":{"file":"mod_parts.scad", "function":"wash_and_strobparts()"},
 "images":["BOM_module_slide_deck_wash_dry_station.PNG","BOM_module_slide_deck_wash_dry_station_washbowl_1tip.PNG","BOM_module_slide_deck_wash_dry_station_washbowl_watervacinput.PNG","BOM_module_slide_deck_wash_dry_station_microwell_plate_guide.PNG","BOM_module_slide_deck_wash_dry_station_microwell_plate_guide_microwellplate.PNG"],
 	"lineitems":[
@@ -222,6 +379,10 @@
 		{"time":"31m 56s","cost":0.17, "usedfilament_gm":"4.98","sku":"microwell_plate_guide","quantity":1, "stl":"microwell_plate_guide.stl","dxf":"","png":"","print":0,"image":"BOM_module_slide_deck_wash_dry_station_microwell_plate_guide.PNG"}
 	]
 	},
+
+
+
+
 	{"vendor":"Cole-Parmer", "openscad":{"file":"mod_parts.scad", "function":""},
 "images":["tubing.PNG"],
 	"lineitems":[
@@ -229,6 +390,9 @@
 		{"cost":31, "sku":"Cole-Parmer Platinum-Cured Silicone Tubing, 1/16inchID x 1/8inchOD, 25ft per pack","quantity":1, "stl":"", "web":"https://www.coleparmer.com/i/cole-parmer-platinum-cured-silicone-tubing-1-16-id-x-1-8-od-25-ft-pack/9580202", "name":"Platinum-Cured Silicone Tubing, 1/16inchID x 1/8inchOD","comments":"","images":["tubing.PNG","assy_19_Silicone Tubing1_16inchID.PNG"]}
 	]
 	},
+
+
+
 	{"vendor":"HTS Resources", "openscad":{"file":"mod_parts.scad", "function":"openmv_nice_assy_stroboscope()"},
 "images":["BOM_module_slide_deck_openmv_nice_assy_stroboscope.PNG"],
 	"lineitems":[
@@ -242,12 +406,28 @@
 		{"time":"38m 36s","cost":0.17, "usedfilament_gm":"4.99","sku":"m12lens_screwshim_spacer","quantity":1, "stl":"m12lens_screwshim_spacer.stl","dxf":"","png":"","print":0, "comments":"The openmv_camera_lensmount_lensepart fits inside and you can adjust its distance from the image sensor. So it makes it possible to work with different focal distance M12 lenses"}
 	]
 	},
+
+
+
+
+
+
+
+
+
+
+
+
 	{"vendor":"HTS Resources", "openscad":{"file":"mod_parts.scad", "function":"openmv_camera_mnt_zbed()"},
 "images":["BOM_module_slide_deck_openmv_openmv_camera_mnt_zbed.PNG","BOM_module_slide_deck_openmv_openmv_camera_mnt_zbed_underside_view.PNG"],
 	"lineitems":[
 		{"time":"1h 37m 28s","cost":0.59, "usedfilament_gm":"16.86","sku":"openmv_camera_mnt_zbed","quantity":1, "stl":"openmv_camera_mnt_zbed.stl","dxf":"","png":"","print":1}
 	]
 	},
+
+
+
+
 	{"vendor":"M12 Lenses", "openscad":{"file":"mod_parts.scad", "function":"openmv_nice_assy_stroboscope()"},
 "images":[""],
 	"lineitems":[
@@ -255,6 +435,10 @@
 		{"cost":13.23, "sku":"PT-2520","quantity":1, "stl":"", "web":"http://www.m12lenses.com/25mm-F2-0-Board-Lens-p/pt-2520.htm", "name":"25mm, F2.0 Board Lens","comments":"","image":"25mm_focal_length_lens.PNG"}
 	]
 	},
+
+
+
+
 	{"vendor":"OpenMV", "openscad":{"file":"mod_parts.scad", "function":"openmv_nice_assy_stroboscope()"},
 "images":[""],
 	"lineitems":[
@@ -267,12 +451,18 @@
 	"lineitems":[
 		{"cost":4.9, "sku":"1085","quantity":1, "stl":"", "web":"", "name":"FR-4 TG130 2 layers","comments":"This is used with the BOM_controlpanel","fritzing":"BOM_controlpanel.fzz","arduino":"","gerber":"BOM_controlpanel_drill.zip","mfg":"Seeed"}
 	]},
+
+
+
 	{"vendor":"HTS Resources", "openscad":{"file":"mod_parts.scad", "function":"bom_controlpanel()"},
 "images":["BOM_module_pcb_panels_bom_controlpanel.PNG"],
 	"lineitems":[
 		{"time":"41m 34s","cost":0.25, "usedfilament_gm":"7.06","sku":"bom_controlpanel","quantity":1, "stl":"bom_controlpanel.stl","dxf":"","png":"","print":1,"images":"BOM_module_pcb_panels_bom_controlpanel.PNG"}
 	]
 	},
+
+
+
 	{"vendor":"Amazon", "openscad":{"file":"mod_parts.scad", "function":"bom_controlpanel()"},
 "images":["BOM_module_pcb_panels_bom_controlpanel.PNG"],
 	"lineitems":[
@@ -283,22 +473,34 @@
 	]
 	},
 
+
+
+
 		{"vendor":"HTS Resources", "openscad":{"file":"bom_electronics.scad", "function":"syringe_pcb_holder()"}, "images":["BOM_module_pcb_panels_syringe_pcb_holder.PNG"],"fritzing":"BOM_10pin_syringe.fzz","arduino":"","gerber":"BOM_10pin_syringe_silkTop.zip",
 	"lineitems":[
 		{"cost":4.9, "sku":"1085","quantity":1, "stl":"", "web":"", "name":"FR-4 TG130 2 layers","comments":"","fritzing":"BOM_10pin_syringe.fzz","arduino":"","gerber":"BOM_10pin_syringe_silkTop.zip","mfg":"Seeed"}
 	]},
+
+
+
 	{"vendor":"HTS Resources", "openscad":{"file":"mod_parts.scad", "function":"syringe_pcb_holder()"},
 "images":["BOM_module_pcb_panels_syringe_pcb_holder.PNG"],
 	"lineitems":[
 		{"time":"2h 14m 50s","cost":0.75, "usedfilament_gm":"21.32","sku":"syringe_pcb_holder_set","quantity":1, "stl":"syringe_pcb_holder_set.stl","dxf":"","png":"","print":1,"images":""}
 	]
 	},
+
+
+
 	{"vendor":"HTS Resources", "openscad":{"file":"mod_parts.scad", "function":"bananajackpanel()"},
 "images":["BOM_module_pcb_panels_bananajackpanel.PNG"],
 	"lineitems":[
 		{"time":"1h 16m 48s","cost":0.48, "usedfilament_gm":"13.66","sku":"bananajackpanel","quantity":1, "stl":"bananajackpanel.stl","dxf":"","png":"","print":1,"images":""}
 	]
 	},
+
+
+
 	{"vendor":"Amazon", "openscad":{"file":"mod_parts.scad", "function":"bom_controlpanel()"},
 "images":["banana_jack_binding_post.PNG"],
 	"lineitems":[
@@ -307,28 +509,42 @@
 		{"cost":1, "sku":"red binding post","quantity":1, "stl":"", "web":"", "name":"Red Binding Post For Speaker 4mm Banana Plug Test Probe Connector","comments":"This is 5V","image":""},
 		{"cost":1, "sku":"green binding post","quantity":1, "stl":"", "web":"", "name":"Green Binding Post For Speaker 4mm Banana Plug Test Probe Connector","comments":"This is 3V","image":""}
 	]},
+
+
+
 	{"vendor":"HTS Resources", "openscad":{"file":"mod_parts.scad", "function":"liquidlevel_pumps_pcb()"},
 "images":["BOM_module_pcb_panels_liquidlevel_pumps_pcb.PNG"],
 	"lineitems":[
 		{"time":"1h 15m 40s","cost":0.47, "usedfilament_gm":"13.32","sku":"liquidlevel_pumps_pcb","quantity":1, "stl":"liquidlevel_pumps_pcb.stl","dxf":"","png":"","print":1,"images":""}
 	]
 	},
+
+
 		{"vendor":"HTS Resources", "openscad":{"file":"bom_electronics.scad", "function":"liquidlevel_pumps_pcb()"}, "images":["BOM_module_pcb_panels_liquidlevel_pumps_pcb_fz.PNG"],"fritzing":"BOM_liquidlevel_pumps_pcb.fzz","arduino":"","gerber":"BOM_10pin_syringe_silkTop.zip",
 	"lineitems":[
 		{"cost":4.9, "sku":"1085","quantity":1, "stl":"", "web":"", "name":"FR-4 TG130 2 layers","comments":"","fritzing":"BOM_liquidlevel_pumps_pcb.fzz","arduino":"","gerber":"BOM_liquidlevel_pumps_pcb_silkTop.zip","mfg":"Seeed"}
 	]},
+
+
+
 	{"vendor":"HTS Resources", "openscad":{"file":"mod_parts.scad", "function":"atx_power_connect_assy()"},
 "images":["BOM_module_pcb_panels_atx_power_connect_assy.PNG"],
 	"lineitems":[
 		{"time":"1h 5m 59s","cost":0.47, "usedfilament_gm":"13.32","sku":"atx_power_connect_assy","quantity":1, "stl":"atx_power_connect_assy.stl","dxf":"","png":"","print":1,"images":"BOM_module_pcb_panels_atx_power_connect_assy.PNG"}
 	]
 	},
+
+
 	{"vendor":"Amazon", "openscad":{"file":"mod_parts.scad", "function":"atx_power_connect_assy"},
 "images":[""],
 	"lineitems":[
 		{"cost":3, "sku":"8 pin ATX power extension","quantity":1, "stl":"", "web":"https://www.amazon.com/gp/product/B000M802RG/ref=oh_aui_detailpage_o06_s00?ie=UTF8&psc=1", "name":"8-Inch EPS 8-Pin Power Extension Cable","comments":"","image":"8-Inch_EPS_8-Pin_PowerExtensionCable.PNG"},
 		{"cost":1, "sku":"ATX PSU 24 Pin Connector","quantity":1, "stl":"", "web":"https://www.amazon.com/gp/product/B00DUXU7Z2/ref=oh_aui_detailpage_o04_s00?ie=UTF8&psc=1", "name":"Module PSU 24 Pin 90 Degree ATX Connector Adapter ","comments":"","image":"atx_socket.PNG"}
 	]},
+
+
+
+
 
 	{"vendor":"HTS Resources", "openscad":{"file":"mod_parts.scad", "function":"conveyer_panel_pcb_holder()"},
 "images":["BOM_module_pcb_panels_conveyer_panel_pcb_holder.PNG"],
@@ -338,10 +554,15 @@
 	},
 
 
+
+
 		{"vendor":"HTS Resources", "openscad":{"file":"bom_electronics.scad", "function":"conveyer_panel_pcb_holder()"}, "images":["BOM_module_pcb_panels_conveyer_panel_pcb_holder_fz.PNG"],"fritzing":"BOM_conveyer_panel.fzz","arduino":"","gerber":"BOM_conveyer_panel_silkTop.zip",
 	"lineitems":[
 		{"cost":4.9, "sku":"1085","quantity":1, "stl":"", "web":"", "name":"FR-4 TG130 2 layers","comments":"","fritzing":"BOM_conveyer_panel.fzz","arduino":"","gerber":"BOM_conveyer_panel_silkTop.zip","mfg":"Seeed"}
 	]},
+
+
+
 	{"vendor":"HTS Resources", "openscad":{"file":"mod_parts.scad", "function":"usbs_socket_alu_support_lid_usbs_cover()"},
 "images":["BOM_module_pcb_panels_bom_usbs_socket_alu_support_lid_usbs_cover.PNG"],
 	"lineitems":[
@@ -349,12 +570,18 @@
 	]
 	},
 
+
+
+
 	{"vendor":"HTS Resources", "openscad":{"file":"mod_parts.scad", "function":"usbs_socket_alu_support_lid_usbs_simplier()"},
 "images":["BOM_module_pcb_panels_bom_usbs_socket_alu_support_lid_usbs_simplier.PNG"],
 	"lineitems":[
 		{"time":"1h 32m 2s","cost":0.57, "usedfilament_gm":"16.32","sku":"usbs_socket_alu_support_lid_usbs_cover","quantity":1, "stl":"usbs_socket_alu_support_lid_usbs_cover.stl","dxf":"","png":"","print":1,"images":"BOM_module_pcb_panels_bom_usbs_socket_alu_support_lid_usbs_simplier.PNG"}
 	]
 	},
+
+
+
 		{"vendor":"Adafruit", "openscad":{"file":"modparts.scad", "function":"usbs_socket_alu_support_lid_usbs_simplier()"}, "images":[""],
 	"lineitems":[
 		{"cost":3.95, "sku":"936","quantity":1, "stl":"", "web":"https://www.adafruit.com/product/936", "name":"Panel Mount USB Cable - B Female to Mini-B Male","comments":"","images":"PanelMountUSBCable_mini.PNG"},
@@ -365,28 +592,43 @@
 		{"cost":7, "sku":"12V cooling fan","quantity":1, "stl":"", "web":"https://www.amazon.com/BXQINLENX-0-12amaxQuiet-Brushless-Miniature-40x40X20mm/dp/B018JRSY5I/ref=sr_1_19?ie=UTF8&qid=1527713817&sr=8-19&keywords=40x40x20mm+12V+cooling+fan", "name":" Miniature Cooling Fans 40x40X20mm ","comments":"","images":"cooling_fan_40x40X20mm.PNG"}
 	]},
 
+
+
 		{"vendor":"HTS Resources", "openscad":{"file":"modparts.scad", "function":"electronics_setup()"}, "images":["BOM_module_electronics_BOM_atxpowerconnect.PNG"],"fritzing":"BOM_atxpowerconnect.fzz","arduino":"","gerber":"BOM_atxpowerconnect_silkTop.zip",
 	"lineitems":[
 		{"cost":4.9, "sku":"atx power","quantity":1, "stl":"", "web":"", "name":"FR-4 TG130 2 layers","comments":"ATX power connectors with fuses","fritzing":"BOM_atxpowerconnect.fzz","arduino":"","gerber":"BOM_atxpowerconnect_silkTop.zip","mfg":"Seeed"}
 	]},
 
+
+
 		{"vendor":"HTS Resources", "openscad":{"file":"modparts.scad", "function":"electronics_setup()"}, "images":["BOM_module_electronics_BOM_conveyer_solenoids.PNG","BOM_module_electronics_BOM_conveyer_solenoids_fz.PNG"],"fritzing":"BOM_conveyer_solenoids.fzz","arduino":"","gerber":"BOM_conveyer_solenoids_silkTop.zip",
 	"lineitems":[
 		{"cost":1, "sku":"conveyor solenoid","quantity":1, "stl":"", "web":"", "name":"FR-4 TG130 2 layers","comments":"","fritzing":"BOM_conveyer_solenoids.fzz","arduino":"","gerber":"BOM_conveyer_solenoids_silkTop.zip","mfg":"Seeed"}
 	]},
+
+
+
 		{"vendor":"Panucatt", "openscad":{"file":"modparts.scad", "function":"azteeg_controller()"}, "images":["BOM_module_electronics_BOM_azteeg.PNG"],
 	"lineitems":[
 		{"cost":120, "sku":"AX5MINI","quantity":1, "stl":"", "web":"http://www.panucatt.com/azteeg_X5_mini_reprap_3d_printer_controller_p/ax5mini.htm", "name":"Azteeg X5 mini WIFI 32BIT All-in-one Controller + 4 mechanical endstops","comments":"","images":"azteegx5mini.PNG"},
 		{"cost":75, "sku":"VIKILCD2","quantity":1, "stl":"", "web":"http://www.panucatt.com/product_p/vikilcd2.htm", "name":"ViKi 2 Graphic LCD - Control Panel Interface","comments":"","images":"ViKi2Graphic_LCD.PNG"}
 	]},
+
+
+
 		{"vendor":"HTS Resources", "openscad":{"file":"modparts.scad", "function":"electronics_setup()"}, "images":["BOM_washdrypcv_kill.PNG","BOM_washdrypcv_kill_fz.PNG"],"fritzing":"BOM_washdrypcv_kill.fzz","arduino":"washdrypcv_servo_electrocaloric_kill.ino","gerber":"BOM_conveyer_solenoids_silkTop.zip",
 	"lineitems":[
 		{"cost":1, "sku":"microfluidic shield","quantity":1, "stl":"", "web":"", "name":"FR-4 TG130 2 layers","comments":"This runs the diaphragm pumps (wash, dry and pressure compensation vessel). It also runs the syringe pump valve servo. It can also halt the Azteeg.  It has connections to an electrocaloric liquid level sensor. ","fritzing":"BOM_washdrypcv_kill.fzz","arduino":"washdrypcv_servo_electrocaloric_kill.ino","gerber":"BOM_conveyer_solenoids_silkTop.zip","mfg":"Seeed"}
 	]},
+
+
 		{"vendor":"HTS Resources", "openscad":{"file":"modparts.scad", "function":"electronics_setup()"}, "images":["BOM_conveyer_pcb.PNG","BOM_conveyer_pcb_fz.PNG"],"fritzing":"BOM_conveyer_pcb.fzz","arduino":"conveyer_linearactuator_arduinomicro.ino","gerber":"BOM_conveyer_pcb_silkTop.zip",
 	"lineitems":[
 		{"cost":8, "sku":"conveyor shield","quantity":1, "stl":"", "web":"", "name":"FR-4 TG130 2 layers","comments":"This runs 5 stepper motors and also 4 solenoids. Its designed to work with the conveyor system but could be used for something else","fritzing":"BOM_conveyer_pcb.fzz","arduino":"conveyer_linearactuator_arduinomicro.ino","gerber":"BOM_conveyer_pcb_silkTop.zip","mfg":"Seeed"}
 	]},
+
+
+
 
 	{"vendor":"HTS Resources", "openscad":{"file":"mod_parts.scad", "function":"nextgen_syringe10ml_assy()"},
 "images":["syringe10ml_assy.PNG"],
@@ -402,24 +644,48 @@
 
 		{"time":"","cost":"", "usedfilament_gm":"","sku":"smallsyringe_valvesupportmodule_plate","quantity":1, "stl":"smallsyringe_valvesupportmodule_plate.stl","dxf":"","png":"","print":0,"images":["smallsyringe_valvesupportmodule_plate.PNG","assy_12_smallsyringe_valvesupportmodule_plate.PNG"]},
 		{"time":"","cost":"", "usedfilament_gm":"","sku":"valveconnectpart","quantity":1, "stl":"valveconnectpart.stl","dxf":"","png":"","print":0,"images":"valveconnectpart.PNG"},
+
 		{"time":"","cost":"", "usedfilament_gm":"","sku":"igus_TW_04_12_slider_plate","quantity":1, "stl":"igus_TW_04_12_slider_plate.stl","dxf":"","png":"","print":0,"images":"igus_TW_04_12_slider_plate.PNG"},
+
+
 		{"time":"","cost":"", "usedfilament_gm":"","sku":"syringeshuttle_clipbracket","quantity":1, "stl":"syringeshuttle_clipbracket.stl","dxf":"","png":"","print":0,"images":["syringeshuttle_clipbracket.PNG","assy_7_syringeshuttle_clipbracket"]},
 
 		{"time":"","cost":"", "usedfilament_gm":"","sku":"igus_TW_04_12_slider","quantity":1, "stl":"igus_TW_04_12_slider.stl","dxf":"","png":"","print":0,"images":["igus_TW_04_12_slider.PNG","assy_6_igus_TW_04_12_slider_plate.PNG"]},
 		{"time":"","cost":"", "usedfilament_gm":"","sku":"stepper_linear_m8nut_coupler","quantity":1, "stl":"stepper_linear_m8nut_coupler.stl","dxf":"","png":"","print":0,"images":"stepper_linear_m8nut_coupler.PNG"}
 	]
 	},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		{"vendor":"HTS Resources", "openscad":{"file":"bom_electronics.scad", "function":"syringe_pcb_holder()"}, "images":["BOM_module_pcb_panels_syringe_pcb_holder.PNG"],"fritzing":"BOM_10pin_syringe.fzz","arduino":"","gerber":"BOM_10pin_syringe_silkTop.zip",
 	"lineitems":[
 		{"cost":4.9, "sku":"1085","quantity":1, "stl":"", "web":"", "name":"FR-4 TG130 2 layers","comments":"","fritzing":"BOM_10pin_syringe.fzz","arduino":"","gerber":"BOM_10pin_syringe_silkTop.zip","mfg":"Seeed"}
 	]},
 
+
+
+
 		{"vendor":"Adafruit", "openscad":{"file":"mod_parts.scad", "function":"compact_extruder()"}, "images":["BOM_module_filament_driver_assy_linearactuator_filament_driver_assy_motormount_nema17.PNG","nema_17_adafruit.PNG"],
 	"lineitems":[
 		{"cost":14, "sku":"324","quantity":1, "stl":"", "web":"https://www.adafruit.com/product/324", "name":"Stepper motor - NEMA-17 size - 200 steps/rev, 12V 350mA","comments":"","image":"adafruit_stepper_motor_324.PNG","assy_3_stepper_motor.PNG"},
 		{"cost":4.95, "sku":"1176","quantity":1, "stl":"", "web":"https://www.adafruit.com/product/1176", "name":"Aluminum Flex Shaft Coupler - 5mm to 8mm","comments":"","image":"adafruit_ShaftCoupler-5mm-to-8mm-1176.PNG","assy_3_stepper_motor.PNG"}
-
 	]},
+
+
+
+
 	{"vendor":"Amazon", "openscad":{"file":"mod_parts.scad", "function":"nextgen_syringe10ml_assy()"},
 "images":[""],
 	"lineitems":[
@@ -430,27 +696,47 @@
 		{"cost":1, "sku":"m9 compression spring","quantity":1, "stl":"", "web":"https://www.amazon.com/uxcell-0-8mmx9mmx30mm-Stainless-Compression-Springs/dp/B076M4RLGN/ref=sr_1_11?ie=UTF8&qid=1527866790&sr=8-11&keywords=9mm+compression+spring", "name":"uxcell 0.8mmx9mmx30mm 304 Stainless Steel Compression Springs Silver Tone 20pcs","comments":"","image":"0.8mmx9mmx30mm_304_Stainless_Steel_Compression_Spring.PNG"},
 		{"cost":1, "sku":"155","quantity":1, "stl":"", "web":"https://www.adafruit.com/product/155", "name":"Standard servo - TowerPro SG-5010 - 5010","comments":"","images":["Standard_servo-TowerPro_SG-5010.PNG","assy_13_servo.PNG"]}
 	],
+
+
+
+
+
+
 	{"vendor":"Misumi", "openscad":{"file":"mod_parts.scad", "function":"nextgen_syringe10ml_assy()"},
 "images":["BOM_module_outside_frame.PNG","BOM_module_outside_frame_gantry_noplates.PNG"],
 	"lineitems":[
 		{"cost":6.63, "sku":"HFS5-2020-200-TPW","quantity":1,"stl":"HFS5-2020-200-TPW.stl"}
 	]},
+
+
+
+
 	{"vendor":"Igus", "openscad":{"file":"mod_parts.scad", "function":"igus_TW_04_12_slider()"},
 "images":["assy_2_HFS5-2020-200-TPW.PNG"],
 	"lineitems":[
 		{"cost":64.50, "sku":"TS_04_12_150_2","quantity":1, "stl":"TS_04_12_150_2.stl", "web":"", "name":"DryLin T, miniature profile rail unit/meter","comments":"Have to cut this piece to 150mm"},
 		{"cost":38.50, "sku":"TW-04-12","quantity":1, "stl":"TW_04_12_1.stl", "web":"", "name":"DRYLIN T CARR","comments":""}
 	]},
+
+
+
+
 	{"vendor":"HTS Resources", "openscad":{"file":"mod_parts.scad", "function":"nextgen_syringe10ml_assy()"},
 	"images":["assy_5_threadedrod.PNG"],
 	"lineitems":[
 		{"cost":5, "sku":"treadedrod","quantity":4, "stl":"", "web":"", "name":"Threaded Rod 5/16inch","comments":"5/16inch in diameter in stainless steel","image":"assy_5_threadedrod.PNG"}
 	]},
+
+
+
 	{"vendor":"BD", "openscad":{"file":"mod_parts.scad", "function":"valve_assy()"},
 	"images":["assy_15_stopcock_valve_for_syringe.PNG"],
 	"lineitems":[
 		{"cost":25, "sku":"stopcock valve","quantity":1, "stl":"", "web":"https://catalog1.bd.com/infusiondisposables/extension-35666.html", "name":"BD Connecta 3-way stop cock valve REF394910","comments":"","images":["assy_15_stopcock_valve_for_syringe.PNG","stopcock_valve_REF_394910.PNG"]}
 	]},
+
+
+
 
 	{"vendor":"HTS Resources", "openscad":{"file":"bom_vacuum_pumps_box.scad", "function":"diaphragmpump_boxassy()"},
 "images":["step_1_diaphragmpump_boxassy.PNG.PNG","step_2_tslot20.PNG","step_3_boxcouplersbottom.PNG","step_4_diaphragmpump_end_6pin.PNG","step_5_diaphragmpump_longwall.PNG","step_6_diaphragmpump_end.PNG","step_7_diaphragmpump_longwall_pumpports.PNG","step_8_boxcouplerstop.PNG","step_9_diaphragmpump_case_lid_from_base.PNG"],
@@ -461,12 +747,20 @@
 		{"time":"","cost":"", "usedfilament_gm":"","sku":"boxcouplers","quantity":1, "stl":"boxcouplers.stl","dxf":"","png":"","print":1,"images":[""]}
 	]},
 
+
+
+
+
+
 	{"vendor":"Ponoko", "openscad":{"file":"bom_vacuum_pumps.scad", "function":"diaphragmpump_boxassy()"},
 "images":[""],
 	"lineitems":[
 		{"cost":38.57, "sku":"acrylic_diaphragm_box_ponoko","quantity":1, "thick":"0.177 inches","stl":"", "svg":"acrylic_diaphragm_box_ponoko.svg","web":"http://www.ponoko.com", "name":"Acrylic - Black0.177 inchesP2 -31.100 inches long x 15.100 inches wide","comments":"Material and color is flexible"}
 	]
 	},
+
+
+
 		{"vendor":"HTS Resources", "openscad":{"file":"bom_vacuum_pumps.scad", "function":"diaphragmpump_boxassy()"}, "images":["BOM_diaphragm_washpumps_fz.PNG"],"fritzing":"BOM_diaphragm_washpumps.fzz","arduino":"","gerber":"BOM_diaphragm_washpumps_silkTop.zip",
 	"lineitems":[
 		{"cost":4.9, "sku":"1085","quantity":1, "stl":"", "web":"", "name":"FR-4 TG130 2 layers","comments":"","fritzing":"BOM_diaphragm_washpumps.fzz","arduino":"","gerber":"BOM_diaphragm_washpumps_silkTop.zip","mfg":"Seeed"}

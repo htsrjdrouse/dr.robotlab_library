@@ -1,9 +1,9 @@
 include <modparts.scad>
 use<writescad/write.scad>
 
-//translate([105,45,0])bom_controlpanel();
-//electrics_panels_to_print();
+translate([0,-50,0])liquidlevel_pumps_pcb();
 
+//translate([105,45,0])rotate([180,0,180])BOM_controlpanel();//electrics_panels_to_print();
 //atx_power_connect_assy();
 
 //syringe_pcb_holder_placeholder();
@@ -30,9 +30,16 @@ syringe_pcb_holder();
 //usbs_socket_alu_support_lid_usbs_simplier();
 
 //labbot3d_electronics_configuration();
-
-outside_frame(bcl,cl);
 /*
+for(i=[-4:4]){translate([i*12.5,0,0])
+difference(){
+cylinder(r=12/2,h=5);
+translate([0,0,-1])cylinder(r=5/2,h=10);
+}
+}
+*/
+/*
+outside_frame(bcl,cl);
 pcb_panels();
 gantry();
 //gantry_nomenclature();
@@ -51,7 +58,13 @@ pcb_panels();
 // labbot3d_electronics_configuration();
 electronics_setup();
 */
+/*
 
+ outside_frame(tcl,thcl);
+pcb_panels();
+
+electronics_setup();
+*/
 //electronics_stl();
 // labbot3d_electronics_configuration();
 //noconveyer_gantry_assy(20,-30,-45+50+100-50-100+150,-55,0,267,tcl,thcl);
@@ -238,19 +251,25 @@ translate([59.533,87.643,-0.1])cylinder(r=3.5/2,h=20);
 }
 }
 
+
 module BOM_controlpanel(){
-translate([0,40,6])color("black")rotate([0,0,0])mirror([0,0,0])write("BOM_controlpanel",h=8);
+//translate([0,40,6])color("black")rotate([0,0,0])mirror([0,0,0])write("BOM_controlpanel",h=8);
 difference(){
-cube([61.9,39.3,3]);
+translate([-5,0,0])cube([61.9+10,39.3,5]);
 translate([5.772,33.154,-50.1])cylinder(r=3.5/2,h=200);
 translate([56.627,33.256,-50.1])cylinder(r=3.5/2,h=200);
 translate([5.772,5.117,-50.1])cylinder(r=3.5/2,h=200);
 translate([57.957,6.038,-50.1])cylinder(r=3.5/2,h=200);
-translate([15.186,20.875,-50.1])rotate([0,0,45])cylinder(r=9/2,h=200);
-translate([34.627,21.591,-50.1])rotate([0,0,45])cylinder(r=5.5/2,h=200);
+translate([15.186,20.875,-50.1])rotate([0,0,45])#cylinder(r=10/2,h=200);
+translate([15.186,20.875,-50.1])rotate([0,0,45])#cylinder(r=27/2,h=55.25-2,$fn=4);
+translate([15.186+18,20.875,-50.1])rotate([0,0,45])#cylinder(r=27/2,h=55.25-2,$fn=4);
+translate([15.186+36,20.875,-50.1])rotate([0,0,45])#cylinder(r=27/2,h=55.25-2,$fn=4);
+//translate([34.627,21.591,-50.1])rotate([0,0,45])#cylinder(r=5.5/2,h=200);
 translate([52.329,21.591,-50.1])rotate([0,0,45])cylinder(r=5.5/2,h=200);
 }
 }
+
+
 
 module BOM_liquidlevel_pumps(){
 translate([100,30,-0])color("black")rotate([0,180,0])mirror([0,0,0])write("BOM_liquidlevel_pumps",h=8);

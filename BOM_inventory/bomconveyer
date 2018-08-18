@@ -1,6 +1,46 @@
-	{"vendor":"Biqu", "openscad":{"file":"mod_parts.scad", "function":"outside_frame()"},
-	"images":["BOM_module_outside_frame_gantry_plates_zmotor_smoothrod_idlers.PNG", "name":"product list"],
-	"lineitems":[
-		{"cost":2.5, "sku":"WCL000007","quantity":9, "stl":"", "web":"https://www.biqu.equipment/products/biqu-cnc-openbuilds-pom-wheel-with-bearings-big-models-passive-round-wheel-idler-gear-perlin-wheel-for-v-slot?variant=32457817795", "name":"BIQU POM Pulley","comments":"You can get also at Othermachine, but they are around $5 a unit. Openscad: cylinder(r=23.9/2,h=10.23)"}
-	]},
+
+{"openscad": {"function": "slide_conveyer()", "file": "mod_parts.scad"},"images":["conveyor_overview.PNG", "conveyor_steppermotor.PNG","conveyor_steppermotor_motormount.PNG","conveyor_steppermotor_motormount_shaftcoupler.PNG","conveyor_steppermotor_threadedrod.PNG","conveyor_lbrack_support.PNG","conveyor_endstop_for_conveyer.PNG","conveyer_stepper_linear_m8nut_coupler_a.PNG","conveyer_stepper_linear_m8nut_coupler_b.PNG","solenoid_flag.PNG","conveyer_verticallinearpulleybearingbottom.PNG","conveyer_slider_x4.PNG","conveyor_slidedeck.PNG"],
+"info":["Overview of conveyor module", "Stepper motor Adafruit 324 Nema-17", "Motor mount to vertical extrusion support","Shaft coupler","5/16inch threaded rod","Conveyor rail L bracket support","Conveyor endstop mount","Conveyer linear actuator m8nut coupler A","This holds the solenoid for moving slide deck. conveyer_stepper_linear_m8nut_coupler_b","This is the structure the solenoid is used to drag the slide deck frontwards and backwards, solenoid_flag","This holds the other side of the threaded rod in place it uses a 608z bearing","This is the shuttle that allows for moveable spotting and imaging plates to attach","Conveyor spotting/imaging deck this thing attaches to conveyer_slider_x4 shuttle. It is also possible to adjust the levelness"],
+{"sku": "5/16inch brass nut", "web": "https://www.amazon.com/Speck-5829340800-Brass-Casing-Flange/dp/B074RGPGQ4/ref=sr_1_1?s=lawn-garden&ie=UTF8&qid=1527865805&sr=1-1&keywords=m8+brass+nut&dpID=4122WPzN%252BvL&preST=_SY300_QL70_&dpSrc=srch", "name": "Brass nut - 5/16inch", "stl": "", "comments": "", "cost": 1, "images": ["brass_m8_nut.PNG"], "quantity": 1},
+"lineitems": [
+{"sku": "m9 compression spring", "web": "https://www.amazon.com/uxcell-0-8mmx9mmx30mm-Stainless-Compression-Springs/dp/B076M4RLGN/ref=sr_1_11?ie=UTF8&qid=1527866790&sr=8-11&keywords=9mm+compression+spring", "name": "uxcell 0.8mmx9mmx30mm 304 Stainless Steel Compression Springs Silver Tone 20pcs", "stl": "", "comments": "", "cost": 1, "images": ["0.8mmx9mmx30mm_304_Stainless_Steel_Compression_Spring.PNG"], "quantity": 1},
+{"sku": "1176", "web": "https://www.adafruit.com/product/1176", "name": "Adafruit Aluminum Flex Shaft Coupler - 5mm to 8mm", "stl": "", "comments":     "", "cost": 1, "images": ["Adafruit_ShaftCoupler-5mm-to-8mm-1176.PNG", ""] "quantity": 1}], "vendor": "Adafruit"},
+{"sku": "1259", "web": "https://www.adafruit.com/product/1259", "name": "Adafruit Aluminum Extrusion Double Corner Brace Support (for 20x20)", "stl": "", "comments": "There is a module for this: adafruit_lplate_1259()", "cost": 1, "images": ["conveyor_lbrack_support.PNG", "adafruit_lbracket_1259.PNG"], "quantity": 1}], "vendor": "Adafruit"},
+{"sku": "1259", "web": "https://www.adafruit.com/product/2776", "name": "Mini Push-Pull Solenoid - 5V", "stl": "", "comments": "Solenoid is used to move the slide deck", "cost": 1, "images": ["adafruit_solenoid_mini_2776.PNG", "adafruit_lbracket_1259.PNG"], "quantity": 1}], "vendor": "Adafruit"}
+]}
+
+
+
+{"openscad": {"function": "slide_conveyer()", "file": "mod_parts.scad"},"info":["M8 threaded rod"],"images": ["conveyor_steppermotor_threadedrod.PNG"],  "file": "mod_parts.scad"}, "lineitems": [{"sku": "threadedrod", "web": "", "name": "Threaded Rod 5/16inch", "stl": "", "image": "conveyor_steppermotor_threadedrod.PNG", "comments": "5/16inch in diameter in stainless steel", "cost": 5, "quantity": 4}], "vendor": "HTS Resources"},
+
+{"info":["Small 625zz wheels for M3"],"images": ["conveyer_stepper_linear_m8nut_coupler_a.PNG"],"openscad": {"function": "slide_conveyer()", "file": "mod_parts.scad"}, "lineitems": [{"sku": "3D0006", "web": "", "name": "Its also called MR105ZZ, Small round wheel idler for 625zz bearings", "stl": "", "image": "MR105ZZ-Small-round-wheel-idler.PNG", " comments": "15.5mm OD diameter, ", "cost": 6, "quantity": 4}], "vendor": "Biqu"},
+{"images": ["conveyer_slider_x4.PNG"], "info":[""conveyer_slider_x4 wheels"],"openscad": {"function": "slide_conveyer()", "file": "mod_parts.scad"}, "lineitems": [{"sku": "WCL000007", "web": "https://www.Biqu.equipment/products/Biqu-cnc-openbuilds-pom-wheel-with-bearings-big-models-passive-round-wheel-idler-gear-perlin-wheel-for-v-slot?variant=32457817795", "name": "Biqu POM Pulley", "stl": "", "comments": "You can get also at Othermachine, but they are around $5 a unit. Openscad: cylinder(r=23.9/2,h=10.23)", "cost": 2.5, "quantity": 9}], "vendor": "Biqu", "name": "product list"},
+
+
+
+
+{"info":["Overview of conveyor module",  "Motor mount to vertical extrusion support", "Conveyor rail L bracket support","Conveyor endstop mount","Conveyer linear actuator m8nut coupler A","Adafruit Solenoid Push-pull","This is the structure the solenoid is used to drag the slide deck frontwards and backwards, solenoid_flag", "This holds the other side of the threaded rod in place it uses a 608z bearing","This is the shuttle that allows for moveable spotting and imaging plates to attach","Conveyor spotting/imaging deck this thing attaches to conveyer_slider_x4 shuttle. It is also possible to adjust the levelness"],
+"images": ["conveyor_overview.PNG", "conveyor_steppermotor_motormount.PNG","conveyor_lbrack_support.PNG","conveyor_endstop_for_conveyer.PNG","conveyer_stepper_linear_m8nut_coupler_a.PNG","adafruit_solenoid_mini_2776.PNG","solenoid_flag.PNG","conveyer_verticallinearpulleybearingbottom.PNG","conveyer_slider_x4.PNG","conveyor_slidedeck.PNG"], 
+"openscad": {"function": "slide_conveyer()_3Dprint", "file": "mod_parts.scad"}, 
+"lineitems": [
+{"sku": "bom_conveyer_parts", "stl": "bom_conveyer_parts.stl", "usedfilament_gm": "71.06", "cost": 2.49, "time": "7h 34m 2s", "print": 1, "dxf": "", "png": "conveyor_overview.PNG", "quantity": 1},
+{"sku": "conveyer_stepper_linear_m8nut_coupler_a", "stl": "conveyer_stepper_linear_m8nut_coupler_a.stl", "usedfilament_gm": "10.51", "cost": 0.37, "time": "1h 11m 22s", "print": 0, "dxf": "", "png": "", "quantity": 0, "comments":"Conveyer linear actuator m8nut coupler A. It works with 15.5 diameter wheel 9mm thick which uses a 625zz bearing"},
+{"sku": "conveyer_stepper_linear_m8nut_coupler_b", "stl": "conveyer_stepper_linear_m8nut_coupler_b.stl", "usedfilament_gm": "6.58", "cost": 0.23, "time": "53m 26s", "print": 0, "dxf": "", "png": "", "quantity": 0, "comments":"This holds the solenoid for moving slide deck. conveyer_stepper_linear_m8nut_coupler_b"},
+{"sku": "solenoid_flag", "stl": "solenoid_flag.stl", "usedfilament_gm": "0.29", "cost": 0.03, "time": "7m 35s", "print": 0, "dxf": "", "png": "solenoid_flag.PNG", "quantity": 0, "comments":"This is the structure the solenoid is used to drag the slide deck frontwards and backwards, solenoid_flag"},
+{"sku": "conveyer_verticallinearpulleybearingbottom", "stl": "conveyer_verticallinearpulleybearingbottom.stl", "usedfilament_gm": "13.80", "cost": 0.48, "time": "1h 24m 5s", "print": 0, "dxf": "", "png": "conveyer_verticallinearpulleybearingbottom.PNG", "quantity": 0, "comments":"This holds the other side of the threaded rod in place it uses a 608z bearing"},
+{"sku": "conveyer_slider_x4", "stl": "conveyer_slider_x4.stl", "usedfilament_gm": "20.40", "cost": 0.71, "time": "2h 9m 34s", "print": 0, "dxf": "", "png": "conveyer_slider_x4.PNG", "quantity": 0, "comments":"This is the shuttle that allows for moveable spotting and imaging plates to attach"}
+], 
+"vendor": "HTS Resources"},
+
+
+{"info":[],"images": [], "openscad": {"function": "slide_conveyer()", "file": "modparts.scad"}, "lineitems": [{"sku": "conveyor_slidedeck_293_260_ponoko", "web": "http://www.ponoko.com", "name": "Acrylic - Black0.177 inchesP2 -15.100 inches long x 15.100 inches wide", "stl": "", "svg": "conveyor_slidedeck_293_260_ponoko.svg", "comments": "Material and color is flexible", "cost": 15.6, "thick": "0.118 inches", "quantity": 1}], "vendor": "Ponoko"},
+
+
+images:["conveyor_overview.PNG", "conveyor_steppermotor.PNG","conveyor_steppermotor_motormount.PNG","conveyor_steppermotor_motormount_shaftcoupler.PNG","conveyor_steppermotor_threadedrod.PNG","conveyor_lbrack_support.PNG","conveyor_endstop_for_conveyer.PNG","conveyer_stepper_linear_m8nut_coupler_a.PNG","conveyer_stepper_linear_m8nut_coupler_b.PNG","solenoid_flag.PNG","conveyer_verticallinearpulleybearingbottom.PNG","conveyer_slider_x4.PNG","conveyor_slidedeck.PNG"]
+info:["Overview of conveyor module", "Stepper motor Adafruit 324 Nema-17", "Motor mount to vertical extrusion support","Shaft coupler","5/16inch threaded rod","Conveyor rail L bracket support","Conveyor endstop mount","Conveyer linear actuator m8nut coupler A","This holds the solenoid for moving slide deck. conveyer_stepper_linear_m8nut_coupler_b","This is the structure the solenoid is used to drag the slide deck frontwards and backwards, solenoid_flag","This holds the other side of the threaded rod in place it uses a 608z bearing","This is the shuttle that allows for moveable spotting and imaging plates to attach","Conveyor spotting/imaging deck this thing attaches to conveyer_slider_x4 shuttle. It is also possible to adjust the levelness"]
+
+
+
+
+
 

@@ -5,6 +5,7 @@ use<writescad/write.scad>
 bcl = [155/255,155/255,155/255];
 cl = [155/255,155/255,155/255];
 
+outside_frame(bcl,cl);
 /*
 gantry();
 gantry_nomenclature();
@@ -21,9 +22,11 @@ y_encoder_support(60);
 //xshuttle_assy(x=20,y=-30);
 // xymotor_assy();
 
-pcb_panels();
+//pcb_panels();
 gantry();
-//gantry_nomenclature();
+gantry_nomenclature();
+
+/*
 outside_frame(bcl,cl);
 zencoder_assy();
 xshuttle_assy(x,y);
@@ -32,7 +35,7 @@ y_encoder_support(60);
 zbed_assy(0);
 
 electronics_setup();
-
+*/
 
 
 

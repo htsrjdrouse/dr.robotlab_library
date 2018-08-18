@@ -44,6 +44,7 @@ adafruit --  760  -- Premium Male/Male Jumper Wires - 40 x 12" (300mm) --  $3.95
 adafruit --  825 -- Premium Female/Male 'Extension' Jumper Wires - 40 x 3" (75mm) --  $3.95 --  1
 adafruit --  824 -- Premium Female/Male 'Extension' Jumper Wires - 40 x 12" (300mm) --  $7.95 --  1
 adafruit --  824 -- Premium Female/Male 'Extension' Jumper Wires - 40 x 12" (300mm) --  $7.95 --  1
+adafruit --  1176 -- ALUMINUM FLEX SHAFT COUPLER - 5MM TO 8MM --  $4.95 -- 6
 sparkfun --  ROB-11015 --  Solenoid - 5v (small) (adafruit is 2776 but out of stock) -- $4.95 --  4
 sparkfun --  CAB-10647 --  Ribbon Cable - 10 wire (15ft) --  $4.95	 --  2
 sparkfun -- ROB-10398  -- Vacuum Pump - 12V -- 	$14.95 --  3

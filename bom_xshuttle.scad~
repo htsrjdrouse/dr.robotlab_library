@@ -6,15 +6,15 @@ use<writescad/write.scad>
 //rightside_underneath_plate_x1();
 
 //washdry_pcv_pump_enclosure();
+    translate([0,-70+0,0])shuttle_front();
 
-xshuttle_assy_stls();
+//xshuttle_assy_stls();
 
 //corexy_beltsetup(30,-20);
 
 
 module xshuttle_assy_stls(){
 //start x_axis(x)
-
   //start slider_assy(x);
   //start slider_front_assy();
    translate([20+0,-40-0,-28])linearactuator_filament_encodershuttle_filamentclamp();
@@ -38,12 +38,10 @@ module xshuttle_assy_stls(){
   translate([50,0,6])rotate([0,180,90])wiper_clamp_yaxis();
   //stop wiper_clamp_yaxis();
 //end x_axis(x);
-
 //start x_encoder_support();
 translate([0,55,15])rotate([0,90,90])#backextruder_clamp();
 translate([20,55+10,15])rotate([0,90,90])#backextruder_clamp();
 //end x_encoder_support();
-
 }
 
 

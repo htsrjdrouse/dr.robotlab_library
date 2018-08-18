@@ -1,15 +1,58 @@
 include <modparts.scad>
 use<writescad/write.scad>
+//translate([0,-20,30])rotate([0,0,0])import("bowden_extruder/Duct.stl");
+//pololu_screw_nobacklash_cap();
+//zbed_assy(100);
+//zbed_connector_bar();
 
+//rotate([0,90,0])zbed_connector_bar();
+//lm8uu_smz_glider();
+bed_leveler_better_lm8uu();
+
+//rotate([0,90,0])lm8uu_smz_glider();
+
+//bed_leveler_better_lm8uu();
+//bed_leveler_better_lm8uu();
+//zbedslot_516_smz_zbed();
 //zbed_smz_stls();
+//slidedeck_adjust_wheel();
 
+/*
+adafruit_microswitch_817();
+difference(){
+cylinder(r=12/2,h=6);
+translate([0,0,-0.3])cylinder(r=6/2,h=7);
+}
+*/
+/*
+translate([-85,-90,0])raspi2_top_lego();
+mirror([0,1,0])raspi2_bottom_lego_female();
+*/
+//translate([0,0,35])rotate([0,90,0])lm8uu_smz_glider();
+//motormount_smz_justcad();
+//bearing_mount_smz();
 
+module bed_support_strip(){
+translate([22,7,10])
+difference(){
+cube([160,16,7]);
+translate([160/2-8,8,0])#cylinder(r=3.5/2,h=20);
+translate([160/2+8,8,0])#cylinder(r=3.5/2,h=20);
+translate([6,8,0])#cylinder(r=5.5/2,h=20);
+translate([6+24,8,0])#cylinder(r=5.5/2,h=20);
+translate([115+10,0,0]){
+translate([6,8,0])#cylinder(r=5.5/2,h=20);
+translate([6+24,8,0])#cylinder(r=5.5/2,h=20);
+}
+}
+}
  //zbed_wash_microwell_stls();
 // slidedeck_adjust_wheel();
 
-zbed_wash_microwell_stls();
+//zbed_wash_microwell_stls();
 
-
+// translate([0,0,35])rotate([0,90,0])
+//lm8uu_smz_glider();
 //zbedslot_516_smz_zbed();
 
 //color([100,100,100])

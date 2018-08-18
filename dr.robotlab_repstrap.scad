@@ -491,8 +491,8 @@ module zbedslot_516_smz_zbed(){
    translate([31,7.5,-22])cylinder(r=31/2,h=30);
    translate([0,-0.5,0]){
    translate([45*0.25-0.75-6+9-2.5-44,13/2+9-5+2+4,-20]){
-   cylinder(r=3.8/2,h=100);}//translate([0,0,2])cylinder(r=9.7/2,h=5);
-   translate([45*0.25-0.75-6+9-2.5-44,13/2-5+2-3,-20]){cylinder(r=3.8/2,h=100);} //translate([0,0,2])cylinder(r=9.7/2,h=5);
+   #cylinder(r=3.8/2,h=100);}//translate([0,0,2])cylinder(r=9.7/2,h=5);
+   translate([45*0.25-0.75-6+9-2.5-44,13/2-5+2-3,-20]){#cylinder(r=3.8/2,h=100);} //translate([0,0,2])cylinder(r=9.7/2,h=5);
    }
   }
   }
@@ -7512,11 +7512,12 @@ module conveyer_verticallinearpulleybearingbottom(){
 /*
 difference(){
 color([100/255,100/255,100/255])translate([0,0,2+5])cylinder(r=23/2,h=10);
-translate([0,0,-10])cylinder(r=8.7/2,h=40);
+translate([0,0,-10])cylinder(r=8.7/2,h=28);
 }
 */
 //color([200/255,200/255,200/255])
 difference(){
+//color("pink")
 union(){
 cylinder(r=29/2,h=15);
 translate([-10,-29/2+5-6-2,0])cube([70,7,18]);
@@ -7526,7 +7527,7 @@ translate([42,-29/2+5-6-2,10])cube([18,7,18]);
 translate([-10+26,-29/2+5-6+2,0])cube([25,5,18]);
 translate([0,0,2])cylinder(r=13/2,h=40);
 translate([0,0,2+5])cylinder(r=22.5/2,h=40);
-translate([0,0,-10])cylinder(r=8.7/2,h=40);
+translate([0,0,-10])cylinder(r=8.7/2,h=28);
 //translate([50.5,-5,5])rotate([90,90,0]){translate([0,0,-2])cylinder(r=4.7/2,h=20);translate([0,0,8])cylinder(r=10/2,h=5);}
 translate([50.5,-5,20])rotate([90,90,0]){cylinder(r=4.7/2,h=20);translate([0,0,8])cylinder(r=10/2,h=5);}
 }
@@ -7812,9 +7813,9 @@ union(){
 translate([20,27,0])cylinder(r=28/2,h=8);
 translate([0,19,0])cube([14,20,8]);
 }
-translate([20,27,1])cylinder(r=22.4/2,h=7.1);
-translate([20,27,-0.1])cylinder(r=14/2,h=2);
-translate([20,27,-0.1])cylinder(r=8.7/2,h=200);
+translate([20,27,1+4])cylinder(r=22.4/2,h=7.1/2);
+//translate([20,27,-0.1])#cylinder(r=14/2,h=2);
+translate([20,27,-0.1])#cylinder(r=8.7/2,h=200);
 }
 }
 
@@ -8445,10 +8446,12 @@ translate([20,27,6.5])cylinder(r=8.7/2,h=250+6);
 
 module bottom_simple_m8_smoothrodholder_for_z(){
 //translate([5,75,-30])rotate([90,0,0])tslot20(200);
-difference(){translate([-33,1.7,0])rotate([0,0,0])cube([50,53.7,2]);
+/*
+difference(){translate([-33,1.7,0])rotate([0,0,0])#cube([50,53.7,2]);
 translate([20,27,1])cylinder(r=8.7/2,h=20);
 translate([20,27,0])cylinder(r=5.7/2,h=2);
 }
+*/
 difference(){
 union(){
 translate([20,27,0])cylinder(r=28/2,h=12);
@@ -13863,32 +13866,26 @@ translate([-38.25+14-13.9+13.7+13,-70+34,22.5+3.8])cylinder(r=3.7/2,h=20);
 }
 
 module conveyer_stepper_linear_m8nut_coupler(){
-
-conveyer_stepper_linear_m8nut_coupler_a();
+color("pink")conveyer_stepper_linear_m8nut_coupler_a();
+//color("pink")
 conveyer_stepper_linear_m8nut_coupler_b();
-
 }
 
 
 module conveyer_stepper_linear_m8nut_coupler_a(){
-
 //the wheel for graphical purposes
 /*
-color([140/255,140/255,140/255])translate([0,-20-9,0])translate([-38.25+14-13.9-20+52.7+0.5,-70+30.-5+12-4,22.5+3.8-2.3-6])difference(){
+color([140/255,140/255,140/255])
+translate([0,-20-9,0])translate([-38.25+14-13.9-20+52.7+0.5,-70+30.-5+12-4,22.5+3.8-2.3-6])difference(){
 cylinder(r=15.5/2,h=9);
 translate([0,0,-10])cylinder(r=5/2,h=60);
 }
 */
-
-//color([200/255,200/255,200/255])
+color([200/255,200/255,200/255])
 translate([0,-20-9,0])difference(){
 union(){
-
-
-
 translate([-38.25+14-13.9-20,-70+30.-5,22.5+3.8-2.3])cube([17,11+5,6]);
 translate([-38.25+14-13.9,-70+30-5,22.5])rotate([-90,0,0])cylinder(r=20/2,h=23);
-
 translate([-38.25+14-13.9+3,-70+30.-5,22.5+3.8-2.3+4-15])cube([17+3,11+5,16]);
 translate([-38.25+14-13.9+3,-70+30.-5,22.5+3.8-2.3+4-15])cube([17+19,11+5,4]);
 translate([-38.25+14-13.9+3,-70+30.-5,22.5+3.8-2.3+4])cube([17+19,11+5,4]);
@@ -13896,7 +13893,7 @@ translate([-38.25+14-13.9+3,-70+30.-5,22.5+3.8-2.3+4])cube([17+19,11+5,4]);
 translate([-38.25+14-13.9-20+52.7+0.5,-70+30.-5+12-4,22.5+3.8-2.3-6])
 translate([0+1.5,0,-10])cylinder(r=5/2,h=60);
 translate([-38.25+14-13.9,-70+30-10,22.5])rotate([-90,0,0])cylinder(r=7.3,h=41,$fn=6);
-translate([-38.25+14-13.9,-70+30,22.5])rotate([-90,0,0])cylinder(r=8.7/2,h=241);
+//color("pink")translate([-38.25+14-13.9,-70+30,22.5])rotate([-90,0,0])cylinder(r=8.7/2,h=241);
 translate([-38.25+14-13.9+13.7-27,-70+34-5,22.5+3.8-11+4]){cylinder(r=3.2/2,h=16);translate([0,0,16])cylinder(r=9/2,h=3);}
 translate([-38.25+14-13.9+13.7-27,-70+34+3,22.5+3.8-11+4]){cylinder(r=3.2/2,h=16);translate([0,0,16])cylinder(r=9/2,h=3);}
 }
@@ -13904,9 +13901,9 @@ translate([-38.25+14-13.9+13.7-27,-70+34+3,22.5+3.8-11+4]){cylinder(r=3.2/2,h=16
 
 module conveyer_stepper_linear_m8nut_coupler_b(){
 translate([-20-55-10+2+5-4,-70-2-15,20+0-3-3.25-3])rotate([0,-90,-90])ada_solenoid_2776();
-//color([175/255,175/255,175/255])
+color([175/255,175/255,175/255])
 translate([-20-55-10+14+2+5-4,-70-2-15-2,20+10-3])cube([13-2-3-5+3,15,6]);
-//color([175/255,175/255,175/255])
+color([175/255,175/255,175/255])
 translate([0,-20-9,0])difference(){
 union(){
 translate([-38.25+14-13.9-24,-70+30.-5-15,22.5+3.8-2.3+6])cube([5+12,11+4+16,8]);
@@ -18651,10 +18648,10 @@ translate([x+13,y/2,-0.3])cylinder(r=4.7/2,h=20);
 
 module ada_solenoid_2776(){
 //delete this for printing
-//color([100/255,100/255,100/255])translate([0-1-1.5+1,-0.15-0.5,0])cube([20.5+2,12+0.3+1,11+4+1]);
+color([100/255,100/255,100/255])translate([0-1-1.5+1,-0.15-0.5,0])cube([20.5+2,12+0.3+1,11+4+1]);
 
 
-//color([175/255,175/255,175/255])
+color([175/255,175/255,175/255])
 difference(){
 translate([-2,-2,-2])cube([20.5+4,12+4,11+4]);
 translate([0,-0.15,0])cube([20.5+3,12+0.3,11+4]);

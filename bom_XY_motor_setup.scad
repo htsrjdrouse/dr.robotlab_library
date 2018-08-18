@@ -1,7 +1,12 @@
 include <modparts.scad>
 use<writescad/write.scad>
 
-xshuttle_assy_stls();
+
+//import("files/endstop_y.stl");
+
+//endstop_z();
+
+//xshuttle_assy_stls();
 
 module xshuttle_assy_stls(){
 //start x_axis(x)

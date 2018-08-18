@@ -6,8 +6,10 @@ use<writescad/write.scad>
 //rightside_underneath_plate_x1();
 
 //washdry_pcv_pump_enclosure();
+    //translate([0,-70+0,0])shuttle_front();
+    translate([0,-70+0,0])shuttle_back();
 
-xshuttle_assy_stls();
+//xshuttle_assy_stls();
 
 //corexy_beltsetup(30,-20);
 

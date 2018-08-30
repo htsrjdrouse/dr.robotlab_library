@@ -7,11 +7,17 @@ use<writescad/write.scad>
 
 //washdry_pcv_pump_enclosure();
     //translate([0,-70+0,0])shuttle_front();
-    translate([0,-70+0,0])shuttle_back();
+//    translate([0,-70+0,0])shuttle_back();
 
 //xshuttle_assy_stls();
 
 //corexy_beltsetup(30,-20);
+
+
+//xshuttle_assy_stls();
+
+//translate([-50+0,0,0])filament_linearactuator_shuttle();
+
 
 
 module xshuttle_assy_stls(){

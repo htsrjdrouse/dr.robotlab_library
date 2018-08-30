@@ -1,10 +1,34 @@
 include <modparts.scad>
 use<writescad/write.scad>
+//  translate([-88-(i*28),0,0])rotate([0,0,0])simple_m8_smoothrodholder_for_z();
+
+//cable_support();
+//wiper_set();
+
+/*
+difference(){
+cube([18,40,4]);
+translate([9,8,-0.1])#cylinder(r=5.7/2,h=20);
+translate([9,40-8,-0.1])#cylinder(r=5.7/2,h=20);
+}
+*/
+//clamp_bottom_simple_m8_smoothrodholder_for_z();
+
+//translate([-113,13.5,0])rotate([0,90,0])zbed_connector_bar();
+
+//color("gainsboro")translate([-61.5,18,0])rotate([0,-90,90])z_encoder_clamp_wiper();
+//rotate([0,180,0])wiper_clamp_yaxis();
+//rotate([0,180,0])wiper_clamp();
+translate([-26,0,-23])rotate([0,0,0])wiper_tip_m5(6);
+
+
+//translate([7.5,52,-10+5])rotate([0,180,0])wiper_tip_m5(6);
+
 
 bcl = [155/255,155/255,155/255];
 cl = [155/255,155/255,155/255];
 
-outside_frame_stls(bcl,cl); 
+//outside_frame_stls(bcl,cl); 
 
 //translate([-100+50,405-210,277])rotate([0,0,90])color("gainsboro")z_encoder_inbetween();
 
@@ -44,7 +68,7 @@ module outside_frame_stls(){
 
 
 module right_outside_frame_stls(){
-translate([12,3,0])mirror([0,1,0])import("files/endstop_y.stl");
+translate([12,3,0])mirror([0,0,0])import("files/endstop_y.stl");
 //begin right_outside_frame();
  for(i=[0:3]){
   translate([-88-(i*28),0,0])rotate([0,0,0])simple_m8_smoothrodholder_for_z();

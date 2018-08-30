@@ -3,17 +3,34 @@ use<writescad/write.scad>
 //translate([0,-20,30])rotate([0,0,0])import("bowden_extruder/Duct.stl");
 //pololu_screw_nobacklash_cap();
 //zbed_assy(100);
-//zbed_connector_bar();
 
-rotate([0,90,0])zbed_connector_bar();
+laser_zbed(144);
+//wash_and_strobparts();
+//zbed_fix();
+
+
+
+module zbed_fix(){
+//Not really though
+translate([-113,13.5,-20])rotate([0,90,0])zbed_connector_bar();
+translate([-177,0,8]){
+rotate([0,90,0])lm8uu_smz_glider();
+translate([24.5,7.5,-30])bed_leveler_better_lm8uu();
+}
+translate([42,0,8]){
+rotate([0,90,0])lm8uu_smz_glider();
+translate([59.5,7.5,-30])mirror([1,0,0])bed_leveler_better_lm8uu();
+}
+}
+
+//rotate([0,90,0])zbed_connector_bar();
 //lm8uu_smz_glider();
 //bed_leveler_better_lm8uu();
 
-//rotate([0,90,0])lm8uu_smz_glider();
+
 
 //bed_leveler_better_lm8uu();
-//bed_leveler_better_lm8uu();
-//zbedslot_516_smz_zbed();
+//translate([-40,81.5,200])rotate([0,180,0])zbedslot_516_smz_zbed();
 //zbed_smz_stls();
 //slidedeck_adjust_wheel();
 

@@ -3,7 +3,7 @@ use<writescad/write.scad>
 
 
 //translate([-100,0,0])boxstandoff();
-//translate([-70,0,27])boxcouplers();
+translate([-70,0,27])boxcouplers_panelside();
 //translate([200,0,0])rotate([0,0,90])airpo_d2028B_pump_mount_assy();
 
 //projection(cut=false){
@@ -17,7 +17,7 @@ use<writescad/write.scad>
 //diaphragmpump_end_6pin();
 //diaphragmpump_end_6pin_pcb();
 
-translate([0,0,30])diaphragmpump_boxassy();
+//translate([0,0,30])diaphragmpump_boxassy();
 
 
 //diagphragm_pump_case();

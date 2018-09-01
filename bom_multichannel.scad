@@ -13,11 +13,259 @@ translate([230+125.25,195-0,145+5])wash_holder_arm();
 //multichannel_wash_assembly();
 //color("darkgrey")washbowl_watervacinput();
 
-multichannel_drypad();
+//multichannel_drypad();
+//translate([9,0,0])pipette_conical_part_p200(2.2);
+//multichannel_pipette_holder();
 
 
 
-//multichannel_vacuum();
+//multichannel_ejection_flap();
+
+//rotate([90,0,0])multichannel_solenoid_connect_part();
+//rotate([90,0,0])multichannel_solenoid_base();
+
+translate([63,-0,-28])rotate([90,0,0])multichannel_ejection_flap_top();
+
+/*
+translate([63,0,-32.1])rotate([0,180,0]){
+translate([21.5+10,20+17-6,-4-20+15])rotate([0,180,0])multichannel_ejection_flap();
+translate([63,-0,-28])rotate([0,180,0])multichannel_ejection_flap_top();
+}
+//translate([21.5+10,10-47+6,-4-20])rotate([0,0,180])multichannel_ejection_flap();
+
+translate([-17.5,-28,1])rotate([0,90,0])tslot20(100);
+translate([-17.5,-2,1])rotate([0,90,0])tslot20(100);
+multichannel_pipette_holder();
+//no longer need multichannel_solenoid_base();
+multichannel_solenoid_connect_part();
+*/
+
+ext = 0;
+/*
+translate([0,0,4.3])remove_pipette_multichannel(ext);
+*/
+//translate([20-1.5+3,30-7+3-3,-50+12+2-4-4])rotate([0,-90,0])color("pink")multichannel_solenoid(ext);
+
+//translate([60,30,-50])rotate([0,-90,0])multichannel_solenoid(ext);
+
+module multichannel_solenoid_connect_part(){
+translate([3,0,0])difference(){
+union(){
+translate([62,23-4,-39])rotate([0,180,0])#cube([12+55,4,19]);
+translate([62-18,23-4,-39])rotate([0,180,0])#cube([12+19,4,19+24]);
+}
+
+translate([-6+62,50,-53])rotate([90,0,0])#cylinder(r=2.8/2,h=120);
+translate([-6+62,50,-43])rotate([90,0,0])#cylinder(r=2.8/2,h=120);
+translate([1,50,-53])rotate([90,0,0])#cylinder(r=2.8/2,h=120);
+translate([1,50,-43])rotate([90,0,0])#cylinder(r=2.8/2,h=120);
+translate([15.5,0+19,-45+1])rotate([0,90,0]){
+#translate([10,10,20-3+3])rotate([90,0,0])cylinder(r=5/2,h=20);
+#translate([39-5,10,3+3])rotate([90,0,0])cylinder(r=5/2,h=20);
+}
+}
+}
+
+module multichannel_solenoid_base(){
+
+//this is part of multichannel_ejection_flap_top now
+translate([3,0,0])difference(){
+union(){
+translate([7,23,-5])rotate([0,180,0])cube([12,4,17+40-3]);
+translate([9-5,23,-5])rotate([0,180,0])#cube([12+5,4,17]);
+translate([62+8,23,-5])rotate([0,180,0])#cube([12+6.5,4,17]);
+translate([62,23,-5])rotate([0,180,0])cube([12,4,17+40-3]);
+}
+translate([4,50,-13.7])rotate([90,0,0])#cylinder(r=4.7/2,h=120);
+translate([-8+62,50,-13.7])rotate([90,0,0])#cylinder(r=4.7/2,h=120);
+translate([-6+62,50,-53])rotate([90,0,0])cylinder(r=3.7/2,h=120);
+translate([-6+62,50,-43])rotate([90,0,0])cylinder(r=3.7/2,h=120);
+translate([1,50,-53])rotate([90,0,0])cylinder(r=3.7/2,h=120);
+translate([1,50,-43])rotate([90,0,0])cylinder(r=3.7/2,h=120);
+}
+translate([3,0,0]){
+translate([-8,29,-13])rotate([90,45,0])#cylinder(r=6.3/2,h=2,$fn=4);
+translate([4+62,29,-13])rotate([90,45,0])#cylinder(r=6.3/2,h=3,$fn=4);
+}
+}
+
+
+module multichannel_ejection_flap_top(){
+
+//translate([0,0,4])multichannel_solenoid_connect_part();
+// multichannel_solenoid_base();
+
+translate([21.5,20+4,-4])difference(){cube([20,17-2.5,4]);
+//translate([10,24,-1])
+translate([10,7,0])cylinder(r=6/2,h=20);
+}
+difference(){
+union(){
+translate([21.5-10,20+3,-4-10+2-4-3-2])cube([13,4,16+5]);
+translate([21.5-10+27,20+3,-4-10+2-4-3-2])cube([13,4,16+5]);
+translate([21.5-5-5,20+3,-4-10+2-4-3-2])cube([40,1.6,16+5]);
+}
+translate([21.5-5+2+3-4,20+3+10,-4-10+2-4+6.2])rotate([90,0,0])#cylinder(r=4.9/2,h=30);
+translate([21.5-5+2+23+4,20+3+10,-4-10+2-4+6.2])rotate([90,0,0])#cylinder(r=4.9/2,h=30);
+
+}
+translate([21.5+10,20+17-6,-15]){
+difference(){
+rotate([0,0,45])cylinder(r=21/2,h=11,$fn=4);
+rotate([0,0,45])cylinder(r=18/2,h=20.5,$fn=4);
+}
+}
+}
+
+
+
+module multichannel_ejection_flap(){
+translate([-12.5/2,-3.5-2.15,-3])cube([12.5,17,3]);
+difference(){
+rotate([0,0,45])cylinder(r=16/2,h=15,$fn=4);
+rotate([0,0,45])cylinder(r=11.5/2,h=20.5,$fn=4);
+}
+difference(){
+rotate([0,0,0])cylinder(r=5/2,h=15+13);
+rotate([0,0,0])cylinder(r=2.8/2,h=20.5+30);
+}
+}
+
+module multichannel_solenoid(ext){
+//uxcell JF-1039B DC 12V 400mA 4800W 25N 10mm Pull Push 
+rotate([0,180,0]){difference(){
+union(){
+cube([39,26,20]);
+translate([39,26/2,20/2])rotate([0,90,0])cylinder(r=9/2,h=65-39-ext);
+translate([-10-ext,26/2,20/2])rotate([0,90,0])#cylinder(r=3.7/2,h=65-39);
+}
+#translate([10,10,20-3])rotate([90,0,0])cylinder(r=5/2,h=20);
+#translate([39-5,10,3])rotate([90,0,0])cylinder(r=5/2,h=20);
+}
+}
+}
+
+
+
+module multichannel_pipette_holder(){
+
+/*
+translate([21.5+10,10-47+6,-15]){
+difference(){
+rotate([0,0,45])cylinder(r=13/2,h=11,$fn=4);
+rotate([0,0,45])cylinder(r=10.2/2,h=20.5,$fn=4);
+}
+}
+*/
+/*
+difference(){
+rotate([0,0,45])cylinder(r=11/2,h=15,$fn=4);
+rotate([0,0,45])cylinder(r=8/2,h=20.5,$fn=4);
+}
+difference(){
+rotate([0,0,0])cylinder(r=5/2,h=15+13);
+rotate([0,0,0])cylinder(r=2.8/2,h=20.5+30);
+}
+}
+*/
+
+difference(){
+translate([21.5,10-47,-4])cube([20,17,4]);
+translate([21.5+10,10-47+6,-10])
+rotate([0,0,0])cylinder(r=6.3/2,h=15+13);
+}
+
+difference(){
+translate([21.5,10-47+57,-4])cube([20,17,4]);
+translate([21.5+10,10-47+6+62,-10])
+rotate([0,0,0])cylinder(r=6.3/2,h=15+13);
+}
+/*
+translate([21.5+10,10-47+6,-4]){
+difference(){
+rotate([0,0,45])cylinder(r=11/2,h=15,$fn=4);
+rotate([0,0,45])cylinder(r=8/2,h=20.5,$fn=4);
+}
+difference(){
+rotate([0,0,0])cylinder(r=5/2,h=15+13);
+rotate([0,0,0])cylinder(r=2.8/2,h=20.5+30);
+}
+}
+*/
+
+difference(){
+union(){
+for(i=[0:7]){
+translate([i*9,0,0])pipette_conical_part_p200(5);
+}
+}
+sh = 32;
+translate([-4+11,sh/2-3,-10])cylinder(r=4.7/2,h=80);
+translate([-4+11,-sh/2+3,-10])cylinder(r=4.7/2,h=80);
+
+translate([-4-11+(7*10),sh/2-3,-10])cylinder(r=4.7/2,h=80);
+translate([-4-11+70,-sh/2+3,-10])cylinder(r=4.7/2,h=80);
+
+translate([-4+35,sh/2-3,-10])cylinder(r=4.7/2,h=80);
+translate([-4+35,-sh/2+3,-10])cylinder(r=4.7/2,h=80);
+}
+}
+
+
+module remove_pipette_multichannel(ext){
+translate([21.5,7,ext-4])difference(){
+cube([20,30,4]);
+translate([10,24,-1])cylinder(r=6/2,h=20);
+}
+translate([21.5,7-44,ext-4])difference(){
+cube([20,30,4]);
+translate([10,6,-1])cylinder(r=6/2,h=20);
+}
+color("pink")translate([0,0,ext])difference(){
+for(i=[0:7]){
+ translate([i*9,0,0])difference(){
+ translate([-5,-10,-4])cube([10,20,4]);
+ translate([0,0,-50.2])cylinder(r=6/2,h=100);
+}
+}
+}
+}
+
+
+//this is the p50 multichannel
+module pipette_conical_part_p50(){
+difference(){
+union(){
+translate([0,0,11.5])cylinder(r2=3/2,r1=4.5/2,h=16);
+translate([0,0,0])cylinder(r2=5/2,r1=5.5/2,h=11.5);
+translate([-5,-40/2,-4])cube([10,40,4]);
+}
+translate([0,0,-50.2])cylinder(r=2.1/2,h=100);
+}
+}
+
+module pipette_conical_part_p200(dia){
+difference(){
+union(){
+//translate([0,0,4])cylinder(r2=4.5/2,r1=5.5/2,h=8);
+translate([0,2,0])rotate([0,0,45])cylinder(r=13/2,h=8,$fn=4);
+translate([0,-2,0])rotate([0,0,45])cylinder(r=13/2,h=8,$fn=4);
+translate([0,0,0])rotate([0,0,45])cylinder(r=13/2,h=8,$fn=4);
+translate([-5,-40/2,-4])cube([10,40,4]);
+}
+translate([0,0,-50.2+46])cylinder(r=dia/2,h=100);
+translate([0,0+50,-50.2+46+8])rotate([90,0,0])cylinder(r=1.7/2,h=100);
+
+//translate([0,0,-50.2+46])cylinder(r=dia/2,h=100);
+//translate([0,0,-50.2+46])cylinder(r=(dia+0.2)/2,h=2);
+}
+}
+
+
+
+
+
+
 
 
 module multichannel_drypad(){
@@ -32,7 +280,7 @@ cylinder(r=3.7/2,h=30);translate([0,0,10])
 cylinder(r=6.7/2,h=3.2);
 }
 translate([-30,33-66,-10]){
-#cylinder(r=3.7/2,h=30);
+cylinder(r=3.7/2,h=30);
 translate([0,0,10])cylinder(r=6.7/2,h=3.2);
 }
 */
@@ -41,19 +289,15 @@ translate([-44-(a*10),-40+5,-1])cube([5,71+10,13]);
 }
 
 translate([-33,-66,-20])rotate([0,0,90]){
-translate([19+7,2.5-10,2])translate([7.5,25/2-8,18])#cylinder(r=6.9/2,h=3.2);
-translate([19+7,2.5-10,2])translate([7.5,25/2-8,-0.1])#cylinder(r=2.8/2,h=40);
+translate([19+7,2.5-10,2])translate([7.5,25/2-8,18])cylinder(r=6.9/2,h=3.2);
+translate([19+7,2.5-10,2])translate([7.5,25/2-8,-0.1])cylinder(r=2.8/2,h=40);
 
-translate([19+7+37,2.5-10,2])translate([7.5,25/2-8,18])#cylinder(r=6.9/2,h=3.2);
-translate([19+7+37,2.5-10,2])translate([7.5,25/2-8,-0.1])#cylinder(r=2.8/2,h=40);
+translate([19+7+37,2.5-10,2])translate([7.5,25/2-8,18])cylinder(r=6.9/2,h=3.2);
+translate([19+7+37,2.5-10,2])translate([7.5,25/2-8,-0.1])cylinder(r=2.8/2,h=40);
 
-translate([19+7+75,2.5-10,2])translate([7.5,25/2-8,18])#cylinder(r=6.9/2,h=3.2);
-translate([19+7+75,2.5-10,2])translate([7.5,25/2-8,-0.1])#cylinder(r=2.8/2,h=40);
+translate([19+7+75,2.5-10,2])translate([7.5,25/2-8,18])cylinder(r=6.9/2,h=3.2);
+translate([19+7+75,2.5-10,2])translate([7.5,25/2-8,-0.1])cylinder(r=2.8/2,h=40);
 }
-
-
-
-
 }
 }
 
@@ -66,14 +310,14 @@ wh = 20;
 sh = 9;
 difference(){
 translate([26,2.5,2])color("lightgreen")cube([90,25+15,wh]);
-translate([26+9,2.5+21,2+5])#cube([90-14,12,50]);
+translate([26+9,2.5+21,2+5])cube([90-14,12,50]);
 for(i=[0:12]){
 translate([26+9+i*5,2.5+7,2+5+(7-(i*1.2)/2)])cube([5,11,50]);
 }
-translate([26+70,2.5+7,2+5])#cube([15,11,50]);
+translate([26+70,2.5+7,2+5])cube([15,11,50]);
 for(j=[112,85,55,30]){
-translate([j,15+sh+15,4]){#cylinder(r=2.8/2,h=200);}
-translate([j,15-sh,4]){#cylinder(r=2.8/2,h=200);}
+translate([j,15+sh+15,4]){cylinder(r=2.8/2,h=200);}
+translate([j,15-sh,4]){cylinder(r=2.8/2,h=200);}
 }
 
 translate([95,15,15])rotate([0,90,0])cylinder(r=5/2,h=30);
@@ -147,17 +391,17 @@ wh = 7;
 
 translate([19+7,2.5-10,2])difference(){
 color("lightblue")cube([15,10,3]);
-translate([7.5,25/2-8,-0.1])#cylinder(r=2.8/2,h=40);
+translate([7.5,25/2-8,-0.1])cylinder(r=2.8/2,h=40);
 }
 
 translate([19+7+37,2.5-10,2])difference(){
 color("lightblue")cube([15,10,3]);
-translate([7.5,25/2-8,-0.1])#cylinder(r=2.8/2,h=40);
+translate([7.5,25/2-8,-0.1])cylinder(r=2.8/2,h=40);
 }
 
 translate([19+7+75,2.5-10,2])difference(){
 color("lightblue")cube([15,10,3]);
-translate([7.5,25/2-8,-0.1])#cylinder(r=2.8/2,h=40);
+translate([7.5,25/2-8,-0.1])cylinder(r=2.8/2,h=40);
 }
 
 
@@ -166,13 +410,13 @@ translate([7.5,25/2-8,-0.1])#cylinder(r=2.8/2,h=40);
 
 translate([19,2.5+10,2])difference(){
 translate([0,7,0])color("lime")cube([7,12,wh]);
-translate([3.5,25/2,-0.1])#cylinder(r=3.7/2,h=20);
-translate([3.5,25/2,3.6])#cylinder(r=9/2,h=3.5);
+translate([3.5,25/2,-0.1])cylinder(r=3.7/2,h=20);
+translate([3.5,25/2,3.6])cylinder(r=9/2,h=3.5);
 }
 translate([97+19,2.5+10,2])difference(){
 translate([0,7,0])color("lime")cube([7,12,wh]);
-translate([3.5,25/2,-0.1])#cylinder(r=3.7/2,h=20);
-translate([3.5,25/2,3.6])#cylinder(r=9/2,h=3.5);
+translate([3.5,25/2,-0.1])cylinder(r=3.7/2,h=20);
+translate([3.5,25/2,3.6])cylinder(r=9/2,h=3.5);
 }
 difference(){
 translate([26,2.5,2])color("pink")cube([90,25+15,wh]);
@@ -203,8 +447,8 @@ module multichannel_holder_assy(){
    translate([25,15,16])rotate([90,0,0])pipetteboy_shaft();
    translate([0,-5,0])base_for_pipetteboy();
   }
-  translate([19,20.5,-10])#cylinder(r=3.7/2,h=120);
-  translate([19+12,20.5,-10])#cylinder(r=3.7/2,h=120);
+  translate([19,20.5,-10])cylinder(r=3.7/2,h=120);
+  translate([19+12,20.5,-10])cylinder(r=3.7/2,h=120);
  }
 }
 
@@ -218,11 +462,11 @@ module serological_1ml_shaft(){
  difference(){
   union(){
   translate([0,0,-0.1])cylinder(r=(4+8)/2,h=15);
-  translate([-6,5,7.5])rotate([0,90,0])#cylinder(r=(7)/2,h=12);
+  translate([-6,5,7.5])rotate([0,90,0])cylinder(r=(7)/2,h=12);
   translate([0,-5,-0.1])rotate([0,0,45])cylinder(r=(14)/2,h=15, $fn=4);
   translate([0,-7.5,-0.1])rotate([0,0,45])cylinder(r=(14)/2,h=15, $fn=4);
   }
-  translate([-7,5,7.5])rotate([0,90,0])#cylinder(r=(2.8)/2,h=14);
+  translate([-7,5,7.5])rotate([0,90,0])cylinder(r=(2.8)/2,h=14);
   translate([0,0,-5])cylinder(r=4.5/2,h=30);
   translate([0,3,-5])rotate([0,0,45])cylinder(r=6/2,h=30,$fn=4);
   translate([0,7,-5])rotate([0,0,45])cylinder(r=6/2,h=30,$fn=4);
@@ -237,10 +481,10 @@ module pipetteboy_shaft(){
  translate([0,-5,-0.1])rotate([0,0,45])cylinder(r=(16)/2,h=15, $fn=4);
  translate([0,-7.5,-0.1])rotate([0,0,45])cylinder(r=(16)/2,h=15, $fn=4);
  }
- translate([-11,7,7.5])rotate([0,90,0])#cylinder(r=(2.8)/2,h=25);
+ translate([-11,7,7.5])rotate([0,90,0])cylinder(r=(2.8)/2,h=25);
  translate([0,0,-5])cylinder(r=10/2,h=30);
- translate([0,5,-5])rotate([0,0,45])#cylinder(r=10/2,h=30,$fn=4);
- translate([0,7,-5])rotate([0,0,45])#cylinder(r=10/2,h=30,$fn=4);
+ translate([0,5,-5])rotate([0,0,45])cylinder(r=10/2,h=30,$fn=4);
+ translate([0,7,-5])rotate([0,0,45])cylinder(r=10/2,h=30,$fn=4);
  }
 }
 
@@ -255,7 +499,7 @@ translate([21,0,0])lower_microchannel_segment();
 module distributor_plate(){
 difference(){
 translate([-15,-5,0])cube([125,27,3]);
-#upper_microchannel_segment();
+upper_microchannel_segment();
 }
 }
 
@@ -267,10 +511,10 @@ for (i=[-1:6]){
 if(i==3){
 //translate([0+i*(9),5,3])rotate([90,0,90])eldon_james_nyloncross();
 translate([0+i*(9)+7.5,5,3])rotate([90,0,0])cylinder(r=4/2,h=30);
-translate([0+i*(9)+7.5,5+10,3])rotate([90,0,0])#cylinder(r=4/2,h=15);
+translate([0+i*(9)+7.5,5+10,3])rotate([90,0,0])cylinder(r=4/2,h=15);
 }else{
 //translate([0+i*(9),5,3])rotate([90,0,90])eldon_james_nylontee();
-translate([0+i*(9)+7.5,5+10,3])rotate([90,0,0])#cylinder(r=4/2,h=15);
+translate([0+i*(9)+7.5,5+10,3])rotate([90,0,0])cylinder(r=4/2,h=15);
 }
 }
 }

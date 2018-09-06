@@ -96,6 +96,151 @@ translate([40,-40,0])syringe_pcb_holder_cover();
 */
 
 
+module tslot_clamp_filament_linearactuator_shuttle(){
+difference(){
+cube([16,60,4]);
+translate([8,30-6,-1])#cylinder(r=3.7/2,h=20);
+translate([8,30+6,-1])#cylinder(r=3.7/2,h=20);
+translate([8,30-22,-1])#cylinder(r=5.9/2,h=20);
+translate([8,30+22,-1])#cylinder(r=5.9/2,h=20);
+}
+}
+
+
+
+
+
+
+module iverntech_slider_x4(){
+color("silver")difference(){union(){
+//translate([-34-0.65,39-0.5,0])cube([69.3,1,25]);
+//translate([-2+2,-12+0.065,0])cube([1,60.94+26,25]);
+
+difference(){cylinder(r=24/2,h=3.3);translate([0,-3.115,-0.1])cylinder(r=(5.9+0.8)/2,h=36);}
+translate([-14,29-20,0])rotate([0,0,0])cube([28,40,4.5]);
+translate([-24,29,0])rotate([0,0,0])cube([48,20,3.3]);
+translate([10,-6,0])rotate([0,0,63])cube([47,20,3.3]);
+translate([-32,36,0])rotate([0,0,-63])cube([47,20,3.3]);
+translate([0,38.94,0])difference(){cylinder(r=7.68+2., h=3.3);
+for(i=[-3,-2,-1,0,1,2,3]){
+translate([0,i,-0.1])cylinder(r=(5.5+0.8)/2,h=6);//translate([0,1,-0.1])cylinder(r=(5+0.8)/2,h=6);
+}
+translate([0,-42,-0.1])cylinder(r=(5.5+0.8)/2,h=6);//translate([0,1,-0.1])cylinder(r=(5.5+0.8)/2,h=6);
+}
+
+//For milling
+translate([-25,38.94,0])difference(){cylinder(r=10, h=3.3);translate([-1,0,-0.1])cylinder(r=(5.9+0.8)/2,h=36);}
+translate([25,38.94,0])difference(){cylinder(r=10, h=3.3);translate([1,0,-0.1])cylinder(r=(5.9+0.8)/2,h=36);}
+}
+translate([0,-3.115,-0.1])#cylinder(r=(5.7+0.8)/2,h=6);
+translate([0,38.94,0]){
+for(i=[-1,0,1]){
+translate([0,i,-0.1])cylinder(r=5.5/2,h=6);//translate([0,1,-0.1])cylinder(r=(5+0.8)/2,h=6);
+}
+}
+//For 3D printing I like this
+//translate([-23.56-0.5,38.94,0])translate([-1,0,-6.1])cylinder(r=(5.7+0.8)/2,h=16);
+//translate([23.56+0.5,38.94,0])translate([1,0,-6.1])cylinder(r=(5.7+0.8)/2,h=16);
+//For milling
+translate([-25,38.94,0])translate([-1,0,-6.1])cylinder(r=(5.9+0.8)/2,h=36);
+translate([25,38.94,0])translate([1,0,-6.1])cylinder(r=(5.9+0.8)/2,h=36);
+}
+}
+
+module iverntech_slider_tslot_connector(){
+translate([-27/2+12/2+29.5,150-5,2-3+6-25-3-3.2])color("lightblue")difference(){
+union(){
+cube([18,70,4.5+3+3.3]);
+translate([-30,20,0])cube([18+30,30,3.3]);
+}
+translate([9,9+9,6.0])#cylinder(r=5.9/2,h=10);
+translate([9,9+9,6.0-30-10])cylinder(r=12/2,h=40);
+translate([9,9+52-9,6.0])#cylinder(r=5.9/2,h=10);
+translate([9,9+52-9,6.0-30-10])cylinder(r=12/2,h=40);
+
+translate([9-5,9+52/2,-6])#cylinder(r=5.9/2,h=10);
+translate([9-5,9+52/2,4])#cylinder(r=12/2,h=10);
+translate([9-5-20,9+52/2,-20.5])cylinder(r=5/2,h=50);
+translate([9-5-30,9+52/2,-20.5])cylinder(r=2.8/2,h=50);
+translate([9-5,9+52,-34])#cylinder(r=5/2,h=40);
+translate([9-5,9+52,6])#cylinder(r=11/2,h=30);
+translate([9-5,9,-34])#cylinder(r=5/2,h=40);
+translate([9-5,9,6])#cylinder(r=11/2,h=40);
+}
+}
+
+
+
+module iverntech_slider(){
+
+/*
+//slider model 
+//here is the rail
+color("silver")cube([12,300,8]);
+//here is the slider 
+translate([-27/2+12/2,150,2-3+6])color("pink")cube([27,45,9]);
+translate([-9,350,-25])rotate([90,0,0])tslot20(400);
+translate([-9+23+2,350-125,-25+4.5+12.5-12.5])rotate([90,0,0])tslot20(100);
+*/
+
+/*
+translate([-27/2+12/2+29.5,150-5,2-3+6-25-3-3.2])color("lightblue")difference(){
+union(){
+cube([18,70,4.5+3+3.3]);
+translate([-30,20,0])cube([18+30,35,3.3]);
+}
+translate([9,9+9,6.0])#cylinder(r=5.9/2,h=10);
+translate([9,9+9,6.0-30-10])cylinder(r=12/2,h=40);
+translate([9,9+52-9,6.0])#cylinder(r=5.9/2,h=10);
+translate([9,9+52-9,6.0-30-10])cylinder(r=12/2,h=40);
+
+translate([9-5,9,-20.5])#cylinder(r=5.9/2,h=50);
+translate([9-5,9+52/2,-6])#cylinder(r=5.9/2,h=10);
+translate([9-5,9+52/2,4])#cylinder(r=12/2,h=10);
+translate([9-5-20,9+52/2,-20.5])cylinder(r=5/2,h=50);
+translate([9-5-30,9+52/2,-20.5])cylinder(r=2.8/2,h=50);
+translate([9-5,9+52,-20.5])#cylinder(r=5.9/2,h=50);
+}
+*/
+iverntech_slider_tslot_connector();
+
+
+translate([-27/2+12/2,150,3+3]){
+translate([0,0,9])difference(){
+ union(){
+ translate([0,0,-1])color("lime")#cube([27,45,9]);
+ color("lime")translate([20+10,45/2-9,2])cube([16,18,6]);
+ color("lime")translate([20+10-3,45/2-7-30,2])cube([16+5,14+60,6]);
+ }
+ //translate([27/2+23,45/2,-5])#cylinder(r=5.7/2,h=20);
+ translate([27/2+23,45/2,2])#cylinder(r=10/2,h=3);
+ translate([27/2+23+2,45/2-26,-5])#cylinder(r=5.7/2,h=20);
+ translate([27/2+23+2,45/2+26,-5])#cylinder(r=5.7/2,h=20);
+
+ translate([27/2-10,45/2-10,-5])#cylinder(r=3.7/2,h=20);
+ translate([27/2+10,45/2-10,-5])#cylinder(r=3.7/2,h=20);
+ translate([27/2-10,45/2+10,-5])#cylinder(r=3.7/2,h=20);
+ translate([27/2+10,45/2+10,-5])#cylinder(r=3.7/2,h=20);
+
+
+ translate([27/2+4,45/2,-5])#cylinder(r=2.8/2,h=20);
+ translate([27/2-8,45/2,-5])#cylinder(r=2.8/2,h=20);
+ 
+ translate([27/2+4,45/2,-1])#cylinder(r=7/2,h=4,$fn=6);
+ translate([27/2-8,45/2,-1])#cylinder(r=7/2,h=4,$fn=6);
+
+ translate([27/2-10,45/2-10,5])#cylinder(r=6.5/2,h=3);
+ translate([27/2+10,45/2-10,5])#cylinder(r=6.5/2,h=3);
+ translate([27/2-10,45/2+10,5])#cylinder(r=6.5/2,h=3);
+ translate([27/2+10,45/2+10,5])#cylinder(r=6.5/2,h=3);
+}
+}
+
+
+}
+
+
+
 
 module coverpanel_screw(){
 difference(){union(){
@@ -3814,7 +3959,8 @@ module slidedeck_adjust_wheel(){
 //for leveling bed works with bed level 
 difference(){
 cylinder(r=10,h=5);
-translate([0,0,0]){cylinder(r=3.7/2,h=80);translate([0,0,2])cylinder(r=6.0/2,h=3.5,$fn=6);}
+translate([0,0,0]){cylinder(r=2.8/2,h=80);}
+//translate([0,0,2])cylinder(r=6.0/2,h=3.5,$fn=6);}
 }
 }
 
@@ -4145,7 +4291,7 @@ translate([10,10,-2])cylinder(r=(5.7+0.8)/2,h=20);
 
 module sliderwheel_assy(){
 //translate([-40,3.5,4])rotate([0,90,0])tslot20(200);
-slider_x4();
+translate([0,0,-0])slider_x4();
 
 translate([0,-3,-20]){
 delrinwheel();
@@ -5882,7 +6028,7 @@ module gantry_assy(x,y,z,xx,xp,sph,tcl,thcl){
 module noconveyer_gantry_assy(x,y,z,xx,xp,sph,tcl,thcl){
  pcb_panels();
  zencoder_assy();
- //filament_driver_assy();
+ filament_driver_assy();
  xshuttle_assy(x,y);
  zbed_assy(z);
  gantry();
@@ -7003,7 +7149,7 @@ rotate([0,0,0])cylinder(r=20/2,h=30);
 }
 module linearactuator_endstop_encoder(){
 translate([-100+15,18-170,20]){
-translate([-4,-1,0])shorternema17();
+translate([-4+12.5,-1,0])shorternema17();
 difference(){
 union(){
 //compact extruder
@@ -7019,7 +7165,9 @@ translate([-21+35-30,-21+5.5+30,3+6-20])cylinder(r=3.7/2,h=200);
 }
 */
 //begin Other motor mount
-translate([-21-29+0.5+49.5,-21-1+23,3-48+45])filament_driver_assy_motormount();
+//filament driver motor mount here it is
+translate([-21-29+0.5+49.5+12.5,-21-1+23,3-48+45])filament_driver_assy_motormount();
+
 /*
 color("gainsboro")difference(){
 //color([cc,cc,cc])
@@ -7405,6 +7553,99 @@ translate([7.5,50,22-6])rotate([90,0,0])cylinder(r=4.7/2,h=30);
 
 
 
+module shuttle_front_vertical_adjust(){
+//color("gainsboro")import("head_front.stl");
+translate([-28.5,-10,0])difference(){
+union(){
+cube([73,53,3]);
+translate([25-2,15+9,0])cube([25+6,13+16,3+7+7]);
+}
+///translate([25-2,15+9+10,3])rotate([0,0,60])cube([25+6,13+16,3+7+8+9]);
+//translate([25-2+16,15+9+10+26,3])rotate([0,0,-60])cube([25+6,13+16,3+7]);
+translate([0-3,-16-4,-0.3])cube([33+3,23,10]);
+translate([47,-9,-0.3])cube([33,23,10]);
+translate([32,32,-3]){
+
+//#translate([0,-4,0])cylinder(r=2.8/2,h=30,$fn=30);
+//#translate([14,0-4,0]){cylinder(r=2.8/2,h=30,$fn=30);}
+#translate([7,-4,0])cylinder(r=2.8/2,h=30,$fn=30);
+
+#translate([7-8,14-4,2.9]){cylinder(r=2.8/2,h=30,$fn=30);}//cylinder(r=6.8/2,h=5.5,$fn=6);}
+translate([7-8,14-4,2.9+3]){difference(){
+cylinder(r=10/2,h=30,$fn=30);
+cylinder(r=5/2,h=30,$fn=30);
+}
+}
+
+
+#translate([7+8,14-4,2.9]){cylinder(r=2.8/2,h=30,$fn=30);}//cylinder(r=6.8/2,h=5.5,$fn=6);}
+translate([7+8,14-4,2.9+3]){difference(){
+cylinder(r=10/2,h=30,$fn=30);
+cylinder(r=5/2,h=30,$fn=30);
+}
+}
+
+
+}
+//bearings screws
+translate([42-1.1,5.15,-4])cylinder(r=5.7/2,h=30, $fn=30);
+translate([42-1.1+25+1,5.15+42,-4])cylinder(r=5.7/2,h=30, $fn=30);
+translate([42-1.1-25-1.,5.15+42,-4])cylinder(r=5.7/2,h=30, $fn=30);
+translate([3.2,9,9-40])cylinder(r=7/2,h=130,$fn=6);
+translate([3.2+17,9,9-40])cylinder(r=7/2,h=130,$fn=6);
+}
+//belt clamp left side
+union(){
+translate([25,17.32+1.38,0])cube([15.6,3.62,10]);
+translate([25,17.32+1.38-14,0])difference(){
+translate([-2,0,0])#cube([4.64+2,13.62+1,10]);translate([-10,5,6.5])rotate([90,0,90]){cylinder(r=2.8/2,h=30,$fn=30);}} //  translate([0,0,9])cylinder(r=6.6/2,h=3,$fn=6);}}
+}
+//end belt clamp
+//belt clamp right side
+translate([25-45.84-7.3,17.32+1.38,0])cube([15.6+7.3,3.62,10]);translate([25-35.73,17.32+1.38-14-4,0])difference(){translate([0,4.1,0])#cube([4.64+0.8+2,13.62+6-4,10]);translate([-10,5+4,6.5])rotate([90,0,90]){cylinder(r=2.8/2,h=30,$fn=30);}} //translate([0,0,13])cylinder(r=6.6/2,h=3,$fn=6);}}
+//inductor mount
+translate([25-45.84-7.3,17.32+1.38-21.61,0])difference(){
+translate([-2,-4,0])cube([15.6+7.3+4,7.8+4,10+6-0.5]);
+//translate([2.8,4-.08-2,0]){translate([0,0,-10])cylinder(r=3/2,h=40,$fn=30);translate([0,0,10]){cylinder(r=6.8/2,h=3,$fn=6);translate([0-5.5,-2.94,0])cube([6.8,5.88,3.2]);}}
+translate([2.8,4-.08-2,0]){translate([0,0,-10])cylinder(r=3/2,h=40,$fn=30);translate([0,0,-1]){cylinder(r=7/2,h=13,$fn=6);}}
+//translate([0-5.5,-2.94,0])cube([6.8,5.88,3.2]);}}
+//translate([2.8+20-2.8,4-.08-2,0]){translate([0,0,-10])cylinder(r=3/2,h=40,$fn=30);translate([0,0,10]){cylinder(r=6.8/2,h=3,$fn=6);translate([0.5,-2.94,0])cube([6.8,5.88,3.2]);}}
+translate([2.8+20-2.8,4-.08-2,0]){translate([0,0,-10])cylinder(r=3/2,h=40,$fn=30);translate([0,0,-1]){cylinder(r=7/2,h=13,$fn=6);}}
+translate([11.45,20,16])rotate([90,0,0])cylinder(r=11.5/2,h=40);
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -7415,9 +7656,6 @@ union(){
 cube([73,53,3]);
 translate([25-2,15+9,0])cube([25+6,13+16,3+7]);
 }
-
-
-
 translate([25-2,15+9+10,3])rotate([0,0,60])cube([25+6,13+16,3+7]);
 translate([25-2+16,15+9+10+26,3])rotate([0,0,-60])cube([25+6,13+16,3+7]);
 translate([0-3,-16-4,-0.3])cube([33+3,23,10]);
@@ -7431,11 +7669,9 @@ translate([7,14,0]){cylinder(r=2.8/2,h=30,$fn=30);}
 translate([42-1.1,5.15,-4])cylinder(r=5.7/2,h=30, $fn=30);
 translate([42-1.1+25+1,5.15+42,-4])cylinder(r=5.7/2,h=30, $fn=30);
 translate([42-1.1-25-1.,5.15+42,-4])cylinder(r=5.7/2,h=30, $fn=30);
-
 translate([3.2,9,9-40])cylinder(r=7/2,h=130,$fn=6);
 translate([3.2+17,9,9-40])cylinder(r=7/2,h=130,$fn=6);
 }
-
 //belt clamp left side
 union(){
 translate([25,17.32+1.38,0])cube([15.6,3.62,10]);
@@ -7443,11 +7679,8 @@ translate([25,17.32+1.38-14,0])difference(){
 translate([-2,0,0])#cube([4.64+2,13.62+1,10]);translate([-10,5,6.5])rotate([90,0,90]){cylinder(r=2.8/2,h=30,$fn=30);}} //  translate([0,0,9])cylinder(r=6.6/2,h=3,$fn=6);}}
 }
 //end belt clamp
-
-
 //belt clamp right side
 translate([25-45.84-7.3,17.32+1.38,0])cube([15.6+7.3,3.62,10]);translate([25-35.73,17.32+1.38-14-4,0])difference(){translate([0,4.1,0])#cube([4.64+0.8+2,13.62+6-4,10]);translate([-10,5+4,6.5])rotate([90,0,90]){cylinder(r=2.8/2,h=30,$fn=30);}} //translate([0,0,13])cylinder(r=6.6/2,h=3,$fn=6);}}
-
 //inductor mount
 translate([25-45.84-7.3,17.32+1.38-21.61,0])difference(){
 translate([-2,-4,0])cube([15.6+7.3+4,7.8+4,10+6-0.5]);
@@ -7459,6 +7692,33 @@ translate([2.8+20-2.8,4-.08-2,0]){translate([0,0,-10])cylinder(r=3/2,h=40,$fn=30
 translate([11.45,20,16])rotate([90,0,0])cylinder(r=11.5/2,h=40);
 }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 module slide_conveyer_caller(z,xx,xp,sph){
 //translate([-36.25+0.5-60+30+215,-33+580-4,90])rotate([-90,0,90])conveyer_solenoid_pcb();
@@ -7856,6 +8116,30 @@ translate([-20,10,10+i*0.5])rotate([0,90,0])cylinder(r=9.7/2,h=9);
 }
 }
 }
+
+//got to finish this here for the spacer
+module filament_driver_assy_motormount_spacer(){
+//color("pink")translate([-21-29+0.5,-21-1,3-48])
+translate([-55+1.5-12,-22-18,-45])
+difference(){
+union(){
+translate([4,19,0])cube([12,40,18]);
+translate([4,19-14,0])#cube([4,70,18]);
+}
+translate([-20,12,9])rotate([0,90,0])#cylinder(r=6/2,h=76);
+translate([-20,68.5,9])rotate([0,90,0])#cylinder(r=6/2,h=76);
+translate([30,0,0]){
+translate([-20,28,9])rotate([0,90,0])#cylinder(r=6/2,h=16);
+translate([-20-4-20,28,9])rotate([0,90,0])#cylinder(r=12/2,h=24);
+translate([-20,28+23,9])rotate([0,90,0])#cylinder(r=6/2,h=16);
+translate([-20-4-20,28+23,9])rotate([0,90,0])#cylinder(r=12/2,h=24);
+}
+}
+}
+
+
+
+
 
 module filament_driver_assy_motormount(){
 difference(){

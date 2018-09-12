@@ -6190,7 +6190,6 @@ translate([300,160,-40]){
 
 //filament_linearactuator();
 module slider_front_assy(){
-
 translate([0,3,0]){
 //filament model
 //pagg = 0.88; color([pagg,pagg,pagg])
@@ -6220,6 +6219,41 @@ translate([15-25+229.5,206.5-11,-63+400])rotate([90,0,0])sandwich_sliderwheel_as
 //translate([-100,-100,0])rotate([90,-90,0])linearactuator_cordglide();
 //translate([15-25+460/2,206.5-15,-60+400])rotate([90,0,0])slider_x4();
 }
+
+
+module slider_front_assy_vertical_adjust_nema17(){
+translate([0,3,0]){
+//filament model
+//pagg = 0.88; color([pagg,pagg,pagg])
+//color("lime")
+//translate([208-16+33.5-7,188-16+16-70+0+11.5+31.5,342-35+30+150-70-80+45])rotate([-0,0,0])cylinder(r=6/1,h=300);
+//ptagg = 0.38; color([ptagg,ptagg,ptagg])
+//color("gainsboro")
+//translate([208-16+33.5-7,188-16+16-70+0+11.5+31.5,342-35+30+150-70-80+53])rotate([-0,0,0])cylinder(r=10/1,h=10,$fn=6);
+//agg = 0.2; color([agg,agg,agg])
+//translate([208-16+33.5-7,188-16+16-70+0+11.5+31.5,342-35+30+150-70-80])rotate([-0,0,0])cylinder(r=2/1,h=1000);
+sgg = 0.6; color([sgg,sgg,sgg])
+translate([208-16+16,188-16+16,342-35+30])rotate([90,0,0])inductivesensorcap();
+
+sgg = 0.6; color([sgg,sgg,sgg])
+translate([208-16+33.5,188-16+16-70+0+11.5,342-35+30+150-70])rotate([-90,0,0])linearactuator_filament_encodershuttle_filamentclamp();
+translate([0,0,-3]){
+translate([208,188,342])rotate([90,0,0])filament_linearactuator();
+//inductive sensor
+cgg = 0.5;color([cgg,cgg,cgg])
+translate([208-16,188-16,342-35])cylinder(r=12/2,h=55);
+}
+/*
+*/
+}
+translate([15-25+229.5,206.5-11,-63+400])rotate([90,0,0])sandwich_sliderwheel_assy();
+//shuttle_front();
+//translate([-100,-100,0])rotate([90,-90,0])linearactuator_cordglide();
+//translate([15-25+460/2,206.5-15,-60+400])rotate([90,0,0])slider_x4();
+}
+
+
+
 
 
 
@@ -7276,8 +7310,9 @@ x_axis(x);
 translate([20,217,400-50])rotate([0,0,-90])x_encoder_support();
 }
 */
-module filament_linearactuator(){
 
+
+module filament_linearactuator(){
 //translate([-40+2,-25+18.8,3])import("igus_sliders/TS_04_09_50_3.stl");
 //translate([0,-10,3]){translate([-38,-40+18,4.5])import("igus_sliders/TW_04_09_4.stl");}
 //translate([-49,-30-8,6])syringeplunger_formed_modular_linearactuator_igus_TW_04_07();
@@ -7306,6 +7341,43 @@ shh = 0.9;color([shh,shh,shh])
 color("gainsboro")
 translate([-0.5,-37,22])filament_linearactuator_shuttle();
 }
+
+module filament_linearactuator_smaller_igus_slidermount_vertical_adjust_nema17(){
+//translate([-40+2,-25+18.8,3])import("igus_sliders/TS_04_09_50_3.stl");
+//translate([0,-10,3]){translate([-38,-40+18,4.5])import("igus_sliders/TW_04_09_4.stl");}
+//translate([-49,-30-8,6])syringeplunger_formed_modular_linearactuator_igus_TW_04_07();
+//translate([-38,-6,0])igus_lowprofile_assy();
+
+sgg = 0.6; color([sgg,sgg,sgg])
+//color("gainsboro")
+shuttle_front_vertical_adjust();
+ssgg = 0.8; color([ssgg,ssgg,ssgg])
+//color("lime")
+translate([-25,5,41])rotate([-90,0,0])import("files/gt2belt_holder.stl");
+
+
+//this is the linear actuator part
+translate([48.47-80+4,92+3-130-2,16.0+7])rotate([0,0,180])smaller_igus_slidermount_vertical_adjust_nema17();
+translate([48.5,-4.8,10+7]){
+translate([-40+2,-25+18.8,3])
+color("silver")
+import("igus_sliders/TS_04_09_50_3.stl");
+translate([0,-10,3]){translate([-38,-40+18,4.5])
+color("silver")
+import("igus_sliders/TW_04_09_4.stl");}
+}
+shh = 0.9;color([shh,shh,shh])
+color("gainsboro")
+translate([-0.5,-37,22+7])filament_linearactuator_shuttle();
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -7555,10 +7627,13 @@ translate([7.5,50,22-6])rotate([90,0,0])cylinder(r=4.7/2,h=30);
 
 module shuttle_front_vertical_adjust(){
 //color("gainsboro")import("head_front.stl");
+
 translate([-28.5,-10,0])difference(){
 union(){
 cube([73,53,3]);
-translate([25-2,15+9,0])cube([25+6,13+16,3+7+7]);
+translate([25-2,15+9,0])#cube([25+6,13+16,3+7+7]);
+//translate([25-2,15+9,0])#cube([25+6,13,3+7+7]);
+//translate([25-2+5,15+9,0])#cube([25+6-10,13+16,3+7+7]);
 }
 ///translate([25-2,15+9+10,3])rotate([0,0,60])cube([25+6,13+16,3+7+8+9]);
 //translate([25-2+16,15+9+10+26,3])rotate([0,0,-60])cube([25+6,13+16,3+7]);
@@ -7570,22 +7645,30 @@ translate([32,32,-3]){
 //#translate([14,0-4,0]){cylinder(r=2.8/2,h=30,$fn=30);}
 #translate([7,-4,0])cylinder(r=2.8/2,h=30,$fn=30);
 
+/*
+//this is the middle hole going to try this out
+#translate([7,14-4,2.9]){cylinder(r=2.8/2,h=30,$fn=30);}//cylinder(r=6.8/2,h=5.5,$fn=6);}
+translate([7,14-4,2.9+3+9]){difference(){
+cylinder(r=10/2,h=30,$fn=30);
+//#cylinder(r=5/2,h=30,$fn=30);
+}
+}
+*/
+
+//this is the first side I think its not necessary
 #translate([7-8,14-4,2.9]){cylinder(r=2.8/2,h=30,$fn=30);}//cylinder(r=6.8/2,h=5.5,$fn=6);}
-translate([7-8,14-4,2.9+3]){difference(){
-cylinder(r=10/2,h=30,$fn=30);
-cylinder(r=5/2,h=30,$fn=30);
+translate([7-8,14-4,2.9+3+9]){difference(){
+#cylinder(r=10/2,h=30,$fn=30);
+//cylinder(r=5/2,h=30,$fn=30);
 }
 }
-
-
+//this is the other side I think its not necessary
 #translate([7+8,14-4,2.9]){cylinder(r=2.8/2,h=30,$fn=30);}//cylinder(r=6.8/2,h=5.5,$fn=6);}
-translate([7+8,14-4,2.9+3]){difference(){
+translate([7+8,14-4,2.9+3+9]){difference(){
 cylinder(r=10/2,h=30,$fn=30);
-cylinder(r=5/2,h=30,$fn=30);
+//cylinder(r=5/2,h=30,$fn=30);
 }
 }
-
-
 }
 //bearings screws
 translate([42-1.1,5.15,-4])cylinder(r=5.7/2,h=30, $fn=30);
@@ -7614,6 +7697,14 @@ translate([2.8+20-2.8,4-.08-2,0]){translate([0,0,-10])cylinder(r=3/2,h=40,$fn=30
 translate([11.45,20,16])rotate([90,0,0])cylinder(r=11.5/2,h=40);
 }
 }
+
+
+
+
+
+
+
+
 
 
 

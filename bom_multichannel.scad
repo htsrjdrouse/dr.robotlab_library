@@ -8,17 +8,20 @@ use<writescad/write.scad>
 //rotate([0,-90,0])filament_driver_assy_motormount_spacer();
 
 //slider_front_assy();
-
+//slider_front_assy_vertical_adjust_nema17();
 //shuttle_front_vertical_adjust();
-//translate([-27.5,-41,20+3])rotate([0,0,180])smaller_igus_slidermount_vertical_adjust();
+translate([-27.5,-41,20+3])rotate([0,0,180])smaller_igus_slidermount_vertical_adjust_nema17();
 
+//filament_linearactuator_smaller_igus_slidermount_vertical_adjust_nema17();
+
+//rotate([90,0,0])stepper_linear_m8nut_coupler_vertical_adjust_nema17();
 /*
 x =10;
 y = 100;
  xshuttle_assy(x,y);
 */
 //multichannel_pipette_holder();
-multichannel_top_fix();
+//multichannel_top_fix();
 
 //smaller_igus_slidermount();
 //translate([-0.5,-37,22])
@@ -275,6 +278,9 @@ translate([39-5,10,3])rotate([90,0,0])cylinder(r=5/2,h=20);
 
 
 module multichannel_pipette_holder(){
+
+translate([-9,-6.6,-4])cube([5,13.2,12]);
+translate([-9+76.5,-6.6,-4])cube([5,13.2,12]);
 /*
 difference(){
 translate([21.5,10-47,-4])#cube([20,17,4]);
@@ -290,7 +296,15 @@ rotate([0,0,0])cylinder(r=6.3/2,h=15+13);
 difference(){
 union(){
 for(i=[0:7]){
-translate([i*9,0,0])pipette_serological_1ml(5);
+if (i==0){
+ translate([i*9,0,0])pipette_serological_1ml(5);
+} 
+else if (i==7){
+ translate([i*9,0,0])pipette_serological_1ml(5.2);
+}
+else {
+translate([i*9,0,0])pipette_serological_1ml(5.3);
+}
 }
 }
 sh = 32;

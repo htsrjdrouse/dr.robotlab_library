@@ -96,19 +96,41 @@ translate([40,-40,0])syringe_pcb_holder_cover();
 */
 
 
+
+module zbed_washer_hold_plate_into_place(){
+
+difference(){
+cylinder(r=21/2,h=5);
+translate([0,0,-0.1])cylinder(r=2.8/2,h=6);
+}
+}
+
+
 module tslot_clamp_filament_linearactuator_shuttle(){
 difference(){
-cube([16,60,4]);
+union(){
+translate([0,0,-3.5])cube([16,60,4+3.5]);
+translate([0,17.5,0-3.5])cube([16,25,4+5+3.5]);
+}
 translate([8,30-6,-1])#cylinder(r=3.7/2,h=20);
+translate([8,30-6,0-3.5])#cylinder(r=6.5/2,h=3.5);
 translate([8,30+6,-1])#cylinder(r=3.7/2,h=20);
-translate([8,30-22,-1])#cylinder(r=5.9/2,h=20);
-translate([8,30+22,-1])#cylinder(r=5.9/2,h=20);
+translate([8,30+6,0-3.5])#cylinder(r=6.5/2,h=3.5);
+//translate([8,30-22,-1])cylinder(r=5.9/2,h=20);
+//translate([8,30+22,-1])cylinder(r=5.9/2,h=20);
+translate([8,30-15,-1-6])#cylinder(r=5.9/2,h=50);
+translate([8,30+15,-1-6])#cylinder(r=5.9/2,h=50);
+translate([8,30-15,4-3.5])#cylinder(r=10/2,h=20);
+translate([8,30+15,4-3.5])#cylinder(r=10/2,h=20);
 }
 }
 
-
-
-
+module tslot_clamp_filament_linearactuator_shuttle_shim(wd){
+rotate([0,0,45])difference(){
+cylinder(r=18/2,h=wd,$fn=4);
+translate([0,0,-1])cylinder(r=6/2,h=10);
+}
+}
 
 
 module iverntech_slider_x4(){
@@ -3568,6 +3590,35 @@ translate([25-7.5,7.5,-0.1])cylinder(r=6.5/2,h=4);
 }
 }
 
+
+
+module bed_leveler_better_lm8uu_for_metalversion(){
+difference(){
+union(){
+#cube([35,15,6]);
+cube([25+10+25+4-27,15,6]);
+//translate([25-7.5,7.5,0])#cylinder(r=15/2,h=11+5);
+translate([35/2,7.5,0])#cylinder(r=15/2,h=11+5);
+}
+translate([5,7.5,-1-50])#cylinder(r=3.8/2,h=200);
+translate([5,7.5,-1])#cylinder(r=3.8/2,h=20);
+translate([5+25,7.5,-1-50])#cylinder(r=3.8/2,h=200);
+translate([35/2,7.5,6+5])cylinder(r=10/2,h=11);
+translate([35/2,7.5,-1+0])cylinder(r=2.8/2,h=300);
+translate([35/2,7.5,-0.1])cylinder(r=9.5/2,h=4);
+/*
+translate([5+53,7.5,-1-50])cylinder(r=3.8/2,h=200);
+translate([5+52,7.5,-1-50])cylinder(r=3.8/2,h=200);
+translate([5+51,7.5,-1-50])cylinder(r=3.8/2,h=200);
+translate([5+50,7.5,-1-50])cylinder(r=3.8/2,h=200);
+translate([5+49,7.5,-1-50])cylinder(r=3.8/2,h=200);
+*/
+}
+}
+
+
+
+
 module bed_leveler_better_lm8uu(){
 difference(){
 union(){
@@ -6238,7 +6289,9 @@ translate([208-16+16,188-16+16,342-35+30])rotate([90,0,0])inductivesensorcap();
 sgg = 0.6; color([sgg,sgg,sgg])
 translate([208-16+33.5,188-16+16-70+0+11.5,342-35+30+150-70])rotate([-90,0,0])linearactuator_filament_encodershuttle_filamentclamp();
 translate([0,0,-3]){
-translate([208,188,342])rotate([90,0,0])filament_linearactuator();
+//translate([208,188,342])rotate([90,0,0])filament_linearactuator();
+translate([208,188,342])rotate([90,0,0])
+filament_linearactuator_smaller_igus_slidermount_vertical_adjust_nema17();
 //inductive sensor
 cgg = 0.5;color([cgg,cgg,cgg])
 translate([208-16,188-16,342-35])cylinder(r=12/2,h=55);
@@ -6259,9 +6312,47 @@ translate([15-25+229.5,206.5-11,-63+400])rotate([90,0,0])sandwich_sliderwheel_as
 
 
 module inductivesensorcap(){
-import("files/inductive_attach.stl");
+//import("files/inductive_attach.stl");
+inductivesensorcap_aligner();
 
 }
+
+
+module inductivesensorcap_aligner(){
+shm = 3.65;
+psh = 6;
+translate([-29,-4,10+psh])difference(){
+#cube([30-3.05,10,10]);
+translate([shm,5,-0.5])cylinder(r=3.7/2,h=30);
+translate([shm+17.3,5,-0.5])cylinder(r=3.7/2,h=30);
+translate([12.3,10,6-psh])rotate([90,0,0])cylinder(r=11.5/2,h=40);
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 module slider_back_assy(){
 translate([0,0,-3]){
@@ -7366,9 +7457,7 @@ translate([0,-10,3]){translate([-38,-40+18,4.5])
 color("silver")
 import("igus_sliders/TW_04_09_4.stl");}
 }
-shh = 0.9;color([shh,shh,shh])
-color("gainsboro")
-translate([-0.5,-37,22+7])filament_linearactuator_shuttle();
+shh = 0.9;color([shh,shh,shh])color("gainsboro")translate([-0.5,-37,22+7])filament_linearactuator_shuttle();
 }
 
 

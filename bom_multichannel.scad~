@@ -1,18 +1,33 @@
-include <modparts.scad>
-use<writescad/write.scad>
+include <modparts.scad> use<writescad/write.scad>
 
+//multichannel_pipette_holder();
 
+//pipette_p200(5);
 
+//multichannel_pipette_holder();
+//zbed_washer_hold_plate_into_place();
+//laser_zbed(144);
 
 //filament_driver_assy_motormount();
 //rotate([0,-90,0])filament_driver_assy_motormount_spacer();
+//translate([208-16+16,188-16+16,342-35+30])rotate([90,0,0])inductivesensorcap();
+//inductivesensorcap();
+
+//rotate([0,180,0])inductivesensorcap_aligner();
+
 
 //slider_front_assy();
+//shh = 0.9;color([shh,shh,shh])color("gainsboro")translate([-0.5,-37,22+7])filament_linearactuator_shuttle();
 //slider_front_assy_vertical_adjust_nema17();
 //shuttle_front_vertical_adjust();
-translate([-27.5,-41,20+3])rotate([0,0,180])smaller_igus_slidermount_vertical_adjust_nema17();
+//translate([-27.5,-41,20+3])rotate([0,0,180])smaller_igus_slidermount_vertical_adjust_nema17();
+//smaller_igus_slidermount_vertical_adjust_nema17();
 
-//filament_linearactuator_smaller_igus_slidermount_vertical_adjust_nema17();
+
+///filament_linearactuator_smaller_igus_slidermount_vertical_adjust_nema17();
+
+//rotate([0,0,0])stepper_linear_m8nut_coupler_vertical_adjust_nema17_spacer(5);
+//translate([0,0,-60])stepper_linear_m8nut_coupler_vertical_adjust_nema17_nut();
 
 //rotate([90,0,0])stepper_linear_m8nut_coupler_vertical_adjust_nema17();
 /*
@@ -26,7 +41,10 @@ y = 100;
 //smaller_igus_slidermount();
 //translate([-0.5,-37,22])
 //tslot_clamp_filament_linearactuator_shuttle();
+tslot_clamp_filament_linearactuator_shuttle_shim(2);
+
 //filament_linearactuator_shuttle();
+// multichannel_pipette_holder();
 
 //multichannel_drypad();
 //slidedeck_adjust_wheel();
@@ -77,18 +95,19 @@ translate([230+125.25,195-0,145+5])wash_holder_arm();
 
 
 /*the evolving assembly design
-//multichannel_remove_pipette_assy();
-//the_actual_remove_pipette_part();
-//translate([0,-0,0])mirror([0,1,0])multichannel_remove_pipette_assy();
-//translate([-17.5,-28,1])rotate([0,90,0])tslot20(100);
-//multichannel_lockwasher();
-translate([-17.5,-2,1])rotate([0,90,0])tslot20(100);
-multichannel_pipette_holder();
-translate([0,0,-24])multichannel_top_fix();
 */
 
-
-
+//multichannel_remove_pipette_assy();
+//the_actual_remove_pipette_part();
+//multichannel_pipette_holder();
+/*
+//translate([0,-5,0])mirror([0,1,0])multichannel_remove_pipette_assy();
+translate([-17.5,-28-5,1])rotate([0,90,0])tslot20(100);
+//multichannel_lockwasher();
+translate([-17.5,-2+5,1])rotate([0,90,0])tslot20(100);
+multichannel_pipette_holder();
+//translate([0,0,-24])multichannel_top_fix();
+*/
 
 
 
@@ -137,19 +156,24 @@ cylinder(r=4/2,h=3);
 }
 
 module the_actual_remove_pipette_part(){
-translate([-4.5,-10,9-4])
+
+
+difference(){translate([-4.5,-10,9-4])
 difference(){
 union(){
 translate([-2,2.5,0])cube([75,15,4]);
-translate([-2+32.5,2.5-30,0])cube([12,75,4]);
+translate([-2+32.5,2.5-30-5,0])cube([12,75+10,4]);
 }
-translate([-2+32.5+6-0.5,2.5-30+6.4,-8])#cylinder(r=3.8/2,h=20);
-translate([-2+32.5+6-0.5,2.5-30+6.4+62,-8])#cylinder(r=3.8/2,h=20);
+translate([-2+32.5+6-0.5,2.5-30+6.4-5,-8])cylinder(r=3.8/2,h=20);
+translate([-2+32.5+6-0.5,2.5-30+6.4+62+5,-8])cylinder(r=3.8/2,h=20);
 translate([4.5,10,-12])
 for(i=[0:7]){
-translate([i*9,0,0])cylinder(r=6.3/2,h=30);
+translate([i*9,0,0])cylinder(r=7.5/2,h=30);
 }
 }
+translate([-2-10,2.5-2.5,0])cube([75+10,15+30,40]);
+}
+
 
 }
 
@@ -281,6 +305,7 @@ module multichannel_pipette_holder(){
 
 translate([-9,-6.6,-4])cube([5,13.2,12]);
 translate([-9+76.5,-6.6,-4])cube([5,13.2,12]);
+
 /*
 difference(){
 translate([21.5,10-47,-4])#cube([20,17,4]);
@@ -297,23 +322,35 @@ difference(){
 union(){
 for(i=[0:7]){
 if (i==0){
- translate([i*9,0,0])pipette_serological_1ml(5);
-} 
+ translate([i*9,0,0])
+  ///pipette_serological_1ml(5);
+  //pipette_serological_1ml(7.5);
+  pipette_p1000(7.9);
+  //pipette_p200(5); 
+}
 else if (i==7){
- translate([i*9,0,0])pipette_serological_1ml(5.2);
+ translate([i*9,0,0])
+ //pipette_p200(5); 
+ //pipette_serological_1ml(5.2);
+ //pipette_serological_1ml(7.7);
+ pipette_p1000(7.9);
 }
 else {
-translate([i*9,0,0])pipette_serological_1ml(5.3);
+translate([i*9,0,0])
+ //pipette_serological_1ml(5.3);
+ //pipette_serological_1ml(7.8);
+ pipette_p1000(7.9);
+ //pipette_p200(5); 
 }
 }
 }
 sh = 32;
-translate([-4+11,sh/2-3,-10])cylinder(r=5.5/2,h=80);
-translate([-4-11+(7*10),sh/2-3,-10])cylinder(r=5.5/2,h=80);
+translate([-4+11,sh/2-3+5,-10])cylinder(r=5.5/2,h=80);
+translate([-4-11+(7*10),sh/2-3+5,-10])cylinder(r=5.5/2,h=80);
 //translate([-4+35,sh/2-3,-10])cylinder(r=5.5/2,h=80);
 //translate([-4+35,-sh/2+3,-10])#cylinder(r=5.5/2,h=80);
-//translate([-4+11,-sh/2+3,-10])#cylinder(r=5.5/2,h=80);
-//translate([-4-11+70,-sh/2+3,-10])#cylinder(r=5.5/2,h=80);
+translate([-4+11,-sh/2+3-5,-10])#cylinder(r=5.5/2,h=80);
+translate([-4-11+70,-sh/2+3-5,-10])#cylinder(r=5.5/2,h=80);
 }
 
 }
@@ -393,24 +430,19 @@ translate([0,0+50,-50.2+46+8])rotate([90,0,0])cylinder(r=1.7/2,h=100);
 //color("lightblue")translate([0,0,-50.2+46-33+8-6])cylinder(r=dia/2,h=50);
 }
 
-
-
-
-
-
-
-
-
-module pipette_serological_1ml(dia){
+module pipette_p200(dia){
 difference(){
 union(){
 //translate([0,0,4])cylinder(r2=4.5/2,r1=5.5/2,h=8);
-translate([0,2,0])rotate([0,0,45])cylinder(r=13/2,h=8,$fn=4);
-translate([0,-2,0])rotate([0,0,45])cylinder(r=13/2,h=8,$fn=4);
-translate([0,0,0])rotate([0,0,45])cylinder(r=13/2,h=8,$fn=4);
+translate([0,2,0])rotate([0,0,45])cylinder(r=13/2,h=7,$fn=4);
+translate([0,-2,0])rotate([0,0,45])cylinder(r=13/2,h=7,$fn=4);
+translate([0,0,0])rotate([0,0,45])cylinder(r=13/2,h=7,$fn=4);
 translate([-5,-40/2+13.4,-4])cube([10,40-13,4]);
+//the other side for solenoid
+//translate([-5,-40/2,-4])cube([10,40-13,4]);
 }
-translate([0,0,-50.2+46])cylinder(r=dia/2,h=100);
+translate([0,0,-50.2+46+4.25-7])cylinder(r2=8/2,r1=8/2,h=7);
+translate([0,0,-50.2+46+4.25])#cylinder(r2=6.5/2,r1=8/2,h=7);
 translate([0,0+50,-50.2+46+8])rotate([90,0,0])cylinder(r=1.7/2,h=100);
 
 //translate([0,0,-50.2+46])cylinder(r=dia/2,h=100);
@@ -433,6 +465,100 @@ color("white")translate([0,0,-36.7-3])cylinder(r=12/2,h=3);
 */
 
 }
+
+
+
+module pipette_p1000(dia){
+difference(){
+union(){
+//translate([0,0,4])cylinder(r2=4.5/2,r1=5.5/2,h=8);
+translate([0,2,0])rotate([0,0,45])cylinder(r=13/2,h=8,$fn=4);
+translate([0,-2,0])rotate([0,0,45])cylinder(r=13/2,h=8,$fn=4);
+translate([0,0,0])rotate([0,0,45])cylinder(r=13/2,h=8,$fn=4);
+translate([-5,-40/2+13.4,-4])#cube([10,40-13+4,4]);
+//the other side for solenoid
+translate([-5,-40/2-4,-4])#cube([10,40-13+4,4]);
+}
+translate([0,0,-50.2+46])cylinder(r=dia/2,h=100);
+translate([0,0+50,-50.2+46+8])rotate([90,0,0])cylinder(r=1.7/2,h=100);
+//translate([0,0,-50.2+46])cylinder(r=dia/2,h=100);
+//translate([0,0,-50.2+46])cylinder(r=(dia+0.2)/2,h=2);
+}
+/*
+translate([0,0,-65+41]){
+//this is for show
+color("lightblue")translate([0,0,-36.7])cylinder(r=4.5/2,h=102-13-10);
+color("lightblue")translate([0,0,62])cylinder(r=2.5/2,h=13);
+color("lightblue")translate([0,0,52.3-10])cylinder(r2=2.5/2,r1=4.5/2,h=20);
+color("lightblue")translate([0,0,-36.7])cylinder(r=7.5/2,h=20);
+//here is the luer lock
+color("white")translate([0,0,-36.7-5])cylinder(r=8/2,h=3);
+color("white")translate([0,0,-36.7-3])cylinder(r=12/2,h=3);
+//cylinder(r=12/2,h=3);
+//end luer lock
+}
+*/
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+module pipette_serological_1ml(dia){
+difference(){
+union(){
+//translate([0,0,4])cylinder(r2=4.5/2,r1=5.5/2,h=8);
+translate([0,2,0])rotate([0,0,45])cylinder(r=13/2,h=8,$fn=4);
+translate([0,-2,0])rotate([0,0,45])cylinder(r=13/2,h=8,$fn=4);
+translate([0,0,0])rotate([0,0,45])cylinder(r=13/2,h=8,$fn=4);
+translate([-5,-40/2+13.4,-4])#cube([10,40-13,4]);
+//the other side for solenoid
+//translate([-5,-40/2,-4])#cube([10,40-13,4]);
+}
+translate([0,0,-50.2+46])cylinder(r=dia/2,h=100);
+translate([0,0+50,-50.2+46+8])rotate([90,0,0])cylinder(r=1.7/2,h=100);
+//translate([0,0,-50.2+46])cylinder(r=dia/2,h=100);
+//translate([0,0,-50.2+46])cylinder(r=(dia+0.2)/2,h=2);
+}
+/*
+translate([0,0,-65+41]){
+//this is for show
+color("lightblue")translate([0,0,-36.7])cylinder(r=4.5/2,h=102-13-10);
+color("lightblue")translate([0,0,62])cylinder(r=2.5/2,h=13);
+color("lightblue")translate([0,0,52.3-10])cylinder(r2=2.5/2,r1=4.5/2,h=20);
+color("lightblue")translate([0,0,-36.7])cylinder(r=7.5/2,h=20);
+//here is the luer lock
+color("white")translate([0,0,-36.7-5])cylinder(r=8/2,h=3);
+color("white")translate([0,0,-36.7-3])cylinder(r=12/2,h=3);
+//cylinder(r=12/2,h=3);
+//end luer lock
+}
+*/
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -465,7 +591,7 @@ translate([-33,-66,-20])rotate([0,0,90]){
 
 for(j=[0:7]){
 for(k=[0:3]){
- translate([19+7+(j*9)+5,2.5-10+33-(k*1),2])translate([7.5,25/2-8,-0.1])cylinder(r=6/2,h=40);
+ translate([19+7+(j*9)+5,2.5-10+33-(k*1),2])translate([7,25/2-8,-0.1])cylinder(r=7.5/2,h=40);
 }}
 translate([19+7,2.5-10,2])translate([7.5,25/2-8,18])cylinder(r=6.9/2,h=3.2);
 translate([19+7,2.5-10,2])translate([7.5,25/2-8,-0.1])cylinder(r=3.7/2,h=40);

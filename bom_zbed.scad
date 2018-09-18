@@ -4,26 +4,130 @@ use<writescad/write.scad>
 //pololu_screw_nobacklash_cap();
 //zbed_assy(100);
 
-laser_zbed(144);
-//wash_and_strobparts();
 //zbed_fix();
 
+//zbed_washer_hold_plate_into_place();
+//color("pink")laser_zbed(144);
+
+// x_level_guide();
+
+ //y_level_guide();
+ //color("lime")x_level_alignment_bar();
 
 
-module zbed_fix(){
-//Not really though
-translate([-113,13.5,-20])rotate([0,90,0])zbed_connector_bar();
+//tipbox_model(144);
+//tipbox_leftmount(144);
+
+tipbox_rightmount(144);
+module tipbox_model(z){
+translate([170,140,z+4])color("lime")cube([83,119,50]);
+}
+
+module tipbox_rightmount(z){
+translate([170-45+130,142.5+87,z+4])difference(){
+difference(){
+union(){
+color("red")cube([110,15,2]);
+translate([90,0,0])color("red")cube([20,15,6]);
+color("red")cube([10,15,6]);
+translate([0,-9,0])color("red")cube([15,30-6,15]);
+}
+translate([9,7.5,-10])#cylinder(r=5/2,h=40);
+translate([9,7.5,6])#cylinder(r=10/2,h=40);
+translate([9+90,7.5,-10])#cylinder(r=5/2,h=40);
+translate([-29,-4,10])rotate([0,90,0])#cylinder(r=3.7/2,h=100);
+}
+}
+}
+
+module tipbox_leftmount(z){
+translate([170-45,142.5,z+4])difference(){
+union(){
+color("red")cube([43,15,6]);
+translate([30,15,0])color("red")cube([13,20,15]);
+}
+translate([10,7.5,-10])#cylinder(r=6/2,h=40);
+translate([10+25,7.5,-10])#cylinder(r=6/2,h=40);
+translate([10,7.5+17,10])rotate([0,90,0])#cylinder(r=3.7/2,h=40);
+}
+}
+
+
+
+
+
+module y_level_guide(){
+translate([368,32,144+4])
+difference(){
+translate([1,-2,0])cube([16,90,2]);
+translate([10-1,6,-10])#cylinder(r=8/2,h=20);
+translate([10-1,6+75,-10])#cylinder(r=8/2,h=20);
+}
+
+}
+
+module x_level_alignment_bar(){
+translate([250,18-8+3,144+3])
+translate([10,10,0])cube([160,10,2]);
+
+
+}
+
+
+module x_level_guide(){
+
+translate([250,18,144-4])
+difference(){
+union(){
+translate([10-30,0,0])#cube([120,20,4]);
+translate([10-30,0,0])cube([120,5,10]);
+for(i=[-1:3]){
+translate([10+(i*26.5),0,0])cube([10,9,8]);
+}
+translate([7.5,5,0])cube([20,30,4]);
+translate([88,5,0])cube([20,30,4]);
+}
+translate([17,20,0])#cylinder(r=9/2,h=30);
+translate([17+80,20,0])#cylinder(r=9/2,h=30);
+}
+}
+
+
+//zbed_metal_version();
+
+module zbed_metal_version(){
+//Not really though maybe it is now
+translate([-113,13.5-6,-20])rotate([0,90,0])#zbed_connector_bar();
 translate([-177,0,8]){
 rotate([0,90,0])lm8uu_smz_glider();
-translate([24.5,7.5,-30])bed_leveler_better_lm8uu();
+translate([24.5,7.5,-30+3])bed_leveler_better_lm8uu_for_metalversion();
 }
 translate([42,0,8]){
 rotate([0,90,0])lm8uu_smz_glider();
-translate([59.5,7.5,-30])mirror([1,0,0])bed_leveler_better_lm8uu();
+translate([59.5,7.5,-30+3])mirror([1,0,0])bed_leveler_better_lm8uu_for_metalversion();
 }
 }
 
-//rotate([0,90,0])zbed_connector_bar();
+
+
+
+module zbed_3dprint_version(){
+//Not really though maybe it is now
+translate([-113,13.5-6,-20])rotate([0,90,0])#zbed_connector_bar();
+translate([-177,0,8]){
+rotate([0,90,0])lm8uu_smz_glider();
+translate([24.5,7.5,-30+3])bed_leveler_better_lm8uu();
+}
+translate([42,0,8]){
+rotate([0,90,0])lm8uu_smz_glider();
+translate([59.5,7.5,-30+3])mirror([1,0,0])bed_leveler_better_lm8uu();
+}
+}
+
+
+
+
+///rotate([0,90,0])zbed_connector_bar();
 //lm8uu_smz_glider();
 //bed_leveler_better_lm8uu();
 

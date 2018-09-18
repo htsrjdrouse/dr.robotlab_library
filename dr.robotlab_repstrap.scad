@@ -2052,13 +2052,12 @@ module motormount_smaller_igus_slidermount_vertical_adjust_nema17(){
  //motrad = 4;
 
  //This is for show
-/*
+ /*
  translate([21,40,-10])rotate([0,180,0])nema17();
  translate([21-0,40,-10-110])cylinder(r=8.7/2,h=80);
  translate([21-0,40,-10-30])cylinder(r=16/2,h=18);
- translate([-1,2,-117])rotate([-90,0,-90])stepper_linear_m8nut_coupler_vertical_adjust_nema17();
-*/
-
+ translate([-1+45-0.5-45,2,-117])rotate([-90,0,-90])mirror([0,0,0])stepper_linear_m8nut_coupler_vertical_adjust_nema17();
+ */
  difference(){
   translate([mmposx,mmposy,mmposz])
   cube([mmx,mmy,mmz]);
@@ -3369,10 +3368,10 @@ union(){
  union(){
  translate([-2,4,0])difference(){
  translate([2,30-4,0])color("lime")cube([22,15+5,6-1.75+1]); 
- translate([11.5+cubeln-4.5-2.5-20,32.5-1+3+6.5,-0.3]) #cylinder(r=3.7/2,h=100);
- translate([11.5+cubeln-4.5-2.5-20,32.5-1+3+6.5,-0.1-1.5+1]) cylinder(r=6.7/2,h=2.5,$fn=6);
- translate([11.5+cubeln-4.5-2.5+13-20,32.5-1+3+6.5,-0.3]) #cylinder(r=3.7/2,h=100);
- translate([11.5+cubeln-4.5-2.5+13-20,32.5-1+3+6.5,-0.1-1.5+1]) cylinder(r=6.7/2,h=2.5,$fn=6);
+ translate([11.5+cubeln-4.5-2.5-20,32.5-1+3+6.5,-0.3]) #cylinder(r=2.7/2,h=100);
+// translate([11.5+cubeln-4.5-2.5-20,32.5-1+3+6.5,-0.1-1.5+1]) cylinder(r=6.7/2,h=2.5,$fn=6);
+ translate([11.5+cubeln-4.5-2.5+13-20,32.5-1+3+6.5,-0.3]) #cylinder(r=2.7/2,h=100);
+// translate([11.5+cubeln-4.5-2.5+13-20,32.5-1+3+6.5,-0.1-1.5+1]) cylinder(r=6.7/2,h=2.5,$fn=6);
  //translate([11.5+cubeln-4.5-2.5+13/2,32.5-1+10,0]) rotate([90,0,0])cylinder(r=3.2/2,h=30);
  }
  color("peru")cube([cubeln,cubehi,3]);
@@ -3403,8 +3402,8 @@ translate([15,0,15.6])cylinder(r=5.5/2,h=13.5);
 translate([0,13,15.6])cylinder(r=5.5/2,h=13.5);
 translate([15,13,15.6])cylinder(r=5.5/2,h=13.5);
 
-translate([-7.2+14.8+6,6-7+7,0]){#cylinder(r=2.8/2,h=123.5);translate([0,0,9.5-4])cylinder(r=6.45/2,h=4+5,$fn=6);}
-translate([-7.2+14.8-6,6-7+7,0]){#cylinder(r=2.8/2,h=123.5);translate([0,0,9.5-4])cylinder(r=6.45/2,h=4+5,$fn=6);}
+translate([-7.2+14.8+6,6-7+7,0]){#cylinder(r=2.7/2,h=123.5);}//translate([0,0,9.5-4])cylinder(r=6.45/2,h=4+5,$fn=6);}
+translate([-7.2+14.8-6,6-7+7,0]){cylinder(r=2.7/2,h=123.5);}//translate([0,0,9.5-4])cylinder(r=6.45/2,h=4+5,$fn=6);}
 //translate([-7.2+14.8,6+5,0]){cylinder(r=3.7/2,h=23.5);translate([0,0,9.5-4])cylinder(r=6.45/2,h=4+5,$fn=6);}
 /*
 translate([-7.2+14.8,6-7,0]){cylinder(r=3.7/2,h=23.5);translate([0,0,9.5-4])cylinder(r=6.45/2,h=4+5,$fn=6);}
@@ -14007,21 +14006,64 @@ translate([-38.25+14-13.9+13.7+13,-70+34,22.5+3.8])cylinder(r=3.7/2,h=20);
 }
 }
 
+
+module stepper_linear_m8nut_coupler_vertical_adjust_nema17_spacer(thick){
+
+translate([0,-20-9,0])difference(){
+translate([-38.25+14-13.9+20,-70+30.-5,22.5+3.8-1.0])cube([44.5-20,11+5,5]);
+for(i=[0:0]){
+translate([-38.25+14-13.9+13.7+11.9-i,-70+34,22.5+3.8-50])cylinder(r=3.7/2,h=120);
+translate([-38.25+14-13.9+13.7+13+11.9-i,-70+34,22.5+3.8-50])cylinder(r=3.7/2,h=120);
+}
+}
+
+}
+
+module stepper_linear_m8nut_coupler_vertical_adjust_nema17_nut(){
+
+difference(){
+cylinder(r=13.8/2,h=10,$fn=32);
+translate([0,0,-0.2])cylinder(r=7.8/2,h=12,$fn=36);
+translate([-30,0,-0.2+5])rotate([0,90,0])#cylinder(r=2.8/2,h=120);
+}
+}
+
 module stepper_linear_m8nut_coupler_vertical_adjust_nema17(){
+mirror([0,0,0]){
 translate([0,-20-9,0])difference(){
 union(){
-translate([-38.25+14-13.9,-70+30-5,22.5])rotate([-90,0,0])cylinder(r=17.5/2,h=23+3);
-translate([-38.25+14-13.9,-70+30.-5,22.5+3.8])#cube([31+13,11+5,3.7+1.25]);
-translate([-38.25+14-13.9+18,-70+30.-5,22.5+3.8-4.5-7.5])#cube([31+13-18,11+5,3.7+1.25+7.5]);
+//translate([-38.25+14-13.9,-70+30-5,22.5])rotate([-90,0,0])cylinder(r=18/2,h=23+3-15);
+translate([-38.25+14-13.9,-70+30-5,22.5])rotate([-90,0,0])cylinder(r=24/2,h=23+3-8);
+translate([-38.25+14-13.9,-70+30.-5,22.5+3.8-1.0])cube([44.5,11+5,3.7+1.25]);
+//translate([-38.25+14-13.9+18,-70+30.-5,22.5+3.8-4.5-7.5])cube([31+13-18,11+5,3.7+1.25+7.5]);
 }
 //cylinder(r=7.4,h=sl+4,$fn=6);
 //translate([-38.25+14-13.9,-70+30,22.5])rotate([-90,0,0])cylinder(r=11.4/2,h=41,$fn=6);
-translate([-38.25+14-13.9,-70+30-10+8,22.5])rotate([-90,0,0])cylinder(r=7.,h=28,$fn=6);
-translate([-38.25+14-13.9,-70+30-30,22.5])rotate([-90,0,0])cylinder(r=8.7/2,h=241);
-translate([-38.25+14-13.9+13.7+11.9,-70+34,22.5+3.8-50])#cylinder(r=3.7/2,h=120);
-translate([-38.25+14-13.9+13.7+13+11.9,-70+34,22.5+3.8-50])#cylinder(r=3.7/2,h=120);
+translate([-38.25+14-13.9,-70+30-10+8+5,22.5])rotate([-90,0,0])cylinder(r=12/2,h=28,$fn=35);
+translate([-38.25+14-13.9,-70+30-10+8+5,22.5-8])rotate([-90,0,0])#cylinder(r=2.8/2,h=28,$fn=35);
+translate([-38.25+14-13.9,-70+30-10+8+5,22.5+8])rotate([-90,0,0])#cylinder(r=2.8/2,h=28,$fn=35);
+translate([-38.25+14-13.9-8,-70+30-10+8+5,22.5])rotate([-90,0,0])#cylinder(r=2.8/2,h=28,$fn=35);
+translate([-38.25+14-13.9+8,-70+30-10+8+5,22.5])rotate([-90,0,0])#cylinder(r=2.8/2,h=28,$fn=35);
+//translate([-38.25+14-13.9-17,-70+30-10+8+5+13,2.5])rotate([-90,0,0])#cylinder(r=2.7/2,h=128,$fn=32);
+//translate([-38.25+14-13.9-17,-70+30-10+8+5+13,2.5])rotate([-0,40,0])#cylinder(r=3.7/2,h=128,$fn=32);
+//translate([-38.25+14-13.9,-70+30-10+8+5,22.5])rotate([-90,0,0])cylinder(r=13.8/2,h=28,$fn=6);
+translate([-38.25+14-13.9,-70+30-30,22.5])rotate([-90,0,0])cylinder(r=7.8/2,h=241);
+for(i=[0:0]){
+translate([-38.25+14-13.9+13.7+11.9-i,-70+34,22.5+3.8-50])cylinder(r=3.7/2,h=120);
+translate([-38.25+14-13.9+13.7+13+11.9-i,-70+34,22.5+3.8-50])cylinder(r=3.7/2,h=120);
 }
 }
+}
+}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -14378,7 +14420,7 @@ translate([0-7.5-10-32+56+3,-40+20+10+3-8+22+3,0])#cube([10+15+10+10+32-48,10,6+
 }
 translate([13,-36+(0*10)+48+3,0]){#cylinder(r=2.8/2,h=1000);}
 translate([13+19,-36+(0*10)+48+3,0]){#cylinder(r=2.8/2,h=1000);}
-translate([5,-40+20+10+3-8+20,17])rotate([90,0,0])cylinder(r=10/2,h=30);
+translate([5,-40+20+10+3-8+20,17])rotate([90,0,0])#cylinder(r=8/2,h=30);
 translate([5,-40+20+10+3-8+20+60,17])rotate([90,0,0])cylinder(r=2/2,h=60);
 //translate([5+20,20+(-5.5*10)-1.5,0]){cylinder(r=3.7/2,h=40);translate([0,0,5+11])cylinder(r=6.7/2,h=3.5);}//cylinder(r=5.4/2,h=3+4,$fn=6);}
 translate([0,-33,0])for(a=[4,6,8,10]){

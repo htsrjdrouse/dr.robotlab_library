@@ -1,10 +1,24 @@
 include <modparts.scad>
+include <bom_multichannel.scad>
 use<writescad/write.scad>
 //translate([0,-20,30])rotate([0,0,0])import("bowden_extruder/Duct.stl");
 //pololu_screw_nobacklash_cap();
 //zbed_assy(100);
 
 //zbed_fix();
+//zbed_metal_version();
+
+
+ translate([44+10,15,133])multichannel_pipette_remove_assay();
+
+
+ zencoder_assy();
+ translate([570-2,0,0])zencoder_assy();
+ zbed_assy(z);
+ translate([383.5/2-83/2,103.5-27,0])tipbox_model(144);
+ translate([383.5/2-85/2-90,103.5-27-6,0])microwellplate_model(144);
+ translate([383.5/2-85/2+88,103.5-27-6,0])microwellplate_model(144);
+
 
 //zbed_washer_hold_plate_into_place();
 //color("pink")laser_zbed(144);
@@ -15,12 +29,17 @@ use<writescad/write.scad>
  //color("lime")x_level_alignment_bar();
 
 
-//tipbox_model(144);
 //tipbox_leftmount(144);
 
-tipbox_rightmount(144);
+//tipbox_rightmount(144);
+
+module microwellplate_model(z){
+translate([25.5+2,64-35.5,z-11])color("pink")cube([85,127,14]);
+}
+
+
 module tipbox_model(z){
-translate([170,140,z+4])color("lime")cube([83,119,50]);
+translate([25.5,64-35.5,z-11])color("lime")cube([83,119,50]);
 }
 
 module tipbox_rightmount(z){
@@ -97,7 +116,7 @@ translate([17+80,20,0])#cylinder(r=9/2,h=30);
 
 module zbed_metal_version(){
 //Not really though maybe it is now
-translate([-113,13.5-6,-20])rotate([0,90,0])#zbed_connector_bar();
+translate([-113,13.5-6,-20])rotate([0,90,0])#zbed_connector_bar_metal();
 translate([-177,0,8]){
 rotate([0,90,0])lm8uu_smz_glider();
 translate([24.5,7.5,-30+3])bed_leveler_better_lm8uu_for_metalversion();

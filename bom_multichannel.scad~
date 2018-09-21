@@ -110,8 +110,8 @@ translate([230+125.25,195-0,145+5])wash_holder_arm();
 module multichannel_pipette_remove_assay(){
 multichannel_remove_pipette_assy();
 translate([100,0,0])multichannel_remove_pipette_assy();
-translate([-17.5,-2,2])rotate([0,90,0])tslot20(380);
-translate([-11+185,-150+3,-120])rotate([180,0,-90])multichannel_drypad();
+translate([-17.5,-2,2])rotate([0,90,0])tslot20(400);
+translate([-11+185,-150+3,-150])rotate([180,0,-90])multichannel_drypad();
 }
 
 

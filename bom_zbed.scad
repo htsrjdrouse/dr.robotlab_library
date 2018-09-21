@@ -9,15 +9,66 @@ use<writescad/write.scad>
 //zbed_metal_version();
 
 
- translate([44+10,16,133])multichannel_pipette_remove_assay();
-
-
+ translate([37.5,2,133+20])multichannel_pipette_remove_assay();
+ gantry();
  zencoder_assy();
  translate([570-2,0,0])zencoder_assy();
  zbed_assy(z);
+ translate([20,120,130])rotate([0,90,0])tslot20(400);
+ translate([20,120+101,130])rotate([0,90,0])tslot20(400);
+
+ difference(){union(){
+ color("gainsboro")translate([0,0,-10-10])multichannel_laser_zbed(144);
  translate([383.5/2-83/2,103.5-27,0])tipbox_model(144);
- translate([383.5/2-85/2-90,103.5-27-6,0])microwellplate_model(144);
- translate([383.5/2-85/2+88,103.5-27-6,0])microwellplate_model(144);
+ translate([383.5/2-85/2-90-10,103.5-27-6,0])microwellplate_model(144);
+ translate([383.5/2-85/2+88+14,103.5-27-6,0])microwellplate_model(144);
+ translate([-10,103.5-27-25,0])plateholder(144);
+ translate([383.5/2-290/2,103.5-27-25,1])ruler_plateholder(144);
+ }
+
+  translate([0,6,0])for(i=[0:3]){
+  b = 5;
+  if (i==1){
+  translate([25.5+22+20,75+i*(48)+11-b,100])cylinder(r=3/2,h=200);
+  translate([25.5+22+20+101,75+i*(48)+11-b,100])cylinder(r=3/2,h=200);
+  translate([25.5+22+20+101+100,75+i*(48)+11-b,100])cylinder(r=3/2,h=200);
+  translate([25.5+22+20+101+202,75+i*(48)+11-b,100])cylinder(r=3/2,h=200);
+  } else {
+  translate([25.5+22+20,75+i*(48)+11,100])cylinder(r=3/2,h=200);
+  translate([25.5+22+20+101,75+i*(48)+11,100])cylinder(r=3/2,h=200);
+  translate([25.5+22+20+101+100,75+i*(48)+11,100])cylinder(r=3/2,h=200);
+  translate([25.5+22+20+101+202,75+i*(48)+11,100])cylinder(r=3/2,h=200);
+  }
+  }
+  translate([0,10,0]){
+  translate([25.5+22+20+101+202-25,75+0*(48)+11,100])cylinder(r=3/2,h=200);
+  translate([25.5+22+20+25,75+0*(48)+11,100])cylinder(r=3/2,h=200);
+  translate([25.5+22+20+101+25,75+0*(48)+11,100])cylinder(r=3/2,h=200);
+  translate([25.5+22+20+101+100-25,75+0*(48)+11,100])cylinder(r=3/2,h=200);
+  }
+
+  for(i=[0:8]){  
+  translate([25.5+22+i*50,75+3*(53.8),100-50])cylinder(r=3/2,h=200);
+  translate([25.5+22+i*50,75+1*(60),100-50])cylinder(r=3/2,h=200);
+  }
+
+  for(i=[0:5]){
+  translate([25.5+22,75+i*(45),100-50])cylinder(r=3/2,h=200);
+  translate([25.5+22+(23*15),75+i*48,100])cylinder(r=3/2,h=200);
+  }
+  for(i=[0:6]){
+  translate([25.5+22+i*(50),75+8,100])#cylinder(r=3/2,h=200);
+  //translate([25.5+22+i*(23*2),75+(7*24),100])cylinder(r=3/2,h=200);
+  }
+ }
+
+module ruler_plateholder(z){
+translate([28,64-35.5,z-11])color("blue")cube([290,14,5]);
+}
+
+module plateholder(z){
+translate([25.5+2+40,64-35.5+8,z-11])color("yellow")cube([310+15,158+5-8,5]);
+}
 
 
 //zbed_washer_hold_plate_into_place();

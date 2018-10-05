@@ -32,7 +32,8 @@ include <modparts.scad> use<writescad/write.scad>
 ///filament_linearactuator_smaller_igus_slidermount_vertical_adjust_nema17();
 
 //rotate([0,0,0])stepper_linear_m8nut_coupler_vertical_adjust_nema17_spacer(5);
-//rotate([0,0,0])stepper_linear_m8nut_coupler_vertical_adjust_nema17_spacer(10);
+//best spacer is 6mm high (could even be 6.1mm )
+//rotate([0,0,0])stepper_linear_m8nut_coupler_vertical_adjust_nema17_spacer(6);
 //translate([0,0,-60])stepper_linear_m8nut_coupler_vertical_adjust_nema17_nut();
 
 //rotate([90,0,0])stepper_linear_m8nut_coupler_vertical_adjust_nema17();
@@ -92,6 +93,8 @@ translate([230+125.25,195-0,145+5])wash_holder_arm();
 //multichannel_ejection_flap();
 
 //rotate([90,0,0])multichannel_solenoid_connect_part();
+
+
 //rotate([90,0,0])multichannel_solenoid_base();
 
 //translate([63,-0,-28])rotate([90,0,0])multichannel_ejection_flap_top();
@@ -106,12 +109,17 @@ translate([230+125.25,195-0,145+5])wash_holder_arm();
 //multichannel_ejection_flap();
 //multichannel_ejection_flap_top();
 
+//rotate([90,0,0])solenoid_make_straight_connectorbar();
 //multichannel_pipette_remove_assay();
 module multichannel_pipette_remove_assay(){
-multichannel_remove_pipette_assy();
-translate([100,0,0])multichannel_remove_pipette_assy();
+translate([5.5,0,0])multichannel_remove_pipette_assy();
+translate([100.5,0,0])multichannel_remove_pipette_assy();
+
 translate([-17.5,-2,2])rotate([0,90,0])tslot20(400);
 translate([-11+185,-150+3,-150])rotate([180,0,-90])multichannel_drypad();
+solenoid_make_straight_connectorbar();
+
+
 }
 
 
@@ -128,8 +136,14 @@ translate([-17.5,-2+5,1])rotate([0,90,0])tslot20(100);
 */
 
 
+module solenoid_make_straight_connectorbar(){
+translate([5.5+15,35-6,-50])difference(){
+translate([8,0,0])color("lightblue")cube([110,2.5,8]);
+translate([16,10,4])rotate([90,0,0])#cylinder(r=4/2,h=20);
+translate([16+95,10,4])rotate([90,0,0])#cylinder(r=4/2,h=20);
+}
 
-
+}
 
 
 
@@ -209,15 +223,14 @@ translate([-2-10,2.5-2.5,0])cube([75+10,15+30,40]);
 
 module multichannel_remove_pipette_assy(){
 ext = 0;
-translate([20-1.5+3,30-7+3-3,-50+12+2-4-4])rotate([0,-90,0])color("silver")multichannel_solenoid(ext);
+//translate([20-1.5+3,30-7+3-3,-50+12+2-4-4])rotate([0,-90,0])color("silver")multichannel_solenoid(ext);
 translate([31,31,-26])rotate([180,0,90])remove_tip_solenoid_coupler();
-
 translate([63,0,-32.1])rotate([0,180,0]){
 translate([21.5+10,20+17-6,-4-20+15])rotate([0,180,0])multichannel_ejection_flap();
 translate([63,-0,-28])rotate([0,180,0])multichannel_ejection_flap_top();
 }
 translate([63,50,0])rotate([180,180,0])multichannel_solenoid_base();
-translate([0,8,0])color("pink")multichannel_solenoid_connect_part();
+//translate([0,8,0])color("pink")multichannel_solenoid_connect_part();
 }
 
 
@@ -238,15 +251,15 @@ union(){
 translate([62,23-4,-39])rotate([0,180,0])cube([12+55,4,19]);
 translate([62-18,23-4,-39])rotate([0,180,0])cube([12+19,4,19+24]);
 }
-translate([33,23-4,-39])rotate([0,180,0])cube([10,4,13]);
+translate([33,23-4,-39])rotate([0,180,0])#cube([10,4,13+8]);
 
 translate([-6+62,50,-53])rotate([90,0,0])cylinder(r=2.8/2,h=120);
 translate([-6+62,50,-43])rotate([90,0,0])cylinder(r=2.8/2,h=120);
 translate([1,50,-53])rotate([90,0,0])cylinder(r=2.8/2,h=120);
 translate([1,50,-43])rotate([90,0,0])cylinder(r=2.8/2,h=120);
 translate([15.5,0+19,-45+1])rotate([0,90,0]){
-translate([10,10,20-3+3])rotate([90,0,0])cylinder(r=5/2,h=20);
-translate([39-5-2,10,3+3])rotate([90,0,0])cylinder(r=5/2,h=20);
+translate([10-8+5,10,20-3+3])rotate([90,0,0])#cylinder(r=5/2,h=20);
+translate([39-5-2-8+5,10,3+3])rotate([90,0,0])#cylinder(r=5/2,h=20);
 }
 }
 }
@@ -641,11 +654,11 @@ translate([19+7+75,2.5-10,2])translate([7.5,25/2-8,18])cylinder(r=6.9/2,h=3.2);
 translate([19+7+75,2.5-10,2])translate([7.5,25/2-8,-0.1])cylinder(r=3.7/2,h=40);
 */
 //translate([19+7,2.5-10,2])translate([7.5,25/2-8,18])cylinder(r=6.9/2,h=3.2);
-translate([19+7,2.5-10,2])translate([7.5-10,25/2-8,-0.1])cylinder(r=2.7/2,h=40);
+translate([19+7,2.5-10,2])translate([7.5-10,25/2-8,-0.1])#cylinder(r=2.7/2,h=240);
 //translate([19+7+37,2.5-10,2])translate([7.5,25/2-8,18])cylinder(r=6.9/2,h=3.2);
 translate([19+7+37,2.5-10,2])translate([7.5,25/2-8,-0.1])cylinder(r=3.7/2,h=40);
 //translate([19+7+75,2.5-10,2])translate([7.5,25/2-8,18])cylinder(r=6.9/2,h=3.2);
-translate([19+7+75,2.5-10,2])translate([7.5+10,25/2-8,-0.1])cylinder(r=2.7/2,h=40);
+translate([19+7+75,2.5-10,2])translate([7.5+10,25/2-8,-0.1])#cylinder(r=2.7/2,h=240);
 
 
 

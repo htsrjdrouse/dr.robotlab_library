@@ -8566,9 +8566,9 @@ translate([7.5,33,0])rotate([0,0,-23])cube([5,14,4]);
 }
 translate([-50,27.2,7.5])rotate([90,0,90])cylinder(r=3/2,h=80);
 
-translate([20,10-1,0])cylinder(r=5.7/2,h=18);
+translate([20,10-1,0-100])#cylinder(r=5.7/2,h=180);
 translate([20,10-1,4.1])cylinder(r=8.9/2,h=38);
-translate([20,45,0])cylinder(r=5.7/2,h=18);
+translate([20,45,0-100])#cylinder(r=5.7/2,h=180);
 translate([20,45,4.1])cylinder(r=8.9/2,h=38);
 //translate([20,27,1+5])cylinder(r=22.4/2,h=7);
 translate([20,27,-0.1])cylinder(r=8.1/2,h=50);
@@ -14000,7 +14000,7 @@ translate([-38.25+14-13.9,-70+30.-5,22.5+3.8])cube([31,11+5,3.7+1.25]);
 //cylinder(r=7.4,h=sl+4,$fn=6);
 //translate([-38.25+14-13.9,-70+30,22.5])rotate([-90,0,0])cylinder(r=11.4/2,h=41,$fn=6);
 translate([-38.25+14-13.9,-70+30-10+8,22.5])rotate([-90,0,0])cylinder(r=7.,h=28,$fn=6);
-translate([-38.25+14-13.9,-70+30-30,22.5])rotate([-90,0,0])cylinder(r=8.7/2,h=241);
+translate([-38.25+14-13.9,-70+30-30,22.5])rotate([-90,0,0])#cylinder(r=8.7/2,h=241);
 translate([-38.25+14-13.9+13.7,-70+34,22.5+3.8])cylinder(r=3.7/2,h=20);
 translate([-38.25+14-13.9+13.7+13,-70+34,22.5+3.8])cylinder(r=3.7/2,h=20);
 }
@@ -14009,7 +14009,7 @@ translate([-38.25+14-13.9+13.7+13,-70+34,22.5+3.8])cylinder(r=3.7/2,h=20);
 
 module stepper_linear_m8nut_coupler_vertical_adjust_nema17_spacer(thick){
 translate([0,-20-9,0])difference(){
-translate([-38.25+14-13.9+20,-70+30.-5,22.5+3.8-1.0])cube([44.5-20,11+5,5]);
+translate([-38.25+14-13.9+20,-70+30.-5,22.5+3.8-1.0])cube([44.5-20,11+5,thick]);
 for(i=[0:0]){
 translate([-38.25+14-13.9+13.7+11.9-i,-70+34,22.5+3.8-50])cylinder(r=3.7/2,h=120);
 translate([-38.25+14-13.9+13.7+13+11.9-i,-70+34,22.5+3.8-50])cylinder(r=3.7/2,h=120);
@@ -14037,7 +14037,7 @@ translate([-38.25+14-13.9,-70+30.-5,22.5+3.8-1.0])cube([44.5,11+5,3.7+1.25]);
 }
 //cylinder(r=7.4,h=sl+4,$fn=6);
 //translate([-38.25+14-13.9,-70+30,22.5])rotate([-90,0,0])cylinder(r=11.4/2,h=41,$fn=6);
-translate([-38.25+14-13.9,-70+30-10+8+5,22.5])rotate([-90,0,0])cylinder(r=12/2,h=28,$fn=35);
+translate([-38.25+14-13.9,-70+30-10+8+5+2,22.5])rotate([-90,0,0])#cylinder(r=12/2,h=28,$fn=35);
 translate([-38.25+14-13.9,-70+30-10+8+5,22.5-8])rotate([-90,0,0])cylinder(r=2.8/2,h=28,$fn=35);
 translate([-38.25+14-13.9,-70+30-10+8+5,22.5+8])rotate([-90,0,0])cylinder(r=2.8/2,h=28,$fn=35);
 translate([-38.25+14-13.9-8,-70+30-10+8+5,22.5])rotate([-90,0,0])cylinder(r=2.8/2,h=28,$fn=35);
@@ -14418,11 +14418,11 @@ translate([0-7.5-10-32+56+3,-40+20+10+3-8+22+3,0])cube([10+15+10+10+32-48,10,6+3
 }
 translate([13,-36+(0*10)+48+3,0]){cylinder(r=2.8/2,h=1000);}
 translate([13+19,-36+(0*10)+48+3,0]){cylinder(r=2.8/2,h=1000);}
-translate([5,-40+20+10+3-8+20,17])rotate([90,0,0])cylinder(r=8/2,h=30);
+translate([5,-40+20+10+3-8+20,17])rotate([90,0,0])#cylinder(r=8/2,h=30);
 translate([5,-40+20+10+3-8+20+60,17])rotate([90,0,0])cylinder(r=2/2,h=60);
 //translate([5+20,20+(-5.5*10)-1.5,0]){cylinder(r=3.7/2,h=40);translate([0,0,5+11])cylinder(r=6.7/2,h=3.5);}//cylinder(r=5.4/2,h=3+4,$fn=6);}
 translate([0,-33,0])for(a=[4,6,8,10]){
-translate([5,20+(a*10),-5]){cylinder(r=3/2,h=40);translate([0,0,5-4.5])cylinder(r=5.4/2,h=3+4,$fn=6);}
+translate([5,20+(a*10),-5]){#cylinder(r=1.2/2,h=40);}//translate([0,0,5-4.5])cylinder(r=5.4/2,h=3+4,$fn=6);}
 }
 //translate([15,-27+(0*10),0]){cylinder(r=3.7/2,h=100);translate([0,0,2.6])cylinder(r=6.7/2,h=3.5+12);}
 translate([5,-36+(0*10),0]){cylinder(r=3.7/2,h=10);translate([0,0,2.6])cylinder(r=6.7/2,h=6.5);}
@@ -18677,7 +18677,7 @@ translate([0,-33,0])for(a=[2,3,4,5]){
 translate([2,10+(a*25),-5]){cylinder(r=3.7/2,h=40);translate([0,0,4])cylinder(r=6.8/2,h=3+4,$fn=6);}
 }
 translate([17.5,-33,0])for(a=[0,4,8,12]){
-translate([5,20+(a*10),-0.1]){translate([0,0,2.4])cylinder(r=3/2,h=6);cylinder(r=5.5/2,h=2.5);}
+translate([5,20+(a*10),-0.1]){translate([0,0,2.4-4])#cylinder(r=2.7/2,h=16);}//#cylinder(r=5.5/2,h=2.5);}
 }
 translate([17.5,-33,0])for(a=[4,8,12]){
 translate([5+4,10+(a*10),-5]){translate([0,0,8.4+1])cylinder(r=4.7/2,h=8);translate([0,0,5])cylinder(r=8/2,h=4.5);}

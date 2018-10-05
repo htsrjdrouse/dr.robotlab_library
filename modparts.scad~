@@ -4616,11 +4616,12 @@ cube([18,300,3]);
 //LLYENC it has 2 screws commented out below
 //This needs to be updated fixed
 //HFS5-2020-484-TPW-Z5-XA135.5-XB230-XC353.5
+//HFS5-2020-484-TPW-Z5-XA134-XB352-YA230
 translate([-50,400+sh,16])rotate([90,0,0]){
 tslot20(484);
-//translate([15,0,135.5])rotate([-90,0,0])cylinder(r=5.7/2,h=2000);
-//translate([15-200,15,230])rotate([0,90,0])cylinder(r=5.7/2,h=2000);
-//translate([15,0,353.5])rotate([-90,0,0])cylinder(r=5.7/2,h=2000);
+translate([15,0,134])rotate([-90,0,0])cylinder(r=5.7/2,h=2000);
+translate([15-200,15,230])rotate([0,90,0])cylinder(r=5.7/2,h=2000);
+translate([15,0,352])rotate([-90,0,0])cylinder(r=5.7/2,h=2000);
 }
 //translate([30-65,324.5,15-50])rotate([0,0,90])color("gainsboro")cylinder(r=5.7/2,h=130);
 //translate([30-65,324.5-218,15-50])rotate([0,0,90])color("gainsboro")cylinder(r=5.7/2,h=130);
@@ -4639,9 +4640,9 @@ translate([30-10,340+30,15])rotate([0,0,90])color("gainsboro")backextruder_clamp
 //RRYENC it has 2 screws commented out below
 translate([-50,400+sh,16])rotate([90,0,0]){
 tslot20(484);
-//translate([15,0,96.5])rotate([-90,0,0])cylinder(r=5.7/2,h=2000);
-//translate([15-200,15,195])rotate([0,90,0])cylinder(r=5.7/2,h=2000);
-//translate([15,0,314.5])rotate([-90,0,0])cylinder(r=5.7/2,h=2000);
+translate([15,0,96])rotate([-90,0,0])cylinder(r=5.7/2,h=2000);
+translate([15-200,15,195])rotate([0,90,0])#cylinder(r=5.7/2,h=2000);
+translate([15,0,314])rotate([-90,0,0])cylinder(r=5.7/2,h=2000);
 }
 
 
@@ -4691,11 +4692,12 @@ translate([-0,27+380,-184])color("silver")rotate([-0,-90,180])tslot20innerbracke
 //end 3d printed stuff
 
 //LFTL1
-//HFS5-2020-484-TPW-Z5-XA94.5-XB312.5
+//HFS5-2020-484-TPW-Z5-XA94.5-XB312.5 now change to ...
+//HFS5-2020-484-TPW-Z5-XA96-XB314
 translate([-50,460-26,16-25])rotate([90,0,0]){
-tslot20(484);
-//translate([15,0,94.5])rotate([-90,0,0])cylinder(r=5.7/2,h=2000);
-//translate([15,0,312.5])rotate([-90,0,0])cylinder(r=5.7/2,h=2000);
+#tslot20(484);
+//translate([15,0,96])rotate([-90,0,0])cylinder(r=5.7/2,h=2000);
+//translate([15,0,314])rotate([-90,0,0])cylinder(r=5.7/2,h=2000);
 }
 }
 
@@ -4808,7 +4810,7 @@ module motormount_smz_justcad(){
 difference(){union(){
 translate([0+4,0,0])
 //color("gainsboro")
-motormountthin();
+translate([0,0,0.5])motormountthin();
 translate([0,32,-18])
 //color("gainsboro")
 cube([5,22,30]);
@@ -4846,10 +4848,11 @@ translate([340+100,410-0,-1])rotate([0,0,180]){
 translate([-0,27,-184])rotate([-0,-90,180])color("silver")tslot20innerbracketlonger_smfrnz_back();
 translate([-0,27+380,-184])rotate([-0,-90,180])color("silver")tslot20innerbracketlonger_smfrnz_back();
 //RFTL1
+
 translate([-50,460,16-25])rotate([90,0,0]){
-tslot20(484);
-//translate([15,0,169.5])rotate([-90,0,0])cylinder(r=5.7/2,h=2000);
-//translate([15,0,387.5])rotate([-90,0,0])cylinder(r=5.7/2,h=2000);
+#tslot20(484);
+//translate([15+1,0,170])rotate([-90,0,0])cylinder(r=5.7/2,h=2000);
+//translate([15+1,0,388])rotate([-90,0,0])cylinder(r=5.7/2,h=2000);
 }
 }
 
@@ -5620,24 +5623,26 @@ module left_zbed_connector_bar_metal(){
   }
   //translate([-35,7.5,17.5+1.4])rotate([0,90,0])cylinder(r=2.8/2,h=70);
   translate([0,0,5.8]){ 
-  translate([-35,7.5,9.5+156/2-8])rotate([0,90,0])cylinder(r=2.8/2,h=180);
-  translate([-35,7.5,9.5+156/2+8])rotate([0,90,0])cylinder(r=2.8/2,h=180);
+  translate([-35,7.5,9.5+156/2-8])rotate([0,90,0])#cylinder(r=2.8/2,h=180);
+  translate([-35,7.5,9.5+156/2+8])rotate([0,90,0])#cylinder(r=2.8/2,h=180);
   }
   //translate([-35,7.5-1,9.5+156/2-8-56])rotate([0,90,0])cylinder(r=2.8/2,h=180);
   //translate([-35,7.5-0,9.5+156/2-8-56])rotate([0,90,0])cylinder(r=2.8/2,h=180);
   //translate([-35,7.5+1,9.5+156/2-8-56])rotate([0,90,0])cylinder(r=2.8/2,h=180);
   //translate([-35,7.5,9.5+156/2-8-52.5])rotate([0,90,0])cylinder(r=2.8/2,h=180);
+
   translate([-35,7.5,9.5+156/2-8-52.5+4.5])rotate([0,90,0])cylinder(r=2.8/2,h=180);
   translate([-35,7.5,9.5+156/2-8-52.5+4.5+10])rotate([0,90,0])cylinder(r=2.8/2,h=180);
-  translate([-35,7.5,9.5+156-6.75])rotate([0,90,0])cylinder(r=2.8/2,h=70);
-  translate([-35-2,7.5,9.5+6.75])rotate([0,90,0])cylinder(r=2.8/2,h=70);
+  //translate([-35,7.5,9.5+156-6.75])rotate([0,90,0])cylinder(r=2.8/2,h=70);
+  translate([-35-2,7.5,9.5+6.75])rotate([0,90,0])#cylinder(r=2.8/2,h=70);
+
   //translate([-35,7.5,17.5+67.75])rotate([0,90,0])cylinder(r=2.8/2,h=180);
   //translate([-35,7.5,17.5+69+14.75])rotate([0,90,0])cylinder(r=2.8/2,h=180);
   //translate([-35,7.5,160])rotate([0,90,0])cylinder(r=2.8/2,h=70);
 
 
-  translate([-35-2,7.5,9.5+6.75+50.5])rotate([0,90,0])cylinder(r=3.8/2,h=70);
-  translate([-35-2,7.5,9.5+6.75+50+101.5])rotate([0,90,0])cylinder(r=3.8/2,h=70);
+  translate([-35-2,7.5,9.5+6.75+50.5])rotate([0,90,0])#cylinder(r=3.8/2,h=70);
+  translate([-35-2,7.5,9.5+6.75+50+101.5])rotate([0,90,0])#cylinder(r=3.8/2,h=70);
   
 
   translate([0,0,2.5]){
@@ -5659,9 +5664,9 @@ module right_zbed_connector_bar_metal(){
   //translate([0,-6,156-10.5])cube([5,18,20]);
   }
 
-  translate([0,0,-5]){
-  translate([-35-2,7.5,9.5+6.75+50.5])rotate([0,90,0])cylinder(r=3.8/2,h=70);
-  translate([-35-2,7.5,9.5+6.75+50+101.5])rotate([0,90,0])cylinder(r=3.8/2,h=70);
+  translate([0,0,-5.5]){
+  translate([-35-2,7.5,9.5+6.75+50.5])rotate([0,90,0])#cylinder(r=3.8/2,h=70);
+  translate([-35-2,7.5,9.5+6.75+50+101.5])rotate([0,90,0])#cylinder(r=3.8/2,h=70);
   } 
 
   //translate([-35,7.5,17.5+1.4])rotate([0,90,0])cylinder(r=2.8/2,h=70);
@@ -5677,7 +5682,7 @@ module right_zbed_connector_bar_metal(){
   
   translate([-35,7.5,9.5+156/2-8-52.5+4.5])rotate([0,90,0])cylinder(r=2.8/2,h=180);
   translate([-35,7.5,9.5+156/2-8-52.5+4.5+10])rotate([0,90,0])cylinder(r=2.8/2,h=180);
-  translate([-35,7.5,9.5+156-6.75])rotate([0,90,0])cylinder(r=2.8/2,h=70);
+  //translate([-35,7.5,9.5+156-6.75])rotate([0,90,0])#cylinder(r=2.8/2,h=70);
   translate([-35-2,7.5,9.5+6.75])rotate([0,90,0])cylinder(r=2.8/2,h=70);
 
 
@@ -5756,7 +5761,7 @@ difference(){
 translate([-8+6.5-0.25,0+20,0])color("lightgray")cube([383.5,350-20,3]);
 //translate([227,100,-0.1])cube([100+6,100-10,5]);
 translate([45-8,285-65,-0.1])cube([180+100+20+8,160,5]);
-translate([45-8,285-65-340+9,-0.1])#cube([180+100+20+8,160,5]);
+translate([45-8,285-65-340+9,-0.1])cube([180+100+20+8,160,5]);
 //translate([45-5,65-65-0.1,-0.1])cube([84,100,5]);
 
 lzd = 3.2;
@@ -6344,12 +6349,12 @@ module gantry_assy(x,y,z,xx,xp,sph,tcl,thcl){
 module noconveyer_gantry_assy(x,y,z,xx,xp,sph,tcl,thcl){
  //pcb_panels();
  ///labbot3d_electronics_configuration();
- zencoder_assy();
- translate([570-2,0,0])zencoder_assy();
+ //zencoder_assy();
+ //translate([570-2,0,0])zencoder_assy();
  zbed_assy(z);
  //filament_driver_assy();
  //xshuttle_assy(x,y);
- //gantry();
+ gantry();
 
  outside_frame(tcl,thcl);
  //y_encoder_support(60);
@@ -6556,8 +6561,7 @@ sgg = 0.6; color([sgg,sgg,sgg])
 translate([208-16+33.5,188-16+16-70+0+11.5,342-35+30+150-70])rotate([-90,0,0])linearactuator_filament_encodershuttle_filamentclamp();
 translate([0,0,-3]){
 //translate([208,188,342])rotate([90,0,0])filament_linearactuator();
-translate([208,188,342])rotate([90,0,0])
-filament_linearactuator_smaller_igus_slidermount_vertical_adjust_nema17();
+translate([208,188,342])rotate([90,0,0])filament_linearactuator_smaller_igus_slidermount_vertical_adjust_nema17();
 //inductive sensor
 cgg = 0.5;color([cgg,cgg,cgg])
 translate([208-16,188-16,342-35])cylinder(r=12/2,h=55);

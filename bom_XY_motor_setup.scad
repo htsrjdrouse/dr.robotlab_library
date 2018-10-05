@@ -7,7 +7,19 @@ use<writescad/write.scad>
 //endstop_z();
 
 //xshuttle_assy_stls();
-
+//filament_driver_assy_motormount();
+//shh = 0.9;color([shh,shh,shh])color("gainsboro")translate([-0.5,-37,22+7])filament_linearactuator_shuttle();
+//slider_front_assy_vertical_adjust_nema17();
+//rotate([0,180,0])inductivesensorcap();
+//linearactuator_filament_encodershuttle_filamentclamp();
+//filament_linearactuator_smaller_igus_slidermount_vertical_adjust_nema17();
+//slider_front_assy_vertical_adjust_nema17();
+//shuttle_front_vertical_adjust();
+//smaller_igus_slidermount_vertical_adjust_nema17();
+//rotate([0,0,0])stepper_linear_m8nut_coupler_vertical_adjust_nema17_spacer(6);
+//translate([0,0,-60])stepper_linear_m8nut_coupler_vertical_adjust_nema17_nut();
+//rotate([90,0,0])stepper_linear_m8nut_coupler_vertical_adjust_nema17();
+shuttle_back();
 module xshuttle_assy_stls(){
 //start x_axis(x)
   //start slider_assy(x);

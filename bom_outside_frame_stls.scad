@@ -4,6 +4,7 @@ use<writescad/write.scad>
 
 //cable_support();
 //wiper_set();
+motormount_smz_justcad();
 
 /*
 difference(){
@@ -19,7 +20,7 @@ translate([9,40-8,-0.1])#cylinder(r=5.7/2,h=20);
 //color("gainsboro")translate([-61.5,18,0])rotate([0,-90,90])z_encoder_clamp_wiper();
 //rotate([0,180,0])wiper_clamp_yaxis();
 //rotate([0,180,0])wiper_clamp();
-translate([-26,0,-23])rotate([0,0,0])wiper_tip_m5(6);
+//translate([-26,0,-23])rotate([0,0,0])wiper_tip_m5(6);
 
 
 //translate([7.5,52,-10+5])rotate([0,180,0])wiper_tip_m5(6);

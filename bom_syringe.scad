@@ -1,6 +1,8 @@
 include <modparts.scad>
 use<writescad/write.scad>
 
+
+
 //syringe_pcb_holder_for_syringemodule();
 //openmv_set();
 
@@ -8,6 +10,7 @@ use<writescad/write.scad>
 //syringe_pump_stls();
 //syringe_1ml();
 
+//rotate([0,180,0])multichannel_syringe1ml_clamp_top();
 
 
 //rotate([0,-90,0])syringe_1ml();
@@ -20,13 +23,23 @@ use<writescad/write.scad>
 //translate([-100,160,0])nextgen_syringe1ml_multichannel_assy();
 //multichannel_syringe1ml_clamp_extrusion_connect();
 
+//translate([0,70,-0.1])multichannel_syringe1ml_clamp_luerlock();
 
+//multichannel_plunger_clamp();
 /*
-multichannel_plunger_clamp();
 translate([0,12,0]){
 translate([-100,160,0])
 color("gainsboro")translate([-25.75,123,-30])rotate([90,-90,0])multichannel_syringeshuttle_clipbracket();
 }
+*/
+//translate([50,-4,4])igus_TW_04_12_slider_plate();
+
+//translate([-22.85-20,1-24,2.5+91.5])rotate([90,0,90])stepper_linear_m8nut_coupler();
+//color("yellow")translate([110,52,26])igus_slidermount_encoder_TW_04_12_motormount_assy_m8();
+smaller_igus_slidermount_vertical_adjust_nema17();
+
+module eight_multichannel_assay(){
+
 //translate([64.5,0,0])syringe_1ml_plungerclip();
 translate([0,20,0]){
 translate([0,70,-0.1])syringe_1ml_stack();
@@ -34,10 +47,10 @@ translate([0,70,-0.1])multichannel_syringe1ml_clamp();
 color("pink")translate([0,70,-0.1])multichannel_syringe1ml_clamp_extrusion_connect();
 translate([0,70,-0.1+0])multichannel_syringe1ml_clamp_top();
 translate([0,70,-0.1])multichannel_syringe1ml_clamp_luerlock();
-translate([0,70,-0.1+0])multichannel_syringe1ml_clamp_top_luerlock();
+//translate([0,70,-0.1+0])multichannel_syringe1ml_clamp_top_luerlock();
 color("pink")translate([0,70+60,-0.1])multichannel_syringe1ml_clamp_extrusion_connect();
 }
-*/
+}
 
 //multichannel_syringe1ml_clamp();
 //multichannel_plunger_clamp();
@@ -91,12 +104,12 @@ translate([64.7-5,14.4-3-3,155.75-10])cube([25,15+3+3-9.75-4,10+11+10-3]);
 }
 translate([65.2+0.75,14.4+7.5,155.75+20-1.5-4])cube([14-1.5,14,24]);
 
-translate([64.7-5,14.4-3-0.87,155.75])translate([17.25,5.8,-10])translate([0,0,4])cylinder(r=6.9/2, h=3.2, $fn=6);
-translate([64.7-5,14.4-3-0.87,155.75])translate([17.25,5.8,-10])translate([0,0,4])translate([0,-3.5,0])cube([12,7,3.2]);
-translate([64.7-5,14.4-3-0.87,155.75])translate([17.25,5.8,-10])translate([-9,0,4])cylinder(r=6.9/2, h=3.2, $fn=6);
-translate([64.7-5,14.4-3-0.87,155.75])translate([17.25,5.8,-10])translate([-9,0,4])translate([-12,-3.5,0])cube([12,7,3.2]);
-translate([64.7-5,14.4-3-0.87,155.75])translate([17.25,5.8,-10])translate([0,0,-100])cylinder(r=3.7/2, h=200);
-translate([64.7-5,14.4-3-0.87,155.75])translate([17.25,5.8,-10])translate([-9,0,-100])cylinder(r=3.7/2, h=200);
+//translate([64.7-5,14.4-3-0.87,155.75])translate([17.25,5.8,-10])translate([0,0,4])cylinder(r=6.9/2, h=3.2, $fn=6);
+//translate([64.7-5,14.4-3-0.87,155.75])translate([17.25,5.8,-10])translate([0,0,4])translate([0,-3.5,0])cube([12,7,3.2]);
+//translate([64.7-5,14.4-3-0.87,155.75])translate([17.25,5.8,-10])translate([-9,0,4])cylinder(r=6.9/2, h=3.2, $fn=6);
+//translate([64.7-5,14.4-3-0.87,155.75])translate([17.25,5.8,-10])translate([-9,0,4])translate([-12,-3.5,0])#cube([12,7,3.2]);
+translate([64.7-5,14.4-3-0.87,155.75])translate([17.25,5.8,-10])translate([0,0,-100])#cylinder(r=2.7/2, h=200);
+translate([64.7-5,14.4-3-0.87,155.75])translate([17.25,5.8,-10])translate([-9,0,-100])#cylinder(r=2.7/2, h=200);
 translate([64.7-5,14.4-3-0.87,155.75])translate([17.25,5.8,-10])translate([-9+15-2,30,23])rotate([90,0,0])cylinder(r=2.7/2, h=200);
 translate([64.7-5,14.4-3-0.87,155.75])translate([17.25,5.8,-10])translate([-9+15-2-17.5,30,23])rotate([90,0,0])cylinder(r=2.7/2, h=200);
 }
@@ -224,13 +237,16 @@ translate([-120+7.5,220-60+23+60,0])cylinder(r=3.7/2,h=100);
 for(i=[0:7]){
 translate([-183+(i*14),170,44])rotate([0,90,90])syringe_1ml();
 translate([-183+(i*14),170-50,44])rotate([0,90,90])cylinder(r=6/2,h=100);
+
+/*
 if(i>0){
-translate([-77.5-(i*14)-0.5,175.6+60,0])cylinder(r=2.8/2,h=150);
+translate([-77.5-(i*14)-0.5,175.6+60,0])#cylinder(r=2.8/2,h=150);
 }else{
 translate([-77.5-(i*14),175.6+60,0])cylinder(r=2.8/2,h=150);
 }
+*/
 }
-translate([-77.5-(8*14)-1.7,175.6+60,0])cylinder(r=2.8/2,h=150);
+//translate([-77.5-(8*14)-1.7,175.6+60,0])cylinder(r=2.8/2,h=150);
 }
 }
 

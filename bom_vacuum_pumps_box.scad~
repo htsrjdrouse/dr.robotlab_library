@@ -3,14 +3,14 @@ use<writescad/write.scad>
 
 
 //translate([-100,0,0])boxstandoff();
-translate([-70,0,27])boxcouplers();
+//translate([-70,0,27])boxcouplers_panelside();
 //translate([200,0,0])rotate([0,0,90])airpo_d2028B_pump_mount_assy();
 
 //projection(cut=false){
 //translate([-10-140,90,-53])translate([150,0,100-14-3])rotate([0,0,0])color("lime")diaphragmpump_case_lid_from_base();
 //diaphragmpump_case_base();
 //}
-//diaphragmpump_case_base();
+diaphragmpump_case_base();
 //diaphragmpump_case_base();
 
 //diaphragmpump_end_justusb();

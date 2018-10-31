@@ -1,7 +1,30 @@
 include <modparts.scad>
 use<writescad/write.scad>
 
-translate([0,-50,0])liquidlevel_pumps_pcb();
+// conveyer_panel_pcb_holder();
+
+//translate([40-12.5,-40+61,2])syringe_pcb_holder();
+//translate([69.2,13,-52])rotate([90,0,0])
+//bom_controlpanel();
+
+/*
+translate([40-12.5,-40+61,6])syringe_pcb_holder_cover();
+translate([28,21,5])syringe_pcb_holder_back();
+translate([40-12.5,-40+61,2])syringe_pcb_holder();
+translate([40-12.5,-40+61,6])syringe_pcb_holder_cover();
+translate([40-12.5+53,-40+61,2])syringe_pcb_holder_placeholder();
+*/
+
+
+//pcb_panels();
+//liquidlevel_pumps_pcb();
+//rotate([90,0,0])atx_power_connect_assy();
+//translate([424,0,-63])rotate([0,180,0])
+//outside_frame(tcl,thcl);
+//electronics_setup();
+//hdmi_rj45_usb_panel();
+
+//translate([0,-50,0])liquidlevel_pumps_pcb();
 
 //translate([105,45,0])rotate([180,0,180])BOM_controlpanel();//electrics_panels_to_print();
 //atx_power_connect_assy();
@@ -19,7 +42,7 @@ syringe_pcb_holder();
 //bom_controlpanel();
 
 
-//bananajackpanel();
+bananajackpanel();
 //liquidlevel_pumps_pcb();
 
 //translate([-78,-116,-400+3])rotate([90,0,0])atx_power_connect_assy();
@@ -113,6 +136,8 @@ translate([200,300,-15])color("blue")BOM_conveyer_solenoids();
 //BOM_amplifier_brd_holder();
 //BOM_conveyer_pcb();
 
+
+
 module electrics_panels_to_print(){
 
 bananajackpanel();
@@ -149,6 +174,7 @@ translate([390,340,0])rotate([0,180,90])BOM_atxpowerconnect();
 translate([69.2,14,-52])rotate([90,0,0])BOM_controlpanel();
 translate([440-7,200-0.8+162,-63])rotate([90,0,-90]){
 translate([40,17,-2])BOM_liquidlevel_pumps();
+translate([40+20+90,17+54,-15+50])rotate([90,0,0])pi_bottom_for_panel();
 }
 }
 

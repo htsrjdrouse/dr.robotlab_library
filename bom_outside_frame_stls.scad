@@ -2,9 +2,14 @@ include <modparts.scad>
 use<writescad/write.scad>
 //  translate([-88-(i*28),0,0])rotate([0,0,0])simple_m8_smoothrodholder_for_z();
 
+
+bearing_mount_smz();
+
+//bananajackpanel();
+
 //cable_support();
 //wiper_set();
-motormount_smz_justcad();
+//motormount_smz_justcad();
 
 /*
 difference(){

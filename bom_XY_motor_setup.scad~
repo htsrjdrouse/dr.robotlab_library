@@ -1,7 +1,15 @@
 include <modparts.scad>
 use<writescad/write.scad>
 
+//syringe_pcb_holder_for_syringemodule();
 
+//cable_support_extrusion();
+//rotate([0,90,0])cable_support();
+//rotate([0,90,0])cable_support_lid();
+
+//cordclamp();
+
+//m5bearing_washer();
 //import("files/endstop_y.stl");
 
 //endstop_z();
@@ -15,10 +23,16 @@ use<writescad/write.scad>
 //filament_linearactuator_smaller_igus_slidermount_vertical_adjust_nema17();
 //slider_front_assy_vertical_adjust_nema17();
 //shuttle_front_vertical_adjust();
-//smaller_igus_slidermount_vertical_adjust_nema17();
-//rotate([0,0,0])stepper_linear_m8nut_coupler_vertical_adjust_nema17_spacer(6);
+
+/*
+smaller_igus_slidermount_vertical_adjust_nema17();
+rotate([0,0,0])stepper_linear_m8nut_coupler_vertical_adjust_nema17_spacer(6);
+*/
 //translate([0,0,-60])stepper_linear_m8nut_coupler_vertical_adjust_nema17_nut();
-rotate([90,0,0])stepper_linear_m8nut_coupler_vertical_adjust_nema17();
+//rotate([90,0,0])stepper_linear_m8nut_coupler_vertical_adjust_nema17();
+//shuttle_back();
+
+
 module xshuttle_assy_stls(){
 //start x_axis(x)
   //start slider_assy(x);

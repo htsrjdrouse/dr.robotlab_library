@@ -1,14 +1,33 @@
 include <modparts.scad>
 include <bom_multichannel.scad>
 use<writescad/write.scad>
+
+//translate([0,0,120])zbed_multichannel_setup(100);
+
 //translate([0,-20,30])rotate([0,0,0])import("bowden_extruder/Duct.stl");
 //pololu_screw_nobacklash_cap();
+//leftside_midtopleft_tip_mtp_aligner_yend(144);
+// translate([383.5/2-290/2+83,103.5-27-25+230-5,5])color("lightblue")
+
+//plate_topright_aligner();
+//mirror([1,0,0])leftside_midtopleft_tip_mtp_aligner_yend(144);
+//leftside_midleftright_tip_mtp_aligner(144);
+//mirror([1,0,0])midbotright_tip_mtp_aligner(144);
+//midtopright_tip_mtp_aligner_yend(144);
+//plate_btomright_aligner(144);
+//plate_btomleft_aligner(144);
+
+
+
+//mirror([1,0,0])rotate([0,0,180])leftside_midtopleft_tip_mtp_aligner_yend(144);
 //zbed_assy(100);
+/*
+*/
+//extrusion_riser();
 
+//slidedeck_adjust_wheel();
 
-//zbed_multichannel_setup(100);
-rightside_plate_holder();
-
+//plate_aligner_on_zbed();
 //plate_topright_aligner(144);
 
 
@@ -44,8 +63,6 @@ mirror([1,0,0])tip_mtp_aligner(144);
 */
 
 
-
-
 //zbed_fix();
 //zbed_metal_version();
 /*
@@ -63,27 +80,73 @@ rotate([0,90,0])right_zbed_connector_bar_metal();
  zbed_assy(z);
  translate([20,120,130])rotate([0,90,0])tslot20(400);
  translate([20,120+101,130])rotate([0,90,0])tslot20(400);
-
 zbed_multichannel_setup();
 */
 
 
-module rightside_plate_holder(){
+module extrusion_riser(){
+
+difference(){
+cylinder(r=10.5/2,h=11.5);
+translate([0,0,-1])cylinder(r=4/2,h=20);
+}
+}
+
+
+
+module plate_aligner_on_zbed(){
+
+// translate([383.5/2-290/2+83-20+220.5,103.5-27-25-11+200,0])color("lightbrown")rotate([0,0,180]) plate_topright_aligner(144);
+
+ translate([383.5/2-290/2+83-20,103.5-27-25-11,0])color("")plate_topleft_aligner(144);
+ translate([383.5/2-290/2+83-20+350,103.5-27-25-11,0])color("")plate_btomright_aligner(144);
+ translate([383.5/2-290/2+83-20,103.5-27-25-11,0])color("")plate_btomleft_aligner(144);
+ translate([383.5/2-290/2+83-20+220.5,103.5-27-25-11+200,0])color("")rotate([0,0,180]) plate_topright_aligner(144);
+/*
+*/
+}
+
+
+
+
+module leftside_plate_holder(){
 
 /*
- translate([383.5/2-290/2+83-20+350,103.5-27-25-11,0])color("silver")microplate_corner(144+48);
- translate([383.5/2-290/2+83-20+350-100-140+0,103.5-27-25-11-45+8-0.5,0])color("silver")rotate([0,0,-90])microplate_corner(144+48);
- translate([383.5/2-290/2+83-20+350-100-140+0-37-0.5,103.5-27-25-11-45+8-0.5+130+152-0,0])color("silver")rotate([0,0,-90-90])microplate_corner(144+48);
- translate([383.5/2-290/2+83-20+350-100-140+0-37-0.5+50+180+10-0,103.5-27-25-11-45+8-0.5+130+152-0+100-62.5,0])color("silver")rotate([0,0,-90-90-90])microplate_corner(144+48);
- //mid bottom right
- translate([383.5/2-290/2+83+177.5,103.5-27-25,5])color("lightblue") mirror([1,0,0])midbotright_tip_mtp_aligner(144);
- //far bottom right
- translate([383.5/2-290/2+83+177.5+24,103.5-27+65-90,5])color("lightblue") mirror([0,0,0])farbotright_tip_mtp_aligner(144);
-//mid top right
- translate([383.5/2-290/2+83+177.5,103.5-27-25+230-5,5])color("lightblue")mirror([0,0,0])rotate([0,0,180])midtopright_tip_mtp_aligner_yend(144);
+translate([-202,0,0]){
+ translate([383.5/2-290/2+83-20+350,103.5-27-25-11,0])color("")microplate_corner(144+48);
+ translate([383.5/2-290/2+83-20+350-100-140+0,103.5-27-25-11-45+8-0.5,0])color("")rotate([0,0,-90])microplate_corner(144+48);
+ translate([383.5/2-290/2+83-20+350-100-140+0-37-0.5,103.5-27-25-11-45+8-0.5+130+152-0,0])color("")rotate([0,0,-90-90])microplate_corner(144+48);
+ translate([383.5/2-290/2+83-20+350-100-140+0-37-0.5+50+180+10-0,103.5-27-25-11-45+8-0.5+130+152-0+100-62.5,0])color("")rotate([0,0,-90-90-90])microplate_corner(144+48);
+}
 */
+
+ translate([383.5/2-290/2+83,103.5-27-25,5])color("")leftside_midleftright_tip_mtp_aligner(144);
+ translate([383.5/2-290/2+83,103.5-27-25,5])color("")leftside_plate_tip_mtp_left(144);
+ translate([383.5/2-290/2+83,103.5-27-25+230-5,5])color("")mirror([1,0,0])rotate([0,0,180])leftside_midtopleft_tip_mtp_aligner_yend(144);
+ translate([383.5/2-290/2+83-101,103.5-27-25+230-5,5])color("")mirror([1,0,0])rotate([0,0,180])leftside_fartopleft_tip_mtp_aligner_yend(144);
+/*
+*/
+}
+
+
+
+module rightside_plate_holder(){
+ /*
+ translate([383.5/2-290/2+83-20+350,103.5-27-25-11,0])color("")microplate_corner(144+48);
+ translate([383.5/2-290/2+83-20+350-100-140+0,103.5-27-25-11-45+8-0.5,0])color("")rotate([0,0,-90])microplate_corner(144+48);
+ translate([383.5/2-290/2+83-20+350-100-140+0-37-0.5,103.5-27-25-11-45+8-0.5+130+152-0,0])color("")rotate([0,0,-90-90])microplate_corner(144+48);
+
+ translate([383.5/2-290/2+83-20+350-100-140+0-37-0.5+50+180+10-0,103.5-27-25-11-45+8-0.5+130+152-0+100-62.5,0])color("")rotate([0,0,-90-90-90])microplate_corner(144+48);
+  */
+
+ //mid bottom right
+ translate([383.5/2-290/2+83+177.5,103.5-27-25,5])color("") mirror([1,0,0])midbotright_tip_mtp_aligner(144);
+ //far bottom right
+ translate([383.5/2-290/2+83+177.5+24,103.5-27+65-90,5])color("") mirror([0,0,0])farbotright_tip_mtp_aligner(144);
+//mid top right
+ translate([383.5/2-290/2+83+177.5,103.5-27-25+230-5,5])color("")mirror([0,0,0])rotate([0,0,180])midtopright_tip_mtp_aligner_yend(144);
 //far top right
- translate([383.5/2-290/2+83+177.5+28,103.5-27-25+230-5,5])color("lightblue")mirror([1,0,0])rotate([0,0,180])fartopright_tip_mtp_aligner_yend(144);
+ translate([383.5/2-290/2+83+177.5+28,103.5-27-25+230-5,5])color("")mirror([1,0,0])rotate([0,0,180])fartopright_tip_mtp_aligner_yend(144);
  /*
 */
 }
@@ -113,10 +176,10 @@ difference(){
  translate([5.3,5,0])cylinder(r=8/2,h=6);
  translate([5.3,5+45,0])cylinder(r=8/2,h=6);
  }
- translate([5.3,5,-25])#cylinder(r=4.7/2,h=50);
- translate([5.3,5+45,-25])#cylinder(r=4.7/2,h=50);
- translate([5.3+15,5+10,5-1.5])rotate([90,0,0])#cylinder(r=2.8/2,h=50);
- translate([5.3+15-30,5+10+15,5-1.5])rotate([0,90,0])#cylinder(r=2.8/2,h=50);
+ translate([5.3,5,-25])cylinder(r=4.7/2,h=50);
+ translate([5.3,5+45,-25])cylinder(r=4.7/2,h=50);
+ translate([5.3+15,5+10,5-1.5])rotate([90,0,0])cylinder(r=2.8/2,h=50);
+ translate([5.3+15-30,5+10+15,5-1.5])rotate([0,90,0])cylinder(r=2.8/2,h=50);
 }
 }
 
@@ -127,16 +190,16 @@ translate([28+5.5-101,64-35.5+7-6,z-11])
 difference(){ 
  union(){
  translate([0,1,0])cube([10,55,3]);
- translate([0,1+22+10,0])#cube([10,11,3+5]);
- translate([-4.8+20,1,0])cube([10,11,3+5]);
- translate([0,1,0])cube([25,11,3]);
+ translate([0,1+22+10,0])cube([10,11,3+5]);
+ translate([-4.8+20,1-3,0])cube([10,11,3+5]);
+ translate([0,1-3,0])cube([25,11,3]);
  translate([5.3,5,0])cylinder(r=8/2,h=6);
  translate([5.3,5+45,0])cylinder(r=8/2,h=6);
  }
  translate([5.3,5,-25])cylinder(r=4.7/2,h=50);
  translate([5.3,5+45,-25])cylinder(r=4.7/2,h=50);
  translate([5.3+15,5+10,5-1.5])rotate([90,0,0])cylinder(r=2.8/2,h=50);
- translate([5.3+15-30,5+10+15+10,5-1.5])rotate([0,90,0])#cylinder(r=2.8/2,h=50);
+ translate([5.3+15-30,5+10+15+10,5-1.5])rotate([0,90,0])cylinder(r=2.8/2,h=50);
 }
 }
 
@@ -147,16 +210,16 @@ translate([28+5.5-101+5.5,64-35.5+7-6,z-11])
 mirror([1,0,0])difference(){ 
  union(){
  translate([0,1,0])cube([10,58,3]);
- translate([0,1+22,0])cube([10,11,3+5]);
- translate([-4.8+20,1,0])cube([10,11,3+5]);
- translate([0,1,0])cube([25,11,3]);
+ translate([0,1+22+13,0])cube([10,11,3+5]);
+ translate([-4.8+20,1-3,0])cube([10,11,3+5]);
+ translate([0,1-3,0])cube([25,11,3]);
  translate([5.3,5,0])cylinder(r=8/2,h=6);
  translate([5.3,5+48,0])cylinder(r=8/2,h=6);
  }
- translate([5.3,5,-25])#cylinder(r=4.7/2,h=50);
- translate([5.3,5+48,-25])#cylinder(r=4.7/2,h=50);
- translate([5.3+15,5+10,5-1.5])rotate([90,0,0])#cylinder(r=2.8/2,h=50);
- translate([5.3+15-30,5+10+15,5-1.5])rotate([0,90,0])#cylinder(r=2.8/2,h=50);
+ translate([5.3,5,-25])cylinder(r=4.7/2,h=50);
+ translate([5.3,5+48,-25])cylinder(r=4.7/2,h=50);
+ translate([5.3+15,5+10,5-1.5])rotate([90,0,0])cylinder(r=2.8/2,h=50);
+ translate([5.3+15-30,5+10+15+13,5-1.5])rotate([0,90,0])cylinder(r=2.8/2,h=50);
 }
 }
 
@@ -170,7 +233,7 @@ translate([28+5.5-101,64-35.5+7-6-58,z-11])
 difference(){ 
  union(){
  translate([0,1-5,0])cube([10,60,3]);
- translate([0,1+22,0])cube([10,11,3+5]);
+ translate([0,1+22+11,0])cube([10,11,3+5]);
  translate([-4.8+20,1+10,0])cube([10,11,3+5]);
  translate([0,1+10,0])cube([25,11,3]);
  translate([5.3,5-3.1,0])cylinder(r=8/2,h=6);
@@ -178,8 +241,8 @@ difference(){
  }
  translate([5.3,5-3.1,-25])cylinder(r=4.7/2,h=50);
  translate([5.3,5+45,-25])cylinder(r=4.7/2,h=50);
- translate([5.3+15,5+10+10,5-1.5])rotate([90,0,0])#cylinder(r=2.8/2,h=50);
- translate([5.3+15-30,5+10+15,5-1.5])rotate([0,90,0])#cylinder(r=2.8/2,h=50);
+ translate([5.3+15,5+10+10,5-1.5])rotate([90,0,0])cylinder(r=2.8/2,h=50);
+ translate([5.3+15-30,5+10+15+11,5-1.5])rotate([0,90,0])cylinder(r=2.8/2,h=50);
 }
 }
 
@@ -195,11 +258,11 @@ mirror([1,0,0])difference(){
  translate([0,1,0-4])cube([20,10.5+3,3+7+3-3]);
  }
  bg = -4;
- translate([0+8,1+bg-5,0-4])rotate([0,0,45])#cube([10+0.5,30,3+7+3]);
- translate([15,5,-27+2.5])#cylinder(r=3.7/2,h=30);
- translate([15,5,-27+34-1.5])cylinder(r=9/2,h=3.5);
- translate([5-1,15,-27+2.5])#cylinder(r=3.7/2,h=30);
- translate([5-1,15,-27+34-1.5])cylinder(r=9/2,h=3.5);
+ translate([0+8,1+bg-5,0-4-1])rotate([0,0,45])cube([10+0.5,30,3+7+3+5]);
+ translate([15,5,-27+2.5])cylinder(r=3.7/2,h=30);
+ translate([15,5,-27+34-1.5])cylinder(r=9/2,h=13.5);
+ translate([5-1,15,-27+2.5])cylinder(r=3.7/2,h=30);
+ translate([5-1,15,-27+34-1.5])cylinder(r=9/2,h=13.5);
 }
 }
 
@@ -208,19 +271,95 @@ mirror([1,0,0])difference(){
 
 
 
-module plate_tip_mtp_left(z){
+module leftside_plate_tip_mtp_left(z){
 translate([28+5.5-101,64-35.5+7,z-11])
 difference(){ 
  union(){
- translate([-4.8,1,0])cube([15,55,3]);
+ translate([5.3-2.8+4.5,5+10+1,0])cylinder(r=9/2,h=22);
+ translate([5.3-2.8-10+24.5,5+10+1-11,0])cylinder(r=9/2,h=22);
+ translate([-4.8+5,1,0])cube([10,55,3]);
  translate([-4.8,1,0])cube([25,11,3]);
  translate([5.3,5,0])cylinder(r=8/2,h=6);
  translate([5.3,5+43,0])cylinder(r=8/2,h=6);
  }
- translate([5.3,5,-1])#cylinder(r=3.7/2,h=10);
- translate([5.3,5+43,-1])#cylinder(r=3.7/2,h=10);
+ translate([5.3-2.8+4.5,5+10+1,0])cylinder(r=2.7/2,h=25);
+ translate([5.3-2.8-10+24.5,5+10+1-11,0])cylinder(r=2.7/2,h=25);
+ translate([5.3,5,-1])cylinder(r=3.7/2,h=10);
+ translate([5.3,5+43,-1])cylinder(r=3.7/2,h=10);
 }
 }
+
+module leftside_midleftright_tip_mtp_aligner(z){
+translate([28+5.5,64-35.5+7,z-11])
+difference(){ 
+ union(){
+ cube([10,55,3]);
+ translate([5.3-2.8+3,5+10+0,0])cylinder(r=9/2,h=22);
+ translate([5.3-2.8-10+2,5+10+1-11,0])cylinder(r=9/2,h=22);
+ translate([5.3,5,0])cylinder(r=8/2,h=6);
+ translate([5.3,5+43,0])cylinder(r=8/2,h=6);
+ translate([0,8-3,0])cube([25+3,10,3]);
+ translate([10,8-3,0])cube([15+3,10,8]);
+ translate([-20,2,0])cube([30,10,3]);
+ }
+ translate([5.3-2.8+3,5+10+0,0])cylinder(r=2.7/2,h=22);
+ translate([5.3-2.8-10+2,5+10+1-11,0])cylinder(r=2.7/2,h=22);
+ translate([5.3,5,-1])cylinder(r=3.7/2,h=10);
+ translate([5.3,5+43,-1])cylinder(r=3.7/2,h=10);
+ translate([5.3+13+3+2,5+28,4])rotate([90,0,0])cylinder(r=2.7/2,h=30);
+}
+}
+
+
+module leftside_fartopleft_tip_mtp_aligner_yend(z){
+translate([28+5.5,64-35.5+7,z-11])
+difference(){ 
+ union(){
+ translate([5.3-2.8+3+1.5,5+10+2.5+1-1,0])cylinder(r=9/2,h=22);
+ translate([5.3-2.8-11+4+22.5,5+10+2.5-10,0])cylinder(r=9/2,h=22);
+ cube([10,55,3]);
+ translate([5.3,5,0])cylinder(r=8/2,h=6);
+ translate([5.3,5+48,0])cylinder(r=8/2,h=6);
+ translate([0,8,0])cube([25,10,3]);
+ }
+ translate([5.3-2.8+3+1.5,5+10+2.5+1-1,0])cylinder(r=2.7/2,h=22);
+ translate([5.3-2.8-11+4+22.5,5+10+2.5-10,0])cylinder(r=2.7/2,h=22);
+ translate([5.3,5,-1])cylinder(r=3.7/2,h=10);
+ translate([5.3,5+48,-30])cylinder(r=3.7/2,h=60);
+}
+}
+
+
+
+
+
+
+
+module leftside_midtopleft_tip_mtp_aligner_yend(z){
+translate([28+5.5,64-35.5+7,z-11])
+difference(){ 
+ union(){
+ translate([5.3-2.8+3,5+10+2.5+1,0])cylinder(r=9/2,h=22);
+ translate([5.3-2.8-11+4,5+10+2.5-10,0])cylinder(r=9/2,h=22);
+ cube([10,55,3]);
+ translate([5.3,5,0])cylinder(r=8/2,h=6);
+ translate([5.3,5+48,0])cylinder(r=8/2,h=6);
+ translate([0,8-5,0])cube([25+5,10,3]);
+ translate([10,8-5,0])cube([15+5,10,8]);
+ translate([-20,2,0])cube([30,10,3]);
+ }
+ translate([5.3-2.8+3,5+10+2.5+1,0])cylinder(r=2.7/2,h=22);
+ translate([5.3-2.8-11+4,5+10+2.5-10,0])cylinder(r=2.7/2,h=22);
+ translate([5.3,5,-1])cylinder(r=4.7/2,h=10);
+ translate([5.3,5+48,-1])cylinder(r=4.7/2,h=10);
+ translate([5.3+13+3+2,5+28-5,4])rotate([90,0,0])cylinder(r=2.7/2,h=30);
+}
+}
+
+
+
+
+
 
 
 
@@ -239,11 +378,14 @@ difference(){
  translate([10,8,0])cube([15,10,8]);
  translate([-20,2,0])cube([30,10,3]);
  }
- translate([5.3,5,-1])#cylinder(r=3.7/2,h=10);
- translate([5.3,5+43,-1])#cylinder(r=3.7/2,h=10);
- translate([5.3+13+3,5+28,4])rotate([90,0,0])#cylinder(r=2.7/2,h=30);
+ translate([5.3,5,-1])cylinder(r=3.7/2,h=10);
+ translate([5.3,5+43,-1])cylinder(r=3.7/2,h=10);
+ translate([5.3+13+3,5+28,4])rotate([90,0,0])cylinder(r=2.7/2,h=30);
 }
 }
+
+
+
 
 
 
@@ -256,15 +398,15 @@ difference(){
  translate([5.3-2.8,5+10+1,0])cylinder(r=9/2,h=22);
  translate([5.3-2.8-10,5+10+1-11,0])cylinder(r=9/2,h=22);
  translate([5.3,5+43,0])cylinder(r=8/2,h=6);
- translate([0,8,0])cube([25,10,3]);
- translate([10,8,0])cube([15,10,8]);
+ translate([0,8-3,0])cube([25+3,10,3]);
+ translate([10,8-3,0])cube([15+3,10,8]);
  translate([-20,2,0])cube([30,10,3]);
  }
  translate([5.3-2.8-10,5+10+1-11,0])cylinder(r=2.8/2,h=26);
  translate([5.3-2.8,5+10+1,0])cylinder(r=2.8/2,h=26);
- translate([5.3,5,-1])#cylinder(r=3.7/2,h=10);
- translate([5.3,5+43,-1])#cylinder(r=3.7/2,h=10);
- translate([5.3+13+3,5+28,4])rotate([90,0,0])#cylinder(r=2.7/2,h=30);
+ translate([5.3,5,-1])cylinder(r=3.7/2,h=10);
+ translate([5.3,5+43,-1])cylinder(r=3.7/2,h=10);
+ translate([5.3+13+3+2,5+28,4])rotate([90,0,0])cylinder(r=2.7/2,h=30);
 }
 }
 
@@ -283,15 +425,13 @@ difference(){
  //translate([10,8,0])cube([15,10,8]);
  translate([-20,2,0])cube([30,10,3]);
  }
- translate([5.3-2.8-10+2,5+10+1-11,0])#cylinder(r=2.8/2,h=26);
+ translate([5.3-2.8-10+2,5+10+1-11,0])cylinder(r=2.8/2,h=26);
  translate([5.3-2.8+3,5+10+1-1,0])cylinder(r=2.8/2,h=26);
- translate([5.3,5,-1])#cylinder(r=3.7/2,h=10);
- translate([5.3,5+43,-1])#cylinder(r=3.7/2,h=10);
- translate([5.3+13+3,5+28,4])rotate([90,0,0])#cylinder(r=2.7/2,h=30);
+ translate([5.3,5,-1])cylinder(r=3.7/2,h=10);
+ translate([5.3,5+43,-1])cylinder(r=3.7/2,h=10);
+ translate([5.3+13+3,5+28,4])rotate([90,0,0])cylinder(r=2.7/2,h=30);
 }
 }
-
-
 
 
 
@@ -319,13 +459,13 @@ difference(){
  cube([10,60,3]);
  translate([5.3,5,0])cylinder(r=8/2,h=6);
  translate([5.3,5+43+5,0])cylinder(r=8/2,h=6);
- translate([0,8,0])#cube([25,8,3]);
- translate([10,8,0])#cube([15,8,8]);
+ translate([0,8,0])cube([25,8,3]);
+ translate([10,8,0])cube([15,8,8]);
  translate([-20,2,0])cube([30,10,3]);
  }
- translate([5.3,5,-1])#cylinder(r=3.7/2,h=10);
- translate([5.3,5+43+5,-1])#cylinder(r=3.7/2,h=10);
- translate([5.3+13+3,5+28,4])rotate([90,0,0])#cylinder(r=2.7/2,h=30);
+ translate([5.3,5,-1])cylinder(r=3.7/2,h=10);
+ translate([5.3,5+43+5,-1])cylinder(r=3.7/2,h=10);
+ translate([5.3+13+3,5+28,4])rotate([90,0,0])cylinder(r=2.7/2,h=30);
 }
 }
 
@@ -339,15 +479,15 @@ difference(){
  translate([5.3-2.8-11,5+10+2.5-10,0])cylinder(r=9/2,h=22);
  translate([5.3,5,0])cylinder(r=8/2,h=6);
  translate([5.3,5+43+5,0])cylinder(r=8/2,h=6);
- translate([0,8,0])#cube([25,8,3]);
- translate([10,8,0])#cube([15,8,8]);
+ translate([0,8-3,0])cube([25+3,10,3]);
+ translate([10,8-3,0])cube([15+3,10,8]);
  translate([-20,2,0])cube([30,10,3]);
  }
  translate([5.3-2.8-11,5+10+2.5-10,0])cylinder(r=2.8/2,h=26);
  translate([5.3-2.8,5+10+2.5,0])cylinder(r=2.8/2,h=26);
- translate([5.3,5,-1])#cylinder(r=3.7/2,h=10);
- translate([5.3,5+43+5,-1])#cylinder(r=3.7/2,h=10);
- translate([5.3+13+3,5+28,4])rotate([90,0,0])#cylinder(r=2.7/2,h=30);
+ translate([5.3,5,-1])cylinder(r=3.7/2,h=10);
+ translate([5.3,5+43+5,-1])cylinder(r=3.7/2,h=10);
+ translate([5.3+13+3+2,5+28,4])rotate([90,0,0])cylinder(r=2.7/2,h=30);
 }
 }
 
@@ -360,16 +500,37 @@ difference(){
  translate([5.3-2.8-11+4,5+10+2.5-10,0])cylinder(r=9/2,h=22);
  translate([5.3,5,0])cylinder(r=8/2,h=6);
  translate([5.3,5+43+5,0])cylinder(r=8/2,h=6);
- //translate([0,8,0])#cube([25,8,3]);
- //translate([10,8,0])#cube([15,8,8]);
+ //translate([0,8,0])cube([25,8,3]);
+ //translate([10,8,0])cube([15,8,8]);
  translate([-20,2,0])cube([30,10,3]);
+
+
  }
  translate([5.3-2.8-11+4,5+10+2.5-10,0])cylinder(r=2.8/2,h=26);
  translate([5.3-2.8+3,5+10+2+2.5-1,0])cylinder(r=2.8/2,h=26);
- translate([5.3,5,-1])#cylinder(r=3.7/2,h=10);
- translate([5.3,5+43+5,-1])#cylinder(r=3.7/2,h=10);
- translate([5.3+13+3,5+28,4])rotate([90,0,0])#cylinder(r=2.7/2,h=30);
+ translate([5.3,5,-1])cylinder(r=3.7/2,h=10);
+ translate([5.3,5+43+5,-1])cylinder(r=3.7/2,h=10);
+ translate([5.3+13+3,5+28,4])rotate([90,0,0])cylinder(r=2.7/2,h=30);
 }
+
+ /*
+ //for show
+ translate([28+5.5-3.5,64-35.5+7,z-11]){
+ translate([5.3-2.8-11+4,5+10+2.5-10,0])color("silver")cylinder(r=2.8/2,h=40);
+ translate([5.3-2.8-11+4,5+10+2.5-10,28.5])color("silver")cylinder(r=7.5/2,h=4.5,$fn=6);
+ 
+ translate([5.3-2.8-11+4,5+10+2.5-10,43])
+  difference(){color("silver")cylinder(r=8/2,h=3);
+  cylinder(r=5/2,h=3.1,$fn=6);
+ }
+ translate([5.3-2.8+3,5+10+2+2.5-1,0])color("silver")cylinder(r=2.8/2,h=44);
+ translate([5.3-2.8+3,5+10+2+2.5-1,28.5])color("silver")cylinder(r=7.5/2,h=4.5,$fn=6);
+ translate([5.3-2.8+3,5+10+2+2.5-1,0+43])difference(){
+  color("silver")cylinder(r=8/2,h=3);
+  cylinder(r=5/2,h=3.1,$fn=6);
+  }
+ }
+ */
 }
 
 
@@ -381,28 +542,26 @@ difference(){
 
 module zbed_multichannel_setup(){
 
+/*
+ translate([383.5/2-83/2-2.3,103.5-27,0])tipbox_model(144);
+ //translate([383.5/2-85/2-90-10,103.5-27-6,48])microwellplate_model(144);
+ translate([383.5/2-85/2-90-10+70,103.5-27-6+92,48+133])rotate([0,0,90])color("lightblue")import("96_microwell_plate.STL.stl");
+ //translate([383.5/2-85/2+88+14,103.5-27-6,48])microwellplate_model(144);
+ translate([383.5/2-85/2+172,103.5-27-6+92,48+133])rotate([0,0,90])color("lightblue")import("96_microwell_plate.STL.stl");
+*/
 //projection(cut = false){
  difference(){union(){
- color("gainsboro")translate([0,0,-10-10])multichannel_laser_zbed(144);
- translate([-10,103.5-27-25,0])plateholder(144);
- translate([383.5/2-83/2-2.3,103.5-27,0])tipbox_model(144);
- translate([383.5/2-85/2-90-10,103.5-27-6,48])microwellplate_model(144);
- translate([383.5/2-85/2+88+14,103.5-27-6,48])microwellplate_model(144);
+ color("lightblue")translate([0,0,-10-10])multichannel_laser_zbed(144);
+ //color("lightblue")translate([-10,103.5-27-25,0])plateholder(144);
  //translate([383.5/2-290/2,103.5-27-25,1])ruler_plateholder(144);
 
- translate([383.5/2-290/2+83,103.5-27-25,5])color("lightblue")tip_mtp_aligner(144);
- translate([383.5/2-290/2+83,103.5-27-25,5])color("lightblue") plate_tip_mtp_left(144);
-
-
+/*
+color("gainsboro"){
 rightside_plate_holder();
-
- translate([383.5/2-290/2+83-20,103.5-27-25-11,0])color("lightbrown")plate_btomleft_aligner(144);
- translate([383.5/2-290/2+83-20+350,103.5-27-25-11,0])color("lightbrown")plate_btomright_aligner(144);
- translate([383.5/2-290/2+83-20,103.5-27-25-11,0])color("lightbrown")plate_topleft_aligner(144);
- translate([383.5/2-290/2+83-20+220.5,103.5-27-25-11+200,0])color("lightbrown")rotate([0,0,180]) plate_topright_aligner(144);
-
- translate([383.5/2-290/2+83,103.5-27-25+230-5,5])color("lightblue")mirror([1,0,0])rotate([0,0,180])tip_mtp_aligner_yend(144);
-
+leftside_plate_holder();
+plate_aligner_on_zbed();
+}
+*/
  }
   translate([0,6,0])for(i=[0:3]){
   b = 5;
@@ -472,6 +631,17 @@ translate([25.5+2,64-35.5,z-11])color("pink")cube([85,127,14]);
 
 module tipbox_model(z){
 translate([25.5,64-35.5,z-11])color("lime")cube([83,119,50]);
+
+
+translate([32,136,180])color("lightblue")
+for(i=[0:8]){
+for(j=[0:11]){
+translate([9*i,-9*j,0])difference(){
+cylinder(r2=7/2,r1=6/2,h=7);
+cylinder(r2=6/2,r1=5/2,h=8);
+}
+}
+}
 }
 
 module tipbox_rightmount(z){
@@ -483,10 +653,10 @@ translate([90,0,0])color("red")cube([20,15,6]);
 color("red")cube([10,15,6]);
 translate([0,-9,0])color("red")cube([15,30-6,15]);
 }
-translate([9,7.5,-10])#cylinder(r=5/2,h=40);
-translate([9,7.5,6])#cylinder(r=10/2,h=40);
-translate([9+90,7.5,-10])#cylinder(r=5/2,h=40);
-translate([-29,-4,10])rotate([0,90,0])#cylinder(r=3.7/2,h=100);
+translate([9,7.5,-10])cylinder(r=5/2,h=40);
+translate([9,7.5,6])cylinder(r=10/2,h=40);
+translate([9+90,7.5,-10])cylinder(r=5/2,h=40);
+translate([-29,-4,10])rotate([0,90,0])cylinder(r=3.7/2,h=100);
 }
 }
 }
@@ -497,9 +667,9 @@ union(){
 color("red")cube([43,15,6]);
 translate([30,15,0])color("red")cube([13,20,15]);
 }
-translate([10,7.5,-10])#cylinder(r=6/2,h=40);
-translate([10+25,7.5,-10])#cylinder(r=6/2,h=40);
-translate([10,7.5+17,10])rotate([0,90,0])#cylinder(r=3.7/2,h=40);
+translate([10,7.5,-10])cylinder(r=6/2,h=40);
+translate([10+25,7.5,-10])cylinder(r=6/2,h=40);
+translate([10,7.5+17,10])rotate([0,90,0])cylinder(r=3.7/2,h=40);
 }
 }
 
@@ -511,8 +681,8 @@ module y_level_guide(){
 translate([368,32,144+4])
 difference(){
 translate([1,-2,0])cube([16,90,2]);
-translate([10-1,6,-10])#cylinder(r=8/2,h=20);
-translate([10-1,6+75,-10])#cylinder(r=8/2,h=20);
+translate([10-1,6,-10])cylinder(r=8/2,h=20);
+translate([10-1,6+75,-10])cylinder(r=8/2,h=20);
 }
 
 }
@@ -530,7 +700,7 @@ module x_level_guide(){
 translate([250,18,144-4])
 difference(){
 union(){
-translate([10-30,0,0])#cube([120,20,4]);
+translate([10-30,0,0])cube([120,20,4]);
 translate([10-30,0,0])cube([120,5,10]);
 for(i=[-1:3]){
 translate([10+(i*26.5),0,0])cube([10,9,8]);
@@ -538,8 +708,8 @@ translate([10+(i*26.5),0,0])cube([10,9,8]);
 translate([7.5,5,0])cube([20,30,4]);
 translate([88,5,0])cube([20,30,4]);
 }
-translate([17,20,0])#cylinder(r=9/2,h=30);
-translate([17+80,20,0])#cylinder(r=9/2,h=30);
+translate([17,20,0])cylinder(r=9/2,h=30);
+translate([17+80,20,0])cylinder(r=9/2,h=30);
 }
 }
 
@@ -548,7 +718,7 @@ translate([17+80,20,0])#cylinder(r=9/2,h=30);
 
 module zbed_metal_version(){
 //Not really though maybe it is now
-translate([-113,13.5-6,-20])rotate([0,90,0])#zbed_connector_bar_metal();
+translate([-113,13.5-6,-20])rotate([0,90,0])zbed_connector_bar_metal();
 translate([-177,0,8]){
 rotate([0,90,0])lm8uu_smz_glider();
 translate([24.5,7.5,-30+3])bed_leveler_better_lm8uu_for_metalversion();
@@ -564,7 +734,7 @@ translate([59.5,7.5,-30+3])mirror([1,0,0])bed_leveler_better_lm8uu_for_metalvers
 
 module zbed_3dprint_version(){
 //Not really though maybe it is now
-translate([-113,13.5-6,-20])rotate([0,90,0])#zbed_connector_bar();
+translate([-113,13.5-6,-20])rotate([0,90,0])zbed_connector_bar();
 translate([-177,0,8]){
 rotate([0,90,0])lm8uu_smz_glider();
 translate([24.5,7.5,-30+3])bed_leveler_better_lm8uu();
@@ -608,13 +778,13 @@ module bed_support_strip(){
 translate([22,7,10])
 difference(){
 cube([160,16,7]);
-translate([160/2-8,8,0])#cylinder(r=3.5/2,h=20);
-translate([160/2+8,8,0])#cylinder(r=3.5/2,h=20);
-translate([6,8,0])#cylinder(r=5.5/2,h=20);
-translate([6+24,8,0])#cylinder(r=5.5/2,h=20);
+translate([160/2-8,8,0])cylinder(r=3.5/2,h=20);
+translate([160/2+8,8,0])cylinder(r=3.5/2,h=20);
+translate([6,8,0])cylinder(r=5.5/2,h=20);
+translate([6+24,8,0])cylinder(r=5.5/2,h=20);
 translate([115+10,0,0]){
-translate([6,8,0])#cylinder(r=5.5/2,h=20);
-translate([6+24,8,0])#cylinder(r=5.5/2,h=20);
+translate([6,8,0])cylinder(r=5.5/2,h=20);
+translate([6+24,8,0])cylinder(r=5.5/2,h=20);
 }
 }
 }

@@ -1,5 +1,12 @@
 include <modparts.scad> use<writescad/write.scad>
 
+
+//multichannel_pipette_holder();
+//import("pi_back.stl");
+
+//pi_bottom_for_panel();
+
+
 //multichannel_pipette_holder();
 //multichannel_drypad();
 
@@ -9,7 +16,6 @@ include <modparts.scad> use<writescad/write.scad>
 
 //pipette_p200(5);
 
-//multichannel_pipette_holder();
 //zbed_washer_hold_plate_into_place();
 //laser_zbed(144);
 
@@ -22,21 +28,30 @@ include <modparts.scad> use<writescad/write.scad>
 
 
 //slider_front_assy();
-//shh = 0.9;color([shh,shh,shh])color("gainsboro")translate([-0.5,-37,22+7])filament_linearactuator_shuttle();
+
+//tslot_clamp_filament_linearactuator_shuttle();
+//the_actual_remove_pipette_part();
+
+//rotate([0,0,0])stepper_linear_m8nut_coupler_vertical_adjust_nema17_spacer(6);
+
+/*
+shh = 0.9;color([shh,shh,shh])color("gainsboro")translate([-0.5,-37,22+7])filament_linearactuator_shuttle();
+smaller_igus_slidermount_vertical_adjust_nema17();
+shuttle_front_vertical_adjust();
+rotate([0,0,0])stepper_linear_m8nut_coupler_vertical_adjust_nema17_spacer(6);
+rotate([90,0,0])stepper_linear_m8nut_coupler_vertical_adjust_nema17();
+*/
+
 //slider_front_assy_vertical_adjust_nema17();
-//shuttle_front_vertical_adjust();
 //translate([-27.5,-41,20+3])rotate([0,0,180])smaller_igus_slidermount_vertical_adjust_nema17();
-//smaller_igus_slidermount_vertical_adjust_nema17();
 
 
-///filament_linearactuator_smaller_igus_slidermount_vertical_adjust_nema17();
+//filament_linearactuator_smaller_igus_slidermount_vertical_adjust_nema17();
 
 //rotate([0,0,0])stepper_linear_m8nut_coupler_vertical_adjust_nema17_spacer(5);
 //best spacer is 6mm high (could even be 6.1mm )
-//rotate([0,0,0])stepper_linear_m8nut_coupler_vertical_adjust_nema17_spacer(6);
 //translate([0,0,-60])stepper_linear_m8nut_coupler_vertical_adjust_nema17_nut();
 
-//rotate([90,0,0])stepper_linear_m8nut_coupler_vertical_adjust_nema17();
 /*
 x =10;
 y = 100;
@@ -130,9 +145,10 @@ solenoid_make_straight_connectorbar();
 translate([0,-5,0])mirror([0,1,0])multichannel_remove_pipette_assy();
 translate([-17.5,-28-5,1])rotate([0,90,0])tslot20(100);
 //multichannel_lockwasher();
-translate([-17.5,-2+5,1])rotate([0,90,0])tslot20(100);
+//translate([-17.5,-2+5,1])rotate([0,90,0])tslot20(100);
 //multichannel_pipette_holder();
 //translate([0,0,-24])multichannel_top_fix();
+multichannel_pipette_holder();
 */
 
 
@@ -353,7 +369,7 @@ translate([39-5,10,3])rotate([90,0,0])cylinder(r=5/2,h=20);
 module multichannel_pipette_holder(){
 
 translate([-9,-6.6,-4])cube([6,13.2,12]);
-translate([-9+76.5-0.3,-6.6,-4])cube([5,13.2,12]);
+translate([-9+76.5-0.3+1,-6.6,-4])cube([5,13.2,12]);
 
 /*
 difference(){
@@ -529,7 +545,7 @@ translate([-5,-40/2+13.4+12,-4])cube([10,40-13+4-12,4]);
 //translate([-5,-40/2-4,-4])cube([10,40-13+4,4]);
 }
 translate([0,0,-50.2+46])cylinder(r=dia/2,h=100);
-translate([0,0+50,-50.2+46+8])rotate([90,0,0])cylinder(r=1.7/2,h=100);
+translate([0,0+50-50,-50.2+46+8])rotate([90,0,0])#cylinder(r=1.7/2,h=30);
 //translate([0,0,-50.2+46])cylinder(r=dia/2,h=100);
 //translate([0,0,-50.2+46])cylinder(r=(dia+0.2)/2,h=2);
 }
@@ -642,7 +658,13 @@ translate([-33,-66,-20])rotate([0,0,90]){
 //actually c-to-c spacing on prusa is 8.723 not 9mm
 for(j=[0:7]){
 for(k=[0:3]){
- translate([19+7+(j*9)+5+2,2.5-10+33-(k*1),2])translate([7,25/2-8,-0.1])cylinder(r=7.8/2,h=40);
+ //The is for the Rainin LTS tip without the filter
+ //translate([19+7+(j*9)+5+2,2.5-10+33-(k*1),2])translate([7,25/2-8,-0.1])#cylinder(r=7.8/2,h=40);
+ //The is for the Rainin LTS tip with this is too tight
+ //translate([19+7+(j*9)+5+2,2.5-10+33-(k*1),2])translate([6.5,25/2-8,-0.1])#cylinder(r=6.5/2,h=40);
+ translate([19+7+(j*9)+5+2,2.5-10+33-(k*1),2])translate([6.8,25/2-8,-0.1])#cylinder(r=7/2,h=40);
+
+
 }}
 
 /*
@@ -654,14 +676,11 @@ translate([19+7+75,2.5-10,2])translate([7.5,25/2-8,18])cylinder(r=6.9/2,h=3.2);
 translate([19+7+75,2.5-10,2])translate([7.5,25/2-8,-0.1])cylinder(r=3.7/2,h=40);
 */
 //translate([19+7,2.5-10,2])translate([7.5,25/2-8,18])cylinder(r=6.9/2,h=3.2);
-translate([19+7,2.5-10,2])translate([7.5-10,25/2-8,-0.1])#cylinder(r=2.7/2,h=240);
+translate([19+7,2.5-10,2])translate([7.5-10,25/2-8,-0.1])#cylinder(r=3.7/2,h=240);
 //translate([19+7+37,2.5-10,2])translate([7.5,25/2-8,18])cylinder(r=6.9/2,h=3.2);
 translate([19+7+37,2.5-10,2])translate([7.5,25/2-8,-0.1])cylinder(r=3.7/2,h=40);
 //translate([19+7+75,2.5-10,2])translate([7.5,25/2-8,18])cylinder(r=6.9/2,h=3.2);
-translate([19+7+75,2.5-10,2])translate([7.5+10,25/2-8,-0.1])#cylinder(r=2.7/2,h=240);
-
-
-
+translate([19+7+75,2.5-10,2])translate([7.5+10,25/2-8,-0.1])#cylinder(r=3.7/2,h=240);
 
 }
 }

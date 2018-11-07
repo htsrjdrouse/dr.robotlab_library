@@ -1,6 +1,11 @@
 include <modparts.scad>
 use<writescad/write.scad>
 
+
+
+//multichannel_syringe_module();
+
+module multichannel_syringe_module(){
 eight_multichannel_assay();
 translate([-100,160,0])nextgen_syringe1ml_multichannel_assy();
 //translate([0,70,-0.1])multichannel_syringe1ml_clamp_luerlock();
@@ -11,7 +16,7 @@ translate([-100,160,0])
 //color("gainsboro")
 translate([-25.75,123,-30])rotate([90,-90,0])multichannel_syringeshuttle_clipbracket();
 }
-
+}
 
 
 
@@ -305,6 +310,7 @@ module syringe_1ml(){
 //translate([0,0,4])rotate([0,0,45])cylinder(r=10,h=15,$fn=4);
 //translate([0,0,74])rotate([0,0,45])cylinder(r=10,h=15,$fn=4);
 union(){
+color("lightblue")translate([0,0,100])cylinder(r=3/2,h=30);
 color("white")cylinder(r=9.5/2,h=92);
 color("white")cylinder(r2=5.5/2,r1=9.5/2,h=92+7);
 color("white")translate([0,0,-12-(71-12)])cylinder(r=4/2,h=92);

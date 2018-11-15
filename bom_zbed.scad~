@@ -95,7 +95,6 @@ translate([0,0,-1])cylinder(r=4/2,h=20);
 
 
 module plate_aligner_on_zbed(){
-
 // translate([383.5/2-290/2+83-20+220.5,103.5-27-25-11+200,0])color("lightbrown")rotate([0,0,180]) plate_topright_aligner(144);
 
  translate([383.5/2-290/2+83-20,103.5-27-25-11,0])color("")plate_topleft_aligner(144);
@@ -106,20 +105,37 @@ module plate_aligner_on_zbed(){
 */
 }
 
+module plate_aligner_on_zbed_wider(){
+// translate([383.5/2-290/2+83-20+220.5,103.5-27-25-11+200,0])color("lightbrown")rotate([0,0,180]) plate_topright_aligner(144);
+
+ translate([383.5/2-290/2+83-20,103.5-27-25-11,0])color("")plate_topleft_aligner(144);
+ translate([383.5/2-290/2+83-20,103.5-27-25-11-97,0])color("")plate_btomleft_aligner_wider(144);
+
+ translate([383.5/2-290/2+83-20+350+135+42+5,103.5-27-25-11-94,0])color("")plate_btomright_aligner_wider(144);
+ translate([383.5/2-290/2+83-20+220.5+135+42+5,103.5-27-25-11+200,0])color("")rotate([0,0,180]) plate_topright_aligner(144);
+/*
+*/
+}
+
+
+
+
+
+
 
 
 
 module leftside_plate_holder(){
-
 translate([-202,0,0]){
- translate([383.5/2-290/2+83-20+350,103.5-27-25-11,0])color("")microplate_corner(144+48);
- translate([383.5/2-290/2+83-20+350-100-140+0,103.5-27-25-11-45+8-0.5,0])color("")rotate([0,0,-90])microplate_corner(144+48);
+ //translate([383.5/2-290/2+83-20+350,103.5-27-25-11,0])color("")microplate_corner(144+48);
+translate([383.5/2-290/2+83-20+350-39,103.5-27-25-11+150-9,0])color("")rotate([0,0,90])microplate_corner_4sides(144+48);
+ translate([383.5/2-290/2+83-20+350-100-140+0,103.5-27-25-11-45+8-0.5,0])color("")rotate([0,0,-90])microplate_corner_2sides(144+48);
  translate([383.5/2-290/2+83-20+350-100-140+0-37-0.5,103.5-27-25-11-45+8-0.5+130+152-0,0])color("")rotate([0,0,-90-90])microplate_corner(144+48);
- translate([383.5/2-290/2+83-20+350-100-140+0-37-0.5+50+180+10-0,103.5-27-25-11-45+8-0.5+130+152-0+100-62.5,0])color("")rotate([0,0,-90-90-90])microplate_corner(144+48);
+ translate([383.5/2-290/2+83-20+350-100-140+0-37-0.5+50+180+10-140,-40+103.5-27-25-11-45+8-0.5+130+152-0+100-62.5,0])color("")rotate([0,0,-90-90-0])microplate_corner_2sides(144+48);
+ //translate([383.5/2-290/2+83-20+350-100-140+0-37-0.5+50+180+10-0,103.5-27-25-11-45+8-0.5+130+152-0+100-62.5,0])color("")rotate([0,0,-90-90-90])microplate_corner(144+48);
 }
 /*
 */
-
  translate([383.5/2-290/2+83,103.5-27-25,5])color("")leftside_midleftright_tip_mtp_aligner(144);
  translate([383.5/2-290/2+83,103.5-27-25,5])color("")leftside_plate_tip_mtp_left(144);
  translate([383.5/2-290/2+83,103.5-27-25+230-5,5])color("")mirror([1,0,0])rotate([0,0,180])leftside_midtopleft_tip_mtp_aligner_yend(144);
@@ -129,15 +145,47 @@ translate([-202,0,0]){
 }
 
 
+module plate_holder_corner(){
+translate([-202,0,0]){
+translate([383.5/2-290/2+83-20+350-39,103.5-27-25-11+150-9,0])color("")rotate([0,0,90])microplate_corner_4sides(144+48);
+}
+}
+
+module leftside_plate_holder_wider(){
+translate([-202,0,0]){
+ translate([383.5/2-290/2+83-20+350,103.5-27-25-11,0])color("")microplate_corner(144+48);
+translate([383.5/2-290/2+83-20+350-39,103.5-27-25-11+150-9,0])color("")rotate([0,0,90])microplate_corner_4sides(144+48);
+
+
+ translate([383.5/2-290/2+83-20+350-100-140+0,103.5-27-25-11-45+8-0.5,0])color("")rotate([0,0,-90])microplate_corner_2sides(144+48);
+ translate([383.5/2-290/2+83-20+350-100-140+0-37-0.5,103.5-27-25-11-45+8-0.5+130+152-0,0])color("")rotate([0,0,-90-90])microplate_corner(144+48);
+ translate([383.5/2-290/2+83-20+350-100-140+0-37-0.5+50+180+10-140,-40+103.5-27-25-11-45+8-0.5+130+152-0+100-62.5,0])color("")rotate([0,0,-90-90-0])microplate_corner_2sides(144+48);
+ //translate([383.5/2-290/2+83-20+350-100-140+0-37-0.5+50+180+10-0,103.5-27-25-11-45+8-0.5+130+152-0+100-62.5,0])color("")rotate([0,0,-90-90-90])microplate_corner(144+48);
+}
+/*
+*/
+ translate([383.5/2-290/2+83,103.5-27-25+230-5,5])color("")mirror([1,0,0])rotate([0,0,180])leftside_midtopleft_tip_mtp_aligner_yend(144);
+
+
+ translate([383.5/2-290/2+83,103.5-27-25,5])color("")leftside_midleftright_tip_mtp_aligner(144);
+ translate([383.5/2-290/2+83,103.5-27-25,5])color("")leftside_plate_tip_mtp_left(144);
+ translate([383.5/2-290/2+83-101,103.5-27-25+230-5,5])color("")mirror([1,0,0])rotate([0,0,180])leftside_fartopleft_tip_mtp_aligner_yend(144);
+/*
+*/
+}
+
+
+
+
+
+
 
 module rightside_plate_holder(){
- translate([383.5/2-290/2+83-20+350,103.5-27-25-11,0])color("")microplate_corner(144+48);
- translate([383.5/2-290/2+83-20+350-100-140+0,103.5-27-25-11-45+8-0.5,0])color("")rotate([0,0,-90])microplate_corner(144+48);
- translate([383.5/2-290/2+83-20+350-100-140+0-37-0.5,103.5-27-25-11-45+8-0.5+130+152-0,0])color("")rotate([0,0,-90-90])microplate_corner(144+48);
-
- translate([383.5/2-290/2+83-20+350-100-140+0-37-0.5+50+180+10-0,103.5-27-25-11-45+8-0.5+130+152-0+100-62.5,0])color("")rotate([0,0,-90-90-90])microplate_corner(144+48);
- /*
-  */
+ translate([383.5/2-290/2+83-20+350,103.5-27-25-11,0])color("")microplate_corner_4sides(144+48);
+ translate([383.5/2-290/2+83-20+350-100-140+0,103.5-27-25-11-45+8-0.5,0])color("")rotate([0,0,-90])microplate_corner_4sides(144+48);
+ translate([383.5/2-290/2+83-20+350-100-140+0-37-0.5,103.5-27-25-11-45+8-0.5+130+152-0,0])color("")rotate([0,0,-90-90])microplate_corner_2sides(144+48);
+ translate([383.5/2-290/2+83-20+350-100-140+0-37-0.5+100,103.5-27-25-11-45+8-0.5+130+152-0,0])color("")rotate([0,0,-90-90])microplate_corner_2sides(144+48);
+ 
 
  //mid bottom right
  translate([383.5/2-290/2+83+177.5,103.5-27-25,5])color("") mirror([1,0,0])midbotright_tip_mtp_aligner(144);
@@ -147,8 +195,33 @@ module rightside_plate_holder(){
  translate([383.5/2-290/2+83+177.5,103.5-27-25+230-5,5])color("")mirror([0,0,0])rotate([0,0,180])midtopright_tip_mtp_aligner_yend(144);
 //far top right
  translate([383.5/2-290/2+83+177.5+28,103.5-27-25+230-5,5])color("")mirror([1,0,0])rotate([0,0,180])fartopright_tip_mtp_aligner_yend(144);
- /*
-*/
+
+
+
+translate([102,0,0]){
+
+
+ translate([383.5/2-290/2+83-20+350,103.5-27-25-11,0])color("")microplate_corner_4sides(144+48);
+ translate([383.5/2-290/2+83-20+350-100-140+0-37-0.5+100,103.5-27-25-11-45+8-0.5+130+152-0,0])color("")rotate([0,0,-90-90])microplate_corner_2sides(144+48);
+ 
+
+ //mid bottom right
+ //translate([383.5/2-290/2+83+177.5,103.5-27-25,5])color("") mirror([1,0,0])midbotright_tip_mtp_aligner(144);
+ //far bottom right
+ translate([383.5/2-290/2+83+177.5+24,103.5-27+65-90,5])color("") mirror([0,0,0])farbotright_tip_mtp_aligner(144);
+//mid top right
+ //translate([383.5/2-290/2+83+177.5,103.5-27-25+230-5,5])color("")mirror([0,0,0])rotate([0,0,180])midtopright_tip_mtp_aligner_yend(144);
+//far top right
+ translate([383.5/2-290/2+83+177.5+28,103.5-27-25+230-5,5])color("")mirror([1,0,0])rotate([0,0,180])fartopright_tip_mtp_aligner_yend(144);
+
+
+
+
+
+
+
+}
+
 }
 
 
@@ -203,6 +276,50 @@ difference(){
 }
 }
 
+module plate_btomleft_aligner_wider(z){
+translate([28+5.5-101,64-35.5+7-6,z-11])
+difference(){ 
+ union(){
+ translate([0,1,0])cube([10,55,3]);
+ translate([0,1+22+10,0])cube([10,11,3+5]);
+ translate([-4.8+20,1-3,0])cube([10,11,3+5]);
+ translate([0,1-3,0])cube([25,11,3]);
+ translate([5.3,5+15,0])cylinder(r=8/2,h=6);
+ translate([5.3,5+45,0])cylinder(r=8/2,h=6);
+ }
+ translate([5.3,5+15,-25])cylinder(r=4.7/2,h=50);
+ translate([5.3,5+45,-25])cylinder(r=4.7/2,h=50);
+ translate([5.3+15,5+10,5-1.5])rotate([90,0,0])cylinder(r=2.8/2,h=50);
+ translate([5.3+15-30,5+10+15+10,5-1.5])rotate([0,90,0])cylinder(r=2.8/2,h=50);
+}
+}
+
+
+
+
+module plate_btomright_aligner_wider(z){
+translate([28+5.5-101+5.5,64-35.5+7-6,z-11])
+mirror([1,0,0])difference(){ 
+ union(){
+ translate([0,1,0])cube([10,58,3]);
+ translate([0,1+22+13,0])cube([10,11,3+5]);
+ translate([-4.8+20,1-3,0])cube([10,11,3+5]);
+ translate([0,1-3,0])cube([25,11,3]);
+ translate([5.3,5+15,0])cylinder(r=8/2,h=6);
+ translate([5.3,5+48,0])cylinder(r=8/2,h=6);
+ }
+ translate([5.3,5+15,-25])cylinder(r=4.7/2,h=50);
+ translate([5.3,5+48,-25])cylinder(r=4.7/2,h=50);
+ translate([5.3+15,5+10,5-1.5])rotate([90,0,0])cylinder(r=2.8/2,h=50);
+ translate([5.3+15-30,5+10+15+13,5-1.5])rotate([0,90,0])cylinder(r=2.8/2,h=50);
+}
+}
+
+
+
+
+
+
 
 
 module plate_btomright_aligner(z){
@@ -222,6 +339,10 @@ mirror([1,0,0])difference(){
  translate([5.3+15-30,5+10+15+13,5-1.5])rotate([0,90,0])cylinder(r=2.8/2,h=50);
 }
 }
+
+
+
+
 
 
 
@@ -266,6 +387,18 @@ mirror([1,0,0])difference(){
 }
 }
 
+module microplate_corner_2sides(z){
+microplate_corner(z);
+translate([-140-0.4,-38.5,0])rotate([0,0,-90])microplate_corner(z);
+}
+
+module microplate_corner_4sides(z){
+microplate_corner_2sides(z);
+//translate([0,101,0])mirror([0,1,0])microplate_corner_2sides(z);
+translate([-179,102,0])rotate([0,0,-180])microplate_corner_2sides(z);
+}
+
+
 
 
 
@@ -300,12 +433,14 @@ difference(){
  translate([5.3,5+43,0])cylinder(r=8/2,h=6);
  translate([0,8-3,0])cube([25+3,10,3]);
  translate([10,8-3,0])cube([15+3,10,8]);
- translate([-20,2,0])cube([30,10,3]);
+ translate([10-33,8-3,0])cube([15+8,10,8]);
+ //translate([-20,2,0])cube([30,10,3]);
  }
  translate([5.3-2.8+3,5+10+0,0])cylinder(r=2.7/2,h=22);
  translate([5.3-2.8-10+2,5+10+1-11,0])cylinder(r=2.7/2,h=22);
  translate([5.3,5,-1])cylinder(r=3.7/2,h=10);
  translate([5.3,5+43,-1])cylinder(r=3.7/2,h=10);
+ translate([5.3+13+3+2-40,5+28,4])rotate([90,0,0])cylinder(r=2.7/2,h=30);
  translate([5.3+13+3+2,5+28,4])rotate([90,0,0])cylinder(r=2.7/2,h=30);
 }
 }
@@ -333,7 +468,110 @@ difference(){
 
 
 
+module microwell_plate_rising_surface_washmount(z){
+translate([28+5.5,64-35.5+7-84,z-11])
+color("gainsboro")difference(){ 
+ union(){
+ translate([10-3-14,8-5-8,38])cube([15+8+24+44,30,6]);
+ //translate([10-3-14,8-5-5+7.5,38])cube([15+8+24,4,6+4]);
+}
+ translate([5.3-2.8-11+4+20-10-2,5+10+2.5-10,28])cylinder(r=8.7/2,h=122);
+ translate([5.3-2.8-11+4+20-10+28,5+10+2.5-10,28])cylinder(r=8.7/2,h=122);
+ translate([5.3-2.8-11+4+20-10-2,5+10+2.5-10,0])cylinder(r=2.7/2,h=122);
+ translate([5.3-2.8-11+4+20-10+28,5+10+2.5-10,0])cylinder(r=2.7/2,h=122);
+ translate([5.3-2.8-11+4+20-10+28+27,5+10+2.5-10,0])cylinder(r=2.7/2,h=122);
+ translate([5.3-2.8-11+4+20-10+28+27+13,5+10+2.5-10,0])cylinder(r=2.7/2,h=122);
+}
+}
 
+
+
+
+
+
+module microwell_plate_riser_rising_surface(z){
+translate([28+5.5,64-35.5+7-84,z-11])
+color("gainsboro")difference(){ 
+ union(){
+ translate([10-3-14,8-5-8,38])cube([15+8+24,30,6]);
+ translate([10-3-14,8-5-5+7.5,38])cube([15+8+24,4,6+4]);
+}
+ translate([5.3-2.8-11+4+20-10-2,5+10+2.5-10,28])cylinder(r=8.7/2,h=122);
+ translate([5.3-2.8-11+4+20-10+28,5+10+2.5-10,28])cylinder(r=8.7/2,h=122);
+ translate([5.3-2.8-11+4+20-10-2,5+10+2.5-10,0])cylinder(r=2.7/2,h=122);
+ translate([5.3-2.8-11+4+20-10+28,5+10+2.5-10,0])cylinder(r=2.7/2,h=122);
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+module microwell_plate_riser(z){
+
+
+color("white")translate([28+5.5,64-35.5+7-84,z-11]){
+ difference(){union(){
+ translate([5.3-2.8-11+4+20-10-2,5+10+2.5-10,0])cylinder(r=3.7/2,h=42);
+ translate([5.3-2.8-11+4+20-10-2,5+10+2.5-10,0+41.01])cylinder(r=8.7/2,h=3);
+ translate([5.3-2.8-11+4+20-10+28,5+10+2.5-10,0])cylinder(r=3.7/2,h=42);
+ translate([5.3-2.8-11+4+20-10+28,5+10+2.5-10,0+41.01])cylinder(r=8.7/2,h=3);
+ }
+ translate([5.3-2.8-11+4+20-10-2,5+10+2.5-10,0+41.2])cylinder(r=5/2,h=3,$fn=6);
+ translate([5.3-2.8-11+4+20-10+28,5+10+2.5-10,0+41.2])cylinder(r=5/2,h=3,$fn=6);
+ }
+}
+
+
+color("gainsboro")translate([28+5.5,64-35.5+7-84,z-11])
+difference(){ 
+ union(){
+ //translate([10-3-14,8-5-8,38])cube([15+8+24,30,6]);
+ //translate([10-3-14,8-5-5+7.5,38])cube([15+8+24,4,6+4]);
+
+ translate([10-3,8-5,0])cube([15+8,10,3]);
+ translate([10-10-3,8-5,0])cube([11,10,8]);
+ translate([10-10-3+32,8-5,0])cube([13,10,8]);
+ translate([5.3-2.8-11+2+10+30,5+10+2.5-10,0])cylinder(r=9/2,h=22);
+ translate([5.3-2.8-11+4+10-2,5+10+2.5-10,0])cylinder(r=9/2,h=22);
+
+ /*
+ translate([5.3-2.8+3,5+10+2.5+1,0])cylinder(r=9/2,h=22);
+ cube([10,55,3]);
+ translate([5.3,5,0])cylinder(r=8/2,h=6);
+ translate([5.3,5+48,0])cylinder(r=8/2,h=6);
+ translate([0,8-5,0])cube([25+5,10,3]);
+ translate([-20,2,0])cube([30,10,3]);
+ */
+ }
+
+ //translate([5.3-2.8-11+4+20-10-2,5+10+2.5-10,28])cylinder(r=8.7/2,h=122);
+ //translate([5.3-2.8-11+4+20-10+28,5+10+2.5-10,28])cylinder(r=8.7/2,h=122);
+ translate([5.3-2.8-11+4+20-10-2,5+10+2.5-10,0])cylinder(r=2.7/2,h=122);
+ translate([5.3-2.8-11+4+20-10+28,5+10+2.5-10,0])cylinder(r=2.7/2,h=122);
+
+ for(i=[-4:2]){
+ translate([5.3-2.8-11+4+20-10+9.25+i,5+10+2.5-10+0.6,0])cylinder(r=2.7/2,h=22);
+ translate([5.3-2.8-11+4+20-10+9.25+10+i,5+10+2.5-10+0.6,0])cylinder(r=2.7/2,h=22);
+ }
+ translate([5.3+13+3+2-22+37,5+28-5,4])rotate([90,0,0])cylinder(r=2.7/2,h=30);
+ translate([5.3+13+3+2-22-1,5+28-5,4])rotate([90,0,0])cylinder(r=2.7/2,h=30);
+
+ /* 
+ translate([5.3-2.8+3,5+10+2.5+1,0])cylinder(r=2.7/2,h=22);
+ translate([5.3,5,-1])cylinder(r=4.7/2,h=10);
+ translate([5.3,5+48,-1])cylinder(r=4.7/2,h=10);
+ */
+}
+}
 
 module leftside_midtopleft_tip_mtp_aligner_yend(z){
 translate([28+5.5,64-35.5+7,z-11])
@@ -541,14 +779,14 @@ difference(){
 
 
 module zbed_multichannel_setup(){
-
  translate([383.5/2-83/2-2.3,103.5-27,0])tipbox_model(144);
+
  //translate([383.5/2-85/2-90-10,103.5-27-6,48])microwellplate_model(144);
  translate([383.5/2-85/2-90-10+70,103.5-27-6+92,48+133])rotate([0,0,90])color("lightblue")import("96_microwell_plate.STL.stl");
  //translate([383.5/2-85/2+88+14,103.5-27-6,48])microwellplate_model(144);
  translate([383.5/2-85/2+172,103.5-27-6+92,48+133])rotate([0,0,90])color("lightblue")import("96_microwell_plate.STL.stl");
  translate([383.5/2-85/2+172+100,103.5-27-6+92,48+133])rotate([0,0,90])color("lightblue")import("96_microwell_plate.STL.stl");
- translate([383.5/2-85/2+172+100,103.5-27-6+92-120,48+133])rotate([0,0,90])color("lightblue")import("96_microwell_plate.STL.stl");
+ translate([383.5/2-85/2+172+100,103.5-27-6+92-130,48+133])rotate([0,0,90])color("lightblue")import("96_microwell_plate.STL.stl");
 /*
 */
 //projection(cut = false){
@@ -562,9 +800,121 @@ rightside_plate_holder();
 leftside_plate_holder();
 plate_aligner_on_zbed();
 }
-/*
-*/
  }
+
+/*
+  translate([0,6,0])for(i=[0:3]){
+  b = 5;
+  if (i==1){
+  translate([25.5+22+20,75+i*(48)+11-b,100])cylinder(r=3/2,h=200);
+  translate([25.5+22+20+101,75+i*(48)+11-b,100])cylinder(r=3/2,h=200);
+  translate([25.5+22+20+101+100,75+i*(48)+11-b,100])cylinder(r=3/2,h=200);
+  translate([25.5+22+20+101+202,75+i*(48)+11-b,100])cylinder(r=3/2,h=200);
+  } else {
+  translate([25.5+22+20,75+i*(48)+11,100])cylinder(r=3/2,h=200);
+  translate([25.5+22+20+101,75+i*(48)+11,100])cylinder(r=3/2,h=200);
+  translate([25.5+22+20+101+100,75+i*(48)+11,100])cylinder(r=3/2,h=200);
+  translate([25.5+22+20+101+202,75+i*(48)+11,100])cylinder(r=3/2,h=200);
+  }
+  }
+
+
+  translate([0,10,0]){
+  translate([25.5+22+20+101+202-25,75+0*(48)+11,100])cylinder(r=3/2,h=200);
+  translate([25.5+22+20+25,75+0*(48)+11,100])cylinder(r=3/2,h=200);
+  translate([25.5+22+20+101+25,75+0*(48)+11,100])cylinder(r=3/2,h=200);
+  translate([25.5+22+20+101+100-25,75+0*(48)+11,100])cylinder(r=3/2,h=200);
+  }
+  for(i=[0:8]){  
+  translate([25.5+22+i*50,75+3*(53.8),100-50])cylinder(r=3/2,h=200);
+  translate([25.5+22+i*50,75+1*(60),100-50])cylinder(r=3/2,h=200);
+  }
+  for(i=[0:5]){
+  translate([25.5+22,75+i*(45),100-50])cylinder(r=3/2,h=200);
+  translate([25.5+22+(23*15),75+i*48,100])cylinder(r=3/2,h=200);
+  }
+  for(i=[0:6]){
+  translate([25.5+22+i*(50),75+8,100])cylinder(r=3/2,h=200);
+  //translate([25.5+22+i*(23*2),75+(7*24),100])cylinder(r=3/2,h=200);
+  }
+*/
+
+ }
+}
+
+
+
+
+
+module zbed_multichannel_setup_wider(){
+ //translate([147.95,103.5-27,0])tipbox_model(144);
+ //translate([49.25,103.5-27-6,48])microwellplate_model(144);
+   translate([49.25+10+((85+9)*0)-7+62,103.5-27-6+92-127-9,190])
+   rotate([0,0,90])color("lightblue")import("96_microwell_plate.STL.stl");
+ for(i=[1,2,3]){
+  //translate([49.25+10+((85+9)*i)-7,103.5-27-6,48])microwellplate_model(144);
+   translate([49.25+10+((85+9)*i)-7+62,103.5-27-6+92,190])
+   rotate([0,0,90])color("lightblue")import("96_microwell_plate.STL.stl");
+   translate([49.25+10+((85+9)*i)-7+62,103.5-27-6+92-127-9,190])
+   rotate([0,0,90])color("lightblue")import("96_microwell_plate.STL.stl");
+  //translate([49.25+10+((85+9)*i)-7,103.5-27-6-127-9,48])microwellplate_model(144);
+ }
+
+   translate([49.25+10+((85+9)*4)-13,103.5-27-4,0])
+   tipbox_model(144);
+   //rotate([0,0,90])color("lightblue")import("96_microwell_plate.STL.stl");
+   translate([49.25+10+((85+9)*4)-7+62,103.5-27-6+92-127-9,190])
+   rotate([0,0,90])color("lightblue")import("96_microwell_plate.STL.stl");
+ /*
+
+
+ //translate([383.5/2-85/2-90-10+70,103.5-27-6+92,48+133])rotate([0,0,90])color("lightblue")import("96_microwell_plate.STL.stl");
+ //translate([383.5/2-85/2+88+14,103.5-27-6,48])microwellplate_model(144);
+ translate([383.5/2-85/2+172,103.5-27-6+92,48+133])rotate([0,0,90])color("lightblue")import("96_microwell_plate.STL.stl");
+ translate([383.5/2-85/2+172,103.5-27-6+92,48+133])rotate([0,0,90])color("lightblue")import("96_microwell_plate.STL.stl");
+ translate([383.5/2-85/2+172+100,103.5-27-6+92,48+133])rotate([0,0,90])color("lightblue")import("96_microwell_plate.STL.stl");
+ translate([383.5/2-85/2-90-10+70,103.5-27-6+92-132,48+133])rotate([0,0,90])color("lightblue")import("96_microwell_plate.STL.stl");
+ translate([383.5/2-85/2+65,103.5-27-6+92-132,48+133])rotate([0,0,90])color("lightblue")import("96_microwell_plate.STL.stl");
+ translate([383.5/2-85/2+172,103.5-27-6+92-132,48+133])rotate([0,0,90])color("lightblue")import("96_microwell_plate.STL.stl");
+ translate([383.5/2-85/2+172+100,103.5-27-6+92-132,48+133])rotate([0,0,90])color("lightblue")import("96_microwell_plate.STL.stl");
+ translate([383.5/2-85/2+172,103.5-27-6+92-132,48+133])rotate([0,0,90])color("lightblue")import("96_microwell_plate.STL.stl");
+ translate([383.5/2-85/2+65,103.5-27-6+92-132,48+133])rotate([0,0,90])color("lightblue")import("96_microwell_plate.STL.stl");
+ translate([383.5/2-85/2-90-10+70,103.5-27-6+92-132-10,48+133])rotate([0,0,90])color("lightblue")import("96_microwell_plate.STL.stl");
+ */
+
+
+//projection(cut = false){
+ difference(){union(){
+ //color("lightblue")translate([0,0,-10-10])multichannel_laser_zbed(144);
+ color("")translate([-10,103.5-27-25,50-42])plateholder_wider(144);
+ //translate([383.5/2-290/2,103.5-27-25,1])ruler_plateholder(144);
+
+//translate([0,0,7])rightside_plate_holder();
+//translate([0,0,7])leftside_plate_holder_wider();
+ translate([129.75+(94*4)-1.5-103,276.5-4,11])color("")mirror([0,0,0])rotate([0,0,0]){microwell_plate_riser(144); microwell_plate_riser_rising_surface(144);}
+ translate([129.75+(94*5)-1.5-103,276.5-4,11])color("")mirror([0,0,0])rotate([0,0,0]){microwell_plate_riser(144); }
+ translate([129.75+(94*4)-1.5-103,276.5-142.4,11])color("")mirror([0,0,0])rotate([0,0,0]){microwell_plate_riser(144);}
+ translate([129.75+(94*5)-1.5-103,276.5-142.4,11])color("")mirror([0,0,0])rotate([0,0,0]){microwell_plate_riser(144);}
+ translate([129.75+(94*4)-1.5-103,276.5-142.4-180,11])color("")mirror([0,0,0])rotate([0,0,90]){microwell_plate_riser(144);microwell_plate_riser_rising_surface(144);}
+ translate([129.75+(94*5)-1.5-103,276.5-142.4-180,11])color("")mirror([0,0,0])rotate([0,0,90]){microwell_plate_riser(144);microwell_plate_riser_rising_surface(144);}
+
+ color("lime")translate([129.75+(94*0)-1.5-103+75,276.5-4-60-10+10,11+187])rotate([0,180,90])import("wash_assy_for_show.stl");
+ translate([129.75+(94*0)-1.5-103,276.5-4,11])color("")mirror([0,0,0])rotate([0,0,0]){microwell_plate_riser(144); microwell_plate_rising_surface_washmount(144);} //microwell_plate_riser_rising_surface(144);}
+ translate([129.75+(94*0)-1.5-103,276.5-142.4,11])color("")mirror([0,0,0])rotate([0,0,0]){microwell_plate_riser(144);microwell_plate_riser_rising_surface(144);}
+ 
+ translate([129.75+(94*0)-1.5-103,276.5-142.4-180,11])color("")mirror([0,0,0])rotate([0,0,90]){microwell_plate_riser(144);microwell_plate_riser_rising_surface(144);}
+
+for(i=[1:3]){
+ translate([129.75+(94*i)-1.5-103,276.5-4,11])color("")mirror([0,0,0])rotate([0,0,0]){microwell_plate_riser(144); microwell_plate_riser_rising_surface(144);}
+ translate([129.75+(94*i)-1.5-103,276.5-142.4,11])color("")mirror([0,0,0])rotate([0,0,0]){microwell_plate_riser(144);microwell_plate_riser_rising_surface(144);}
+ translate([129.75+(94*i)-1.5-103,276.5-142.4-180,11])color("")mirror([0,0,0])rotate([0,0,90]){microwell_plate_riser(144);microwell_plate_riser_rising_surface(144);}
+ translate([129.75+(94*i)-1.5-103,276.5-142.4-180+180,11])color("")mirror([0,0,0])rotate([0,0,90]){microwell_plate_riser(144);microwell_plate_riser_rising_surface(144);}
+ }
+translate([0,0,7])color("gainsboro")plate_aligner_on_zbed_wider();
+}
+
+
+/*
   translate([0,6,0])for(i=[0:3]){
   b = 5;
   if (i==1){
@@ -585,12 +935,10 @@ plate_aligner_on_zbed();
   translate([25.5+22+20+101+25,75+0*(48)+11,100])cylinder(r=3/2,h=200);
   translate([25.5+22+20+101+100-25,75+0*(48)+11,100])cylinder(r=3/2,h=200);
   }
-
   for(i=[0:8]){  
   translate([25.5+22+i*50,75+3*(53.8),100-50])cylinder(r=3/2,h=200);
   translate([25.5+22+i*50,75+1*(60),100-50])cylinder(r=3/2,h=200);
   }
-
   for(i=[0:5]){
   translate([25.5+22,75+i*(45),100-50])cylinder(r=3/2,h=200);
   translate([25.5+22+(23*15),75+i*48,100])cylinder(r=3/2,h=200);
@@ -599,8 +947,32 @@ plate_aligner_on_zbed();
   translate([25.5+22+i*(50),75+8,100])cylinder(r=3/2,h=200);
   //translate([25.5+22+i*(23*2),75+(7*24),100])cylinder(r=3/2,h=200);
   }
+*/
  }
+ 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // }
 
@@ -611,6 +983,30 @@ translate([28,64-35.5,z-11])color("blue")cube([290,14,5]);
 module plateholder(z){
 translate([25.5+2+40,64-35.5+8,z-11])color("yellow")cube([325,155,5]);
 }
+
+module plateholder_wider(z){
+
+translate([25.5+2+40,64-35.5+8-100,z-11])difference(){
+color("yellow")cube([325+136+42+5,155+100,5]);
+for(i=[0:5]){
+translate([14+i*94,255-7-4,0])cylinder(r=2.4/2,h=20);
+translate([24+i*94,255-7-4,0])cylinder(r=2.4/2,h=20);
+translate([14+i*94,255-7-142.5,0])cylinder(r=2.4/2,h=20);
+translate([24+i*94,255-7-142.5,0])cylinder(r=2.4/2,h=20);
+
+translate([17+i*94-9,255-7-242.5+7,0])cylinder(r=2.4/2,h=20);
+translate([17+i*94-9,255-7-242.5+17,0])cylinder(r=2.4/2,h=20);
+
+translate([17+i*94-9,255-7-242.5+7+180,0])cylinder(r=2.4/2,h=200);
+translate([17+i*94-9,255-7-242.5+17+180,0])cylinder(r=2.4/2,h=20);
+
+
+}
+}
+}
+
+
+
 
 
 //zbed_washer_hold_plate_into_place();

@@ -36,23 +36,36 @@ translate([0,0,1])cylinder(r1=0.5/2,r2=5.5/2,h=49.5);
 module multichannel_assy_wider(){
 //color("gainsboro")translate([-27.5,-38,-24])rotate([0,0,180])inductivesensorcap_aligner();
 //color("gainsboro")smaller_igus_slidermount_vertical_adjust_nema17();
-translate([-38,-40+20+14-32+30,-2+15+3-5])rotate([0,0,0])color("silver")import("TS_04_09_150_2.stl");
 
-translate([-70+33,-80-32-10,19-23])rotate([-90,0,0]){
+translate([-38-1.5+1,-40+20+14-32+30-20,-2+15+3-5])rotate([0,0,0])color("silver")import("TS_04_09_150_2.stl");
+
+translate([-70+33-1.5,-80-32-10,19-23])rotate([-90,0,0]){
 translate([-40,21.1,23.5])color("gainsboro")rotate([0,0,-90])motormount_centered();
 translate([0,0,5])nema17();
-translate([0,0,5])color("silver")cylinder(r=9/2,h=120+50);
+translate([0,0,5])color("silver")cylinder(r=9/2,h=120+40);
 }
-translate([0,-40,0]){
-color("gainsboro")translate([-50+6,-115.5,1])rotate([0,0,180])stepper_linear_m8nut_endstopflag(6);
-translate([-31.8+33,53.5,-3-23])color("gainsboro")stepper_linear_m8nut_coupler_vertical_adjust_nema17_wider();
-translate([-38,-30-5,3+18-5])color("silver")rotate([0,0,0])import("igus_sliders/TW_04_09_4.stl");
-translate([-27,29.5-30-5,8+18-5])rotate([0,0,180])color("gainsboro")filament_linearactuator_shuttle();
+/*
+*/
+
+translate([0-1.5,-22+55-45,0]){
+
+translate([-38+1,-30-10,3+18-5])color("silver")rotate([0,0,0])import("igus_sliders/TW_04_09_4.stl");
+translate([-31.8+33,53.5+5,-3-23-0.5])color("gainsboro")stepper_linear_m8nut_coupler_vertical_adjust_nema17_wider();
+//color("gainsboro")translate([-50+6,-115.5+7-4,1])rotate([0,0,180])stepper_linear_m8nut_endstopflag(6);
+translate([0-5.5,-35-4,13-11]){
+//translate([0,0,-13.5])multichannel_pipette_holder_linear_actuator_connect();
+}
+/*
+*/
+/*
 translate([0,-35,13]){
 translate([-65,29,60])rotate([-90,0,0])multichannel_pipette_holder();
 translate([-8,30-6.5,28.2])rotate([0,180,90])color("gainsboro")tslot_clamp_filament_linearactuator_shuttle();
 translate([-85,0,57])rotate([0,90,0])tslot20(100);
 }
+*/
+
+
 /*
 translate([-8,30-6.5,28.2])rotate([0,180,90])color("gainsboro")tslot_clamp_filament_linearactuator_shuttle();
 translate([-32,49.5,-11])rotate([0,0,0])color("gainsboro")stepper_linear_m8nut_coupler_vertical_adjust_nema17_spacer(6);
@@ -65,6 +78,23 @@ translate([-65,29,60])rotate([-90,0,0])multichannel_pipette_holder();
 */
 }
 
+
+
+module multichannel_pipette_holder_linear_actuator_connect(){
+ difference(){union(){
+ translate([-65,29,60])rotate([-90,0,0])multichannel_pipette_holder_noextrusion();
+ translate([-8,30-6.5,28.2])rotate([0,180,90])color("gainsboro")tslot_clamp_filament_linearactuator_shuttle_noextrusion();
+ }
+
+
+
+
+
+
+
+}
+
+}
 
 
 
@@ -244,7 +274,9 @@ module slider_front_assy_multichannel(){
 translate([179.5,180-12.5+1.5,300-1])rotate([-90,0,180])multichannel_assy_wider();
 translate([0,3,0]){
 translate([0,0,-3]){
+
 translate([208,188+1.5,342])rotate([90,0,0])filament_linearactuator_multichannel_wider();
+
 //translate([208,188+1.5,342])rotate([90,0,0])filament_linearactuator_multichannel();
 //inductive sensor
 //color("silver")translate([208-16,188-16,342-35])cylinder(r=12/2,h=55);
@@ -488,23 +520,10 @@ translate([0,0,11+16.5+4+15-10])cylinder(r1=7/2,r2=6/2,h=8);
 
 
 module multichannel_pipette_holder(){
-
 color("gainsboro"){
 translate([-9,-6.6,-4])cube([6,13.2,12]);
 translate([-9+76.5-0.3+1,-6.6,-4])cube([5,13.2,12]);
 }
-/*
-difference(){
-translate([21.5,10-47,-4])cube([20,17,4]);
-translate([21.5+10,10-47+6,-10])
-rotate([0,0,0])cylinder(r=6.3/2,h=15+13);
-}
-difference(){
-translate([21.5,10-47+57,-4])cube([20,17,4]);
-translate([21.5+10,10-47+6+62,-10])
-rotate([0,0,0])cylinder(r=6.3/2,h=15+13);
-}
-*/
 translate([1,0,0])difference(){
 union(){
 for(i=[0:7]){
@@ -539,8 +558,98 @@ translate([-4-11+(7*10),sh/2-3+5,-10])cylinder(r=5.5/2,h=80);
 translate([-4+11,-sh/2+3-5,-10])cylinder(r=5.5/2,h=80);
 translate([-4-11+70,-sh/2+3-5,-10])cylinder(r=5.5/2,h=80);
 }
+}
+
+
+
+
+
+
+
+
+
+
+module multichannel_pipette_holder_noextrusion(){
+color("gainsboro"){
+translate([-9,-6.6,-4])cube([6,13.2,12]);
+translate([-9+76.5-0.3+1,-6.6,-4])cube([5,13.2,12]);
+}
+translate([1,0,0])difference(){
+union(){
+for(i=[0:7]){
+if (i==0){
+ translate([i*(9),0,0])
+  ///pipette_serological_1ml(5);
+  //pipette_serological_1ml(7.5);
+  pipette_p1000_noextrusion(8.1);
+  //pipette_p200(5); 
+}
+else if (i==7){
+ translate([i*9,0,0])
+ //pipette_p200(5); 
+ //pipette_serological_1ml(5.2);
+ //pipette_serological_1ml(7.7);
+ pipette_p1000_noextrusion(8.1);
+}
+else {
+translate([i*9,0,0])
+ //pipette_serological_1ml(5.3);
+ //pipette_serological_1ml(7.8);
+ pipette_p1000_noextrusion(8.1);
+ //pipette_p200(5); 
+}
+}
+}
+sh = 32;
+//translate([-4+11,sh/2-3+5,-10])cylinder(r=5.5/2,h=80);
+//translate([-4-11+(7*10),sh/2-3+5,-10])cylinder(r=5.5/2,h=80);
+
+
+/*
+translate([-4+11,-sh/2+3-5,-10])cylinder(r=5.5/2,h=80);
+translate([-4-11+70,-sh/2+3-5,-10])cylinder(r=5.5/2,h=80);
+*/
 
 }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 module remove_pipette_multichannel(ext){
@@ -671,22 +780,16 @@ translate([0,0+50-50,-50.2+46+8])rotate([90,0,0])cylinder(r=1.7/2,h=30);
 //translate([0,0,-50.2+46])cylinder(r=dia/2,h=100);
 //translate([0,0,-50.2+46])cylinder(r=(dia+0.2)/2,h=2);
 }
-
-
 translate([0,0,-65+41]){
 //this is for show
-
-
-//translate([0,0,200])rotate([0,180,0])color("lightgreen")pipette_p300_lts_model();
-
-
+translate([0,0,200-100])rotate([0,180,0])color("lightgreen")pipette_p300_lts_model();
 translate([0,0,9])p1000_model_eppendorf();
 color("lightblue")translate([0,0,-6.7])cylinder(r=5.5/2,h=102-13-40);
 //color("lightblue")translate([0,0,62-400])cylinder(r=2.5/2,h=333);
-/*
 color("lightblue")translate([0,0,62])cylinder(r=2.5/2,h=13);
 color("lightblue")translate([0,0,52.3-10])cylinder(r2=2.5/2,r1=4.5/2,h=20);
 color("lightblue")translate([0,0,-36.7])cylinder(r=7.5/2,h=20);
+/*
 */
 //here is the luer lock
 color("white")translate([0,0,-6.7-5])cylinder(r=8/2,h=3);
@@ -697,6 +800,52 @@ color("white")translate([0,0,-6.7-3])cylinder(r=12/2,h=3);
 /*
 */
 }
+
+
+module pipette_p1000_noextrusion(dia){
+color("gainsboro")difference(){
+union(){
+//translate([0,0,4])cylinder(r2=4.5/2,r1=5.5/2,h=8);
+translate([0,2,-4])rotate([0,0,45])cylinder(r=13/2,h=12,$fn=4);
+translate([0,-2,-4])rotate([0,0,45])cylinder(r=13/2,h=12,$fn=4);
+translate([0,0,-4])rotate([0,0,45])cylinder(r=13/2,h=12,$fn=4);
+translate([-5,-40/2+13.4+12,-4+8])cube([10,40-13+4-12,4]);
+//the other side for solenoid
+//translate([-5,-40/2-4,-4])cube([10,40-13+4,4]);
+}
+translate([0,0,-50.2+46])cylinder(r=dia/2,h=100);
+translate([0,0+50-50,-50.2+46+8])rotate([90,0,0])cylinder(r=1.7/2,h=30);
+//translate([0,0,-50.2+46])cylinder(r=dia/2,h=100);
+//translate([0,0,-50.2+46])cylinder(r=(dia+0.2)/2,h=2);
+}
+translate([0,0,-65+41]){
+//this is for show
+translate([0,0,200-100])rotate([0,180,0])color("lightgreen")pipette_p300_lts_model();
+translate([0,0,9])p1000_model_eppendorf();
+color("lightblue")translate([0,0,-6.7])cylinder(r=5.5/2,h=102-13-40);
+/*
+*/
+/*
+//color("lightblue")translate([0,0,62-400])cylinder(r=2.5/2,h=333);
+color("lightblue")translate([0,0,62])cylinder(r=2.5/2,h=13);
+color("lightblue")translate([0,0,52.3-10])cylinder(r2=2.5/2,r1=4.5/2,h=20);
+color("lightblue")translate([0,0,-36.7])cylinder(r=7.5/2,h=20);
+*/
+//here is the luer lock
+color("white")translate([0,0,-6.7-5])cylinder(r=8/2,h=3);
+color("white")translate([0,0,-6.7-3])cylinder(r=12/2,h=3);
+//cylinder(r=12/2,h=3);
+//end luer lock
+/*
+*/
+}
+}
+
+
+
+
+
+
 
 
 

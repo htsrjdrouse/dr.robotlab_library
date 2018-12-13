@@ -239,7 +239,6 @@ for (z = [5,7]) {
 
 
 
-/*
 module connectionarms2(a){
 translate([0,0,0])connector();
 translate([-40,0,0])cube([40,2,10]);
@@ -251,7 +250,7 @@ translate([-30,-2.5,0])cube([40-20,2.5+2.5,10]);
 }
 translate([-39,2,0])rotate([0,0,180])connector();
 }
-*/
+
 /*
 module connector(w=2) {
   translate([1.5, w, 5])

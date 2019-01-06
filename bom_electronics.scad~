@@ -15,13 +15,14 @@ translate([40-12.5,-40+61,6])syringe_pcb_holder_cover();
 translate([40-12.5+53,-40+61,2])syringe_pcb_holder_placeholder();
 */
 
+translate([305,0,0])rotate([0,180,0])azteeg_controller();
 
 //pcb_panels();
 //liquidlevel_pumps_pcb();
 //rotate([90,0,0])atx_power_connect_assy();
 //translate([424,0,-63])rotate([0,180,0])
 //outside_frame(tcl,thcl);
-//electronics_setup();
+electronics_setup();
 //hdmi_rj45_usb_panel();
 
 //translate([0,-50,0])liquidlevel_pumps_pcb();

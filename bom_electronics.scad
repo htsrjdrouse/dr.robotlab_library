@@ -21,7 +21,7 @@ translate([40-12.5+53,-40+61,2])syringe_pcb_holder_placeholder();
 //rotate([90,0,0])atx_power_connect_assy();
 //translate([424,0,-63])rotate([0,180,0])
 //outside_frame(tcl,thcl);
-//electronics_setup();
+electronics_setup();
 //hdmi_rj45_usb_panel();
 
 //translate([0,-50,0])liquidlevel_pumps_pcb();
@@ -42,7 +42,7 @@ syringe_pcb_holder();
 //bom_controlpanel();
 
 
-bananajackpanel();
+//bananajackpanel();
 //liquidlevel_pumps_pcb();
 
 //translate([-78,-116,-400+3])rotate([90,0,0])atx_power_connect_assy();

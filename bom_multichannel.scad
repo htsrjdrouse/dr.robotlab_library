@@ -1,6 +1,9 @@
 include <modparts.scad> use<writescad/write.scad>
 
 
+
+
+
 //multichannel_pipette_holder();
 //import("pi_back.stl");
 
@@ -56,15 +59,14 @@ translate([0-5.5,-35-4,13-11]){
 //this one is the camera mount one
 //This is envisioning the camera mount
 //translate([-11.5+3.8+(9*5),80-1.5+0.5,-50+10-1.3])rotate([0,90,0])color("pink")miuzei_camera_breadboard_screwstub();
-translate([-11.5+3.8+(9*5)-10+1+9,80-1.5+0.5-20-17-0.75,-50+10-1.3+100+7])rotate([90,0,90])color("pink")import("BOM_inventory/build2/stls/miuzei_camera_breadboard_screwstub.stl");
-translate([-11.5+3.8+(9*5)-10+1+9-(9*9),80-1.5+0.5-20-17-0.75,-50+10-1.3+100+7])rotate([90,0,90])color("pink")import("BOM_inventory/build2/stls/miuzei_camera_breadboard_screwstub.stl");
+
+
 translate([0,0,-13.5])multichannel_pipette_holder_linear_actuator_connect_cameramount();
-
-translate([-11.5+3.8+(9*5)-10+1+9+45,80-1.5+0.5-20-17-0.75,-50+10-1.3+100+7])rotate([90,0,90])color("pink")import("BOM_inventory/build2/stls/miuzei_camera_breadboard_screwstub.stl");
-
-
+translate([-20,5,60])rotate([0,0,180])miuzei_camera_module();
 
 /*
+translate([-11.5+3.8+(9*5)-10+1+9,80-1.5+0.5-20-17-0.75,-50+10-1.3+100+7])rotate([90,0,90])color("pink")import("BOM_inventory/build2/stls/miuzei_camera_breadboard_screwstub.stl");
+translate([-11.5+3.8+(9*5)-10+1+9-(9*9),80-1.5+0.5-20-17-0.75,-50+10-1.3+100+7])rotate([90,0,90])color("pink")import("BOM_inventory/build2/stls/miuzei_camera_breadboard_screwstub.stl");
 translate([0-26-18,90-13.5-20+1,-50-13+5+120])rotate([-0,90,-0])miuzei_camera_breadboard();
 translate([-7-15,-25+120-31.5+16.4-36,-37-17+10+110-1])rotate([0,-0,-90])import("BOM_inventory/build2/stls/mnt_md_justclip.stl");
 translate([0,-60,83]){
@@ -102,6 +104,67 @@ translate([-65,29,60])rotate([-90,0,0])multichannel_pipette_holder();
 }
 /*
 */
+}
+
+
+
+
+module miuzei_camera_module(){
+
+
+/*
+//translate([0-26-18,90-13.5,-50-13+5])rotate([-90,0,-90])
+rotate([0,90,0])miuzei_camera_breadboard_a();
+//import("BOM_inventory/build3/stls/miuzei_camera_breadboard_a.stl");
+rotate([0,180,0])import("BOM_inventory/build3/stls/miuzei_camera_breadboard_b.stl");
+//translate([0,0,11])rotate([0,90,0])miuzei_camera_breadboard_b();
+*/
+
+
+translate([-212,-330-53,110+45])rotate([-90,0,0]){
+translate([175-2+10,300-120,400])rotate([-90,0,90]){
+translate([0,0,3+6])rotate([0,180,0])displayPiZero();
+raspizerobase_extrusion();
+color("white")raspizero_ribbon_cable();
+}
+}
+/*
+
+*/
+/*
+
+translate([43,-57,-62]){
+translate([-11.5+3.8+(9*5)-10+1+9+3,80-1.5+0.5-20-17-0.75,-50+10-1.3+100+7])rotate([90,0,90])color("pink")import("BOM_inventory/build2/stls/miuzei_camera_breadboard_screwstub.stl");
+translate([-11.5+3.8+(9*5)-10+1+9-(9*9),80-1.5+0.5-20-17-0.75,-50+10-1.3+100+7])rotate([90,0,90])color("pink")import("BOM_inventory/build2/stls/miuzei_camera_breadboard_screwstub.stl");
+}
+*/
+
+/*
+//translate([0-26-18,90-13.5-20+1,-50-13+5+120])rotate([-0,90,-0])miuzei_camera_breadboard();
+
+rotate([0,90,0])miuzei_camera_breadboard_a();
+translate([0,0,-4])rotate([0,180,0])import("BOM_inventory/build3/stls/miuzei_camera_breadboard_b.stl");
+*/
+
+translate([-17,40,-55])rotate([0,0,180]){
+translate([-7-15,-25+120-31.5+16.4-36,-37-17+10+110-1])rotate([0,-0,-90])import("BOM_inventory/build2/stls/mnt_md_justclip.stl");
+translate([0,-60,83]){
+translate([-18+2,100-21+1,-26.3+10-1.5])rotate([0,0,90])connectionarms2(0);
+translate([-18+2+3,100-21+10+1-49,-26.3+10-1.5])rotate([0,0,-90])connectionarms2(0);
+translate([-35-10,90-50,64-37])rotate([90,0,0]){
+translate([30,1,8])#miuzei_cover();
+//translate([30,0,0])miuzei_raspicam_base();
+translate([30,0,0])import("BOM_inventory/build2/stls/miuzei_raspicam_base.stl");
+translate([30,4,-10])color("black")cylinder(r=12/2,h=18);
+translate([30,4,-3])color("black")cylinder(r=16/2,h=8);
+}
+}
+}
+/*
+*/
+
+
+
 }
 
 
@@ -702,7 +765,7 @@ translate([-4-11+70,-sh/2+3-5,-10])cylinder(r=5.5/2,h=80);
 }
 
 
-
+//pipette part 
 module multichannel_pipette_holder_camera_example(){
 color("gainsboro"){
 //translate([-9,-6.6+8,-4])cube([6,13.2,12]);
@@ -713,13 +776,24 @@ translate([-9+76.5-0.3+1+9,-6.6+8,-4])cube([5,13.2,12]);
 translate([1,0+8,0])difference(){
 union(){
 for(i=[-1:8]){
-if (i==0){
+if (i==-1){
  translate([i*(9),0,0])
-  pipette_p1000_noextrusion(8.1,1);
+  pipette_p1000_noextrusion(8.1,0);
  }
+else if (i==8){
+ translate([i*(9),0,0])
+  pipette_p1000_noextrusion(8.1,0);
+}
+else if (i==1){
+ translate([i*(9),0,0])
+  pipette_p1000_noextrusion(8.1,0);
+}
 else {
  translate([i*(9),0,0])pipette_p1000_noextrusion(8.1,0);
 }
+/*
+*/
+
 /*
 if (i==0){
  translate([i*(9),0,0])
@@ -1122,7 +1196,7 @@ color("white")translate([0,0,-36.7-3])cylinder(r=12/2,h=3);
 module multichannel_drypad(){
 translate([-148,85,-150])difference(){
 union(){
-translate([-75.5-5+22-5,-40,0])cube([29,90,3]);
+translate([-75.5-5+22-5-34+12,-40,0])cube([29+36-12,90,5]);
 translate([-75.5-5+45,-40-10,0])cube([10,90+20,5]);
 }
 /*
@@ -1135,15 +1209,21 @@ cylinder(r=3.7/2,h=30);
 translate([0,0,10])cylinder(r=6.7/2,h=3.2);
 }
 */
-for(a=[0:1]){
+/*
+translate([-30,0,0])for(a=[0:1]){
 translate([-44-(a*10),-40+5,-1])cube([5,71+10,13]);
 }
-
+*/
+translate([-30-30+6,-20,-20])
+translate([-44-(a*10),-40+5,-1])cylinder(r=6/2,h=50);
+translate([-30-30+6,20,-20])
+translate([-44-(a*10),-40+5,-1])cylinder(r=6/2,h=50);
 
 translate([-33,-66,-20])rotate([0,0,90]){
 
 
 //actually c-to-c spacing on prusa is 8.723 not 9mm
+translate([0,-31+65-12,0])
 for(j=[0:7]){
 for(k=[0:3]){
  //The is for the Rainin LTS tip without the filter
@@ -1151,8 +1231,6 @@ for(k=[0:3]){
  //The is for the Rainin LTS tip with this is too tight
  //translate([19+7+(j*9)+5+2,2.5-10+33-(k*1),2])translate([6.5,25/2-8,-0.1])cylinder(r=6.5/2,h=40);
  translate([19+7+(j*9)+5+2,2.5-10+33-(k*1),2])translate([6.8,25/2-8,-0.1])cylinder(r=7/2,h=40);
-
-
 }}
 
 /*

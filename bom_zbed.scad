@@ -915,6 +915,8 @@ module zbed_multichannel_setup_wider(){
  translate([160,0,0])rotate([0,0,0])bar_plate_set();
  translate([160+188,0-139,0])rotate([0,0,0])front_rightcorner_bar_plate_set();
  translate([160+188,0,0])rotate([0,0,0])rightcorner_bar_plate_set();
+
+
  /*
  */
 /*
@@ -1632,7 +1634,7 @@ module front_rightcorner_bar_plate_set(){
 difference(){
 union(){
   translate([1+122.25,-140-94,0])cube([8,98,5]);
-  translate([1,-137,0])cube([150,8,5]);
+  translate([1+30,-137,0])cube([150-30,8,5]);
 }
 translate([21.25+28,-133,-30])cylinder(r=4/2,h=140);
 translate([21-10+0.25+28,-133,-30])cylinder(r=4/2,h=140);

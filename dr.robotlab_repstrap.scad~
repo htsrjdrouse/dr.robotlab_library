@@ -2012,6 +2012,7 @@ module motormountthin(){
   cube([mmx,mmy,mmz]);
   translate([mmposx+mmx/2,mmposy+mmy/2,mmposz]){
   cylinder(r=motrad, h=9);
+  #cylinder(r=8.2/2, h=9);
   translate([0,0,-100])
   cylinder(r=4.3, h=400);
   }
@@ -14062,9 +14063,9 @@ translate([0,-20-9,0])difference(){
 difference(){union(){
 translate([-38.25+14-13.9+20,-70+30.-5+4,22.5+3.8-1.0])cube([44.5-20,11,thick]);
 translate([-38.25+14-13.9+20-20,-70+30.-5-5,22.5+3.8-1.0])cube([44.5-20+20-23,5+10+5,thick]);
-translate([-38.25+14-13.9+20-20-4,-70+30.-5-5,22.5+3.8-1.0])cube([44.5-20+20-23,5+10+5,thick+5]);
+translate([-38.25+14-13.9+20-20-4,-70+30.-5-5-4,22.5+3.8-1.0])cube([44.5-20+20-23,5+10+5+4,thick+5]);
 }
-translate([-90,-40,29])rotate([0,90,0])#cylinder(r=3.6/2,h=73);
+translate([-90,-40,29])rotate([0,90,0])cylinder(r=3.6/2,h=73);
 }
 for(i=[0:0]){
 translate([-38.25+14-13.9+13.7+11.9-i,-70+34,22.5+3.8-50])cylinder(r=3.7/2,h=120);

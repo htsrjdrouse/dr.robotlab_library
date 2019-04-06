@@ -1,7 +1,12 @@
 include <modparts.scad>
 use<writescad/write.scad>
 
+//color("gainsboro")translate([-3+160-4,0,0])rotate([0,0,0])diaphragmpump_end_6pin();
+//diaphragmpump_end_6pin();
+//diaphragmpump_end_6pin_pcb();
+
 //diaphragmpump_boxassy();
+//translate([0,-3,0])color("")diaphragmpump_longwall_pumpports();
 //diaphragmpump_case_base();
 
 //translate([-100,0,0])boxstandoff();

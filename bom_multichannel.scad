@@ -62,7 +62,7 @@ translate([0-5.5,-35-4,13-11]){
 
 
 translate([0,0,-13.5])multichannel_pipette_holder_linear_actuator_connect_cameramount();
-translate([-20,5,60])rotate([0,0,180])miuzei_camera_module();
+//translate([-20,5,60])rotate([0,0,180])miuzei_camera_module();
 
 /*
 translate([-11.5+3.8+(9*5)-10+1+9,80-1.5+0.5-20-17-0.75,-50+10-1.3+100+7])rotate([90,0,90])color("pink")import("BOM_inventory/build2/stls/miuzei_camera_breadboard_screwstub.stl");

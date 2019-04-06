@@ -1,0 +1,22 @@
+  else if (firstValue == "help"){
+   Serial.println("wash_dry_pcv_kill help 17 lines");
+   Serial.println("washon: washpin on");
+   Serial.println("setwashval: adjust the washing flow rate");
+   Serial.println("dryon: drypin on");
+   Serial.println("setdryval: adjust the drying flow rate");
+   Serial.println("setpcvval: adjust the pressure compensation flow rate");
+   Serial.println("setpumpdelay: adjust the delay time after the liquid level sensor turns on and the pump turns off");
+   Serial.println("pcvon: manually turn pcv pump on (this turns off closed loop feedback)");
+   Serial.println("pcvoff: manually turn pcv pump off (this turns off closed loop feedback)");
+   Serial.println("manpcv: turn on pcv manual mode");
+   Serial.println("feedbackpcv: turn off pcv manual mode and enable closed loop feedback");
+   Serial.println("revivemotors: killPin 0 and enablePin LOW");
+   Serial.println("killmotors: killPin 1 and enablePin HIGH");
+   Serial.println("valveservo: set the PWM valve to move the valve");
+   Serial.println("readtemp: read the pcv sensor pin");
+   Serial.println("turnon5v: applies 5 volts to servo valve");
+   Serial.println("turnoff5v: disconnects 5 volts to servo valve");
+   Serial.println("heaton: turns on the heater");
+   Serial.println("heatoff: turns off the heater");
+   Serial.println("setheatval [val]: sets the heater level");
+  }

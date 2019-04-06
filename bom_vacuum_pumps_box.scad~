@@ -1,7 +1,12 @@
 include <modparts.scad>
 use<writescad/write.scad>
 
+//color("gainsboro")translate([-3+160-4,0,0])rotate([0,0,0])diaphragmpump_end_6pin();
+//diaphragmpump_end_6pin();
+//diaphragmpump_end_6pin_pcb();
+
 //diaphragmpump_boxassy();
+//translate([0,-3,0])color("")diaphragmpump_longwall_pumpports();
 //diaphragmpump_case_base();
 
 //translate([-100,0,0])boxstandoff();
@@ -26,7 +31,7 @@ use<writescad/write.scad>
 /*
 projection(cut = false){
 //rotate([-90,0,0])translate([-100-56,-3+70-76,-150])mirror([0,1,0])diaphragmpump_longwall();
-//translate([-162,168,-57])rotate([90,0,0])translate([0,-3+70,0])mirror([0,0,0])diaphragmpump_longwall_pumpports();
+translate([-162,168,-57])rotate([90,0,0])translate([0,-3+70,0])mirror([0,0,0])diaphragmpump_longwall_pumpports();
 //translate([28,-92,0])rotate([0,90,0])diaphragmpump_end();
 translate([28,-92,0])rotate([0,90,0])
 diaphragmpump_end_justusb();
@@ -64,7 +69,7 @@ translate([0+(140)+10,0-71,0])mirror([1,0,0])boxcouplers();
 translate([0+(0),0,0])mirror([0,0,0])boxcouplers();
 translate([0+(0),0-71,0])mirror([0,0,0])boxcouplers();
 }
-//translate([0,-3,0])color("")diaphragmpump_longwall_pumpports();
+translate([0,-3,0])color("")diaphragmpump_longwall_pumpports();
 color("gainsboro")translate([-3,0,86])rotate([0,180,0])diaphragmpump_end();
 translate([0,-3+70+1,0])mirror([0,1,0])color("gainsboro")diaphragmpump_longwall();
 color("gainsboro")translate([-3+160-4,0,0])rotate([0,0,0])diaphragmpump_end_6pin();

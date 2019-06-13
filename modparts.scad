@@ -8,6 +8,9 @@ include <bom_zbed.scad>
 include <bom_syringe.scad>
 use<writescad/write.scad>
 
+
+
+
 //rightside_underneath_plate_x1();
 
 //leftside_underneath_plate_x1();
@@ -8804,6 +8807,24 @@ translate([-49.5+12,345,300-11+28])rotate([0,180,180])ivernetech_slider_module_w
 
 
 
+module iverntech_model_300(){
+translate([0,0,0])difference(){
+color("silver")cube([12,300,8]);
+translate([6,12.5,-12])
+for(i=[0:11]){
+translate([0,i*25,0])#cylinder(r=2.8/2,h=40);
+}
+}
+translate([-27/2+12/2,8,2-3+6])difference(){
+ color("silver")cube([27,45,9]);
+ translate([27/2-10,45/2-10,-5])#cylinder(r=3.7/2,h=60);
+ translate([27/2+10,45/2-10,-5])#cylinder(r=3.7/2,h=60);
+ translate([27/2-10,45/2+10,-5])#cylinder(r=3.7/2,h=60);
+ translate([27/2+10,45/2+10,-5])#cylinder(r=3.7/2,h=60);
+}
+}
+
+
 
 
 module xshuttle_assy(x,y){
@@ -8817,6 +8838,7 @@ color("gainsboro")translate([-1,0,28.5])difference(){
  cube([12,300,1]);
 }
 }
+
 translate([5+420,70,307]){
 color("silver")
 cube([12,300,8]);
@@ -9059,8 +9081,7 @@ y = y+0-120+285;
  //translate([-70,-25+50,z])zbed_multichannel_setup_wider_deeper(z);
 
 
-
- zbed_assy_wider(z);
+ //zbed_assy_wider(z);
  //conduit_tubes_3wayvalve();
  //outside_frame_wider(tcl,thcl,x,y);
  //microfluidics_set();
@@ -9070,7 +9091,7 @@ y = y+0-120+285;
  ///conduit_tubes_notubes();
  //pcb_panels_wider();
  //translate([0,0,-29.5])xymotor_assy_wider();
- //gantry_shelves_wider();
+ gantry_shelves_wider();
  /*
  //linearencoder_set(x,y);
  */
@@ -12038,6 +12059,32 @@ translate([30,15,-0.1])cylinder(r=6.5/2,h=20);
 }
 
 
+module light_connector(){
+union(){
+difference(){
+
+union(){
+//translate([-36,40-2,13])rotate([-90,0,0])import("stls/mirrorball.stl"); //mirrorball();
+translate([-36+5,42-4,13])cube([20,12,17]);
+translate([-36+5-0,42-4,-2])cube([20,12,17+2]);
+translate([-36+5-10,42-4,-8+5])cube([20+20,12,10]);
+}
+
+/*
+for(i=[-6,-5,-4,-3,-2,-1,0,1,2,3,4,5,6]){
+translate([-36+5+10,42-4+17,-2+i])rotate([90,90,0])cylinder(r=4.7/2,h=100);
+}
+*/
+for(i=[-2:2]){
+translate([-36+5+10+(i*8),42-4+17,2])rotate([90,90,0])#cylinder(r=2.8/2,h=60);
+}
+translate([-36+5+10,42-4+17,13+10])rotate([90,90,0])cylinder(r=4.7/2,h=10);
+translate([-36+5+10,42-4+8,13+10])rotate([90,90,0])cylinder(r=10/2,h=10);
+}
+}
+}
+
+
 module lasermount_connector(){
 union(){
 difference(){
@@ -12145,6 +12192,7 @@ translate([-16.5,16,20-1])cylinder(r=5.4/2,h=20);
 
 }
 
+
 module nextgen_syringe10ml_assy(){
 //board mount here
 //color("pink")syringe_pcb_holder_for_syringemodule();
@@ -12222,6 +12270,92 @@ color("gainsboro")translate([-22.85,1,2.5])stepper_linear_m8nut_coupler();
 }
 translate([-50,0,-13])valve_assy();
 }
+
+
+
+
+
+
+module iverntech_nextgen_syringe10ml_assy(){
+//board mount here
+//color("pink")syringe_pcb_holder_for_syringemodule();
+/*
+*/
+color("gainsboro")
+translate([0,98,0])syringe10mlmount_plungerfix_assy();
+
+/*
+color(""){
+//here is the luer lock
+color("white")translate([-70+8+27-6,178-3,30-5+10])rotate([90,0,0])cylinder(r=8/2,h=3);
+color("white")translate([-70+8+27-6,178,30-5+10])rotate([90,0,0])cylinder(r=12/2,h=3);
+//end luer lock
+//tubing from valve to syringe
+color("lightblue")translate([-70+8+27-6,178+4,30-5+10])
+{
+for(i=[0:44]){translate([0,i/8-5,0])sphere(r=3.175/2,$fn=30);}
+for(i=[0:232]){translate([-i/30,i/8+12/8,i/7.75])sphere(r=3.175/2,$fn=30);}
+for(i=[0:80]){translate([-7.75,i/8+12/8+232/8,232/8+1])sphere(r=3.175/2,$fn=30);}
+}
+}
+*/
+//end tubing
+color("white")translate([-70+8+27-6,178-3+7,30-5+10])translate([-18,50,30])rotate([90,0,90])cylinder(r=8/2,h=3);
+color("white")translate([-70+8+27-6-3,178+4,30-5+10])translate([-18,50,30])rotate([90,0,90])cylinder(r=12/2,h=3);
+color("white")translate([-70+8+27+4,178-3+7-8,30-5+10])translate([-18,50,30])rotate([90,0,0])cylinder(r=8/2,h=3);
+color("white")translate([-70+8+27+4,178+4-11,30-5+10])translate([-18,50,30])rotate([90,0,0])cylinder(r=12/2,h=3);
+color("white")translate([-70+8+27+4,178-3+7-8+20,30-5+10])translate([-18,50,30])rotate([90,0,0])cylinder(r=8/2,h=3);
+color("white")translate([-70+8+27+4,178+4-11+23,30-5+10])translate([-18,50,30])rotate([90,0,0])cylinder(r=12/2,h=3);
+
+color(""){
+//valve 1 direction tubing
+color("lightblue")translate([-70+8+27-6,178+4,30-5+10])
+{
+for(i=[0:200]){translate([-18-i/2,50,30-i/2])rotate([0,0,0])sphere(r=3.175/2,$fn=30);}
+}
+color("lightblue")translate([-70+8+27-6,178+4,30-5+10])
+for(i=[0:450]){
+translate([-18-200/2+i/2,50+i/8.5,30-200/2-i/10])rotate([0,0,0])sphere(r=3.175/2,$fn=30);
+}
+
+//end valve 1 direction tubing
+//valve 2 direction tubing
+color("lightblue")translate([-70+8+27-6,178+4,30-5+10])
+{
+for(i=[0:800]){translate([-7.75,i/8+12/8+232/8+30,232/8+1])sphere(r=3.175/2,$fn=30);}
+}
+color("lightblue")translate([-7.75-41,12/8+232/8+30+281,232/8+37-0.6])rotate([-0,90,0])cylinder(r=3.175/2,h=270); 
+color("lightblue")translate([-7.75-41+270,12/8+232/8+30+281,232/8+37-0.6])rotate([60,90-24,0])cylinder(r=3.175/2,h=69); 
+
+//end valve 2 direction tubing
+}
+
+translate([-41,-20+100,35])color("gainsboro")rotate([0,90,90])syringe_10ml();
+color("gainsboro")translate([-56.5,200,104.45])rotate([90,90,0])syringe10ml_clipmount();
+
+color("gainsboro")translate([-70+8,-80+40-50,30-5])rotate([-90,0,0])cylinder(r=8.7/2,h=250);
+color("gainsboro")translate([-70+8,-80,30-5])rotate([-90,0,0])cylinder(r=16/2,h=18);
+translate([-70+8,-80,30-5])rotate([-90,0,0])nema17();
+color("gainsboro")translate([-34+5-9-3,20-3.5,3])igus_TW_04_12_slider();
+igus_slidermount_encoder_TW_04_12_motormount_assy_m8();
+translate([-25-6.5,320,-4.6])rotate([90,0,0])tslot20(400);
+
+translate([0,12,0]){
+//sbg = 0.9;color([sbg,sbg,sbg])
+color("gainsboro")
+translate([0,-4,0])igus_TW_04_12_slider_plate();
+color("gainsboro")translate([-25.75,123,-30])rotate([90,-90,0])syringeshuttle_clipbracket();
+color("gainsboro")translate([-22.85,1,2.5])stepper_linear_m8nut_coupler();
+/*
+//cbg = 0.55;color([cbg,cbg,cbg])
+//nbg = 0.4;color([nbg,nbg,nbg])
+*/
+}
+translate([-50,0,-13])valve_assy();
+}
+
+
+
 
 
 

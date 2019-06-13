@@ -6,6 +6,21 @@ use<writescad/write.scad>
 
 
 
+
+module one_1ml_syringe_parts(){
+ //translate([0,70,-0.1])one_channel_syringe1ml_clamp();
+ //one_syringe1ml_clamp_top_luerlock();
+ //onechannel_plunger_clamp();
+ //translate([0,70+60,-0.1])multichannel_syringe1ml_clamp_extrusion_connect();
+ /*
+ translate([0,70,-0.1])one_front_syringe1ml_clamp_luerlock();
+ */
+ syringe_1ml_plungerclip();
+}
+
+
+
+
 //multichannel_syringe_module();
 
 module multichannel_syringe_module(){
@@ -49,8 +64,10 @@ translate([-25.75,123,-30])rotate([90,-90,0])multichannel_syringeshuttle_clipbra
 //color("yellow")translate([110,52,26])igus_slidermount_encoder_TW_04_12_motormount_assy_m8();
 //smaller_igus_slidermount_vertical_adjust_nema17();
 
-module eight_multichannel_assay(){
 
+
+
+module one_multichannel_assay(){
 //translate([64.5,0,0])syringe_1ml_plungerclip();
 translate([0,20,0]){
 translate([0,70,-0.1])syringe_1ml_stack();
@@ -64,6 +81,31 @@ translate([0,70,-0.1])multichannel_syringe1ml_clamp_luerlock();
 translate([0,70+60,-0.1])multichannel_syringe1ml_clamp_extrusion_connect();
 }
 }
+
+
+
+
+
+
+
+
+
+module eight_multichannel_assay(){
+//translate([64.5,0,0])syringe_1ml_plungerclip();
+translate([0,20,0]){
+translate([0,70,-0.1])syringe_1ml_stack();
+translate([0,70,-0.1])multichannel_syringe1ml_clamp();
+//color("pink")
+translate([0,70,-0.1])multichannel_syringe1ml_clamp_extrusion_connect();
+//translate([0,70,-0.1+0])multichannel_syringe1ml_clamp_top();
+translate([0,70,-0.1])multichannel_syringe1ml_clamp_luerlock();
+//translate([0,70,-0.1+0])multichannel_syringe1ml_clamp_top_luerlock();
+//color("pink")
+translate([0,70+60,-0.1])multichannel_syringe1ml_clamp_extrusion_connect();
+}
+}
+
+
 
 //multichannel_syringe1ml_clamp();
 //multichannel_plunger_clamp();
@@ -85,6 +127,34 @@ multichannel_syringe1ml_clamp_extrusion_connect();
 
 
 
+module onechannel_plunger_clamp(){
+difference(){
+translate([-183-13/2-5,170-13/2,30]){
+union(){
+//translate([0,2+7.25-2,2])rotate([0,0,0])cube([120,13/2+7,4]);
+//translate([40,2,0])rotate([0,0,0])cube([42,13.9,15]);
+translate([44,2+7.25-2,2])rotate([0,0,0])cube([20,13/2+7,4]);
+translate([0+41.2,2+7.25-7-3,2])rotate([0,0,0])cube([25,10,4]);
+}
+}
+translate([-183-13/2-5,170-13/2,30]){
+translate([64.7-5-36.15,14.4-3-0.87-50+8-0.08,-55.75])translate([17.25,5.8,-10])translate([-9+15-2,30,23])rotate([0,0,0])cylinder(r=3.7/2, h=200);
+translate([64.7-5-36.15+17.5,14.4-3-0.87-50+8-0.08,-55.75])translate([17.25,5.8,-10])translate([-9+15-2,30,23])rotate([0,0,0])cylinder(r=3.7/2, h=200);
+for(i=[3]){
+translate([64.7-5-36.15+17.5-50.75+(i*14),14.4-3-0.87-50+8-0.08+9.75,-55.75])translate([17.25,5.8,-10])translate([-9+15-2,30,23])rotate([0,0,0])cylinder(r=2.7/2, h=200);
+}
+}
+}
+}
+
+
+
+
+
+
+
+
+
 module multichannel_plunger_clamp(){
 difference(){
 translate([-183-13/2-5,170-13/2,30]){
@@ -93,7 +163,6 @@ translate([0,2+7.25-2,2])rotate([0,0,0])cube([120,13/2+7,4]);
 translate([0+41.2,2+7.25-7-3,2])rotate([0,0,0])cube([25,10,4]);
 }
 }
-
 translate([-183-13/2-5,170-13/2,30]){
 translate([64.7-5-36.15,14.4-3-0.87-50+8-0.08,-55.75])translate([17.25,5.8,-10])translate([-9+15-2,30,23])rotate([0,0,0])cylinder(r=3.7/2, h=200);
 translate([64.7-5-36.15+17.5,14.4-3-0.87-50+8-0.08,-55.75])translate([17.25,5.8,-10])translate([-9+15-2,30,23])rotate([0,0,0])cylinder(r=3.7/2, h=200);
@@ -194,6 +263,34 @@ translate([-120+7.5-4,220-60+23-28.5-1,0])cylinder(r=4.7/2,h=100);
 }
 }
 
+
+
+
+module one_syringe1ml_clamp_top_luerlock(){
+difference(){
+union(){
+translate([-183-13/2-5,170-13/2,30]){
+//translate([0,2+7.25+60-1,10/2+10])rotate([0,0,0])cube([120,13/2+1,15/2+2]);
+translate([40,2+7.25+60-1,10/2+10])rotate([0,0,0])cube([42,13/2+1,15/2+2]);
+}
+}
+for(i=[3]){
+translate([-183+(i*14),170+60,44])rotate([0,90,90])syringe_1ml();
+translate([-183+(i*14),170-50+60,44])rotate([0,90,90])cylinder(r=6/2,h=100);
+if(i>0){
+translate([-77.5-(i*14)-0.5,175+60.6,0])#cylinder(r=3.7/2,h=150);
+translate([-77.5-((i+2)*14)-0.5,175+60.6,0])#cylinder(r=3.7/2,h=150);
+}else{
+translate([-77.5-(i*14),175.6+60,0])cylinder(r=3.7/2,h=150);
+}
+}
+translate([-77.5-(8*14)-1.7,175.6+60,0])cylinder(r=3.7/2,h=150);
+}
+}
+
+
+
+
 module multichannel_syringe1ml_clamp_top_luerlock(){
 difference(){
 union(){
@@ -213,6 +310,9 @@ translate([-77.5-(i*14),175.6+60,0])cylinder(r=3.7/2,h=150);
 translate([-77.5-(8*14)-1.7,175.6+60,0])cylinder(r=3.7/2,h=150);
 }
 }
+
+
+
 
 module multichannel_syringe1ml_clamp_top(){
 difference(){
@@ -263,6 +363,115 @@ translate([-77.5-(i*14),175.6+60,0])cylinder(r=2.8/2,h=150);
 }
 }
 
+module one_front_syringe1ml_clamp_luerlock(){
+difference(){
+union(){
+translate([-183-13/2-5,170-13/2+60,30]){
+//translate([0,2+6.9,0])rotate([0,0,0])cube([120,13.9-7,15]);
+translate([40,2+6.9,0])rotate([0,0,0])cube([42,13.9-7,15]);
+translate([69,2-15-1,0])rotate([0,0,0])cube([18+8,23+20+1,5]);
+}
+}
+translate([-120,220-60+60,0])cylinder(r=3.7/2,h=100);
+translate([-120+15,220-60+60,0])cylinder(r=3.7/2,h=100);
+translate([-120+7.5,220-60+23+60,0])cylinder(r=3.7/2,h=100);
+for(i=[3]){
+translate([-183+(i*14),170,44])rotate([0,90,90])syringe_1ml();
+translate([-183+(i*14),170-50,44])rotate([0,90,90])cylinder(r=6/2,h=100);
+
+/*
+if(i>0){
+translate([-77.5-(i*14)-0.5,175.6+60,0])#cylinder(r=2.8/2,h=150);
+}else{
+translate([-77.5-(i*14),175.6+60,0])cylinder(r=2.8/2,h=150);
+}
+*/
+}
+//translate([-77.5-(8*14)-1.7,175.6+60,0])cylinder(r=2.8/2,h=150);
+}
+}
+
+
+
+
+
+
+
+
+
+
+module one_syringe1ml_clamp_luerlock(){
+difference(){
+union(){
+translate([-183-13/2-5,170-13/2+60,30]){
+translate([0,2+6.9,0])rotate([0,0,0])cube([120,13.9-7,15]);
+translate([69,2-15-1,0])rotate([0,0,0])cube([18+8,23+20+1,5]);
+}
+}
+translate([-120,220-60+60,0])cylinder(r=3.7/2,h=100);
+translate([-120+15,220-60+60,0])cylinder(r=3.7/2,h=100);
+translate([-120+7.5,220-60+23+60,0])cylinder(r=3.7/2,h=100);
+for(i=[0:7]){
+translate([-183+(i*14),170,44])rotate([0,90,90])syringe_1ml();
+translate([-183+(i*14),170-50,44])rotate([0,90,90])cylinder(r=6/2,h=100);
+
+/*
+if(i>0){
+translate([-77.5-(i*14)-0.5,175.6+60,0])#cylinder(r=2.8/2,h=150);
+}else{
+translate([-77.5-(i*14),175.6+60,0])cylinder(r=2.8/2,h=150);
+}
+*/
+}
+//translate([-77.5-(8*14)-1.7,175.6+60,0])cylinder(r=2.8/2,h=150);
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+module one_channel_syringe1ml_clamp(){
+difference(){
+union(){
+translate([-183-13/2-5,170-13/2,30]){
+//#translate([0,2,0])rotate([0,0,0])cube([120,13.9,15]);
+translate([40,2,0])rotate([0,0,0])cube([42,13.9,15]);
+translate([69,2-15,0])rotate([0,0,0])cube([18+8,23+20,5]);
+}
+}
+translate([-120,220-60,0])cylinder(r=3.7/2,h=100);
+translate([-120+15,220-60,0])cylinder(r=3.7/2,h=100);
+translate([-120+7.5,220-60+23,0])cylinder(r=3.7/2,h=100);
+translate([-120,220-60,32])cylinder(r=9.7/2,h=10);
+translate([-120+15,220-60,32])cylinder(r=9.7/2,h=10);
+translate([-120+7.5,220-60+23,32])cylinder(r=9.7/2,h=10);
+for(i=[3]){
+translate([-183+(i*14),170,44])rotate([0,90,90])#syringe_1ml();
+translate([-183+(i*14),170-50,44])rotate([0,90,90])cylinder(r=6/2,h=100);
+if(i>0){
+translate([-77.5-(i*14)-0.5,175.6,0])#cylinder(r=2.8/2,h=150);
+translate([-77.5-((i+2)*14)-0.5,175.6,0])#cylinder(r=2.8/2,h=150);
+}else{
+translate([-77.5-(i*14),175.6,0])cylinder(r=2.8/2,h=150);
+}
+}
+translate([-77.5-(8*14)-1.7,175.6,0])cylinder(r=2.8/2,h=150);
+}
+}
+
 
 
 
@@ -288,6 +497,9 @@ translate([69,2-15,0])rotate([0,0,0])cube([18+8,23+20,5]);
 translate([-120,220-60,0])cylinder(r=3.7/2,h=100);
 translate([-120+15,220-60,0])cylinder(r=3.7/2,h=100);
 translate([-120+7.5,220-60+23,0])cylinder(r=3.7/2,h=100);
+translate([-120,220-60,32])cylinder(r=9.7/2,h=10);
+translate([-120+15,220-60,32])cylinder(r=9.7/2,h=10);
+translate([-120+7.5,220-60+23,32])cylinder(r=9.7/2,h=10);
 for(i=[0:7]){
 translate([-183+(i*14),170,44])rotate([0,90,90])syringe_1ml();
 translate([-183+(i*14),170-50,44])rotate([0,90,90])cylinder(r=6/2,h=100);

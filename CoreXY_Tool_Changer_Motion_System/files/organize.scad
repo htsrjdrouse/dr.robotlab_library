@@ -1,6 +1,16 @@
 //import("ToolChanger_-_Abdeckung-2.STL");
 
 
+difference(){
+import("ToolChanger_-_Base_Halter-1.STL");
+//translate([177.4,60-0.75,70])#cylinder(r=(3.25+1)/2,h=50,$fn=12);
+translate([177.4,60-0.75,70+37.9])rotate([0,0,90])#cylinder(r=(9.5)/2,h=3,$fn=6);
+translate([-31.5,0,0]){
+//translate([177.4,60-0.75,70])#cylinder(r=(3.25+1)/2,h=50,$fn=12);
+translate([177.4,60-0.75,70+37.9])rotate([0,0,90])#cylinder(r=(9.5)/2,h=3,$fn=6);
+}
+}
+
 /*
 
 a = 20;
@@ -15,13 +25,14 @@ translate([165+a-23.5+0.1,14+a+5.5+0.225,10])rotate([0,0,11.6])cylinder(r=8.05, 
 import("ToolChanger_-_Welle-1.STL");
 */
 
-
+/*
 difference(){
 import("ToolChanger_-_Schlitten-1.stl");
 translate([148,26.55,0])#cylinder(r=2.9/2,h=200,$fn=20);
 translate([175.25,26.55,0])#cylinder(r=2.9/2,h=200,$fn=20);
 translate([148+(175.25-148)/2,26.55+29.65,0])#cylinder(r=2.9/2,h=200,$fn=20);
 }
+*/
 /*
 difference(){
 import("ToolChanger_-_Servo_Distanz-1.stl");

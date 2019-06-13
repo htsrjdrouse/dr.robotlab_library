@@ -5,9 +5,190 @@ include <bom_openmv_camera.scad>
 include <nanoplotter.scad>
 include <PiZero.scad>
 
+one_1ml_syringe_parts();
+/*
+
+module one_1ml_syringe_parts(){
+ translate([0,70,-0.1])one_channel_syringe1ml_clamp();
+ onechannel_plunger_clamp();
+ //one_syringe1ml_clamp_top_luerlock();
+ translate([0,70+60,-0.1])multichannel_syringe1ml_clamp_extrusion_connect();
+ translate([0,70,-0.1])one_front_syringe1ml_clamp_luerlock();
+ syringe_1ml_plungerclip();
+}
+*/
+
+
+//translate([0,70,-0.1])multichannel_syringe1ml_clamp_luerlock();
+//color("")translate([-85-(i*14),105.5,44])rotate([-0,0,-90])
+
+//
+//multichannel_syringe1ml_clamp_luerlock();
+//module one_syringe1ml_clamp_luerlock(){
+//multichannel_plunger_clamp();
+//translate([0,70,-0.1+0])multichannel_syringe1ml_clamp_top();
+
+//translate([0,70,-0.1])multichannel_syringe1ml_clamp();
+//one_multichannel_assay();
+
+
+
+//eight_multichannel_assay();
+//translate([-74-8,-35,465-140])rotate([0,-90,0])multichannel_syringe_module();
+//color("darkgrey")translate([0,3,0])washbowl_1tip();
+// translate([0,0-55+55+29-29,0])gantry();
+//igus_slidermount_encoder_TW_04_12_motormount_assy_m8();
+//translate([0,0,0])nextgen_syringe10ml_assy();
+//iverntech_nextgen_syringe10ml_assy();
+//iverntech_pump_slider();
+
+//translate([0,-4,0])iverntech_pump_slider_plate();
+/*
+color("gainsboro")translate([-25.75,123,-30])rotate([90,-90,0])syringeshuttle_clipbracket();
+translate([0,-4,0])iverntech_pump_slider_plate();
+translate([-26.5-20.5,-3.5-90+35,3])iverntech_model_300();
+*/
+
+
+//igus_TW_04_12_slider_plate();
+
+//ivernetech_slider_module();
+//iverntech_slider();
+// xshuttle_assy(x=30,y=50);
+
+
+//pressurecompensation_bottle();
+//translate([0,0,10])color("pink")phillip_lid();
+
+//phillip_base();
+
+//gesim_mount();
+
+
+module phillip_lid(){
+difference(){
+union(){
+translate([-12-10,-37.5-10,0])cube([25+20,75+20,10]);
+}
+
+translate([-12+3,-37.5-10+14,-0.1])cube([25-6,75-8,50]);
+translate([-12-1,-37.5-1,10-1.5])cube([27,77,1.6+10]);
+translate([-12,60,5])rotate([90,0,0])cylinder(r=(3.7)/2,h=150);
+translate([0,60,5])rotate([90,0,0])cylinder(r=(3.7)/2,h=150);
+translate([12,60,5])rotate([90,0,0])cylinder(r=(3.7)/2,h=150);
+
+
+translate([18,42,-20])rotate([0,0,45])#cylinder(r=(3.7)/2,h=100);
+translate([-18,42,-20])rotate([0,0,45])#cylinder(r=(3.7)/2,h=100);
+translate([18,-42,-20])rotate([0,0,45])#cylinder(r=(3.7)/2,h=100);
+translate([-18,-42,-20])rotate([0,0,45])#cylinder(r=(3.7)/2,h=100);
+}
+}
+
+module phillip_base(){
+translate([-12,-37.5,10-1])color("lightblue")cube([25,75,1]);
+difference(){
+union(){
+translate([-12-10,-37.5-10,0])cube([25+20,75+20,10]);
+}
+
+translate([-12-2,-37.5-10+14+5,-0.1])cube([25+4,75-18,50]);
+translate([-12+3,-37.5-10+14,-0.1])cube([25-6,75-8,50]);
+translate([-12-1,-37.5-1,10-1.5])cube([27,77,1.6+10]);
+translate([-12,60,5])rotate([90,0,0])cylinder(r=(3.7)/2,h=150);
+translate([0,60,5])rotate([90,0,0])#cylinder(r=(3.7)/2,h=150);
+translate([12,60,5])rotate([90,0,0])#cylinder(r=(3.7)/2,h=150);
+
+translate([18,42,-20])rotate([0,0,45])#cylinder(r=(2.7)/2,h=100);
+translate([-18,42,-20])rotate([0,0,45])#cylinder(r=(2.7)/2,h=100);
+translate([18,-42,-20])rotate([0,0,45])#cylinder(r=(2.7)/2,h=100);
+translate([-18,-42,-20])rotate([0,0,45])#cylinder(r=(2.7)/2,h=100);
+
+
+}
+}
+
+
+
+
+
+
+
+
+
+
+//rotate([-90,0,0])color("lime")light_connector();
+
+//99cent_lamp();
+
+module 99cent_lamp(){
+difference(){
+union(){
+translate([0,20,0])cylinder(r=40/2,h=10);
+translate([11+1.6,0.5-2,0])cube([6,26,10]);
+translate([11-29.6,0.5-2,0])cube([6,26,10]);
+translate([0,43+4,5])rotate([90,45,0])#cylinder(r=14.14/2,h=10,$fn=4);
+}
+translate([0,43+40,5])rotate([90,0,0])cylinder(r=2.7/2,h=100);
+translate([0,33+3.5,5])rotate([90,0,0])cylinder(r=8/2,h=100);
+translate([-30,3,5])rotate([0,90,0])cylinder(r=2.7/2,h=100);
+translate([-30,3,5])rotate([0,90,0])cylinder(r=3.7/2,h=30);
+translate([0,20,-20])cylinder(r=25.4/2,h=100);
+for(i=[0:20]){
+translate([0,20-i,-20])cylinder(r=25.4/2,h=100);
+}
+}
+}
+
+module gesim_mount(){
+difference(){
+union(){
+translate([0,17.5,-6.5])cube([56-30,2.5,6.5+8]);
+translate([0,0-1,-6.5])cube([56-30,8,6.5+8]);
+translate([0,0,-6.5])cube([56-30,20,6.5]);
+translate([4,9,0])for(i=[0:3]){
+ translate([i*4.5,0,0])cube([2,6.5,6.25]);
+}
+}
+translate([4+3+0.2,10,0])for(i=[0:3]){
+ translate([i*4.5+0.05,0+16,0+1+2.5])rotate([90,0,0])#cylinder(r=2/2,h=30);
+ //translate([i*4.5+0.05,0+16-17.5,0+1+2.5])rotate([90,0,0])cylinder(r=2.8/2,h=15);
+}
+
+//translate([13,0-2,-20])cube([30,30,30]);
+}
+}
+
+
+//import("BOM_inventory/build3/stls/valveconnectpart_microservo.stl");
+//microfluidics_set();
+//multichannel_drypad();
+
+//valve_assy_microservo();
+//translate([1+4,232,61.3])rotate([0,0,90])#valveconnectpart_microservo();
+
+//multichannel_drypad_384();
+
+
+//rotate([90,0,0])valvemountplate_screwattach_smallersyringe_vertical_attach();
+//valveconnectpart_microservo();
+//translate([1,232,61.3])rotate([0,0,90])valveconnectpart();
+//valve_assy_microservo();
+//translate([0,130,0])microservo();
+//rotate([0,90,0])smallsyringe_valvesupportmodule_plate_microservo();
+//valveconnectpart();
+
+//cube([30,50,12]);
+//valve_assy();
+//translate([1,232,61.3])rotate([0,0,90])valveconnectpart();
+//rotate([0.0,90])smallsyringe_valvesupportmodule_plate();
+//color("gainsboro")translate([52,190,63])rotate([-90,90,0])smallsyringe_valvesupportmodule_plate();
+//rotate([0,90,0])smallsyringe_valvesupportmodule_plate_microservo();
+//color("gainsboro")translate([36,295.5,18])
+//rotate([0,90,90])valvemountplate_screwattach_smallersyringe();
 
 //microfluidics_tjunction();
-//translate([1,232,61.3])rotate([0,0,90])valveconnectpart();
+//translate([1,232,61.3])rotate([0,0,90])valveconnectpart_microservo();
 //translate([0,0,0])nextgen_syringe10ml_assy();
 
 //translate([0,0,0])nextgen_syringe30ml_assy();
@@ -15,7 +196,7 @@ include <PiZero.scad>
 //rotate([0,90,0])syringe30ml_clipmount();
 //translate([-45+4,85+16.3-12,35+3.5])rotate([0,90,90])syringe_30ml();
 
-rotate([0,-90,0])syringe30mlshuttle_clipbracket();
+//rotate([0,-90,0])syringe30mlshuttle_clipbracket();
 
 //translate([0,98,0])syringe30mlmount_plungerfix_assy();
 
@@ -101,7 +282,6 @@ translate([0,-25,0])cylinder(r=2.7/2,h=13);
 translate([0,0,0])cylinder(r=29/2,h=13);
 translate([0,25,0])cylinder(r=2.7/2,h=13);
 }
- //microfluidics_set();
 //translate([50-50,-3,1])rotate([0,0,180])
 //translate([30,0,0])drypad();
 //color("darkgrey")translate([0-37,3,-1+18])washbowl_8tip_drypad();

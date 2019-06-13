@@ -18696,6 +18696,46 @@ translate([0+18.5+6,0,0])difference(){union(){translate([0,0,33])cylinder(h = 2.
 
 
 
+module smallsyringe_valvesupportmodule_plate_microservo(){
+translate([45,15.5,0])difference(){
+union(){
+translate([0,0,-70])difference(){union(){
+translate([-20-1.6+0.9,-32.5+5+17.5,83])cube([5,20+15,53+7]);
+//translate([-20-1.6+0.9,-32.5+5+17.5+20,83+5])cube([5,20+15,15]);
+//translate([-20-1.6+0.9,-32.5+5+17.5,83+5+39+8.5])cube([5,20,22]);
+translate([-20-1.6+0.9,-32.5+5+17.5+20,83+5+39+15.5-13.9])cube([5,20+15,15]);
+translate([-20-1.6+0.9,-32.5+5+17.5+20,83+7.9])cube([5,20+15,15]);
+}
+
+translate([0,0,-70])translate([-20-1.6+0.9-0.1,-32.5+5+17.5-0.1,83+130])cube([5.5,20,53+7]);
+translate([-30,0+16,90+10])rotate([90,0,90]){cylinder(r=4/2,h=20);}//translate([0,0,13])cylinder(r=6.8/2,h=3,$fn=6);}
+translate([-30,0+16,90+40])rotate([90,0,90]){cylinder(r=4/2,h=20);}//translate([0,0,13])cylinder(r=6.8/2,h=3,$fn=6);}
+translate([-30,0,90])rotate([90,0,90])cylinder(r=5.5/2,h=20);
+translate([-30,0,90+38])rotate([90,0,90])cylinder(r=5.6/2,h=20);
+
+translate([-30,0+20+15+0.5,96.9+6.8])rotate([90,0,90]){cylinder(r=1.9/2,h=20);}
+translate([-30,0+20+15+0.5,147.7-0.5-16.5])rotate([90,0,90]){cylinder(r=1.9/2,h=20);}
+}
+}
+translate([18.5+6,0,0])cylinder(r=9.5/2,h=200);
+translate([0+18.5+6,0,0])difference(){union(){translate([0,0,33])cylinder(h = 2.5, d1 = 10, d2 = 16.5, center = false);translate([0,0,32+3])cylinder(r=16.5/2,h=25);}cylinder(r=9.5/2,h=200);}
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -18753,7 +18793,7 @@ translate([0,0,10])valvesupport();
 //this one works with the cool feedback sensor servo
 module valveconnectpart(){
 difference(){
-translate([0,0,-2-1.4-1.5])cylinder(r=15,h=10+1.4+1.5);
+translate([0,0,-2-1.4-1.5+1.2])#cylinder(r=15,h=10+1.4+1.5-1.2);
 translate([0,0,-17])cylinder(r=9.5/2,h=18);
 translate([0,0,8-2.5])cylinder(r=9.5/2,h=18);
 translate([-2.5/2,-6.8,8-2.5])cube([2.5,9.5+4.8,3.4]);
@@ -18763,18 +18803,60 @@ translate([-3.8-8,-5/2,8-2.5])rotate([0,0,90])cube([5,2,3.4]);
 translate([-3.8-9.7,-6/2,8-2.5])rotate([0,0,90])cube([6,2,3.4]);
 
 translate([0,0,-5])rotate([0,0,40])
-translate([16.3/2,0,0])cylinder(r=2./2,h=118);
+translate([16.3/2,0,-2])#cylinder(r=2.3/2,h=118);
 translate([0,0,-5])rotate([0,0,40])
-translate([-16.3/2,0,0])cylinder(r=2./2,h=118);
+translate([-16.3/2,0,-2])#cylinder(r=2.3/2,h=118);
 translate([0,0,-5])rotate([0,0,40])
-translate([0,16.3/2,0])cylinder(r=2./2,h=118);
+translate([0,16.3/2,-2])#cylinder(r=2.3/2,h=118);
 translate([0,0,-5])rotate([0,0,40])
-translate([0,-16.3/2,0])cylinder(r=2./2,h=118);
+translate([0,-16.3/2,-2])#cylinder(r=2.3/2,h=118);
+}
+cylinder(r=5.1/2,h=8);
+}
+
+
+//this one works with the cool feedback sensor servo
+module valveconnectpart_microservo(){
+difference(){
+translate([0,0,-2-1.4-1.5+1-0.75])cylinder(r=15,h=10+1.4+1.5-1+0.75);
+translate([0,0,-17])cylinder(r=7/2,h=18);
+translate([0,0,8-2.5])cylinder(r=9.5/2,h=18);
+translate([-2.5/2,-6.8,8-2.5])cube([2.5,9.5+4.8,3.4]);
+translate([6.8,-2.5/2,8-2.5])rotate([0,0,90])cube([2.5,9.5+4.8,3.4]);
+translate([-3.8,-4.7/2,8-2.5])rotate([0,0,90])cube([4.7,9.5+4.8,3.4]);
+translate([-3.8-8,-5/2,8-2.5])rotate([0,0,90])cube([5,2,3.4]);
+translate([-3.8-9.7,-6/2,8-2.5])rotate([0,0,90])cube([6,2,3.4]);
+
+ds = 18;
+translate([0,0,-5])rotate([0,0,40])translate([ds/2+0.25,0,0])#cylinder(r=2./2,h=118);
+translate([0,0,-5])rotate([0,0,40])translate([-ds/2-0.25,0,0])#cylinder(r=2./2,h=118);
+
+
+translate([0,0,-5])rotate([0,0,40])translate([0,ds/2,0])cylinder(r=2./2,h=118);
+translate([0,0,-5])rotate([0,0,40])translate([0,-ds/2,0])cylinder(r=2./2,h=118);
+dss= 10;
+translate([0,0,-5])rotate([0,0,40])translate([dss/2,0,0])cylinder(r=2./2,h=110);
+translate([0,0,-5])rotate([0,0,40])translate([-dss/2,0,0])cylinder(r=2./2,h=110);
+translate([0,0,-5])rotate([0,0,40])translate([0,dss/2,0])cylinder(r=2./2,h=110);
+translate([0,0,-5])rotate([0,0,40])translate([0,-dss/2,0])cylinder(r=2./2,h=110);
 
 
 }
 cylinder(r=5.1/2,h=8);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 module valvemountplate_screwattach_smallersyringe(){
@@ -18811,8 +18893,8 @@ translate([-3+19+5,18+0.1+2.5-4,12+13])cube([19.5-5,16+4,7+6+38.5-13]);
 translate([-3+19+5-3,18+0.1+2.5-4-10,12+13+27])cube([19.5-5+3,16+4+20,7+6+38.5-13-27]);
 translate([-3+19+5,18+0.1+2.5-4-10,12+13+0])cube([19.5-5,16+4+20,7+6+38.5-13-27-3]);
 }
-translate([30-5.5,10+1.5,40])cylinder(r=3.7/2,h=50);
-translate([30-5.5,10+1.5+30,40])cylinder(r=3.7/2,h=50);
+translate([30-5.5,10+1.5,40])#cylinder(r=2.8/2,h=50);
+translate([30-5.5,10+1.5+30,40])cylinder(r=2.8/2,h=50);
 translate([4,0,-40]){
 translate([30-5.5,10+1.5,40]){cylinder(r=3/2,h=50);}//translate([0,0,31])cylinder(r=6.8/2,h=4,$fn=6);}
 translate([30-5.5,10+1.5+30,40]){cylinder(r=3/2,h=50);}//translate([0,0,31])cylinder(r=6.8/2,h=4,$fn=6);}
@@ -18879,7 +18961,6 @@ translate([-4.5,125,33.5])syringe_3ml_shaftsupport();
 
 
 module valve_assy(){
-
 //vcl = 0.7;color([vcl,vcl,vcl])translate([36,295.5,18])rotate([0,-90,90])valvemountplate_screwattach_smallersyringe();
 //vvcl = 0.95;color([vvcl,vvcl,vvcl])translate([36,295.5,18])rotate([0,-90,90])valvemountplate_screwattach_smallersyringe_vertical_attach();
 //pcl = 0.65;color([pcl,pcl,pcl])translate([52,190,63])rotate([-90,90,0])smallsyringe_valvesupportmodule_plate();
@@ -18887,17 +18968,36 @@ module valve_assy(){
 color("gainsboro")translate([52,190,63])rotate([-90,90,0])smallsyringe_valvesupportmodule_plate();
 //color("black")
 translate([1,232,61.3])rotate([0,0,90])valveconnectpart();
-/*
-*/
 translate([7,585,-22])rotate([90,0,0]){
 color("black")translate([4,34,363])rotate([0,90,90])servo();
 color("white")translate([-6,83.5,353])rotate([0,90,90])actualvalve_for_syringe();
 }
 color("gainsboro")translate([36,295.5,18])rotate([0,-90,90])valvemountplate_screwattach_smallersyringe_vertical_attach();
 color("gainsboro")translate([36,295.5,18])rotate([0,-90,90])valvemountplate_screwattach_smallersyringe();
-/*
-*/
 }
+
+
+
+module valve_assy_microservo(){
+color("gainsboro")translate([52,190,63])rotate([-90,90,0])smallsyringe_valvesupportmodule_plate_microservo();
+translate([1,232,61.3])rotate([0,0,90])#valveconnectpart_microservo();
+translate([7,585,-22])rotate([90,0,0]){
+translate([4-20+4,34+17,359])rotate([-90,0,0])microservo();
+//color("white")translate([-6,83.5,353])rotate([0,90,90])actualvalve_for_syringe();
+}
+color("gainsboro")translate([36,295.5,18])rotate([0,-90,90])valvemountplate_screwattach_smallersyringe_vertical_attach();
+color("gainsboro")translate([36,295.5,18])rotate([0,-90,90])valvemountplate_screwattach_smallersyringe();
+}
+
+
+
+
+
+
+
+
+
+
 
 
 module plunger_connector_assy(){
@@ -19025,13 +19125,15 @@ translate([64.7-5,14.4-3-0.87,155.75])translate([17.25,5.8,-10])translate([-9,0,
 
 
 
-
-
-
-
-
-
-
+module microservo(){
+  cube([12,22.5,22.5]);
+  translate([6,6,22.5])cylinder(r=2.5,h=7);
+  translate([0,-9.5/2,22.5-4.2-2.5])difference(){
+    cube([12,32,2.5]);
+    translate([12/2,2.5,-13])#cylinder(r=3/2,h=30);
+    translate([12/2,32-2.5,-13])#cylinder(r=3/2,h=30);
+  }
+}
 
 
 
@@ -19040,7 +19142,8 @@ translate([64.7-5,14.4-3-0.87,155.75])translate([17.25,5.8,-10])translate([-9,0,
 
 module servo(){
  bcl = 0.4;
- color([bcl,bcl,bcl])cube([40.75,19.85,35]);
+ color([bcl,bcl,bcl])
+ cube([40.75,19.85,35]);
  difference(){
  color([bcl,bcl,bcl])translate([-(55.5-40.74)/2,0,35-8])cube([55.5,19.85,2.5]);
  translate([-(55.5-40.74)/2+3.8,0+4.5,35-8-10])cylinder(r=3.7/2,h=20);
@@ -19048,7 +19151,6 @@ module servo(){
  translate([-(55.5-40.74)/2+3.8+49,0+4.5,35-8-10])cylinder(r=3.7/2,h=20);
  translate([-(55.5-40.74)/2+3.8+49,0+4.5+10,35-8-10])cylinder(r=3.7/2,h=20);
  }
- 
  cl = 0.9;
  color([cl,cl,cl]){
  translate([10,10,30])cylinder(r=8/2,h=12);
@@ -19099,6 +19201,70 @@ translate([5,-26+(a*10),0]){cylinder(r=3.7/2,h=10);translate([0,0,2.6])cylinder(
 }
 }//end translate
 }
+
+
+
+
+module iverntech_slider_pump_base(){
+//guide TS-04-09-50
+//carriage TW-04-09
+translate([2,-30,0]){
+translate([-45,-33-10,-6])difference(){
+union(){
+//color("pink")
+translate([0-7.5,-40,0])cube([10+15+10+6,68+40+23+20,6+3]);
+//color("yellow")
+translate([0-7.5,-40-1.0,0])cube([10+15+13,10,6+3]);
+//color("lime")
+translate([0-7.5-5-5.5-22,-40-1.3-20+20.3+31-5,0])cube([12+22,53-42.8+10,6+3]);
+}
+translate([0-7.5+18,-40+18,3+3.4])cube([10+15+10+6-18+2,68+40+23+20-18+2,6]);
+translate([5+20,20+(-5.5*10)-1.5,-10]){cylinder(r=3.7/2,h=40);translate([0,0,5+11])cylinder(r=6.7/2,h=3.5);}//cylinder(r=5.4/2,h=3+4,$fn=6);}
+translate([0,-33,0])for(a=[2,3,4,5]){
+//translate([2,10+(a*25),-5]){cylinder(r=3.7/2,h=40);translate([0,0,4])cylinder(r=6.8/2,h=3+4,$fn=6);}
+translate([2,10+(a*25),-5]){cylinder(r=2.8/2,h=40);}
+}
+/*
+translate([17.5,-33,0])for(a=[0,4,8,12]){
+translate([5,20+(a*10),-0.1]){translate([0,0,2.4-4])cylinder(r=2.7/2,h=16);}//cylinder(r=5.5/2,h=2.5);}
+}
+*/
+translate([17.5,-33,0])for(a=[4,8,12]){
+translate([5+4,10+(a*10),-5]){translate([0,0,8.4+1])cylinder(r=4.7/2,h=8);translate([0,0,5])cylinder(r=8/2,h=4.5);}
+}
+//translate([15,-27+(0*10),0]){cylinder(r=3.7/2,h=100);translate([0,0,2.6])cylinder(r=6.7/2,h=3.5+12);}
+//translate([5,-36+(0*10),0]){#cylinder(r=3.7/2,h=10);translate([0,0,2.6])cylinder(r=6.7/2,h=6.5);}
+/*
+for(a=[0,4]){
+translate([5,-26+(a*10),0]){#cylinder(r=3.7/2,h=10);translate([0,0,2.6])cylinder(r=6.7/2,h=6.5);}
+}
+*/
+}
+}//end translate
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 module syringemount_for_pump_plungefix(){
@@ -19364,7 +19530,7 @@ translate([43.5,20,-6]){cylinder(r=5.7/2,h=10);translate([0,0,10])cylinder(r=9.7
 
 module igus_TW_04_12_slider_plate(){ 
 difference(){
-union(){
+translate([0,0,0])union(){
 translate([-110+55.5+3,-81.5+1.5+40-24,16])cube([22+5-3.5,11,7+5.8]);
 translate([-110+55.5+3,-81.5+1.5+40-25,16])cube([22+5-3.5,28.5,7]);
 translate([-110+55.5,-81.5+1.5+40,16])cube([22+5,28.5,7]);
@@ -19381,6 +19547,29 @@ translate([-110+59+20,-81.5+1.5+46,16-8]){cylinder(r=3.7/2,h=12+1);translate([0,
 translate([-110+59+20,-81.5+1.5+46+15,16-8]){cylinder(r=3.7/2,h=12+1);translate([0,0,12])cylinder(r=8/2,h=3.5);}
 }
 }
+
+module iverntech_pump_slider_plate(){ 
+translate([0,0,1])difference(){
+union(){
+translate([-110+55.5+3,-81.5+1.5+40-24,16])cube([22+5-3.5,11,7+5.8]);
+translate([-110+55.5+3,-81.5+1.5+40-25,16])cube([22+5-3.5,28.5,7]);
+translate([-110+55.5,-81.5+1.5+40,16])cube([22+5,28.5,7]);
+translate([-110+55.5,-81.5+1.5+40+6.6+3.5,16])cube([22+5,6.5,30]);
+}
+translate([-110+59+5.3-1.6,-81.5+1.5+20,36-3.4-17])rotate([0,0,0]){cylinder(r=3.7/2,h=20);cylinder(r=6.8/2,h=9,$fn=6);}
+translate([-110+59+5.3-1.6+13,-81.5+1.5+20,36-3.4-17])rotate([0,0,0]){cylinder(r=3.7/2,h=20);cylinder(r=6.8/2,h=9,$fn=6);}
+translate([-110+59+5.3,-81.5+1.5+146,36-3.4])rotate([90,90,0])cylinder(r=3.7/2,h=200);
+translate([-110+59+5.3+9,-81.5+1.5+146,36-3.4])rotate([90,90,0])cylinder(r=3.7/2,h=200);
+
+translate([-110+59,-81.5+1.5+46,16-8]){cylinder(r=3.7/2,h=12+1);translate([0,0,12])cylinder(r=8/2,h=3.5);}
+translate([-110+59+20,-81.5+1.5+46,16-8]){cylinder(r=3.7/2,h=12+1);translate([0,0,12])cylinder(r=8/2,h=3.5);}
+
+translate([-110+59+20,-81.5+1.5+46+20,16-8]){cylinder(r=3.7/2,h=12+1);translate([0,0,12])cylinder(r=8/2,h=3.5);}
+translate([-110+59,-81.5+1.5+46+20,16-8]){#cylinder(r=3.7/2,h=12+1);translate([0,0,12])cylinder(r=8/2,h=3.5);}
+}
+}
+
+
 
 
 
@@ -19416,6 +19605,36 @@ translate([-110+27,-81.5+1.5,-4])cube([42,8.5,10]);
 //translate([-70+8,-80+40,30-5])rotate([-90,0,0])cylinder(r=8.7/2,h=200);
 }
 }
+
+module iverntech_pump_slider(){
+//color("lightgrey")
+bg = 0.5;
+//color([bg,bg,bg])
+//color("gainsboro")
+//igus_slidermount_encoder_TW_04_12(); 
+iverntech_slider_pump_base();
+
+translate([1,0,0]){
+//color("lightgrey")
+//color([bg,bg,bg])
+//color("gainsboro")
+translate([-22,-90,4])rotate([90,-90,0])motormount();
+//color([bg,bg,bg])
+//color("gainsboro")
+translate([-110+27,-81.5+1.5,-4])cube([42,8.5,10]);
+
+//This is for display purposes
+//translate([-70+8,-80,30-5])rotate([-90,0,0])nema17();
+//rbg=0.85;color([rbg,rbg,rbg])
+//color("gainsboro")
+//translate([-70+8,-80+40,30-5])rotate([-90,0,0])cylinder(r=8.7/2,h=200);
+}
+}
+
+
+
+
+
 
 
 module xyz_zprobe_board(){

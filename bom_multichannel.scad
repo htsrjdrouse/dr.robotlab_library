@@ -786,7 +786,7 @@ else if (i==8){
 }
 else if (i==1){
  translate([i*(9),0,0])
-  pipette_p1000_noextrusion(8.1,1);
+  pipette_p1000_noextrusion(8.1,0);
 }
 else {
  translate([i*(9),0,0])pipette_p1000_noextrusion(8.1,0);

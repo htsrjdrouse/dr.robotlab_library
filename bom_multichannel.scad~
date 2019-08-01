@@ -180,7 +180,7 @@ module multichannel_pipette_holder_linear_actuator_connect(){
 module multichannel_pipette_holder_linear_actuator_connect_cameramount(){
  difference(){union(){
  translate([-65,29,60])rotate([-90,0,0]) multichannel_pipette_holder_camera_example();
- translate([-8,30-6.5,28.2])rotate([0,180,90])color("gainsboro")tslot_clamp_filament_linearactuator_shuttle_noextrusion();
+ //translate([-8,30-6.5,28.2])rotate([0,180,90])color("gainsboro")tslot_clamp_filament_linearactuator_shuttle_noextrusion();
  }
 }
 }
@@ -786,7 +786,7 @@ else if (i==8){
 }
 else if (i==1){
  translate([i*(9),0,0])
-  pipette_p1000_noextrusion(8.1,1);
+  pipette_p1000_noextrusion(8.1,0);
 }
 else {
  translate([i*(9),0,0])pipette_p1000_noextrusion(8.1,0);
@@ -1179,7 +1179,7 @@ color("white")translate([0,0,-36.7-3])cylinder(r=12/2,h=3);
 module multichannel_drypad_384(){
 translate([-148,85,-150])difference(){
 union(){
-translate([-75.5-5+22-5-34+12-2,-40,0])#cube([29+36-12,90,5]);
+translate([-75.5-5+22-5-34+12-2,-40,0])cube([29+36-12,90,5]);
 translate([-75.5-5+45,-40-10,0])cube([10,90+20,5]);
 }
 /*

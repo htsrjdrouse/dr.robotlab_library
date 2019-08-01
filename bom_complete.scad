@@ -5,9 +5,438 @@ include <bom_openmv_camera.scad>
 include <nanoplotter.scad>
 include <PiZero.scad>
 
-one_1ml_syringe_parts();
-/*
 
+translate([28,21,5])liquidlevel_pumps_pcb();
+//translate([69.2-75,13-60-42+3,-52])rotate([90,0,0])bom_controlpanel();
+
+//translate([0,0,-13.5])multichannel_pipette_holder_linear_actuator_connect_cameramount();
+
+//multichannel_syringe_module();
+
+//translate([-27-1.3-3.2,-7,12.4])rotate([90,0,90])gesim_mount_lego_slot();
+
+
+//rotate([0,90,0])miuzei_camera_breadboard_screwstub_gesimtip();
+
+
+/*
+for(i=[0:2]){
+translate([0+i*9,0,0]){
+rotate([0,90,0])miuzei_camera_breadboard_screwstub_gesimtip();
+translate([-27-1.3-3.2,-7,12.4])rotate([90,0,90])gesim_mount_lego_slot();
+}
+}
+*/
+//gesim_mount_lego();
+//multichannel_syringe_module();
+
+
+module gesim_mount_lego_slot(){
+translate([0,0,3.2])difference(){
+union(){
+translate([0,-2,-2])cube([10,1.85,3.2+2]);
+translate([0,7.55,-2])cube([10,1.85,3.2+2]);
+translate([0-8,0-0.15,0])#cube([10+8,7.7,3.2]);
+}
+translate([0+5,7.5/2,-4.3])#cylinder(r=2/2,h=20);
+translate([-8.5-4-2+10.5,-11+13,-29.3-6])rotate([0,0,0])#cylinder(r=2/2,h=50);
+}
+}
+
+
+
+module gesim_mount_lego(){
+difference(){
+cube([20,7.5,3.2]);
+translate([0+5,7.5/2,-4.3])#cylinder(r=2.7/2,h=20);
+}
+}
+
+
+//nalgene_cap_for_sst_liquidlevel();
+//nalgene_bottle_assy_electrocaloric();
+//nalgene_liquidsensor();
+//pressurecompensation_bottle();
+
+// translate([6.5,-6.5,185])nalgene_cap_for_electrocaloric();
+
+//color("darkgrey")translate([0-37,3,-1+18])washbowl_8tip_drypad();
+//color("darkgrey")translate([0,3,-1+18])washbowl_8tip();
+//color("darkgrey")translate([0,3,-1])washbowl_8tip_base();
+
+// washplate_mount();
+
+
+
+//multichannel_plunger_clamp();
+
+//multichannel_syringe_module();
+//translate([0,0,7])color("gainsboro")plate_aligner_on_zbed_wider();
+//zbed_multichannel_setup_wider();
+
+//atx_power_connect_assy();
+
+
+/*
+ corner_plate_set();
+ translate([0,0-139,0])front_corner_plate_set();
+ translate([160,0-139,0])rotate([0,0,0])bar_plate_set();
+ translate([160,0,0])rotate([0,0,0])bar_plate_set();
+ translate([160+188,0-139,0])rotate([0,0,0])front_rightcorner_bar_plate_set();
+ translate([160+188,0,0])rotate([0,0,0])rightcorner_bar_plate_set();
+*/
+
+
+
+
+
+
+/*
+difference(){
+cube([35,18,4]);
+a = 0;
+translate([8+a,9,-1])cylinder(r=4.7/2,h=20);
+translate([8+20+a,9,-1])cylinder(r=4.7/2,h=20);
+}
+*/
+//translate([0,70,-0.1])syringe_1ml_stack_1piece_multichannel();
+
+//gesim_mount();
+
+//multichannel_syringe_module();
+
+//eight_multichannel_assay();
+
+//translate([0,70,-0.1])multichannel_syringe1ml_clamp();
+
+//translate([0,70,-0.1+0])multichannel_syringe1ml_clamp_top();
+
+//one_1ml_syringe_parts();
+
+// translate([0,70,-0.1])one_channel_syringe1ml_clamp();
+//translate([-74-8,-35,465-140])rotate([0,-90,0])multichannel_syringe_module();
+//multichannel_plunger_clamp();
+//multichannel_syringeshuttle_clipbracket();
+//eight_multichannel_assay();
+//translate([0,70,-0.1])multichannel_syringe1ml_clamp_luerlock();
+//translate([0,70,-0.1])multichannel_syringe1ml_clamp_extrusion_connect();
+//translate([0,70,-0.1+0])multichannel_syringe1ml_clamp_top();
+
+
+
+
+//translate([-100,-100,0])rotate([90,-90,0])linearactuator_cordglide();
+//translate([-11.5+3.8+(9*5),80-1.5+0.5,-50+10-1.3])rotate([0,90,0])color("pink")miuzei_camera_breadboard_screwstub();
+
+
+
+//translate([0,0,-13.5])multichannel_pipette_holder_linear_actuator_connect_cameramount();
+
+//cables_wall();
+
+
+// translate([-50,6,240])cable_support_extrusion();
+// translate([-30,-55,0])rotate([0,0,-90])cable_support_lid();
+// rotate([0,0,90])cable_support();
+
+//cordclamp();
+
+
+//gesim_mount();
+
+// zbed_smz_wider_nomove();
+//raspizerobase_extrusion();
+
+// xshuttle_assy_wider(100,100);
+
+//color("gainsboro")translate([-25-12,5+4,41-12])rotate([-90,0,0])import("files/gt2belt_holder.stl");
+// slider_assy(100,100);
+//slider_front_assy_multichannel();
+//translate([179.5,180-12.5+1.5,300-1])rotate([-90,0,180])multichannel_assy_wider();
+//translate([208,188+1.5,342])rotate([90,0,0])filament_linearactuator_multichannel_wider();
+//color("gainsboro")translate([-1,0,0])shuttle_front_vertical_adjust_wider_slider_wall();
+//valveconnectpart();
+
+//m5bearing_washer();
+// translate([0,-14+19,-26])slider_assy(100,100);
+//iverntech_slider_x4();
+
+//iverntech_slider_wider(100);
+//iverntech_slider();
+//iverntech_slider_tslot_connector();
+//iverntech_slider_shuttle_bottom();
+
+//bom_controlpanel();
+
+//color(col)translate([28,21,5])bananajackpanel();
+
+//rotate([0,180,0])bottom_bed_fix();
+// hdmi_rj45_usb_panel();
+
+//pcb_panels_wider();
+
+//translate([-60-7,25-55-45,-60])rotate([0,0,180])XY_motor_x2higher();
+//XY_motor_x2higher_3dprint();
+
+//mirror([1,0,0])XY_motor_x2higher_3dprint();
+
+//joinpieces_bottom_surface();
+
+module joinpieces_bottom_surface(){
+  difference(){
+   cube([25,60,4]);
+   translate([12.5,10,-0.2])#cylinder(r=5/2,h=20);
+   translate([12.5,50,-0.2])#cylinder(r=5/2,h=20);
+  }
+} 
+ 
+// outside_frame_wider(tcl,thcl,x,y);
+/*
+translate([28,21,5])syringe_pcb_holder_back();
+translate([40-12.5,-40+61,2])syringe_pcb_holder();
+translate([40-12.5,-40+61,6])syringe_pcb_holder_cover();
+translate([40-12.5+53,-40+61,2])syringe_pcb_holder_placeholder();
+*/
+
+//noconveyer_gantry_assy(20,-75+78-166+260,-45+50+100-50-100+70,-55,0,267,tcl,thcl);
+
+//pcb_panels_wider();
+//bananajackpanel();
+//liquidlevel_pumps_pcb();
+//atx_power_connect_assy();
+//translate([100,-200,0])one_1ml_syringe_parts();
+
+//translate([-74-8,-35,465-140])rotate([0,-90,0])multichannel_syringe_module();
+//multichannel_plunger_clamp();
+//multichannel_syringeshuttle_clipbracket();
+//eight_multichannel_assay();
+//translate([0,70,-0.1])multichannel_syringe1ml_clamp_luerlock();
+//translate([0,70,-0.1])multichannel_syringe1ml_clamp_extrusion_connect();
+//translate([0,70,-0.1+0])multichannel_syringe1ml_clamp_top();
+
+
+
+//translate([0,70,-0.1])syringe_1ml_stack_1piece_multichannel();
+//translate([0-42.5,-4+230-13,0])iverntech_pump_slider_plate_connect_multichannel();
+
+//translate([100,-200,0])one_1ml_syringe_parts();
+
+//import("files/foot_big.stl");
+// translate([0,-14+19,-26])slider_assy(x=10,y=10);
+//iverntech_slider();
+//iverntech_slider_tslot_connector();
+
+//iverntech_connector();
+
+//filament_linearactuator_multichannel_wider();
+
+//translate([15-25+229.5,206.5-11,-63+400])rotate([90,0,0])
+//color("gainsboro")translate([-1,0,0])shuttle_front_vertical_adjust_wider_slider_wall();
+
+//multichannel_assy_wider();
+
+//slider_front_assy_multichannel();
+//slider_back_assy();
+
+//ledamp();
+z = 40;
+// translate([-70,-25+50,z])zbed_multichannel_setup_wider(z);
+
+/*
+ corner_plate_set();
+ translate([0,0-139,0])front_corner_plate_set();
+ translate([160,0-139,0])rotate([0,0,0])bar_plate_set();
+ translate([160,0,0])rotate([0,0,0])bar_plate_set();
+ translate([160+188,0-139,0])rotate([0,0,0])front_rightcorner_bar_plate_set();
+ translate([160+188,0,0])rotate([0,0,0])rightcorner_bar_plate_set();
+*/
+//translate([0,0,7])color("gainsboro")plate_aligner_on_zbed_wider();
+
+
+
+
+
+
+module ledamp(){
+
+difference(){
+cube([50,13,3]);
+translate([5,13/2,-1])cylinder(r=3.8/2,h=20);
+translate([50-5,13/2,-1])cylinder(r=3.8/2,h=20);
+translate([5+10,13/2,-1])cylinder(r=5.2/2,h=20);
+translate([5+20,13/2,-1])cylinder(r=5.2/2,h=20);
+translate([5+30,13/2,-1])cylinder(r=5.2/2,h=20);
+}
+}
+
+
+module bananajack_amp(){
+difference(){
+cube([60,17,3]);
+translate([5,17/2,-0])#cylinder(r=3.8/2,h=30);
+translate([15,17/2,-1])#cylinder(r=7/2,h=30);
+translate([15+11,17/2,-1])#cylinder(r=7/2,h=30);
+translate([15+22,17/2,-1])#cylinder(r=7/2,h=30);
+translate([60-5,17/2,-0])#cylinder(r=3.8/2,h=30);
+}
+}
+//amp_lidbox_assy();
+
+//atx_print_pcb_connector();
+//bananajackpanel();
+
+//syringe_pcb_holder_back();
+//syringe_pcb_holder_for_syringemodule();
+//hdmi_usb_4pin_5pin_10pin_panel();
+//hdmi_rj45_usb_panel();
+
+module atx_print_pcb_connector(){
+
+difference(){
+translate([15,10,0])cube([14,14,4]);
+translate([15+7,18,-1])#cylinder(r=3.9/2,h=30);
+}
+difference(){
+translate([15,-20,0])cube([14,14,4]);
+translate([15+7,-20+6,-1])#cylinder(r=3.9/2,h=30);
+}
+
+//sp = 3.85;
+sp = 4.2;
+difference(){
+translate([-8-1,-10+sp/2,0])
+cube([58+6,20,7]);
+translate([-8+5-3,-10+sp/2,0])
+#translate([3,5,2])cube([49.5+3,10,20]);
+for(i=[0:11]){
+translate([i*sp,0,-1])#cylinder(r=1,h=4);
+translate([i*sp,sp,-1])#cylinder(r=1,h=4);
+}
+}
+}
+
+
+/*
+for(i=[0:3]){
+translate([0,i*11,0])teensy_enclosure_highnut();
+translate([11,i*11,0])teensy_enclosure_nutspacer(3.8);
+translate([22,i*11,0])teensy_enclosure_nutspacer(2.8);
+}
+*/
+
+module teensy_enclosure_nutspacer(dia){
+difference(){
+translate([0,0,0])cylinder(r=10/2,h=6);
+translate([0,0,-1])cylinder(r=dia/2,h=50);
+}
+}
+
+module teensy_enclosure_highnut(){
+difference(){
+rotate([0,0,45])cylinder(r=10/2,h=25);
+translate([0,0,-1])cylinder(r=2.9/2,h=50);
+}
+}
+
+//translate([143,0,0])amp_powersupply_wallB_plug();
+// hdmi_rj45_usb_panel();
+//translate([40-12.5,-40+61,2])syringe_pcb_holder();
+//translate([40-12.5-40,-40+61,6])syringe_pcb_holder_cover();
+
+
+
+//amp_lidbox_assy();
+//amp_powersupply_box_assy();
+//projection(cut = false)
+//bottom_x1_wider_a();
+//teensy_amp_module();
+//rotate([0,90,0])tslot20innerbracket();
+
+//bottom_x1_wider_b();
+
+
+
+
+
+
+module bottom_x1_wider_a(){
+ translate([14+(708.8*0.58)-1,19+(638.4*0.58),13-7])color(bcl)rotate([0,0,180])
+difference(){
+ union(){
+ bottom_x1_wider();
+ //translate([182,-30,0])#cube([301,500,5]);
+ } 
+ translate([-3-114,-2-40,0-1])cube([(595+3)/2,(495+5)+30,3+4]);
+}
+}
+
+module bottom_x1_wider_b(){
+ translate([14+(708.8*0.58)-1,19+(638.4*0.58),13-7])color(bcl)rotate([0,0,180])
+difference(){
+ union(){
+ bottom_x1_wider();
+ //translate([-115,-30,0])#cube([297,500,5]);
+ }
+ translate([-3+185,-2-40,0-1])cube([((595+3)/2)+5,(495+5)+36,3+4]);
+}
+}
+
+
+
+//miuzei_camera_module();
+//translate([-18+2,100-21+1,-26.3+10-1.5])rotate([0,0,90])connectionarms2(0);
+//translate([30,1,8])#miuzei_cover();
+
+//nalgene_cap_for_electrocaloric();
+//valve_assy();
+//rotate([0.0,90])smallsyringe_valvesupportmodule_plate();
+//translate([100,-200,0])one_1ml_syringe_parts();
+
+//nalgene_cap_for_sst_liquidlevel();
+//nalgene_bottle_assy_electrocaloric();
+//nalgene_liquidsensor();
+//pressurecompensation_bottle();
+
+ //atx_connect();
+
+module atx_connect(){
+difference(){union(){
+cube([130,20,2]);
+translate([50,17,0])cube([30,20,4]);
+translate([4,10,0])cylinder(r=10/2,h=9);
+translate([4+121,10,0])cylinder(r=10/2,h=9);
+}
+translate([55,31-0,-1])#cylinder(r=3.7/2,h=20);
+translate([55+20,31,-1])#cylinder(r=3.7/2,h=20);
+translate([4,10,-1])#cylinder(r=2.8/2,h=15);
+translate([4+121,10,-1])#cylinder(r=2.8/2,h=15);
+}
+}
+
+//translate([-100+32,60,0])rotate([0,0,90+180])diaphragmpump_end_6pin_pcb();
+//translate([0,0,0])peristaltic_pump_lid();
+
+//translate([1,232,61.3])rotate([0,0,90])valveconnectpart();
+//peristaltic_adafruit();
+//translate([-40,0,0])rotate([0,0,90])diaphragmpump_end_6pin_pcb();
+/*
+*/
+
+
+//translate([100,-200,0])one_1ml_syringe_parts();
+//zbedslot_516_smz_zbed();
+//  #translate([18,2,33])rotate([0,180,0])pololu_screw_nobacklash();
+
+//iverntech_nextgen_syringe10ml_assy();
+//iverntech_pump_slider();
+//translate([0,-4,0])iverntech_pump_slider_plate();
+//igus_TW_04_12_slider_plate();
+//color("silver")translate([-34+5-9-3,20-3.5,3])igus_TW_04_12_slider();
+//multichannel_syringeshuttle_clipbracket();
+
+
+
+/*
 module one_1ml_syringe_parts(){
  translate([0,70,-0.1])one_channel_syringe1ml_clamp();
  onechannel_plunger_clamp();
@@ -36,11 +465,8 @@ module one_1ml_syringe_parts(){
 //eight_multichannel_assay();
 //translate([-74-8,-35,465-140])rotate([0,-90,0])multichannel_syringe_module();
 //color("darkgrey")translate([0,3,0])washbowl_1tip();
-// translate([0,0-55+55+29-29,0])gantry();
 //igus_slidermount_encoder_TW_04_12_motormount_assy_m8();
 //translate([0,0,0])nextgen_syringe10ml_assy();
-//iverntech_nextgen_syringe10ml_assy();
-//iverntech_pump_slider();
 
 //translate([0,-4,0])iverntech_pump_slider_plate();
 /*
@@ -62,7 +488,6 @@ translate([-26.5-20.5,-3.5-90+35,3])iverntech_model_300();
 
 //phillip_base();
 
-//gesim_mount();
 
 
 module phillip_lid(){
@@ -143,15 +568,21 @@ translate([0,20-i,-20])cylinder(r=25.4/2,h=100);
 module gesim_mount(){
 difference(){
 union(){
-translate([0,17.5,-6.5])cube([56-30,2.5,6.5+8]);
-translate([0,0-1,-6.5])cube([56-30,8,6.5+8]);
-translate([0,0,-6.5])cube([56-30,20,6.5]);
-translate([4,9,0])for(i=[0:3]){
+translate([0,17.5,-6.5])cube([56-30-15,2.5,6.5+8]);
+translate([0,0-1,-6.5])cube([56-30-15,8,6.5+8]);
+translate([0,0,-6.5])cube([56-30-15,20,6.5]);
+//translate([0,0,-6.5])#cube([56-25,13,4.5]);
+translate([0,0-20,-6.5])cube([56-45,13+20,4.5]);
+translate([4,9,0])for(i=[0:0]){
  translate([i*4.5,0,0])cube([2,6.5,6.25]);
 }
 }
-translate([4+3+0.2,10,0])for(i=[0:3]){
- translate([i*4.5+0.05,0+16,0+1+2.5])rotate([90,0,0])#cylinder(r=2/2,h=30);
+translate([5,13/2-20,-10])#cylinder(r=4/2,h=20);
+translate([27,13/2,-10])#cylinder(r=4/2,h=20);
+translate([27,13/2,-10])#cylinder(r=4/2,h=20);
+translate([4+3+0.2+1-1,10,0])for(i=[0:0]){
+ translate([i*4.5+0.05,0+16-9,0+1+2.5+1-1])rotate([90,0,0])cylinder(r=2/2,h=30);
+ //translate([i*4.5+0.05,0+16-23+1,0+1+2.5])rotate([90,0,0])#cylinder(r=4.5/2,h=6);
  //translate([i*4.5+0.05,0+16-17.5,0+1+2.5])rotate([90,0,0])cylinder(r=2.8/2,h=15);
 }
 
@@ -255,12 +686,7 @@ translate([10+i/2+0.5,51+5-i/2+0.5,h])rotate([0,90,0])#sphere(r=4/2);
 
 //color("gainsboro")clamp_bottom_simple_m8_smoothrodholder_for_z();
 
-//noconveyer_gantry_assy(20,-75+78-166+260,-45+50+100-50-100+70,-55,0,267,tcl,thcl);
 
-/*
-translate([-40,0,0])rotate([0,0,90])diaphragmpump_end_6pin_pcb();
-translate([-100,0,0])rotate([0,0,90])diaphragmpump_end_6pin_pcb_lid();
-*/
 
 module peristaltic_pump_lid(){
 difference(){
@@ -304,7 +730,6 @@ translate([0,25,0])cylinder(r=2.7/2,h=13);
 
 // xshuttle_assy_wider(20,100);
 //valve_assy();
-//translate([-74-8,-35,465-140])rotate([0,-90,0])multichannel_syringe_module();
 
 //rotate([0,0,0])decapper_servo_handle();
 //decapper_servo_arm();
@@ -630,8 +1055,9 @@ translate([(90-72)/2,(45-23)/2,-2.1])cube([72,23,10]);
 
 //miuzei_raspicam_base();
 
+
+
 //multichannel_drypad();
-//miuzei_camera_module();
 //raspizerobase_extrusion();
 //color("gainsboro")translate([-50+6,-115.5+7-4+130,1+56.5])rotate([180,0,180])
 //stepper_linear_m8nut_endstopflag(6);
@@ -701,7 +1127,6 @@ lasermount_connector_cap();
 //translate([0,0,11])rotate([0,90,0])miuzei_camera_breadboard_b();
 
 
-//translate([-11.5+3.8+(9*5),80-1.5+0.5,-50+10-1.3])rotate([0,90,0])color("pink")miuzei_camera_breadboard_screwstub();
 //rotate([-90,0,0])multichannel_pipette_holder_linear_actuator_connect_cameramount();
 
 

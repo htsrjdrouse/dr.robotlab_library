@@ -1,5 +1,6 @@
 include <modparts.scad>
 use<writescad/write.scad>
+include <dr.robotlab_repstrap.scad>
 
 
 
@@ -8,14 +9,18 @@ use<writescad/write.scad>
 
 
 module one_1ml_syringe_parts(){
- //translate([0,70,-0.1])one_channel_syringe1ml_clamp();
- //one_syringe1ml_clamp_top_luerlock();
- //onechannel_plunger_clamp();
- //translate([0,70+60,-0.1])multichannel_syringe1ml_clamp_extrusion_connect();
+ //translate([-22.85,1-123.7,2.5])mirror([0,1,0])oneml_syringe_stepper_linear_m8nut_coupler();
+ //translate([0,-4,0])iverntech_pump_slider_plate();
+ //translate([0,-4,0])iverntech_pump_slider_plate_connect();
+ multichannel_syringeshuttle_clipbracket();
  /*
- translate([0,70,-0.1])one_front_syringe1ml_clamp_luerlock();
- */
+ onechannel_plunger_clamp();
+ translate([0,70+60,-0.1])multichannel_syringe1ml_clamp_extrusion_connect();
+ translate([0,70,-0.1])one_channel_syringe1ml_clamp();
+ one_syringe1ml_clamp_top_luerlock();
+ //translate([0,70,-0.1])one_front_syringe1ml_clamp_luerlock();
  syringe_1ml_plungerclip();
+ */
 }
 
 
@@ -160,12 +165,12 @@ difference(){
 translate([-183-13/2-5,170-13/2,30]){
 union(){
 translate([0,2+7.25-2,2])rotate([0,0,0])cube([120,13/2+7,4]);
-translate([0+41.2,2+7.25-7-3,2])rotate([0,0,0])cube([25,10,4]);
+translate([0+41.2,2+7.25-7-3-5,2])rotate([0,0,0])#cube([25,10+5,4]);
 }
 }
 translate([-183-13/2-5,170-13/2,30]){
-translate([64.7-5-36.15,14.4-3-0.87-50+8-0.08,-55.75])translate([17.25,5.8,-10])translate([-9+15-2,30,23])rotate([0,0,0])cylinder(r=3.7/2, h=200);
-translate([64.7-5-36.15+17.5,14.4-3-0.87-50+8-0.08,-55.75])translate([17.25,5.8,-10])translate([-9+15-2,30,23])rotate([0,0,0])cylinder(r=3.7/2, h=200);
+translate([64.7-5-36.15,14.4-3-0.87-50+8-0.08-5,-55.75])translate([17.25,5.8,-10])translate([-9+15-2,30,23])rotate([0,0,0])cylinder(r=3.7/2, h=200);
+translate([64.7-5-36.15+17.5,14.4-3-0.87-50+8-0.08-5,-55.75])translate([17.25,5.8,-10])translate([-9+15-2,30,23])rotate([0,0,0])cylinder(r=3.7/2, h=200);
 for(i=[0:7]){
 translate([64.7-5-36.15+17.5-50.75+(i*14),14.4-3-0.87-50+8-0.08+9.75,-55.75])translate([17.25,5.8,-10])translate([-9+15-2,30,23])rotate([0,0,0])cylinder(r=2.7/2, h=200);
 }
@@ -199,7 +204,22 @@ translate([64.7-5,14.4-3-0.87,155.75])translate([17.25,5.8,-10])translate([-9+15
 
 
 
-
+module syringe_1ml_plungerclip_1piece(){
+difference(){
+union(){
+translate([0-4+10,-5+2.5,-8])cube([5,10+5,16]);
+translate([0-4+10,-5+2.5,-8])#cube([14+15-10+4,10+5-1,4]);
+}
+translate([18+4,0,-8])#cylinder(r=3.7/2,h=40);
+/*
+for(i=[0:10]){
+translate([-5,0,0+i])rotate([90,-0,90])cylinder(r=4/2,h=10);
+translate([5,0,0+i])rotate([90,-0,90])cylinder(r=10.2/2,h=1.75);
+}
+*/
+translate([2.5-2,40,4])rotate([90,0,0])cylinder(r=2.8/2,h=100);
+}
+}
 
 module syringe_1ml_plungerclip(){
 difference(){
@@ -225,10 +245,61 @@ translate([-183+(i*14),170,44])rotate([0,90,90])syringe_1ml();
 }
 }
 
+module syringe_1ml_stack_1piece_multichannel(){
+
+difference(){union(){
+
+/*
+//clamp part
+translate([-0.3-14,0+146-2,-0.8])
+translate([-110+54.5+6-14,-81.5+1.5+40+6.6+3.5-14.5,16+15+6])cube([5,6.5,35-15-4]);
+translate([-0.3-14-(8*14)-3.5,0+146-2,-0.8])
+translate([-110+54.5+6-14,-81.5+1.5+40+6.6+3.5-14.5,16+15+6])cube([5,6.5,35-15-4]);
+*/
 
 
+//attach part
+translate([-0.3-14-(8.6*13),0+146-2-7.4,-1])
+translate([-110+54.5+6-14-3-1,-81.5+1.5+40+6.6+3.5-14.5+2.3,16+15+6])cube([5+3+1,6.5-1.5,35-15-4]);
+translate([-85-(9*14),105.5,44])
+translate([0-4+10.5+10+1,-5+2.5-22.5-4,-8])#cube([14+15-10-10-1,10+5+4,4]);
 
 
+for(i=[0:7]){
+color("")translate([-85-(i*14),105.5,44])rotate([-0,0,-90])syringe_1ml_plungerclip_1piece();
+//translate([-183+(i*14),170,44])rotate([0,90,90])syringe_1ml();
+//translate([0-42.5-(i*14),-4+230-80-2,0])iverntech_pump_slider_plate_connect_multichannel();
+}
+}
+
+translate([-77.5-0.5,100-0.5,50-4])rotate([90,90,0])cylinder(r=3.8/2,h=100);
+translate([-77.5-0.5,130,50-4])rotate([90,90,0])cylinder(r=2.8/2,h=100);
+translate([-77.5-(8*14)-0.5,100-0.5,50-4])rotate([90,90,0])cylinder(r=3.8/2,h=100);
+translate([-77.5-(8*14)-0.5,130,50-4])rotate([90,90,0])cylinder(r=2.8/2,h=100);
+
+for(i=[0:7]){
+//translate([18-(i*14),0,-8])cylinder(r=3.7/2,h=40);
+
+/*
+translate([-85-(i*14),105.5,44])rotate([-0,0,-90])
+for(i=[0:10]){
+translate([-5,0,0+i])rotate([90,-0,90])cylinder(r=4/2,h=10);
+translate([5,0,0+i])rotate([90,-0,90])cylinder(r=10.2/2,h=1.75);
+}
+*/
+
+translate([-14,0,0]){
+translate([-77.5-(i*14)-0.5,100-0.5,50-4])rotate([90,90,0])cylinder(r=3.8/2,h=100);
+translate([-77.5-(i*14)-0.5,130,50-4])rotate([90,90,0])cylinder(r=2.8/2,h=100);
+}
+translate([-77.5-0.5,100-0.5,50-4])rotate([90,90,0])cylinder(r=3.8/2,h=100);
+translate([-77.5-0.5,130,50-4])rotate([90,90,0])cylinder(r=2.8/2,h=100);
+
+translate([-77.5-(8*14)-0.5,100-0.5,50-4])rotate([90,90,0])cylinder(r=3.8/2,h=100);
+translate([-77.5-(8*14)-0.5,130,50-4])rotate([90,90,0])cylinder(r=2.8/2,h=100);
+}
+}
+}
 /*
 
 rotate([0,0,0])difference(){

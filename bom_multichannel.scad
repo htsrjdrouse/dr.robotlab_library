@@ -37,22 +37,29 @@ translate([0,0,1])cylinder(r1=0.5/2,r2=5.5/2,h=49.5);
 
 //where the action is for the wider option
 module multichannel_assy_wider(){
-//color("gainsboro")translate([-27.5,-38,-24])rotate([0,0,180])inductivesensorcap_aligner();
-//color("gainsboro")smaller_igus_slidermount_vertical_adjust_nema17();
+//color("")translate([-27.5,-38,-24])rotate([0,0,180])inductivesensorcap_aligner();
+//color("")smaller_igus_slidermount_vertical_adjust_nema17();
 
 translate([-38-1.5+1,-40+20+14-32+30-20,-2+15+3-5])rotate([0,0,0])color("silver")import("TS_04_09_150_2.stl");
 
 translate([-70+33-1.5,-80-32-10,19-23])rotate([-90,0,0]){
-translate([-40,21.1,23.5])color("gainsboro")rotate([0,0,-90])motormount_centered();
+translate([-40,21.1,23.5])color("")rotate([0,0,-90])motormount_centered();
+
 translate([0,0,5])nema17();
 translate([0,0,5])color("silver")cylinder(r=9/2,h=120+40);
 }
-/*
-*/
+
+
 translate([0-1.5,-22+55-45+32-50+50-20,0]){
+
+//this is in actual design
+translate([-31.8+33,53.5+5,-3-23-0.5])color("")stepper_linear_m8nut_coupler_vertical_adjust_nema17_wider();
 translate([-38+1,-30-10,3+18-5])color("silver")rotate([0,0,0])import("igus_sliders/TW_04_09_4.stl");
-translate([-31.8+33,53.5+5,-3-23-0.5])color("gainsboro")stepper_linear_m8nut_coupler_vertical_adjust_nema17_wider();
-color("gainsboro")translate([-50+6,-115.5+7-4+130,1+56.5])rotate([180,0,180])stepper_linear_m8nut_endstopflag(6);
+color("")translate([-50+6,-115.5+7-4+130,1+56.5])rotate([180,0,180])stepper_linear_m8nut_endstopflag(6);
+/* 
+*/
+
+
 translate([0-5.5,-35-4,13-11]){
 //this one is the standard one 
 //translate([0,0,-13.5])multichannel_pipette_holder_linear_actuator_connect();
@@ -61,7 +68,10 @@ translate([0-5.5,-35-4,13-11]){
 //translate([-11.5+3.8+(9*5),80-1.5+0.5,-50+10-1.3])rotate([0,90,0])color("pink")miuzei_camera_breadboard_screwstub();
 
 
+//This is in actual design
 translate([0,0,-13.5])multichannel_pipette_holder_linear_actuator_connect_cameramount();
+
+
 //translate([-20,5,60])rotate([0,0,180])miuzei_camera_module();
 
 /*
@@ -88,16 +98,16 @@ translate([30,4,-3])color("black")cylinder(r=16/2,h=8);
 /*
 translate([0,-35,13]){
 translate([-65,29,60])rotate([-90,0,0])multichannel_pipette_holder();
-translate([-8,30-6.5,28.2])rotate([0,180,90])color("gainsboro")tslot_clamp_filament_linearactuator_shuttle();
+translate([-8,30-6.5,28.2])rotate([0,180,90])color("")tslot_clamp_filament_linearactuator_shuttle();
 translate([-85,0,57])rotate([0,90,0])tslot20(100);
 }
 */
 
 
 /*
-translate([-8,30-6.5,28.2])rotate([0,180,90])color("gainsboro")tslot_clamp_filament_linearactuator_shuttle();
-translate([-32,49.5,-11])rotate([0,0,0])color("gainsboro")stepper_linear_m8nut_coupler_vertical_adjust_nema17_spacer(6);
-translate([-31.8,53.5,-3])color("gainsboro")stepper_linear_m8nut_coupler_vertical_adjust_nema17();
+translate([-8,30-6.5,28.2])rotate([0,180,90])color("")tslot_clamp_filament_linearactuator_shuttle();
+translate([-32,49.5,-11])rotate([0,0,0])color("")stepper_linear_m8nut_coupler_vertical_adjust_nema17_spacer(6);
+translate([-31.8,53.5,-3])color("")stepper_linear_m8nut_coupler_vertical_adjust_nema17();
 translate([-85,0,57])rotate([0,90,0])tslot20(100);
 translate([-65,29,60])rotate([-90,0,0])multichannel_pipette_holder();
 */
@@ -110,8 +120,6 @@ translate([-65,29,60])rotate([-90,0,0])multichannel_pipette_holder();
 
 
 module miuzei_camera_module(){
-
-
 //translate([0-26-18,90-13.5,-50-13+5])rotate([-90,0,-90])
 rotate([0,90,0])miuzei_camera_breadboard_a();
 //import("BOM_inventory/build3/stls/miuzei_camera_breadboard_a.stl");
@@ -119,8 +127,6 @@ rotate([0,180,0])import("BOM_inventory/build3/stls/miuzei_camera_breadboard_b.st
 //translate([0,0,11])rotate([0,90,0])miuzei_camera_breadboard_b();
 /*
 */
-
-
 translate([-212,-330-53,110+45])rotate([-90,0,0]){
 translate([175-2+10,300-120,400])rotate([-90,0,90]){
 translate([0,0,3+6])rotate([0,180,0])displayPiZero();
@@ -129,9 +135,7 @@ color("white")raspizero_ribbon_cable();
 }
 }
 /*
-
 */
-
 translate([43,-57,-62]){
 translate([-11.5+3.8+(9*5)-10+1+9+3,80-1.5+0.5-20-17-0.75,-50+10-1.3+100+7])rotate([90,0,90])color("pink")import("BOM_inventory/build2/stls/miuzei_camera_breadboard_screwstub.stl");
 translate([-11.5+3.8+(9*5)-10+1+9-(9*9),80-1.5+0.5-20-17-0.75,-50+10-1.3+100+7])rotate([90,0,90])color("pink")import("BOM_inventory/build2/stls/miuzei_camera_breadboard_screwstub.stl");
@@ -141,16 +145,14 @@ translate([-11.5+3.8+(9*5)-10+1+9-(9*9),80-1.5+0.5-20-17-0.75,-50+10-1.3+100+7])
 
 /*
 //translate([0-26-18,90-13.5-20+1,-50-13+5+120])rotate([-0,90,-0])miuzei_camera_breadboard();
-
 rotate([0,90,0])miuzei_camera_breadboard_a();
 translate([0,0,-4])rotate([0,180,0])import("BOM_inventory/build3/stls/miuzei_camera_breadboard_b.stl");
 */
-
 translate([-17,40,-55])rotate([0,0,180]){
 translate([-7-15,-25+120-31.5+16.4-36,-37-17+10+110-1])rotate([0,-0,-90])import("BOM_inventory/build2/stls/mnt_md_justclip.stl");
 translate([0,-60,83]){
-translate([-18+2,100-21+1,-26.3+10-1.5])rotate([0,0,90])connectionarms2(0);
-translate([-18+2+3,100-21+10+1-49,-26.3+10-1.5])rotate([0,0,-90])connectionarms2(0);
+translate([-18+2,100-21+1,-26.3+10-1.5])rotate([0,0,90])connectionarms2(40);
+translate([-18+2+3,100-21+10+1-49,-26.3+10-1.5])rotate([0,0,-90])connectionarms2(40);
 translate([-35-10,90-50,64-37])rotate([90,0,0]){
 translate([30,1,8])#miuzei_cover();
 //translate([30,0,0])miuzei_raspicam_base();
@@ -162,17 +164,22 @@ translate([30,4,-3])color("black")cylinder(r=16/2,h=8);
 }
 /*
 */
-
-
-
 }
+
+
+
+
+
+
+
+
 
 
 
 module multichannel_pipette_holder_linear_actuator_connect(){
  difference(){union(){
  translate([-65,29,60])rotate([-90,0,0])multichannel_pipette_holder_noextrusion();
- translate([-8,30-6.5,28.2])rotate([0,180,90])color("gainsboro")tslot_clamp_filament_linearactuator_shuttle_noextrusion();
+ translate([-8,30-6.5,28.2])rotate([0,180,90])color("")tslot_clamp_filament_linearactuator_shuttle_noextrusion();
  }
 }
 }
@@ -180,7 +187,7 @@ module multichannel_pipette_holder_linear_actuator_connect(){
 module multichannel_pipette_holder_linear_actuator_connect_cameramount(){
  difference(){union(){
  translate([-65,29,60])rotate([-90,0,0]) multichannel_pipette_holder_camera_example();
- translate([-8,30-6.5,28.2])rotate([0,180,90])color("gainsboro")tslot_clamp_filament_linearactuator_shuttle_noextrusion();
+ translate([-8,30-6.5,28.2])rotate([0,180,90])color("")tslot_clamp_filament_linearactuator_shuttle_noextrusion();
  }
 }
 }
@@ -193,8 +200,8 @@ module multichannel_pipette_holder_linear_actuator_connect_cameramount(){
 
 
 module multichannel_assy(){
-color("gainsboro")translate([-27.5,-38,-24])rotate([0,0,180])inductivesensorcap_aligner();
-color("gainsboro")smaller_igus_slidermount_vertical_adjust_nema17();
+color("")translate([-27.5,-38,-24])rotate([0,0,180])inductivesensorcap_aligner();
+color("")smaller_igus_slidermount_vertical_adjust_nema17();
 translate([-38,-40+20+14,-2])color("silver")import("TS_04_09_105_2.stl");
 translate([-70,-80,19])rotate([-90,0,0]){
 nema17();
@@ -202,10 +209,10 @@ color("silver")cylinder(r=9/2,h=120);
 }
 translate([0,-25,0]){
 translate([-38,0,3])color("silver")import("igus_sliders/TW_04_09_4.stl");
-translate([-27,29.5,8])rotate([0,0,180])color("gainsboro")filament_linearactuator_shuttle();
-translate([-8,30-6.5,28.2])rotate([0,180,90])color("gainsboro")tslot_clamp_filament_linearactuator_shuttle();
-translate([-32,49.5,-11])rotate([0,0,0])color("gainsboro")stepper_linear_m8nut_coupler_vertical_adjust_nema17_spacer(6);
-translate([-31.8,53.5,-3])color("gainsboro")stepper_linear_m8nut_coupler_vertical_adjust_nema17();
+translate([-27,29.5,8])rotate([0,0,180])color("")filament_linearactuator_shuttle();
+translate([-8,30-6.5,28.2])rotate([0,180,90])color("")tslot_clamp_filament_linearactuator_shuttle();
+translate([-32,49.5,-11])rotate([0,0,0])color("")stepper_linear_m8nut_coupler_vertical_adjust_nema17_spacer(6);
+translate([-31.8,53.5,-3])color("")stepper_linear_m8nut_coupler_vertical_adjust_nema17();
 translate([-85,0,57])rotate([0,90,0])tslot20(100);
 translate([-65,29,60])rotate([-90,0,0])multichannel_pipette_holder();
 }
@@ -228,7 +235,7 @@ translate([-65,29,60])rotate([-90,0,0])multichannel_pipette_holder();
 
 
 /*
-shh = 0.9;color([shh,shh,shh])color("gainsboro")translate([-0.5,-37,22+7])filament_linearactuator_shuttle();
+shh = 0.9;color([shh,shh,shh])color("")translate([-0.5,-37,22+7])filament_linearactuator_shuttle();
 smaller_igus_slidermount_vertical_adjust_nema17();
 shuttle_front_vertical_adjust();
 rotate([0,0,0])stepper_linear_m8nut_coupler_vertical_adjust_nema17_spacer(6);
@@ -346,17 +353,17 @@ multichannel_pipette_holder();
 
 
 module filament_linearactuator_multichannel_wider(){
-color("gainsboro")translate([-1,0,0])shuttle_front_vertical_adjust_wider_slider_wall();
-color("gainsboro")translate([-25+8,5,41])rotate([-90,0,0])import("files/gt2belt_holder.stl");
-color("gainsboro")translate([-25-53-8,5,41])rotate([-90,0,0])import("files/gt2belt_holder.stl");
+color("")translate([-1,0,0])shuttle_front_vertical_adjust_wider_slider_wall_beltfix();
+//color("")translate([-25+8,5,41])rotate([-90,0,0])import("files/gt2belt_holder.stl");
+//color("")translate([-25-53-8,5,41])rotate([-90,0,0])import("files/gt2belt_holder.stl");
 }
 
 
 
 module filament_linearactuator_multichannel(){
-color("gainsboro")translate([-1,0,0])shuttle_front_vertical_adjust();
-color("gainsboro")translate([-25,5,41])rotate([-90,0,0])import("files/gt2belt_holder.stl");
-color("gainsboro")translate([-25-53,5,41])rotate([-90,0,0])import("files/gt2belt_holder.stl");
+color("")translate([-1,0,0])shuttle_front_vertical_adjust();
+color("")translate([-25,5,41])rotate([-90,0,0])import("files/gt2belt_holder.stl");
+color("")translate([-25-53,5,41])rotate([-90,0,0])import("files/gt2belt_holder.stl");
 }
 
 
@@ -364,12 +371,10 @@ color("gainsboro")translate([-25-53,5,41])rotate([-90,0,0])import("files/gt2belt
 
 
 module slider_front_assy_multichannel(){
-//translate([179.5,180-12.5+1.5,300-1])rotate([-90,0,180])multichannel_assy();
 translate([179.5,180-12.5+1.5,300-1])rotate([-90,0,180])multichannel_assy_wider();
 translate([0,3,0]){
 translate([0,0,-3]){
 translate([208,188+1.5,342])rotate([90,0,0])filament_linearactuator_multichannel_wider();
-//translate([208,188+1.5,342])rotate([90,0,0])filament_linearactuator_multichannel();
 //inductive sensor
 //color("silver")translate([208-16,188-16,342-35])cylinder(r=12/2,h=55);
 }
@@ -724,7 +729,7 @@ translate([0,0,-0.1])cylinder(r1=(7-1)/2,r2=(4-1)/2,h=15+.2);
 
 
 module multichannel_pipette_holder(){
-color("gainsboro"){
+color(""){
 translate([-9,-6.6,-4])cube([6,13.2,12]);
 translate([-9+76.5-0.3+1,-6.6,-4])cube([5,13.2,12]);
 }
@@ -767,7 +772,7 @@ translate([-4-11+70,-sh/2+3-5,-10])cylinder(r=5.5/2,h=80);
 
 //pipette part 
 module multichannel_pipette_holder_camera_example(){
-color("gainsboro"){
+color(""){
 //translate([-9,-6.6+8,-4])cube([6,13.2,12]);
 //translate([-9+76.5-0.3+1,-6.6+8,-4])cube([5,13.2,12]);
 translate([-9-9,-6.6+8,-4])cube([6,13.2,12]);
@@ -841,7 +846,7 @@ translate([-4-11+70,-sh/2+3-5,-10])cylinder(r=5.5/2,h=80);
 
 
 module multichannel_pipette_holder_noextrusion(){
-color("gainsboro"){
+color(""){
 translate([-9,-6.6+8,-4])cube([6,13.2,12]);
 translate([-9+76.5-0.3+1,-6.6+8,-4])cube([5,13.2,12]);
 }
@@ -1043,7 +1048,7 @@ color("white")translate([0,0,-36.7-3])cylinder(r=12/2,h=3);
 
 
 module pipette_p1000(dia){
-color("gainsboro")difference(){
+color("")difference(){
 union(){
 //translate([0,0,4])cylinder(r2=4.5/2,r1=5.5/2,h=8);
 translate([0,2,-4])rotate([0,0,45])cylinder(r=13/2,h=12,$fn=4);
@@ -1081,7 +1086,7 @@ color("white")translate([0,0,-6.7-3])cylinder(r=12/2,h=3);
 
 
 module pipette_p1000_noextrusion(dia,fl){
-color("gainsboro")difference(){
+color("")difference(){
 union(){
 //translate([0,0,4])cylinder(r2=4.5/2,r1=5.5/2,h=8);
 translate([0,2,-4])rotate([0,0,45])cylinder(r=13/2,h=12,$fn=4);

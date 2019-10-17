@@ -6,17 +6,275 @@ include <nanoplotter.scad>
 include <PiZero.scad>
 
 
+//translate([0,0,200])rotate([90,0,90])import("CoreXY_Tool_Changer_Motion_System/files/m8_ybar_corexy.stl");
+
+//translate([-8,0,0])iverntech_slider_tslot_connector();
+//rotate([0,180,0])iverntech_slider_shuttle_bottom();
+
+//translate([-49.5+12,345,300-11])rotate([0,180,180])ivernetech_slider_module_wider();
+xshuttle_assy_wider(x,y);
+outside_frame_wider(tcl,thcl,x,y);
+translate([0,-14+19,-26])slider_assy(x,y);
+//translate([0,0,-24])corexy_beltsetup_wider(x,y);
+translate([0,0,-29.5])xymotor_assy_wider();
+translate([0,0,-24])corexy_beltsetup_wider(x,y);
+//zbed_smz_wider_nomove();
+//microfluidics_set();
+
+//left_outside_frame_wider_zbed();
+
+/*
+translate([-50,0,0])difference(){
+cube([10,22,4]);
+translate([5,3.5,-0.1])#cylinder(r=3.7/2,h=40);
+translate([5,3.5+12,-0.1])#cylinder(r=3.7/2,h=40);
+}
+*/
+
+//translate([0,-14+19,-26])slider_assy(100,100);
+//filament_linearactuator_multichannel_wider();
+//color("gainsboro")translate([-1,0,0])shuttle_front_vertical_adjust_wider_slider_wall();
+
+//translate([0,-55,0])shuttle_front_vertical_adjust_wider_slider_wall_beltfix();
+//shuttle_back();
+//translate([15-25+229.5,206.5-11,-63+400])rotate([90,0,0])sandwich_sliderwheel_assy();
+//color("")translate([-1,0,0])shuttle_front_vertical_adjust_wider_slider_wall_beltfix();
+//slider_front_assy_multichannel();
+///slider_back_assy();
+//shuttle_back();
+//translate([49.7,31,25])slider_wall();
+//rotate([-90,0,0])stepper_linear_m8nut_coupler_vertical_adjust_nema17_wider();
+
+/*
+translate([18.55,10-1,-3])cube([8,11.95,2]);
+color("gainsboro")translate([-25-12,5+4,41-12])rotate([-90,0,0])import("files/gt2belt_holder.stl");
+*/
+
+
+//filament_linearactuator_shuttle();
+//linearactuator_filament_encodershuttle();
+
+//syringeplunger_modular_linearactuator_assy_igus_TW_04_07();
+//filamentdriver_formed_modular_linearactuator_igus_TW_04_09();
+//igus_lowprofile_assy();
+
+
+//tslot20innerbracket_rtangle();
+
+//aluminum_extrusion_breadboard();
+//topbreadboard();
+
+//tslot_topbreadboardmount();
+
+//extrusion_lid_coupler_breadboard();
+
+//iverntech_pump_slider_plate();
+
+//back_plate_plug_rise();
+//amp_powersupply_wallB_plug();
+//translate([70,1,0])#miuzei_cover();
+//translate([30,0,0])miuzei_raspicam_base();
+//translate([30,0,0])import("BOM_inventory/build2/stls/miuzei_raspicam_base.stl");
+
+//rotate([0,90,0])tslot20innerbracket();
+
+//syringe_1ml_stack();
+// translate([-141,200-19.7-32-225,44])rotate([0,0,-90])syringe_cavro250ul_plungerclip();
+
+//miuzei_camera_module();
+//syringe_1ml_plungerclip_1piece();
+//one_1ml_syringe_parts();
+// translate([0,70,-0.1])one_channel_cavro250ul_clamp();
+ gantry_shelves_wider();
+
+//color("darkgrey")translate([0-37,3,-1+18])washbowl_8tip_drypad();
+//color("darkgrey")translate([0,3,-1+18])washbowl_8tip();
+//color("darkgrey")translate([0,3,-1])washbowl_8tip_base();
+// washplate_mount();
+
+
+/*
+translate([0,0,10])color("pink")phillip_lid();
+phillip_base();
+*/
+
+//gesim_mount_lego();
+
+//connectionarms2(30);
+/*
+rotate([0,90,0])miuzei_camera_breadboard_screwstub_gesimtip();
+translate([-27-1.3-3.2+0.04,-7,12.4])rotate([90,0,90])#gesim_mount_lego_slot();
+
+
+rotate([0,180,0])gesim_mount_lego_slot();
+rotate([0,90,0])miuzei_camera_breadboard_screwstub_gesimtip();
+*/
+
+
+//zdrive_corexy();
+//color("pink")zdrive_corexy_beltplate();
+//color("lime")zdrive_corexy_beltplate_tslotconnect();
+
+
+
+
+
+/*
+fritholder();
+translate([13,0,0])fritholder_top();
+*/
+
+module fritholder_top(){
+difference(){
+cylinder(r=(5.2+4+4)/2,h=2.1+3.5+1,$fn=6);
+translate([0,0,3.5])#cylinder(r=(5.2+4+0.2)/2,h=2.2+3,$fn=6);
+translate([0,0,-1])#cylinder(r=3.8/2,h=30);
+}
+}
+
+module fritholder(){
+difference(){cylinder(r=(5.2+4)/2,h=2.1+3.5,$fn=6);
+translate([0,0,3.5])#cylinder(r=5.2/2,h=2.1);
+translate([0,0,-3])#cylinder(r=3.8/2,h=12.1);
+}
+}
+
+
+//translate([-27-1.3-3.2,-7,12.4])rotate([90,0,90])gesim_mount_lego_slot();
+//rotate([0,90,0])miuzei_camera_breadboard_screwstub_gesimtip();
+/*
+*/
+
+
+
+//slider_front_assy_multichannel();
+
+//slider_front_assy_multichannel();
+//translate([5,385,307+8])rotate([0,180,180])
+//translate([-9+23+2,350-125,-25+4.5+12.5-12.5])rotate([90,0,0])tslot20(100);
+//translate([179.5,180-12.5+1.5,300-1])rotate([-90,0,180])multichannel_assy_wider();
+//translate([208,188+1.5,342])rotate([90,0,0])filament_linearactuator_multichannel_wider();
+/*
+*/
+
+/*
+translate([208-151.5,188+1.5,342-35])rotate([90,0,0])
+zdrive_corexy();
+translate([208+151.5+20,188+1.5-16,342-35])rotate([-90,180,0])
+color("pink")zdrive_corexy_beltplate();
+translate([208+151.5+20,188+1.5-16,342-35])rotate([-90,180,0])
+color("lime")zdrive_corexy_beltplate_tslotconnect();
+*/
+//translate([208+151.5+20,188+1.5-16,342-35])rotate([-90,180,0])
+//color("pink")zdrive_corexy_beltplate();
+
+/*
+*/
+//color("gainsboro")translate([-1,0,0])shuttle_front_vertical_adjust_wider_slider_wall();
+//multichannel_drypad_384();
+
+
+//stroboscope_miuzei_back();
+//stroboscope_miuzei_mirror(10);
+
+//XY_bearings_Left_x1_3dprint();
+
+//XY_bearings_Right_x1();
+
+
+//iverntech_slider_tslot_connector();
+//usbs_socket_alu_support_lid_usbs_cover();
+
+//color(col)translate([28,21,5])bananajackpanel();
+//projection(cut = false)
+//back_plate_x1_wider();
+//right_plate_x1_wider();
+//left_plate_x1_wider();
+//pcb_panels_wider();
+//noconveyer_gantry_assy(20,-75+78-166+260,-45+50+100-50-100+70,-55,0,267,tcl,thcl);
+
+//cube([20,20,7]);
+
+//translate([69.2-75,13-60-42+3,-52])rotate([90,0,0])mirror([0,1,0])bom_controlpanel();
+//conveyer_panel_pcb_holder();
+//mirror([0,1,0])import("files/endstop_y.stl");
+
+//translate([30,0,0])cube([40,25,4]);
+
+//openmv_nice_assy_stroboscope();
+//stroboscope_assy();
+//raspizerobase_extrusion();
+//translate([-7-15,-25+120-31.5+16.4-36,-37-17+10+110-1])rotate([0,-0,-90])import("BOM_inventory/build2/stls/mnt_md_justclip.stl");
+
+//rotate([0,180,0])miuzei_lenscap(16);
+//translate([-18+2,100-21+1,-26.3+10-1.5])rotate([0,0,90])connectionarms2(0);
+
+
+//translate([-15,60-20,35])rotate([90,180,0])miuzei_lenscap(11);
+
+//pcb_panels_wider();
+
+/*
+//translate([-15,60-20,35])rotate([90,180,0])miuzei_lenscap_stroboscope(11+0);
+stroboscope_miuzei();
+translate([34-0.5,-60+0-24+51.5-22-0.4,-20+2-0.5]){
+//miuzei_camera_curtain();
+//miuzei_camera_curtain_support_stroboscope();
+//translate([-30,0,0])mirror([1,0,0])miuzei_camera_curtain_support_stroboscope();
+translate([-15,60-20,35])rotate([90,180,0])miuzei_lenscap_stroboscope(11+0);
+translate([-35-10,90-50,64-37])rotate([90,0,0]){
+translate([30,1,8])#miuzei_cover();
+//translate([30,0,0])miuzei_raspicam_base();
+translate([30,0,0])import("BOM_inventory/build2/stls/miuzei_raspicam_base.stl");
+translate([30,4,-10])color("black")cylinder(r=12/2,h=18);
+translate([30,4,-3])color("black")cylinder(r=16/2,h=8);
+}
+}
+*/
+
+
+module miuzei_camera_curtain(){
+translate([0,32,0])difference(){
+translate([-15+16-25,60-20+5,35-10+1])cube([10+3+25,3,15]);
+//translate([-15+13+5-1,60-20+5+25,35-10+5+1])rotate([90,0,0])#cylinder(r=3.8/2,h=40);
+translate([-15+13+5-1+8.5,60-20+5+25+10,35-10+5+1-1])rotate([90,0,0])#cylinder(r=2.7/2,h=60);
+}
+}
+
+/*
+module miuzei_camera_curtain_support(){
+difference(){
+union(){
+translate([-15+13,60-20+5,35-10+1])cube([10+3,5,10]);
+translate([-15+13+9,60-20+5,35-10+1])cube([7,30,8]);
+}
+translate([-15+13+5-1+8.5,60-20+5+25+10,35-10+5+1-1])rotate([90,0,0])#cylinder(r=2.7/2,h=60);
+translate([-15+13+5-1,60-20+5+25,35-10+5+1])rotate([90,0,0])#cylinder(r=3.8/2,h=40);
+}
+}
+*/
+module miuzei_camera_curtain_support_stroboscope(){
+difference(){
+union(){
+translate([-15+13,60-20+5,35-10+1])cube([10+3+5,5,10]);
+translate([-15+13+9+5,60-20+5,35-10+1])#cube([7,30,8]);
+}
+translate([-15+13+5-1+8.5,60-20+5+25+10,35-10+5+1-1])rotate([90,0,0])#cylinder(r=2.7/2,h=60);
+translate([-15+13+5-1,60-20+5+25,35-10+5+1])rotate([90,0,0])#cylinder(r=3.8/2,h=40);
+}
+}
+
+
+
+
+
+
 //translate([28,21,5])liquidlevel_pumps_pcb();
-translate([69.2-75,13-60-42+3,-52])rotate([90,0,0])bom_controlpanel();
+//translate([69.2-75,13-60-42+3,-52])rotate([90,0,0])bom_controlpanel();
 
 //translate([0,0,-13.5])multichannel_pipette_holder_linear_actuator_connect_cameramount();
 
 //multichannel_syringe_module();
-
-//translate([-27-1.3-3.2,-7,12.4])rotate([90,0,90])gesim_mount_lego_slot();
-
-
-//rotate([0,90,0])miuzei_camera_breadboard_screwstub_gesimtip();
 
 
 /*
@@ -36,10 +294,10 @@ translate([0,0,3.2])difference(){
 union(){
 translate([0,-2,-2])cube([10,1.85,3.2+2]);
 translate([0,7.55,-2])cube([10,1.85,3.2+2]);
-translate([0-8,0-0.15,0])#cube([10+8,7.7,3.2]);
+translate([0-8,0-0.15,0-0.05])cube([10+8,7.7,3.252]);
 }
-translate([0+5,7.5/2,-4.3])#cylinder(r=2/2,h=20);
-translate([-8.5-4-2+10.5,-11+13,-29.3-6])rotate([0,0,0])#cylinder(r=2/2,h=50);
+translate([0+5,7.5/2,-4.3])cylinder(r=2/2,h=20);
+translate([-8.5-4-2+10.5,-11+13,-29.3-6])rotate([0,0,0])cylinder(r=2/2,h=50);
 }
 }
 
@@ -59,12 +317,6 @@ translate([0+5,7.5/2,-4.3])#cylinder(r=2.7/2,h=20);
 //pressurecompensation_bottle();
 
 // translate([6.5,-6.5,185])nalgene_cap_for_electrocaloric();
-
-//color("darkgrey")translate([0-37,3,-1+18])washbowl_8tip_drypad();
-//color("darkgrey")translate([0,3,-1+18])washbowl_8tip();
-//color("darkgrey")translate([0,3,-1])washbowl_8tip_base();
-
-// washplate_mount();
 
 
 
@@ -114,14 +366,15 @@ translate([8+20+a,9,-1])cylinder(r=4.7/2,h=20);
 //one_1ml_syringe_parts();
 
 // translate([0,70,-0.1])one_channel_syringe1ml_clamp();
-//translate([-74-8,-35,465-140])rotate([0,-90,0])multichannel_syringe_module();
-//multichannel_plunger_clamp();
-//multichannel_syringeshuttle_clipbracket();
-//eight_multichannel_assay();
-//translate([0,70,-0.1])multichannel_syringe1ml_clamp_luerlock();
-//translate([0,70,-0.1])multichannel_syringe1ml_clamp_extrusion_connect();
-//translate([0,70,-0.1+0])multichannel_syringe1ml_clamp_top();
-
+/*
+translate([-74-8,-35,465-140])rotate([0,-90,0])multichannel_syringe_module();
+multichannel_plunger_clamp();
+multichannel_syringeshuttle_clipbracket();
+eight_multichannel_assay();
+translate([0,70,-0.1])multichannel_syringe1ml_clamp_luerlock();
+translate([0,70,-0.1])multichannel_syringe1ml_clamp_extrusion_connect();
+translate([0,70,-0.1+0])multichannel_syringe1ml_clamp_top();
+*/
 
 
 
@@ -190,7 +443,6 @@ module joinpieces_bottom_surface(){
   }
 } 
  
-// outside_frame_wider(tcl,thcl,x,y);
 /*
 translate([28,21,5])syringe_pcb_holder_back();
 translate([40-12.5,-40+61,2])syringe_pcb_holder();
@@ -218,6 +470,9 @@ translate([40-12.5+53,-40+61,2])syringe_pcb_holder_placeholder();
 
 //translate([0,70,-0.1])syringe_1ml_stack_1piece_multichannel();
 //translate([0-42.5,-4+230-13,0])iverntech_pump_slider_plate_connect_multichannel();
+
+
+
 
 //translate([100,-200,0])one_1ml_syringe_parts();
 
@@ -348,10 +603,10 @@ translate([0,0,-1])cylinder(r=2.9/2,h=50);
 //amp_lidbox_assy();
 //amp_powersupply_box_assy();
 //projection(cut = false)
-//bottom_x1_wider_a();
 //teensy_amp_module();
 //rotate([0,90,0])tslot20innerbracket();
 
+//bottom_x1_wider_a();
 //bottom_x1_wider_b();
 
 
@@ -485,7 +740,6 @@ translate([-26.5-20.5,-3.5-90+35,3])iverntech_model_300();
 
 //pressurecompensation_bottle();
 //translate([0,0,10])color("pink")phillip_lid();
-
 //phillip_base();
 
 
@@ -523,20 +777,12 @@ translate([-12-1,-37.5-1,10-1.5])cube([27,77,1.6+10]);
 translate([-12,60,5])rotate([90,0,0])cylinder(r=(3.7)/2,h=150);
 translate([0,60,5])rotate([90,0,0])#cylinder(r=(3.7)/2,h=150);
 translate([12,60,5])rotate([90,0,0])#cylinder(r=(3.7)/2,h=150);
-
 translate([18,42,-20])rotate([0,0,45])#cylinder(r=(2.7)/2,h=100);
 translate([-18,42,-20])rotate([0,0,45])#cylinder(r=(2.7)/2,h=100);
 translate([18,-42,-20])rotate([0,0,45])#cylinder(r=(2.7)/2,h=100);
 translate([-18,-42,-20])rotate([0,0,45])#cylinder(r=(2.7)/2,h=100);
-
-
 }
 }
-
-
-
-
-
 
 
 

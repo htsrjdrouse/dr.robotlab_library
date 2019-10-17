@@ -2,7 +2,10 @@
 //translate([0,0,12.1])phillip_middlegasket();
 //translate([0,0,12.1+11])phillip_topgasket();
 
-translate([0,0,13.5])color("pink")phillip_lid();
+//translate([0,0,13.5])color("pink")phillip_lid();
+
+phillip_magnetholder();
+
 /*
 phillip_base();
 translate([0,0,0.1])phillip_lowergasket();
@@ -21,7 +24,6 @@ translate([-5,-37.5+7,3.5])color("silver")cube([10,60,5]);
 
 
 module phillip_magnetholder(){
-
 difference(){
  translate([-5-3,-37.5+7-2,0])cube([10+6,60+4,7]);
  translate([-5-0.5,-37.5+7-0.5,4])cube([10+1,60+1,5]);
@@ -29,7 +31,6 @@ difference(){
  translate([-5-0.5+5,-37.5+7-0.5+10,1])cylinder(r=8/2,h=3);
  translate([-5-0.5+5,-37.5+7-0.5+10+40,-3])cylinder(r=3.7/2,h=30);
  translate([-5-0.5+5,-37.5+7-0.5+10+40,1])cylinder(r=8/2,h=3);
- 
 }
 }
 

@@ -18,7 +18,7 @@ translate([0,0,-8-36-2.5-7.5+3+3])color("silver")cylinder(r=6.1/2,h=3,$fn=20);
 
 module one_1ml_syringe_parts(){
  //translate([-22.85,1-123.7,2.5])mirror([0,1,0])oneml_syringe_stepper_linear_m8nut_coupler();
- translate([0,-4,0])iverntech_pump_slider_plate();
+ //translate([0,-4,0])iverntech_pump_slider_plate();
  //translate([-141.5+0.3+100-1,280+6.5-3-225-32,42.5+1.5+2])rotate([-90,90,0])cavro_250ul_syringe();
  translate([0+100-1,54,2]){
  //translate([-141,200-19.7-32-225,44])rotate([0,0,-90])syringe_cavro250ul_plungerclip();
@@ -35,7 +35,7 @@ module one_1ml_syringe_parts(){
  }
  */
  //translate([0,70,-0.1])one_front_syringe1ml_clamp_luerlock();
- translate([-141.5+0.3,280+6.5-3,42.5+1.5])rotate([-90,90,0])cavro_250ul_syringe();
+ //translate([-141.5+0.3,280+6.5-3,42.5+1.5])rotate([-90,90,0])cavro_250ul_syringe();
 }
 
 
@@ -54,10 +54,38 @@ translate([-100,160,0])
 //color("gainsboro")
 translate([-25.75,123,-30])rotate([90,-90,0])multichannel_syringeshuttle_clipbracket();
 }
+
 }
 
 
+module multichannel_syringe_module_iverntech(){
 
+translate([-150+3,100,3.0]){
+//here is the rail
+color("silver")cube([12,200,8]);
+//here is the slider 
+translate([-27/2+12/2,20,2-3+6])color("silver")cube([27,45,9]);
+}
+eight_multichannel_assay();
+translate([-100,180,0]){
+translate([-22.85,1-123.7,2.5])mirror([0,1,0])oneml_syringe_stepper_linear_m8nut_coupler();
+translate([0,-4,0])iverntech_pump_slider_plate();
+}
+translate([0-15+14,92,6.8]){
+syringe_1ml_stack_1piece_multichannel();
+syringe_1ml_stack_1piece_multichannel_clamp();
+}
+/*
+*/
+translate([-1,12-7,7]){
+translate([-100,160,0])
+translate([-25.75,123,-30])rotate([90,-90,0])multichannel_syringeshuttle_clipbracket();
+}
+translate([-1,-2,6.8])#multichannel_plunger_clamp();
+//translate([0,30,0])multichannel_syringe1ml_clamp_top_luerlock();
+
+translate([-100,160,0])nextgen_syringe1ml_multichannel_assy();
+}
 
 
 //syringe_pcb_holder_for_syringemodule();
@@ -111,24 +139,15 @@ translate([0,70+60,-0.1])multichannel_syringe1ml_clamp_extrusion_connect();
 
 
 module eight_multichannel_assay(){
-//translate([64.5,0,0])syringe_1ml_plungerclip();
 translate([0,20,0]){
-translate([0,70,-0.1])syringe_1ml_stack();
-translate([0,70,-0.1])multichannel_syringe1ml_clamp();
-//color("pink")
+//translate([0,70,-0.1])syringe_1ml_stack();
+//translate([0,70,-0.1])multichannel_syringe1ml_clamp();
 translate([0,70,-0.1])multichannel_syringe1ml_clamp_extrusion_connect();
-//translate([0,70,-0.1+0])multichannel_syringe1ml_clamp_top();
-translate([0,70,-0.1])multichannel_syringe1ml_clamp_luerlock();
-//translate([0,70,-0.1+0])multichannel_syringe1ml_clamp_top_luerlock();
-//color("pink")
+//translate([0,70,-0.1])multichannel_syringe1ml_clamp_luerlock();
 translate([0,70+60,-0.1])multichannel_syringe1ml_clamp_extrusion_connect();
+//translate([0,30-20,0])multichannel_syringe1ml_clamp_top_luerlock();
 }
 }
-
-
-
-//multichannel_syringe1ml_clamp();
-//multichannel_plunger_clamp();
 
 /*
 multichannel_syringe1ml_clamp_extrusion_connect();
@@ -283,9 +302,7 @@ translate([-183+(i*14),170,44])rotate([0,90,90])syringe_1ml();
 }
 
 module syringe_1ml_stack_1piece_multichannel(){
-
 difference(){union(){
-
 /*
 //clamp part
 translate([-0.3-14,0+146-2,-0.8])
@@ -293,52 +310,135 @@ translate([-110+54.5+6-14,-81.5+1.5+40+6.6+3.5-14.5,16+15+6])cube([5,6.5,35-15-4
 translate([-0.3-14-(8*14)-3.5,0+146-2,-0.8])
 translate([-110+54.5+6-14,-81.5+1.5+40+6.6+3.5-14.5,16+15+6])cube([5,6.5,35-15-4]);
 */
-
-
 //attach part
 translate([-0.3-14-(8.6*13),0+146-2-7.4,-1])
 translate([-110+54.5+6-14-3-1,-81.5+1.5+40+6.6+3.5-14.5+2.3,16+15+6])cube([5+3+1,6.5-1.5,35-15-4]);
 translate([-85-(9*14),105.5,44])
 translate([0-4+10.5+10+1,-5+2.5-22.5-4,-8])cube([14+15-10-10-1,10+5+4,4]);
-
-
 for(i=[0:7]){
 color("")translate([-85-(i*14),105.5,44])rotate([-0,0,-90])syringe_1ml_plungerclip_1piece();
 //translate([-183+(i*14),170,44])rotate([0,90,90])syringe_1ml();
 //translate([0-42.5-(i*14),-4+230-80-2,0])iverntech_pump_slider_plate_connect_multichannel();
 }
 }
-
 translate([-77.5-0.5,100-0.5,50-4])rotate([90,90,0])cylinder(r=3.8/2,h=100);
 translate([-77.5-0.5,130,50-4])rotate([90,90,0])cylinder(r=2.8/2,h=100);
 translate([-77.5-(8*14)-0.5,100-0.5,50-4])rotate([90,90,0])cylinder(r=3.8/2,h=100);
 translate([-77.5-(8*14)-0.5,130,50-4])rotate([90,90,0])cylinder(r=2.8/2,h=100);
-
 for(i=[0:7]){
 //translate([18-(i*14),0,-8])cylinder(r=3.7/2,h=40);
-
 /*
+
 translate([-85-(i*14),105.5,44])rotate([-0,0,-90])
 for(i=[0:10]){
 translate([-5,0,0+i])rotate([90,-0,90])cylinder(r=4/2,h=10);
 translate([5,0,0+i])rotate([90,-0,90])cylinder(r=10.2/2,h=1.75);
 }
 */
-
 translate([-14,0,0]){
 translate([-77.5-(i*14)-0.5,100-0.5,50-4])rotate([90,90,0])cylinder(r=3.8/2,h=100);
 translate([-77.5-(i*14)-0.5,130,50-4])rotate([90,90,0])cylinder(r=2.8/2,h=100);
 }
 translate([-77.5-0.5,100-0.5,50-4])rotate([90,90,0])cylinder(r=3.8/2,h=100);
 translate([-77.5-0.5,130,50-4])rotate([90,90,0])cylinder(r=2.8/2,h=100);
-
 translate([-77.5-(8*14)-0.5,100-0.5,50-4])rotate([90,90,0])cylinder(r=3.8/2,h=100);
 translate([-77.5-(8*14)-0.5,130,50-4])rotate([90,90,0])cylinder(r=2.8/2,h=100);
 }
 }
 }
+
+
+
+
+
+module syringe_1ml_stack_1piece_multichannel_clamp(){
+difference(){union(){
+/*
+*/
+//clamp part
+translate([-0.3-14,0+146-2,-0.8])
+translate([-110+54.5+6-14,-81.5+1.5+40+6.6+3.5-14.5,16+15+6])cube([5,6.5,35-15-4]);
+translate([-0.3-14-(8*14)-3.5,0+146-2,-0.8])
+translate([-110+54.5+6-14,-81.5+1.5+40+6.6+3.5-14.5,16+15+6])cube([5,6.5,35-15-4]);
+//attach part
+//translate([-0.3-14-(8.6*13),0+146-2-7.4,-1])translate([-110+54.5+6-14-3-1,-81.5+1.5+40+6.6+3.5-14.5+2.3,16+15+6])cube([5+3+1,6.5-1.5,35-15-4]);
+//translate([-85-(9*14),105.5,44])translate([0-4+10.5+10+1,-5+2.5-22.5-4,-8])cube([14+15-10-10-1,10+5+4,4]);
+for(i=[0:7]){
+//color("")translate([-85-(i*14),105.5,44])rotate([-0,0,-90])syringe_1ml_plungerclip_1piece();
+//translate([-183+(i*14),170,44])rotate([0,90,90])syringe_1ml();
+translate([0-42.5-(i*14),-4+230-80-2,0])iverntech_pump_slider_plate_connect_multichannel();
+}
+}
+translate([-77.5-0.5,100-0.5,50-4])rotate([90,90,0])cylinder(r=3.8/2,h=100);
+translate([-77.5-0.5,130,50-4])rotate([90,90,0])cylinder(r=2.8/2,h=100);
+translate([-77.5-(8*14)-0.5,100-0.5,50-4])rotate([90,90,0])cylinder(r=3.8/2,h=100);
+translate([-77.5-(8*14)-0.5,130,50-4])rotate([90,90,0])cylinder(r=2.8/2,h=100);
+for(i=[0:7]){
+//translate([18-(i*14),0,-8])cylinder(r=3.7/2,h=40);
 /*
 
+translate([-85-(i*14),105.5,44])rotate([-0,0,-90])
+for(i=[0:10]){
+translate([-5,0,0+i])rotate([90,-0,90])cylinder(r=4/2,h=10);
+translate([5,0,0+i])rotate([90,-0,90])cylinder(r=10.2/2,h=1.75);
+}
+*/
+translate([-14,0,0]){
+translate([-77.5-(i*14)-0.5,100-0.5,50-4])rotate([90,90,0])cylinder(r=3.8/2,h=100);
+translate([-77.5-(i*14)-0.5,130,50-4])rotate([90,90,0])cylinder(r=2.8/2,h=100);
+}
+translate([-77.5-0.5,100-0.5,50-4])rotate([90,90,0])cylinder(r=3.8/2,h=100);
+translate([-77.5-0.5,130,50-4])rotate([90,90,0])cylinder(r=2.8/2,h=100);
+translate([-77.5-(8*14)-0.5,100-0.5,50-4])rotate([90,90,0])cylinder(r=3.8/2,h=100);
+translate([-77.5-(8*14)-0.5,130,50-4])rotate([90,90,0])cylinder(r=2.8/2,h=100);
+}
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 rotate([0,0,0])difference(){
 //translate([0,70,-0.1+0])multichannel_syringe1ml_clamp_top();
 //translate([0,70,-0.1+0])multichannel_syringe1ml_clamp_top();
@@ -349,6 +449,8 @@ translate([0+102,2,10/2+10-20])rotate([0,0,0])cube([70,15,15/2+2+30]);
 }
 }
 */
+
+
 //translate([0,70,-0.1+0])multichannel_syringe1ml_clamp_top();
 //translate([0,70,-0.1])multichannel_syringe1ml_clamp();
 //translate([0,70+60,-0.1])multichannel_syringe1ml_clamp_luerlock();
@@ -719,79 +821,13 @@ translate([52,190-30,49.5])rotate([-90,90,90])smallsyringe_valvesupportmodule_pl
 
 
 module nextgen_syringe1ml_multichannel_assy(){
-//board mount here
-//color("pink")syringe_pcb_holder_for_syringemodule();
 /*
 */
-//color("gainsboro")translate([0,98,0])syringe10mlmount_plungerfix_assy();
-/*
-color(""){
-//here is the luer lock
-color("white")translate([-70+8+27-6,178-3,30-5+10])rotate([90,0,0])cylinder(r=8/2,h=3);
-color("white")translate([-70+8+27-6,178,30-5+10])rotate([90,0,0])cylinder(r=12/2,h=3);
-//end luer lock
-//tubing from valve to syringe
-color("lightblue")
-translate([-70+8+27-6,178+4,30-5+10])
-{
-for(i=[0:44]){translate([0,i/8-5,0])sphere(r=3.175/2,$fn=30);}
-for(i=[0:232]){translate([-i/30,i/8+12/8,i/7.75])sphere(r=3.175/2,$fn=30);}
-for(i=[0:80]){translate([-7.75,i/8+12/8+232/8,232/8+1])sphere(r=3.175/2,$fn=30);}
-}
-}
-*/
-//end tubing
-/*
-color("white")translate([-70+8+27-6,178-3+7,30-5+10])translate([-18,50,30])rotate([90,0,90])cylinder(r=8/2,h=3);
-color("white")translate([-70+8+27-6-3,178+4,30-5+10])translate([-18,50,30])rotate([90,0,90])cylinder(r=12/2,h=3);
-color("white")translate([-70+8+27+4,178-3+7-8,30-5+10])translate([-18,50,30])rotate([90,0,0])cylinder(r=8/2,h=3);
-color("white")translate([-70+8+27+4,178+4-11,30-5+10])translate([-18,50,30])rotate([90,0,0])cylinder(r=12/2,h=3);
-color("white")translate([-70+8+27+4,178-3+7-8+20,30-5+10])translate([-18,50,30])rotate([90,0,0])cylinder(r=8/2,h=3);
-color("white")translate([-70+8+27+4,178+4-11+23,30-5+10])translate([-18,50,30])rotate([90,0,0])cylinder(r=12/2,h=3);
-*/
-color(""){
-//valve 1 direction tubing
-/*
-color("lightblue")translate([-70+8+27-6,178+4,30-5+10])
-{
-for(i=[0:200]){translate([-18-i/2,50,30])sphere(r=3.175/2,$fn=30);}
-}
-*/
-//end valve 1 direction tubing
-//valve 2 direction tubing
-/*
-color("lightblue")translate([-70+8+27-6,178+4,30-5+10])
-{
-for(i=[0:800]){translate([-7.75,i/8+12/8+232/8+30,232/8+1])sphere(r=3.175/2,$fn=30);}
-}
-*/
-
-//end valve 2 direction tubing
-}
-
-//translate([-41,-20+100,35])color("gainsboro")rotate([0,90,90])syringe_10ml();
-//color("gainsboro")translate([-56.5,200,104.45])rotate([90,90,0])syringe10ml_clipmount();
-
 color("silver")translate([-70+8,-80+40-50,30-5])rotate([-90,0,0])cylinder(r=8.7/2,h=250);
 color("silver")translate([-70+8,-80,30-5])rotate([-90,0,0])cylinder(r=16/2,h=18);
 translate([-70+8,-80,30-5])rotate([-90,0,0])nema17();
-color("silver")translate([-34+5-9-3,20-3.5,3])igus_TW_04_12_slider();
 igus_slidermount_encoder_TW_04_12_motormount_assy_m8();
 translate([-25-6.5,320,-4.6])rotate([90,0,0])tslot20(400);
-
-translate([0,12,0]){
-//sbg = 0.9;color([sbg,sbg,sbg])
-//color("gainsboro")
-translate([0,-4,0])igus_TW_04_12_slider_plate();
-//color("gainsboro")translate([-25.75,123,-30])rotate([90,-90,0])multichannel_syringeshuttle_clipbracket();
-//color("gainsboro")
-translate([-22.85,1,2.5])stepper_linear_m8nut_coupler();
-/*
-//cbg = 0.55;color([cbg,cbg,cbg])
-//nbg = 0.4;color([nbg,nbg,nbg])
-*/
-}
-//translate([-50,0,-13])valve_assy();
 }
 
 

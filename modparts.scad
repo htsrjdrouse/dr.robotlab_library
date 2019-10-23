@@ -302,6 +302,7 @@ translate([25,38.94,0])translate([1,0,-6.1])cylinder(r=(5.9+0.8)/2,h=36);
 module iverntech_slider_tslot_connector(){
 
 
+/*
 //bearings for corexy example
 translate([-27/2+12/2+29.5,150-5+8,2-3+6-25-3-3.2])
 translate([4,1,-15]){
@@ -333,7 +334,6 @@ translate([0,0,0.5])cylinder(r=18/2,h=4);
 translate([0,0,-0.5])cylinder(r=5.7/2,h=6);
 }
 }
-/*
 */
 
 //for show

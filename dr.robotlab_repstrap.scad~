@@ -19022,28 +19022,28 @@ module valve_assy(){
 //vvcl = 0.95;color([vvcl,vvcl,vvcl])translate([36,295.5,18])rotate([0,-90,90])valvemountplate_screwattach_smallersyringe_vertical_attach();
 //pcl = 0.65;color([pcl,pcl,pcl])translate([52,190,63])rotate([-90,90,0])smallsyringe_valvesupportmodule_plate();
 
-color("gainsboro")translate([52,190,63])rotate([-90,90,0])smallsyringe_valvesupportmodule_plate();
+color("")translate([52,190,63])rotate([-90,90,0])smallsyringe_valvesupportmodule_plate();
 //color("black")
 translate([1,232,61.3])rotate([0,0,90])valveconnectpart();
 translate([7,585,-22])rotate([90,0,0]){
 color("black")translate([4,34,363])rotate([0,90,90])servo();
 color("white")translate([-6,83.5,353])rotate([0,90,90])actualvalve_for_syringe();
 }
-color("gainsboro")translate([36,295.5,18])rotate([0,-90,90])valvemountplate_screwattach_smallersyringe_vertical_attach();
-color("gainsboro")translate([36,295.5,18])rotate([0,-90,90])valvemountplate_screwattach_smallersyringe();
+color("")translate([36,295.5,18])rotate([0,-90,90])valvemountplate_screwattach_smallersyringe_vertical_attach();
+color("")translate([36,295.5,18])rotate([0,-90,90])valvemountplate_screwattach_smallersyringe();
 }
 
 
 
 module valve_assy_microservo(){
-color("gainsboro")translate([52,190,63])rotate([-90,90,0])smallsyringe_valvesupportmodule_plate_microservo();
+color("")translate([52,190,63])rotate([-90,90,0])smallsyringe_valvesupportmodule_plate_microservo();
 translate([1,232,61.3])rotate([0,0,90])valveconnectpart_microservo();
 translate([7,585,-22])rotate([90,0,0]){
 translate([4-20+4,34+17,359])rotate([-90,0,0])microservo();
 //color("white")translate([-6,83.5,353])rotate([0,90,90])actualvalve_for_syringe();
 }
-color("gainsboro")translate([36,295.5,18])rotate([0,-90,90])valvemountplate_screwattach_smallersyringe_vertical_attach();
-color("gainsboro")translate([36,295.5,18])rotate([0,-90,90])valvemountplate_screwattach_smallersyringe();
+color("")translate([36,295.5,18])rotate([0,-90,90])valvemountplate_screwattach_smallersyringe_vertical_attach();
+color("")translate([36,295.5,18])rotate([0,-90,90])valvemountplate_screwattach_smallersyringe();
 }
 
 
@@ -19698,21 +19698,21 @@ module igus_slidermount_encoder_TW_04_12_motormount_assy_m8(){
 //color("lightgrey")
 bg = 0.5;
 //color([bg,bg,bg])
-//color("gainsboro")
+//color("")
 igus_slidermount_encoder_TW_04_12(); 
 translate([1,0,0]){
 //color("lightgrey")
 //color([bg,bg,bg])
-//color("gainsboro")
+//color("")
 translate([-22,-90,4])rotate([90,-90,0])motormount();
 //color([bg,bg,bg])
-//color("gainsboro")
+//color("")
 translate([-110+27,-81.5+1.5,-4])cube([42,8.5,10]);
 
 //This is for display purposes
 //translate([-70+8,-80,30-5])rotate([-90,0,0])nema17();
 //rbg=0.85;color([rbg,rbg,rbg])
-//color("gainsboro")
+//color("")
 //translate([-70+8,-80+40,30-5])rotate([-90,0,0])cylinder(r=8.7/2,h=200);
 }
 }
@@ -19721,23 +19721,23 @@ module iverntech_pump_slider(){
 //color("lightgrey")
 bg = 0.5;
 //color([bg,bg,bg])
-//color("gainsboro")
+//color("")
 //igus_slidermount_encoder_TW_04_12(); 
 iverntech_slider_pump_base();
 
 translate([1,0,0]){
 //color("lightgrey")
 //color([bg,bg,bg])
-//color("gainsboro")
+//color("")
 translate([-22,-90,4])rotate([90,-90,0])motormount();
 //color([bg,bg,bg])
-//color("gainsboro")
+//color("")
 translate([-110+27,-81.5+1.5,-4])cube([42,8.5,10]);
 
 //This is for display purposes
 //translate([-70+8,-80,30-5])rotate([-90,0,0])nema17();
 //rbg=0.85;color([rbg,rbg,rbg])
-//color("gainsboro")
+//color("")
 //translate([-70+8,-80+40,30-5])rotate([-90,0,0])cylinder(r=8.7/2,h=200);
 }
 }

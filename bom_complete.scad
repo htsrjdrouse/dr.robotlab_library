@@ -6,13 +6,144 @@ include <nanoplotter.scad>
 include <PiZero.scad>
 
 
+
+
+//syringe_1ml_stack_1piece_multichannel();
+//syringe_1ml_stack_1piece_multichannel_clamp();
+
+
+
+//iverntech_pump_slider_plate();
+//oneml_syringe_stepper_linear_m8nut_coupler();
+translate([0,0,0])multichannel_syringe_module_iverntech();
+
+
+/*
+translate([-1,12-7,7]){
+translate([-100,160,0])
+translate([-25.75,123,-30])rotate([90,-90,0])multichannel_syringeshuttle_clipbracket();
+}
+*/
+//translate([-1,-2,4])multichannel_plunger_clamp();
+
+
+
+/*
+translate([-150+3,100,3.0]){
+//here is the rail
+color("silver")cube([12,200,8]);
+//here is the slider 
+translate([-27/2+12/2,20,2-3+6])color("silver")cube([27,45,9]);
+}
+eight_multichannel_assay();
+translate([-100,180,0]){
+translate([-22.85,1-123.7,2.5])mirror([0,1,0])oneml_syringe_stepper_linear_m8nut_coupler();
+translate([0,-4,0])iverntech_pump_slider_plate();
+}
+translate([0-15+14,92,6]){
+syringe_1ml_stack_1piece_multichannel();
+syringe_1ml_stack_1piece_multichannel_clamp();
+}
+translate([-1,12-7,7]){
+translate([-100,160,0])
+translate([-25.75,123,-30])rotate([90,-90,0])multichannel_syringeshuttle_clipbracket();
+}
+translate([-1,-2,4])multichannel_plunger_clamp();
+translate([0,30,0])multichannel_syringe1ml_clamp_top_luerlock();
+*/
+
+
+
+
+
+
+
+/*
+*/
+//translate([-1-300+18,-2,4+70])rotate([0,180,0])multichannel_plunger_clamp();
+
+
+//translate([0,70,-0.1+0])multichannel_syringe1ml_clamp_top_luerlock();
+/*
+multichannel_plunger_clamp();
+multichannel_syringeshuttle_clipbracket();
+translate([0,70+60,-0.1])multichannel_syringe1ml_clamp_extrusion_connect();
+ onechannel_plunger_clamp();
+*/
+
+//multichannel_plunger_clamp();
+//translate([0,70,-0.1])multichannel_syringe1ml_clamp_luerlock();
+
+//one_1ml_syringe_parts();
+
+//translate([0,0,-13.5])multichannel_pipette_holder_linear_actuator_connect_cameramount();
+//eight_multichannel_assay();
+/*
+multichannel_syringeshuttle_clipbracket();
+translate([0,70,-0.1])multichannel_syringe1ml_clamp();
+translate([0,70,-0.1+0])multichannel_syringe1ml_clamp_top();
+translate([0,70+60,-0.1])multichannel_syringe1ml_clamp_extrusion_connect();
+translate([-100,160,0])nextgen_syringe1ml_multichannel_assy();
+//one_1ml_syringe_parts();
+// translate([0,70,-0.1])one_channel_syringe1ml_clamp();
+translate([-74-8,-35,465-140])rotate([0,-90,0])multichannel_syringe_module();
+multichannel_plunger_clamp();
+multichannel_syringeshuttle_clipbracket();
+eight_multichannel_assay();
+translate([0,70,-0.1])multichannel_syringe1ml_clamp_luerlock();
+translate([0,70,-0.1])multichannel_syringe1ml_clamp_extrusion_connect();
+translate([0,70,-0.1+0])multichannel_syringe1ml_clamp_top();
+*/
+
+
+
+
+
+
+
+//  translate([129.75+(94*4)-1.5-103-332-70+454-6,276.5-4+25-25,11+3+24+3-26])color("")mirror([0,0,0])rotate([0,0,0]){microwell_plate_riser(144);} 
+
+//translate([420+50,-164-55,90])rotate([0,180,90])multichannel_drypad();
+//multichannel_drypad_384();
+
+/*
+translate([230,0,220])rotate([0,0,-90]){
+//translate([0,3,-1])washbowl_8tip_base();
+translate([0-37,3,-1+18])washbowl_8tip_drypad();
+//translate([0,3,-1+18])washbowl_8tip();
+}
+
+
+// washplate_mount();
+
+
+
+ outside_frame_wider(tcl,thcl,x,y);
+ gantry_shelves_wider();
+ zbed_smz_wider_nomove();
+ translate([-70,-25+50,z])zbed_multichannel_setup_wider(z);
+*/
+ //microfluidics_set();
+
+
+// corner_plate_set();
+/*
+ translate([160+188,0,0])rotate([0,0,0])rightcorner_bar_plate_set();
+ translate([160+188,0-139,0])rotate([0,0,0])front_rightcorner_bar_plate_set();
+ translate([160,0-139,0])rotate([0,0,0])bar_plate_set();
+ translate([0,0-139,0])front_corner_plate_set();
+ translate([160,0,0])rotate([0,0,0])bar_plate_set();
+*/
+
+
+
 //translate([0,0,200])rotate([90,0,90])import("CoreXY_Tool_Changer_Motion_System/files/m8_ybar_corexy.stl");
 
 //translate([-8,0,0])iverntech_slider_tslot_connector();
 //rotate([0,180,0])iverntech_slider_shuttle_bottom();
 
 //translate([-49.5+12,345,300-11])rotate([0,180,180])ivernetech_slider_module_wider();
-translate([420+50,-164-55,90])rotate([0,180,90])multichannel_drypad();
+//translate([420+50,-164-55,90])rotate([0,180,90])multichannel_drypad();
 /*
 xshuttle_assy_wider(x,y);
 outside_frame_wider(tcl,thcl,x,y);
@@ -174,7 +305,6 @@ color("lime")zdrive_corexy_beltplate_tslotconnect();
 /*
 */
 //color("gainsboro")translate([-1,0,0])shuttle_front_vertical_adjust_wider_slider_wall();
-//multichannel_drypad_384();
 
 
 //stroboscope_miuzei_back();
@@ -360,33 +490,12 @@ translate([8+20+a,9,-1])cylinder(r=4.7/2,h=20);
 
 //multichannel_syringe_module();
 
-//eight_multichannel_assay();
-
-//translate([0,70,-0.1])multichannel_syringe1ml_clamp();
-
-//translate([0,70,-0.1+0])multichannel_syringe1ml_clamp_top();
-
-//one_1ml_syringe_parts();
-
-// translate([0,70,-0.1])one_channel_syringe1ml_clamp();
-/*
-translate([-74-8,-35,465-140])rotate([0,-90,0])multichannel_syringe_module();
-multichannel_plunger_clamp();
-multichannel_syringeshuttle_clipbracket();
-eight_multichannel_assay();
-translate([0,70,-0.1])multichannel_syringe1ml_clamp_luerlock();
-translate([0,70,-0.1])multichannel_syringe1ml_clamp_extrusion_connect();
-translate([0,70,-0.1+0])multichannel_syringe1ml_clamp_top();
-*/
-
-
 
 //translate([-100,-100,0])rotate([90,-90,0])linearactuator_cordglide();
 //translate([-11.5+3.8+(9*5),80-1.5+0.5,-50+10-1.3])rotate([0,90,0])color("pink")miuzei_camera_breadboard_screwstub();
 
 
 
-//translate([0,0,-13.5])multichannel_pipette_holder_linear_actuator_connect_cameramount();
 
 //cables_wall();
 
@@ -471,8 +580,6 @@ translate([40-12.5+53,-40+61,2])syringe_pcb_holder_placeholder();
 
 
 
-//translate([0,70,-0.1])syringe_1ml_stack_1piece_multichannel();
-//translate([0-42.5,-4+230-13,0])iverntech_pump_slider_plate_connect_multichannel();
 
 
 

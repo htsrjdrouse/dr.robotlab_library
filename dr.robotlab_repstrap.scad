@@ -12316,30 +12316,30 @@ module washbowl_8tip_base(){
   translate([18-12.5+2,9+4-4,3])cube([7,73,20]);
 
 
-  translate([35/2,3.5,3-20])#cylinder(r=3.7/2,h=40);
-  translate([2,3.5,3-20])#cylinder(r=3.7/2,h=40);
-  translate([35-2,3.5,3-20])#cylinder(r=3.7/2,h=40);
-  translate([35/2,90-3.5,3-20])#cylinder(r=3.7/2,h=40);
-  translate([2,90-3.5,3-20])#cylinder(r=3.7/2,h=40);
-  translate([35-2,90-3.5,3-20])#cylinder(r=3.7/2,h=40);
-  translate([35-2,90/2,3-20])#cylinder(r=3.7/2,h=40);
-  translate([2,90/2,3-20])#cylinder(r=3.7/2,h=40);
+  translate([35/2,3.5,3-20])cylinder(r=3.7/2,h=40);
+  translate([2,3.5,3-20])cylinder(r=3.7/2,h=40);
+  translate([35-2,3.5,3-20])cylinder(r=3.7/2,h=40);
+  translate([35/2,90-3.5,3-20])cylinder(r=3.7/2,h=40);
+  translate([2,90-3.5,3-20])cylinder(r=3.7/2,h=40);
+  translate([35-2,90-3.5,3-20])cylinder(r=3.7/2,h=40);
+  translate([35-2,90/2,3-20])cylinder(r=3.7/2,h=40);
+  translate([2,90/2,3-20])cylinder(r=3.7/2,h=40);
 
 
-  translate([35/2,3.5,3-25-10])#cylinder(r=6.7/2,h=40,$fn=6);
+  translate([35/2,3.5,3-25-10])cylinder(r=6.7/2,h=40,$fn=6);
 
   translate([2,3.5,3-25-10])cylinder(r=6.7/2,h=40,$fn=6);
-  translate([35-2,3.5,3-25-10])#cylinder(r=6.7/2,h=40,$fn=6);
-  translate([35/2,90-3.5,3-25-10])#cylinder(r=6.7/2,h=40,$fn=6);
-  translate([2,90-3.5,3-25-10])#cylinder(r=6.7/2,h=40,$fn=6);
-  translate([35-2,90-3.5,3-25-10])#cylinder(r=6.7/2,h=40,$fn=6);
-  translate([35-2,90/2,3-25-10])#cylinder(r=6.7/2,h=40,$fn=6);
-  translate([2,90/2,3-25-10])#cylinder(r=6.7/2,h=40,$fn=6);
+  translate([35-2,3.5,3-25-10])cylinder(r=6.7/2,h=40,$fn=6);
+  translate([35/2,90-3.5,3-25-10])cylinder(r=6.7/2,h=40,$fn=6);
+  translate([2,90-3.5,3-25-10])cylinder(r=6.7/2,h=40,$fn=6);
+  translate([35-2,90-3.5,3-25-10])cylinder(r=6.7/2,h=40,$fn=6);
+  translate([35-2,90/2,3-25-10])cylinder(r=6.7/2,h=40,$fn=6);
+  translate([2,90/2,3-25-10])cylinder(r=6.7/2,h=40,$fn=6);
 
 
   translate([35-12,90/2,-1])cylinder(r=10.4/2,h=20);
   translate([35-25,90/2-40+10,10])rotate([90,90,0])cylinder(r=10.4/2,h=40);
-  translate([35-25,90/2-40+10+80+18,10])rotate([90,90,0])#cylinder(r=10.4/2,h=40);
+  translate([35-25,90/2-40+10+80+18,10])rotate([90,90,0])cylinder(r=10.4/2,h=40);
 
 
  }

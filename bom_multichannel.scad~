@@ -55,7 +55,7 @@ translate([0-1.5,-22+55-45+32-50+50-20,0]){
 //this is in actual design
 translate([-31.8+33,53.5+5,-3-23-0.5])color("")stepper_linear_m8nut_coupler_vertical_adjust_nema17_wider();
 translate([-38+1,-30-10,3+18-5])color("silver")rotate([0,0,0])import("igus_sliders/TW_04_09_4.stl");
-//color("")translate([-50+6,-115.5+7-4+130,1+56.5])rotate([180,0,180])stepper_linear_m8nut_endstopflag(6);
+color("")translate([-50+6,-115.5+7-4+130,1+56.5])rotate([180,0,180])stepper_linear_m8nut_endstopflag(6);
 /* 
 */
 

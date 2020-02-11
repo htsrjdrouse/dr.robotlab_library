@@ -395,8 +395,10 @@ translate([-12.5,1-0.5,1.5])cube([25,7,30]);
 //translate([0,-1.5,-2])#cylinder(r=17/2,h=30);
 translate([0,-1.5,1.5])rotate([0,0,45])cylinder(r=24.75/2,h=9,$fn=4);
 translate([0,1.7,1])roundedRect([11.5,20,10],3.5);
-
 }
+
+
+
 
 module raspi_cam(){
 //translate([xs/2 ,mhyc+mhoy,zs]) sensor();
@@ -423,7 +425,6 @@ module roundedRect(size, radius)
 x = size[0];
 y = size[1];
 z = size[2];
-
 linear_extrude(height=z)
 hull()
 {

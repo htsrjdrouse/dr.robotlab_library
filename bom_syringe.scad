@@ -2,6 +2,7 @@ include <modparts.scad>
 use<writescad/write.scad>
 include <dr.robotlab_repstrap.scad>
 
+//syringe_1ml_stack_1piece_multichannel_clamp();
 
 module cavro_250ul_syringe(){
 color("silver")cylinder(r=6.25/2,h=10.25,$fn=20);
@@ -81,7 +82,7 @@ translate([-1,12-7,7]){
 translate([-100,160,0])
 translate([-25.75,123,-30])rotate([90,-90,0])multichannel_syringeshuttle_clipbracket();
 }
-translate([-1,-2,6.8])#multichannel_plunger_clamp();
+translate([-1,-2,6.8])multichannel_plunger_clamp();
 //translate([0,30,0])multichannel_syringe1ml_clamp_top_luerlock();
 
 translate([-100,160,0])nextgen_syringe1ml_multichannel_assy();
@@ -140,12 +141,12 @@ translate([0,70+60,-0.1])multichannel_syringe1ml_clamp_extrusion_connect();
 
 module eight_multichannel_assay(){
 translate([0,20,0]){
-//translate([0,70,-0.1])syringe_1ml_stack();
-//translate([0,70,-0.1])multichannel_syringe1ml_clamp();
+translate([0,70,-0.1])syringe_1ml_stack();
+translate([0,70,-0.1])multichannel_syringe1ml_clamp();
 translate([0,70,-0.1])multichannel_syringe1ml_clamp_extrusion_connect();
-//translate([0,70,-0.1])multichannel_syringe1ml_clamp_luerlock();
+translate([0,70,-0.1])multichannel_syringe1ml_clamp_luerlock();
 translate([0,70+60,-0.1])multichannel_syringe1ml_clamp_extrusion_connect();
-//translate([0,30-20,0])multichannel_syringe1ml_clamp_top_luerlock();
+translate([0,30-20,0])multichannel_syringe1ml_clamp_top_luerlock();
 }
 }
 
@@ -357,9 +358,9 @@ difference(){union(){
 */
 //clamp part
 translate([-0.3-14,0+146-2,-0.8])
-translate([-110+54.5+6-14,-81.5+1.5+40+6.6+3.5-14.5,16+15+6])cube([5,6.5,35-15-4]);
+translate([-110+54.5+6-14,-81.5+1.5+40+6.6+3.5-14.5,16+15+6+3])cube([5,6.5,35-15-4-3]);
 translate([-0.3-14-(8*14)-3.5,0+146-2,-0.8])
-translate([-110+54.5+6-14,-81.5+1.5+40+6.6+3.5-14.5,16+15+6])cube([5,6.5,35-15-4]);
+translate([-110+54.5+6-14,-81.5+1.5+40+6.6+3.5-14.5,16+15+6+3])cube([5,6.5,35-15-4-3]);
 //attach part
 //translate([-0.3-14-(8.6*13),0+146-2-7.4,-1])translate([-110+54.5+6-14-3-1,-81.5+1.5+40+6.6+3.5-14.5+2.3,16+15+6])cube([5+3+1,6.5-1.5,35-15-4]);
 //translate([-85-(9*14),105.5,44])translate([0-4+10.5+10+1,-5+2.5-22.5-4,-8])cube([14+15-10-10-1,10+5+4,4]);

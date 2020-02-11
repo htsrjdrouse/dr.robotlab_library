@@ -72,7 +72,7 @@ translate([0-5.5,-35-4,13-11]){
 translate([0,0,-13.5])multichannel_pipette_holder_linear_actuator_connect_cameramount();
 
 
-//translate([-20,5,60])rotate([0,0,180])miuzei_camera_module();
+translate([-20,5,60])rotate([0,0,180])miuzei_camera_module();
 
 /*
 translate([-11.5+3.8+(9*5)-10+1+9,80-1.5+0.5-20-17-0.75,-50+10-1.3+100+7])rotate([90,0,90])color("pink")import("BOM_inventory/build2/stls/miuzei_camera_breadboard_screwstub.stl");
@@ -83,7 +83,7 @@ translate([0,-60,83]){
 translate([-18+2,100-21+1,-26.3+10-1.5])rotate([0,0,90])connectionarms2(0);
 translate([-18+2+3,100-21+10+1-49,-26.3+10-1.5])rotate([0,0,-90])connectionarms2(0);
 translate([-35-10,90-50,64-37])rotate([90,0,0]){
-translate([30,1,8])#miuzei_cover();
+translate([30,1,8])miuzei_cover();
 //translate([30,0,0])miuzei_raspicam_base();
 translate([30,0,0])import("BOM_inventory/build2/stls/miuzei_raspicam_base.stl");
 translate([30,4,-10])color("black")cylinder(r=12/2,h=18);
@@ -154,7 +154,7 @@ translate([0,-60,83]){
 translate([-18+2,100-21+1,-26.3+10-1.5])rotate([0,0,90])connectionarms2(40);
 translate([-18+2+3,100-21+10+1-49,-26.3+10-1.5])rotate([0,0,-90])connectionarms2(40);
 translate([-35-10,90-50,64-37])rotate([90,0,0]){
-translate([30,1,8])#miuzei_cover();
+translate([30,1,8])miuzei_cover();
 //translate([30,0,0])miuzei_raspicam_base();
 translate([30,0,0])import("BOM_inventory/build2/stls/miuzei_raspicam_base.stl");
 translate([30,4,-10])color("black")cylinder(r=12/2,h=18);
@@ -358,6 +358,15 @@ color("")translate([-1,0,0])shuttle_front_vertical_adjust_wider_slider_wall_belt
 //color("")translate([-25-53-8,5,41])rotate([-90,0,0])import("files/gt2belt_holder.stl");
 }
 
+module filament_linearactuator_multichannel_wider_iverntech(){
+color("")translate([-1,0,0])shuttle_front_vertical_adjust_wider_slider_wall_beltfix();
+//color("")translate([-25+8,5,41])rotate([-90,0,0])import("files/gt2belt_holder.stl");
+//color("")translate([-25-53-8,5,41])rotate([-90,0,0])import("files/gt2belt_holder.stl");
+}
+
+
+
+
 
 
 module filament_linearactuator_multichannel(){
@@ -381,6 +390,19 @@ translate([208,188+1.5,342])rotate([90,0,0])filament_linearactuator_multichannel
 }
 translate([15-25+229.5,206.5-11,-63+400])rotate([90,0,0])sandwich_sliderwheel_assy();
 }
+
+module slider_front_assy_multichannel_iverntech(){
+//translate([179.5,180-12.5+1.5,300-1])rotate([-90,0,180])multichannel_assy_wider();
+translate([0,3,0]){
+translate([0,0,-3]){
+translate([208,188+1.5,342])rotate([90,0,0])filament_linearactuator_multichannel_wider_iverntech();
+//inductive sensor
+//color("silver")translate([208-16,188-16,342-35])cylinder(r=12/2,h=55);
+}
+}
+//translate([15-25+229.5,206.5-11,-63+400])rotate([90,0,0])sandwich_sliderwheel_assy_iverntech();
+}
+
 
 
 
@@ -602,13 +624,8 @@ translate([39-5,10,3])rotate([90,0,0])cylinder(r=5/2,h=20);
 
 
 module p1000_model_eppendorf(){
-
-
-
 //color("lightblue")
 //translate([0,0,-190])cylinder(r=2/2,h=180);
-
-
 rotate([0,0,0]){
 difference(){
 union(){
@@ -621,7 +638,6 @@ translate([0,0,2])cylinder(r=(8.5-1)/2,h=2);
 translate([0,0,5])cylinder(r=(8.5-2)/2,h=2);
 translate([0,0,6.9])cylinder(r=(8.5-1.5)/2,h=4.11+6.6);
 }
-
 color("lightblue")translate([0,0,11])
 difference(){
 cylinder(r1=7.5/2,r2=7.5/2,h=16.5);
@@ -645,8 +661,7 @@ cylinder(r2=4.5/2,r1=7/2,h=9.5);
 }
 translate([0,0,-0.1])cylinder(r1=(7-1)/2,r2=(4-1)/2,h=15+.2);
 }
-
-
+/*
 //this is for show
 color("")translate([0,0,11+16.5+4])
 difference(){
@@ -659,20 +674,28 @@ translate([0,0,7.5-3])cylinder(r=7/2,h=0.6);
 translate([0,0,-0.1])cylinder(r1=(7-1)/2,r2=(4-1)/2,h=15+.2);
 }
 //end for show
-
-
-
-
-
-
-
-
-
-/*
 */
 //translate([0,0,11+16.5+4+15-10])cylinder(r1=7/2,r2=6/2,h=8);
 }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 module p1000_model_generic(){
 rotate([0,0,0]){
@@ -1271,7 +1294,8 @@ module multichannel_drypad(){
 translate([-148,85,-150])difference(){
 union(){
 translate([-75.5-5+22-5-34+12,-40,0])cube([29+36-12,90,5]);
-translate([-75.5-5+45,-40-10,0])cube([10,90+20,5]);
+translate([-75.5-5+45-7,-40-10,0])cube([20,90+20,5+5]);
+translate([-75.5-5+45-7-20-10,-40-10-10+20,0])cube([30,90,5+5]);
 }
 /*
 translate([-30,33,-10]){
@@ -1288,10 +1312,10 @@ translate([-30,0,0])for(a=[0:1]){
 translate([-44-(a*10),-40+5,-1])cube([5,71+10,13]);
 }
 */
-translate([-30-30+6,-20,-20])
-translate([-44-(a*10),-40+5,-1])cylinder(r=6/2,h=50);
-translate([-30-30+6,20,-20])
-translate([-44-(a*10),-40+5,-1])cylinder(r=6/2,h=50);
+//translate([-30-30+6,-20,-20])
+//translate([-44-(a*10),-40+5,-1])cylinder(r=6/2,h=50);
+//translate([-30-30+6,20,-20])
+//translate([-44-(a*10),-40+5,-1])cylinder(r=6/2,h=50);
 translate([-33,-66,-20])rotate([0,0,90]){
 //actually c-to-c spacing on prusa is 8.723 not 9mm
 translate([0,-31+65-12,0])
@@ -1313,11 +1337,14 @@ translate([19+7+75,2.5-10,2])translate([7.5,25/2-8,18])cylinder(r=6.9/2,h=3.2);
 translate([19+7+75,2.5-10,2])translate([7.5,25/2-8,-0.1])cylinder(r=3.7/2,h=40);
 */
 //translate([19+7,2.5-10,2])translate([7.5,25/2-8,18])cylinder(r=6.9/2,h=3.2);
-translate([19+7,2.5-10,2])translate([7.5-10,25/2-8,-0.1])cylinder(r=3.7/2,h=240);
+translate([19+7,2.5-10,2])translate([7.5-10,25/2-8,14])cylinder(r=5.7/2,h=240);
+translate([19+7,2.5-10,2])translate([7.5-10,25/2-8,24])cylinder(r=10/2,h=240);
 //translate([19+7+37,2.5-10,2])translate([7.5,25/2-8,18])cylinder(r=6.9/2,h=3.2);
-translate([19+7+37,2.5-10,2])translate([7.5,25/2-8,-0.1])cylinder(r=3.7/2,h=40);
+translate([19+7+37,2.5-10,2])translate([7.5,25/2-8,14])cylinder(r=5.7/2,h=40);
+translate([19+7+37,2.5-10,2])translate([7.5,25/2-8,24])cylinder(r=10/2,h=40);
 //translate([19+7+75,2.5-10,2])translate([7.5,25/2-8,18])cylinder(r=6.9/2,h=3.2);
-translate([19+7+75,2.5-10,2])translate([7.5+10,25/2-8,-0.1])cylinder(r=3.7/2,h=240);
+#translate([19+7+75,2.5-10,2])translate([7.5+10,25/2-8,14])cylinder(r=5.7/2,h=240);
+#translate([19+7+75,2.5-10,2])translate([7.5+10,25/2-8,24])cylinder(r=10/2,h=240);
 }
 }
 }

@@ -2,22 +2,261 @@ include <modparts.scad>
 use<writescad/write.scad>
 include <bom_vacuum_pumps_box.scad>
 include <bom_openmv_camera.scad>
-include <nanoplotter.scad>
+//include <nanoplotter.scad>
 include <PiZero.scad>
 
+//stepper_linear_m8nut_endstopflag(5);
+
+//mirror([0,1,0])import("files/endstop_y.stl");
+
+//mirror([0,1,0])import("files/endstop_y.stl");
+
+//syringe_1ml_stack_1piece_multichannel_clamp();
+
+//slider_wall();
+//shuttle_front_vertical_adjust_wider_slider_wall();
+/*
+translate([0,20+3,0])rotate([0,90,0])tslot20(100);
+rotate([0,90,0])tslot20(100);
+*/
+/*
+difference(){
+translate([0,5,-5])cube([16,43,4]);
+translate([8,15,-10])#cylinder(r=4.7/2,h=30);
+translate([8,15+23,-10])#cylinder(r=4.7/2,h=30);
+}
+*/
+//slider_x4();
+//shuttle_back();
+
+//gantryhead_back_slider_x4();
+
+//XY_bearings_Left_x1_3dprint();
+//XY_bearings_Left_x1_3dprint();
+//XY_bearings_Right_x1_3dprint();
+//XY_motor_x2higher_3dprint();
+//XY_motor_x2higher();
+//m5bearing_washer();
+
+//bom_controlpanel();
+//pcb_panels_wider();
+
+//import("files/foot_big.stl");
 
 
+//noconveyer_gantry_assy(20,-75+78-166+260,-45+50+100-50-100+70,-55,0,267,tcl,thcl);
+//smallsyringe_valvesupportmodule_plate_4valve();
+
+
+//translate([30,-4,0])iverntech_pump_slider_plate_directdrive_plexium();
+//iverntech_pump_slider_plate_directdrive();
+//color("pink")translate([0,-14,0])mirror([1,0,0])directdrive_coupler();
+//iverntech_slider();
+
+//valvepart_pp();
+
+
+//valvesupportmodule_plate_4();
+//smallsyringe_valvesupportmodule_plate_4servos();
+/*
+translate([0,69,0]){
+color("")translate([52,190,63])rotate([-90,90,0])smallsyringe_valvesupportmodule_plate_pre4();
+color("")translate([52-60.5,190+85,33])cube([34,5,5]);
+color("")translate([52,190+72,63])rotate([-90,90,0])smallsyringe_valvesupportmodule_plate_pre4();
+}
+*/
+//valve_assy();
+
+//translate([1,232,61.3-0.5])rotate([0,0,0])valveconnectpart_pinchvalve();
+//translate([1,232,61.3+8-8-0.5])color("pink")rotate([0,0,0])valveconnectpart_outside();
+
+//translate([1,232,61.3])rotate([0,0,90])valvepart_pp();
+/*
+translate([1,232,61.3+8])color("pink")rotate([0,0,90])valve_pp_top();
+color("")translate([36,295.5,18])rotate([0,-90,90])valvemountplate_screwattach_smallersyringe_valve_pp();
+*/
+//color("")translate([36,295.5,18])rotate([0,-90,90])valvemountplate_screwattach_smallersyringe_vertical_attach_pinchvalve();
+
+//smallsyringe_valvesupportmodule_plate_4servos();
+
+/*
+translate([230,0,220])rotate([0,0,-90]){
+//translate([0,3,-1])washbowl_8tip_base();
+//translate([0-37,3,-1+18])washbowl_8tip_drypad();
+translate([0,3,-1+18])washbowl_8tip();
+}
+// washplate_mount();
+*/
+
+//p1000_model_eppendorf();
+//p1000_model_generic();
+
+
+
+//miuzei_raspicam_base();
+
+//extrusion_lid_coupler_breadboard();
+//multichannel_drypad();
+
+//rotate([0,180,0])iverntech_slider_xshuttle_connect();
+//rotate([90,0,0])shuttle_back();
+//translate([-20+5-220-3+0.5,200+5-231.8,678.8])rotate([0,180,-90])
+//slider_front_assy_multichannel_iverntech();
+
+//translate([120,250-4.5,654])rotate([180,0,90])iverntech_railsystem();
+//xshuttle_assy_wider(x,y);
+//import("BOM_inventory/build5/xdrive_fix/shuttle_back.stl");
+//import("BOM_inventory/build5/beltclamp.stl");
+//beltclamp_fin_plate();
+
+//iverntech_slider_xshuttle_connect();
+//shuttle_back();
+//ivernetech_slider_module_wider();
+//iverntech_slider_shuttle_bottom();
+//translate([0,-14+19,-26])slider_assy(x,y);
+
+/*
+//translate([-49.5+12,345,300-11])rotate([0,180,180])
+*/
+
+
+//shuttle_front_vertical_adjust_wider_slider_wall();
+
+/*
+outside_frame_wider(tcl,thcl,x,y);
+//translate([0,0,-24])corexy_beltsetup_wider(x,y);
+translate([0,0,-29.5])xymotor_assy_wider();
+translate([0,0,-24])corexy_beltsetup_wider(x,y);
+*/
+
+
+
+
+/*
+translate([-40,2,0])difference(){
+translate([-5,-0,0])cube([10,22,5]);
+translate([0,5,-1])#cylinder(r=3.7/2,h=20,$fn=20);
+translate([0,5+12,-1])#cylinder(r=3.7/2,h=20,$fn=20);
+}
+*/
+
+//translate([0,-4,0])iverntech_pump_slider_plate_directdrive_plexium();
+
+//color("pink")translate([0,-14,0])mirror([1,0,0])directdrive_coupler();
+//iverntech_slider();
+
+//stepper_linear_m8nut_coupler_vertical_adjust_nema17_wider();
+//translate([-22,-90,4])rotate([90,-90,0])motormount_screws();
+//iverntech_slidermount_motormount();
+
+//oneml_syringe_stepper_linear_m8nut_coupler();
+
+//igus_slidermount_encoder_TW_04_12();
+//iverntech_pump_slider();
+//ivernetech_slidermount();
+//translate([0,-4,0])iverntech_pump_slider_plate();
+
+//diaphragmpump_boxassy();
+//rotate([0,180,0])import("BOM_inventory/build3/stls/miuzei_camera_breadboard_b.stl");
+//displayPiZero();
+//raspizerobase_extrusion();
+//rotate([90,0,90])color("")import("BOM_inventory/build2/stls/miuzei_camera_breadboard_screwstub.stl");
+//import("BOM_inventory/build2/stls/mnt_md_justclip.stl");
+//rotate([90,0,0])connectionarms2(40);
+//miuzei_cover();
+//import("BOM_inventory/build2/stls/miuzei_raspicam_base.stl");
+//stroboscope_miuzei_mirror(10);
+//miuzei_lenscap(16);
+
+/*
+rotate([50,90,45]){
+translate([-20,5,60])rotate([0,0,180])miuzei_camera_module();
+translate([0,0,-13.5])multichannel_pipette_holder_linear_actuator_connect_cameramount();
+}
+*/
+
+//slider_front_assy_multichannel();
+//multichannel_assy_wider();
+//diaphragmpump_end_6pin_pcb();
+//import("BOM_inventory/BOM");
+//diaphragmpump_end_6pin_pcb_lid();
+//nalgene_cap_for_electrocaloric();
+//peristaltic_pump_lid();
+//pressurecompensation_bottle();
+//nalgene_bottle_assy_electrocaloric();
+//bottle_cap();
+//rotate([90,0,0])import("/Users/richard/Documents/009Reprapcatcube010715/cap.STL");
+
+/*
+conduit_tubes_3wayvalve();
+//translate([0,0,-24])corexy_beltsetup_wider(x,y);
+outside_frame_wider(tcl,thcl,x,y);
+gantry_shelves_wider();
+translate([0,0,-29.5])xymotor_assy_wider();
+pcb_panels_wider();
+*/
+/*
+translate([424-75,0+30,-63])rotate([0,0,0])atx_power_connect_assy();
+*/
+//translate([28,21,5])bananajackpanel();
+
+//raspi2_bottom_lego_female();
+
+/*
+translate([-48,0,197])smallsyringe_valvesupportmodule_plate_4servos();
+
+translate([-48-310+726,740-22,197+0-0])rotate([90,-90,0])smallsyringe_valvesupportmodule_plate_4servos();
+*/
+
+/*
+translate([-45,405,276.5-20])rotate([0,-90,-90]){
+for(i=[0:3]){
+translate([0,-58*i,0])color("")translate([52,190,63])rotate([-90,90,0])smallsyringe_valvesupportmodule_plate();
+//valve_assy();
+}
+for(i=[0:3]){
+translate([445-(i*58),-55.5*1,0])rotate([0,0,90])valve_assy();
+}
+}
+*/
+//translate([-20,436,490])rotate([-90,90,0])mirror([0,1,0])raspi2_bottom_lego_female();
+//translate([-230,210,320])rotate([-90,90,0])mirror([0,0,0])raspi_module();
+
+
+// translate([-50,6,240])cable_support_extrusion();
+
+// translate([-30,-55,0])rotate([0,0,-90])cable_support_lid();
+// rotate([0,0,90])cable_support();
+
+
+/*
+*/
+//zbed_smz_wider_nomove();
+//translate([-70,-25+50,z])zbed_multichannel_setup_wider(z);
+//microfluidics_set();
+/*
+*/
+/*
+*/
+//translate([1,232,61.3])rotate([0,0,90])valveconnectpart();
+
+//valve_assy();
+//color("")translate([36,295.5,18])rotate([0,-90,90])
+//valvemountplate_screwattach_smallersyringe_vertical_attach();
+//color("")translate([36,295.5,18])rotate([0,-90,90])valvemountplate_screwattach_smallersyringe();
+
+//valveconnectpart();
 
 //syringe_1ml_stack_1piece_multichannel();
 //syringe_1ml_stack_1piece_multichannel_clamp();
 
+//translate([0,30-20,0])rotate([0,180,0])multichannel_syringe1ml_clamp_top_luerlock();
 
 
 //iverntech_pump_slider_plate();
 //oneml_syringe_stepper_linear_m8nut_coupler();
-translate([0,0,0])multichannel_syringe_module_iverntech();
-
-
+//translate([0,0,0])multichannel_syringe_module_iverntech();
+//multichannel_syringe1ml_clamp_luerlock();
 /*
 translate([-1,12-7,7]){
 translate([-100,160,0])
@@ -106,26 +345,6 @@ translate([0,70,-0.1+0])multichannel_syringe1ml_clamp_top();
 //translate([420+50,-164-55,90])rotate([0,180,90])multichannel_drypad();
 //multichannel_drypad_384();
 
-/*
-translate([230,0,220])rotate([0,0,-90]){
-//translate([0,3,-1])washbowl_8tip_base();
-translate([0-37,3,-1+18])washbowl_8tip_drypad();
-//translate([0,3,-1+18])washbowl_8tip();
-}
-
-
-// washplate_mount();
-
-
-
- outside_frame_wider(tcl,thcl,x,y);
- gantry_shelves_wider();
- zbed_smz_wider_nomove();
- translate([-70,-25+50,z])zbed_multichannel_setup_wider(z);
-*/
- //microfluidics_set();
-
-
 // corner_plate_set();
 /*
  translate([160+188,0,0])rotate([0,0,0])rightcorner_bar_plate_set();
@@ -144,14 +363,6 @@ translate([0-37,3,-1+18])washbowl_8tip_drypad();
 
 //translate([-49.5+12,345,300-11])rotate([0,180,180])ivernetech_slider_module_wider();
 //translate([420+50,-164-55,90])rotate([0,180,90])multichannel_drypad();
-/*
-xshuttle_assy_wider(x,y);
-outside_frame_wider(tcl,thcl,x,y);
-translate([0,-14+19,-26])slider_assy(x,y);
-//translate([0,0,-24])corexy_beltsetup_wider(x,y);
-translate([0,0,-29.5])xymotor_assy_wider();
-translate([0,0,-24])corexy_beltsetup_wider(x,y);
-*/
 //zbed_smz_wider_nomove();
 //microfluidics_set();
 
@@ -310,7 +521,6 @@ color("lime")zdrive_corexy_beltplate_tslotconnect();
 //stroboscope_miuzei_back();
 //stroboscope_miuzei_mirror(10);
 
-//XY_bearings_Left_x1_3dprint();
 
 //XY_bearings_Right_x1();
 
@@ -324,7 +534,6 @@ color("lime")zdrive_corexy_beltplate_tslotconnect();
 //right_plate_x1_wider();
 //left_plate_x1_wider();
 //pcb_panels_wider();
-//noconveyer_gantry_assy(20,-75+78-166+260,-45+50+100-50-100+70,-55,0,267,tcl,thcl);
 
 //cube([20,20,7]);
 
@@ -520,9 +729,7 @@ translate([8+20+a,9,-1])cylinder(r=4.7/2,h=20);
 //translate([179.5,180-12.5+1.5,300-1])rotate([-90,0,180])multichannel_assy_wider();
 //translate([208,188+1.5,342])rotate([90,0,0])filament_linearactuator_multichannel_wider();
 //color("gainsboro")translate([-1,0,0])shuttle_front_vertical_adjust_wider_slider_wall();
-//valveconnectpart();
 
-//m5bearing_washer();
 // translate([0,-14+19,-26])slider_assy(100,100);
 //iverntech_slider_x4();
 
@@ -586,7 +793,6 @@ translate([40-12.5+53,-40+61,2])syringe_pcb_holder_placeholder();
 
 //translate([100,-200,0])one_1ml_syringe_parts();
 
-//import("files/foot_big.stl");
 // translate([0,-14+19,-26])slider_assy(x=10,y=10);
 //iverntech_slider();
 //iverntech_slider_tslot_connector();
@@ -753,7 +959,6 @@ difference(){
 //translate([30,1,8])#miuzei_cover();
 
 //nalgene_cap_for_electrocaloric();
-//valve_assy();
 //rotate([0.0,90])smallsyringe_valvesupportmodule_plate();
 //translate([100,-200,0])one_1ml_syringe_parts();
 
@@ -966,7 +1171,6 @@ translate([4+3+0.2+1-1,10,0])for(i=[0:0]){
 //valveconnectpart();
 
 //cube([30,50,12]);
-//valve_assy();
 //translate([1,232,61.3])rotate([0,0,90])valveconnectpart();
 //rotate([0.0,90])smallsyringe_valvesupportmodule_plate();
 //color("gainsboro")translate([52,190,63])rotate([-90,90,0])smallsyringe_valvesupportmodule_plate();

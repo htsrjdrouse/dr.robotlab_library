@@ -8709,6 +8709,11 @@ translate([-38,-27,-20])cube([50,150,100]);
 
 
 
+
+
+
+
+
 module m8_ybar_corexy(){
 //translate([5,75,-30])rotate([90,0,0])tslot20(200);
 /*

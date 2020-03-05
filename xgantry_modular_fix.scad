@@ -1,4 +1,5 @@
 include <PiZero.scad>
+include <bom_multichannel.scad>
 /*
 include <modparts.scad>
 use<writescad/write.scad>
@@ -8,80 +9,38 @@ include <nanoplotter.scad>
 include <PiZero.scad>
 */
 
+//translate([120,250-4.5,654])rotate([180,0,90])iverntech_railsystem();
+//xshuttle_assy_wider(x,y);
 
-dia = 31.75;
-hi = 9;
-cut = 0;
-//translate([0,0,0])mouse_conenozzle(dia,hi,cut);
-//waterproof_camera_square_tube(10);
-cage_assy();
-light_pvc_holder();
-translate([333,0,0])light_pvc_holder();
+//slider_front_assy_multichannel_iverntech();
+shuttle_back();
+//iverntech_railsystem();
 
-//mirror([0,1,0])raspi2_bottom();
-//rfid_camera_connector();
-//rfid_camera_module();
-//rfid_camera_standoff();
-module rfid_camera_standoff(){
-difference(){
-translate([25-2,-5+107-5+4,0])cube([18,10,30]);
-translate([28,-5+107-5+6.5+3,-10])#cylinder(r=2.8/2,h=300,$fn=30);
-translate([28+8,-5+107-5+6.5+3,-10])#cylinder(r=2.8/2,h=300,$fn=30);
-}
-}
-
-module rfid_camera_module(){
-translate([30,-19+140,0])rotate([0,0,-90])cytokinetics_miuzei_raspicam_base();
-difference(){
-translate([25,-5+107-5+38,0])cube([16,10,3]);
-translate([28,-5+107-5+6.5-2.5+40,-10])#cylinder(r=3.8/2,h=300,$fn=30);
-translate([28+8,-5+107-5+6.5-2.5+40,-10])#cylinder(r=3.8/2,h=300,$fn=30);
-}
-}
-
-
-module rfid_camera_connector(){
-rfid_holder();
-difference(){
-translate([25,-5+107-5,0])cube([16,13,3]);
-translate([28,-5+107-5+6.5+3,-10])#cylinder(r=2.8/2,h=300,$fn=30);
-translate([28+8,-5+107-5+6.5+3,-10])#cylinder(r=2.8/2,h=300,$fn=30);
-}
-}
-
-//tslot20(100);
-//rfid();
-//camera_65mm_mount_tslotstand();
-//waterproof_camera_square_tube(10);
-//rotate([0,180,0])mouse_restraint(44.3,62);
-
+module iverntech_railsystem(){
+translate([-20+5-220-3+0.5,200+5-231.8,678.8])rotate([0,180,-90])slider_front_assy_multichannel_iverntech();
+translate([-20+5-3,200+5,340])rotate([-90,0,-90])shuttle_back();
 /*
-mouse_restraint(31,12);
-//translate([35,0,0])mouse_nozzle(3);
 */
+translate([-25.5,20,320-3])rotate([0,180,0])iverntech_slider_xshuttle_connect();
+translate([-15.5,-10,0]){
+translate([0-30,250,269-5])rotate([90,0,0])tslot20(100);
+translate([0-30-20,250,269-5])rotate([90,0,0])tslot20(100);
+}
 /*
-a = 0;
-b = 0;
-dia = [0.7,0.8,0.9,1.1,1.2,1.3,1.4,1.5];
-//x = [0,45,85,0,45,85,24];
-//y = [0,0,0,0,0,0,25];
-x = [0,45,85,120,150,175,200];
-y = [0,0,0,0,0,0,0];
-for(i=[0:6]){
- echo(31/dia[i]);
- translate([x[i],y[i],0])mouse_restraint(31/dia[i],10);
+*/
+translate([-27/2+12/2-48+6+12,55-60-30-60,310-6+5])color("black")cube([12,450,8]);
+translate([-27/2+12/2-42-7.5+12,150+20,310-6+5-6])difference(){
+ color("silver")cube([27,45,9]);
+ translate([27/2-10,45/2-10,-5-20])cylinder(r=3.7/2,h=60);
+ translate([27/2+10,45/2-10,-5-20])cylinder(r=3.7/2,h=60);
+ translate([27/2-10,45/2+10,-5-20])cylinder(r=3.7/2,h=60);
+ translate([27/2+10,45/2+10,-5-20])cylinder(r=3.7/2,h=60);
+}
 }
 
-*/
-
-//mirror([0,1,0])import("files/endstop_y.stl");
-
-//endstop_y();
 
 
-//rotate([0,90,0])tslot20(100);
-//translate([0,20,0])rotate([0,90,0])tslot20(100);
-//y_arm_flag();
+
 
 
 
@@ -93,9 +52,8 @@ translate([-4,-4,0])cube([61+8,96+8,13]);
 translate([-23,5,0])cube([20,20,4]);
 translate([-23,60,0])cube([20,20,4]);
 }
-translate([0,0-10,2])#cube([20,20,20]);
-translate([-23+8,70,-10])cylinder(r=4.7/2,h=30);
-translate([-23+8,15,-10])cylinder(r=4.7/2,h=30);
+translate([-23+8,70,-10])#cylinder(r=4.7/2,h=30);
+translate([-23+8,15,-10])#cylinder(r=4.7/2,h=30);
 translate([0,0,2])cube([61,96,20]);
 translate([15,15,-1])cube([61-30,96-30,20]);
 translate([50,20,6])rotate([0,90,0])cylinder(r=2.8/2,h=30,$fn=30);
@@ -233,6 +191,7 @@ translate([0,0,0+i])rotate([-90,0,0])cylinder(r=10/2,h=40);
 //waterproof_camera(15);
 //pvc_raspi();
 //waterproof_camera_square_tube(0);
+//translate([-40,-2,3+5])rotate([0,0,90])camera_65mm_mount_disc_square();
 //uctronics_5();
 //one_inch_pvc_mount();
 //translate([12.5,60,-25])rotate([90,0,0])tslot20(200);
@@ -309,7 +268,6 @@ module waterproof_camera_square_tube(ang){
 translate([0,0,39-2]){
 translate([0,0,3])rotate([90,0,ang])camera_65mm_mount();
 translate([0,0,3+5])rotate([90,0,ang])camera_65mm_mount_disc_square();
-translate([0,0,3+5+153-94])rotate([-90,0,ang])camera_65mm_mount_disc_square();
 translate([0,0,7])rotate([-90,0,ang])color("black")cylinder(r=14/2,h=15,$fn=20);
 }
 //color("pink")waterproof_toppanel();
@@ -324,8 +282,10 @@ translate([0,0,37])color("")camera_65mm_mount_tslotstand();
 difference(){
 color("lightblue")rotate([0,0,45+ang])cylinder(r=71.5/2,h=150,$fn=4);
 translate([0,0,-0.2])rotate([0,0,45+ang])cylinder(r=58/2,h=324,$fn=4);
+
 //color("lightblue")rotate([0,0,45+ang])cylinder(r=50.8/2,h=150,$fn=4);
 //translate([0,0,-0.2])rotate([0,0,45+ang])cylinder(r=44.45/2,h=324,$fn=4);
+
 }
 }
 

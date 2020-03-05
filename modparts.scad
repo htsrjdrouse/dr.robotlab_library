@@ -517,7 +517,11 @@ translate([0,0,9])difference(){
  translate([0,0,-1])color("")cube([27,45,9+4.9]);
  color("")translate([20+10,45/2-9,2+1.5])cube([16-5,18,6+4.9-1.5]);
  color("")translate([20+10-3,45/2-7-30-9,2+1.5])cube([16+5-5,14+60+19,6+4.9-1.5]);
- }
+ } //end union
+ translate([27/2+23+2-8+5,45/2-2,-5+12.5-10+3])#cylinder(r=17/2,h=10);
+ translate([27/2+23+2-8+8,45/2-2,-5+12.5-10+3])#cylinder(r=17/2,h=10);
+ translate([27/2+23+2-8+5,45/2-0,-5+12.5-10+3])#cylinder(r=17/2,h=10);
+ translate([27/2+23+2-8+8,45/2-0,-5+12.5-10+3])#cylinder(r=17/2,h=10);
 
 // translate([27/2+23,45/2,-5])cylinder(r=5.7/2,h=20);
 // translate([27/2+23,45/2,2-0.1])cylinder(r=10/2,h=3);
@@ -4534,7 +4538,7 @@ translate([5+49,7.5,-1-50])cylinder(r=3.8/2,h=200);
 
 module m5bearing_washer(){
 difference(){union(){
-cylinder(r=19/2,h=2-0.5-0.3);
+cylinder(r=(19+6)/2,h=2-0.5-0.3);
 translate([0,0,0])cylinder(r=8/2,h=3.5-1.75+0.3);
 }
 translate([0,0,-1])cylinder(r=5.8/2,h=20);
@@ -11779,7 +11783,7 @@ module shuttle_back(){
 //translate([24.8,0,3])rotate([0,180,0])color("")import("head_back.stl");
 translate([-28.52,-10,0])difference(){
 union(){
-translate([9,0,0])cube([73,53,5]);
+translate([9,-4,0])cube([73,53+4,5]);
 translate([19-10,20,0])cube([53,60,5]);
 translate([19-10+6,66,0])cube([13,13,3.6]);
 translate([19-10+36,66,0])cube([13,13,3.6]);
@@ -11802,9 +11806,11 @@ translate([19-10+36,66,0])cube([13,13,3.6]);
 translate([0,-16,-0.3])cube([33,23,10]);
 translate([50,-9,-0.3])cube([33,23,10]);
 //bearings screws
-translate([60-8.5,72.35-1.3,-4-4.4])cylinder(r=5.7/2,h=42, $fn=30);
-translate([30-8.6,72.35-1.3,-4-4.4])cylinder(r=5.7/2,h=42, $fn=30);
-translate([42-1.1,5.15,-4])cylinder(r=4.7/2,h=30, $fn=30);
+translate([60-8.5,72.35-1.3,-4-4.4])#cylinder(r=5.7/2,h=42, $fn=30);
+translate([30-8.6,72.35-1.3,-4-4.4])#cylinder(r=5.7/2,h=42, $fn=30);
+translate([42-1.1,5.15-3.5,-4])#cylinder(r=4.7/2,h=30, $fn=30);
+translate([42-1.1,5.15-3,-4])#cylinder(r=4.7/2,h=30, $fn=30);
+translate([42-1.1,5.15-2.5,-4])#cylinder(r=4.7/2,h=30, $fn=30);
 translate([42-1.1+25+1,5.15+42,-4])#cylinder(r=4.7/2,h=30, $fn=30);
 translate([42-1.1-25-1,5.15+42,-4])cylinder(r=4.7/2,h=30, $fn=30);
 }
@@ -11874,27 +11880,22 @@ module shuttle_front_vertical_adjust_wider_slider_wall_beltfix(){
  translate([-25+8-30+14-5.2,22.5+2,0])rotate([90,0,0])cube([24+10,7,20]);
  translate([-25+8-30+14-5.2+60,22.5+2,0])rotate([90,0,0])cube([24+10,7,20]);
   }
-
-
  translate([-25+8-30+14-5.2+42+4-32,22.5-4+11-10-9,0-20])rotate([0,0,0])cube([4,8,30]);
  translate([-25+8-30+14-5.2+42+4+70-38,22.5-4+11-9-10,0-20])rotate([0,0,0])cube([4,8,30]);
-
-
  translate([-25+8-30+14-5.2+88,22.5-2,0-50])rotate([0,0,0])cylinder(r=2.7/2,h=400,$fn=20);
  translate([-25+8-30+14-5.2+88,22.5-2-12,0-50])rotate([0,0,0])cylinder(r=2.7/2,h=400,$fn=20);
-
  translate([-25+8-30+14-5.2+6,22.5-2,0-50])rotate([0,0,0])cylinder(r=2.7/2,h=400,$fn=20);
  translate([-25+8-30+14-5.2+6,22.5-2-12,0-50])rotate([0,0,0])cylinder(r=2.7/2,h=400,$fn=20);
-
-
-
-
-  translate([-6.5,-20,20]){translate([0,0,4.5])cylinder(r=3.7/2,h=30);translate([0,0,-20])cylinder(r=2.7/2,h=40);}
-  translate([-6.5,17,20]){translate([0,0,4.5])cylinder(r=3.7/2,h=30);translate([0,0,-20])cylinder(r=2.7/2,h=40);}
+  translate([-6.5,-20,20]){translate([0,0,4.5])#cylinder(r=3.7/2,h=30);translate([0,0,-20])cylinder(r=2.7/2,h=40);}
+  translate([-6.5,-20+12.5,20]){translate([0,0,4.5])#cylinder(r=3.7/2,h=30);translate([0,0,-20])cylinder(r=2.7/2,h=40);}
+  translate([-6.5,17,20]){translate([0,0,4.5])#cylinder(r=3.7/2,h=30);translate([0,0,-20])cylinder(r=2.7/2,h=40);}
+  translate([-6.5,17+12.5,20]){translate([0,0,4.5])#cylinder(r=3.7/2,h=30);translate([0,0,-20])cylinder(r=2.7/2,h=40);}
   translate([-6.5,36,20]){translate([0,0,4.5])cylinder(r=3.7/2,h=30);translate([0,0,-20])cylinder(r=2.7/2,h=40);}
   translate([35,0,0]){
-  translate([-6.5,-20,20]){translate([0,0,4.5])cylinder(r=3.7/2,h=30);translate([0,0,-20])cylinder(r=2.7/2,h=40);}
-  translate([-6.5,17,20]){translate([0,0,4.5])cylinder(r=3.7/2,h=30);translate([0,0,-20])cylinder(r=2.7/2,h=40);}
+  translate([-6.5,-20,20]){translate([0,0,4.5])#cylinder(r=3.7/2,h=30);translate([0,0,-20])cylinder(r=2.7/2,h=40);}
+  translate([-6.5,-20+12.5,20]){translate([0,0,4.5])#cylinder(r=3.7/2,h=30);translate([0,0,-20])cylinder(r=2.7/2,h=40);}
+  translate([-6.5,17,20]){translate([0,0,4.5])#cylinder(r=3.7/2,h=30);translate([0,0,-20])cylinder(r=2.7/2,h=40);}
+  translate([-6.5,17+12.5,20]){translate([0,0,4.5])#cylinder(r=3.7/2,h=30);translate([0,0,-20])cylinder(r=2.7/2,h=40);}
   translate([-6.5,36,20]){translate([0,0,4.5])cylinder(r=3.7/2,h=30);translate([0,0,-20])cylinder(r=2.7/2,h=40);}
   }
  }
@@ -12019,7 +12020,7 @@ module shuttle_front_vertical_adjust_wider_iverntech(){
 
 translate([-28.5,-10,0])difference(){
 union(){
-translate([0,-1.75,0])cube([73,53,5]);
+translate([0,-1.75-4,0])#cube([73,53+4,5]);
 //translate([25-2,15+9,0])cube([25+6,13+16,3+7+7]);
 //translate([25-2,15+9,0])cube([25+6,13+16,3+7+7]);
 //translate([25-2,15+9,0])cube([25+6,13,3+7+7]);
@@ -12058,7 +12059,9 @@ cylinder(r=10/2,h=30,$fn=30);
 }
 }
 //bearings screws
-translate([42-1.1,5.15-0.15,-4])cylinder(r=5.7/2,h=30, $fn=30);
+#translate([42-1.1,5.15-0.15-3.5,-4])cylinder(r=5.7/2,h=30, $fn=30);
+#translate([42-1.1,5.15-0.15-3,-4])cylinder(r=5.7/2,h=30, $fn=30);
+#translate([42-1.1,5.15-0.15-2.5,-4])cylinder(r=5.7/2,h=30, $fn=30);
 translate([42-1.1+25+1,5.15+42,-4])cylinder(r=5.7/2,h=30, $fn=30);
 translate([42-1.1-25-1.,5.15+42,-4])cylinder(r=5.7/2,h=30, $fn=30);
 }

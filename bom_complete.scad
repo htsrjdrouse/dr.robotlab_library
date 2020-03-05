@@ -5,6 +5,16 @@ include <bom_openmv_camera.scad>
 //include <nanoplotter.scad>
 include <PiZero.scad>
 
+
+
+//raspi2_bottom();
+
+//multichannel_pipette_holder_linear_actuator_connect_cameramount();
+
+
+// translate([-8,30-6.5,28.2])rotate([0,180,90])color("")tslot_clamp_filament_linearactuator_shuttle_noextrusion();
+
+//m5bearing_washer();
 //stepper_linear_m8nut_endstopflag(5);
 
 //mirror([0,1,0])import("files/endstop_y.stl");
@@ -97,14 +107,14 @@ translate([0,3,-1+18])washbowl_8tip();
 
 //extrusion_lid_coupler_breadboard();
 //multichannel_drypad();
-
 //rotate([0,180,0])iverntech_slider_xshuttle_connect();
-//rotate([90,0,0])shuttle_back();
-//translate([-20+5-220-3+0.5,200+5-231.8,678.8])rotate([0,180,-90])
-//slider_front_assy_multichannel_iverntech();
-
-//translate([120,250-4.5,654])rotate([180,0,90])iverntech_railsystem();
-//xshuttle_assy_wider(x,y);
+/*
+rotate([90,0,0])shuttle_back();
+translate([-20+5-220-3+0.5,200+5-231.8,678.8])rotate([0,180,-90])
+slider_front_assy_multichannel_iverntech();
+*/
+translate([120,250-4.5,654])rotate([180,0,90])iverntech_railsystem();
+xshuttle_assy_wider(x,y);
 //import("BOM_inventory/build5/xdrive_fix/shuttle_back.stl");
 //import("BOM_inventory/build5/beltclamp.stl");
 //beltclamp_fin_plate();

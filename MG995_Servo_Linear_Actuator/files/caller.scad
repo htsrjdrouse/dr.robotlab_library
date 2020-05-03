@@ -15,10 +15,36 @@ include <holder_half.scad>
 */
 
 
+module holder_half_mod(){
+
+difference(){
+union(){
+import("/Users/richard/Documents/dr.robot/dr.robotlab_library/MG995_Servo_Linear_Actuator/files/holder_half.stl");
+color("pink")translate([-66.8-7.8,13.5,44])cube([6+1.5,30,10]);
+color("pink")translate([-66.8-7.8,13.5,44+10-2])cube([6+1.5,40,12]);
+}
+
+translate([-30-70+25,2-5,71])rotate([0,90,0]){
+translate([7-4,35,-2])#cylinder(r=3.8/2,h=200,$fn=30);
+translate([7-4,35,-0])#cylinder(r=8/2,h=3,$fn=30);
+translate([7+7,41+11.25,-2])#cylinder(r=3.8/2,h=200,$fn=30);
+translate([7+7,41+11.25,-0])#cylinder(r=8/2,h=3,$fn=30);
+translate([7+18,35,-2])#cylinder(r=3.8/2,h=200,$fn=30);
+translate([7+18,35,-0])#cylinder(r=8/2,h=3,$fn=30);
+}
+
+
+}
+}
+
+
 
 module servo_linear_assy(){
 //translate([54,100-30+0.5,0])rotate([0,0,0])import("/Users/richard/Documents/dr.robot/dr.robotlab_library/MG995_Servo_Linear_Actuator/files/holder_half.stl");
-translate([34.5,109.5,63])rotate([0,180,-90])import("/Users/richard/Documents/dr.robot/dr.robotlab_library/MG995_Servo_Linear_Actuator/files/holder_half.stl");
+//translate([34.5,109.5,63])rotate([0,180,-90])import("/Users/richard/Documents/dr.robot/dr.robotlab_library/MG995_Servo_Linear_Actuator/files/holder_half.stl");
+translate([34.5,109.5,63])rotate([0,180,-90])holder_half_mod();
+
+
 translate([34.5-14,109.5-149,63])rotate([0,180,90])import("/Users/richard/Documents/dr.robot/dr.robotlab_library/MG995_Servo_Linear_Actuator/files/holder_half.stl");
 
 /*
@@ -31,7 +57,7 @@ translate([36-18,100-30+0.5+50,0+11])rotate([90,0,0])cylinder(r=2.8/2,h=120,$fn=
 //translate([54-54,-0,0])rotate([0,0,0])import("/Users/richard/Documents/dr.robot/dr.robotlab_library/MG995_Servo_Linear_Actuator/files/holder_half.stl");
 translate([50+4,-50+120+0.5,27.5])color("lime")rotate([0,180,90])import("/Users/richard/Documents/dr.robot/dr.robotlab_library/MG995_Servo_Linear_Actuator/files/sled_bottom.stl");
 
-translate([10-1,-10-15,30])rotate([0,0,90])color("pink")import("/Users/richard/Documents/dr.robot/dr.robotlab_library/MG995_Servo_Linear_Actuator/files/rack.stl");
+translate([10-1,-10-15+20,30])rotate([0,0,90])color("pink")import("/Users/richard/Documents/dr.robot/dr.robotlab_library/MG995_Servo_Linear_Actuator/files/rack.stl");
 translate([0,4,-0])rotate([0,0,0])
 difference(){
 color("peru")import("/Users/richard/Documents/dr.robot/dr.robotlab_library/MG995_Servo_Linear_Actuator/files/pinion.stl");

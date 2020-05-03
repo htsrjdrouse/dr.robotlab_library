@@ -705,8 +705,6 @@ translate([40-12.5+53,-40+61,2])syringe_pcb_holder_placeholder();
 
 
 
-
-
 //This is the control panel
 color(col)
 translate([69.2-75,13-60-42+3,-52])rotate([90,0,0])bom_controlpanel();
@@ -2211,13 +2209,11 @@ translate([15/2,20,0])translate([-5.5,-16.5/2,-1])cube([14,16.5,10]);
 }
 */
 /*
-
 translate([77.5+17+17,20+3-76+1,0]){
 translate([15/2,20,0])translate([0,-14.6,-1])cylinder(r=3.7/2,h=10);
 translate([15/2,20,0])translate([0,0,-1])rotate([0,0,45])cylinder(r=16/2,h=10,$fn=4);
 translate([15/2,20,0])translate([0,14.6,-1])cylinder(r=3.7/2,h=10);
 }
-
 translate([77.5+17+(17*2),20+3-76+1,0]){
 translate([15/2,20,0])translate([0,-14.6,-1])cylinder(r=3.7/2,h=10);
 translate([15/2,20,0])translate([0,0,-1])rotate([0,0,45])cylinder(r=16/2,h=10,$fn=4);
@@ -2232,6 +2228,47 @@ translate([15/2,20,0])translate([0,14.6,-1])cylinder(r=3.7/2,h=10);
 }
 }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6913,7 +6950,6 @@ module rightside_panel(cl,bcl){
 color(bcl)rightside_underneath_plate_x1();
 
 
-
 //RSP2
 //panel 2
 /*
@@ -6959,6 +6995,26 @@ translate([514.0-100,-50+10,30])rotate([0,90,0])cylinder(r=5.7/2,h=200);
 }
 */
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 module leftside_underneath_plate_x1(){
 
@@ -10020,6 +10076,20 @@ translate([(-17/2-14)*0.58,(-90-17/2-10)*0.58,-1])rotate([0,0,0])cube([(17+24)*0
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 module left_plate_x1_wider_deeper(){
 //length = 370.736
 //width = 62.81
@@ -10473,6 +10543,22 @@ translate([62+120+50+i*50-18,14-3+35,-50])cylinder(r=2.8/2,h=200);
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 module right_plate_x1_wider_deeper(){
 //length = 370.736
 //width = 62.81
@@ -10723,6 +10809,23 @@ translate([142.2,79.6,-0.1])cylinder(r=7/2,h=5);
 */
 }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 module back_plate_x1(){
 x = 58;
@@ -11779,11 +11882,11 @@ translate([7.5,10+37.5+2+2.5+1.5,-35+28])cylinder(r=12/2,h=30);
 
 module shuttle_back(){
 //translate([-30,39-7+15,28-26])rotate([0,90,0])tslot20(100);
-
 //translate([24.8,0,3])rotate([0,180,0])color("")import("head_back.stl");
 translate([-28.52,-10,0])difference(){
 union(){
 translate([9,-4,0])cube([73,53+4,5]);
+//translate([9+22,-4,0])#cube([73-30,53+4-42,8]);
 translate([19-10,20,0])cube([53,60,5]);
 translate([19-10+6,66,0])cube([13,13,3.6]);
 translate([19-10+36,66,0])cube([13,13,3.6]);
@@ -11791,30 +11894,27 @@ translate([19-10+36,66,0])cube([13,13,3.6]);
  translate([-25+8-30+14-5.2+35+64,22.5+10,0])rotate([90,0,0])cube([24+10,7,18]);
 //translate([25-2,15+9,0])cube([25+6,13+16,3+7]);
 }
-
  translate([-25+8-30+14-5.2+42+4,22.5-4+11-10,0-20])rotate([0,0,0])cube([4,8,30]);
  translate([-25+8-30+14-5.2+42+4+70,22.5-4+11-10,0-20])rotate([0,0,0])cube([4,8,30]);
-
-
  translate([3.8,29.5,-50])rotate([0,0,0])cylinder(r=2.7/2,h=400,$fn=20);
  translate([3.8,29.5-12,-50])rotate([0,0,0])cylinder(r=2.7/2,h=400,$fn=20);
-
  translate([-25+8-30+14-5.2+42+84,22.5-4+11,0-50])rotate([0,0,0])cylinder(r=2.7/2,h=400,$fn=20);
  translate([-25+8-30+14-5.2+42+84,22.5-4-12+11,0-50])rotate([0,0,0])cylinder(r=2.7/2,h=400,$fn=20);
-
-
 translate([0,-16,-0.3])cube([33,23,10]);
 translate([50,-9,-0.3])cube([33,23,10]);
 //bearings screws
-translate([60-8.5,72.35-1.3,-4-4.4])#cylinder(r=5.7/2,h=42, $fn=30);
-translate([30-8.6,72.35-1.3,-4-4.4])#cylinder(r=5.7/2,h=42, $fn=30);
-translate([42-1.1,5.15-3.5,-4])#cylinder(r=4.7/2,h=30, $fn=30);
-translate([42-1.1,5.15-3,-4])#cylinder(r=4.7/2,h=30, $fn=30);
-translate([42-1.1,5.15-2.5,-4])#cylinder(r=4.7/2,h=30, $fn=30);
-translate([42-1.1+25+1,5.15+42,-4])#cylinder(r=4.7/2,h=30, $fn=30);
+//here is the bearing screws adjustment
+translate([60-8.5,72.35-1.3,-4-4.4])cylinder(r=5.7/2,h=42, $fn=30);
+translate([30-8.6,72.35-1.3,-4-4.4])cylinder(r=5.7/2,h=42, $fn=30);
+//translate([42-1.1,5.15-3.5,-4])cylinder(r=4.7/2,h=30, $fn=30);
+//translate([42-1.1,5.15-3,-4])cylinder(r=4.7/2,h=30, $fn=30);
+for(i=[0:12]){
+translate([42-1.1,5.15+2.5-i/2,-4])cylinder(r=4.7/2,h=30, $fn=30);
+}
+translate([42-1.1,5.15+2.5,-4+7])rotate([90,0,0])#cylinder(r=2/2,h=300, $fn=30);
+translate([42-1.1+25+1,5.15+42,-4])cylinder(r=4.7/2,h=30, $fn=30);
 translate([42-1.1-25-1,5.15+42,-4])cylinder(r=4.7/2,h=30, $fn=30);
 }
-
 //belt clamp left side
 translate([5,0,0])union(){
 //translate([25,17.32+1.38,0])cube([15.6+7,3.62,10]);
@@ -11822,23 +11922,33 @@ translate([19.5,12.7,0])difference(){{translate([-1,0,0])cube([6+2,6,10]);transl
 translate([0,0,0])cylinder(r=6.8/2,h=10-7,$fn=6);
 }}}
 translate([25,17.32+1.38-14,0])difference(){cube([5.5+1,13.62+1,10]);translate([-10,5,6.5])rotate([90,0,90]){cylinder(r=2.8/2,h=30,$fn=30);
-
 //translate([0,0,9-9])cylinder(r=6.8/2,h=13,$fn=6);
 }}
 }
-
 //translate([24,12.8,0])difference(){cube([6,6,10]);translate([3.2,3,0]){cylinder(r=2.8/2,h=20);cylinder(r=6.8/2,h=13,$fn=6);}}
-
-
 //belt clamp right side
 translate([5,0,0]){
 //translate([25-45.84-7.3+7.4,17.32+1.38,0])cube([15.6+2,3.62,10]);
 translate([25-35.73,17.32+1.38-14-4,0])difference(){translate([0.6,4.1,0])cube([4.64+0.2+2,13.62+6-4,10]);translate([-10,5+4,6.5])rotate([90,0,90]){cylinder(r=2.8/2,h=30,$fn=30);
 //translate([0,0,13])cylinder(r=6.8/2,h=3,$fn=6);
 }}}
-
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 module backextruder_clamp(){
 difference(){
@@ -12020,7 +12130,7 @@ module shuttle_front_vertical_adjust_wider_iverntech(){
 
 translate([-28.5,-10,0])difference(){
 union(){
-translate([0,-1.75-4,0])#cube([73,53+4,5]);
+translate([0,-1.75-4,0])cube([73,53+4,5]);
 //translate([25-2,15+9,0])cube([25+6,13+16,3+7+7]);
 //translate([25-2,15+9,0])cube([25+6,13+16,3+7+7]);
 //translate([25-2,15+9,0])cube([25+6,13,3+7+7]);
@@ -12059,9 +12169,15 @@ cylinder(r=10/2,h=30,$fn=30);
 }
 }
 //bearings screws
-#translate([42-1.1,5.15-0.15-3.5,-4])cylinder(r=5.7/2,h=30, $fn=30);
-#translate([42-1.1,5.15-0.15-3,-4])cylinder(r=5.7/2,h=30, $fn=30);
-#translate([42-1.1,5.15-0.15-2.5,-4])cylinder(r=5.7/2,h=30, $fn=30);
+translate([42-1.1,5.15-0.15-3.5,-4])cylinder(r=5.7/2,h=30, $fn=30);
+translate([42-1.1,5.15-0.15-3,-4])#cylinder(r=5.7/2,h=30, $fn=30);
+translate([42-1.1,5.15-0.15-2.5,-4])#cylinder(r=5.7/2,h=30, $fn=30);
+for(i=[0:12]){
+#translate([42-1.1,5.15+2.5-i/2,-4])cylinder(r=5.7/2,h=30, $fn=30);
+}
+translate([42-1.1,5.15+2.5,-4+7])rotate([90,0,0])#cylinder(r=2/2,h=300, $fn=30);
+/*
+*/
 translate([42-1.1+25+1,5.15+42,-4])cylinder(r=5.7/2,h=30, $fn=30);
 translate([42-1.1-25-1.,5.15+42,-4])cylinder(r=5.7/2,h=30, $fn=30);
 }

@@ -799,7 +799,6 @@ module zbedconstraintbearing(){
   cbx = 45;
   cby = 19;
   cbz = 5;
-
   //bed 
   bl = 275;
 

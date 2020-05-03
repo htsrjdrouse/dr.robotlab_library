@@ -1,0 +1,13 @@
+difference(){union(){
+translate([70,160-9+6,0])cube([52-10,15,4]);
+difference(){
+union(){
+import("Re_Arm_mount.stl");
+}
+translate([0,160,-1])cube([130,30,30]);
+translate([0,160-7.4,4])cube([130,130,30]);
+}
+}
+translate([80,165,-20])#cylinder(r=5.7/2,h=30,$fn=20);
+translate([100,165,-20])#cylinder(r=5.7/2,h=30,$fn=20);
+}

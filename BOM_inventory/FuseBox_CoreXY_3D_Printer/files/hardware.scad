@@ -132,7 +132,7 @@ cube([20,30,4]);
 translate([-20,15,0])cube([20,5,10]);
 translate([5,25,0])cube([15,5,17]);
 }
-translate([9.5,50,10.5])rotate([90,0,0])cylinder(r=4.9/2,h=40,$fn=30);
+#translate([9.5,50,10.5])rotate([90,0,0])cylinder(r=5.8/2,h=23,$fn=30);
 translate([9.5-2,27.5-0,10.5])rotate([0,90,0])cylinder(r=2.8/2,h=40,$fn=30);
 translate([-15,30,5.5])rotate([90,0,0])cylinder(r=3.8/2,h=40,$fn=30);
 translate([-15+8,30,5.5])rotate([90,0,0])cylinder(r=3.8/2,h=40,$fn=30);

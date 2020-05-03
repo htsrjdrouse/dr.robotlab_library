@@ -11,7 +11,7 @@ use<writescad/write.scad>
 
 //xshuttle_assy_stls();
 
-corexy_beltsetup(30,-20);
+//corexy_beltsetup(30,-20);
 
 
 //xshuttle_assy_stls();

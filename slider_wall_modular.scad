@@ -1,8 +1,9 @@
 //translate([-40+2,-25+18.8,3])import("/Users/richard/Documents/009Reprapcatcube010715/igus_sliders/TS_04_09_50_3.stl");
 
-stepper_linear_m8nut_endstopflag(6);
+//stepper_linear_m8nut_endstopflag(6);
 
-/*
+
+
 
 difference(){
 translate([49.7,31,25])slider_wall_mod();
@@ -15,6 +16,7 @@ translate([49.7,31,25])slider_wall_mod();
   translate([-6.5,36,20]){translate([0,0,4.5])cylinder(r=3.7/2,h=30);translate([0,0,-20])cylinder(r=2.7/2,h=40);}
 }
 }
+/*
 */
 
 module stepper_linear_m8nut_endstopflag(thick){

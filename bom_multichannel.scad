@@ -395,6 +395,11 @@ module slider_front_assy_multichannel_iverntech(){
 //translate([179.5,180-12.5+1.5,300-1])rotate([-90,0,180])multichannel_assy_wider();
 translate([0,3,0]){
 translate([0,0,-3]){
+//nested modules ...uhhhh
+//this module filament_linearactuator_multichannel_wider_iverntech() is here
+//which just calls this: color("")translate([-1,0,0])shuttle_front_vertical_adjust_wider_slider_wall_beltfix()
+//which is in modparts.scad file frustratingly at line 11879
+//which then calls module shuttle_front_vertical_adjust_wider_iverntech()  at line 12023 also at modparts.scad
 translate([208,188+1.5,342])rotate([90,0,0])filament_linearactuator_multichannel_wider_iverntech();
 //inductive sensor
 //color("silver")translate([208-16,188-16,342-35])cylinder(r=12/2,h=55);

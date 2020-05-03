@@ -1,9 +1,29 @@
 
 //translate([23,550,8.5])rotate([90,0,0])tslot20(400);
 
+//smallsyringe_valvesupportmodule_plate_4valve_B();
+smallsyringe_valvesupportmodule_plate_4valve_A();
+
+module smallsyringe_valvesupportmodule_plate_4valve_A(){
+difference(){
+smallsyringe_valvesupportmodule_plate_4valve();
+translate([-60,152,0])#cube([250,200,50]);
+}
+}
+
+module smallsyringe_valvesupportmodule_plate_4valve_B(){
+difference(){
+smallsyringe_valvesupportmodule_plate_4valve();
+translate([-60,152+195,0])#cube([250,200,50]);
+}
+}
+
+
+
+
 
 module smallsyringe_valvesupportmodule_plate_4valve(){
-projection(cut=false){
+//projection(cut=false){
 difference(){union(){
 for(i=[0:3]){
 color("")translate([52,190+(i*72),63])rotate([-90,90,0])smallsyringe_valvesupportmodule_plate_pre4();
@@ -17,8 +37,10 @@ translate([38,240+100,0])#cylinder(r=5.7/2,h=300,$fn=30);
 translate([38,240+150,0])#cylinder(r=5.7/2,h=300,$fn=30);
 translate([38,240+200,0])#cylinder(r=5.7/2,h=300,$fn=30);
 }
+//}
 }
-}
+
+
 
 module smallsyringe_valvesupportmodule_plate_pre4(){
 translate([45,15.5,0])difference(){
@@ -36,10 +58,10 @@ translate([-30,0+16,90+40-i])rotate([90,0,90]){#cylinder(r=4/2,h=20,$fn=30);}//t
 }
 translate([-30,0,90+12])rotate([90,0,90])cylinder(r=5.6/2,h=20,$fn=30);
 translate([-30,0,90+38])rotate([90,0,90])cylinder(r=5.6/2,h=20,$fn=30);
-translate([-30,0+20-5+15,96.9+1.7])rotate([90,0,90]){cylinder(r=3/2,h=20,$fn=30);}//translate([0,0,13])cylinder(r=6.8/2,h=3,$fn=6);}
-translate([-30,0+20+5+15,96.9+1.7])rotate([90,0,90]){cylinder(r=3/2,h=20,$fn=30);}//translate([0,0,13])cylinder(r=6.8/2,h=3,$fn=6);}
-translate([-30,0+20-5+15,147.7-0.5])rotate([90,0,90]){cylinder(r=3/2,h=20,$fn=30);}//translate([0,0,13])cylinder(r=6.8/2,h=3,$fn=6);}
-translate([-30,0+20+5+15,147.7-0.5])rotate([90,0,90]){cylinder(r=3/2,h=20,$fn=30);}//translate([0,0,13])cylinder(r=6.8/2,h=3,$fn=6);}
+translate([-30,0+20-5+15,96.9+1.7])rotate([90,0,90]){cylinder(r=2.8/2,h=20,$fn=30);}//translate([0,0,13])cylinder(r=6.8/2,h=3,$fn=6);}
+translate([-30,0+20+5+15,96.9+1.7])rotate([90,0,90]){cylinder(r=2.8/2,h=20,$fn=30);}//translate([0,0,13])cylinder(r=6.8/2,h=3,$fn=6);}
+translate([-30,0+20-5+15,147.7-0.5])rotate([90,0,90]){cylinder(r=2.8/2,h=20,$fn=30);}//translate([0,0,13])cylinder(r=6.8/2,h=3,$fn=6);}
+translate([-30,0+20+5+15,147.7-0.5])rotate([90,0,90]){cylinder(r=2.8/2,h=20,$fn=30);}//translate([0,0,13])cylinder(r=6.8/2,h=3,$fn=6);}
 }
 }
 translate([18.5+6,0,0])cylinder(r=9.5/2,h=200);

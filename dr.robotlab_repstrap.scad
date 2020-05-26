@@ -12288,24 +12288,6 @@ translate([19,-13,5-3]){translate([0,i,-2])cylinder(r=4.7/2,h=10+6);}
   translate([31,14,5-2.9])cylinder(r=10/2,h=3);
   translate([31,14+66,-50])cylinder(r=4.7/2,h=200);
   translate([31,14+66,5-2.9])cylinder(r=11/2,h=3);
-  /*
-  translate([35/2,3.5,-0.1])cylinder(r=3.7/2,h=10);
-  translate([35/2,3.5,2])cylinder(r=6.5/2,h=3.1);
-  translate([2,3.5,-0.1])cylinder(r=3.7/2,h=10);
-  translate([2,3.5,2])cylinder(r=6.5/2,h=3.1);
-  translate([35-2,3.5,-0.1])cylinder(r=3.7/2,h=10);
-  translate([35-2,3.5,2])cylinder(r=6.5/2,h=3.1);
-  translate([35/2,90-3.5,-0.1])cylinder(r=3.7/2,h=10);
-  translate([35/2,90-3.5,2])cylinder(r=6.5/2,h=3.1);
-  translate([2,90-3.5,-0.1])cylinder(r=3.7/2,h=10);
-  translate([2,90-3.5,2])cylinder(r=6.5/2,h=3.1);
-  translate([35-2,90-3.5,-0.1])cylinder(r=3.7/2,h=10);
-  translate([35-2,90-3.5,2])cylinder(r=6.5/2,h=3.1);
-  translate([35-2,90/2,-0.1])cylinder(r=3.7/2,h=10);
-  translate([35-2,90/2,2])cylinder(r=6.5/2,h=3.1);
-  translate([2,90/2,-0.1])cylinder(r=3.7/2,h=10);
-  translate([2,90/2,2])cylinder(r=6.5/2,h=3.1);
- */
  }
 }
 
@@ -12372,7 +12354,6 @@ module washbowl_8tip_base(){
   }
   translate([-6-1.5,14,5])cylinder(r=3.8/2,h=30);
   translate([-6-1.5,14+66,5])cylinder(r=3.8/2,h=30);
-  
   /*
   for(i=[0:7]){
    translate([11,(i*9)+13,-0.1])cylinder(r=5/2,h=13);
@@ -12386,8 +12367,6 @@ module washbowl_8tip_base(){
   translate([18-12.5,9+4-4,3])cube([9,10,20]);
   translate([18-12.5,9+4-4+63,3])cube([9,10,20]);
   translate([18-12.5+2,9+4-4,3])cube([7,73,20]);
-
-
   translate([35/2,3.5,3-20])cylinder(r=3.7/2,h=40);
   translate([2,3.5,3-20])cylinder(r=3.7/2,h=40);
   translate([35-2,3.5,3-20])cylinder(r=3.7/2,h=40);
@@ -12396,10 +12375,7 @@ module washbowl_8tip_base(){
   translate([35-2,90-3.5,3-20])cylinder(r=3.7/2,h=40);
   translate([35-2,90/2,3-20])cylinder(r=3.7/2,h=40);
   translate([2,90/2,3-20])cylinder(r=3.7/2,h=40);
-
-
   translate([35/2,3.5,3-25-10])cylinder(r=6.7/2,h=40,$fn=6);
-
   translate([2,3.5,3-25-10])cylinder(r=6.7/2,h=40,$fn=6);
   translate([35-2,3.5,3-25-10])cylinder(r=6.7/2,h=40,$fn=6);
   translate([35/2,90-3.5,3-25-10])cylinder(r=6.7/2,h=40,$fn=6);
@@ -12407,13 +12383,9 @@ module washbowl_8tip_base(){
   translate([35-2,90-3.5,3-25-10])cylinder(r=6.7/2,h=40,$fn=6);
   translate([35-2,90/2,3-25-10])cylinder(r=6.7/2,h=40,$fn=6);
   translate([2,90/2,3-25-10])cylinder(r=6.7/2,h=40,$fn=6);
-
-
   translate([35-12,90/2,-1])#cylinder(r=6.8/2,h=20);
   translate([35-25,90/2-40+10,10])rotate([90,90,0])#cylinder(r=6.8/2,h=40);
   translate([35-25,90/2-40+10+80+18,10])rotate([90,90,0])#cylinder(r=6.8/2,h=40);
-
-
  }
 }
 

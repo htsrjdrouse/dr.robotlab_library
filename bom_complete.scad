@@ -7,7 +7,10 @@ include <PiZero.scad>
 
 //miuzei_camera_module();
 
-pcb_panels_wider();
+
+//actualvalve_for_syringe();
+
+//pcb_panels_wider();
 
 //rotate([0,180,0])bottom_bed_fix();
 
@@ -32,7 +35,7 @@ pcb_panels_wider();
 
 //mirror([0,1,0])import("files/endstop_y.stl");
 
-//syringe_1ml_stack_1piece_multichannel_clamp();
+syringe_1ml_stack_1piece_multichannel_clamp();
 
 //slider_wall();
 //shuttle_front_vertical_adjust_wider_slider_wall();

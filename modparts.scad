@@ -301,7 +301,6 @@ translate([25,38.94,0])translate([1,0,-6.1])cylinder(r=(5.9+0.8)/2,h=36);
 
 module iverntech_slider_tslot_connector(){
 
-
 /*
 //bearings for corexy example
 translate([-27/2+12/2+29.5,150-5+8,2-3+6-25-3-3.2])
@@ -318,8 +317,6 @@ translate([0,0,0.5])cylinder(r=18/2,h=4);
 translate([0,0,-0.5])cylinder(r=5.7/2,h=6);
 }
 }
-
-
 translate([-27/2+12/2+29.5,150-5+8+52,2-3+6-25-3-3.2])
 translate([4,1,-15]){
 color("silver")
@@ -335,7 +332,6 @@ translate([0,0,-0.5])cylinder(r=5.7/2,h=6);
 }
 }
 */
-
 //for show
 /*
 //This is the screw
@@ -375,6 +371,11 @@ translate([9-5,9,-34])cylinder(r=5/2,h=40);
 translate([9-5,9,6])cylinder(r=11/2,h=40);
 }
 }
+
+
+
+
+
 
 
 
@@ -461,9 +462,7 @@ translate([0,0,0])color("silver")cube([12,300,8]);
 translate([-27/2+12/2,150,2-3+6])color("silver")cube([27,45,9]);
 translate([-9,350,-25])rotate([90,0,0])tslot20(400);
 */
-
 translate([-9+23+2-8,350-125,-25+4.5+12.5-12.5])rotate([90,0,0])tslot20(100);
-
 /*
 translate([-27/2+12/2+29.5,150-5,2-3+6-25-3-3.2])color("")difference(){
 union(){
@@ -474,7 +473,6 @@ translate([9,9+9,6.0])cylinder(r=5.9/2,h=10);
 translate([9,9+9,6.0-30-10])cylinder(r=12/2,h=40);
 translate([9,9+52-9,6.0])cylinder(r=5.9/2,h=10);
 translate([9,9+52-9,6.0-30-10])cylinder(r=12/2,h=40);
-
 translate([9-5,9,-20.5])cylinder(r=5.9/2,h=50);
 translate([9-5,9+52/2,-6])cylinder(r=5.9/2,h=10);
 translate([9-5,9+52/2,4])cylinder(r=12/2,h=10);
@@ -483,10 +481,7 @@ translate([9-5-30,9+52/2,-20.5])cylinder(r=2.8/2,h=50);
 translate([9-5,9+52,-20.5])cylinder(r=5.9/2,h=50);
 }
 */
-
-
 translate([-8,0,0])iverntech_slider_tslot_connector();
-
 //for show its the screws
 translate([-27/2+12/2-8,150,3+3]){
 translate([0,0,9]){
@@ -502,9 +497,7 @@ translate([0,0,9]){
 }}
 /*
 */
-
 iverntech_slider_shuttle_bottom();
-
 }
 
 
@@ -670,10 +663,6 @@ translate([0,-7,0])conveyer_pcb_holder_backsupport();
 }
 */
 }
-
-
-
-//This is the banana jack panel
 translate([440+80+45,200-0.8-52-42,-63])rotate([90,0,-90]){
 color("")translate([28,21,5])bananajackpanel();
 //translate([40-12.5,-40+61,2])syringe_pcb_holder();
@@ -702,9 +691,6 @@ translate([40-12.5,-40+61,6])syringe_pcb_holder_cover();
 translate([40-12.5+53,-40+61,2])syringe_pcb_holder_placeholder();
 
 }
-
-
-
 //This is the control panel
 color(col)
 translate([69.2-75,13-60-42+3,-52])rotate([90,0,0])bom_controlpanel();
@@ -734,6 +720,31 @@ color("black")
 translate([2-125,0-55,12])cube([40+5,40+5,3]);
 }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3331,6 +3342,12 @@ translate([150-10+5-20,-5+10-8,-30-0.1+12+100.5])rotate([90,0,90])cylinder(r=3.7
 }
 }
 
+
+
+
+
+
+
 module amp_powersupply_wallB(){
 /*
 //URBEST�Inlet Module Plug Fuse Switch Male Power Socket 10A 250V 3 Pin IEC320 C14
@@ -4693,6 +4710,12 @@ translate([38-22,-38+10,-10])cylinder(r=3/2,h=29);
 }
 
 
+
+
+
+
+
+
 module waterbottle(){
  //translate([40+5,-42,80])color("")pressurecompensation_bottle();
  translate([6.5,-6.5,185])bottle_cap();
@@ -5666,7 +5689,6 @@ translate([-32+3-0.6,35+2+5.5-0.2,400])nema17();
 
 
 module XY_motor_x2higher_3dprint(){
-
 //bearings stuff
 /*
 translate([-50,0,400])translate([(62.8/2*0.65),(64.32*0.65),-15]){
@@ -5686,8 +5708,6 @@ translate([40,0,-0.2])rotate([0,0,-30])cube([63.84-20,94.32,13.5]);
 translate([62.8/2,64.32,-0.1])cylinder(r=35.8/2,h=30);
 translate([7.38,40.82,-0.1])cylinder(r=4.92/2,h=30);
 translate([7.38,40.82,3.3])cylinder(r=11/2,h=5);
-
-
 translate([54.88,87.52,-0.1])cylinder(r=4.92/2,h=30);
 translate([54.88,87.52,3.3])cylinder(r=11/2,h=5);
 translate([7.68,15.2,-0.1])cylinder(r=6.36/2,h=30);
@@ -5726,6 +5746,10 @@ tslot20_2060(444.5+45);
 //translate([30-65,324.5-218,15-50])rotate([0,0,90])color("")cylinder(r=5.7/2,h=130);
 }
 }
+
+
+
+
 
 module y_encoder_support_wider_deeper(sh){
 translate([0,410,330])rotate([180,0,0]){
@@ -5946,6 +5970,35 @@ translate([75-1-355,-55+464+2.5,6+272])rotate([0,0,0])tslot20innerbracket();
 /*
 */
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -7619,26 +7672,6 @@ translate([46+5+25,70-14+86,144-5-25])cylinder(r=2.8/2,h=50);
 
 
 
-module multichannel_laser_zbed_wider(zz){
-translate([30-79,30,zz+3])
-difference(){
-//translate([-8,0,0])color("lightgray")cube([397,350,3]);
-translate([-8+6.5-0.25,0+20-45,0])color("lightgray")cube([383.5+158+42,350-20,3]);
-//translate([227,100,-0.1])cube([100+6,100-10,5]);
-translate([45-8,285-65,-0.1])cube([180+100+20+8+158+42,160,5]);
-translate([45-8,285-65-340+9,-0.1])cube([180+100+20+8+158+42,160,5]);
-//translate([45-5,65-65-0.1,-0.1])cube([84,100,5]);
-lzd = 3.2;
-for(i=[-3:3]){
-translate([5,74.5+i-3.5+67,-40])cylinder(r=(lzd+1)/2,h=200);
-translate([5,74.5+218+i-3.5,-40])cylinder(r=(lzd+1)/2,h=200);
-translate([369+158+42,0,0]){
-translate([5,74.5+i-3.5+67,-40])cylinder(r=(lzd+1)/2,h=200);
-translate([5,74.5+218+i-3.5,-40])cylinder(r=(lzd+1)/2,h=200);
-}
-}
-}
-}
 
 module multichannel_laser_zbed_wider_deeper(zz){
 translate([30-79,30,zz+3])
@@ -7975,20 +8008,15 @@ translate([12,7,0])cylinder(r=4.7/2,h=40);
 
 //this is where I need to modify
 module zbed_smz_wider_nomove(){
-
 translate([0,0,-15]){
 translate([0,0,15]){
 translate([15-65,120-50-54,141.5+42])rotate([0,90,0])tslot20(582);
 translate([75-1-355+817,-55+464+2.5-191-180,6+272-300])rotate([180,-90,0])tslot20innerbracket();
 translate([75-1-355+817-590,-55+464+2.5-191-180,6+272-300])rotate([180,-90,0])mirror([0,0,1])tslot20innerbracket();
 }
-
 translate([15-65,120+100+35-54-7+110,141.5+42+14])rotate([0,90,0])tslot20(582);
 translate([75-1-355+817,-55+464+2.5-191+110,6+272-300+20-5])rotate([180,-90,0])tslot20innerbracket();
 translate([75-1-355+817-590,-55+464+2.5-191+110,6+272-300+20-5])rotate([180,-90,0])mirror([0,0,1])tslot20innerbracket();
-
-
-
 }
 }
 
@@ -8196,6 +8224,40 @@ module conduit_tubes(){
 translate([-54,410,505])rotate([0,90,0])tslot20(200);
 translate([140,410,505-105])rotate([0,0,0])tslot20(100);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -8431,70 +8493,8 @@ translate([140,410,505-105])rotate([0,0,0])tslot20(100);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 module outside_frame_wider(bcl,cl,x,y){
-
 // xshuttle_assy_wider(x,y);
-
 //outside_frame(tcl,thcl);
  //bcl,tcl is thick
  //cl,thcl is thin
@@ -8534,19 +8534,15 @@ top_outside_frame();
  //cl = [0.5,0.5,0,0.8];
 //translate([77.5,20+3,5])rotate([0,0,90])justusb_otherend();
  //select this
-
  //translate([14+(708.8*0.58)-1,19+(638.4*0.58),13-7])color(bcl)rotate([0,0,180])bottom_x1_wider();
  translate([14+(708.8*0.58)-1+60,19+(638.4*0.58)-44-4,13-7-5])color(bcl)rotate([0,0,180])bottom_x1_wider_a();
  translate([14+(708.8*0.58)-1+60,19+(638.4*0.58)-44-4,13-7-5])color(bcl)rotate([0,0,180])bottom_x1_wider_b();
-
-
  translate([15,16.5,-60-3])rotate([90,0,0])color(bcl)front_plate_x1_wider();
  translate([15,16.5+380,-60])rotate([90,0,0])color(bcl)back_plate_x1_wider();
  translate([-4+12.5+420+42,19,-60])rotate([90,0,90])color(bcl)right_plate_x1_wider();
  translate([-4+12.5,19,-60])rotate([90,0,90])color(bcl)left_plate_x1_wider();
 /*
 */
-
 /*
  translate([-4+12.5,19,-60])rotate([90,0,90])color(bcl)left_plate_x1();
  tcl = [155/255,155/255,155/255];
@@ -8555,6 +8551,19 @@ top_outside_frame();
  rightside_panel(cl,bcl);
 */
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 module outside_frame_wider_deeper(bcl,cl){
@@ -8989,7 +8998,6 @@ translate([-27/2+12/2-42-7.5+12,150+20,310-6+5-6])difference(){
 
 
 module xshuttle_assy_wider(x,y){
-
 translate([0,y,0]){
 //translate([20-70,217-23,400-78])rotate([0,0,-90])x_encoder_support_wider();
 translate([0,-28,0]){
@@ -8997,18 +9005,13 @@ translate([43-25-55,206.5-15-41.5+28+19,-60+430-28])rotate([-90,90,-90])tslot20(
 }
 /*
 */
-
 translate([0,0,-28]){
 //translate([-27/2+12/2-48+6,55-y-65,310-6+5])cube([12,400,8]);
-
-
 translate([0,-60,0]){
 translate([1,0-20,284+28])rotate([90,0,90])color("")iverntech_connector();
 translate([1,0+170,284+28])rotate([90,0,90])color("")iverntech_connector();
 translate([1,0+350,284+28])rotate([90,0,90])color("")iverntech_connector();
 }
-
-
 translate([-27/2+12/2-48+6+12,55-60-30-60,310-6+5])color("black")cube([12,450,8]);
 translate([-27/2+12/2-42-7.5+12,150+20,310-6+5-6])difference(){
  color("silver")cube([27,45,9]);
@@ -9019,7 +9022,6 @@ translate([-27/2+12/2-42-7.5+12,150+20,310-6+5-6])difference(){
 }
 }
 translate([-49.5+12,345,300-11])rotate([0,180,180])ivernetech_slider_module_wider();
-
 translate([440.5+42,0,-28])mirror([1,0,0]){
 translate([0,-60,0]){
 translate([1,0-20,284+28])rotate([90,0,90])color("")iverntech_connector();
@@ -9040,9 +9042,7 @@ translate([-49.5+12,345,300-11+28])rotate([0,180,180])ivernetech_slider_module_w
 }
 /*
 */
-
 }
-
 }
 
 
@@ -9262,9 +9262,7 @@ translate([0,0,3])cylinder(r=55,130);
 }
 /*
 */
-
 }
-
 }
 
 
@@ -9337,7 +9335,7 @@ y = y+0-120+285;
  */
 translate([0,-14+19,-26])slider_assy(x,y);
  //translate([0,0,-24])corexy_beltsetup_wider(x,y);
- //translate([-74-8,-35,465-140])rotate([0,-90,0])multichannel_syringe_module();
+ //translate([-75-8,-35,465-140])rotate([0,-90,0])multichannel_syringe_module();
  //outside_frame_wider_deeper(tcl,thcl);
  ///labbot3d_electronics_configuration();
  //zencoder_assy();
@@ -11021,6 +11019,7 @@ color("silver")translate([0,0,10])cylinder(r=(17)/2,h=1);
 color("silver")translate([0,0,15])cylinder(r=(17)/2,h=1);
 }
 }
+
 scale([0.508,0.508,1])mirror([0,1,0])difference(){
 union(){
 color("silver")cube([61,63.60,3.3]);
@@ -12537,6 +12536,8 @@ translate([-80,-47,30])rotate([90,0,90]){cylinder(r=5.6/2,h=50);translate([0,0,1
 translate([-30,55,15])rotate([90,0,90])cylinder(r=4.6/2,h=50);
 }
 }
+
+
 /*
 */
 

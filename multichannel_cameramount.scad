@@ -1,16 +1,29 @@
 
 
+//multichannel_pipette_holder_camera_example();
 
 //multichannel_pipette_holder_linear_actuator_connect_cameramount();
 
-module multichannel_pipette_holder_linear_actuator_connect_cameramount(){
- difference(){union(){
- /*
- translate([0,-17,0])difference(){
+
+//multichannel_pipette_holder_linear_actuator_connect_cameramount();
+
+
+
+module multichannel_cameramount_tslot_part(){
+multichannel_pipette_holder_linear_actuator_connect_cameramount();
+}
+
+module multichannel_cameramount_tipholder(){
+ translate([0,-17+15,0])difference(){
   translate([-65,29,60])rotate([-90,0,0]) multichannel_pipette_holder_camera_example();
   translate([-65+19.4,29,60-40])cube([26-0.6,20,25]);
  }
- */
+}
+
+
+module multichannel_pipette_holder_linear_actuator_connect_cameramount(){
+ difference(){union(){
+ //multichannel_cameramount_tipholder();
  translate([-8,30-6.5,28.2])rotate([0,180,90])color("")tslot_clamp_filament_linearactuator_shuttle_noextrusion();
  }
 }
@@ -47,11 +60,11 @@ if (fl == 1){
 //this is for show
 //translate([0,0,200-100+80])rotate([0,180,0])color("lightgreen")pipette_p300_lts_model();
 translate([0,0,9])p1000_model_eppendorf();
-color("lightblue")translate([0,0,-6.7])cylinder(r=5.5/2,h=102-13-40);
+color("lightblue")translate([0,0,-6.7])cylinder(r=5.5/2,h=102-13-40,$fn=30);
+//color("lightblue")translate([0,0,62-400])cylinder(r=2.5/2,h=333);
 /*
 */
 /*
-//color("lightblue")translate([0,0,62-400])cylinder(r=2.5/2,h=333);
 color("lightblue")translate([0,0,62])cylinder(r=2.5/2,h=13);
 color("lightblue")translate([0,0,52.3-10])cylinder(r2=2.5/2,r1=4.5/2,h=20);
 color("lightblue")translate([0,0,-36.7])cylinder(r=7.5/2,h=20);
@@ -90,14 +103,29 @@ translate([-38.25+14-13.9+6.5+i*9,-70+30-10+8+5-16+1.5+y*9-3,22.5+8-8-2.5-4])rot
 }
 }
 translate([0.35+0.75+40+6-83-2-0.1,75-1-5.35,-25-2.5])rotate([0,0,90]){
+
+translate([-38.25+14-13.9+6.5-7.5,-70+30-10+8+5-16+1.5+6.5-6.5,22.5+8-8+1.5])rotate([-0,0,0])cylinder(r=8.2/2,h=3,$fn=35);
+translate([-38.25+14-13.9+6.5-7.5,-70+30-10+8+5-16+1.5+6.5-6.5,22.5+8-8])rotate([-0,0,0])cylinder(r=3.7/2,h=36,$fn=35);
+
+
+translate([-38.25+14-13.9+6.5,-70+30-10+8+5-16+1.5+6.5,22.5+8-8+1.5])rotate([-0,0,0])cylinder(r=8.2/2,h=3,$fn=35);
+translate([-38.25+14-13.9+6.5,-70+30-10+8+5-16+1.5+6.5,22.5+8-8])rotate([-0,0,0])cylinder(r=3.7/2,h=36,$fn=35);
+
+
+translate([-38.25+14-13.9+6.5-15,-70+30-10+8+5-16+1.5+6.5,22.5+8-8+1.5])rotate([-0,0,0])cylinder(r=8.2/2,h=3,$fn=35);
+translate([-38.25+14-13.9+6.5-15,-70+30-10+8+5-16+1.5+6.5,22.5+8-8])rotate([-0,0,0])cylinder(r=3.7/2,h=36,$fn=35);
+
+/*
 translate([-38.25+14-13.9+6.5,-70+30-10+8+5-16+1.5,22.5+8-8-2.5])rotate([-0,0,0])cylinder(r=4.5/2,h=11.8,$fn=35);
-#translate([-38.25+14-13.9+6.5,-70+30-10+8+5-16+1.5,22.5+8-8])rotate([-0,0,0])cylinder(r=2.5/2,h=36,$fn=35);
+translate([-38.25+14-13.9+6.5,-70+30-10+8+5-16+1.5,22.5+8-8])rotate([-0,0,0])cylinder(r=2.5/2,h=36,$fn=35);
 translate([-38.25+14-13.9+6.5-15,-70+30-10+8+5-16+1.5,22.5+8-8-2.5])rotate([-0,0,0])cylinder(r=4.5/2,h=11.8,$fn=35);
-#translate([-38.25+14-13.9+6.5-15,-70+30-10+8+5-16+1.5,22.5+8-8])rotate([-0,0,0])cylinder(r=2.5/2,h=36,$fn=35);
+translate([-38.25+14-13.9+6.5-15,-70+30-10+8+5-16+1.5,22.5+8-8])rotate([-0,0,0])cylinder(r=2.5/2,h=36,$fn=35);
 translate([-38.25+14-13.9+6.5,-70+30-10+8+5-16+1.5+13,22.5+8-8-2.5])rotate([-0,0,0])cylinder(r=4.5/2,h=11.8,$fn=35);
-#translate([-38.25+14-13.9+6.5,-70+30-10+8+5-16+1.5+13,22.5+8-8])rotate([-0,0,0])cylinder(r=2.5/2,h=36,$fn=35);
+translate([-38.25+14-13.9+6.5,-70+30-10+8+5-16+1.5+13,22.5+8-8])rotate([-0,0,0])cylinder(r=2.5/2,h=36,$fn=35);
 translate([-38.25+14-13.9+6.5-15,-70+30-10+8+5-16+1.5+13,22.5+8-8-2.5])rotate([-0,0,0])cylinder(r=4.5/2,h=11.8,$fn=35);
-#translate([-38.25+14-13.9+6.5-15,-70+30-10+8+5-16+1.5+13,22.5+8-8])rotate([-0,0,0])cylinder(r=2.5/2,h=36,$fn=35);
+translate([-38.25+14-13.9+6.5-15,-70+30-10+8+5-16+1.5+13,22.5+8-8])rotate([-0,0,0])cylinder(r=2.5/2,h=36,$fn=35);
+*/
+
 }
 /*
 translate([8,30-6,-1])cylinder(r=3.7/2,h=20);
@@ -109,8 +137,8 @@ translate([8,30+6,0-3.6])cylinder(r=6.5/2,h=3.6);
 //translate([8,30+22,-1])cylinder(r=5.9/2,h=20);
 //translate([8,30-22,-1])cylinder(r=5.9/2,h=20);
 
-translate([8+22,30-15+8,-1-6])cylinder(r=2.8/2,h=50);
-translate([8+22,30-15+8+13,-1-6])cylinder(r=2.8/2,h=50);
+translate([8+22,30-15+8,-1-6])cylinder(r=2.8/2,h=50,$fn=30);
+translate([8+22,30-15+8+13,-1-6])cylinder(r=2.8/2,h=50,$fn=30);
 /*
 translate([8,30+15,-1-6])cylinder(r=5.9/2,h=50);
 translate([8,30-15,4-3.5])cylinder(r=10/2,h=20);
@@ -126,8 +154,10 @@ module multichannel_pipette_holder_camera_example(){
 color(""){
 //translate([-9,-6.6+8,-4])cube([6,13.2,12]);
 //translate([-9+76.5-0.3+1,-6.6+8,-4])cube([5,13.2,12]);
-translate([-9-9,-6.6+8,-4])cube([6,13.2,12]);
-translate([-9+76.5-0.3+1+9,-6.6+8,-4])cube([5,13.2,12]);
+
+
+//translate([-9-9,-6.6+8,-4])cube([6,13.2,12]);
+//translate([-9+76.5-0.3+1+9,-6.6+8,-4])cube([5,13.2,12]);
 }
 translate([1,0+8,0])difference(){
 union(){
@@ -138,19 +168,19 @@ if (i==-1){
  }
 else if (i==2){
  translate([i*(9),0,0])
-  pipette_p1000_noextrusion(8.1,0,"n");
+  pipette_p1000_noextrusion(8.1,1,"y");
 }
 else if (i==3){
  translate([i*(9),0,0])
-  pipette_p1000_noextrusion(8.1,0,"n");
+  pipette_p1000_noextrusion(8.1,1,"y");
 }
 else if (i==4){
  translate([i*(9),0,0])
-  pipette_p1000_noextrusion(8.1,0,"n");
+  pipette_p1000_noextrusion(8.1,1,"y");
 }
 else if (i==5){
  translate([i*(9),0,0])
-  pipette_p1000_noextrusion(8.1,0,"n");
+  pipette_p1000_noextrusion(8.1,1,"y");
 }
 else if (i==8){
  translate([i*(9),0,0])
@@ -158,10 +188,10 @@ else if (i==8){
 }
 else if (i==1){
  translate([i*(9),0,0])
-  pipette_p1000_noextrusion(8.1,0,"y");
+  pipette_p1000_noextrusion(8.1,1,"y");
 }
 else {
- translate([i*(9),0,0])pipette_p1000_noextrusion(8.1,0,"y");
+ translate([i*(9),0,0])pipette_p1000_noextrusion(8.1,1,"y");
 }
 /*
 */
@@ -200,38 +230,3 @@ translate([-4-11+70,-sh/2+3-5,-10])cylinder(r=5.5/2,h=80);
 */
 }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

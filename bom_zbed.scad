@@ -1,5 +1,5 @@
-include <modparts.scad>
-include <bom_multichannel.scad>
+//include <modparts.scad>
+//include <bom_multichannel.scad>
 use<writescad/write.scad>
 
 //translate([0,0,120])zbed_multichannel_setup(100);
@@ -82,6 +82,33 @@ rotate([0,90,0])right_zbed_connector_bar_metal();
  translate([20,120+101,130])rotate([0,90,0])tslot20(400);
 zbed_multichannel_setup();
 */
+
+
+module multichannel_laser_zbed_wider(zz){
+translate([30-79,30,zz+3])
+difference(){
+//translate([-8,0,0])color("lightgray")cube([397,350,3]);
+translate([-8+6.5-0.25,0+20-45,0])color("lightgray")cube([383.5+158+42,350-20,3]);
+//translate([227,100,-0.1])cube([100+6,100-10,5]);
+translate([45-8,285-65,-0.1])cube([180+100+20+8+158+42,160,5]);
+translate([45-8,285-65-340+9,-0.1])cube([180+100+20+8+158+42,160,5]);
+//translate([45-5,65-65-0.1,-0.1])cube([84,100,5]);
+lzd = 3.2;
+for(i=[-3:3]){
+translate([5,74.5+i-3.5+67,-40])cylinder(r=(lzd+1)/2,h=200);
+translate([5,74.5+218+i-3.5,-40])cylinder(r=(lzd+1)/2,h=200);
+translate([369+158+42,0,0]){
+translate([5,74.5+i-3.5+67,-40])cylinder(r=(lzd+1)/2,h=200);
+translate([5,74.5+218+i-3.5,-40])cylinder(r=(lzd+1)/2,h=200);
+}
+}
+}
+}
+
+
+
+
+
 
 
 module extrusion_riser(){
@@ -898,25 +925,26 @@ module zbed_multichannel_setup_wider(){
 
 //projection(cut = false){
  difference(){union(){
- color("lightblue")translate([70,-25,-10])multichannel_laser_zbed_wider(144);
+ color("lime")translate([70,-25,-10])multichannel_laser_zbed_wider(144);
  color("")translate([-10,103.5-27-25,50-42])plateholder_wider(144);
  //translate([383.5/2-290/2,103.5-27-25,1])ruler_plateholder(144);
 
+
+translate([0,0,7])color("gainsboro")plate_aligner_on_zbed_wider();
+ 
 //translate([0,0,7])rightside_plate_holder();
 //translate([0,0,7])leftside_plate_holder_wider();
 
 /*
  translate([129.75+(94*4)-1.5-103,276.5-4,11-1])color("")mirror([0,0,0])rotate([0,0,0]){microwell_plate_riser(144); microwell_plate_riser_rising_surface(144);}
 */
+ /*
  corner_plate_set();
  translate([0,0-139,0])front_corner_plate_set();
  translate([160,0-139,0])rotate([0,0,0])bar_plate_set();
  translate([160,0,0])rotate([0,0,0])bar_plate_set();
  translate([160+188,0-139,0])rotate([0,0,0])front_rightcorner_bar_plate_set();
  translate([160+188,0,0])rotate([0,0,0])rightcorner_bar_plate_set();
-
- /*
-
  */
 /*
  translate([129.75+(94*4)-1.5-103-9+61,276.5-4-45.5,11+135])color("")mirror([0,0,0])rotate([0,0,0]){cube([100,10,5]);}
@@ -957,7 +985,6 @@ for(i=[1:3]){
 
 
 
-translate([0,0,7])color("gainsboro")plate_aligner_on_zbed_wider();
 }
 
   translate([25.5+22-15+3,-7+11,100])cylinder(r=5.7/2,h=200);

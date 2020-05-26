@@ -1,23 +1,30 @@
-include <bom_multichannel.scad>
+//include <bom_multichannel.scad>
 include <tslot.inc.scad>
 
-translate([90-0,-50+15,20+10])rotate([90,0,90])camera_view();
+//translate([90-0,-50+15,20+10])rotate([90,0,90])camera_view();
 
+/*
 difference(){
 color("silver")translate([43,-40,0])cube([20,80,60]);
 translate([43+2,-40+2,2])cube([20-4,80-4,60]);
 translate([43+2+16-2,-40+4,2+26])cube([5,80-8,10]);
 }
-/*
 */
 
 //pipette_p200(5);
 
-//color("silver")translate([-0,-50,0])cube([50,100,3]);
-
+/*
+difference(){
+color("silver")translate([-0,-50,0])cube([50,100,3+14]);
+translate([30,-31.5,5-4])
+for(i=[0:7]){
+translate([0,i*9,0])
+cylinder(r=5.5/2,h=120,$fn=30);
+}
+}
 
 ins = [0.8,0.2,0.4,0.1,0.9,1.4,0.6];
-translate([13,0,5])
+translate([-10,0,5-4-12])
 for(i=[0:7]){
 for(j=[0:0]){
 if(j==0){
@@ -27,19 +34,25 @@ translate([40-j*9,-31.5+i*9,0])pipette_p300_lts_model();
 //translate([40-4.5,-31.5+i*9-4.25,0])color("lightgreen")cube([8.5,8.5,20]);
 difference(){
 //translate([40-j*9,-31.5+i*9,6])color("purple",0.3)rotate([0,0,45])cylinder(r=4.25+2.1,h=20+10,$fn=4);
-//translate([40+3,-31.5+i*9+2,6])rotate([0,0,45])cylinder(r=4.25,h=22,$fn=4);
+//#translate([40+3,-31.5+i*9+2,6])rotate([0,0,45])cylinder(r=4.25,h=22,$fn=4);
 //translate([40+3,-31.5+i*9-2,6])rotate([0,0,45])cylinder(r=4.25,h=22,$fn=4);
 }
+//translate([40,-31.5+i*9,6+7+2])color("pink",ins[i])rotate([0,0,45])cylinder(r1=0.8,r2=1.5,h=10-3+4+4,$fn=30);
+//translate([40,-31.5+i*9,6+7-3])color("lightblue",0.7)rotate([0,0,45])cylinder(r1=0.8,r2=0.8,h=13-3-6,$fn=30);
+
+
+//translate([40,-31.5+i*9,6+7])color("lightblue",0.7)rotate([0,0,45])cylinder(r1=0.8,r2=2.5,h=10-3+25,$fn=30);
+
 //translate([40,-31.5+i*9,6+7])color("lightblue",0.7)rotate([0,0,45])cylinder(r1=0.8,r2=2.5,h=10-3+25,$fn=30);
 //translate([40,-31.5+i*9,6+7-3])color("lightblue",0.7)rotate([0,0,45])cylinder(r1=1.8,r2=2.2,h=13-3-6,$fn=30);
-//translate([40,-31.5+i*9,6+7])color("lightblue",0.7)rotate([0,0,45])cylinder(r1=0.8,r2=1.5,h=10-3+8,$fn=30);
-translate([40,-31.5+i*9,6+7+2])color("pink",ins[i])rotate([0,0,45])cylinder(r1=0.8,r2=1.5,h=10-3+4+4,$fn=30);
+//translate([40,-31.5+i*9,6+7])color("lightblue",0.7)rotate([0,0,45])cylinder(r1=0.8,r2=1.5,h=10-3,$fn=30);
+translate([40,-31.5+i*9,6+7])color("plum",0.7)rotate([0,0,45])cylinder(r1=0.8,r2=1.5,h=10-3+8,$fn=30);
+translate([40,-31.5+i*9,6+7+4+13])color("lightblue",0.7)rotate([0,0,45])cylinder(r1=1.2,r2=2.4,h=10-3+4+10,$fn=30);
 //translate([40,-31.5+i*9,6+7+4+13])color("lightblue",0.7)rotate([0,0,45])cylinder(r1=1.2,r2=2.2,h=10-3+4,$fn=30);
-translate([40,-31.5+i*9,6+7-3])color("lightblue",0.7)rotate([0,0,45])cylinder(r1=0.8,r2=0.8,h=13-3-6,$fn=30);
 }
 }
 //translate([3+9,0,7])import("96_microwell_plate.STL.stl");
-
+*/
 
 /*
 translate([26+1+13-6,-277.6,-230+6])rotate([0,0,90]){
@@ -52,20 +65,20 @@ module pipette_p300_lts_model(){
 aa = 0;
 difference(){
 union(){
-color("lightgreen",1.49)cylinder(r1=(0.5-aa)/2,r2=(7-aa)/2,h=49.5, $fn=30);
-color("lightgreen",1.5)translate([0,0,49.5])cylinder(r=7/2,h=10, $fn=30);
+color("lightgreen",0.9)cylinder(r1=(0.5-aa)/2,r2=(7-aa)/2,h=49.5, $fn=30);
+color("lightgreen",0.9)translate([0,0,49.5])cylinder(r=7/2,h=10, $fn=30);
 }
 translate([0,0,50])cylinder(r=5.5/2,h=10, $fn=30);
 //translate([0,0,1+17])cylinder(r1=(2.5)/2,r2=(5.5)/2,h=49.5-17, $fn=30);
 translate([0,0,1])cylinder(r1=(0.5)/2,r2=(5.5)/2,h=49.5, $fn=30);
 translate([0,0,1-40+2.5])cylinder(r1=0.5/2,r2=5.5/2,h=49.5, $fn=30);
 
-translate([0,-20,0])cube([30,30,80-29]);
+//translate([0,-20,0])cube([30,30,80-29]);
 }
-color("white",1.5)translate([0,0,49.5+4])cylinder(r=5.5/2,h=3, $fn=30);
+//#color("white",1.5)translate([0,0,49.5+4])cylinder(r=5.5/2,h=3, $fn=30);
 color("white",2.5)translate([0,0,49.5-17])cylinder(r1=3.8/2,r2=4.8/2,h=8, $fn=30);
 
-//color("white",0.5)translate([0,0,49.5-17-22])cylinder(r1=3.8/2,r2=3.8/2,h=8, $fn=30);
+//color("white",0.5)translate([0,0,49.5-17-22])cylinder(r1=4.8/2,r2=4.8/2,h=22, $fn=30);
 //color("white",0.5)translate([0,0,49.5-17-16])cylinder(r1=2/2,r2=3.2/2,h=8+4, $fn=30);
 
 //color("lightblue",0.8)translate([0,0,49.5-17])cylinder(r1=3.8/2,r2=4.8/2,h=8, $fn=30);

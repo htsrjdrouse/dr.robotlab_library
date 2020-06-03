@@ -160,10 +160,10 @@ cylinder(r=4.7/2,h=2.5,$fn=30);
 }
 
 
-module lm8uu_zdriver_assay(){
+module lm8uu_zdriver_assay(z){
 
 
-stepper_driver_lm8uu_pla();
+stepper_driver_lm8uu_pla(z);
 //translate([-20.5-50,130+0.75+30,370.75-37])rotate([90,0,-90])multichannel_pipette_holder_linear_actuator_connect_cameramount();
 translate([-20.5,130+0.75,370.75])rotate([-90,0,90]){
 translate([49.7,31,25])slider_wall_holes();
@@ -190,17 +190,17 @@ translate([0,9.5,0])pre_stepper_driver_lm8uu_slider_assy();
 
 
 
-module stepper_driver_lm8uu_pla(){
+module stepper_driver_lm8uu_pla(z){
 translate([-20.5-2,130+0.75,370.75])rotate([-90,0,90]){
 color("silver")translate([49.7+11,31+33+10+1,25+40-5])rotate([90,0,0])cylinder(r=8/2,h=131,$fn=30);
 //color("green")translate([49.7+11,31+33+10-50-3+10,25+40-5])rotate([90,0,0])lm8uu_pla();
 //lm8uu_zslider();
 }
-translate([-100+50+6.5-10+10,154+76.5-1,250-5+30])rotate([-90,0,90])spring_stepper_linear_m8nut_coupler_lm8uu();
+translate([-100+50+6.5-10+10,154+76.5-1,250-5+30-z])rotate([-90,0,90])spring_stepper_linear_m8nut_coupler_lm8uu();
 translate([0,-1,0]){
 translate([-45,232.5,282.5])rotate([0,0,180]){
 motormount_centered();
-translate([21,40,-18.5])nema17();
+translate([0,19,-18.5-48])linactnema17();
 translate([21,40,-4])color("silver")cylinder(r=8/2,h=145,$fn=30);
 }
 }
@@ -842,34 +842,23 @@ translate([25-35.73,17.32+1.38-14-4,0])difference(){translate([0.6,4.1,0])cube([
 
 
 
-module iverntech_railsystem(){
+module iverntech_railsystem(z){
 translate([-96,221.5,250])rotate([0,180,180])stepperconduitclamp();
-translate([-80+19,159,322.8+13])rotate([90,0,-90]){
+translate([-80+19,159,322.8+13-z])rotate([90,0,-90]){
 multichannel_cameramount_tslot_part();
 multichannel_cameramount_tipholder();
 }
-lm8uu_zdriver_assay();
-/*
-*/
+lm8uu_zdriver_assay(z);
 translate([-37.5,192.5,350-1])rotate([0,90,0])sandwich_delrinwheel();
 
-/*
-translate([0,-28,0]){
-translate([43-25-55-10,206.5-15-41.5+28+19+300,-60+430-28])rotate([-0,90,-90])tslot20(552);
-}
-translate([-27/2+12/2-48+6+12,55-60-30-0,310-6+5])color("silver")cube([12,450,8]);
-*/
-
 translate([-20+5-220-3+0.5,200+5-231.8,678.8])rotate([0,180,-90])slider_front_assy_multichannel_iverntech();
-//translate([-20+5-220-3+0.5,200+5-231.8,678.8])rotate([0,180,-90])shuttle_front_vertical_adjust_wider_slider_wall_beltfix();
 translate([-20+5-3,200+5,340])rotate([-90,0,-90])shuttle_back_fast();
 translate([-25.5,20,320-3])rotate([0,180,0])iverntech_slider_xshuttle_connect();
+
 translate([-15.5,-10,0]){
 translate([0-30,250,269-5])rotate([90,0,0])tslot20(100);
 translate([0-30-20,250,269-5])rotate([90,0,0])tslot20(100);
 }
-/*
-*/
 translate([-27/2+12/2-42-7.5+12,150+20,310-6+5-6])difference(){
  color("silver")cube([27,45,9]);
  translate([27/2-10,45/2-10,-5-20])cylinder(r=3.7/2,h=60);
@@ -877,6 +866,8 @@ translate([-27/2+12/2-42-7.5+12,150+20,310-6+5-6])difference(){
  translate([27/2-10,45/2+10,-5-20])cylinder(r=3.7/2,h=60);
  translate([27/2+10,45/2+10,-5-20])cylinder(r=3.7/2,h=60);
 }
+/*
+*/
 }
 
 module multi_iverntech_railsystem(){
@@ -969,6 +960,28 @@ module y_arm_flag(){
 difference(){
 cube([15,30,4]);
 translate([6,6,-1])cylinder(r=5.7/2,h=30,$fn=30);
+}
+}
+
+
+module endstop_multichannel_syringe(){
+
+difference(){
+union(){
+//import("files/endstop_y.stl");
+translate([40+30-38+13,1.5,-0.0])cube([85-10+38-83-13,30,4]);
+translate([40+30-52,1.5,-0.0])cube([28,18,4]);
+//translate([40+30-38,1.5,-0.0])cube([18,28,4]);
+//translate([40.9,12.5,0])rotate([0,0,45])cylinder(r=8.7/2,h=8,$fn=4);
+}
+translate([60,-114,0])rotate([0,0,90]){
+translate([40.75+80,4.5,-0.2])#cylinder(r=2.9/2,h=30,$fn=20);
+translate([60.75+80,4.5,-0.2])#cylinder(r=2.9/2,h=30,$fn=20);
+}
+translate([40.9,25,-0.2])cylinder(r=4.7/2,h=30,$fn=30);
+translate([40.9,10,-0.2])#cylinder(r=4.7/2,h=30,$fn=30);
+translate([40.9-15,10,-0.2])#cylinder(r=4.7/2,h=30,$fn=30);
+//translate([50.,12,-0.2])cube([120,20,20]);
 }
 }
 

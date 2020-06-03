@@ -1,11 +1,29 @@
 
+
+
+module syringe_endstop_flag(){
+difference(){
+union(){
+translate([-15-10,50-0.5,10])color("pink")cube([45,10,3]);
+translate([-15-10+30,50-0.5+4,10])color("pink")cube([15,6,10]);
+}
+translate([-20.+0.5,57-0.25,-10])cylinder(r=3.7/2,h=30,$fn=30);
+translate([-20.5+10.,57-0.25,-10])cylinder(r=3.7/2,h=30,$fn=30);
+translate([-20.5+13.25+20-2.3,55+12,17])rotate([90,0,0])#cylinder(r=2.7/2,h=30,$fn=30);
+}
+}
+
+
+
+
+
 module peristaltic_pump_mnts(){
 translate([-54,330,110])rotate([0,0,-90]){
 translate([-100,-45,46])rotate([0,90,0])tslot20(525);
 translate([120,0,0]){
-peristaltic_pump();
+//peristaltic_pump();
 translate([60,0,0])peristaltic_pump();
-translate([120,0,0])peristaltic_pump();
+//translate([120,0,0])peristaltic_pump();
 }
 }
 }
@@ -51,7 +69,7 @@ translate([-160+20-84+110,-117+272-73+13,160])rotate([0,0,0])color("lightblue")c
 translate([-160+20-84+108,-117+272-73+13,190])rotate([0,90,0])color("lightblue")cylinder(r=5.5,h=100,$fn=30);
 translate([-160+20-84+108+100,-117+272-73+13,190-5])rotate([0,0,0])color("lightblue")cylinder(r=5.5,h=48,$fn=30);
 translate([-160+20-84+108+100,-117+272-73+13,228])rotate([90,0,0])color("lightblue")cylinder(r=5.5,h=110,$fn=30);
-translate([-160+20-84+108+100,-117+272-73+13-110,228])rotate([0,90,0])color("lightblue")cylinder(r=5.5,h=280,$fn=30);
+translate([-160+20-84+108+100,-117+272-73+13-110,228])rotate([0,90,0])color("lightblue")cylinder(r=5.5,h=260,$fn=30);
 
 }
 
@@ -160,11 +178,73 @@ translate([-115+190+100,365+141-24,295-42-14+115-144-69])rotate([0,0,0])color("l
 
 
 
+module valves_to_pipettes(){
+
+//valve 1
+translate([-160+435+100,-117+600,386-8])rotate([0,0,0])color("lightblue")cylinder(r=3/2,h=10,$fn=30);
+translate([-160+435+100,-117+600,386-8+10])rotate([0,90,0])color("lightblue")cylinder(r=3/2,h=70,$fn=30);
+translate([-160+435+170,-117+600,386-8+10-365])rotate([0,0,0])color("lightblue")cylinder(r=3/2,h=70+295,$fn=30);
+translate([-160+435+170,-117+600,386-8+10-365])rotate([0,-90,0])color("lightblue")cylinder(r=3/2,h=457,$fn=30);
+translate([-160+435+170-455,-117+600,386-8+10-365])rotate([90,0,0])color("lightblue")cylinder(r=3/2,h=75,$fn=30);
+translate([-160+435+170-455,-117+600-75,386-8+10-365])rotate([0,0,0])color("lightblue")cylinder(r=3/2,h=270,$fn=30);
+//valve 2
+translate([-160+435+100,-117+600,386-8-70])rotate([0,0,0])color("lightblue")cylinder(r=3/2,h=10,$fn=30);
+translate([-160+435+100,-117+600,386-8+10-70])rotate([0,90,0])color("lightblue")cylinder(r=3/2,h=65,$fn=30);
+translate([-160+435+165,-117+600,386-8+10-362])rotate([0,0,0])color("lightblue")cylinder(r=3/2,h=70+222,$fn=30);
+translate([-160+435+165,-117+600,386-8+10-360])rotate([0,-90,0])color("lightblue")cylinder(r=3/2,h=448,$fn=30);
+translate([-160+435+170-450,-117+600-0,386-8+10-360])rotate([90,0,0])color("lightblue")cylinder(r=3/2,h=75,$fn=30);
+translate([-160+435+175-455,-117+600-75,386-8+10-361])rotate([0,0,0])color("lightblue")cylinder(r=3/2,h=273,$fn=30);
+//valve 3
+translate([-160+435+100,-117+600,386-8-70-70])rotate([0,0,0])color("lightblue")cylinder(r=3/2,h=10,$fn=30);
+translate([-160+435+100,-117+600,386-8+10-70-70])rotate([0,90,0])color("lightblue")cylinder(r=3/2,h=62,$fn=30);
+translate([-160+435+161,-117+600,386-8+10-355])rotate([0,0,0])color("lightblue")cylinder(r=3/2,h=70+145,$fn=30);
+translate([-160+435+161,-117+600,386-8+10-354])rotate([0,-90,0])color("lightblue")cylinder(r=3/2,h=439,$fn=30);
+translate([-160+435+170-450+4,-117+600-0,386-8+10-354])rotate([90,0,0])color("lightblue")cylinder(r=3/2,h=75,$fn=30);
+translate([-160+435+175-455+4,-117+600-75,386-8+10-354])rotate([0,0,0])color("lightblue")cylinder(r=3/2,h=273,$fn=30);
+//valve 4
+translate([-160+435+100,-117+600,386-8-70-70-70])rotate([0,0,0])color("lightblue")cylinder(r=3/2,h=10,$fn=30);
+translate([-160+435+100,-117+600,386-8+10-70-70-70])rotate([0,90,0])color("lightblue")cylinder(r=3/2,h=58,$fn=30);
+translate([-160+435+161-4,-117+600,386-8+10-355+5])rotate([0,0,0])color("lightblue")cylinder(r=3/2,h=70+71,$fn=30);
+translate([-160+435+161-3,-117+600,386-8+10-354+4])rotate([0,-90,0])color("lightblue")cylinder(r=3/2,h=431,$fn=30);
+translate([-160+435+170-450+9,-117+600-8+6+2,386-8+10-354+4])rotate([90,0,0])color("lightblue")cylinder(r=3/2,h=77,$fn=30);
+translate([-160+435+175-455+8,-117+600-75,386-8+10-349])rotate([0,0,0])color("lightblue")cylinder(r=3/2,h=254,$fn=30);
 
 
+//valve 5
+translate([-160+435+100-200,-117+600,386-8])rotate([0,0,0])color("lightblue")cylinder(r=3/2,h=10,$fn=30);
+translate([-160+435+100-200,-117+600,386-8+10])rotate([0,90,0])color("lightblue")cylinder(r=3/2,h=39,$fn=30);
+translate([-160+435+120-200+18,-117+600,386-8+10-365+18])rotate([0,0,0])color("lightblue")cylinder(r=3/2,h=70+279,$fn=30);
+translate([-160+435+120-200+18,-117+600,386-8+10-365+18])rotate([0,-90,0])color("lightblue")cylinder(r=3/2,h=188+18,$fn=30);
+translate([-160+435+170-450+9+4,-117+600-8+6+2,386-8+10-354+4+3])rotate([90,0,0])color("lightblue")cylinder(r=3/2,h=84,$fn=30);
+translate([-160+435+175-455+8+5,-117+600-75-10,386-8+10-349])rotate([0,0,0])color("lightblue")cylinder(r=3/2,h=254,$fn=30);
 
 
+//valve 6
+translate([-160+435+100-200,-117+600,386-8-70])rotate([0,0,0])color("lightblue")cylinder(r=3/2,h=10,$fn=30);
+translate([-160+435+100-200,-117+600,386-8+10-70])rotate([0,90,0])color("lightblue")cylinder(r=3/2,h=35,$fn=30);
+translate([-160+435+120-200+14,-117+600,386-8+10-365+24])rotate([0,0,0])color("lightblue")cylinder(r=3/2,h=70+202,$fn=30);
+translate([-160+435+120-200+14,-117+600,386-8+10-365+24])rotate([0,-90,0])color("lightblue")cylinder(r=3/2,h=188+9,$fn=30);
+translate([-160+435+170-450+9+4+5,-117+600-8+6+3,386-8+10-354+4+9])rotate([90,0,0])color("lightblue")cylinder(r=3/2,h=84,$fn=30);
+translate([-160+435+175-455+8+5+4,-117+600-75-7,386-8+10-344])rotate([0,-3,0])color("lightblue")cylinder(r=3/2,h=248,$fn=30);
 
+//valve 7
+translate([-160+435+100-200,-117+600,386-8-140])rotate([0,0,0])color("lightblue")cylinder(r=3/2,h=10,$fn=30);
+translate([-160+435+100-200,-117+600,386-8+10-70-70])rotate([0,90,0])color("lightblue")cylinder(r=3/2,h=30,$fn=30);
+translate([-160+435+120-200+14-4,-117+600,386-8+10-365+24+6])rotate([0,0,0])color("lightblue")cylinder(r=3/2,h=70+202-76,$fn=30);
+translate([-160+435+120-200+10,-117+600,386-8+10-365+24+6])rotate([0,-90,0])color("lightblue")cylinder(r=3/2,h=188+9-9,$fn=30);
+translate([-160+435+170-450+9+4+10,-117+600-8+6+3,386-8+10-354+4+15])rotate([90,0,0])color("lightblue")cylinder(r=3/2,h=80,$fn=30);
+translate([-160+435+175-455+8+5+10,-117+600-75-4,386-8+10-336])rotate([0,-3,0])color("lightblue")cylinder(r=3/2,h=248,$fn=30);
+
+//valve 8
+translate([-160+435+100-200,-117+600,386-8-210])rotate([0,0,0])color("lightblue")cylinder(r=3/2,h=10,$fn=30);
+translate([-160+435+100-200,-117+600,386-8+10-70-70-70])rotate([0,90,0])color("lightblue")cylinder(r=3/2,h=25,$fn=30);
+translate([-160+435+120-200+14-9,-117+600,386-8+10-365+24+10])rotate([0,0,0])color("lightblue")cylinder(r=3/2,h=70+202-76-74,$fn=30);
+translate([-160+435+120-200+10-4,-117+600,386-8+10-365+24+10])rotate([0,-90,0])color("lightblue")cylinder(r=3/2,h=188+9-19,$fn=30);
+translate([-160+435+170-450+9+4+15,-117+600-8+6+3,386-8+10-354+4+19])rotate([90,0,0])color("lightblue")cylinder(r=3/2,h=80,$fn=30);
+translate([-160+435+175-455+8+5+15,-117+600-75-4,386-8+10-336+4])rotate([0,-6,0])color("lightblue")cylinder(r=3/2,h=248,$fn=30);
+
+
+}
 
 
 
@@ -286,6 +366,12 @@ import("syringe_1ml_stack_1piece_multichannel.stl");
 
 
 
+
+
+
+
+
+
 module syringe_1ml(){
 
 //translate([0,0,4])rotate([0,0,45])cylinder(r=10,h=15,$fn=4);
@@ -399,7 +485,7 @@ translate([1,0,0]){
 //translate([-22,-90,4])rotate([90,-90,0])motormount();
 //color([bg,bg,bg])
 //color("")
-//#translate([-110+27,-81.5+1.5,-4])cube([42,8.5,10]);
+//translate([-110+27,-81.5+1.5,-4])cube([42,8.5,10]);
 
 //This is for display purposes
 //translate([-70+8,-80,30-5])rotate([-90,0,0])nema17();
@@ -426,7 +512,7 @@ translate([0-7.5-5-5.5-22,-40-1.3-20+20.3+31-5,0])cube([12+22,53-42.8+10,6+3]);
 translate([0-7.5+18,-40+18,3+3.4])cube([10+15+10+6-18+2,68+40+23+20-18+2,6]);
 translate([5+20,20+(-5.5*10)-1.5,-10]){cylinder(r=3.7/2,h=40);translate([0,0,5+11])cylinder(r=6.7/2,h=3.5);}//cylinder(r=5.4/2,h=3+4,$fn=6);}
 translate([0,-33,0])for(a=[2,3,4,5]){
-translate([2,10+(a*25),-5]){#cylinder(r=3.7/2,h=40);translate([0,0,4])cylinder(r=6.8/2,h=3+4,$fn=6);}
+translate([2,10+(a*25),-5]){cylinder(r=3.7/2,h=40);translate([0,0,4])cylinder(r=6.8/2,h=3+4,$fn=6);}
 }
 translate([17.5,-33,0])for(a=[0,4,8,12]){
 translate([5,20+(a*10),-0.1]){translate([0,0,2.4-4])cylinder(r=2.7/2,h=16);}//cylinder(r=5.5/2,h=2.5);}
@@ -437,7 +523,7 @@ translate([5+4,10+(a*10),-5]){translate([0,0,8.4+1])cylinder(r=4.7/2,h=8);transl
 //translate([15,-27+(0*10),0]){cylinder(r=3.7/2,h=100);translate([0,0,2.6])cylinder(r=6.7/2,h=3.5+12);}
 translate([5,-36+(0*10),0]){cylinder(r=3.7/2,h=10);translate([0,0,2.6])cylinder(r=6.7/2,h=6.5);}
 for(a=[0,4]){
-translate([5,-26+(a*10),0]){#cylinder(r=3.7/2,h=10);translate([0,0,2.6])cylinder(r=6.7/2,h=6.5);}
+translate([5,-26+(a*10),0]){cylinder(r=3.7/2,h=10);translate([0,0,2.6])cylinder(r=6.7/2,h=6.5);}
 }
 }
 }//end translate
@@ -510,8 +596,8 @@ bg = 0.5;
 //color("")
 difference(){
 iverntech_pump_slider();
-translate([-54,-75.5,-50])#cylinder(r=3.7/2,h=100);
-translate([-54-14,-75.5,-50])#cylinder(r=3.7/2,h=100);
+translate([-54,-75.5,-50])cylinder(r=3.7/2,h=100);
+translate([-54-14,-75.5,-50])cylinder(r=3.7/2,h=100);
 translate([-54,-75.5,-50])cylinder(r=8.5/2,h=48);
 translate([-54-14,-75.5,-50])cylinder(r=8.5/2,h=48);
 }
@@ -566,10 +652,10 @@ module motormount_screws(){
   translate([mmposx+mmx/2+15.5-1.5,mmposy+mmy/2-15.5,mmposz-0.1])
   translate([0,-2.25,0])
   cube([8,4.5,90]);
-  translate([-60,32,-14.5])rotate([0,90,0])#cylinder(r=2.7/2,h=80);
-  translate([-60,32+14,-14.5])rotate([0,90,0])#cylinder(r=2.7/2,h=80);
-  translate([-60,32,-14.5])rotate([0,90,0])#cylinder(r=8/2,h=56);
-  translate([-60,32+14,-14.5])rotate([0,90,0])#cylinder(r=8/2,h=56);
+  translate([-60,32,-14.5])rotate([0,90,0])cylinder(r=2.7/2,h=80);
+  translate([-60,32+14,-14.5])rotate([0,90,0])cylinder(r=2.7/2,h=80);
+  translate([-60,32,-14.5])rotate([0,90,0])cylinder(r=8/2,h=56);
+  translate([-60,32+14,-14.5])rotate([0,90,0])cylinder(r=8/2,h=56);
  }
 }
 

@@ -11,8 +11,15 @@ include <camera.scad>
 //translate([139-50,17,-38])plunger_shuttle();
 //rotate([0,0,0])import("4-YRodMount.stl");
 
+//beltattach_grab();
+
+//import("2-XYMotorMount.stl");
+
 //stronger_bar_clamp();
-assay_display();
+
+//import("1-LeftIdlerCorner.stl");
+//assay_display();
+setup_assay_display();
 
 module stronger_bar_clamp(){
 //translate([-400,-21.5,-70-4])rotate([0,90,0])tslot20(200);
@@ -31,6 +38,8 @@ translate([-319+10,-16.5+43,-100+11])rotate([90,0,0])#cylinder(r=5.7/2,h=200,$fn
 translate([-319-22,-16.5+43,-100+11])rotate([90,0,0])#cylinder(r=5.7/2,h=200,$fn=30);
 }
 }
+
+
 //color("peru")translate([185,117,34])rotate([0,-90,0])import("newcarriage.stl");
 /*
 assy_toprint();
@@ -48,8 +57,15 @@ camera_corexy_linear();
 }
 
 
-
-
+module setup_assay_display(){
+translate([40-10,8,0])rotate([0,180,90]){
+camera_corexy_linear();
+}
+translate([0,0,0])color("pink")microservo();
+filterwheel();
+mirror([0,0,0])microservomount();
+translate([0,23,0])mirror([0,1,0])microservomount();
+}
 
 module assay_display(){
 
@@ -61,7 +77,6 @@ camera_corexy_linear();
 }
 translate([0,0,0])color("pink")microservo();
 filterwheel();
-
 mirror([0,0,0])microservomount();
 translate([0,23,0])mirror([0,1,0])microservomount();
 /*
@@ -117,16 +132,6 @@ translate([-8.5,0,0]){
 
 
 
-
-
-
-
-
-
-
-
-
-
 module plunger_shuttle(){
 translate([-132-38,-18+40+50-72,12])rotate([0,180,0]){
 translate([8+10,0,0])mirror([0,0,0])beltattach_grab();
@@ -158,7 +163,6 @@ translate([-0,2,0])import("LM8UU_holder_stub.stl");
 translate([-120,-53.5+55,-10])cube([30,10,40]);
 }
 }
-
 translate([-10-0.1,0,0]){
 translate([-100+28-2.9,89+51.5-8.2,4.5])rotate([0,0,90])difference(){
 translate([0,2,0])#import("LM8UU_holder_stub.stl");
@@ -170,7 +174,6 @@ translate([-120,-53.5,-10])cube([30,30,40]);
 }
 }
 }
-
 translate([-300,-11,14])rotate([0,90,0])cylinder(r=10.7/2,h=500,$fn=30);
 translate([-300,-11+43,14])rotate([0,90,0])cylinder(r=10.7/2,h=500,$fn=30);
 translate([-27,-3,-100])rotate([0,0,90]){
@@ -194,19 +197,11 @@ translate([7+7,41+10,-2])cylinder(r=2.8/2,h=200,$fn=30);
 #translate([7+7+27-55,41+22-11,-2])cylinder(r=2.8/2,h=200,$fn=30);
 //translate([7+14,34,-2])#cylinder(r=2.8/2,h=200,$fn=30);
 }
-
-
-
-
-
 //color("silver")translate([-55-10+0-5-100,5+10,4.5-10])rotate([0,90,0])cylinder(r=23/2,h=260,$fn=30);
-
 //#translate([-80,15,-10])cylinder(r=2.8/2,h=40,$fn=30);
 //translate([-80,15-10,-10])cylinder(r=2.8/2,h=40,$fn=30);
-
 //translate([-80-16,15,-10])cylinder(r=2.8/2,h=40,$fn=30);
 //#translate([-80-16,15-10,-10])cylinder(r=2.8/2,h=40,$fn=30);
-
 //translate([-80-18,15,-10])cylinder(r=2.8/2,h=40,$fn=30);
 /*
 translate([-3,0,0]){
@@ -218,7 +213,6 @@ translate([-80-18,3,-10])cylinder(r=3.8/2,h=40,$fn=30);
 */
 }
 }
-
 
 
 
@@ -250,6 +244,19 @@ translate([5+8,-7.5,4])cylinder(r=8/2,h=30,$fn=30);
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 module filterwheel(){
 ldia = 35;
 difference(){ 
@@ -266,6 +273,12 @@ color("")translate([25.4/4-0,25.4/4-20,30-2])filter(20.4);
 color("")translate([25.4/4-0,25.4/4+20,30-2])filter(20.4);
 }
 }
+
+
+
+
+
+
 
 module motor_mount_rail_support(){
 difference(){

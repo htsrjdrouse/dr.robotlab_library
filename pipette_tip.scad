@@ -61,10 +61,23 @@ translate([230,0,220])rotate([0,0,-90])import("BOM_inventory/build5/washbowl_8ti
 }
 */
 
+
+
+module pipette_sample_collection(){
+translate([40-j*9,-31.5+i*9,0])pipette_p300_lts_model();
+translate([40-j*9,-31.5+i*9,6])color("purple",0.3)rotate([0,0,45])cylinder(r=4.25+2.1,h=20+10,$fn=4);
+
+
+}
+
+
+
+
 module pipette_p300_lts_model(){
 aa = 0;
 difference(){
 union(){
+color("lightblue",0.9)translate([0,0,49.5+10])cylinder(r=(7-aa)/2,h=1, $fn=30);
 color("lightgreen",0.9)cylinder(r1=(0.5-aa)/2,r2=(7-aa)/2,h=49.5, $fn=30);
 color("lightgreen",0.9)translate([0,0,49.5])cylinder(r=7/2,h=10, $fn=30);
 }
@@ -73,18 +86,18 @@ translate([0,0,50])cylinder(r=5.5/2,h=10, $fn=30);
 translate([0,0,1])cylinder(r1=(0.5)/2,r2=(5.5)/2,h=49.5, $fn=30);
 translate([0,0,1-40+2.5])cylinder(r1=0.5/2,r2=5.5/2,h=49.5, $fn=30);
 
-//translate([0,-20,0])cube([30,30,80-29]);
+//translate([-10,-30,0])cube([30,30,80-29]);
 }
 //#color("white",1.5)translate([0,0,49.5+4])cylinder(r=5.5/2,h=3, $fn=30);
 color("white",2.5)translate([0,0,49.5-17])cylinder(r1=3.8/2,r2=4.8/2,h=8, $fn=30);
 
-//color("white",0.5)translate([0,0,49.5-17-22])cylinder(r1=4.8/2,r2=4.8/2,h=22, $fn=30);
+//color("white",0.5)translate([0,0,49.5-17-22-8])cylinder(r1=4.8/2,r2=4.8/2,h=26, $fn=30);
 //color("white",0.5)translate([0,0,49.5-17-16])cylinder(r1=2/2,r2=3.2/2,h=8+4, $fn=30);
 
-//color("lightblue",0.8)translate([0,0,49.5-17])cylinder(r1=3.8/2,r2=4.8/2,h=8, $fn=30);
+color("lightblue",0.8)translate([0,0,49.5-17])cylinder(r1=3.8/2,r2=4.8/2,h=8, $fn=30);
 
-//ff = 3-3;
-//color("lightblue",0.8)translate([0,0,49.5-17-22+22])cylinder(r1=(3.8-ff)/2,r2=(4.8-ff+0.8-0.8)/2,h=8+8-8, $fn=30);
+ff = 3-3;
+color("lightblue",0.8)translate([0,0,49.5-17-22+22])cylinder(r1=(3.8-ff)/2,r2=(4.8-ff+0.8-0.8)/2,h=8+8-8, $fn=30);
 
 //ff = 3;
 //color("lightblue",0.8)translate([0,0,49.5-17-22])cylinder(r1=(3.8-ff)/2,r2=(4.8-ff+0.8)/2,h=8+8, $fn=30);
@@ -97,9 +110,10 @@ translate([0,0,49.5-17-22-6-17])cylinder(r1=(3.8-ff)/2,r2=(4.8-ff+0.8+1.5)/2,h=8
 }
 */
 
-//ff = 1.5;
-//color("lightblue",0.8)translate([0,0,49.5-17-22+21])cylinder(r1=(3.8-ff)/2,r2=(4.8-ff+0.8+1.5)/2,h=8+8+10-10, $fn=30);
-
+/*
+ff = 1.5;
+color("lightblue",0.8)translate([0,0,49.5-17-22+21])cylinder(r1=(3.8-ff)/2,r2=(4.8-ff+0.8+1.5)/2,h=8+8+10-10, $fn=30);
+*/
 
 /*
 difference(){
@@ -109,6 +123,51 @@ translate([0,-20,0])cube([30,30,80]);
 }
 */
 }
+
+
+
+
+
+
+
+
+module piezo_model(){
+aa = 0;
+difference(){
+union(){
+color("grey",0.9)translate([0,0,49.5+10])cylinder(r=(7-aa)/2,h=1, $fn=30);
+color("grey",0.9)cylinder(r1=(0.5-aa)/2,r2=(7-aa)/2,h=49.5, $fn=30);
+color("grey",0.9)translate([0,0,49.5])cylinder(r=7/2,h=10, $fn=30);
+}
+translate([0,0,50])cylinder(r=5.5/2,h=10, $fn=30);
+translate([0,0,1])cylinder(r1=(0.5)/2,r2=(5.5)/2,h=49.5, $fn=30);
+translate([0,0,1-40+2.5])cylinder(r1=0.5/2,r2=5.5/2,h=49.5, $fn=30);
+
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -6,11 +6,13 @@ include <arducam-raspi.scad>
 //translate([70-8-60,14-7+95+0,55+130-9.5])rotate([-90,0,0])servo_linear_assy();
 //translate([-72-0+10-2,120+12-120,-27.4-113+1])rotate([90,0,-90])raspi_mount_linact();
 
+
+/*
 union(){
 import("/Users/richard/Documents/dr.robot/dr.robotlab_library/BOM_inventory/FuseBox_CoreXY_3D_Printer/files/plunger_shuttle.stl");
 raspi_mount_linact_connect();
 }
-
+*/
 
 //translate([-4.5,-4,6.1])arducam_case_lid();
 

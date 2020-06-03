@@ -18,10 +18,10 @@ include <PiZero.scad>
 
 //backbackpanel_group();
 
-     translate([180,28,55-20])rotate([0,90,0])rj45jack_panel();
-     translate([180,28,55+5])rotate([0,90,0])rj45jack_panel();
-
 //backbackpanel();
+
+
+//raspi_holder_base();
 
 //arducam_rotate_case();
 //rj45jack_panel();
@@ -50,10 +50,16 @@ include <PiZero.scad>
 //top_assy();
 //ffrontpanel();
 //color("grey")
-//translate([180/2,175/2,108])teachplate_core();
+//translate([180/2,175/2,108])teachplate_core_larger();
+translate([130,65,100])color("grey")rotate([180,0,180])raspi_setup();
 
 //translate([30-38,0,0])raspimount_holes();
 
+
+module raspi_setup(){
+translate([0,-70,50-30])rotate([-90,180,0])import("cytokinetics/Top_Slots_SM.stl");
+import("cytokinetics/platereader_v2/platereader_v4/raspi_holder_base.stl");
+}
 
 
 module usbjack_panel(){
@@ -66,7 +72,7 @@ module usbjack_panel(){
 module hdmijack_panel(){
   difference(){
   translate([85+35,-55,0])cube([30,46,2]);
-  #hdmi_jack();
+  hdmi_jack();
   }
 }
 
@@ -92,9 +98,9 @@ module usb_jack(){
 
 //usb port
 translate([77.5+17-1,20+3-76+1,0]){
-#translate([15/2,20,0])translate([0,-14.6,-1])cylinder(r=3.7/2,h=10);
-#translate([15/2,20,0])translate([0,0,-1])rotate([0,0,45])cylinder(r=16/2,h=10,$fn=4);
-#translate([15/2,20,0])translate([0,14.6,-1])cylinder(r=3.7/2,h=10);
+translate([15/2,20,0])translate([0,-14.6,-1])cylinder(r=3.7/2,h=10);
+translate([15/2,20,0])translate([0,0,-1])rotate([0,0,45])cylinder(r=16/2,h=10,$fn=4);
+translate([15/2,20,0])translate([0,14.6,-1])cylinder(r=3.7/2,h=10);
 }
 
 
@@ -136,9 +142,9 @@ color("white")translate([12,0,1.5])writecube( "kinetics",where=[0,0,0],size=[0,0
 //power indicator
 module power_indicator(){
 difference(){union(){
- translate([0,0,0]) translate([0,0,-1])roundedRect([30,37,2], 4);
+ color("black")translate([0,0,0]) translate([0,0,-1])roundedRect([30,37,2], 4);
 //color("white")translate([-15,10,1.5])writecube( "12V",where=[0,0,0],size=[0,0,0],h=7,face="top");
-//color("white")
+color("white")
  translate([0,10,1.5])writecube( "5V",where=[0,0,0],size=[0,0,0],h=7,face="top");
 }
 //translate([-15,-7,-5])cylinder(r=12.4/2,h=30,$fn=30);
@@ -230,19 +236,25 @@ module ffrontpanel(){
   translate([0,130,40])rotate([0,-90,0])cytokinetics_emblem();
        color("white")difference(){
         translate([Thick+m/2,Thick+m/2,Thick+m/2]) Panel(Length,Width,Thick,Filet);
-        #translate([Thick+m/2-10,Thick+m/2+40,Thick+m/2+70]) rotate([0,90,0])cylinder(r=5/2,h=20,$fn=30);
+        translate([Thick+m/2-10,Thick+m/2+40,Thick+m/2+70]) rotate([0,90,0])cylinder(r=5/2,h=20,$fn=30);
      }
 }
 /*
 */
 
 
+module rj45_jack2(){
+     translate([180,28,55-20])rotate([0,90,0])rj45jack_panel();
+     translate([180,28,55+5])rotate([0,90,0])rj45jack_panel();
+
+}
 
 module backbackpanel(){
+   color("black")rj45_jack2();
+     translate([180+1,114+16,49])rotate([90,0,90])power_indicator();
      /*
      translate([180,28,55-20])rotate([0,90,0])rj45jack_panel();
      translate([180,28,55+5])rotate([0,90,0])rj45jack_panel();
-     translate([180+1,114+16,49])rotate([90,0,90])power_indicator();
      */
     /*
      translate([175+5,115,49])rotate([90,0,90]){
@@ -379,7 +391,7 @@ color("")bottom();
 */
 
 module bottom(){
-raspimount_holes();
+//raspimount_holes();
 difference(){
 color("pink")translate([80-12,19.5+138/2+7.5-17.5+1,20-18])cube([48,17,10]);
 color("pink")translate([80-3,19.5+138/2+7.5-17.5+9.5,20-18])cylinder(r=2.8/2,h=30,$fn=30);
@@ -392,7 +404,7 @@ translate([30-48,0,0])raspimount();
 
 translate([0,0,0])difference(){
 union(){
-translate([0,0,0])bottombox();
+translate([0,0,0])color("black")bottombox();
 /*
 translate([80,19.5+138/2+7.5,20])rotate([0,90,0]){
 translate([20,-4,-30+83+15])rotate([0,-90,0])cylinder(r=10/2,h=5,$fn=30);
@@ -430,10 +442,10 @@ translate([72+5-10,15+10-8,-5])cube([57,45-20,4]);
 //union(){
 
 translate([4,0,28]){
-translate([-11,3,0])translate([140,10,-20])rotate([90,0,0])#cylinder(r=3.8/2,h=50,$fn=30);
-translate([-11-58,3,0])translate([140,10,-20])rotate([90,0,0])#cylinder(r=3.8/2,h=50,$fn=30);
-translate([-11,3,0])translate([140,44.5+10,-20])rotate([90,0,0])#cylinder(r=8/2,h=50,$fn=30);
-translate([-11-58,3,0])translate([140,44.5+10,-20])rotate([90,0,0])#cylinder(r=8/2,h=50,$fn=30);
+translate([-11,3,0])translate([140,10,-20])rotate([90,0,0])cylinder(r=3.8/2,h=50,$fn=30);
+translate([-11-58,3,0])translate([140,10,-20])rotate([90,0,0])cylinder(r=3.8/2,h=50,$fn=30);
+translate([-11,3,0])translate([140,44.5+10,-20])rotate([90,0,0])cylinder(r=8/2,h=50,$fn=30);
+translate([-11-58,3,0])translate([140,44.5+10,-20])rotate([90,0,0])cylinder(r=8/2,h=50,$fn=30);
 }
 
 translate([-10,-7,0]){
@@ -1106,7 +1118,7 @@ color("gray")difference(){
  union(){
  translate([-0,-0,2])roundedRect([l+18,w+18,hb+8], rd);
  }
- #translate([-0,-0,-1])roundedRect([l+0.7,w+0.7,hb+31], rd);
+ translate([-0,-0,-1])roundedRect([l+0.7,w+0.7,hb+31], rd);
  }
  translate([-0,-0,2])roundedRect([l+0.7,w+0.7,hb], rd);
  }
@@ -1120,7 +1132,7 @@ color("gray")difference(){
  for (i=[25,67]){
  for (j=[-3,137]){
  translate([j,i,0]){
-  #translate([-67,20-67,12-4])rotate([0,0,0])cylinder(r=8/2,h=300,$fn=30);
+  translate([-67,20-67,12-4])rotate([0,0,0])cylinder(r=8/2,h=300,$fn=30);
   translate([-67,20-67,-10])rotate([0,0,0])cylinder(r=3.7/2,h=300,$fn=30);
  }
  }
@@ -1128,7 +1140,7 @@ color("gray")difference(){
  for (i=[-2,96]){
  for (j=[35,100]){
  translate([j,i,0]){
-  #translate([-67,20-67,12-4])rotate([0,0,0])cylinder(r=8/2,h=300,$fn=30);
+  translate([-67,20-67,12-4])rotate([0,0,0])cylinder(r=8/2,h=300,$fn=30);
   translate([-67,20-67,-10])rotate([0,0,0])cylinder(r=3.7/2,h=300,$fn=30);
  }
  }
@@ -1165,7 +1177,7 @@ color("gray")difference(){
  union(){
  translate([-0,-0,2])roundedRect([l+18,w+18,hb+8], rd);
  }
- #translate([-0,-0,-1])roundedRect([l+0.7,w+0.7,hb+31], rd);
+ translate([-0,-0,-1])roundedRect([l+0.7,w+0.7,hb+31], rd);
  }
  translate([-0,-0,2])roundedRect([l+0.7,w+0.7,hb], rd);
  }
@@ -1179,7 +1191,7 @@ color("gray")difference(){
  for (i=[25,67]){
  for (j=[-3,137]){
  translate([j,i,0]){
-  #translate([-67,20-67,12-4])rotate([0,0,0])cylinder(r=8/2,h=300,$fn=30);
+  translate([-67,20-67,12-4])rotate([0,0,0])cylinder(r=8/2,h=300,$fn=30);
   translate([-67,20-67,-10])rotate([0,0,0])cylinder(r=3.7/2,h=300,$fn=30);
  }
  }
@@ -1187,7 +1199,7 @@ color("gray")difference(){
  for (i=[-2,96]){
  for (j=[35,100]){
  translate([j,i,0]){
-  #translate([-67,20-67,12-4])rotate([0,0,0])cylinder(r=8/2,h=300,$fn=30);
+  translate([-67,20-67,12-4])rotate([0,0,0])cylinder(r=8/2,h=300,$fn=30);
   translate([-67,20-67,-10])rotate([0,0,0])cylinder(r=3.7/2,h=300,$fn=30);
  }
  }

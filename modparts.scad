@@ -13042,6 +13042,8 @@ translate([0, 15]) rotate([90]) difference() {
   //translate([0,4.5])
   //cube([10, 6.2, 15]);
 }
+
+
 module base() {
   cube([10,2,3]);
   translate([8,0])
@@ -13098,13 +13100,11 @@ translate([15, 1.5]) {
 
 
 module mnt_md_justclip(dd){
- 
   difference(){
   md_justclip();
   translate([-7+13-11,5+2,-5])cylinder(r=4/2,h=50);
   translate([-7+13-11,5+2,10-5])cylinder(r=9/2,h=5);
   }
-
 }
 
 module tslot_breadboard(){

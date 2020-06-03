@@ -3,6 +3,102 @@ use<writescad/write.scad>
 include <dr.robotlab_repstrap.scad>
 
 //syringe_1ml_stack_1piece_multichannel_clamp();
+//one_1ml_syringe_parts();
+
+//oneml_cavro_syringe_assy();
+
+
+//syringe_endstop_flag();
+
+endstop_multichannel_syringe();
+
+
+
+module endstop_multichannel_syringe(){
+difference(){
+union(){
+//import("files/endstop_y.stl");
+translate([40+30-38+13,1.5,-0.0])cube([85-10+38-83-13,30,4]);
+translate([40+30-52,1.5,-0.0])cube([28,18,4]);
+//translate([40+30-38,1.5,-0.0])cube([18,28,4]);
+//translate([40.9,12.5,0])rotate([0,0,45])cylinder(r=8.7/2,h=8,$fn=4);
+}
+translate([60,-114,0])rotate([0,0,90]){
+translate([40.75+80,4.5,-0.2])cylinder(r=2.9/2,h=30,$fn=20);
+translate([60.75+80,4.5,-0.2])cylinder(r=2.9/2,h=30,$fn=20);
+}
+translate([40.9,25,-0.2])cylinder(r=4.7/2,h=30,$fn=30);
+translate([40.9,10,-0.2])cylinder(r=4.7/2,h=30,$fn=30);
+translate([40.9-15,10,-0.2])cylinder(r=4.7/2,h=30,$fn=30);
+//translate([50.,12,-0.2])cube([120,20,20]);
+}
+}
+
+
+
+
+
+module syringe_endstop_flag(){
+difference(){
+union(){
+translate([-15-10,50-0.5,10])cube([45,10,3]);
+translate([-15-10+30,50-0.5+4,-3])cube([15,6,13]);
+}
+translate([-20.+0.5,57-0.25,-10])cylinder(r=3.7/2,h=30,$fn=30);
+translate([-20.5+10.,57-0.25,-10])cylinder(r=3.7/2,h=30,$fn=30);
+translate([-20.5+13.25+20-2.3,55+12,2])rotate([90,0,0])#cylinder(r=2.7/2,h=30,$fn=30);
+}
+}
+
+
+
+module oneml_cavro_syringe_assy(){
+
+translate([-126,-10+62,20.5])rotate([0,0,-90])endstop_multichannel_syringe();
+
+translate([-126,-11.3,96.5])rotate([-90,0,0])syringe_endstop_flag();
+translate([0,-212,2])one_1ml_syringe_parts();
+translate([-160,-80,25.5])rotate([-90,0,0])nema17();
+translate([-98,0,0.5]){
+translate([-62,-60,25])rotate([-90,0,0])color("silver")cylinder(r=8/2,h=200,$fn=30);
+translate([-47,-65,3]){
+//here is the rail
+color("silver")cube([12,300,8]);
+//here is the slider
+translate([-27/2+12/2,60,2-3+6])color("silver")cube([27,45,9]);
+}
+translate([-33,-88,25])rotate([-90,0,0])tslot20(350);
+import("iverntech_slidermount_motormount.stl");
+import("motormount_screws.stl");
+translate([-1,50,0])import("oneml_syringe_stepper_linear_m8nut_coupler.stl");
+}
+
+/*
+translate([0,-38,0]){
+translate([0,-10,0])import("multichannel_syringe1ml_clamp_extrusion_connect.stl");
+translate([0,-70,0])import("multichannel_syringe1ml_clamp_extrusion_connect.stl");
+import("multichannel_syringe1ml_clamp_luerlock.stl");
+import("multichannel_syringe1ml_clamp.stl");
+translate([0,-70,0])rotate([0,-180,0])import("multichannel_syringe1ml_clamp_top_luerlock.stl");
+}
+translate([0,-130,0]){
+import("multichannel_syringeshuttle_clipbracket.stl");
+import("multichannel_plunger_clamp.stl");
+}
+translate([0,-38,-4]){
+import("syringe_1ml_stack_1piece_multichannel_clamp.stl");
+import("syringe_1ml_stack_1piece_multichannel.stl");
+}
+*/
+
+}
+
+
+
+
+
+
+
 
 module cavro_250ul_syringe(){
 color("silver")cylinder(r=6.25/2,h=10.25,$fn=20);
@@ -19,24 +115,26 @@ translate([0,0,-8-36-2.5-7.5+3+3])color("silver")cylinder(r=6.1/2,h=3,$fn=20);
 
 module one_1ml_syringe_parts(){
  //translate([-22.85,1-123.7,2.5])mirror([0,1,0])oneml_syringe_stepper_linear_m8nut_coupler();
- //translate([0,-4,0])iverntech_pump_slider_plate();
  //translate([-141.5+0.3+100-1,280+6.5-3-225-32,42.5+1.5+2])rotate([-90,90,0])cavro_250ul_syringe();
+ /*
  translate([0+100-1,54,2]){
- //translate([-141,200-19.7-32-225,44])rotate([0,0,-90])syringe_cavro250ul_plungerclip();
+ translate([-141,200-19.7-32-225,44])rotate([0,0,-90])syringe_cavro250ul_plungerclip();
  } 
+ */
  //translate([0,-4,0])iverntech_pump_slider_plate_connect();
  //multichannel_syringeshuttle_clipbracket();
- //translate([0,70,-0.1])one_channel_cavro250ul_clamp();
  //translate([0,10,0])one_syringe1ml_clamp_top_luerlock();
- //translate([0,70+60,-0.1])multichannel_syringe1ml_clamp_extrusion_connect();
- /*
+ //onechannel_plunger_clamp();
+ //translate([0,70,-0.1])one_front_syringe1ml_clamp_luerlock();
+
+ translate([0-99,-4+262,-2])iverntech_pump_slider_plate();
+
+ translate([0,70,-0.1])one_channel_cavro250ul_clamp();
+ translate([0,96,-0.1-0])multichannel_syringe1ml_clamp_extrusion_connect();
  translate([0,54,0]){
- onechannel_plunger_clamp();
  translate([-141,200-19.7,44])rotate([0,0,-90])syringe_cavro250ul_plungerclip();
  }
- */
- //translate([0,70,-0.1])one_front_syringe1ml_clamp_luerlock();
- //translate([-141.5+0.3,280+6.5-3,42.5+1.5])rotate([-90,90,0])cavro_250ul_syringe();
+ translate([-141.5+0.3,280+6.5-3,42.5+1.5])rotate([-90,90,0])cavro_250ul_syringe();
 }
 
 
@@ -278,8 +376,8 @@ union(){
 translate([0-4,-5-4,-8-4])cube([14+4,10+8,12+4]);
 //translate([0-4,-5,-8])cube([14+15,10,4]);
 }
-translate([18-20,0-4.75,-8+1.75])rotate([0,90,0])#cylinder(r=2.8/2,h=40);
-translate([18-20,0+4.4,-8+1.75])rotate([0,90,0])#cylinder(r=2.8/2,h=40);
+translate([18-20,0-4.75,-8+1.75])rotate([0,90,0])cylinder(r=2.8/2,h=40);
+translate([18-20,0+4.4,-8+1.75])rotate([0,90,0])cylinder(r=2.8/2,h=40);
 translate([18,0,-8])cylinder(r=3.7/2,h=40);
 for(i=[0:10]){
 translate([-5,0,0+i])rotate([90,-0,90])cylinder(r=6.6/2,h=10);

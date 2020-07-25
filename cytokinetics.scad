@@ -10,6 +10,90 @@ include <bom_openmv_camera.scad>
 include <nanoplotter.scad>
 include <PiZero.scad>
 */
+
+//rj45_jack3();
+
+//backbackpanel();
+//power_indicator();
+
+//window_v2();
+//sd_lightfixture_mod3();
+//mirror([0,1,0])sd_lightfixture_mod3();
+//translate([-23,200,0])rotate([0,0,-90])import("cytokinetics/platereader_v2/platereader_v3/sd_lightfixture_mod.stl");
+//top();
+//translate([0,3,-25])pr_lightfixture_mod();
+
+//mirror([0,0,0])pr_lightfixture_mod3();
+
+//pr_lightfixture_mod_diffuse();
+//mirror([0,1,0])pr_lightfixture_mod3();
+//mirror([0,1,0])pr_lightfixture_mod2();
+
+//teachplate_core_larger();
+
+//cytokinetics_banner();
+//htsresources_banner();
+//cytokinetics_emblem();
+//code2d_emblem();
+//code_imager_banner();
+
+//power_indicator();
+
+
+//cytokinetics_RFID();
+/*
+mirror([0,1,0])raspi2_bottom();
+rfid_camera_connector();
+rfid_camera_module();
+*/
+
+//rfid_holder();
+
+//rfid_holder_mount();
+
+/*
+difference(){
+cylinder(r=12/2,h=2,$fn=30);
+translate([0,0,-0.2])cylinder(r=4.3/2,h=30,$fn=30);
+}
+*/
+
+//translate([-20,100,24])rotate([90,0,0])tslot20(100);
+///translate([-14,10,24])color("orange")mti_antenna_interfaceplate();
+
+//color("lime")mti_antenna();
+
+
+module mti_antenna_interfaceplate(){
+difference(){
+cube([105,80,5]);
+translate([31.5,7.5,-1]){
+//translate([-22.5,0,0])cylinder(r=4.8/2,h=16,$fn=30);
+translate([-22.5,20,0])cylinder(r=4.8/2,h=16,$fn=30);
+translate([-22.5,50,0])cylinder(r=4.8/2,h=16,$fn=30);
+translate([0,0,0])cylinder(r=5.8/2,h=16,$fn=30);
+translate([33,33,0])cylinder(r=40.8/2,h=16,$fn=30);
+translate([66,0,0])cylinder(r=5.8/2,h=16,$fn=30);
+translate([0,66,0])cylinder(r=5.8/2,h=16,$fn=30);
+translate([66,66,0])cylinder(r=5.8/2,h=16,$fn=30);
+}
+}
+}
+
+module mti_antenna(){
+
+
+
+cube([192,192,25]);
+translate([71,135,25])cylinder(r=12/2,h=16,$fn=30);
+translate([17.5,17.5,25]){
+translate([0,0,0])cylinder(r=5/2,h=16,$fn=30);
+translate([66,0,0])cylinder(r=5/2,h=16,$fn=30);
+translate([0,66,0])cylinder(r=5/2,h=16,$fn=30);
+translate([66,66,0])cylinder(r=5/2,h=16,$fn=30);
+}
+}
+
 //raspimount_holes();
 
 //translate([180/2,175/2,108])teachplate_core();
@@ -24,7 +108,7 @@ include <PiZero.scad>
 //raspi_holder_base();
 
 //arducam_rotate_case();
-//rj45jack_panel();
+//rj45jack_panel_tmp();
 //power_indicator();
 //translate([60,95,20+15])rotate([0,0,180])dual_camera_stand();
 //pr_lightfixture_mod_diffuse();
@@ -51,7 +135,7 @@ include <PiZero.scad>
 //ffrontpanel();
 //color("grey")
 //translate([180/2,175/2,108])teachplate_core_larger();
-translate([130,65,100])color("grey")rotate([180,0,180])raspi_setup();
+//translate([130,65,100])color("grey")rotate([180,0,180])raspi_setup();
 
 //translate([30-38,0,0])raspimount_holes();
 
@@ -107,6 +191,22 @@ translate([15/2,20,0])translate([0,14.6,-1])cylinder(r=3.7/2,h=10);
 }
 
 
+module rj45jack_panel_tmp(){
+  difference(){
+ translate([-11.5+4-10,-5+5,0])cube([35,60,2]);
+	//rj45 jack
+	//translate([77.5+17+(17*3)-148,20+3-76+1+80,55])rotate([0,90,0]){
+	translate([15/2,20,0])translate([0,-27/2,-1])cylinder(r=3.7/2,h=10);
+	translate([15/2,20,0])translate([0,27/2,-1])cylinder(r=3.7/2,h=10);
+	translate([15/2,20,0])translate([-5.5,-16.5/2,-1])cube([14,16.5,10]);
+	//}
+ } 
+}
+
+
+
+
+
 module rj45jack_panel(){
   difference(){
  translate([-11.5+4,-5+5,0])cube([37.5-8,40,2]);
@@ -131,6 +231,31 @@ translate([10,-10,0])cylinder(r=13/2,h=5,$fn=30);
 }
 }
 
+//code2d emblem
+module code2d_emblem(){
+color("black")translate([0,0,0]) translate([0,0,-1])roundedRect([38,38,2], 4);
+
+x = [-0,-7,-6,-5,-4,-3,-8,-7,-6,-5,4,-2,-1,0,-2,-4,-6,1,0,0,2,4,5,5,6,6,7,7,6,4,3];
+y = [-5,-8,-6,-6,-6,-6,-3,-1,0,-1,1,2,2,2,4,6,7,0,2,4,-2,-3,-4,-7,-6,-5,3,4,5,7,8];
+for(i=[0:30]){
+color("white")translate([x[i]*2,y[i]*2,0])rotate([0,0,45])cylinder(r=5/2,h=3,$fn=4);
+}
+/*
+difference(){
+color("white")cylinder(r=34/2,h=3,$fn=30);
+translate([0,0,0])cylinder(r=20/2,h=5,$fn=30);
+translate([10,-10,0])cylinder(r=13/2,h=5,$fn=30);
+}
+*/
+
+}
+
+
+
+
+
+
+
 
 //cytokinetics
 module cytokinetics_banner(){
@@ -139,15 +264,61 @@ color("white")translate([-19,0,1.5])writecube( "Cyto",where=[0,0,0],size=[0,0,0]
 color("white")translate([12,0,1.5])writecube( "kinetics",where=[0,0,0],size=[0,0,0],h=7,face="top");
 }
 
+//htsresources.com
+module htsresources_banner(){
+color("black")translate([3.5,0,0]) translate([0,0,-1])roundedRect([70,15,2], 4);
+color("white")translate([-19,0,1.5])writecube( "HTS",where=[0,0,0],size=[0,0,0],h=7,face="top");
+color("white")translate([12-11,0,1.5])writecube( "Reso",where=[0,0,0],size=[0,0,0],h=7,face="top");
+color("white")translate([12+11.5,0,1.5])writecube( "urces",where=[0,0,0],size=[0,0,0],h=7,face="top");
+}
+
+
+
+
+
+
+//Cytokinetics RFID
+module cytokinetics_RFID(){
+
+difference(){
+color("black")translate([0,-35,0]) translate([0,0,-1])roundedRect([38,38+95,2], 4);
+translate([0,25,-5])cylinder(r=4.7/2,h=45,$fn=30);
+translate([0,-94,-5])cylinder(r=4.7/2,h=45,$fn=30);
+}
+color("white")translate([10,-10,0])cylinder(r=8/2,h=3,$fn=30);
+difference(){
+color("white")cylinder(r=34/2,h=3,$fn=30);
+translate([0,0,0])cylinder(r=20/2,h=5,$fn=30);
+translate([10,-10,0])cylinder(r=13/2,h=5,$fn=30);
+}
+
+translate([12,-55,0])rotate([0,0,-90]){
+color("white")translate([-19,0,1.5])writecube( "Cyto",where=[0,0,0],size=[0,0,0],h=7,face="top");
+color("white")translate([12,0,1.5])writecube( "kinetics",where=[0,0,0],size=[0,0,0],h=7,face="top");
+}
+translate([-1,-55,0])rotate([0,0,-90]){
+color("white")translate([-0,0,1.5])writecube( "RFID Scanner",where=[0,0,0],size=[0,0,0],h=7,face="top");
+}
+translate([-13,-41,0])rotate([0,0,-90]){
+color("white")translate([-0,0,1.5])writecube( "LabBot",where=[0,0,0],size=[0,0,0],h=7,face="top");
+}
+
+}
+
+
+
+
+
+
 //power indicator
 module power_indicator(){
 difference(){union(){
- color("black")translate([0,0,0]) translate([0,0,-1])roundedRect([30,37,2], 4);
-//color("white")translate([-15,10,1.5])writecube( "12V",where=[0,0,0],size=[0,0,0],h=7,face="top");
+ color("black")translate([0-14,0,0]) translate([0,0,-1])roundedRect([30+20,37,2], 4);
+color("white")translate([-15-15,10,1.5])writecube( "12V",where=[0,0,0],size=[0,0,0],h=7,face="top");
 color("white")
  translate([0,10,1.5])writecube( "5V",where=[0,0,0],size=[0,0,0],h=7,face="top");
 }
-//translate([-15,-7,-5])cylinder(r=12.4/2,h=30,$fn=30);
+translate([-15-15,-7,-5])cylinder(r=12.4/2,h=30,$fn=30);
 translate([0,-7,-5])cylinder(r=12.4/2,h=30,$fn=30);
 }
 }
@@ -193,8 +364,72 @@ difference(){
 translate([95,36,105])rotate([-90,0,0])pr_lightfixture(108);
 translate([58,38.5,30])cylinder(r=2.2/2,h=100,$fn=30);
 translate([58+65,38.5,30])cylinder(r=2.2/2,h=100,$fn=30);
+translate([58+10,38.5+20,98+3])rotate([90,0,0])cylinder(r=4/2,h=100,$fn=30);
+translate([58+10,38.5+98.5,98+3])rotate([90,0,0])cylinder(r=7.5/2,h=100,$fn=30);
+translate([58+55,38.5,98+3])rotate([90,0,0])cylinder(r=4/2,h=100,$fn=30);
+translate([58+55,38.5+98.5,98+3])rotate([90,0,0])cylinder(r=7.5/2,h=100,$fn=30);
 }
 }
+
+
+module pr_lightfixture_mod3(){
+difference(){
+translate([95,36,105])rotate([-90,0,0])pr_lightfixture3(108);
+/*
+translate([58,38.5,30])cylinder(r=2.2/2,h=100,$fn=30);
+translate([58,38.5+4,30])cylinder(r=2.2/2,h=100,$fn=30);
+translate([58,38.5+8,30])cylinder(r=2.2/2,h=100,$fn=30);
+*/
+translate([58,38.5+8+9,30])cylinder(r=2.2/2,h=100,$fn=30);
+translate([58,38.5+8+12,30])cylinder(r=2.4/2,h=100,$fn=30);
+/*
+translate([58+65,38.5,30])cylinder(r=2.2/2,h=100,$fn=30);
+translate([58+65,38.5+4,30])cylinder(r=2.2/2,h=100,$fn=30);
+translate([58+65,38.5+8,30])cylinder(r=2.2/2,h=100,$fn=30);
+*/
+translate([58+65,38.5+8+9,30])cylinder(r=2.2/2,h=100,$fn=30);
+translate([58+65,38.5+8+12,30])cylinder(r=2.4/2,h=100,$fn=30);
+
+
+for(i=[0:3]){
+translate([58+10,38.5+20,98-23+i*6])rotate([90,0,0])cylinder(r=2.8/2,h=100,$fn=30);
+translate([58+55,38.5+20,98-23+i*6])rotate([90,0,0])cylinder(r=2.8/2,h=100,$fn=30);
+}
+
+}
+}
+
+module sd_lightfixture_mod3(){
+difference(){
+translate([95,36,105])rotate([-90,0,0])pr_lightfixture3(56);
+
+
+translate([42.5,38.5,30])cylinder(r=2.2/2,h=100,$fn=30);
+translate([42.5,38.5+4,30])cylinder(r=2.2/2,h=100,$fn=30);
+translate([42.5,38.5+8,30])cylinder(r=2.2/2,h=100,$fn=30);
+translate([42.5+42,38.5,30])cylinder(r=2.2/2,h=100,$fn=30);
+translate([42.5+42,38.5+4,30])cylinder(r=2.2/2,h=100,$fn=30);
+translate([42.5+42,38.5+8,30])cylinder(r=2.2/2,h=100,$fn=30);
+}
+}
+
+module pr_lightfixture_mod2(){
+difference(){
+translate([95,36,105])rotate([-90,0,0])pr_lightfixture2(108);
+translate([58,38.5,30])cylinder(r=2.2/2,h=100,$fn=30);
+translate([58,38.5+4,30])cylinder(r=2.2/2,h=100,$fn=30);
+translate([58,38.5+8,30])cylinder(r=2.2/2,h=100,$fn=30);
+translate([58+65,38.5,30])cylinder(r=2.2/2,h=100,$fn=30);
+translate([58+65,38.5+4,30])cylinder(r=2.2/2,h=100,$fn=30);
+translate([58+65,38.5+8,30])cylinder(r=2.2/2,h=100,$fn=30);
+}
+}
+
+
+
+
+
+
 
 
 
@@ -243,15 +478,25 @@ module ffrontpanel(){
 */
 
 
+module rj45_jack3(){
+     translate([180,28,55-20])rotate([0,90,0])rj45jack_panel();
+     translate([180,28,55+5])rotate([0,90,0])rj45jack_panel();
+     translate([180,28,55+5+25])rotate([0,90,0])rj45jack_panel();
+}
+
+
 module rj45_jack2(){
      translate([180,28,55-20])rotate([0,90,0])rj45jack_panel();
      translate([180,28,55+5])rotate([0,90,0])rj45jack_panel();
-
+     translate([180,28,55+5+25])rotate([0,90,0])rj45jack_panel();
 }
 
+
+
+
 module backbackpanel(){
-   color("black")rj45_jack2();
-     translate([180+1,114+16,49])rotate([90,0,90])power_indicator();
+   //color("black")rj45_jack3();
+     //translate([180+1,114+16,49])rotate([90,0,90])power_indicator();
      /*
      translate([180,28,55-20])rotate([0,90,0])rj45jack_panel();
      translate([180,28,55+5])rotate([0,90,0])rj45jack_panel();
@@ -268,22 +513,30 @@ module backbackpanel(){
   	}
 	//rj45 jack
 
+        /*
 	translate([77.5+17+(17*3)-148,20+3-76+1+80,55-20])rotate([0,90,0]){
 	translate([15/2,20,0])translate([0,-27/2,-1])cylinder(r=3.7/2,h=10);
 	translate([15/2,20,0])translate([0,27/2,-1])cylinder(r=3.7/2,h=10);
 	translate([15/2,20,0])translate([-5.5,-16.5/2,-1])cube([14,16.5,10]);
-	}
+        }
 	translate([77.5+17+(17*3)-148,20+3-76+1+80,55+5])rotate([0,90,0]){
 	translate([15/2,20,0])translate([0,-27/2,-1])cylinder(r=3.7/2,h=10);
 	translate([15/2,20,0])translate([0,27/2,-1])cylinder(r=3.7/2,h=10);
 	translate([15/2,20,0])translate([-5.5,-16.5/2,-1])cube([14,16.5,10]);
 	}
-
+        translate([0,0,0]){
+	translate([77.5+17+(17*3)-148,20+3-76+1+80+50,55+5])rotate([0,90,0]){
+	translate([15/2,20,0])translate([0,-27/2,-1])cylinder(r=3.7/2,h=10);
+	translate([15/2,20,0])translate([0,27/2,-1])cylinder(r=3.7/2,h=10);
+	translate([15/2,20,0])translate([-5.5,-16.5/2,-1])cube([14,16.5,10]);
+	}
+	}
+        */
 
 
       translate([0,115,49])rotate([90,0,90]){
-      //translate([-15,-7,-5])cylinder(r=12.4/2,h=30,$fn=30);
-      translate([15,-7,-5])cylinder(r=12.4/2,h=30,$fn=30);
+      translate([20,5,-5])cylinder(r=12.4/2,h=30,$fn=30);
+      translate([20,-20,-5])cylinder(r=12.4/2,h=30,$fn=30);
       /*
       translate([-54,-90-15,0])rotate([0,0,90])usb_jack();
       translate([-55,-90-25,0])rotate([0,0,90])hdmi_jack();
@@ -300,6 +553,31 @@ module frontpanel(){
 }
 
 
+module window_v2(){
+rd = 3;
+rdd = 3;
+w = 85.4964-rd+0.3;
+l = 127.7112-rd;
+h =  14.351-0.;
+hb = 2.5;
+
+difference(){
+union(){
+//topbox();
+translate([17,33,140])cube([148,108,1]);
+//color("pink")translate([180/2,175/2,108])teachplate_core();
+}
+translate([17+15,33+15,140-1])cube([148-30,108-30,3]);
+color("pink")translate([180/2,175/2,108]) translate([0,0,-1])roundedRect([l-9,w-7,hb+30], rd);
+color("pink")translate([180/2,175/2,108]) {
+ for (i=[0,134]){
+ for (j=[0,93]){
+ translate([-67+i,20-67+j,-10])rotate([0,0,0])cylinder(r=2.8/2,h=300,$fn=30);
+ }
+ }
+}
+}
+}
 
 module top(){
 rd = 3;
@@ -340,7 +618,6 @@ color("pink")translate([180/2,175/2,108]) {
  }
  }
 }
-
 }
 }
 
@@ -825,6 +1102,8 @@ translate([333,0,0])light_pvc_holder();
 //mirror([0,1,0])raspi2_bottom();
 //rfid_camera_connector();
 //rfid_camera_module();
+
+
 //translate([0,0,72])teachplate_holder();
 
 //translate([-80.5,0,0])bar_clamp();
@@ -1187,7 +1466,6 @@ color("gray")difference(){
  translate([-25+70,25+100,8])rotate([90,0,0])cylinder(r=2.8/2,h=300,$fn=30);
  translate([-100,25,8])rotate([0,90,0])cylinder(r=2.8/2,h=300,$fn=30);
  translate([-100,20-50,8])rotate([0,90,0])cylinder(r=2.8/2,h=300,$fn=30);
- /*
  for (i=[25,67]){
  for (j=[-3,137]){
  translate([j,i,0]){
@@ -1204,6 +1482,7 @@ color("gray")difference(){
  }
  }
  }
+ /*
  */
  for (i=[0,134]){
  for (j=[0,93]){
@@ -1455,6 +1734,30 @@ translate([50,20,6])rotate([0,90,0])cylinder(r=2.8/2,h=30,$fn=30);
 translate([50,80,6])rotate([0,90,0])cylinder(r=2.8/2,h=30,$fn=30);
 }
 }
+
+
+module rfid_holder_mount(){
+//translate([0,0,0])rotate([0,90,90])tslot20(100);
+difference(){
+union(){
+//translate([-4,-4,0])cube([61+8,96+8,13]);
+translate([-23,10,0])cube([20,20+40,4]);
+translate([-23+10,5+10,0])cylinder(r=23/2,h=4+25,$fn=30);
+//translate([-23,60,0])cube([20,20,4]);
+translate([-23+10,60+10,0])cylinder(r=23/2,h=4+25,$fn=30);
+}
+translate([0,0-10,2])cube([20,20,20]);
+translate([-23+10,70,-10])cylinder(r=3.8/2,h=130,$fn=30);
+translate([-23+10,15,-10])cylinder(r=3.8/2,h=130,$fn=30);
+translate([-23+10,43+8,-10])cylinder(r=4.7/2,h=130,$fn=30);
+translate([-23+10,43-9,-10])cylinder(r=4.7/2,h=130,$fn=30);
+translate([0,0,2])cube([61,96,20]);
+translate([15,15,-1])cube([61-30,96-30,20]);
+translate([50,20,6])rotate([0,90,0])cylinder(r=2.8/2,h=30,$fn=30);
+translate([50,80,6])rotate([0,90,0])cylinder(r=2.8/2,h=30,$fn=30);
+}
+}
+
 
 
 
@@ -1725,23 +2028,64 @@ translate([-44-20-2,0,0])cube([ln+15,11+8,10]);
 //translate([-44-1+5+85-100,4+2.5,5-50])cylinder(r=3.7/2,h=140,$fn=30);
 //translate([-44-1-10-12,4,5])cube([ln+1+18,11,10]);
 translate([-44-1-10-12,8,13])rotate([0,90,0])cylinder(r=6,h=ln+19,$fn=30);
-
 }
 }
 
 //translate([30,0,0])import("BOM_inventory/build2/stls/miuzei_raspicam_base.stl");
 
 
-module pr_lightfixture(ln){
+
+module pr_lightfixture3(ln){
 difference(){
 union(){
-translate([-44-20-2,0,0])cube([ln+15,11+8,10]);
+translate([-44-20-2,0,0])cube([ln+15,11+8+15,10+3+13]);
 }
 //translate([-44-1+5,4+2.5,5-10])cylinder(r=3.7/2,h=40,$fn=30);
 //translate([-44-1+5+85,4+2.5,-10])cylinder(r=3.7/2,h=40,$fn=30);
-translate([-44-1-10-12,4,5])cube([ln+1+18,11,10]);
+translate([-44-1-10-12+5-4.5,4-6+6,5+5-7])rotate([0,0,0])cube([ln+1+18-12+9,11+5+20,15+10]);
+//translate([-44-1-10-12,4,5])cube([ln+1+18,11,10]);
 }
 }
+
+
+
+
+
+
+module pr_lightfixture2(ln){
+difference(){
+union(){
+translate([-44-20-2,0,0])cube([ln+15,11+8,10+3]);
+}
+//translate([-44-1+5,4+2.5,5-10])cylinder(r=3.7/2,h=40,$fn=30);
+//translate([-44-1+5+85,4+2.5,-10])cylinder(r=3.7/2,h=40,$fn=30);
+translate([-44-1-10-12+5,4-6+3,5+5])rotate([-18,0,0])cube([ln+1+18-12,11+5+12,15]);
+//translate([-44-1-10-12,4,5])cube([ln+1+18,11,10]);
+}
+}
+
+
+
+
+
+
+
+
+module pr_lightfixture(ln){
+difference(){
+union(){
+translate([-44-20-2,0,0])cube([ln+15,11+8-4,10]);
+}
+//translate([-44-1+5,4+2.5,5-10])cylinder(r=3.7/2,h=40,$fn=30);
+//translate([-44-1+5+85,4+2.5,-10])cylinder(r=3.7/2,h=40,$fn=30);
+translate([-44-1-10-12,4-2,5-3])cube([ln+1+18,11,10]);
+}
+}
+
+
+
+
+
 
 //translate([30,0,0])import("BOM_inventory/build2/stls/miuzei_raspicam_base.stl");
 

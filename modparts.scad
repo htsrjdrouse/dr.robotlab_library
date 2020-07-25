@@ -2195,6 +2195,24 @@ translate([15/2,20,0])translate([0,0,-1])rotate([0,0,45])cylinder(r=16/2,h=10,$f
 translate([15/2,20,0])translate([0,14.6,-1])cylinder(r=3.7/2,h=10);
 }
 
+//usb port
+translate([77.5+17-1+25,20+3-76+1,0]){
+translate([15/2,20,0])translate([0,-14.6,-1])cylinder(r=3.7/2,h=10);
+translate([15/2,20,0])translate([0,0,-1])rotate([0,0,45])cylinder(r=16/2,h=10,$fn=4);
+translate([15/2,20,0])translate([0,14.6,-1])cylinder(r=3.7/2,h=10);
+}
+
+translate([77.5+17-1+50,20+3-76+1,0]){
+translate([15/2,20,0])translate([0,-14.6,-1])cylinder(r=3.7/2,h=10);
+translate([15/2,20,0])translate([0,0,-1])rotate([0,0,45])cylinder(r=16/2,h=10,$fn=4);
+translate([15/2,20,0])translate([0,14.6,-1])cylinder(r=3.7/2,h=10);
+}
+
+
+
+
+
+
 /*
 //usb port other end
 translate([77.5+17*2+1,20+3-76+1,0]){

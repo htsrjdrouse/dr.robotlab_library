@@ -1,5 +1,10 @@
+include<arducam-raspi.scad>
 
 
+module thermoblockcombo(){
+thermoblock();
+translate([40,0,0])thermoblock();
+}
 module imagingblock(){
  translate([-40,42,18-4])rotate([90,0,90])color("grey")import("arducam_case.stl"); 
  //color("lightblue")cube([22,(79*2),27]);
@@ -17,10 +22,281 @@ module imagingblock(){
  translate([-51,24,13])rotate([0,90,0])cylinder(r=5.5/2,h=30,$fn=30);
  translate([-51,24+45/2+0.4,22])rotate([0,90,0])cylinder(r=13.5/2,h=40,$fn=30);
  translate([-51,24+45,13])rotate([0,90,0])cylinder(r=5.5/2,h=30,$fn=30);
-
-
  }
 }
+
+module imagingblock_base(){
+ //translate([-40,42,18-4])rotate([90,0,90])color("grey")import("arducam_case.stl"); 
+ //color("lightblue")cube([22,(79*2),27]);
+ difference(){
+ color("coral")union(){
+ //translate([-3-33,-3+20,-3])cube([40+8,(15),24]);
+ //translate([-3-33,-3+65,-3])cube([40+8,(15),24]);
+ translate([-3-20,-3,-3])cube([40+8,((77*1.2)+8),40]);
+ //translate([-51+19,24+45/2+0.4,22])rotate([0,90,0])cylinder(r=(13.5+16)/2,h=40,$fn=30);
+ }
+ translate([-3-20+8,-3+7,-3+4])cube([40-8,((77*1.2))-6,40]);
+ translate([-3-20+8-10,-3+7+7,-3+4+8])cube([70-8-5,((77*1.2))-6-14,18+13]);
+ translate([20-22-60,1+7-2,23+8])rotate([0,90,0])cylinder(r=2.9/2,h=250,$fn=30);
+ translate([20-22-60,1+7+80,23+8])rotate([0,90,0])cylinder(r=2.9/2,h=250,$fn=30);
+ translate([0,0,-27]){
+ translate([20-22-60,1+7-2,23+8])rotate([0,90,0])cylinder(r=2.9/2,h=250,$fn=30);
+ translate([20-22-60,1+7+80,23+8])rotate([0,90,0])cylinder(r=2.9/2,h=250,$fn=30);
+ }
+ translate([20,1,23])cylinder(r=2.9/2,h=50,$fn=30);
+ translate([20,1+93,23])cylinder(r=2.9/2,h=50,$fn=30);
+ translate([-39,0,0]){
+ translate([20,1,23])cylinder(r=2.9/2,h=50,$fn=30);
+ translate([20,1+93,23])cylinder(r=2.9/2,h=50,$fn=30);
+ }
+ //cube([22,(79*2),27]);
+ for(i=[0:7]){
+ translate([11,14+i*9,23])cylinder(r=5.5/2,h=50,$fn=30);
+ }
+ translate([-51,24,13])rotate([0,90,0])cylinder(r=3.8/2,h=40,$fn=30);
+ translate([-51,24+45/2+0.4,22])rotate([0,90,0])cylinder(r=13.5/2,h=40,$fn=30);
+ translate([-51,24+45,13])rotate([0,90,0])cylinder(r=3.8/2,h=40,$fn=30);
+ }
+}
+
+
+
+
+module imagingblock_lid(){
+ //translate([-40,42,18-4])rotate([90,0,90])color("grey")import("arducam_case.stl"); 
+ //color("lightblue")cube([22,(79*2),27]);
+ difference(){
+ color("yellow")union(){
+ //translate([-3-33,-3+20,-3])cube([40+8,(15),24]);
+ //translate([-3-33,-3+65,-3])cube([40+8,(15),24]);
+ translate([-3-20-5,-3,-3+40])cube([40+8+10,((77*1.2)+8),5]);
+ translate([-3-20-5-50-35,-3+35,-3+40])cube([40+8+10+50+35,30,4]);
+ //translate([-51+19,24+45/2+0.4,22])rotate([0,90,0])cylinder(r=(13.5+16)/2,h=40,$fn=30);
+ }
+ translate([11-80-35,38,23])cylinder(r=4.7/2,h=50,$fn=30);
+ translate([11-80-35,37+18,23])cylinder(r=4.7/2,h=50,$fn=30);
+
+
+ //translate([-3-20+8,-3+7,-3+4])cube([40-8,((77*1.2))-6,40]);
+ //translate([-3-20+8-10,-3+7+7,-3+4+8])cube([70-8-5,((77*1.2))-6-14,18+13]);
+ translate([20-22-60,1+7-2,23+8])rotate([0,90,0])cylinder(r=2.9/2,h=250,$fn=30);
+ translate([20-22-60,1+7+80,23+8])rotate([0,90,0])cylinder(r=2.9/2,h=250,$fn=30);
+ translate([0,0,-27]){
+ translate([20-22-60,1+7-2,23+8])rotate([0,90,0])cylinder(r=2.9/2,h=250,$fn=30);
+ translate([20-22-60,1+7+80,23+8])rotate([0,90,0])cylinder(r=2.9/2,h=250,$fn=30);
+ }
+ translate([20,1,23])cylinder(r=3.9/2,h=50,$fn=30);
+ translate([20,1+93,23])cylinder(r=3.9/2,h=50,$fn=30);
+ translate([-39,0,0]){
+ translate([20,1,23])cylinder(r=3.9/2,h=50,$fn=30);
+ translate([20,1+93,23])cylinder(r=3.9/2,h=50,$fn=30);
+ }
+ //cube([22,(79*2),27]);
+ for(i=[0:7]){
+ translate([11,14+i*9,23])cylinder(r=5.5/2,h=50,$fn=30);
+ }
+ translate([-51,24,13])rotate([0,90,0])cylinder(r=3.8/2,h=40,$fn=30);
+ translate([-51,24+45/2+0.4,22])rotate([0,90,0])cylinder(r=13.5/2,h=40,$fn=30);
+ translate([-51,24+45,13])rotate([0,90,0])cylinder(r=3.8/2,h=40,$fn=30);
+ }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+module imagingblock_imagingside(){
+ //translate([-40,42,18-4])rotate([90,0,90])color("grey")import("arducam_case.stl"); 
+ //translate([-40,42,18-4])rotate([90,0,90])color("grey")arducam_case_rtPCR();
+ //color("lightblue")cube([22,(79*2),27]);
+ difference(){
+ color("pink")union(){
+ //translate([-3-33,-3+20,-3])cube([40+8,(15),24]);
+ //translate([-3-33,-3+65,-3])cube([40+8,(15),24]);
+ translate([-3-20-5,-3,-3])cube([5,((77*1.2)+8),40]);
+ //translate([-51+19,24+45/2+0.4,22])rotate([0,90,0])cylinder(r=(13.5+16)/2,h=40,$fn=30);
+ /*
+ for(i=[0:0]){
+ translate([-51+24,24+45/2+0.4+i+0.2,22-4.5])rotate([0,-90,0])cylinder(r=20/2,h=6,$fn=30);
+ }
+ */
+ translate([-51+24.4,24+45/2+0.4+0+0.2-25-11.,22+14])rotate([0,-180,-40])cube([6+1+12,6,16+15]);
+ translate([-51+24-10.5,24+45/2+0.4+0+0.2-25,22+14])rotate([0,-180,-0])cube([4+12+12,6,16+15]);
+ translate([-51+24+5,24+45/2+0.4+0+0.2-25+43.5+13,22+14])rotate([0,-180,40])cube([6+1+13,6,16+15]);
+ translate([-51+24-10.5,24+45/2+0.4+0+0.2-25+43.5,22+14])rotate([0,-180,0])cube([4+12+12,6,16+15]);
+ //translate([-51+24,24+45/2+0.4+0+0.2-25+43.5,22+14])rotate([0,-180,0])cube([6+1+8,6,16+15]);
+ translate([-51+24,24+45/2+0.4+0+0.2-25+43.5-40-3.5-8,22+14+1])rotate([0,-180,0])cube([6+1+7.5,49.5+17,3]);
+ translate([-51+24,24+45/2+0.4+0+0.2-25+43.5-40-3.5-8+8,22+14+1])rotate([0,-180,0])cube([6+1+7.5+12+12,49.5+17-17,3]);
+ translate([-51+24,24+45/2+0.4+0+0.2-25+43.5-40-3.5-8,22+14+1-32])rotate([0,-180,0])cube([6+1+7.5,49.5+17,3]);
+ translate([-51+24,24+45/2+0.4+0+0.2-25+43.5-40-3.5-8+8,22+14+1-32])rotate([0,-180,0])cube([6+1+7.5+12+12,49.5+17-17,3]);
+}
+ translate([-3-20-5+5,-3,-3])cube([5,((77*1.2)+8),40]);
+ //translate([-3-20+8,-3+7,-3+4])cube([40-8,((77*1.2))-6,40]);
+ //translate([-3-20+8-10,-3+7+7,-3+4+8])cube([70-8-5,((77*1.2))-6-14,18+13]);
+ translate([20-22-60,1+7-2,23+8])rotate([0,90,0])cylinder(r=3.9/2,h=250,$fn=30);
+ translate([20-22-60,1+7+80,23+8])rotate([0,90,0])cylinder(r=3.9/2,h=250,$fn=30);
+ translate([0,0,-27]){
+ translate([20-22-60,1+7-2,23+8])rotate([0,90,0])cylinder(r=3.9/2,h=250,$fn=30);
+ translate([20-22-60,1+7+80,23+8])rotate([0,90,0])cylinder(r=3.9/2,h=250,$fn=30);
+ }
+ //cube([22,(79*2),27]);
+ for(i=[0:7]){
+ translate([11,14+i*9,23])cylinder(r=5.5/2,h=50,$fn=30);
+ }
+ translate([-51-20,24+1,13])rotate([0,90,0])cylinder(r=3.8/2,h=140,$fn=30);
+ translate([-51-20,24+1,13+18])rotate([0,90,0])cylinder(r=3.8/2,h=140,$fn=30);
+ for(i=[-4:4]){
+ //translate([-51,24+45/2+0.4+i+0.2,22-4.5])rotate([0,90,0])cylinder(r=30/2,h=40,$fn=30);
+ translate([-51+22,24+45/2+0.4+i+0.2-5.5-9.5-7.5,22-4.5-13])cube([25+6,25+4.5+14.5,29.5]);
+ }
+ translate([-51-20,24+45-0.4,13])rotate([0,90,0])cylinder(r=3.8/2,h=140,$fn=30);
+ translate([-51-20,24+45-0.4,13+18])rotate([0,90,0])cylinder(r=3.8/2,h=140,$fn=30);
+ }
+}
+
+
+module imagingblock_lightingside_diffuser(){
+ difference(){
+ union(){
+ translate([-3-20-5-2,-3+15-2,-3+14])cube([5-2,((77*1.2)+8)-30+2,40-18]);
+ translate([-3-20-5-2,-3+15-2-5,-3+14])cube([5-2,((77*1.2)+8)-30+2+10,40-18-6]);
+ }
+ translate([-51,24,13])rotate([0,90,0])cylinder(r=3.8/2,h=40,$fn=30);
+ translate([-51,24,13+17.5])rotate([0,90,0])cylinder(r=3.8/2,h=40,$fn=30);
+ translate([-51,24+45,13+17.5])rotate([0,90,0])cylinder(r=3.8/2,h=40,$fn=30);
+ translate([-51,24+45,13])rotate([0,90,0])cylinder(r=3.8/2,h=40,$fn=30);
+ }
+}
+
+module imagingblock_lightingside(){
+ //translate([-40,42,18-4])rotate([90,0,90])color("grey")import("arducam_case.stl"); 
+ //color("lightblue")cube([22,(79*2),27]);
+ difference(){
+ color("lime")union(){
+ //translate([-3-33,-3+20,-3])cube([40+8,(15),24]);
+ //translate([-3-33,-3+65,-3])cube([40+8,(15),24]);
+ translate([-3-20-5,-3,-3])cube([5,((77*1.2)+8),40]);
+ //translate([-51+19,24+45/2+0.4,22])rotate([0,90,0])cylinder(r=(13.5+16)/2,h=40,$fn=30);
+ }
+ //translate([-3-20+8,-3+7,-3+4])cube([40-8,((77*1.2))-6,40]);
+ //translate([-3-20+8-10,-3+7+7,-3+4+8])cube([70-8-5,((77*1.2))-6-14,18+13]);
+ translate([20-22-60,1+7-2,23+8])rotate([0,90,0])cylinder(r=3.9/2,h=250,$fn=30);
+ translate([20-22-60,1+7+80,23+8])rotate([0,90,0])cylinder(r=3.9/2,h=250,$fn=30);
+ translate([0,0,-27]){
+ translate([20-22-60,1+7-2,23+8])rotate([0,90,0])cylinder(r=3.9/2,h=250,$fn=30);
+ translate([20-22-60,1+7+80,23+8])rotate([0,90,0])cylinder(r=3.9/2,h=250,$fn=30);
+ }
+ //cube([22,(79*2),27]);
+ for(i=[0:7]){
+ translate([11,14+i*9,23])cylinder(r=5.5/2,h=50,$fn=30);
+ }
+ translate([-51,24,13])rotate([0,90,0])cylinder(r=3.8/2,h=40,$fn=30);
+ translate([-51,24,13+17.5])rotate([0,90,0])cylinder(r=3.8/2,h=40,$fn=30);
+ for(i=[-34:34]){
+ #translate([-51,24+45/2+0.4+i,22])rotate([0,90,0])cylinder(r=8/2,h=40,$fn=30);
+ }
+ translate([-51,24+45,13+17.5])rotate([0,90,0])cylinder(r=3.8/2,h=40,$fn=30);
+ translate([-51,24+45,13])rotate([0,90,0])cylinder(r=3.8/2,h=40,$fn=30);
+ }
+}
+
+
+module imagingblock_lightingholder_led(){
+
+for(i=[0:17]){
+translate([0,i*4.7,0]){
+translate([-20,8,21])rotate([0,90,0])cylinder(r=4.2/2,h=7,$fn=30);
+translate([-20,8,21-1.3])rotate([0,90,0])cylinder(r=0.5/2,h=30,$fn=30);
+translate([-20,8,21-1.3+3])rotate([0,90,0])cylinder(r=0.5/2,h=30,$fn=30);
+}
+}
+}
+
+module imagingblock_lightingholder(){
+ //translate([-40,42,18-4])rotate([90,0,90])color("grey")import("arducam_case.stl"); 
+ //color("lightblue")cube([22,(79*2),27]);
+ difference(){
+ color("peru")union(){
+ //translate([-3-33,-3+20,-3])cube([40+8,(15),24]);
+ //translate([-3-33,-3+65,-3])cube([40+8,(15),24]);
+ //translate([-3-20-5,-3,-3])cube([5,((77*1.2)+8),40]);
+ translate([11-32,14+0*9-2,23-5-8-2])cube([9.9,70,25+4]);
+ translate([11-32,14+0*9-2-10,23-5-8-2+7])cube([9.9,70+22,12]);
+ //translate([-51+19,24+45/2+0.4,22])rotate([0,90,0])cylinder(r=(13.5+16)/2,h=40,$fn=30);
+ }
+ //translate([-3-20+8,-3+7,-3+4])cube([40-8,((77*1.2))-6,40]);
+ //translate([-3-20+8-10,-3+7+7,-3+4+8])cube([70-8-5,((77*1.2))-6-14,18+13]);
+ translate([20-22-60,1+7-2,23+8])rotate([0,90,0])cylinder(r=3.9/2,h=250,$fn=30);
+ translate([20-22-60,1+7+80,23+8])rotate([0,90,0])cylinder(r=3.9/2,h=250,$fn=30);
+ translate([0,0,-27]){
+ translate([20-22-60,1+7-2,23+8])rotate([0,90,0])cylinder(r=3.9/2,h=250,$fn=30);
+ translate([20-22-60,1+7+80,23+8])rotate([0,90,0])cylinder(r=3.9/2,h=250,$fn=30);
+ }
+ //cube([22,(79*2),27]);
+ /*
+ for(i=[0:7]){
+ translate([11,14+i*9,23])cylinder(r=5.5/2,h=50,$fn=30);
+ }
+ */
+ translate([11-32-3,14+0*9-2-10+3,23-5-8-2+7.5+1])cube([9.9,70+14+2,11-2]);
+ translate([-51,24,13])rotate([0,90,0])cylinder(r=4.8/2,h=40,$fn=30);
+ translate([-51,24,13+17.5])rotate([0,90,0])cylinder(r=4.8/2,h=40,$fn=30);
+ /*
+ for(i=[-25:25]){
+ translate([-51,24+45/2+0.4+i,22])rotate([0,90,0])cylinder(r=12/2,h=40,$fn=30);
+ }
+ */
+ //#translate([-5-13,24+45,13+17.5-9])rotate([90,0,0])cylinder(r=4.8/2,h=80,$fn=30);
+ translate([-51,24+45,13+17.5])rotate([0,90,0])cylinder(r=4.8/2,h=40,$fn=30);
+ translate([-51,24+45,13])rotate([0,90,0])cylinder(r=4.8/2,h=40,$fn=30);
+
+ for(i=[0:17]){
+ translate([0,i*4.7,0]){
+ translate([-20,8,21-1.3])rotate([0,90,0])cylinder(r=1/2,h=30,$fn=30);
+ translate([-20,8,21-1.3+3])rotate([0,90,0])cylinder(r=1/2,h=30,$fn=30);
+ }
+ }
+ }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -36,25 +312,55 @@ module plugblock(){
 }
 }
 
+module thermoblock_tslotconnect(){
+ //actual_thermoblock();
+ difference(){
+ union(){
+ //translate([-3,-3,-3])cube([20+8,77+8,24]);
+ translate([-9+40,-3-20,-3])cube([10,15+68-40,7]);
+ //translate([-9,-3+20,-3])cube([4+25,40,4]);
+ translate([-9-50,-3-20,-3])cube([10,15+68-40,7]);
+ translate([-9-50,-3-27,-3])cube([100,15+68-65,7]);
+ }
+ //cube([22,79,27]);
+ translate([-14,3+22,1+12])rotate([0,90,0])cylinder(r=4.8/2,h=22,$fn=30);
+ translate([-14,3+22+30,1+12])rotate([0,90,0])cylinder(r=4.8/2,h=22,$fn=30);
+ //translate([11,7+2.5+13,-10])cylinder(r=4.7/2,h=50,$fn=30);
+ //translate([11,7+2.5+14+13,-10])cylinder(r=4.7/2,h=50,$fn=30);
+ translate([11-20,7+2.5-31,-10])cylinder(r=4.7/2,h=50,$fn=30);
+ translate([11-60,7+2.5-31,-10])cylinder(r=4.7/2,h=50,$fn=30);
+ translate([11+17,7+2.5-31,-10])cylinder(r=4.7/2,h=50,$fn=30);
+ //translate([11,38+1.5,-5])cylinder(r=4/2,h=50,$fn=30);
+ translate([-14-50,3,1])rotate([0,90,0])cylinder(r=3.8/2,h=122,$fn=30);
+ translate([-14,74,1])rotate([0,90,0])cylinder(r=3.8/2,h=122,$fn=30);
+ /*
+ for(i=[-3:3]){
+ translate([11-i,20+1.5,-5])cylinder(r=5/2,h=50,$fn=30);
+ translate([11-i,55+1.5,-5])cylinder(r=5/2,h=50,$fn=30);
+ } 
+ */
+ }
+}
+
+
 
 
 
 
 
 module thermoblock(){
- actual_thermoblock();
+ //actual_thermoblock();
  difference(){
  union(){
  translate([-3,-3,-3])cube([20+8,77+8,24]);
- //translate([-9,-3,-3])cube([40,15,7]);
- //translate([-9,82-15,-3])cube([40,15,7]);
+ translate([-9,-3,-3])cube([40,15,7]);
+ translate([-9,82-15,-3])cube([40,15,7]);
  }
  cube([22,79,27]);
  translate([11,7+2.5,-5])cylinder(r=4/2,h=50,$fn=30);
  translate([11,38+1.5,-5])cylinder(r=4/2,h=50,$fn=30);
  translate([24,3,1])rotate([0,90,0])cylinder(r=2.8/2,h=50,$fn=30);
  translate([24,74,1])rotate([0,90,0])cylinder(r=2.8/2,h=50,$fn=30);
- 
  translate([-24,3,1])rotate([0,90,0])cylinder(r=2.8/2,h=22,$fn=30);
  translate([-24,74,1])rotate([0,90,0])cylinder(r=2.8/2,h=22,$fn=30);
  for(i=[-3:3]){

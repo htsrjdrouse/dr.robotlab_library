@@ -2,7 +2,7 @@
 //use<writescad/write.scad>
 include <tslot_lib.scad>
 
-
+//hdmi_rj45_usb_panel();
 
 //cube([200,200,200]);
 //bottom_bed_fix();
@@ -36,6 +36,47 @@ translate([62+120+50+i*50,14-3+35,-50])cylinder(r=2.8/2,h=200);
 }
 }
 */
+
+
+module hdmi_rj45_usb_panel(){
+difference(){
+union(){
+translate([0,0,400])rotate([-90,0,0])translate([92+34-53+10,410-10,-53-4])rotate([90,0,0])cube([117,43+8,3]);
+translate([0,1,0])color(""){
+}
+}
+translate([40,-58,0])for(i=[0,2]){
+translate([62+120+50+i*50-180,14-3,-50])cylinder(r=3.7/2,h=200);
+translate([62+120+50+i*50-180,14-3+35,-50])cylinder(r=3.7/2,h=200);
+}
+translate([10,0,0]){
+
+//usb port
+translate([77.5+17-1,20+3-76+1,0]){
+translate([15/2,20,0])translate([0,-14.6,-1])cylinder(r=3.7/2,h=10);
+translate([15/2,20,0])translate([0,0,-1])rotate([0,0,45])cylinder(r=16/2,h=10,$fn=4);
+translate([15/2,20,0])translate([0,14.6,-1])cylinder(r=3.7/2,h=10);
+}
+
+//usb port
+translate([77.5+17-1+25,20+3-76+1,0]){
+translate([15/2,20,0])translate([0,-14.6,-1])cylinder(r=3.7/2,h=10);
+translate([15/2,20,0])translate([0,0,-1])rotate([0,0,45])cylinder(r=16/2,h=10,$fn=4);
+translate([15/2,20,0])translate([0,14.6,-1])cylinder(r=3.7/2,h=10);
+}
+
+translate([77.5+17-1+50,20+3-76+1,0]){
+translate([15/2,20,0])translate([0,-14.6,-1])cylinder(r=3.7/2,h=10);
+translate([15/2,20,0])translate([0,0,-1])rotate([0,0,45])cylinder(r=16/2,h=10,$fn=4);
+translate([15/2,20,0])translate([0,14.6,-1])cylinder(r=3.7/2,h=10);
+}
+}
+}
+}
+
+
+
+
 
 
 module front_plate_x1_wider(){

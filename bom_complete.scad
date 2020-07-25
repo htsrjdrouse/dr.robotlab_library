@@ -16,7 +16,7 @@ include <PiZero.scad>
 
 
 
-//hdmi_rj45_usb_panel();
+hdmi_rj45_usb_panel();
 
 //multichannel_pipette_holder_linear_actuator_connect_cameramount();
 //microwell_plate_guide();
@@ -35,7 +35,7 @@ include <PiZero.scad>
 
 //mirror([0,1,0])import("files/endstop_y.stl");
 
-syringe_1ml_stack_1piece_multichannel_clamp();
+//syringe_1ml_stack_1piece_multichannel_clamp();
 
 //slider_wall();
 //shuttle_front_vertical_adjust_wider_slider_wall();

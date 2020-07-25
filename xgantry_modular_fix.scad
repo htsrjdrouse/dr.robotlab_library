@@ -4,7 +4,8 @@ include <printable_lm8uu.scad>
 include <multichannel_cameramount.scad>
 include <pipette_tip.scad>
 include <bom_zbed.scad>
-
+include <bom_cytokinetics.scad>
+include <Claw.scad>
 //sandwich_delrinwheel();
 //spring_stepper_linear_m8nut_coupler_lm8uu();
 
@@ -846,15 +847,19 @@ module iverntech_railsystem(z){
 translate([-96,221.5,250])rotate([0,180,180])stepperconduitclamp();
 translate([-80+19,159,322.8+13-z])rotate([90,0,-90]){
 multichannel_cameramount_tslot_part();
-multichannel_cameramount_tipholder();
+//translate([0,-0,10])multichannel_cameramount_tipholder();
+//translate([-33,33,73])rotate([0,-90,90])show_gripper();
+//gripper_paddles();
+
+
+/*
+*/
 }
 lm8uu_zdriver_assay(z);
 translate([-37.5,192.5,350-1])rotate([0,90,0])sandwich_delrinwheel();
-
 translate([-20+5-220-3+0.5,200+5-231.8,678.8])rotate([0,180,-90])slider_front_assy_multichannel_iverntech();
 translate([-20+5-3,200+5,340])rotate([-90,0,-90])shuttle_back_fast();
 translate([-25.5,20,320-3])rotate([0,180,0])iverntech_slider_xshuttle_connect();
-
 translate([-15.5,-10,0]){
 translate([0-30,250,269-5])rotate([90,0,0])tslot20(100);
 translate([0-30-20,250,269-5])rotate([90,0,0])tslot20(100);
@@ -869,6 +874,47 @@ translate([-27/2+12/2-42-7.5+12,150+20,310-6+5-6])difference(){
 /*
 */
 }
+
+module iverntech_railsystem_rfid(z){
+
+translate([-96,221.5,250])rotate([0,180,180])stepperconduitclamp();
+
+translate([-80+19,159,322.8+13-z])rotate([90,0,-90]){
+multichannel_cameramount_tslot_part();
+//translate([-90,0,100])rotate([0,90,0])tslot20(100);
+//translate([10,50,40])rotate([0,0,90])import("cytokinetics/rfid_holder.stl");
+translate([5.8,45,40])rotate([0,0,90])rfid_holder();
+}
+lm8uu_zdriver_assay(z);
+translate([-37.5,192.5,350-1])rotate([0,90,0])sandwich_delrinwheel();
+translate([-20+5-220-3+0.5,200+5-231.8,678.8])rotate([0,180,-90])slider_front_assy_multichannel_iverntech();
+translate([-20+5-3,200+5,340])rotate([-90,0,-90])shuttle_back_fast();
+translate([-25.5,20,320-3])rotate([0,180,0])iverntech_slider_xshuttle_connect();
+translate([-15.5,-10,0]){
+translate([0-30,250,269-5])rotate([90,0,0])tslot20(100);
+translate([0-30-20,250,269-5])rotate([90,0,0])tslot20(100);
+}
+translate([-27/2+12/2-42-7.5+12,150+20,310-6+5-6])difference(){
+ color("silver")cube([27,45,9]);
+ translate([27/2-10,45/2-10,-5-20])cylinder(r=3.7/2,h=60);
+ translate([27/2+10,45/2-10,-5-20])cylinder(r=3.7/2,h=60);
+ translate([27/2-10,45/2+10,-5-20])cylinder(r=3.7/2,h=60);
+ translate([27/2+10,45/2+10,-5-20])cylinder(r=3.7/2,h=60);
+}
+/*
+*/
+}
+
+
+
+
+
+
+
+
+
+
+
 
 module multi_iverntech_railsystem(){
 //translate([-96,221.5,250])rotate([0,180,180])stepperconduitclamp();

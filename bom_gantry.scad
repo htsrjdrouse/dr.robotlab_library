@@ -10,11 +10,40 @@ include<bom_multichannel_syringe.scad>
 include<stopcock_valve.scad>
 include<arducam-raspi.scad>
 include<bom_corexy_understack.scad>
+include<gripper_platecrane/microwell_gripper.scad>
+
+
+ //translate([82+50,97-60+53,190])rotate([0,0,90])imagingblock_lightingholder();
+ //translate([82+50,97-60+53,190])rotate([0,0,90])imagingblock_lightingholder_led();
+ //translate([82+50,97-60+53,190])rotate([0,0,90])imagingblock_lightingside();
+ //translate([82+50,97-60+53,190])rotate([0,0,90])color("blue")imagingblock_lightingside_diffuser();
+
+
+ //translate([82+50,97-60,190])rotate([0,0,90])imagingblock_base();
 /*
+ translate([82+50,97-60,190])rotate([0,0,90])imagingblock_lid();
 */
+ translate([82+50,97-60,190-3.3])rotate([0,0,90])translate([-40,42,18-4])rotate([90,0,90])color("grey")arducam_case_rtPCR();
+ //translate([82+50,97-60+15,190-3.3])rotate([0,0,90])translate([-40,42,18-4])rotate([90,0,90])color("grey")arducam_case_rtPCR_filter();
+ //translate([82+50-5,97-60+6+13,190-3.3+6+2])rotate([0,0,90])translate([-40,42,18-4])rotate([90,0,90])color("yellow")cylinder(r=26/2,h=5,$fn=30);
+ translate([82+50,97-60+31,190])rotate([0,0,90])imagingblock_imagingside();
+
+//
+//heater();
+//thermoblock();
+//translate([40,0,0])thermoblock();
+//translate([40,0,0])thermoblock_tslotconnect();
+//translate([-40,59,2])rotate([0,90,0])tslot20(150);
+//translate([40,59,-3])cube([30,18,4]);
+//imagingblock_lid();
+
+//translate([50-10-20+x+121.5,200-14+y-100-10,279])rotate([180,90,0])
+//wheel_camera_assay();
+
 /*
 */
 tcl = [155/255,155/255,155/255];
+
 thcl = [155/255,155/255,155/255];
 
 //x = 66-225-10+21-11.5;
@@ -22,7 +51,7 @@ thcl = [155/255,155/255,155/255];
 //x = 66-149-43+300-6;
 //x = 129;
 //x = -32+99+63;
-x = -32;
+x = -172;
 //x = 66-149-43+200-8;
 //x = 66-149-43+120-8;
 //x = 66-149-43+120-8-100-40;
@@ -33,11 +62,15 @@ y = 20.5+30;
 //y = -68-9;
 z =  28;
 //tz = 28;
-tz = 5;
+tz = -35;
 echo("testing");
 echo(y);
 
 
+
+//multichannel_cameramount_tslot_part();
+
+//show_gripper();
 
 /*
 multichannel_syringe_assy();
@@ -46,29 +79,35 @@ translate([-126,-11.4,97])rotate([-90,0,0])syringe_endstop_flag();
 */
 /*
 translate([0,0,-29.5])xymotor_assy_wider();
+outside_frame_wider(tcl,thcl,x,y);
+xshuttle_assy_wider(x,y);
+*/
+//translate([50-10-20+x,200-14+30+y,700-50])rotate([180,0,90])iverntech_railsystem(tz);
+//translate([50-10-20+x,200-14+30+y,700-50])rotate([180,0,90])gripper_assembly_paddles();
+/*
+translate([50-10-20+x,200-14+30+y,700-50])rotate([180,0,90])iverntech_railsystem_rfid(tz);
 //syringe_endstop_flag();
 //translate([-126,60,21])rotate([0,0,0])endstop_multichannel_syringe();
-//translate([0,0,z-40])plateobjects_nomastermix_nobox(z);
 */
 /*
-*/
+//translate([50-10-20+x+121.5,200-14+y-100-10,279])rotate([180,90,0])wheel_camera_assay(tz);
 XYMotorMount_corexystack(x+5,y-80);
-translate([50-10-20+x+121.5,200-14+y-100-10,279])rotate([180,90,0])wheel_camera_assay(tz);
 translate([0,0,-24])corexy_beltsetup_wider(x,y);
-xshuttle_assy_wider(x,y);
 conduit_tubes(x,y,(tz+40));
 microfluidics_set();
 //translate([x-81,y-90,tz])rotate([0,0,0])pipette_tips();
-outside_frame_wider(tcl,thcl,x,y);
-translate([50-10-20+x,200-14+30+y,700-50])rotate([180,0,90])iverntech_railsystem(tz);
 gantry_shelves_wider();
 //washstation();
-//processingplateslideobjects(z);
-//fabricationplateslideobjects(z);
-imagingplateslideobjects(z);
+//imagingplateslideobjects(z);
+processingplateslideobjects(z);
+fabricationplateslideobjects(z);
+*/
+/*
+//translate([0,0,z-40])plateobjects_nomastermix_nobox(z);
+translate([0,0,z-40])plateobjects(z);
 translate([-70,-25+50,z])zbed_multichannel_setup_wider(z);
 translate([0,0,-12])zbed_smz_wider_nomove();
-
+*/
 
 
 /*
@@ -265,14 +304,17 @@ module avid_slides_nogaskets(){
 
 
 module plateobjects(z){
- for(i=[0:1]){
+ for(i=[0:0]){
  translate([i*(85*2),0,0]){
  translate([-24,-25+214-85,160])rotate([0,0,0])tipbox_model(z,0);
+ /*
  translate([1,0,0]){
  translate([42.5+85,-25+214,z+144+40])rotate([0,0,90])import("96_microwell_plate.STL.stl");
  translate([-24+85,-25+214-85,160])rotate([0,0,0])mastermix_model(z);
  }
+ */
  }
+ /*
  if(i==1){
   translate([i*(85*2),-120,0]){
  translate([-24,-25+214-85,160])rotate([0,0,0])tipbox_model(z,0);
@@ -282,7 +324,9 @@ module plateobjects(z){
  }
  }
  }
+ */
  }
+ /*
  translate([2*(85*2),0,0])translate([-24,-25+214-85,160])rotate([0,0,0])tipbox_model(z,0);
  translate([2*(85*2)-85,-120,0])translate([1,0,0]){
  translate([42.5+85,-25+214,z+144+40])rotate([0,0,90])import("96_microwell_plate.STL.stl");
@@ -292,6 +336,7 @@ module plateobjects(z){
  translate([82+86,97-30,190])rotate([0,0,90])thermoblock();
  translate([82+86,97,190])rotate([0,0,90])plugblock();
  translate([82+50,97-60,190])rotate([0,0,90])imagingblock();
+ */
 }
 
 module plateobjects_nomastermix(z){

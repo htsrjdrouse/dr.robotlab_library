@@ -1,0 +1,1 @@
+Linear gear gripper by njosol on Thingiverse: https://www.thingiverse.com/thing:4171351

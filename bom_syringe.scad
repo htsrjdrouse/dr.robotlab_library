@@ -10,7 +10,7 @@ include <dr.robotlab_repstrap.scad>
 
 //syringe_endstop_flag();
 
-endstop_multichannel_syringe();
+//endstop_multichannel_syringe();
 
 
 

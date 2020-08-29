@@ -2,7 +2,9 @@
 //translate([23,550,8.5])rotate([90,0,0])tslot20(400);
 
 //smallsyringe_valvesupportmodule_plate_4valve_B();
-smallsyringe_valvesupportmodule_plate_4valve_A();
+//smallsyringe_valvesupportmodule_plate_4valve_A();
+
+smallsyringe_valvesupportmodule_plate_4valve();
 
 module smallsyringe_valvesupportmodule_plate_4valve_A(){
 difference(){
@@ -27,15 +29,15 @@ module smallsyringe_valvesupportmodule_plate_4valve(){
 difference(){union(){
 for(i=[0:3]){
 color("")translate([52,190+(i*72),63])rotate([-90,90,0])smallsyringe_valvesupportmodule_plate_pre4();
-color("")translate([52-60.5,190+85+(i*72),33.7])cube([35,5,5]);
+color("")translate([52-60.5,190+85+(i*72),33.7])#cube([35,5,5]);
 }
-color("")translate([52-60.5+35,190+25,33.7])cube([20,270,5]);
+color("")translate([52-60.5+35,190+25,33.7])cube([20+10,270,5]);
 }
-translate([38,240,0])#cylinder(r=5.7/2,h=300,$fn=30);
-translate([38,240+50,0])#cylinder(r=5.7/2,h=300,$fn=30);
-translate([38,240+100,0])#cylinder(r=5.7/2,h=300,$fn=30);
-translate([38,240+150,0])#cylinder(r=5.7/2,h=300,$fn=30);
-translate([38,240+200,0])#cylinder(r=5.7/2,h=300,$fn=30);
+translate([38+10,240,0])cylinder(r=5.7/2,h=300,$fn=30);
+translate([38+10,240+50,0])cylinder(r=5.7/2,h=300,$fn=30);
+translate([38+10,240+100,0])cylinder(r=5.7/2,h=300,$fn=30);
+translate([38+10,240+150,0])#cylinder(r=5.7/2,h=300,$fn=30);
+translate([38+10,240+200,0])#cylinder(r=5.7/2,h=300,$fn=30);
 }
 //}
 }

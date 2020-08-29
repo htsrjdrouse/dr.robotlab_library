@@ -11,27 +11,176 @@ include<stopcock_valve.scad>
 include<arducam-raspi.scad>
 include<bom_corexy_understack.scad>
 include<gripper_platecrane/microwell_gripper.scad>
+include<labautobox.scad>
+
+//terminalblock_outside();
+//terminalblock_inside();
 
 
+//microfluidics_set();
+terminalfrontpanel();
+
+//labautobox();
+//labautobox_shelf_c();
+//labautobox_shelf_support();
+
+//multichannel_syringe_to_labautobox_connect();
+//endstop_multichannel_syringe();
+
+module atx_24pin_power_socket(){
+atx_24pin_socket();
+translate([-20,10,0])atx_power_socket();
+translate([-15,28,0])#cube([66.5,10,3]);
+translate([-15,0,0])#cube([66.5,10,3]);
+translate([-15,-22,0])#cube([13.2,22,3]);
+translate([28,-22,0])#cube([23.2,22,3]);
+translate([-15,-26,0])#cube([66.5,10,3]);
+translate([48,-26,0])#cube([4,22+42,3]);
+}
+module atx_24pin_socket(){
+difference(){
+import("BackPanel09.stl");
+translate([-80,-34,-10])cube([300,43,30]);
+translate([-80,-34,-10])cube([65,80,30]);
+}
+}
+ //translate([82+50,97-60+53,190])rotate([0,0,90])imagingblock_lightingholder();
+
+
+module atx_power_socket(){
+difference(){
+import("BackPanel09.stl");
+translate([-80,-8,-10])cube([300,40,30]);
+translate([-80,-34,-10])cube([98,80,30]);
+}
+}
  //translate([82+50,97-60+53,190])rotate([0,0,90])imagingblock_lightingholder();
  //translate([82+50,97-60+53,190])rotate([0,0,90])imagingblock_lightingholder_led();
  //translate([82+50,97-60+53,190])rotate([0,0,90])imagingblock_lightingside();
  //translate([82+50,97-60+53,190])rotate([0,0,90])color("blue")imagingblock_lightingside_diffuser();
 
+//washbowl_8tip_drypad();
+//washbowl_8tip_drypad_top();
 
  //translate([82+50,97-60,190])rotate([0,0,90])imagingblock_base();
 /*
  translate([82+50,97-60,190])rotate([0,0,90])imagingblock_lid();
 */
- translate([82+50,97-60,190-3.3])rotate([0,0,90])translate([-40,42,18-4])rotate([90,0,90])color("grey")arducam_case_rtPCR();
+// translate([82+50,97-60,190-3.3])rotate([0,0,90])translate([-40,42,18-4])rotate([90,0,90])color("grey")arducam_case_rtPCR();
  //translate([82+50,97-60+15,190-3.3])rotate([0,0,90])translate([-40,42,18-4])rotate([90,0,90])color("grey")arducam_case_rtPCR_filter();
  //translate([82+50-5,97-60+6+13,190-3.3+6+2])rotate([0,0,90])translate([-40,42,18-4])rotate([90,0,90])color("yellow")cylinder(r=26/2,h=5,$fn=30);
- translate([82+50,97-60+31,190])rotate([0,0,90])imagingblock_imagingside();
+// translate([82+50,97-60+31,190])rotate([0,0,90])imagingblock_imagingside();
 
+
+//actual_thermoblock_metalmount();
+//translate([25-47+25,0,0])mirror([1,0,0])actual_thermoblock_metalmount();
+
+
+//translate([8,13,0])rearm_microfluidics_mount();
+//translate([8,13,-10])microfluidics_power_mount();
+//translate([-30,-50,0])import("/Users/richard/Downloads/Bottom.stl");
+module rearm_microfluidics_mount(){
+difference(){
+union(){
+translate([0,-20,0])color("pink")cube([108,70+25,3]);
+translate([0,-20,0])color("pink")cube([108,10,14]);
+mdia = 9;
+translate([7.8,2.5+6,0])cylinder(r=mdia/2,h=10,$fn=30);
+translate([7.8+80,2.5+6-4.4,0])cylinder(r=mdia/2,h=10,$fn=30);
+translate([7.8+80,2.5+6-4.4+57,0])cylinder(r=mdia/2,h=10,$fn=30);
+translate([7.8+16,2.5+6-4.4+57,0])cylinder(r=mdia/2,h=10,$fn=30);
+mdia = 9;
+translate([7.8,2.5+6,0])cylinder(r=mdia/2,h=10,$fn=30);
+translate([7.8+80,2.5+6-4.4,0])cylinder(r=mdia/2,h=10,$fn=30);
+translate([7.8+80,2.5+6-4.4+57,0])cylinder(r=mdia/2,h=10,$fn=30);
+translate([7.8+16,2.5+6-4.4+57,0])cylinder(r=mdia/2,h=10,$fn=30);
+}
+
+translate([0+25,-20+20,-2])color("pink")cube([108-50,70+20-40,6]);
+dia = 2.9;
+translate([25,2.5+6,8])rotate([90,0,0])cylinder(r=dia/2,h=40,$fn=30);
+translate([25+50,2.5+6,8])rotate([90,0,0])cylinder(r=dia/2,h=40,$fn=30);
+translate([7.8,2.5+6,-4])#cylinder(r=dia/2,h=40,$fn=30);
+translate([7.8+80,2.5+6-4.4,-4])#cylinder(r=dia/2,h=40,$fn=30);
+translate([7.8+80,2.5+6-4.4+57,-4])#cylinder(r=dia/2,h=40,$fn=30);
+translate([7.8+16,2.5+6-4.4+57,-4])#cylinder(r=dia/2,h=40,$fn=30);
+
+
+cdia = 2.4;
+translate([5,0,0]){
+translate([5,0-20+4,-38])rotate([0,0,0])cylinder(r=cdia/2,h=140,$fn=30);
+translate([5+87,0-20+4,-38])rotate([0,0,0])cylinder(r=cdia/2,h=140,$fn=30);
+translate([27,0-20+96-3,-38])rotate([0,0,0])cylinder(r=cdia/2,h=140,$fn=30);
+translate([71,0-20+96-5,-38])rotate([0,0,0])cylinder(r=cdia/2,h=140,$fn=30);
+}
+
+
+
+}
+}
+
+module microfluidics_power_mount(){
+difference(){
+union(){
+translate([0,-20,0])color("lime")cube([108,70+25,3]);
+//translate([0,-20,0])color("pink")cube([108,10,14]);
+/*
+mdia = 9;
+translate([7.8,2.5+6,0])cylinder(r=mdia/2,h=10,$fn=30);
+translate([7.8+80,2.5+6-4.4,0])cylinder(r=mdia/2,h=10,$fn=30);
+translate([7.8+80,2.5+6-4.4+57,0])cylinder(r=mdia/2,h=10,$fn=30);
+translate([7.8+16,2.5+6-4.4+57,0])cylinder(r=mdia/2,h=10,$fn=30);
+*/
+}
+
+translate([0+25,-20+20,-2])color("pink")cube([108-50,70+20-40,6]);
+/*
+dia = 2.8;
+translate([7.8,2.5+6,-4])cylinder(r=dia/2,h=40,$fn=30);
+translate([7.8+80,2.5+6-4.4,-4])cylinder(r=dia/2,h=40,$fn=30);
+translate([7.8+80,2.5+6-4.4+57,-4])cylinder(r=dia/2,h=40,$fn=30);
+translate([7.8+16,2.5+6-4.4+57,-4])cylinder(r=dia/2,h=40,$fn=30);
+*/
+
+cdia = 2.7;
+translate([5,0,0]){
+#translate([4,0-20+4,-38])rotate([0,0,0])cylinder(r=cdia/2,h=140,$fn=30);
+#translate([99-5,0-20+98.5-5,-38])rotate([0,0,0])cylinder(r=cdia/2,h=140,$fn=30);
+translate([5+87,0-20+4,-38])rotate([0,0,0])cylinder(r=cdia/2,h=140,$fn=30);
+translate([27,0-20+96-3,-38])rotate([0,0,0])cylinder(r=cdia/2,h=140,$fn=30);
+translate([71,0-20+96-5,-38])rotate([0,0,0])cylinder(r=cdia/2,h=140,$fn=30);
+}
+}
+
+
+
+}
+
+module actual_thermoblock_metalmount(){
+difference(){
+union(){
+translate([5,0,0])cube([25-5,100,2]);
+translate([5,27,0])cube([10,50,13]);
+}
+translate([12.5,20,-3]){
+translate([-20,20,12])rotate([0,90,0])cylinder(r=2.8/2,h=50,$fn=30);
+translate([-20,15+30,12])rotate([0,90,0])cylinder(r=2.8/2,h=50,$fn=30);
+cylinder(r=5/2,h=50,$fn=30);
+translate([0,67,0])cylinder(r=5/2,h=50,$fn=30);
+}
+}
+}
+/*
+*/
+//thermoblock_lid();
+//translate([-1.5,-2,0])thermoblock();
+//translate([-1.5+55,-2,0])thermoblock();
+//translate([-10.5,-5,-7])thermoblock_plate();
 //
 //heater();
 //thermoblock();
-//translate([40,0,0])thermoblock();
+//projection(cut=false)
+//translate([0,0,2])rotate([0,0,0])actual_thermoblock();
 //translate([40,0,0])thermoblock_tslotconnect();
 //translate([-40,59,2])rotate([0,90,0])tslot20(150);
 //translate([40,59,-3])cube([30,18,4]);

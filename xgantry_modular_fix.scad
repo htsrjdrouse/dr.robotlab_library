@@ -1022,7 +1022,9 @@ translate([40+30-52,1.5,-0.0])cube([28,18,4]);
 }
 translate([60,-114,0])rotate([0,0,90]){
 translate([40.75+80,4.5,-0.2])#cylinder(r=2.9/2,h=30,$fn=20);
-translate([60.75+80,4.5,-0.2])#cylinder(r=2.9/2,h=30,$fn=20);
+translate([45.75+80,4.5,-0.2])#cylinder(r=2.3/2,h=30,$fn=20);
+translate([55.75+80,4.5,-0.2])#cylinder(r=2.3/2,h=30,$fn=20);
+translate([60.75+80,4.5,-0.2])cylinder(r=2.9/2,h=30,$fn=20);
 }
 translate([40.9,25,-0.2])cylinder(r=4.7/2,h=30,$fn=30);
 translate([40.9,10,-0.2])#cylinder(r=4.7/2,h=30,$fn=30);

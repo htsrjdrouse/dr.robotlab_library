@@ -84,7 +84,6 @@ translate([-160+20-84+70,-117+272-13,160])rotate([0,0,0])color("lightblue")cylin
 translate([-160+20-84+70,-117+272-13,360])rotate([0,-90,0])color("lightblue")cylinder(r=5.5,h=195,$fn=30);
 translate([-160+20-84+70-195,-117+272-10,360])rotate([90,0,0])color("lightblue")cylinder(r=5.5,h=143,$fn=30);
 translate([-160+20-84+70-195,-117+272-13-140,230])rotate([0,0,0])color("lightblue")cylinder(r=5.5,h=134,$fn=30);
-
 }
 
 
@@ -322,6 +321,19 @@ translate([307,440,150])tslot20(200);
 translate([370,494,-100])rotate([90,0,-90])import("smallsyringe_valvesupportmodule_plate_4valve.stl");
 }
 }
+
+module valve_assy_4set_noslot(){
+translate([0,-10,0]){
+for(i=[0:3]){
+translate([297,494,601-70*i])rotate([-90,0,-90])valve_assy();
+}
+//translate([307,440,150])tslot20(200);
+translate([370,494,-100])rotate([90,0,-90])import("smallsyringe_valvesupportmodule_plate_4valve.stl");
+}
+}
+
+
+
 
 
 

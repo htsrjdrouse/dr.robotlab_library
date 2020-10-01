@@ -108,17 +108,17 @@ module heater(){
  difference(){
  union(){
  //cube([18,76,26]);
- //translate([0,0,26])#cube([18,76,4]);
- translate([0,0,-4])#cube([18,76,4]);
+ //translate([0,0,26])cube([18,76,4]);
+ translate([0,0,-4])cube([18,76,4]);
  }
  for(i=[0:7]){
- translate([6,6.5+i*9,6.1])#cylinder(r=4/2,h=20+10,$fn=30);
+ translate([6,6.5+i*9,6.1])cylinder(r=4/2,h=20+10,$fn=30);
  }
- translate([10,20,-0.1-4])#cylinder(r=6.5/2,h=26,$fn=30);
- translate([10,20+36,-0.1-4])#cylinder(r=6.5/2,h=26,$fn=30);
- translate([10,20+18,-0.1-4])#cylinder(r=2.4/2,h=26,$fn=30);
- translate([14,12,-0.1-4])#cylinder(r=2.4/2,h=35,$fn=30);
- translate([14,76-12,-0.1-4])#cylinder(r=2.4/2,h=35,$fn=30);
+ translate([10,20,-0.1-4])cylinder(r=6.5/2,h=26,$fn=30);
+ translate([10,20+36,-0.1-4])cylinder(r=6.5/2,h=26,$fn=30);
+ translate([10,20+18,-0.1-4])cylinder(r=2.4/2,h=26,$fn=30);
+ translate([14,12,-0.1-4])cylinder(r=2.4/2,h=35,$fn=30);
+ translate([14,76-12,-0.1-4])cylinder(r=2.4/2,h=35,$fn=30);
 
  }
 }
@@ -197,7 +197,7 @@ color("silver")translate([49.7+11,31+33+10+1,25+40-5])rotate([90,0,0])cylinder(r
 //color("green")translate([49.7+11,31+33+10-50-3+10,25+40-5])rotate([90,0,0])lm8uu_pla();
 //lm8uu_zslider();
 }
-translate([-100+50+6.5-10+10,154+76.5-1,250-5+30-z])rotate([-90,0,90])spring_stepper_linear_m8nut_coupler_lm8uu();
+translate([-100+50+6.5-10+10,154+76.5-1,250-5+30-z])rotate([-90,0,90])translate([0,0,0])spring_stepper_linear_m8nut_coupler_lm8uu();
 translate([0,-1,0]){
 translate([-45,232.5,282.5])rotate([0,0,180]){
 motormount_centered();
@@ -883,7 +883,7 @@ translate([-80+19,159,322.8+13-z])rotate([90,0,-90]){
 multichannel_cameramount_tslot_part();
 //translate([-90,0,100])rotate([0,90,0])tslot20(100);
 //translate([10,50,40])rotate([0,0,90])import("cytokinetics/rfid_holder.stl");
-translate([5.8,45,40])rotate([0,0,90])rfid_holder();
+//translate([5.8,45,40])rotate([0,0,90])rfid_holder();
 }
 lm8uu_zdriver_assay(z);
 translate([-37.5,192.5,350-1])rotate([0,90,0])sandwich_delrinwheel();
@@ -916,13 +916,13 @@ translate([-27/2+12/2-42-7.5+12,150+20,310-6+5-6])difference(){
 
 
 
-module multi_iverntech_railsystem(){
-//translate([-96,221.5,250])rotate([0,180,180])stepperconduitclamp();
+module multi_iverntech_railsystem(z){
+translate([-96,221.5,250])rotate([0,180,180])stepperconduitclamp();
 translate([-80+19,159,322.8+13])rotate([90,0,-90]){
 multichannel_cameramount_tslot_part();
 multichannel_cameramount_tipholder();
 }
-lm8uu_zdriver_assay();
+lm8uu_zdriver_assay(z);
 /*
 translate([-37.5,192.5,350-1])rotate([0,90,0])sandwich_delrinwheel();
 
@@ -945,9 +945,6 @@ translate([-27/2+12/2-42-7.5+12,150+20,310-6+5-6])difference(){
  translate([27/2-10,45/2+10,-5-20])cylinder(r=3.7/2,h=60);
  translate([27/2+10,45/2+10,-5-20])cylinder(r=3.7/2,h=60);
 }
-
-
-
 */
 
 translate([-15.5,-10,0]){
@@ -1021,14 +1018,14 @@ translate([40+30-52,1.5,-0.0])cube([28,18,4]);
 //translate([40.9,12.5,0])rotate([0,0,45])cylinder(r=8.7/2,h=8,$fn=4);
 }
 translate([60,-114,0])rotate([0,0,90]){
-translate([40.75+80,4.5,-0.2])#cylinder(r=2.9/2,h=30,$fn=20);
-translate([45.75+80,4.5,-0.2])#cylinder(r=2.3/2,h=30,$fn=20);
-translate([55.75+80,4.5,-0.2])#cylinder(r=2.3/2,h=30,$fn=20);
+translate([40.75+80,4.5,-0.2])cylinder(r=2.9/2,h=30,$fn=20);
+translate([45.75+80,4.5,-0.2])cylinder(r=2.3/2,h=30,$fn=20);
+translate([55.75+80,4.5,-0.2])cylinder(r=2.3/2,h=30,$fn=20);
 translate([60.75+80,4.5,-0.2])cylinder(r=2.9/2,h=30,$fn=20);
 }
 translate([40.9,25,-0.2])cylinder(r=4.7/2,h=30,$fn=30);
-translate([40.9,10,-0.2])#cylinder(r=4.7/2,h=30,$fn=30);
-translate([40.9-15,10,-0.2])#cylinder(r=4.7/2,h=30,$fn=30);
+translate([40.9,10,-0.2])cylinder(r=4.7/2,h=30,$fn=30);
+translate([40.9-15,10,-0.2])cylinder(r=4.7/2,h=30,$fn=30);
 //translate([50.,12,-0.2])cube([120,20,20]);
 }
 }

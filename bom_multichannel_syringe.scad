@@ -175,71 +175,118 @@ translate([-115+190+100,365+141-24,295-42-14+115-144-69])rotate([0,0,0])color("l
 }
 
 
+module wash_waste_tubing(){
 
+
+//water wash
+translate([8,30,11])color("lightblue")rotate([180-60,0,0])cylinder(r=7/2,h=330,$fn=30);
+
+
+//waste collection
+translate([8+13,30+40,11])color("lightblue")rotate([180,0,0])cylinder(r=7/2,h=50,$fn=30);
+translate([8+13,30+40+120,11])color("lightblue")rotate([180,0,0])cylinder(r=7/2,h=50,$fn=30);
+translate([8+13,30+40-3,11-50])color("lightblue")rotate([180+90,0,0])cylinder(r=7/2,h=127,$fn=30);
+translate([8+13,30+40-3,11-50])color("lightblue")rotate([180+90,0,0])cylinder(r=7/2,h=126,$fn=30);
+translate([8+13,30+40+63,11-50])color("lightblue")rotate([180,0,0])cylinder(r=7/2,h=137,$fn=30);
+translate([8+13,30+40+63,11-50-133])color("lightblue")rotate([180-90,0,0])cylinder(r=7/2,h=430,$fn=30);
+
+
+//bleach wash
+translate([8+13-12,30+40-3+140,11-2])color("lightblue")rotate([180+90,0,0])cylinder(r=7/2,h=30,$fn=30);
+translate([8+13-12,30+40-3+140+27,11-2])color("lightblue")rotate([180,0,0])cylinder(r=7/2,h=200,$fn=30);
+translate([8+13-12,30+40-3+140+27,11-2-197])color("lightblue")rotate([180-90,0,-29])cylinder(r=7/2,h=595,$fn=30);
+
+}
+
+
+
+module valves_to_pipettes_bundle(){
+translate([-113,415-4,-60+2])rotate([90,0,0])color("lightblue")cylinder(r=6,h=450,$fn=30);
+for(i=[-4:4]){
+translate([-160+435+170-455+i/2,-117+600-75+i/2,386-8+10-65])rotate([180,-15,180])color("lightblue")cylinder(r=3/2,h=400,$fn=30);
+}
+}
 
 module valves_to_pipettes(){
 
 //valve 1
+/*
 translate([-160+435+100,-117+600,386-8])rotate([0,0,0])color("lightblue")cylinder(r=3/2,h=10,$fn=30);
 translate([-160+435+100,-117+600,386-8+10])rotate([0,90,0])color("lightblue")cylinder(r=3/2,h=70,$fn=30);
 translate([-160+435+170,-117+600,386-8+10-365])rotate([0,0,0])color("lightblue")cylinder(r=3/2,h=70+295,$fn=30);
 translate([-160+435+170,-117+600,386-8+10-365])rotate([0,-90,0])color("lightblue")cylinder(r=3/2,h=457,$fn=30);
 translate([-160+435+170-455,-117+600,386-8+10-365])rotate([90,0,0])color("lightblue")cylinder(r=3/2,h=75,$fn=30);
-translate([-160+435+170-455,-117+600-75,386-8+10-365])rotate([0,0,0])color("lightblue")cylinder(r=3/2,h=270,$fn=30);
-//valve 2
+*/
+//translate([-160+435+170-455,-117+600-75,386-8+10-365])rotate([0,0,0])color("lightblue")cylinder(r=3/2,h=270,$fn=30);
+
+/*
 translate([-160+435+100,-117+600,386-8-70])rotate([0,0,0])color("lightblue")cylinder(r=3/2,h=10,$fn=30);
 translate([-160+435+100,-117+600,386-8+10-70])rotate([0,90,0])color("lightblue")cylinder(r=3/2,h=65,$fn=30);
 translate([-160+435+165,-117+600,386-8+10-362])rotate([0,0,0])color("lightblue")cylinder(r=3/2,h=70+222,$fn=30);
 translate([-160+435+165,-117+600,386-8+10-360])rotate([0,-90,0])color("lightblue")cylinder(r=3/2,h=448,$fn=30);
 translate([-160+435+170-450,-117+600-0,386-8+10-360])rotate([90,0,0])color("lightblue")cylinder(r=3/2,h=75,$fn=30);
+*/
 translate([-160+435+175-455,-117+600-75,386-8+10-361])rotate([0,0,0])color("lightblue")cylinder(r=3/2,h=273,$fn=30);
 //valve 3
+/*
 translate([-160+435+100,-117+600,386-8-70-70])rotate([0,0,0])color("lightblue")cylinder(r=3/2,h=10,$fn=30);
 translate([-160+435+100,-117+600,386-8+10-70-70])rotate([0,90,0])color("lightblue")cylinder(r=3/2,h=62,$fn=30);
 translate([-160+435+161,-117+600,386-8+10-355])rotate([0,0,0])color("lightblue")cylinder(r=3/2,h=70+145,$fn=30);
 translate([-160+435+161,-117+600,386-8+10-354])rotate([0,-90,0])color("lightblue")cylinder(r=3/2,h=439,$fn=30);
 translate([-160+435+170-450+4,-117+600-0,386-8+10-354])rotate([90,0,0])color("lightblue")cylinder(r=3/2,h=75,$fn=30);
+*/
 translate([-160+435+175-455+4,-117+600-75,386-8+10-354])rotate([0,0,0])color("lightblue")cylinder(r=3/2,h=273,$fn=30);
+
 //valve 4
+/*
 translate([-160+435+100,-117+600,386-8-70-70-70])rotate([0,0,0])color("lightblue")cylinder(r=3/2,h=10,$fn=30);
 translate([-160+435+100,-117+600,386-8+10-70-70-70])rotate([0,90,0])color("lightblue")cylinder(r=3/2,h=58,$fn=30);
 translate([-160+435+161-4,-117+600,386-8+10-355+5])rotate([0,0,0])color("lightblue")cylinder(r=3/2,h=70+71,$fn=30);
 translate([-160+435+161-3,-117+600,386-8+10-354+4])rotate([0,-90,0])color("lightblue")cylinder(r=3/2,h=431,$fn=30);
 translate([-160+435+170-450+9,-117+600-8+6+2,386-8+10-354+4])rotate([90,0,0])color("lightblue")cylinder(r=3/2,h=77,$fn=30);
+*/
 translate([-160+435+175-455+8,-117+600-75,386-8+10-349])rotate([0,0,0])color("lightblue")cylinder(r=3/2,h=254,$fn=30);
 
 
 //valve 5
+/*
 translate([-160+435+100-200,-117+600,386-8])rotate([0,0,0])color("lightblue")cylinder(r=3/2,h=10,$fn=30);
 translate([-160+435+100-200,-117+600,386-8+10])rotate([0,90,0])color("lightblue")cylinder(r=3/2,h=39,$fn=30);
 translate([-160+435+120-200+18,-117+600,386-8+10-365+18])rotate([0,0,0])color("lightblue")cylinder(r=3/2,h=70+279,$fn=30);
 translate([-160+435+120-200+18,-117+600,386-8+10-365+18])rotate([0,-90,0])color("lightblue")cylinder(r=3/2,h=188+18,$fn=30);
 translate([-160+435+170-450+9+4,-117+600-8+6+2,386-8+10-354+4+3])rotate([90,0,0])color("lightblue")cylinder(r=3/2,h=84,$fn=30);
+*/
 translate([-160+435+175-455+8+5,-117+600-75-10,386-8+10-349])rotate([0,0,0])color("lightblue")cylinder(r=3/2,h=254,$fn=30);
 
 
 //valve 6
+/*
 translate([-160+435+100-200,-117+600,386-8-70])rotate([0,0,0])color("lightblue")cylinder(r=3/2,h=10,$fn=30);
 translate([-160+435+100-200,-117+600,386-8+10-70])rotate([0,90,0])color("lightblue")cylinder(r=3/2,h=35,$fn=30);
 translate([-160+435+120-200+14,-117+600,386-8+10-365+24])rotate([0,0,0])color("lightblue")cylinder(r=3/2,h=70+202,$fn=30);
 translate([-160+435+120-200+14,-117+600,386-8+10-365+24])rotate([0,-90,0])color("lightblue")cylinder(r=3/2,h=188+9,$fn=30);
 translate([-160+435+170-450+9+4+5,-117+600-8+6+3,386-8+10-354+4+9])rotate([90,0,0])color("lightblue")cylinder(r=3/2,h=84,$fn=30);
+*/
 translate([-160+435+175-455+8+5+4,-117+600-75-7,386-8+10-344])rotate([0,-3,0])color("lightblue")cylinder(r=3/2,h=248,$fn=30);
 
 //valve 7
+/*
 translate([-160+435+100-200,-117+600,386-8-140])rotate([0,0,0])color("lightblue")cylinder(r=3/2,h=10,$fn=30);
 translate([-160+435+100-200,-117+600,386-8+10-70-70])rotate([0,90,0])color("lightblue")cylinder(r=3/2,h=30,$fn=30);
 translate([-160+435+120-200+14-4,-117+600,386-8+10-365+24+6])rotate([0,0,0])color("lightblue")cylinder(r=3/2,h=70+202-76,$fn=30);
 translate([-160+435+120-200+10,-117+600,386-8+10-365+24+6])rotate([0,-90,0])color("lightblue")cylinder(r=3/2,h=188+9-9,$fn=30);
 translate([-160+435+170-450+9+4+10,-117+600-8+6+3,386-8+10-354+4+15])rotate([90,0,0])color("lightblue")cylinder(r=3/2,h=80,$fn=30);
+*/
 translate([-160+435+175-455+8+5+10,-117+600-75-4,386-8+10-336])rotate([0,-3,0])color("lightblue")cylinder(r=3/2,h=248,$fn=30);
 
 //valve 8
+/*
 translate([-160+435+100-200,-117+600,386-8-210])rotate([0,0,0])color("lightblue")cylinder(r=3/2,h=10,$fn=30);
 translate([-160+435+100-200,-117+600,386-8+10-70-70-70])rotate([0,90,0])color("lightblue")cylinder(r=3/2,h=25,$fn=30);
 translate([-160+435+120-200+14-9,-117+600,386-8+10-365+24+10])rotate([0,0,0])color("lightblue")cylinder(r=3/2,h=70+202-76-74,$fn=30);
 translate([-160+435+120-200+10-4,-117+600,386-8+10-365+24+10])rotate([0,-90,0])color("lightblue")cylinder(r=3/2,h=188+9-19,$fn=30);
 translate([-160+435+170-450+9+4+15,-117+600-8+6+3,386-8+10-354+4+19])rotate([90,0,0])color("lightblue")cylinder(r=3/2,h=80,$fn=30);
+*/
 translate([-160+435+175-455+8+5+15,-117+600-75-4,386-8+10-336+4])rotate([0,-6,0])color("lightblue")cylinder(r=3/2,h=248,$fn=30);
 
 

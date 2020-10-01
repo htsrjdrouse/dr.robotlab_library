@@ -15,7 +15,7 @@
 module valve_assy(){
 
 translate([7,585,-22])rotate([90,0,0]){
-color("black")translate([4,34,363])rotate([0,90,90])servo();
+color("green")translate([4,34,363])rotate([0,90,90])servo();
 color("white")translate([-6,83.5,353])rotate([0,90,90])actualvalve_for_syringe();
 }
 translate([1,232,61.3-0.5])rotate([0,0,90])valveconnectpart();

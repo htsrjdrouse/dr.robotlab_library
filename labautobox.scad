@@ -227,54 +227,128 @@ labautobox_pressurecompensation_tubing();
 //pressurecomp_to_valves();
 labautobox_multichannel_syringe_tubing();
 labautobox_multichannel_syringe_tubing_to_pipettes();
+labautobox_pcv_wash_waste_tubing();
+
+//wash bottle
+color("lightblue"){
+translate([100,-270,-50])cylinder(r=180/2,h=200,$fn=30);
+translate([100,-270,-50])cylinder(r=100/2,h=250,$fn=30);
+translate([100,-270,-50])cylinder(r=8/2,h=270,$fn=30);
+translate([100,-270,220])rotate([-55-2,67,0])cylinder(r=8/2,h=178,$fn=30);
+}
+
+//waste bottle
+translate([0,-200,0])color("lightblue"){
+translate([100,-270,-50])cylinder(r=180/2,h=200,$fn=30);
+translate([100,-270,-50])cylinder(r=100/2,h=250,$fn=30);
+translate([100,-270,-50])cylinder(r=8/2,h=270,$fn=30);
+translate([100,-270,220])rotate([-55-2,67,0])cylinder(r=8/2,h=325,$fn=30);
+}
+
+//bleach bottle
+translate([0,-400,0])color("lightblue"){
+translate([100,-270,-50])cylinder(r=180/2,h=200,$fn=30);
+translate([100,-270,-50])cylinder(r=100/2,h=250,$fn=30);
+translate([100,-270,-50])cylinder(r=8/2,h=270,$fn=30);
+translate([100,-270,220])rotate([-55-30,-67-32,2])cylinder(r=8/2,h=791,$fn=30);
+}
+
+
+
+}
+
+
+module labautobox_pcv_wash_waste_tubing(){
+
+translate([275,4,330])color("lightblue")cylinder(r=8/2,h=50,$fn=30);
+translate([275,4-4,330+50])color("lightblue")rotate([-90,0,0])cylinder(r=8/2,h=50,$fn=30);
+translate([275,4-4+50,330+50])color("lightblue")rotate([-90-33,0,55])cylinder(r=8/2,h=320,$fn=30);
+
+//water reservoir to PCV and wash
+translate([275-202,4+200,330-122])color("lightblue")rotate([90,0,0])cylinder(r=8/2,h=50,$fn=30);
+translate([275-202+25,4+200-48,330-122])color("lightblue")rotate([90-20,60,0])cylinder(r=8/2,h=300,$fn=30);
+translate([275-202,4+200-48,330-122])color("lightblue")rotate([90,0,90])cylinder(r=8/2,h=40,$fn=30);
+translate([275-202+39,4+200,330-122])color("lightblue")rotate([90,0,0])cylinder(r=8/2,h=50,$fn=30);
+
+//wash station
+translate([275-202+26,4+200,330-122])color("lightblue")rotate([90,0,0])cylinder(r=8/2,h=10,$fn=30);
+translate([275-202+26,4+200-10,330-122])color("lightblue")rotate([0,0,0])cylinder(r=8/2,h=50,$fn=30);
+translate([275-202+26,4+200-14,330-122+50])color("lightblue")rotate([-90,0,0])cylinder(r=8/2,h=150,$fn=30);
+translate([275-202+26,4+200-14+150,330-122+52])color("lightblue")rotate([-90-58,-33.5,0])cylinder(r=8/2,h=245,$fn=30);
+
+//waste station
+translate([275-202+39+26,4+200,330-122])color("lightblue")rotate([90-20,57,0])cylinder(r=8/2,h=430,$fn=30);
+translate([275-202+39+39,4+200,330-122])color("lightblue")rotate([90,0,0])cylinder(r=8/2,h=10,$fn=30);
+translate([275-202+39+39,4+200-10,330-122])color("lightblue")rotate([0,0,0])cylinder(r=8/2,h=70,$fn=30);
+translate([275-202+39+39,4+200-10-4,330-122+70])color("lightblue")rotate([-90,0,0])cylinder(r=8/2,h=150,$fn=30);
+translate([275-202+39+39,4+200-10-4+150,330-122+70])color("lightblue")rotate([-90-68.5,-19.5,0])cylinder(r=8/2,h=240,$fn=30);
+
+
+//bleach station
+translate([-0,118,207])rotate([0,90,0])color("lightblue")cylinder(r=8/2,h=10,$fn=30);
+translate([-0,118+13,207])rotate([0,90,0])color("lightblue")cylinder(r=8/2,h=20,$fn=30);
+translate([-0+20,118+13,207])rotate([-0.5,-0.5,0])color("lightblue")cylinder(r=8/2,h=202,$fn=30);
+translate([-0+20,118+13,207+200])rotate([-140,15,0])color("lightblue")cylinder(r=8/2,h=480,$fn=30);
+
+
+
 }
 
 
 module labautobox_multichannel_syringe_tubing_to_pipettes(){
 
+
 //1
 translate([-160+16+395+8-145+31+90,-117+119-100+16+280+44,335+55+40-182-10])rotate([180,0,0])color("lightblue")cylinder(r=3/2,h=29,$fn=30);
-translate([-160+16+395+8-145+31+90,-117+119-100+16+280+44,335+55+40-182-10-29])rotate([180+90,0,0])color("lightblue")cylinder(r=3/2,h=129,$fn=30);
+translate([-160+16+395+8-145+31+90,-117+119-100+16+280+44,335+55+40-182-10-29])rotate([180+90,0,0])color("lightblue")cylinder(r=3/2,h=50,$fn=30);
+translate([-160+16+395+8-145+31+90,-117+119-100+16+280+44+50,335+55+40-182-10-29])rotate([180+90-55,0,0])color("lightblue")cylinder(r=3/2,h=300,$fn=30);
 
 //2
 translate([-160+16+395+8-145+31+90,-117+119-100+16+280+44,335+55+40-182-10-71])rotate([180,0,0])color("lightblue")cylinder(r=3/2,h=29,$fn=30);
-translate([-160+16+395+8-145+31+90,-117+119-100+16+280+44,335+55+40-182-10-29-71])rotate([180+90+50,0,0])color("lightblue")cylinder(r=3/2,h=90,$fn=30);
-translate([-160+16+395+8-145+31+90,-117+119-100+16+280+44+56,335+55+40-182-10-29-3])rotate([180+90,0,0])color("lightblue")cylinder(r=3/2,h=73,$fn=30);
+translate([-160+16+395+8-145+31+90,-117+119-100+16+280+44,335+55+40-182-10-29-71])rotate([180+90,0,0])color("lightblue")cylinder(r=3/2,h=50,$fn=30);
+translate([-160+16+395+8-145+31+90,-117+119-100+16+280+44+50,335+55+40-182-10-29-71])rotate([180+90-45,0,0])color("lightblue")cylinder(r=3/2,h=240,$fn=30);
+//translate([-160+16+395+8-145+31+90,-117+119-100+16+280+44+56,335+55+40-182-10-29-3])rotate([180+90,0,0])color("lightblue")cylinder(r=3/2,h=73,$fn=30);
 
 //3
 translate([-160+16+395+8-145+31+90,-117+119-100+16+280+44,335+55+40-182-10-71-71])rotate([180,0,0])color("lightblue")cylinder(r=3/2,h=29,$fn=30);
-translate([-160+16+395+8-145+31+90,-117+119-100+16+280+44,335+55+40-182-10-29-71-71])rotate([180+90+50,0,0])color("lightblue")cylinder(r=3/2,h=179,$fn=30);
-translate([-160+16+395+8-145+31+90,-117+119-100+16+280+44+56+59,335+55+40-182-10-29-3-3])rotate([180+90,0,0])color("lightblue")cylinder(r=3/2,h=73,$fn=30);
+translate([-160+16+395+8-145+31+90,-117+119-100+16+280+44,335+55+40-182-10-29-71-71])rotate([180+90,0,0])color("lightblue")cylinder(r=3/2,h=50,$fn=30);
+translate([-160+16+395+8-145+31+90,-117+119-100+16+280+44+50,335+55+40-182-10-29-71-71])rotate([180+90-30,0,0])color("lightblue")cylinder(r=3/2,h=185,$fn=30);
+
+//translate([-160+16+395+8-145+31+90,-117+119-100+16+280+44+56+59,335+55+40-182-10-29-3-3])rotate([180+90,0,0])color("lightblue")cylinder(r=3/2,h=73,$fn=30);
 
 //4
 translate([-160+16+395+8-145+31+90,-117+119-100+16+280+44,335+55+40-182-10-71-71-71])rotate([180,0,0])color("lightblue")cylinder(r=3/2,h=29,$fn=30);
-translate([-160+16+395+8-145+31+90,-117+119-100+16+280+44,335+55+40-182-10-29-71-71-71])rotate([180+90+55,0,0])color("lightblue")cylinder(r=3/2,h=249,$fn=30);
-translate([-160+16+395+8-145+31+90,-117+119-100+16+280+44+56+59+27,335+55+40-182-10-29-3-3-3])rotate([180+90,0,0])color("lightblue")cylinder(r=3/2,h=73,$fn=30);
-
-
+translate([-160+16+395+8-145+31+90,-117+119-100+16+280+44,335+55+40-182-10-29-71-71-71])rotate([180+90,0,0])color("lightblue")cylinder(r=3/2,h=50,$fn=30);
+translate([-160+16+395+8-145+31+90,-117+119-100+16+280+44+50,335+55+40-182-10-29-71-71-71])rotate([180+90-10,0,0])color("lightblue")cylinder(r=3/2,h=170,$fn=30);
+//translate([-160+16+395+8-145+31+90,-117+119-100+16+280+44+56+59+27,335+55+40-182-10-29-3-3-3])rotate([180+90,0,0])color("lightblue")cylinder(r=3/2,h=73,$fn=30);
 
 //5
 translate([-160+16+395+8-145+31-116,-117+119-100+16+280+44,335+55+40-182-10])rotate([180,0,0])color("lightblue")cylinder(r=3/2,h=29,$fn=30);
-translate([-160+16+395+8-145+31-116,-117+119-100+16+280+44,335+55+40-182-10-29])rotate([180+90,0,0])color("lightblue")cylinder(r=3/2,h=129,$fn=30);
+translate([-160+16+395+8-145+31-116,-117+119-100+16+280+44,335+55+40-182-10-29])rotate([180+90,0,0])color("lightblue")cylinder(r=3/2,h=50,$fn=30);
+translate([-160+16+395+8-145+31-116,-117+119-100+16+280+44+50,335+55+40-182-10-29])rotate([180+90-55,0,0])color("lightblue")cylinder(r=3/2,h=300,$fn=30);
 
 //6
 translate([-160+16+395+8-145+31-116,-117+119-100+16+280+44,335+55+40-182-10-71])rotate([180,0,0])color("lightblue")cylinder(r=3/2,h=29,$fn=30);
-translate([-160+16+395+8-145+31-116,-117+119-100+16+280+44,335+55+40-182-10-29-71])rotate([180+90+50,0,0])color("lightblue")cylinder(r=3/2,h=90,$fn=30);
-translate([-160+16+395+8-145+31-116,-117+119-100+16+280+44+56,335+55+40-182-10-29-3])rotate([180+90,0,0])color("lightblue")cylinder(r=3/2,h=90,$fn=30);
-
+translate([-160+16+395+8-145+31-116,-117+119-100+16+280+44,335+55+40-182-10-29-71])rotate([180+90,0,0])color("lightblue")cylinder(r=3/2,h=50,$fn=30);
+translate([-160+16+395+8-145+31-116,-117+119-100+16+280+44+50,335+55+40-182-10-29-71])rotate([180+90-45,0,0])color("lightblue")cylinder(r=3/2,h=240,$fn=30);
 
 
 //7
 translate([-160+16+395+8-145+31-116,-117+119-100+16+280+44,335+55+40-182-10-71-71])rotate([180,0,0])color("lightblue")cylinder(r=3/2,h=29,$fn=30);
-translate([-160+16+395+8-145+31-116,-117+119-100+16+280+44,335+55+40-182-10-29-71-71])rotate([180+90+50,0,0])color("lightblue")cylinder(r=3/2,h=179,$fn=30);
-translate([-160+16+395+8-145+31-116,-117+119-100+16+280+44+56+59,335+55+40-182-10-29-3-3])rotate([180+90,0,0])color("lightblue")cylinder(r=3/2,h=73,$fn=30);
+translate([-160+16+395+8-145+31-116,-117+119-100+16+280+44,335+55+40-182-10-29-71-71])rotate([180+90,0,0])color("lightblue")cylinder(r=3/2,h=50,$fn=30);
+translate([-160+16+395+8-145+31-116,-117+119-100+16+280+44+50,335+55+40-182-10-29-71-71])rotate([180+90-30,0,0])color("lightblue")cylinder(r=3/2,h=185,$fn=30);
 
 
 //8
 translate([-160+16+395+8-145+31-116,-117+119-100+16+280+44,335+55+40-182-10-71-71-71])rotate([180,0,0])color("lightblue")cylinder(r=3/2,h=29,$fn=30);
+
+translate([-160+16+395+8-145+31-116,-117+119-100+16+280+44,335+55+40-182-10-29-71-71-71])rotate([180+90,0,0])color("lightblue")cylinder(r=3/2,h=50,$fn=30);
+translate([-160+16+395+8-145+31-116,-117+119-100+16+280+44+50,335+55+40-182-10-29-71-71-71])rotate([180+90-10,0,0])color("lightblue")cylinder(r=3/2,h=170,$fn=30);
+
+/*
 translate([-160+16+395+8-145+31-116,-117+119-100+16+280+44,335+55+40-182-10-29-71-71-71])rotate([180+90+55,0,0])color("lightblue")cylinder(r=3/2,h=249,$fn=30);
 translate([-160+16+395+8-145+31-116,-117+119-100+16+280+44+56+59+27,335+55+40-182-10-29-3-3-3])rotate([180+90,0,0])color("lightblue")cylinder(r=3/2,h=73,$fn=30);
-
+*/
 
 }
 module labautobox_multichannel_syringe_tubing(){
@@ -360,13 +434,20 @@ translate([-160+20-84+70-195,-117+272-13-140,230])rotate([0,0,0])color("lightblu
 
 module labautobox(){
 
+translate([-100+15-70-3+64,103+380+30-230,-73+0.7+20])import("files/foot_big.stl");
+translate([-100+15-70-3+64+180,103+380+30-230,-73+0.7+20])import("files/foot_big.stl");
+translate([-100+15-70-3+64+180,103+380+30-230-220,-73+0.7+20])import("files/foot_big.stl");
+translate([-100+15-70-3+64,103+380+30-230-220,-73+0.7+20])import("files/foot_big.stl");
 translate([180,180,5])rotate([0,0,180]){
 top_assy();
 bottom_assy();
 terminalfrontpanel();
-atxbackbackpanel();
+color("black")atxbackbackpanel();
 }
 labautobox_microfluidics();
+/*
+*/
+
 labautobox_shelf();
 translate([-15,-15,5])rotate([-90,0,0])tslot20(200);
 translate([-15+180,-15,5])rotate([-90,0,0])tslot20(200);
@@ -761,23 +842,17 @@ translate([0+i*6,15,-5])rotate([90,0,0])cylinder(r=3.2/2,h=40,$fn=30);
 module terminalblock_liquidlevel_wdp_jackpanel(){
       color("white")translate([0,84+64,87])rotate([90,-0,-90]) writecube( "P",where=[0,0,0],size=[0,0,0],h=9,face="top");
       color("white")translate([0,84+64-25,87])rotate([90,-0,-90]) writecube( "L",where=[0,0,0],size=[0,0,0],h=9,face="top");
-
       color("white")translate([0,84+64-50,87])rotate([90,-0,-90]) writecube( "H3",where=[0,0,0],size=[0,0,0],h=9,face="top");
+
+/*
      difference(){
       color("black")translate([0,84,56])rotate([0,0,0])cube([3,46.5+108+3-88+8,40]);
 
         translate([-40,103+59-1.5-12,84-3-10]) rotate([0,90,0])cylinder(r=15.5/2,h=80,$fn=30);
         translate([-40,103+59-1.5-12-25,84-3-10]) rotate([0,90,0])cylinder(r=15.5/2,h=80,$fn=30);
         translate([-40,103+59-1.5-12-50,84-3-10]) rotate([0,90,0])cylinder(r=15.5/2,h=80,$fn=30);
-        /*
-        translate([-40,103+59-1.5-20+8,84-55]) rotate([0,90,0])cylinder(r=15/2,h=80,$fn=30);
-        translate([-40,103+59-1.5-20-25+8,84-55]) rotate([0,90,0])cylinder(r=15/2,h=80,$fn=30);
-        translate([-40,103+59-1.5-20-50+8,84-55]) rotate([0,90,0])cylinder(r=15/2,h=80,$fn=30);
-        translate([-40,103+59-1.5-20-75+8,84-55]) rotate([0,90,0])cylinder(r=15/2,h=80,$fn=30);
-        translate([-40,103+59-1.5-20-100+8,84-55]) rotate([0,90,0])cylinder(r=15/2,h=80,$fn=30);
-        translate([-40,103+59-1.5-20-125+8,84-55]) rotate([0,90,0])cylinder(r=15/2,h=80,$fn=30);
-	*/
 }
+*/
 }
 
 
@@ -789,14 +864,10 @@ module terminalblock_outside_xyzs_ht_jackpanel(){
       color("white")translate([0,84+64-75,87-42])rotate([90,-0,-90]) writecube( "S",where=[0,0,0],size=[0,0,0],h=9,face="top");
       color("white")translate([0,84+64-100,87-42])rotate([90,-0,-90]) writecube( "H1",where=[0,0,0],size=[0,0,0],h=9,face="top");
       color("white")translate([0,84+64-125,87-42])rotate([90,-0,-90]) writecube( "H2",where=[0,0,0],size=[0,0,0],h=9,face="top");
+/*
      difference(){
       color("black")translate([0,84-72,56-40-3])rotate([0,0,0])cube([3,46.5+108+3-88+8+72,40]);
 
-        /*
-        translate([-40,103+59-1.5-12,84-3-10]) rotate([0,90,0])cylinder(r=15.5/2,h=80,$fn=30);
-        translate([-40,103+59-1.5-12-25,84-3-10]) rotate([0,90,0])cylinder(r=15.5/2,h=80,$fn=30);
-        translate([-40,103+59-1.5-12-50,84-3-10]) rotate([0,90,0])cylinder(r=15.5/2,h=80,$fn=30);
-	*/
         translate([-40,103+59-1.5-20+8,84-55]) rotate([0,90,0])cylinder(r=15/2,h=80,$fn=30);
         translate([-40,103+59-1.5-20-25+8,84-55]) rotate([0,90,0])cylinder(r=15/2,h=80,$fn=30);
         translate([-40,103+59-1.5-20-50+8,84-55]) rotate([0,90,0])cylinder(r=15/2,h=80,$fn=30);
@@ -804,6 +875,7 @@ module terminalblock_outside_xyzs_ht_jackpanel(){
         translate([-40,103+59-1.5-20-100+8,84-55]) rotate([0,90,0])cylinder(r=15/2,h=80,$fn=30);
         translate([-40,103+59-1.5-20-125+8,84-55]) rotate([0,90,0])cylinder(r=15/2,h=80,$fn=30);
 }
+ */
 }
 
 
@@ -1777,8 +1849,8 @@ translate([-100,105-190+5,-20])cube([180,160,100]);
 
 module terminalfrontpanel(){
 
-   //translate([0,0,3])terminalblock_liquidlevel_wdp_jackpanel();
-   //terminalblock_outside_xyzs_ht_jackpanel();
+   translate([2,0,3])terminalblock_liquidlevel_wdp_jackpanel();
+   translate([2,0,0])terminalblock_outside_xyzs_ht_jackpanel();
    
    /*
    translate([0,-1.5,-3]){
@@ -1799,20 +1871,20 @@ module terminalfrontpanel(){
    */
   //translate([0,52,50])rotate([90,0,-90])code_imager_banner();
   //translate([0,130,40])rotate([0,-90,0])cytokinetics_emblem();
-       color("white")difference(){
+       color("black")difference(){
         translate([Thick+m/2,Thick+m/2,Thick+m/2]) Panel(Length,Width,Thick,Filet);
         translate([Thick+m/2-10,Thick+m/2+40,Thick+m/2+70]) rotate([0,90,0])cylinder(r=5/2,h=20,$fn=30);
 
-        translate([-40,103+59-1.5-12,84-3-10+3]) rotate([0,90,0])cylinder(r=15/2,h=80,$fn=30);
-        translate([-40,103+59-1.5-12-25,84-3-10+3]) rotate([0,90,0])cylinder(r=15/2,h=80,$fn=30);
-        translate([-40,103+59-1.5-12-50,84-3-10+3]) rotate([0,90,0])cylinder(r=15/2,h=80,$fn=30);
+        translate([-40,103+59-1.5-12,84-3-10+3]) rotate([0,90,0])cylinder(r=16.2/2,h=80,$fn=30);
+        translate([-40,103+59-1.5-12-25,84-3-10+3]) rotate([0,90,0])cylinder(r=16.2/2,h=80,$fn=30);
+        translate([-40,103+59-1.5-12-50,84-3-10+3]) rotate([0,90,0])cylinder(r=16.2/2,h=80,$fn=30);
 
-        translate([-40,103+59-1.5-20+8,84-55]) rotate([0,90,0])cylinder(r=15/2,h=80,$fn=30);
-        translate([-40,103+59-1.5-20-25+8,84-55]) rotate([0,90,0])cylinder(r=15/2,h=80,$fn=30);
-        translate([-40,103+59-1.5-20-50+8,84-55]) rotate([0,90,0])cylinder(r=15/2,h=80,$fn=30);
-        translate([-40,103+59-1.5-20-75+8,84-55]) rotate([0,90,0])cylinder(r=15/2,h=80,$fn=30);
-        translate([-40,103+59-1.5-20-100+8,84-55]) rotate([0,90,0])cylinder(r=15/2,h=80,$fn=30);
-        translate([-40,103+59-1.5-20-125+8,84-55]) rotate([0,90,0])cylinder(r=15/2,h=80,$fn=30);
+        translate([-40,103+59-1.5-20+8,84-55]) rotate([0,90,0])cylinder(r=16.2/2,h=80,$fn=30);
+        translate([-40,103+59-1.5-20-25+8,84-55]) rotate([0,90,0])cylinder(r=16.2/2,h=80,$fn=30);
+        translate([-40,103+59-1.5-20-50+8,84-55]) rotate([0,90,0])cylinder(r=16.2/2,h=80,$fn=30);
+        translate([-40,103+59-1.5-20-75+8,84-55]) rotate([0,90,0])cylinder(r=16.2/2,h=80,$fn=30);
+        translate([-40,103+59-1.5-20-100+8,84-55]) rotate([0,90,0])cylinder(r=16.2/2,h=80,$fn=30);
+        translate([-40,103+59-1.5-20-125+8,84-55]) rotate([0,90,0])cylinder(r=16.2/2,h=80,$fn=30);
        /*       
         translate([-40,103-1.5,84-3]) rotate([0,90,0])cylinder(r=3.7/2,h=80,$fn=30);
         translate([-5,103-1.5+2+3,84-3-8]) cube([20,49,16]); 
@@ -1920,8 +1992,14 @@ module atxbackbackpanel(){
 	}
 	}
         */
+
       translate([0,115,49])rotate([90,0,90]){
+      /*
+      //this is really need I just uncomment it for show
       translate([-45,-35,-5])cube([63,62,20]);
+      */
+
+
      /*
       translate([20,5,-5])cylinder(r=12.4/2,h=30,$fn=30);
       translate([20,-20,-5])cylinder(r=12.4/2,h=30,$fn=30);
@@ -1932,13 +2010,9 @@ module atxbackbackpanel(){
       */
       }
      }
-
        conduitclamp();
-
-      
     }
     }
-
 }
 
 

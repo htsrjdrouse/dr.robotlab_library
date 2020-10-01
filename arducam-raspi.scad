@@ -164,10 +164,10 @@ color("peru")translate([30-40,-12.5+38-38.5,0])difference(){
 union(){
 cube([30,34,6]);
 }
-translate([3.5,3.5,0])cube([30-7,3.5,6]);
+//#translate([3.5,3.5,0])cube([30-7,3.5,6]);
 translate([2,2.5,1.5])cube([30-4,34-5,6]);
 translate([4.5,12.5+4,0.5])cylinder(r=2/2,h=10,$fn=30);
-translate([4.5+21/2,12.5+4,-0.5])cylinder(r=3.7/2,h=10,$fn=30);
+//#translate([4.5+21/2,12.5+4,-0.5])cylinder(r=3.7/2,h=10,$fn=30);
 translate([4.5,12.5+4+12.5,0.5])cylinder(r=2/2,h=10,$fn=30);
 translate([4.5+21,12.5+4,0.5])cylinder(r=2/2,h=10,$fn=30);
 translate([4.5+21,12.5+4+12.5,0.5])cylinder(r=2/2,h=10,$fn=30);

@@ -946,7 +946,9 @@ translate([0,0,7])color("gainsboro")plate_aligner_on_zbed_wider();
  corner_plate_set();
  //translate([0,0-139,0])front_corner_plate_set();
  //translate([160,0-139,0])rotate([0,0,0])bar_plate_set();
+ translate([160-100,0,0])rotate([0,0,0])bar_plate_set();
  translate([160,0,0])rotate([0,0,0])bar_plate_set();
+ translate([160+120,0,0])rotate([0,0,0])bar_plate_set();
  //translate([160+188,0-139,0])rotate([0,0,0])front_rightcorner_bar_plate_set();
  translate([160+188,0,0])rotate([0,0,0])rightcorner_bar_plate_set();
  /*
@@ -1250,7 +1252,7 @@ translate([25.5+2+40,64-35.5+8,z-11])color("yellow")cube([325,155,5]);
 
 module plateholder_wider(z){
 translate([25.5+2+40,64-35.5+8-100,z-11])difference(){
-color("lightblue")cube([325+136+42+5,155+100,5]);
+color("lightgreen")cube([325+136+42+5,155+100,5]);
 for(i=[0:5]){
 translate([14+i*94,255-7-4,0])cylinder(r=2.4/2,h=20);
 translate([24+i*94,255-7-4,0])cylinder(r=2.4/2,h=20);
@@ -1323,14 +1325,46 @@ translate([32,136,z+50-11])
 for(i=[0:7]){
 for(j=[0:11]){
  if (j == tt) {echo("skip");color("black")translate([9*i,-9*j,0])cylinder(r2=7/2,r1=6/2,h=1); } else {
-translate([9*i,-9*j,0])difference(){
-color("lightgreen")cylinder(r2=7/2,r1=6/2,h=7);
-cylinder(r2=6/2,r1=5/2,h=8);
+translate([9*i,-9*j,-6.2])difference(){
+union(){
+color("thistle")cylinder(r2=7/2,r1=6/2,h=7);
+translate([0,0,0.5])color("lightblue")cylinder(r2=5.5/2,r1=5.5/2,h=7);
+}
+//cylinder(r2=6/2,r1=5/2,h=8);
 }
 }
 } 
 }
 }
+
+module tipbox_model_missrow(z,tt){
+translate([25.5,64-35.5,z-11])color("thistle")cube([83-7,119,50]);
+translate([32,136,z+50-11])
+for(i=[0:7]){
+for(j=[0:11]){
+ if (j == tt) {echo("skip");color("black")translate([9*i,-9*j,0])cylinder(r2=7/2,r1=6/2,h=1); } else {
+translate([9*i,-9*j,-6.2])difference(){
+union(){
+color("thistle")cylinder(r2=7/2,r1=6/2,h=7);
+if(j<11){
+translate([0,0,0.5])color("lightblue")cylinder(r2=5.5/2,r1=5.5/2,h=7);
+} else {
+translate([0,0,0.5])color("thistle")cylinder(r2=5.5/2,r1=5.5/2,h=7);
+//translate([0,0,0.5])color("lightblue")cylinder(r2=4/2,r1=4/2,h=7);
+} 
+}
+//cylinder(r2=6/2,r1=5/2,h=8);
+}
+}
+} 
+}
+}
+
+
+
+
+
+
 
 
 module tipbox_model_nobox(z,tt){

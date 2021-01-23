@@ -98,6 +98,7 @@ module left_plate_x1_wider(){
 translate([-52-45,0,-75])difference(){
 //cube([370.2,62.814,3]);
 translate([0,4,0])cube([495.2+5,60.51,3]);
+/*
 translate([37.12,33.408,-0.1])cylinder(r=37.584/2,h=30);
 //translate([20.88,16.704,-0.1])cylinder(r=5.365/2,h=30);
 translate([20.88,16.704,-0.1])cylinder(r=5.365/2,h=30);
@@ -111,7 +112,9 @@ for(i=[0,2]){
 translate([62+120+50+i*50-180+180,14-3,-50])cylinder(r=2.7/2,h=200);
 translate([62+120+50+i*50-180+180,14-3+35,-50])cylinder(r=2.7/2,h=200);
 }
+*/
 
+/*
 //usb port
 translate([77.5+17-1+100,20+3-76+1+76,0])rotate([0,0,90]){
 translate([15/2,20,0])translate([0,-14.6,-1])cylinder(r=3.7/2,h=10);
@@ -125,6 +128,8 @@ translate([15/2,20,0])translate([0,-14.6,-1])cylinder(r=3.7/2,h=10);
 translate([15/2,20,0])translate([0,0,-1])rotate([0,0,45])cylinder(r=16/2,h=10,$fn=4);
 translate([15/2,20,0])translate([0,14.6,-1])cylinder(r=3.7/2,h=10);
 }
+*/
+
 }
 }
 
@@ -172,11 +177,13 @@ j = 0.7;
 x = 58;
 y = 35;
 
+/*
 translate([62+120+60-18,14+10,-50])rotate([0,0,0])translate([-7,-7-2,-3.1])cube([x+8+30,y+8-20+4,700]);
 for(i=[0,2]){
 translate([62+120+50+i*50-18,14-3,-50])cylinder(r=2.8/2,h=200);
 translate([62+120+50+i*50-18,14-3+35,-50])cylinder(r=2.8/2,h=200);
 }
+*/
 }
 }
 

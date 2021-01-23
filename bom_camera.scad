@@ -9,11 +9,11 @@ include <arducam-raspi.scad>
 
 module stroboscope_mod(){
 translate([0,-10,0]){
-import("stroboscope_miuzei_mirror.stl");
-import("stroboscope_miuzei_back.stl");
+color("lightblue")import("stroboscope_miuzei_mirror.stl");
+color("lime")import("stroboscope_miuzei_back.stl");
 }
-translate([13.5,-30,15])rotate([-90,0,0])arducam_basecase();
-translate([13.5,-30+8,15])rotate([-90,0,0])arducam_basecase_cover();
+color("green")translate([13.5,-30,15])rotate([-90,0,0])arducam_basecase();
+color("pink")translate([13.5,-30+8,15])rotate([-90,0,0])arducam_basecase_cover();
 translate([13.5,-30+8,15])rotate([-90,0,0])arducam_basecase_attachstem();
 }
 

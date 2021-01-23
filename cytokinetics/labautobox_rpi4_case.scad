@@ -28,6 +28,8 @@ fan_pin_distance = 31.5; // the distance between the mount holes
 // uncomment here what you dont want to generate
 /*
 */
+
+
  translate([0,0,inhibitionzone_height + case_thickness + board_thickness]) rotate([0,180,0]) intersection(){ // top of case
   rpi4_case();
   topSelector();
@@ -96,6 +98,9 @@ module rpi4(){
       translate([67.5,6.8,0]) cube([10.8,13.1,1.8]);                            // onboard wifi
       translate([79,17.3,0]) cube([2.5,22.15,5.4+extension]);                   // display connector
       #translate([79-17,17.3-5+3,10]) cube([2.5+23,15,5.4+extension]);         // 5v power jack
+      for(i=[-8,-8.5,-9,-9.5,-10,-10.5]){
+      #translate([79-17+i,17.3-5+3+7.5,10]) cylinder(r=12/2,h=4.5+extension,$fn=30);         // capacitor space 
+      }
       translate([69.1,50,0]) cube([9.7,7.4+extension,3.6]);                     // USB type c power
       translate([55.0,50,0]) cube([7.95,7.8+extension,3.9]);                    // Micro HDMI0
       translate([41.2,50,0]) cube([7.95,7.8+extension,3.9]);                    // Micro HDMI1

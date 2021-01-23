@@ -19,8 +19,8 @@ color("green")translate([4,34,363])rotate([0,90,90])servo();
 color("white")translate([-6,83.5,353])rotate([0,90,90])actualvalve_for_syringe();
 }
 translate([1,232,61.3-0.5])rotate([0,0,90])valveconnectpart();
-color("")translate([36,295.5,18])rotate([0,-90,90])valvemountplate_screwattach_smallersyringe_vertical_attach();
-color("")translate([36,295.5,18])rotate([0,-90,90])valvemountplate_screwattach_smallersyringe();
+color("slateblue")translate([36,295.5,18])rotate([0,-90,90])valvemountplate_screwattach_smallersyringe_vertical_attach();
+color("slateblue")translate([36,295.5,18])rotate([0,-90,90])valvemountplate_screwattach_smallersyringe();
 //color("")translate([52,190,63])rotate([-90,90,0])smallsyringe_valvesupportmodule_plate();
 }
 

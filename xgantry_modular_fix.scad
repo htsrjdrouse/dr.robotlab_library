@@ -167,10 +167,13 @@ module lm8uu_zdriver_assay(z){
 stepper_driver_lm8uu_pla(z);
 //translate([-20.5-50,130+0.75+30,370.75-37])rotate([90,0,-90])multichannel_pipette_holder_linear_actuator_connect_cameramount();
 translate([-20.5,130+0.75,370.75])rotate([-90,0,90]){
+
+color("salmon"){
 translate([49.7,31,25])slider_wall_holes();
 translate([49.7,31,25])slider_wall_holes_608bearing();
 translate([49.7,31,25])slider_wall_holes_bottomclamp();
 translate([49.7,31+118,25])slider_wall_holes_bottomclamp();
+}
 }
 }
 
@@ -919,10 +922,10 @@ translate([-27/2+12/2-42-7.5+12,150+20,310-6+5-6])difference(){
 module multi_iverntech_railsystem(z){
 translate([-96,221.5,250])rotate([0,180,180])stepperconduitclamp();
 translate([-80+19,159,322.8+13])rotate([90,0,-90]){
-multichannel_cameramount_tslot_part();
-multichannel_cameramount_tipholder();
+color("pink")multichannel_cameramount_tslot_part();
+translate([0,z-29,0])multichannel_cameramount_tipholder();
 }
-lm8uu_zdriver_assay(z);
+color("")lm8uu_zdriver_assay(z);
 /*
 translate([-37.5,192.5,350-1])rotate([0,90,0])sandwich_delrinwheel();
 
@@ -930,14 +933,14 @@ translate([0,-28,0]){
 translate([43-25-55-10,206.5-15-41.5+28+19+300,-60+430-28])rotate([-0,90,-90])tslot20(552);
 }
 */
-
-translate([-20+5-220-3+0.5,200+5-231.8,678.8])rotate([0,180,-90])slider_front_assy_multichannel_iverntech();
+color("Salmon")translate([-20+5-220-3+0.5,200+5-231.8,678.8])rotate([0,180,-90])slider_front_assy_multichannel_iverntech();
+color("Salmon")translate([-25.5,20,320-3])rotate([0,180,0])iverntech_slider_xshuttle_connect();
+color("Plum")translate([-25.5-31,20+167+1,320-8])rotate([90,0,90])import("beltclamp.stl");
+color("Plum")translate([-25.5-31,20+167+1+82,320-8])rotate([90,0,90])import("beltclamp.stl");
 //translate([-20+5-220-3+0.5,200+5-231.8,678.8])rotate([0,180,-90])shuttle_front_vertical_adjust_wider_slider_wall_beltfix();
-translate([-20+5-3,200+5,340])rotate([-90,0,-90])shuttle_back_fast();
-translate([-25.5,20,320-3])rotate([0,180,0])iverntech_slider_xshuttle_connect();
+color("Olive")translate([-20+5-3,200+5,340])rotate([-90,0,-90])shuttle_back_fast();
 /*
 translate([-27/2+12/2-48+6+12,55-60-30-60,310-6+5])color("black")cube([12,450,8]);
-
 translate([-27/2+12/2-42-7.5+12,150+20,310-6+5-6])difference(){
  color("silver")cube([27,45,9]);
  translate([27/2-10,45/2-10,-5-20])cylinder(r=3.7/2,h=60);
@@ -946,15 +949,62 @@ translate([-27/2+12/2-42-7.5+12,150+20,310-6+5-6])difference(){
  translate([27/2+10,45/2+10,-5-20])cylinder(r=3.7/2,h=60);
 }
 */
-
 translate([-15.5,-10,0]){
 translate([0-30,250,269-5])rotate([90,0,0])tslot20(120);
 translate([0-30-20,250,269-5])rotate([90,0,0])tslot20(120);
 //translate([0-30,250,269-5])rotate([90,0,0])tslot20(100);
 //translate([0-30-20,250,269-5])rotate([90,0,0])tslot20(100);
 }
-
 }
+
+
+
+
+module extruder_railsystem(z){
+//translate([-96,221.5,250])rotate([0,180,180])stepperconduitclamp();
+translate([-80+19,159,322.8+13])rotate([90,0,-90]){
+//color("pink")multichannel_cameramount_tslot_part();
+//translate([0,z-29,0])multichannel_cameramount_tipholder();
+translate([0,z-39,41+6])rotate([-90,0,180])extruder_assy();
+translate([25,z-39-15,41-7])rotate([-90,0,180])rotate([0,90,0])tslot20(100);
+translate([25,z-39-15,41-7+20])rotate([-90,0,180])rotate([0,90,0])tslot20(100);
+}
+//color("")lm8uu_zdriver_assay(z);
+/*
+translate([-37.5,192.5,350-1])rotate([0,90,0])sandwich_delrinwheel();
+translate([0,-28,0]){
+translate([43-25-55-10,206.5-15-41.5+28+19+300,-60+430-28])rotate([-0,90,-90])tslot20(552);
+}
+*/
+color("Salmon")translate([-20+5-220-3+0.5,200+5-231.8,678.8])rotate([0,180,-90])slider_front_assy_multichannel_iverntech();
+color("Salmon")translate([-25.5,20,320-3])rotate([0,180,0])iverntech_slider_xshuttle_connect();
+color("Plum")translate([-25.5-31,20+167+1,320-8])rotate([90,0,90])import("beltclamp.stl");
+color("Plum")translate([-25.5-31,20+167+1+82,320-8])rotate([90,0,90])import("beltclamp.stl");
+//translate([-20+5-220-3+0.5,200+5-231.8,678.8])rotate([0,180,-90])shuttle_front_vertical_adjust_wider_slider_wall_beltfix();
+color("Olive")translate([-20+5-3,200+5,340])rotate([-90,0,-90])shuttle_back_fast();
+/*
+translate([-27/2+12/2-48+6+12,55-60-30-60,310-6+5])color("black")cube([12,450,8]);
+translate([-27/2+12/2-42-7.5+12,150+20,310-6+5-6])difference(){
+ color("silver")cube([27,45,9]);
+ translate([27/2-10,45/2-10,-5-20])cylinder(r=3.7/2,h=60);
+ translate([27/2+10,45/2-10,-5-20])cylinder(r=3.7/2,h=60);
+ translate([27/2-10,45/2+10,-5-20])cylinder(r=3.7/2,h=60);
+ translate([27/2+10,45/2+10,-5-20])cylinder(r=3.7/2,h=60);
+}
+*/
+translate([-15.5,-10,0]){
+translate([0-30,250,269-5])rotate([90,0,0])tslot20(120);
+translate([0-30-20,250,269-5])rotate([90,0,0])tslot20(120);
+//translate([0-30,250,269-5])rotate([90,0,0])tslot20(100);
+//translate([0-30-20,250,269-5])rotate([90,0,0])tslot20(100);
+}
+}
+
+
+
+
+
+
 
 
 

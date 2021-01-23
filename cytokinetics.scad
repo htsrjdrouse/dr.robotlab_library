@@ -2,6 +2,7 @@ use<writescad/Write.scad>
 include <PiZero.scad>
 include <arducam-raspi.scad>
 include <The_Ultimate_box_maker/files/U_Box_V104_Test_Cleaned.scad>
+include <raspberrypi4.scad>
 /*
 include <modparts.scad>
 use<writescad/write.scad>
@@ -11,10 +12,69 @@ include <nanoplotter.scad>
 include <PiZero.scad>
 */
 
+//platereader_linkedin();
+top_assy();
+translate([180/2,175/2,108])topfill_fanmnt();
+
+/*
+translate([60,95,20+15])rotate([0,0,180])dual_camera_assy();
+translate([60,95,20+15])rotate([0,0,180])dual_camera_stand();
+translate([60+70,98,20+15])rotate([0,0,180])color("lime")arducam_rotate_case();
+translate([55,78,20+15])rotate([0,0,0])color("lime")arducam_rotate_case();
+*/
+
+
+
+
+//pr_lightfixture_mod_diffuse();
+//translate([0,25,0])sd_lightfixture_mod_diffuse();
+//backbackpanel();
+//translate([180/2,175/2,108])teachplate_core();
+
+/*
+*/
+/*
+*/
+//htsresources_banner();
+//code2d_emblem();
+
+//translate([60,95,20+15])rotate([0,0,180])dual_camera_stand();
+
+
+//raspimount_holes();
+//teachplate_core_larger();
+//backbackpanel_group();
+//raspi_holder_base();
+//arducam_rotate_case();
+//rj45jack_panel_tmp();
+//power_indicator();
+//translate([60,95,20+15])rotate([0,0,180])dual_camera_stand();
+//pr_lightfixture_mod_diffuse();
+//translate([0,25,0])sd_lightfixture_mod_diffuse();
+//color("lime")translate([80,19.5+138/2+7.5,20-11])rotate([0,90,0])miuzei_camera_breadboard_b();
+//arducam_rotate_2mount_adjuster();
+//arducam_rotate_2mount_adjuster_nut();
+//arducam_rotate_2mount_adjuster();
+//translate([120.5,81,20+15])dual_camera_assy();
+//translate([120,80,20+15])dual_camera_stand();
+//color("")top();
+//hdmi_jack();
+//backbackpanel();
+//usbjack_panel();
+//hdmijack_panel();
+//color("grey")
+//translate([180/2,175/2,108])teachplate_core_larger();
+//translate([130,65,100])color("grey")rotate([180,0,180])raspi_setup();
+//translate([30-38,0,0])raspimount_holes();
+
+
+
+
+
+
 
 //top();
 //fan60mm();
-translate([180/2,175/2,108])topfill_fanmnt();
 
 //rj45_jack3();
 //miuzei_camera_breadboard_b();
@@ -24,7 +84,25 @@ translate([180/2,175/2,108])topfill_fanmnt();
 //terminalblock_outside_liquidlevel_wdp();
 //terminalblock_inside_liquidlevel_wdp();
 
-
+//raspimount_holes();
+//translate([180/2,175/2,108])teachplate_core();
+//teachplate_core_larger();
+//backbackpanel_group();
+//backbackpanel();
+//raspi_holder_base();
+//arducam_rotate_case();
+//rj45jack_panel_tmp();
+//power_indicator();
+//translate([60,95,20+15])rotate([0,0,180])dual_camera_stand();
+//pr_lightfixture_mod_diffuse();
+//translate([0,25,0])sd_lightfixture_mod_diffuse();
+//color("lime")translate([80,19.5+138/2+7.5,20-11])rotate([0,90,0])miuzei_camera_breadboard_b();
+//arducam_rotate_2mount_adjuster();
+//arducam_rotate_2mount_adjuster_nut();
+//arducam_rotate_2mount_adjuster();
+//translate([120.5,81,20+15])dual_camera_assy();
+//translate([120,80,20+15])dual_camera_stand();
+//color("")top();
 
 //terminalblock_outside();
 //terminalblock_inside();
@@ -55,8 +133,8 @@ translate([180/2,175/2,108])topfill_fanmnt();
 
 //cytokinetics_banner();
 //htsresources_banner();
-//cytokinetics_emblem();
 //code2d_emblem();
+//cytokinetics_emblem();
 //code_imager_banner();
 
 //power_indicator();
@@ -84,6 +162,22 @@ translate([0,0,-0.2])cylinder(r=4.3/2,h=30,$fn=30);
 ///translate([-14,10,24])color("orange")mti_antenna_interfaceplate();
 
 //color("lime")mti_antenna();
+
+module platereader_linkedin(){
+bottom_assy();
+
+translate([80,180,56]){
+rotate([-90,0,0])raspberrypi4_caller();
+translate([0,20,0])rotate([-90,0,0])raspberrypi4_caller();
+}
+top_assy();
+
+ffrontpanel();
+backbackpanel();
+translate([180/2,175/2,108])teachplate_core();
+}
+
+
 
 
 
@@ -187,39 +281,6 @@ translate([0,66,0])cylinder(r=5/2,h=16,$fn=30);
 translate([66,66,0])cylinder(r=5/2,h=16,$fn=30);
 }
 }
-
-//raspimount_holes();
-
-//translate([180/2,175/2,108])teachplate_core();
-
-//teachplate_core_larger();
-
-//backbackpanel_group();
-
-//backbackpanel();
-
-
-//raspi_holder_base();
-
-//arducam_rotate_case();
-//rj45jack_panel_tmp();
-//power_indicator();
-//translate([60,95,20+15])rotate([0,0,180])dual_camera_stand();
-//pr_lightfixture_mod_diffuse();
-//translate([0,25,0])sd_lightfixture_mod_diffuse();
-//color("lime")translate([80,19.5+138/2+7.5,20-11])rotate([0,90,0])miuzei_camera_breadboard_b();
-
-//arducam_rotate_2mount_adjuster();
-
-//arducam_rotate_2mount_adjuster_nut();
-//arducam_rotate_2mount_adjuster();
-//translate([120.5,81,20+15])dual_camera_assy();
-//translate([120,80,20+15])dual_camera_stand();
-
-//color("")top();
-
-
-
 
 
 
@@ -967,52 +1028,6 @@ translate([66,66,0])cylinder(r=5/2,h=16,$fn=30);
 }
 }
 
-//raspimount_holes();
-
-//translate([180/2,175/2,108])teachplate_core();
-
-//teachplate_core_larger();
-
-//backbackpanel_group();
-
-//backbackpanel();
-
-
-//raspi_holder_base();
-
-//arducam_rotate_case();
-//rj45jack_panel_tmp();
-//power_indicator();
-//translate([60,95,20+15])rotate([0,0,180])dual_camera_stand();
-//pr_lightfixture_mod_diffuse();
-//translate([0,25,0])sd_lightfixture_mod_diffuse();
-//color("lime")translate([80,19.5+138/2+7.5,20-11])rotate([0,90,0])miuzei_camera_breadboard_b();
-
-//arducam_rotate_2mount_adjuster();
-
-//arducam_rotate_2mount_adjuster_nut();
-//arducam_rotate_2mount_adjuster();
-//translate([120.5,81,20+15])dual_camera_assy();
-//translate([120,80,20+15])dual_camera_stand();
-
-//color("")top();
-
-
-//hdmi_jack();
-
-//backbackpanel();
-//usbjack_panel();
-//hdmijack_panel();
-//bottom_assy();
-//top_assy();
-//ffrontpanel();
-//color("grey")
-//translate([180/2,175/2,108])teachplate_core_larger();
-//translate([130,65,100])color("grey")rotate([180,0,180])raspi_setup();
-
-//translate([30-38,0,0])raspimount_holes();
-
-
 module raspi_setup(){
 translate([0,-70,50-30])rotate([-90,180,0])import("cytokinetics/Top_Slots_SM.stl");
 import("cytokinetics/platereader_v2/platereader_v4/raspi_holder_base.stl");
@@ -1203,10 +1218,12 @@ translate([0,-7,-5])cylinder(r=12.4/2,h=30,$fn=30);
 
 
 module top_assy(){
+//pr_lightfixture_mod_diffuse();
+//translate([0,25,0])sd_lightfixture_mod_diffuse();
 color("black")top();
-//pr_lightfixture_mod();
-//translate([0,175,0])mirror([0,1,0])pr_lightfixture_mod();
-
+//pr_lightfixture_mod_diffuse();
+pr_lightfixture_mod();
+translate([0,175,0])mirror([0,1,0])pr_lightfixture_mod();
 sd_lightfixture_mod();
 translate([180,0,0])mirror([1,0,0])sd_lightfixture_mod();
 //color("grey")translate([180/2,175/2,108])teachplate_core();
@@ -1394,9 +1411,13 @@ module terminalfrontpanel(){
 
 
 module ffrontpanel(){
-  translate([0,120,84])rotate([90,0,-90])cytokinetics_banner();
+ //htsresources_banner();
+ //code2d_emblem();
+  //translate([0,120,84])rotate([90,0,-90])cytokinetics_banner();
+  //translate([0,130,40])rotate([0,-90,0])cytokinetics_emblem();
+  translate([0,120,84])rotate([90,0,-90])htsresources_banner();
+  translate([0,130,40])rotate([0,-90,0])code2d_emblem();
   translate([0,52,50])rotate([90,0,-90])code_imager_banner();
-  translate([0,130,40])rotate([0,-90,0])cytokinetics_emblem();
        color("white")difference(){
         translate([Thick+m/2,Thick+m/2,Thick+m/2]) Panel(Length,Width,Thick,Filet);
         translate([Thick+m/2-10,Thick+m/2+40,Thick+m/2+70]) rotate([0,90,0])cylinder(r=5/2,h=20,$fn=30);
@@ -1694,8 +1715,14 @@ module bottom_assy(){
 //dlink_des_105();
 translate([60,95,20+15])rotate([0,0,180])dual_camera_assy();
 translate([60,95,20+15])rotate([0,0,180])dual_camera_stand();
-//color("lime")translate([80,19.5+138/2+7.5,20-11])rotate([0,90,0])miuzei_camera_breadboard_b();
+translate([60+70,98,20+15])rotate([0,0,180])color("lime")arducam_rotate_case();
+translate([55,78,20+15])rotate([0,0,0])color("lime")arducam_rotate_case();
+/*
+*/
 color("")bottom();
+/*
+*/
+//color("lime")translate([80,19.5+138/2+7.5,20-11])rotate([0,90,0])miuzei_camera_breadboard_b();
 }
 /*
 */
@@ -1708,13 +1735,15 @@ color("pink")translate([80-3,19.5+138/2+7.5-17.5+9.5,20-18])cylinder(r=2.8/2,h=3
 color("pink")translate([80-3+30,19.5+138/2+7.5-17.5+9.5,20-18])cylinder(r=2.8/2,h=30,$fn=30);
 }
 
-translate([30-48,0,0])raspimount();
+//translate([30-48,0,0])raspimount();
 //translate([30,85+13,0])raspimount();
 
 
 translate([0,0,0])difference(){
 union(){
 translate([0,0,0])color("black")bottombox();
+//#color("pink")translate([80-3,19.5+138/2+7.5-17.5+9.5,20-18-10])cylinder(r=2.8/2,h=30,$fn=30);
+//#color("pink")translate([80-3+30,19.5+138/2+7.5-17.5+9.5,20-30])cylinder(r=2.8/2,h=30,$fn=30);
 /*
 translate([80,19.5+138/2+7.5,20])rotate([0,90,0]){
 translate([20,-4,-30+83+15])rotate([0,-90,0])cylinder(r=10/2,h=5,$fn=30);
@@ -1724,10 +1753,12 @@ translate([20,-13,-30-15])rotate([0,-90,0])cylinder(r=10/2,h=5,$fn=30);
 }
 */
 }
+/*
 translate([80,19.5+138/2+7.5-1,20])rotate([0,90,0]){
 translate([19+30,-4+72,-30+83+15-148+52])rotate([0,-90,0])cylinder(r=4.2/2,h=50,$fn=30);
 translate([19+30,-4+72,-30+83+15-148+52+63])rotate([0,-90,0])cylinder(r=4.2/2,h=50,$fn=30);
 }
+*/
 /*
 translate([80,19.5+138/2+7.5,20])rotate([0,90,0]){
 translate([19,-4,-30+83+15])rotate([0,-90,0])cylinder(r=2.8/2,h=50,$fn=30);
@@ -2468,7 +2499,6 @@ color("gray")difference(){
 }
 
 module topfill_fanmnt(){
-
 rd = 2;
 rdd = 3;
 w = 85.4964-rd+0.3;
@@ -2482,22 +2512,15 @@ hb = 2.5;
  translate([-67+i,20-67+j,-10])rotate([0,0,0])cylinder(r=2.8/2,h=300,$fn=30);
  }
  }
-
 translate([0-13-80,46-26,0])#cube([80,50,10]);
-
 translate([30-2,30-32.50,-5]){
 #translate([25,25,0])cylinder(r=2.8/2,h=30,$fn=30);
 #translate([-25,25,0])cylinder(r=2.8/2,h=30,$fn=30);
 #translate([25,-25,0])cylinder(r=2.8/2,h=30,$fn=30);
 #translate([-25,-25,0])cylinder(r=2.8/2,h=30,$fn=30);
 #translate([0,0,0])cylinder(r=45/2,h=30,$fn=30);
-
-
 }
-
-
 }
-
 }
 
 module teachplate_core_larger(){

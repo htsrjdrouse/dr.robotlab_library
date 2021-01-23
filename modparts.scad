@@ -4572,11 +4572,8 @@ translate([5+50,7.5,-1-50])cylinder(r=3.8/2,h=200);
 translate([5+49,7.5,-1-50])cylinder(r=3.8/2,h=200);
 */
 }
-
 //for display
 translate([35/2,7.5,-1+0])color("silver")cylinder(r=2.8/2,h=40);
-
-
 }
 
 
@@ -6022,7 +6019,6 @@ translate([75-1-355,-55+464+2.5,6+272])rotate([0,0,0])tslot20innerbracket();
 
 
 module moving_zbed_parts(){
-
 translate([-54,169,90-20])rotate([0,0,90]){
 //begin 3d printed stuff
 translate([50,80-30,180+20])rotate([0,180,180])color("")bearing_mount_smz();
@@ -6044,7 +6040,6 @@ translate([40+44,180,-114])rotate([0,0,180])color("")clamp_bottom_simple_m8_smoo
 translate([84,180-54,-114+275])rotate([0,180,0])color("")clamp_bottom_simple_m8_smoothrodholder_for_z();
 }
 }
-
 }
 
 
@@ -7254,15 +7249,9 @@ rotate([0,90,0])tslot20(548);
 
 
 module lm8uu_smz_glider_wider(){
- //translate([-34,0,0])tslot20(100);
- //translate([-19+35,40,42])translate([0-28,45,0])
- //rotate([0,90,0])cylinder(r=15.4/2,h=60);
- //translate([-19+35,40,42])translate([0-28,45,0])
- //rotate([0,90,0])cylinder(r=8.7/2,h=60);
  translate([-19+35,40,42])difference(){
   union(){
   translate([20-4-6,-35+51,-20])cube([10,18,40]);
-  //translate([20-10,-35,-10+0])cube([10,18+5,20]);
   translate([20-10,-35+60,-10+6])cube([10,63-60,8]);
   translate([-10,50,-4.7])cube([30,20,10]); 
   for(i=[0:4]){
@@ -7271,7 +7260,6 @@ module lm8uu_smz_glider_wider(){
   }
   difference(){
    translate([20-10,-35+50+7,-10+0])cube([10,18-4.5,20]);
-   //translate([20-10,-35+50+7+10,-10+0+3.5])cube([10,5,13]);
   }
   translate([20-10-10-28+14,-35+30+5+45,-0])rotate([0,90,0])cylinder(r=25/2,h=48-14);
   }
@@ -7372,9 +7360,6 @@ translate([11.6,0,5])rotate([0,90,0])cylinder(r=30/2,h=4);
 
 
 module zbed_smz_components_wider(shim,modshim){
- //tslot20(300);
- //translate([5,0,0])cube([5,25,300]);
-//translate([26.5,7.5,-24])
 if (modshim == 0){
  /* the bed levelers */
  translate([0,0+50,7]){
@@ -7395,18 +7380,8 @@ if (modshim == 0){
  translate([25,7.5+50,26.5+218+35.5-2.5])rotate([0,-90,0])mirror([1,0,0])bed_leveler_better_lm8uu_for_metalversion();
  //translate([-230+2+486-10-400-46,75.5+7.5,135+28-28+35])rotate([0,90,0])color("")zbedslot_516_smz_zbed();
  translate([-230+2+486-10-400-46,75.5+7.5,135+28-28+35])rotate([0,90,0])color("")zbedslot_516_smz_zbed_wider();
- /*
- */
  translate([25+10,7+15.5+50,55+187.8])rotate([180,0,0])color("silver") left_zbed_connector_bar_metal();
-
  }
-  /*
-  translate([15,15-30,63])rotate([-90,0,0])cylinder(r=5.7/2,h=400);
-  translate([15,15-30,183])rotate([-90,0,0])cylinder(r=5.7/2,h=400);
-  translate([0,15,31.5])rotate([90,0,90])cylinder(r=5.7/2,h=100);
-  translate([0,15,141])rotate([90,0,90])cylinder(r=5.7/2,h=100);
-  translate([0,15,249+10])rotate([90,0,90])cylinder(r=5.7/2,h=100);
-  */
 }
 }
 
@@ -7553,30 +7528,10 @@ module left_zbed_connector_bar_metal(){
   translate([-35,7.5+i,9.5+156/2+8])rotate([0,90,0])cylinder(r=3.8/2,h=180);
   }
   }
-  //translate([-35,7.5-1,9.5+156/2-8-56])rotate([0,90,0])cylinder(r=2.8/2,h=180);
-  //translate([-35,7.5-0,9.5+156/2-8-56])rotate([0,90,0])cylinder(r=2.8/2,h=180);
-  //translate([-35,7.5+1,9.5+156/2-8-56])rotate([0,90,0])cylinder(r=2.8/2,h=180);
-  //translate([-35,7.5,9.5+156/2-8-52.5])rotate([0,90,0])cylinder(r=2.8/2,h=180);
-
- /*
-  translate([-35,7.5,9.5+156/2-8-52.5+4.5])rotate([0,90,0])cylinder(r=2.8/2,h=180);
-  translate([-35,7.5,9.5+156/2-8-52.5+4.5+10])rotate([0,90,0])cylinder(r=2.8/2,h=180);
- */
-  //translate([-35,7.5,9.5+156-6.75])rotate([0,90,0])cylinder(r=2.8/2,h=70);
-  //translate([-35-2,7.5,9.5+6.75])rotate([0,90,0])cylinder(r=2.8/2,h=70);
-
-  //translate([-35,7.5,17.5+67.75])rotate([0,90,0])cylinder(r=2.8/2,h=180);
-  //translate([-35,7.5,17.5+69+14.75])rotate([0,90,0])cylinder(r=2.8/2,h=180);
-  //translate([-35,7.5,160])rotate([0,90,0])cylinder(r=2.8/2,h=70);
-
-
-  //translate([-35-2,7.5,9.5+6.75+50.5])rotate([0,90,0])cylinder(r=3.8/2,h=70);
   translate([-35-2,7.5,9.5+6.75+50+101.5])rotate([0,90,0])cylinder(r=3.8/2,h=70);
   translate([-35-2,7.5,9.5+6.75+50+101.5+50])rotate([0,90,0])cylinder(r=3.8/2,h=70);
   translate([-35-2,7.5,9.5+6.75+50+101.5+50-185])rotate([0,90,0])cylinder(r=3.8/2,h=70);
   translate([-35-2,7.5,9.5+6.75+50+101.5+50-185+54])rotate([0,90,0])cylinder(r=3.8/2,h=70);
-  
-
   translate([0,0,2.5]){
   for(i=[-2:2]){
    translate([-35-2,7.5+i,9.5+6.75-23.5])rotate([0,90,0])cylinder(r=3.8/2,h=170);
@@ -7691,6 +7646,7 @@ translate([46+5+25,70-14+86,144-5-25])cylinder(r=2.8/2,h=50);
 
 
 
+/*
 module multichannel_laser_zbed_wider_deeper(zz){
 translate([30-79,30,zz+3])
 difference(){
@@ -7712,7 +7668,7 @@ translate([5,74.5+218+i-3.5,-40])cylinder(r=(lzd+1)/2,h=200);
 }
 }
 
-
+*/
 
 
 
@@ -7997,14 +7953,36 @@ translate([46+5+25,70-14+86,-200])cylinder(r=3.8/2,h=500);
 }
 }
 
-
-
-
-
-
 /*
 */
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 module microwell_plate_guide(){
@@ -8042,18 +8020,6 @@ translate([75-1-355+817-590,-55+464+2.5-191+110,6+272-300+20-5])rotate([180,-90,
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 //this is where I need to modify
 module zbed_smz_wider(){
  translate([15-65,120-50,141.5])rotate([0,90,0])tslot20(582);
@@ -8066,48 +8032,11 @@ module zbed_smz_wider(){
  translate([35-65-14,134-18,105])color("")extrusion_riser();
  translate([35+370+120,134-18,105])color("")extrusion_riser();
  }
- /*
- */
-/*
-*/
  translate([50,60,140])rotate([-90,90,0]){
  translate([0,0+29,0])zbed_smz_components_wider(0,0);
  translate([0,-340+1-29-42,0])mirror([0,1,0])zbed_smz_components_wider(0,0);
  }
- //right here also this is part of zbed modules
- //color("lightblue")translate([0,0,-10])multichannel_laser_zbed_wider(144);
- //color("")translate([25+380+120,130+120+25,118+10-23+3])rotate([0,-90,180])z_encoder_clamp_wiper();
- //color("")translate([25,130+120,118+10-23])rotate([0,-90,0])z_encoder_clamp_wiper();
- //translate([27,-175,40])rotate([0,0,90])tslot20innerbracket();
- translate([0,18-5,0]){
- //translate([48-2+178,95+192.5+5-200,140-4])rotate([-90,0,0])mirror([1,0,0])color("")tslot20innerbracket();
- //translate([48-2+160,95+192.5+5-172.5,140-4])rotate([-90,0,0])mirror([0,0,1])color("")tslot20innerbracket();
- //To reduce the weight I remove this
- //translate([48-2,95,140])rotate([0,90,0])tslot20(348.5);
- }
- translate([0,-60,0]){
- //translate([48-2+160,95+192.5+5,140-4])rotate([-90,0,0])color("")tslot20innerbracket();
- //translate([48-2+180,95+192.5+5,140-4])rotate([-90,0,0])mirror([1,0,0])color("")tslot20innerbracket();
- //To reduce the weight I remove this
- //translate([48-2,95+192.5,140])rotate([0,90,0])tslot20(348.5);
- }
- /*
- translate([-65,-25,135])rotate([0,0,0])color("gray")import("bed_leveler_foot.STL");
- translate([-65+370,-25,135])rotate([0,0,0])color("gray")import("bed_leveler_foot.STL");
- translate([200-265.5,10+193,135])rotate([0,0,0])color("gray")import("bed_leveler_foot.STL");
- translate([200+105,10+193,135])rotate([0,0,0])color("gray")import("bed_leveler_foot.STL");
- */
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -9167,10 +9096,8 @@ zbed_smz();
 
 //right here base zbed modules
 module zbed_assy_wider(z){
-
 moving_zbed_parts();
 translate([480,0,0])mirror([1,0,0])moving_zbed_parts();
-
 translate([0,0,z]){
 zbed_smz_wider();
 //translate([0,0,-10])wash_and_strobparts();

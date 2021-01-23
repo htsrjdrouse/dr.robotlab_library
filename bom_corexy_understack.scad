@@ -57,6 +57,26 @@ module corexy_lasermount_base(){
  }
 }
 
+module corexy_shuttle_platform(){
+ //corexy_lasermount();
+ difference(){
+ union(){
+ translate([-28-10,23,-41])cube([80,10,5]);
+ translate([-28-10,23,-41])cube([11,10,36]);
+ translate([-28-10+70,23,-41])cube([11,10,36]);
+ }
+ translate([-28+8,23+5,-71])cylinder(r=3.8/2,h=130,$fn=30);
+ translate([-28+8+10,23+5,-71])cylinder(r=3.8/2,h=130,$fn=30);
+ translate([-28+44,23+5,-71])cylinder(r=3.8/2,h=130,$fn=30);
+ translate([-28+54,23+5,-71])cylinder(r=3.8/2,h=130,$fn=30);
+ translate([-28-5,23+5,-71])cylinder(r=2.8/2,h=130,$fn=30);
+ translate([-28+66,23+5,-71])cylinder(r=2.8/2,h=130,$fn=30);
+ }
+}
+
+
+
+
 
 
 module XYMotorMount_corexystack(px,py){
@@ -115,7 +135,9 @@ module XYMotorMount_corexystack(px,py){
 
 
  translate([242.5+x,115,90])import("plunger_shuttle.stl");
- translate([242.5+x,115,90])corexy_lasermount_base();
+
+ //translate([242.5+x,115,90])corexy_lasermount_base();
+ translate([242.5+x,115,90])corexy_shuttle_platform();
 
 
  translate([220+35+x,120.5+44-14,65])rotate([0,0,0])color("black")cube([220-(2*x),2,5]);

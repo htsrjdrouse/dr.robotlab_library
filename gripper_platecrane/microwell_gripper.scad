@@ -37,6 +37,36 @@ translate([5,-30,-35])rotate([90,0,180])multichannel_cameramount_tipholder();
 
 //steppermotor_board_holder();
 
+module gripperarm_with_tips(){
+translate([93,0,12])rotate([0,90,90])tslot20(100);
+/*
+translate([4.4,0+6,-2+10])rotate([0,0,90])difference(){
+translate([5,-30,-35])rotate([90,0,180])multichannel_cameramount_tipholder();
+translate([0+19.5,0+50-50+23-3,-50.2+46+8-8])rotate([90,0,0])cylinder(r=2.8/2,h=15,$fn=30);
+translate([0+19.5+36,0+50-50+23-3,-50.2+46+8-8])rotate([90,0,0])cylinder(r=2.8/2,h=15,$fn=30);
+}
+*/
+gripper_assembly_arms();
+}
+
+module gripperarm_with_paddles(){
+translate([93,0,12])rotate([0,90,90])tslot20(100);
+translate([4.4,0+6,-2+10])rotate([0,0,90])difference(){
+translate([5,-30,-35])rotate([90,0,180])multichannel_cameramount_tipholder();
+translate([0+19.5,0+50-50+23-3,-50.2+46+8-8])rotate([90,0,0])cylinder(r=2.8/2,h=15,$fn=30);
+translate([0+19.5+36,0+50-50+23-3,-50.2+46+8-8])rotate([90,0,0])cylinder(r=2.8/2,h=15,$fn=30);
+}
+/*
+*/
+gripper_assembly_paddles();
+}
+
+
+
+
+
+
+
 module steppermotor_board_holder(){
 
 difference(){
@@ -97,6 +127,7 @@ translate([0,83,0])gripper_nuts();
 gripperarm();
 translate([0,83,0])gripperarm();
 }
+
 module gripper_assembly_paddles(){
 gripper_assembly();
 

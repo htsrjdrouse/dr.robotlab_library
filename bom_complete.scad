@@ -5,9 +5,45 @@ include <bom_openmv_camera.scad>
 //include <nanoplotter.scad>
 include <PiZero.scad>
 
+
+zz = 100;
+multichannel_laser_zbed_wider_deeper(zz);
+
 //miuzei_camera_module();
 
+/*
+//rotate([0,180,0])zbedslot_516_smz_zbed();
+z = -5;
+zbed_assy(z);
+module zbed_assy(z){
+translate([0,0,z]){
+zbed_smz();
+//translate([0,0,-10])wash_and_strobparts();
+//translate([145+25+25,315-65,172-10])rotate([90,90,0])tslot20(200);
+laser_zbed(144);
+//translate([0,0,-10])laser_zbed(144);
+//translate([25,130+120,118+10])rotate([0,-90,0])z_encoder_clamp_wiper();
+}
+}
 
+
+
+translate([-45,0,z]){
+zbed_smz();
+//wash_and_strobparts();
+//translate([145+25+25,315-65,172])rotate([90,90,0])tslot20(200);
+}
+
+
+//zbed_metal_version();
+zbed_3dprint_version();
+z = 40;
+ translate([-70,-25+50,z])zbed_multichannel_setup_wider(z);
+
+
+
+bed_leveler_better_lm8uu_for_metalversion();
+*/
 //actualvalve_for_syringe();
 
 //pcb_panels_wider();
@@ -16,7 +52,7 @@ include <PiZero.scad>
 
 
 
-hdmi_rj45_usb_panel();
+//hdmi_rj45_usb_panel();
 
 //multichannel_pipette_holder_linear_actuator_connect_cameramount();
 //microwell_plate_guide();

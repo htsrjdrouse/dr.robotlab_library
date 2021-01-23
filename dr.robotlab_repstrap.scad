@@ -8655,14 +8655,6 @@ translate([-38,-27,-20])cube([50,150,100]);
 
 
 module clamp_bottom_simple_m8_smoothrodholder_for_z(){
-//translate([5,75,-30])rotate([90,0,0])tslot20(200);
-/*
-difference(){translate([-33,1.7,0])rotate([0,0,0])cube([50,53.7,2]);
-translate([20,27,1])cylinder(r=8.7/2,h=20);
-translate([20,27,0])cylinder(r=5.7/2,h=2);
-}
-*/
-//translate([20+10,27+11,12])rotate([90,0,0])cylinder(r=10/2,h=22);
 difference(){
 translate([20+6,27+8,12])rotate([90,0,0])cylinder(r=10/2,h=16);
 translate([20+7,27+10,12])rotate([90,0,0])cylinder(r=2.8/2,h=25);

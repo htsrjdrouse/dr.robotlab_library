@@ -12,18 +12,476 @@ include<arducam-raspi.scad>
 include<bom_corexy_understack.scad>
 include<gripper_platecrane/microwell_gripper.scad>
 include<labautobox.scad>
+include<bom_zbed_moveup.scad>
 
 
-//microfluidics_set();
+
+
+z = -5;
+//zbed_assy(z);
+/*
+module zbed_assy(z){
+translate([0,0,z]){
+zbed_smz_wider();
+laser_zbed(144);
+///translate([0,0,-10])laser_zbed(144);
+//translate([25,130+120,118+10])rotate([0,-90,0])z_encoder_clamp_wiper();
+}
+}
+*/
+
+
 labbot_pcr_config();
+translate([0,-60,0])zbed_assy_wider(110);
 
-translate([-535-38-20,-10,-20])translate([145,240,200-40])peristaltic_pump();
+//extruder_assy();
+
+//imagingblock_lightingside();
+
+//imagingblock_base();
+//color("LightSeaGreen")translate([-10.5,-5,-7])thermoblock_plate();
+//1pipettetip_aligner_sm();
+
+//drillblock_1inch();
+//drillblock_1inch_lid_milling();
+//translate([0,0,-45])drillblock_1inch_milling();
+//thermoblock_assy();
+//thermoblock_holder_1inch();
+//drillblock_1inch();
+//drillblock_1inch_lid_half();
+//thermalblock_assy_half_3heater();
+//actualthermoblock_1inch_half_3heater();
+//translate([82+50,97-60+53,190])rotate([0,0,90])imagingblock_imagingside();
+
+//imagingblock_lid();
+//PCR_imagingmodule();
+
+//translate([82+50,97-60+53,190])rotate([0,0,90])imagingblock_lightingside();
+//singletip_imager();
+//p20_use();
+
+//imagingblock_base();
+//translate([0,0,82])rotate([0,180,0])p1000_model_eppendorf_pcrmon();
+
+
+//pipette_loading_module_casebase();
+//translate([0,0,-30])pipette_loading_module_casetop();
+
+
+
+module extruder_assy(){
+
+color("grey")translate([21,2.5,53])rotate([90,0,0])import("extruder/BMG_M.stl");
+color("silver")translate([25,-16,36])rotate([90,0,0])import("extruder/13003_nema17_25mm.stl");
+translate([16.5,-20,41])rotate([90,0,90])color("silver")import("extruder/e3d_v6_hoted.stl");
+import("extruder/MyDD_Back.stl");
+color("peru")import("extruder/MyDD_Front.stl");
+translate([6,18,-4])color("white")rotate([0,-90,0])import("extruder/40mm_fan.stl");
+import("extruder/MyDD_Nozzle_.stl");
+color("grey")translate([32,-66,-3])rotate([0,-90-40,90])import("extruder/5015_blowerFan_40mm.stl");
+translate([20,-63,14])rotate([0,90,180])import("extruder/MyDD_Fan_Support.stl");
+color("pink")import("extruder/MyDD_BLTouch.stl");
+translate([85,-26,42])color("white")rotate([90,0,180])import("extruder/bltouch.stl");
+import("extruder/MyDD_Spacer.stl");
+
+}
+
+module pipettetip_aligner_sm(){
+ difference(){ 
+  cube([80,10,5]);
+  for(i=[0:7]){ 
+   translate([i*9+8,5,-0.1])#cylinder(r1=5/2,r2=3,h=5.1,$fn=30);
+  }
+ }
+}
+
+
+
+module pipettetip_aligner(){
+ difference(){ 
+  cube([80,10,5]);
+  for(i=[0:7]){ 
+   translate([i*9+8,5,-1])#cylinder(r=6.4/2,h=10,$fn=30);
+  }
+ }
+}
+
+
+module pipette_loading_module_casetop(){
+difference(){
+cylinder(r=18/2,h=8,$fn=30);
+translate([0,0,-2])#cylinder(r=(9.5)/2,h=18,$fn=30);
+translate([0,0,2])#cylinder(r=(14.3)/2,h=8,$fn=30);
+}
+}
+
+module pipette_loading_module_casebase(){
+difference(){
+translate([0,-0,-22])cylinder(r=14/2,h=30,$fn=30);
+//p1000_model_eppendorf_pcrmon();
+scale(1.1)pipette_p1000_noextrusion_pcrmon(8.1,1,"n");
+translate([0,-0,-42])cylinder(r=8/2,h=130,$fn=30);
+}
+}
+//translate([0,0,5])eppendortube();
+//translate([0,0,-27])color("lightblue")translate([0,0,78+6-10])cylinder(r1=2.3/2,r2=1/2,h=20,$fn=30);
+/*
+*/
+module eppendortube(){
+translate([0,0,-30]){
+//color("blue")translate([0,0,78+6])cylinder(r1=6/2,r2=3/2,h=10,$fn=30);
+color("blue")translate([0,0,78+6+8])cylinder(r1=4/2,r2=3/2,h=3,$fn=30);
+%color("lightblue",0.8)difference(){
+translate([0,0,80])cylinder(r1=7/2,r2=4/2,h=15,$fn=30);
+translate([0,0,78])cylinder(r1=6/2,r2=3/2,h=15,$fn=30);
+}
+%color("lightblue",0.65)translate([0,0,95])sphere(r=2,$fn=40);
+}
+}
+//pipette_p1000_noextrusion(8.1,1);
+
+//labautobox();
+//bottom_assy();
+//top_assy();
+//terminalfrontpanel();
+//color("black")
+//atxbackbackpanel();
+//conduitclamp();
+//labautobox_shelf();
+//labautobox_microfluidics();
+
+//labautobox_extrusions();
+
+//peristaltic_pump();
+
+//peristaltic_pump_holder(27.5);
+//multichannel_syringe_to_labautobox_connect();
+//translate([-535-38-20,-10,-20])translate([145,240,200-40])peristaltic_pump();
+/*
 translate([-535-38,200,-20])rotate([0,0,-90]){
 translate([145,240,200-40])peristaltic_pump();
 translate([165-60,240,200-40])peristaltic_pump();
 translate([165-100,240,200-40])peristaltic_pump();
 labautobox();
 }
+*/
+
+
+
+
+
+
+
+
+
+//labbot_pcr_config();
+//gripper_assembly_arms();
+//gripperarm();
+//gripper_pulley_motormount();
+//gripperarm_with_tips();
+//gripperarm_with_paddles();
+
+//stroboscope_mod();
+//color("lightblue")import("stroboscope_miuzei_mirror.stl");
+//color("lime")import("stroboscope_miuzei_back.stl");
+//color("green")translate([13.5,-30,15])rotate([-90,0,0])arducam_basecase();
+//color("pink")translate([13.5,-30+8,15])rotate([-90,0,0])arducam_basecase_cover();
+//translate([13.5,-30+8,15])rotate([-90,0,0])arducam_basecase_attachstem();
+
+//translate([-150+10,-240-11+10,-130])valve_assy_4set_noslot();
+//translate([-50+280,-41,100-1])rotate([90,0,0])multichannel_syringe_assy();
+
+
+//translate([-17,-18,8])color("")PCR_imagingmodule();
+//imagingblock_lightingside();
+//imagingblock_lid();
+//imagingblock_lid();
+//translate([-17,-18,8])color("")PCR_imagingmodule();
+
+//color("lightblue")translate([0+2.3,4.5,6])rotate([0,90,0])pcr_tube();
+
+/*
+singletip_imager();
+for(i=[0:8]){
+translate([70,50+(i*9),-20])cylinder(r=4.5/2,h=50,$fn=30);
+}
+*/
+//p20_use();
+//PCR_imagingmodule();
+//imagingblock_lid();
+//color("lime")translate([0,0,33])drillblock_1inch_lid();
+//imagingblock_lightingside();
+
+///pcrfeet();
+
+//reagent_reservoir();
+//washstation();
+//thermoblock_assy();
+//thermoblock_plate();
+//drillblock_1inch();
+/*
+thermalblock_assy();
+translate([40-85,60,-50])rotate([0,0,0])tslot20(50);
+*/
+
+//actualthermoblock_1inch_half();
+
+module brightfield_background(){
+difference(){
+translate([0,2,-23])cube([100,2,47]);
+for(i=[0,7]){
+translate([20+i*9,12,-15])rotate([90,0,0])#cylinder(r=4/2,h=40,$fn=30);
+translate([20+i*9,12,-15+20])rotate([90,0,0])#cylinder(r=4/2,h=40,$fn=30);
+}
+}
+}
+/*
+translate([0,0,20])rotate([0,90,0])tslot20(100);
+rotate([0,90,0])tslot20(100);
+*/
+
+
+//liquidlevel_cam();
+//liquidlevel_cam_led();
+
+module liquidlevel_cam_led(){
+translate([-35,-27,6.1])difference(){
+cube([80,15,5]);
+translate([-1,10.8,2.2])rotate([-0,0,0])cube([82,5,7]);
+translate([-1,2,3])rotate([-6,0,0])cube([82,9,7]);
+translate([28,45-9-18-5,-1])#cylinder(r=5/2,h=50,$fn=30);
+translate([28+25,45-9-18-5,-1])#cylinder(r=5/2,h=50,$fn=30);
+}
+}
+
+module liquidlevel_cam(){
+translate([-25,-32,0])difference(){
+union(){
+translate([-5,20-8,0])cube([20,16+5,6]);
+translate([-5,20-8,0])cube([50,7,6]);
+translate([-5+50,20-8,0])cube([20,16+5,6]);
+}
+translate([18,45-9-18,0])#cylinder(r=4/2,h=50,$fn=30);
+translate([18+25,45-9-18,0])#cylinder(r=4/2,h=50,$fn=30);
+for(i=[-20:-18]){
+translate([5,45+i,3])cylinder(r=8.5/2,h=50,$fn=30);
+translate([5,45+i,0])cylinder(r=4/2,h=50,$fn=30);
+translate([5+50,45+i,3])cylinder(r=8.5/2,h=50,$fn=30);
+translate([5+50,45+i,0])cylinder(r=4/2,h=50,$fn=30);
+}
+}
+arducam_basecase();
+}
+
+/*
+*/
+
+//thermoblock_holder_1inch_half();
+//tslot_hinge_thermalblock();
+//translate([0,0.5-1.5,0])actualthermoblock_1inch_half_3heater();
+//thermalblock_assy_half();
+//thermalblock_assy_half_3heater();
+//color("pink")translate([0,0-1.5,33])drillblock_1inch_lid_half();
+//color("lime")thermoblock_holder_1inch_half();
+//translate([-95,3,-40])rotate([90,0,0])thermocycle_brd();
+
+//thermocycle_brd();
+
+
+
+module thermocycle_brd(){
+
+difference(){
+union(){
+translate([7,8.5,0])cylinder(r=10/2,h=4,$fn=30);
+translate([7+42,8.5,0])cylinder(r=10/2,h=4,$fn=30);
+translate([7,8.5+90.25,0])cylinder(r=10/2,h=4,$fn=30);
+translate([7+42,8.5+90.25,0])cylinder(r=10/2,h=4,$fn=30);
+}
+translate([7,8.5,-5])cylinder(r=2/2,h=14,$fn=30);
+translate([7+42,8.5,-5])cylinder(r=2/2,h=14,$fn=30);
+translate([7,8.5+90.25,-5])cylinder(r=2/2,h=14,$fn=30);
+translate([7+42,8.5+90.25,-5])cylinder(r=2/2,h=14,$fn=30);
+}
+difference(){
+union(){
+
+translate([50,0,0])cube([20,20,4]);
+cube([48+8,99+8,6]);
+}
+translate([62,10,-2])cylinder(r=3.8/2,h=30,$fn=30);
+translate([4,4,2])cube([48,99,5]);
+translate([7,8.5,-5])cylinder(r=2/2,h=14,$fn=30);
+translate([7+42,8.5,-5])cylinder(r=2/2,h=14,$fn=30);
+translate([7,8.5+90.25,-5])cylinder(r=2/2,h=14,$fn=30);
+translate([7+42,8.5+90.25,-5])cylinder(r=2/2,h=14,$fn=30);
+
+}
+}
+
+
+//color("pink")translate([0,0-1.5,33])drillblock_1inch_lid_half();
+//translate([0,0.5-1.5,0])actualthermoblock_1inch_half();
+//translate([25.5,26,0])rotate([0,0,180])tslot_hinge_thermalblock();
+//color("lime")thermoblock_holder_1inch_half();
+
+module pcrfeet(){
+translate([37-85+5-0.3,-10+8+5-0.3,-50-2])
+difference(){
+union(){
+//translate([-9,-9,0])cube([20.6+18,20.6+18,12]);
+translate([10.3,10.3,0])cylinder(r1=38/2,r2=30/2,$fn=30,h=12);
+}
+translate([20+0.5+4,10.3,8])rotate([0,90,0])cylinder(r=8.7/2,h=20,$fn=30);
+translate([20+0.5-4,10.3,8])rotate([0,90,0])cylinder(r=3.7/2,h=20,$fn=30);
+translate([0,0,4])cube([20.6,20.6,10]);
+}
+}
+
+
+module thermalblock_assy_half_3heater(){
+translate([0,0,6]){
+color("grey")translate([0,0-1.5,33])drillblock_1inch_lid_half();
+//translate([0,0.5-1.5,0])actualthermoblock_1inch_half();
+translate([0,0.5-1.5,0])actualthermoblock_1inch_half_3heater();
+color("grey")thermoblock_holder_1inch_half();
+}
+translate([77.5,-1,-0])rotate([0,90,90])singletip_imager();
+translate([42.5,-8,0])rotate([0,180,0])thermoelectric_module();
+translate([42.5,-8,6])rotate([0,180,0])heatsink_plate();
+translate([42.5,-8,0])rotate([0,180,0])heatsink();
+translate([-8,-5,-38])color("black")fan_40mm();
+pcrfeet();
+translate([91,0,0])pcrfeet();
+translate([37-85,-10+8,-50])rotate([0,0,0])tslot20(50);
+tslot_hinge_thermalblock();
+translate([43,-10+8,-50])rotate([0,0,0])tslot20(50);
+translate([25.5,26,0])rotate([0,0,180])tslot_hinge_thermalblock();
+}
+
+
+
+
+
+
+
+module thermalblock_assy_half(){
+translate([0,0,6]){
+color("grey")translate([0,0-1.5,33])drillblock_1inch_lid_half();
+translate([0,0.5-1.5,0])actualthermoblock_1inch_half();
+color("grey")thermoblock_holder_1inch_half();
+}
+translate([77.5,-1,-0])rotate([0,90,90])singletip_imager();
+translate([42.5,-8,0])rotate([0,180,0])thermoelectric_module();
+translate([42.5,-8,6])rotate([0,180,0])heatsink_plate();
+translate([42.5,-8,0])rotate([0,180,0])heatsink();
+translate([-8,-5,-38])color("black")fan_40mm();
+pcrfeet();
+translate([91,0,0])pcrfeet();
+translate([37-85,-10+8,-50])rotate([0,0,0])tslot20(50);
+tslot_hinge_thermalblock();
+translate([43,-10+8,-50])rotate([0,0,0])tslot20(50);
+translate([25.5,26,0])rotate([0,0,180])tslot_hinge_thermalblock();
+}
+
+
+
+
+//thermoblock_assy();
+
+
+
+module thermalblock_assy(){
+color("lime")translate([0,0,33])drillblock_1inch_lid();
+color("lime")thermoblock_holder_1inch();
+difference(){
+color("")translate([-15.5-5,-5,3-12.1])cube([5+5,88,5]);
+color("")translate([-15.5-5+7,-5+20-0.5,3-12.1-50])cylinder(r=4.5/2,h=100,$fn=30);
+color("")translate([-15.5-5+7,-5+20-0.5+46,3-12.1-50])cylinder(r=4.5/2,h=100,$fn=30);
+}
+translate([42.5,-8,0])rotate([0,180,0])heatsink();
+translate([42.5,38,0])rotate([0,180,0])heatsink();
+translate([-8,-5,-38])color("black")fan_40mm();
+translate([-8,-5+46,-38])color("black")fan_40mm();
+translate([0,0.5,0])actualthermoblock_1inch();
+}
+
+
+
+//thermoblock_assy();
+//comment this out for printing
+/*
+translate([0,0,9])p1000_model_eppendorf();
+color("lightblue")translate([0,0,-6.7])cylinder(r=5.5/2,h=102-13-40,$fn=30);
+color("white")translate([0,0,-6.7-5])cylinder(r=8/2,h=3);
+color("white")translate([0,0,-6.7-3])cylinder(r=12/2,h=3);
+*/
+//labbot_pcr_config();
+
+//p1000_model_eppendorf();
+
+//actual_thermoblock();
+//thermoblock_assy();
+//labbot_pcr_config();
+//color("peru")translate([-4,0,2])thermoblock_lid();
+//translate([-1.5-4,-2,3])thermoblock();
+/*
+*/
+module thermoblock_assy(){
+//translate([0,-2,8+36])color("lime")drillblock_1inch_lid();
+//color("LightSeaGreen")translate([-10.5,-5,-7])thermoblock_plate();
+//translate([0,0,9])actualthermoblock_1inch();
+
+translate([-2,0,0]){
+translate([0,-2,8])color("pink")drillblock_1inch();
+//translate([0,-2,8])color("peru")drillblock_1inch_milling();
+//translate([0,-2,8+36])color("lime")drillblock_1inch_lid();
+//translate([0,-2,8+36+20])color("lime")drillblock_1inch_lid_milling();
+translate([0,0,9])actualthermoblock_1inch();
+}
+color("LightSeaGreen")translate([-10.5,-5,-7])thermoblock_plate();
+/*
+*/
+/*
+translate([60,0,0]){
+translate([0,-2,8])color("pink")drillblock_1inch();
+translate([0,-2,8+36])color("lime")drillblock_1inch_lid();
+translate([0,0,9])actualthermoblock_1inch();
+}
+*/
+/*
+color("peru"){
+translate([-4,0,2])thermoblock_lid();
+translate([-1.5-4,-2,3])thermoblock();
+}
+color("tomato"){
+translate([55-24,0,2])thermoblock_lid();
+translate([-1.5+55-24,-2,3])thermoblock();
+}
+*/
+}
+
+//
+//heater();
+//thermoblock();
+//projection(cut=false)
+//translate([0,0,2])rotate([0,0,0])actual_thermoblock();
+//translate([40,0,0])thermoblock_tslotconnect();
+//translate([-40,59,2])rotate([0,90,0])tslot20(150);
+//translate([40,59,-3])cube([30,18,4]);
+//imagingblock_lid();
+
+
+
+
+
+
+
+
+//microfluidics_set();
+
+
+
 //terminalblock_outside();
 //terminalblock_inside();
 
@@ -72,36 +530,92 @@ translate([-80,-34,-10])cube([98,80,30]);
 //PCR_imagingmodule();
 //translate([82+50,97-60,190-3.3])rotate([0,0,90])translate([-40,42,18-4])rotate([90,0,90])color("LemonChiffon")arducam_case_rtPCR();
 //translate([26.5-5.5-32/2,7.5-3-sh-5+10+2.5,-2+6])cylinder(r=23.5/2,h=3,$fn=30);
+
+
+
  module PCR_imagingmodule(){
- //translate([82+50,97-60+53,190])rotate([0,0,90])imagingblock_lightingholder_led();
- //
- /*
+/*
  */
- translate([82+50,97-60,190])rotate([0,0,90])color("")imagingblock_lid();
- translate([82+50,97-60+53,190])rotate([0,0,90])imagingblock_lightingholder();
- translate([82+50,97-60+31,190])rotate([0,0,90])imagingblock_imagingside();
- translate([82+50,97-60,190])rotate([0,0,90])color("")imagingblock_lid();
- translate([82+50,97-60+53,190])rotate([0,0,90])color("")imagingblock_lightingside_diffuser();
- translate([82+50,97-60+53,190])rotate([0,0,90])imagingblock_lightingholder();
- translate([82+50,97-60+53,190])rotate([0,0,90])imagingblock_lightingside();
- translate([82+50,97-60,190])rotate([0,0,90])imagingblock_base();
- translate([82+50,97-60,190])rotate([0,0,90])color("")imagingblock_lid();
-translate([0,-34,0]){
+ //translate([82+50,97-60+53-2,190+2])rotate([0,0,90])imagingblock_lightingholder_led();
+ //translate([82+50,97-60+53-2,190-6.5])rotate([0,0,90])imagingblock_lightingholder_whiteled();
+ //color("aqua")translate([82+50,97-60+53-2,190])rotate([0,0,90])imagingblock_lightingholder_bluewhite();
+ /*
+ //deprecated
+ translate([82+50,97-60+53,190])rotate([0,0,90])imagingblock_lightingside_bluewhite();
+ color("white")translate([82+50,97-60+53+1,190])rotate([0,0,90])imagingblock_diffuser_bluewhite();
+ */
+//translate([82+50,97-60+53,190])rotate([0,0,90])multitip_imager();
+
+
+translate([82+50,97-60+53,190])rotate([0,0,90])color("grey")imagingblock_lightingside();
+
+/*
+ for(i=[0:7]){
+ translate([82+50,97-60+53,190])rotate([0,0,90])for(jj=[-1,-0.5,0,0.5,1]){
+ translate([jj,0,0]){
+  color("blue")translate([-16-16+10-10.5-0.5+0.2,10.5+i*9-0.4+0.5,40-10+2-12.5-1.4-3+12+6.9-13])rotate([0,180-90,0])translate([12-3+gg/2-45,8.8-7.1+10-8+gg-40.3-13,14-1.75])rotate([-90,45,-90])cylinder(r=1.2/2,h=2.5,$fn=4);
+  color("blue")translate([-16-16+10-10.5-0.5+0.2,10.5+i*9-0.4+1-1,40-10+2-12.5-1.4-3+12+6.9-13])rotate([0,180-90,0])translate([12-3+gg/2-45,8.8-7.1+10-8+gg-40.3-13,14-1.75])rotate([-90,45,-90])cylinder(r=1.2/2,h=2.5,$fn=4);
+ }
+  color("black")translate([-16-16+14,10.5+i*9-0.4,40-10+2-12.5-1.4-9])rotate([0,180,0])translate([12-3+gg/2-45,8.8-7.1+10-8+gg-40.3-13,14-1.75])rotate([-90,45,-90])cylinder(r=1.4/2,h=15.5,$fn=30);
+  color("black")translate([-16-16+10-10.5-0.5,10.5+i*9-0.4,40-10+2-12.5-1.4-3+2])rotate([0,180-90,0])translate([12-3+gg/2-45,8.8-7.1+10-8+gg-40.3-13,14-1.75])rotate([-90,45,-90])cylinder(r=1.2/2,h=8.5,$fn=30);
+ }
+ }
+*/
+
+
+ translate([82+51,97-60+53,190-1])rotate([0,0,90])for(i=[0:7]){
+  translate([-16-15.5,6+0+8.75+(i*9)-0.5,40-10+2-16-10])translate([0,0,82])rotate([0,180,0])p1000_model_eppendorf_pcrmon();
+  translate([-16-15.5,6+0+8.75+(i*9)-0.5,40-10+2-16-10])color("lightblue")p20_use();
+  }
+/*
+*/
+
+translate([82+50,97-60,190])rotate([0,0,90])imagingblock_base();
+//translate([82+50,97-60,190])rotate([0,0,90])color("peru")imagingblock_lid();
+
+/*
+
+translate([0,-34+2.5,0]){
 translate([82+50,97-60,190-3.3])rotate([0,0,90])translate([-40,42,18-4])rotate([90,0,90])color("")arducam_case_rtPCR();
 translate([82+50,97-60+15,190-3.3])rotate([0,0,90])translate([-40,42,18-4])rotate([90,0,90])color("")arducam_case_rtPCR_filter();
  }
-translate([0,-31,0]){
-translate([82+50-5,97-60+6+13,190-3.3+6+2])rotate([0,0,90])translate([-40,42,18-4])rotate([90,0,90])color("yellow")cylinder(r=26/2,h=5,$fn=30);
+translate([0,-31,0])color("grey"){
+translate([82+50-5,97-60+6+13,190-3.3+6+2])rotate([0,0,90])translate([-40,42,18-4])rotate([90,0,90])color("")cylinder(r=26/2,h=5,$fn=30);
  translate([82+50,97-60+31,190])rotate([0,0,90])imagingblock_imagingside();
  }
- /*
 */
+
+
+
+
+/*
+translate([0,0,4]){
+//color("white")translate([82+50,97-60+53+8,190])rotate([0,0,90])color("")imagingblock_lightingside_diffuser();
+//color("blue")translate([82+50,97-60+53+7.2,190])rotate([0,0,90])color("")imagingblock_lightingside_diffuser();
+color("aqua")translate([82+50,97-60+53,190])rotate([0,0,90])imagingblock_lightingholder();
+}
+*/
+
+
+
+/*
+translate([82+50-15,97-60+18,190+11]){
+ for(i=[0:7]){
+ translate([-i*9,0,0])rotate([0,0,90])color("pink") p20_use();
+ }
+}
+*/
+/*
+*/
+
+
+/*
+*/
+
 }
 
 
 
-//actual_thermoblock_metalmount();
-//translate([25-47+25,0,0])mirror([1,0,0])actual_thermoblock_metalmount();
 
 
 //translate([8,13,0])rearm_microfluidics_mount();
@@ -197,20 +711,6 @@ translate([0,67,0])cylinder(r=5/2,h=50,$fn=30);
 }
 /*
 */
-//thermoblock_lid();
-//translate([-1.5,-2,0])thermoblock();
-//translate([-1.5+55,-2,0])thermoblock();
-//translate([-10.5,-5,-7])thermoblock_plate();
-//
-//heater();
-//thermoblock();
-//projection(cut=false)
-//translate([0,0,2])rotate([0,0,0])actual_thermoblock();
-//translate([40,0,0])thermoblock_tslotconnect();
-//translate([-40,59,2])rotate([0,90,0])tslot20(150);
-//translate([40,59,-3])cube([30,18,4]);
-//imagingblock_lid();
-
 //translate([50-10-20+x+121.5,200-14+y-100-10,279])rotate([180,90,0])
 //wheel_camera_assay();
 
@@ -226,17 +726,13 @@ thcl = [155/255,155/255,155/255];
 //x = 129;
 //x = -32+99+63;
 //x = -172+138-120+0.5-15-3.5;//+17.5;//+109;//+230+125;
-x = 66-149-43+200-8;
 //x = 66-149-43+120-8;
 //x = 66-149-43+120-8-100-40;
 //y = -120.5;
-y = 20.5+118-150;//-158; //reagent reservoir
 //y = 20.5+118-99-48+9+11.5-32//-54-57;//+9;
 //y = 20.5;
 //y = -138;
 //y = -68-9;
-z =  28;
-tz = 38-20;//+15;
 //tz = 10;
 echo("testing");
 echo(y);
@@ -245,7 +741,6 @@ echo(y);
 
 //multichannel_cameramount_tslot_part();
 
-//show_gripper();
 
 /*
 multichannel_syringe_assy();
@@ -253,28 +748,57 @@ translate([-126,60,21])rotate([0,0,0])endstop_multichannel_syringe();
 translate([-126,-11.4,97])rotate([-90,0,0])syringe_endstop_flag();
 */
 
+//labbot_pcr_config();
 
 //latest pcr setup
 module labbot_pcr_config(){
+y = 20.5+118-3-100;//+251.5; //-9*11-116-50+13;//+80+6-32-45;//-40; //reagent reservoir
+x = 66-149-43+200-8+160-373+400/2;//-385; //+385-235;//+122;//-222.5-20;
+z =  28;
+mtz = 25-20;
+tz = 23+10-0+mtz;//+15;
+//translate([0,0,z-40])plateobjects_nomastermix(z);
+
+//translate([50-10-20+x,200-14+30+y,700-50+37-35])rotate([180,0,90])multi_iverntech_railsystem(tz);
+translate([50-10-20+x,200-14+30+y,700-50+37-35])rotate([180,0,90])extruder_railsystem(tz+20);
+
+conduit_tubes_extruder(x,y,(tz+60-20-mtz*2));
+
+//conduit_tubes(x,y,(tz+60-20-mtz*2));
+translate([0,0,-24])corexy_beltsetup_wider(x,y); 
+xshuttle_assy_wider(x,y);
+//color("lightgrey")translate([-76,-96,300])rotate([0,90,180])PCR_cam_raspi();
 outside_frame_wider(tcl,thcl,x,y);
+/*
+*/
+//translate([-70,-25+50,z])zbed_multichannel_setup_wider(z);
+//translate([0,0,-12])zbed_smz_wider_nomove();
+translate([0,0,-29.5])xymotor_assy_wider();
+extruder_microfluidics_set();
+//microfluidics_set();
+//XYMotorMount_corexystack(x-235,y-80);
+
+/*
+translate([0,0,-10]){
+translate([-17,-18,8])color("Bisque")PCR_imagingmodule();
 washstation(); 
 gantry_shelves_wider(); 
-/*
-translate([-17,-18,8])color("LemonChiffon")PCR_imagingmodule();
-translate([0,0,-29.5])xymotor_assy_wider();
-xshuttle_assy_wider(x,y);
-//XYMotorMount_corexystack(x+5,y-80);
-translate([0,0,-24])corexy_beltsetup_wider(x,y); 
-translate([-70,-25+50,z])zbed_multichannel_setup_wider(z);
-translate([0,0,-12])zbed_smz_wider_nomove();
-translate([0,0,z-40])plateobjects_nomastermix(z);
-translate([50-10-20+x,200-14+30+y,700-50+tz-35])rotate([180,0,90])multi_iverntech_railsystem(tz);
-conduit_tubes(x,y,(tz+40));
+}
 */
-microfluidics_set();
+/*
+*/
 }
 /*
 */
+
+
+module PCR_cam_raspi(){
+translate([30,-100,-13])import("cytokinetics/PCRcam_rpi4_case_top.stl");
+import("cytokinetics/PCRcam_rpi4_case_bottom.stl");
+}
+
+
+
 
 //translate([50-10-20+x,200-14+30+y,700-50])rotate([180,0,90])iverntech_railsystem(tz);
 //translate([50-10-20+x,200-14+30+y,700-50])rotate([180,0,90])gripper_assembly_paddles();
@@ -526,7 +1050,6 @@ module plateobjects(z){
 }
 
 module plateobjects_nomastermix(z){
- 
  for(i=[0:5]){
  if(i>-1){
  if(i==0){
@@ -535,24 +1058,24 @@ module plateobjects_nomastermix(z){
  translate([-24+i*(85-8),-25+214-85,160])rotate([0,0,0])tipbox_model(z,-1);
  }
  }
- /*
- if (i==0){
- translate([-24+i*(85-8),-25+214-85-120+120,160]) plugbox_model(z);
- }
- */
  if (i>1){
- translate([-24+i*(85-8),-25+214-85-120,160])rotate([0,0,0])tipbox_model(z,-1);
- }
- }
- translate([5,-120,0]){
- translate([82+5,97-5+130,190])rotate([0,0,90])thermoblock();
- translate([82+5,97-5+98,190])rotate([0,0,90])thermoblock();
+ if (i==5){
+  translate([-24+i*(85-8),-25+214-85-120,160])rotate([0,0,0])tipbox_model_smaller(z,-1);
+  translate([-24+i*(85-8),-25+214-85-120,160])rotate([0,0,0]) mineraloil_reservoir(z);
  } 
+ else{
+  translate([-24+i*(85-8),-25+214-85-120,160])rotate([0,0,0])tipbox_model_smaller(z,-1);
+ }
+ }
+
+ }
+ /* 
+ */
+
+ color("")translate([50,114+5.5,184+10]) rotate([0,0,-90])thermoblock_assy();
  //translate([82+86,97-5,190])rotate([0,0,90])thermoblock();
  //translate([82+86,97,190])rotate([0,0,90])plugblock();
  //translate([82+50,97-60,190])rotate([0,0,90])imagingblock();
-
-
 }
 
 module plateobjects_nomastermix_nobox(z){
@@ -596,8 +1119,9 @@ translate([261+9*i,193,200])piezo_model();
 
 
 
-
-
+module extruder_microfluidics_set(){
+extruder_valves_to_pipettes_bundle();
+}
 
 module microfluidics_set(){
 /*
@@ -694,17 +1218,34 @@ module washstation(){
 translate([230,0-5,220])rotate([0,0,-90]){
 
 translate([0,-80,0]){
-translate([0,25,-1+18])washbowl_8tip();
-translate([0,25,-1])washbowl_8tip_base();
-translate([0-37,3+22,-1+18])washbowl_8tip_drypad();
 
-wash_waste_tubing();
-translate([0,102,0]){
+translate([0,-30,0]){
+color("DarkSeaGreen")
 translate([0,25,-1+18])washbowl_8tip();
+color("DarkSeaGreen")
 translate([0,25,-1])washbowl_8tip_base();
-translate([0-37,3+22,-1+18])washbowl_8tip_drypad();
+translate([0-37,3+22,-1+18])washbowl_8tip_drypad("DarkSeaGreen");
+}
+/*
+*/
+/*
+*/
+wash_waste_tubing();
+
+
+translate([0,102-10,0]){
+color("lightseagreen")
+//color("LawnGreen")
+translate([0,25,-1+18])washbowl_8tip();
+color("lightseagreen")
+translate([0,25,-1])washbowl_8tip_base();
+translate([0-37,3+22,-1+18])washbowl_8tip_drypad("lightseagreen");
+//translate([0-37,3+22,-1+18])washbowl_8tip_drypad("Orchid");
 }
 
+
+//color("royalblue")
+reagent_reservoir();
 
 
 /*
@@ -715,7 +1256,6 @@ translate([0-37+100,3+22+220,-1+18-220+5])cylinder(r=80-10,h=150,$fn=30);
 */
 }
 //translate([0,3-100,-1+18])washbowl_8tip();
-
 /*
 color("tan"){
 translate([0,3-100,-1+18])reagentbasin_8tip();
@@ -724,8 +1264,25 @@ translate([0,3-100,-1])washbowl_8tip_base();
 */
 //translate([0-1,3+150,16]) drypad_shelf();
 }
-
 }
+
+
+module reagent_reservoir(){
+//color("royalblue")
+translate([0,102+102,0]){
+color("LawnGreen")translate([0,25,-1+18])reservoir_top();
+color("mediumSeaGreen")translate([0,25,-1])reservoir_base();
+translate([47,47,-4])rotate([0,180,0]){
+thermoelectric_module();
+translate([11,3.5,28])color("black")fan_40mm();
+heatsink();
+master_mix_reservoir();
+}
+}
+}
+
+
+
 
 
 module cable_support_lid(){
@@ -804,12 +1361,12 @@ translate([7+415-11+76+42,-25-50-45,355])color("black")rotate([-0.2,0,-0.4])cube
 /*
 */
 //x left
-translate([20-50+7,-25+180-37+dy+19,350])color("black")rotate([0,0,-1])cube([200-20+dx+24,3,5]);
-translate([7+20-50,-25+218-40+dy+19,350])color("black")rotate([-0,0,-180+1+90])cube([2,183+dx+28,5]);
+translate([20-50+7,-25+180-37+dy+19,350+2.5])color("black")rotate([0,0,-1])cube([200-20+dx+24-2,3,5]);
+translate([7+20-50,-25+218-40+dy+19,350+2.5])color("black")rotate([-0,0,-180+1+90])cube([2,183+dx+28,5]);
 
 //x right
-translate([7+415-2.5+43+42,-25+218+dy-41+19,350])color("black")rotate([-0,0,-180-0.5-90])cube([2,163-dx+12+80,5]);
-translate([417-2.5+47+42,-25+181-2+dy-40+19,355])color("black")rotate([0,180,0+0.5])cube([215-dx-28+80,3,5]);
+translate([7+415-2.5+43+42,-25+218+dy-41+19,350+2.5])color("black")rotate([-0,0,-180-0.5-90])cube([2,163-dx+12+80,5]);
+translate([417-2.5+47+42,-25+181-2+dy-40+19,355+2.5])color("black")rotate([0,180,0+0.5])cube([215-dx-28+80-4,3,5]);
 
 //y front side
 translate([7+18-52,-78-45,355])color("black")rotate([0,0,0.5])cube([2,184+dy+25+45,5]);
@@ -1188,6 +1745,8 @@ module conduit_tubes(x,y,z){
  */
 
  }
+/*
+*/
  translate([172,410,260])color(""){
  translate([-50,6,240])cable_support_extrusion();
  translate([-30,-55,0])rotate([0,0,-90])cable_support_lid();
@@ -1196,4 +1755,78 @@ module conduit_tubes(x,y,z){
 translate([-54,410,505])rotate([0,90,0])tslot20(200+390);
 translate([140,410,505-105])rotate([0,0,0])tslot20(100);
 }
+
+
+
+module conduit_tubes_extruder(x,y,z){
+  //echo(z);
+ //translate([-74,198,550-150])rotate([0,90,0])tslot20innerbracket();
+ //translate([-74,198+215,550-150])rotate([0,90,0])tslot20innerbracket();
+ //conduit
+ translate([172,410,260]){
+  translate([-5,-10,210])rotate([0,90,0])color("black")cylinder(r=25/2,h=75+x+21-46);
+  translate([-5-210,-10,210])rotate([0,90,0])color("black")cylinder(r=25/2,h=190);
+  translate([-5-210+40,-10,210-178])rotate([0,-10,0])color("black")cylinder(r=25/2,h=190);
+  //translate([x-21,y+30,z-40]){
+  translate([x-21-51,0,0]){
+  translate([105,-12,210])color("black")sphere(r=12.5);
+  translate([105,-20,210])color("black")sphere(r=12.5);
+  translate([105,-30,210])color("black")sphere(r=12.5);
+  translate([105,-30,210])color("black")rotate([90,0,0])cylinder(r=12.5,h=300-y);
+  translate([105,-30-210-3+y-30-48,210+5])color("black")rotate([180,0,-10])cylinder(r=12.5,h=50);
+  translate([105,-30-210-3+y-30-48,210+5])color("white")rotate([180,0,-10])cylinder(r=6/2,h=80,$fn=30);
+  }
+
+/*
+  //one
+  translate([105-13.5+8+x-91,-30-249+2+y-30,63+z-40])color("lightblue")rotate([-26,75,0])cylinder(r=3/2,h=80);
+  //two
+  translate([105-13.5+8+9+x-91,-30-249+2+y-30,63+z-40])color("lightblue")rotate([-30,71,0])cylinder(r=3/2,h=72);
+  //three
+  translate([105-13.5+8+9*2+x-91,-30-249+2+y-30,63+z-40])color("lightblue")rotate([-30,69,0])cylinder(r=3/2,h=62);
+  translate([105-13.5+8+9*7+18+x-91-15,-30-249+32+y-30,(84+z-40)])color("lightblue")rotate([0,0,0])cylinder(r=3/2,h=(123-z));
+  //four
+  translate([105-13.5+8+9*3+x-91,-30-249+2+y-30,63+z-40])color("lightblue")rotate([-34,65,0])cylinder(r=3/2,h=58);
+  translate([105-13.5+8+9*7+18+x-91-12,-30-249+32+y-30,(84+z-40)])color("lightblue")rotate([0,0,0])cylinder(r=3/2,h=(123-z));
+  //five
+  translate([105-13.5+8+9*4+x-91,-30-249+2+y-30,63+z-40])color("lightblue")rotate([-37,62,0])cylinder(r=3/2,h=52);
+  translate([105-13.5+8+9*7+18+x-91-9,-30-249+32+y-30,(84+z-40)])color("lightblue")rotate([0,0,0])cylinder(r=3/2,h=(123-z));
+  //six
+  translate([105-13.5+8+9*5+x-91,-30-249+2+y-30,63+z-40])color("lightblue")rotate([-40,57,0])cylinder(r=3/2,h=48);
+  translate([105-13.5+8+9*7+18+x-91-6,-30-249+32+y-30,(84+z-40)])color("lightblue")rotate([0,0,0])cylinder(r=3/2,h=(123-z));
+  //seven
+  translate([105-13.5+8+9*6+x-91,-30-249+2+y-30,63+z-40])color("lightblue")rotate([-43,50,0])cylinder(r=3/2,h=44);
+  translate([105-13.5+8+9*7+18+x-91-3,-30-249+32+y-30,(84+z-40)])color("lightblue")rotate([0,0,0])cylinder(r=3/2,h=(123-z));
+  //eight
+  translate([105-13.5+8+9*7+x-91,-30-249+2+y-30,63+z-40])color("lightblue")rotate([-50,42,0])cylinder(r=3/2,h=42);
+  translate([105-13.5+8+9*7+18+x-91,-30-249+32+y-30,(84+z-40)])color("lightblue")rotate([0,0,0])cylinder(r=3/2,h=(123-z));
+*/
+
+ }
+/*
+*/
+ translate([172,410,260])color(""){
+ translate([-50,6,240])cable_support_extrusion();
+ translate([-30,-55,0])rotate([0,0,-90])cable_support_lid();
+ rotate([0,0,90])cable_support();
+ }
+translate([-54,410,505])rotate([0,90,0])tslot20(200+390);
+translate([140,410,505-105])rotate([0,0,0])tslot20(100);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

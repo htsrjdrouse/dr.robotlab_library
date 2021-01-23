@@ -196,13 +196,17 @@ difference(){
 cylinder(r1=7.25/2,r2=7/2,h=4, $fn=30);
 translate([0,0,-0.1])cylinder(r1=(7.25-1)/2,r2=(7-1)/2,h=4.15, $fn=30);
 }
-color("lightblue")translate([0,0,11+16.5+4])
+translate([0,0,11+16.5+4])
 difference(){
 union(){
-cylinder(r1=7/2,r2=4/2,h=15, $fn=30);
-translate([0,0,15-2-12.5])cylinder(r2=7/2,r1=7/2,h=5, $fn=30);
+color("lightblue")cylinder(r1=7/2,r2=4/2,h=15, $fn=30);
+color("lightblue")translate([0,0,15-2-12.5])cylinder(r2=7/2,r1=7/2,h=5, $fn=30);
 translate([0,0,15-2-7.5])difference(){
-cylinder(r2=4.5/2,r1=7/2,h=9.5, $fn=30);
+union(){
+color("lightblue")cylinder(r2=4.5/2,r1=7/2,h=9.5, $fn=30);
+color("lightblue")translate([0,0,9])cylinder(r2=2.5/2,r1=4.5/2,h=9.5, $fn=30);
+color("blue")translate([0,0,10])cylinder(r2=3.5/2,r1=5/2,h=5, $fn=30);
+}
 //need to put this back 
 //translate([0,0,7.5-3])cylinder(r=7/2,h=0.6);
 }
@@ -226,6 +230,11 @@ translate([0,0,-0.1])cylinder(r1=(7-1)/2,r2=(4-1)/2,h=15+.2);
 //translate([0,0,11+16.5+4+15-10])cylinder(r1=7/2,r2=6/2,h=8);
 }
 }
+
+
+
+
+
 
 
 

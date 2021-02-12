@@ -922,8 +922,8 @@ translate([-27/2+12/2-42-7.5+12,150+20,310-6+5-6])difference(){
 module multi_iverntech_railsystem(z){
 translate([-96,221.5,250])rotate([0,180,180])stepperconduitclamp();
 translate([-80+19,159,322.8+13])rotate([90,0,-90]){
-color("pink")multichannel_cameramount_tslot_part();
-translate([0,z-29,0])multichannel_cameramount_tipholder();
+translate([0,z-29,0])color("pink")multichannel_cameramount_tslot_part();
+translate([0,z-29,0])multichannel_cameramount_tipholder(z);
 }
 color("")lm8uu_zdriver_assay(z);
 /*

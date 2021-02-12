@@ -1320,8 +1320,8 @@ translate([25.5+4,64-35.5+4,z+33])color("lightblue")cube([83-8,119-8,5]);
 
 
 module tipbox_model(z,tt){
-translate([25.5,64-35.5,z-11])color("thistle")cube([83-7,119,50]);
-translate([32,136,z+50-11])
+translate([25.5,64-35.5,z-11+10])color("thistle")cube([83-7,119,50-20]);
+translate([32,136,z+50-11-10])
 for(i=[0:7]){
 for(j=[0:11]){
  if (j == tt) {echo("skip");color("black")translate([9*i,-9*j,0])cylinder(r2=7/2,r1=6/2,h=1); } else {
@@ -1329,7 +1329,8 @@ translate([9*i,-9*j,-6.2])difference(){
 union(){
 color("thistle")cylinder(r2=7/2,r1=6/2,h=7);
 //if (j == 3) {
- translate([0,0,0.5])color("lightblue")cylinder(r2=5.5/2,r1=5.5/2,h=7);
+ //translate([0,0,0.5])color("lightblue")cylinder(r2=5.5/2,r1=5.5/2,h=7);
+ translate([0,0,-5])color("bisque")import("pcrtube.stl");
 //}
 }
 //cylinder(r2=6/2,r1=5/2,h=8);
@@ -1348,8 +1349,8 @@ translate([25.5+4,64-35.5+32-28,z-11+0.3])color("lightblue")cube([83-7-8,22,50])
 
 
 module tipbox_model_smaller(z,tt){
-translate([25.5,64-35.5+32,z-11])color("thistle")cube([83-7,119-32,50]);
-translate([32,136,z+50-11])
+translate([25.5,64-35.5+32,z-11+10])color("thistle")cube([83-7,119-32,50-20]);
+translate([32,136,z+50-11-10])
 for(i=[0:7]){
 for(j=[0:7]){
  if (j == tt) {echo("skip");color("black")translate([9*i,-9*j,0])cylinder(r2=7/2,r1=6/2,h=1); } else {
@@ -1371,8 +1372,8 @@ translate([0,0,0.5])color("lightblue")cylinder(r2=5.5/2,r1=5.5/2,h=7);
 
 
 module tipbox_model_missrow(z,tt){
-translate([25.5,64-35.5,z-11])color("thistle")cube([83-7,119,50]);
-translate([32,136,z+50-11])
+translate([25.5,64-35.5,z-11+10])color("thistle")cube([83-7,119,50-20]);
+translate([32,136,z+50-11-10])
 for(i=[0:7]){
 for(j=[0:11]){
  if (j == tt) {echo("skip");color("black")translate([9*i,-9*j,0])cylinder(r2=7/2,r1=6/2,h=1); } else {
@@ -1380,8 +1381,10 @@ translate([9*i,-9*j,-6.2])difference(){
 union(){
 color("thistle")cylinder(r2=7/2,r1=6/2,h=7);
 if(j<11){
-translate([0,0,0.5])color("lightblue")cylinder(r2=5.5/2,r1=5.5/2,h=7);
+//translate([0,0,0.5])color("lightblue")cylinder(r2=5.5/2,r1=5.5/2,h=7);
+translate([0,0,-5])color("bisque")import("pcrtube.stl");
 } else {
+//translate([0,0,-5])color("bisque")import("pcrtube.stl");
 translate([0,0,0.5])color("thistle")cylinder(r2=5.5/2,r1=5.5/2,h=7);
 translate([0,0,0.6])color("grey")cylinder(r2=4/2,r1=4/2,h=7);
 } 

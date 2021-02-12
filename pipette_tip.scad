@@ -62,16 +62,69 @@ translate([230,0,220])rotate([0,0,-90])import("BOM_inventory/build5/washbowl_8ti
 */
 
 
+module pcrtube(){
+difference(){
+union(){
+translate([0,0,0.25+12])cylinder(r2=6/2,r1=6/2,h=9.5,$fn=30);
+translate([0,0,0.25])cylinder(r2=6/2,r1=3/2,h=12,$fn=30);
+sphere(r=2.9/2,$fn=30);
+}
+translate([0,0,0.25+12])cylinder(r=5/2,h=10,$fn=30);
+translate([0,0,0.25])cylinder(r2=5/2,r1=2.5/2,h=12.5,$fn=30);
+}
+}
 
-module pipette_sample_collection(){
-translate([40-j*9,-31.5+i*9,0])pipette_p300_lts_model();
-translate([40-j*9,-31.5+i*9,6])color("purple",0.3)rotate([0,0,45])cylinder(r=4.25+2.1,h=20+10,$fn=4);
-
-
+module pcrtube_stump(){
+difference(){
+union(){
+translate([0,0,0.25+12])cylinder(r2=6.3/2,r1=6.3/2,h=9.5,$fn=30);
+translate([0,0,0.25])cylinder(r2=6.3/2,r1=3.3/2,h=12,$fn=30);
+sphere(r=(2.9+0.3)/2,$fn=30);
+}
+//translate([0,0,0.25+12])cylinder(r=5/2,h=10,$fn=30);
+//translate([0,0,0.25])cylinder(r2=5/2,r1=2.5/2,h=12.5,$fn=30);
+}
 }
 
 
 
+
+
+
+
+module pipette_sample_collection(){
+translate([40-j*9,-31.5+i*9,0])pipette_p300_lts_model();
+translate([40-j*9,-31.5+i*9,6])color("purple",0.3)rotate([0,0,45])cylinder(r=4.25+2.1,h=20+10,$fn=4);
+}
+
+
+module pipette_p20_sleeve(){
+difference(){
+union(){
+translate([0,0,0])color("lightpink",0.9)cylinder(r1=(5.5)/2,r2=(2.5)/2,h=15, $fn=30);
+translate([0,0,10-7])color("peru",0.9)cylinder(r1=(6)/2,r2=(5)/2,h=5, $fn=30);
+}
+translate([0,0,-0.1])color("lightgreen",0.9)cylinder(r1=(5.3)/2,r2=(2.2)/2,h=15.2, $fn=30);
+}
+}
+
+
+module pipette_p20_cap_assy(){
+pipette_p20_model();
+translate([0,0,11-4])pipette_p20_sleeve();
+//color("bisque")translate([0,0,30+74])rotate([0,180,0])import("pcrtube.stl");
+color("bisque")translate([0,0,30+74-74])rotate([0,180,0])import("pcrtube.stl");
+//pcrtube();
+}
+
+module pipette_p20_model(){
+difference(){union(){
+translate([0,0,5])color("lightblue",0.9)cylinder(r1=(5)/2,r2=(1.5)/2,h=21, $fn=30);
+translate([0,0,0])color("lightblue",0.9)cylinder(r1=(6)/2,r2=(5.5)/2,h=5, $fn=30);
+}
+translate([0,0,-0.1])color("lightgreen",0.9)cylinder(r1=(5.8)/2,r2=(0.75)/2,h=26.5, $fn=30);
+}
+}
 
 module pipette_p300_lts_model(){
 aa = 0;

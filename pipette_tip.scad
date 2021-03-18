@@ -7,7 +7,7 @@ include <tslot.inc.scad>
 difference(){
 color("silver")translate([43,-40,0])cube([20,80,60]);
 translate([43+2,-40+2,2])cube([20-4,80-4,60]);
-translate([43+2+16-2,-40+4,2+26])cube([5,80-8,10]);
+t3ranslate([43+2+16-2,-40+4,2+26])cube([5,80-8,10]);
 }
 */
 
@@ -108,12 +108,32 @@ translate([0,0,-0.1])color("lightgreen",0.9)cylinder(r1=(5.3)/2,r2=(2.2)/2,h=15.
 }
 }
 
+module pipette_p1000_sleeve(){
+difference(){
+union(){
+translate([0,0,-2])color("orange",0.9)cylinder(r1=(7.5)/2,r2=(3.5)/2,h=16.5, $fn=30);
+translate([0,0,10-2])color("peru",0.9)cylinder(r1=(6.5)/2,r2=(5)/2,h=5, $fn=30);
+}
+translate([0,0,-2.1])color("orange",0.9)cylinder(r1=(7.5-1)/2,r2=(3.5-1)/2,h=16.5+0.2, $fn=30);
+//translate([0,0,-0.1])color("lightgreen",0.9)cylinder(r1=(5.3)/2,r2=(2.)/2,h=8, $fn=30);
+}
+}
+
+
+
 
 module pipette_p20_cap_assy(){
 pipette_p20_model();
 translate([0,0,11-4])pipette_p20_sleeve();
 //color("bisque")translate([0,0,30+74])rotate([0,180,0])import("pcrtube.stl");
-color("bisque")translate([0,0,30+74-74])rotate([0,180,0])import("pcrtube.stl");
+//color("bisque")translate([0,0,30+74-74])rotate([0,180,0])import("pcrtube.stl");
+//pcrtube();
+}
+
+module pipette_p1000_cap_assy(){
+translate([0,0,11-4-14])pipette_p1000_sleeve();
+color("bisque")translate([0,0,30+74])rotate([0,180,0])import("pcrtube.stl");
+//color("bisque")translate([0,0,30+74-74-4])rotate([0,180,0])import("pcrtube.stl");
 //pcrtube();
 }
 
@@ -258,7 +278,8 @@ translate([0,0,15-2-7.5])difference(){
 union(){
 color("lightblue")cylinder(r2=4.5/2,r1=7/2,h=9.5, $fn=30);
 color("lightblue")translate([0,0,9])cylinder(r2=2.5/2,r1=4.5/2,h=9.5, $fn=30);
-color("blue")translate([0,0,10])cylinder(r2=3.5/2,r1=5/2,h=5, $fn=30);
+//gasket part
+//color("blue")translate([0,0,10])cylinder(r2=3.5/2,r1=5/2,h=5, $fn=30);
 }
 //need to put this back 
 //translate([0,0,7.5-3])cylinder(r=7/2,h=0.6);

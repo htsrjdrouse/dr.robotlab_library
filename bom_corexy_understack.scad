@@ -175,9 +175,10 @@ translate([-13+16+481,400,51.5-8])difference(){
  color("black")cylinder(r=9/2,h=5);translate([0,0,-0.1])color("black")cylinder(r=5/2,h=3.3,$fn=6);
  }
 
+translate([20,24,40]){
 translate([-13-20,-53-20,43-50])nema17();
 translate([-13+497-20,-53-20,43-50])nema17();
-
+}
 translate([-13,400-453,51.5])difference(){
  color("silver")cylinder(r=14/2,h=10);translate([0,0,-0.1])color("black")cylinder(r=5/2,h=3.3,$fn=6);
  }

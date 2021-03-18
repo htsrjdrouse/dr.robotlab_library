@@ -17,6 +17,9 @@ include <Claw.scad>
 //lm8uu_zdriver_assay();
 
 
+
+
+
 /*
 translate([-113,-151+9,520])rotate([0,180,0]){
 multi_iverntech_railsystem();
@@ -194,13 +197,15 @@ translate([0,9.5,0])pre_stepper_driver_lm8uu_slider_assy();
 
 
 
+
+
 module stepper_driver_lm8uu_pla(z){
 translate([-20.5-2,130+0.75,370.75])rotate([-90,0,90]){
 color("silver")translate([49.7+11,31+33+10+1,25+40-5])rotate([90,0,0])cylinder(r=8/2,h=131,$fn=30);
 //color("green")translate([49.7+11,31+33+10-50-3+10,25+40-5])rotate([90,0,0])lm8uu_pla();
 //lm8uu_zslider();
 }
-translate([-100+50+6.5-10+10,154+76.5-1,250-5+30-z])rotate([-90,0,90])translate([0,0,0])spring_stepper_linear_m8nut_coupler_lm8uu();
+translate([-100+50+6.5-10+10,154+76.5-1,250-5+30-z+40])rotate([-90,0,90])translate([0,0,0])spring_stepper_linear_m8nut_coupler_lm8uu();
 translate([0,-1,0]){
 translate([-45,232.5,282.5])rotate([0,0,180]){
 motormount_centered();
@@ -361,16 +366,26 @@ translate([-38.25+14-13.9+6.5,-70+30-10+8+5-16+1.5+13+8.8-13,22.5+8-8])rotate([-
 translate([-38.25+14-13.9-14+8+1.2-0.2,-70+30-5-10-17,22.5+13.5])cube([10,40,5]);
 translate([-38.25+14-13.9,-70+30-10+8+5+2-2.5,22.5])rotate([-90,0,0])cylinder(r=12/2,h=28,$fn=35);
 translate([-38.25+14-13.9,-70+30-10+8+5+2-2.5-33,22.5])rotate([-90,0,0])cylinder(r=12/2,h=28,$fn=35);
-translate([-38.25+14-13.9,-70+30-10+8+5+5-16,22.5-8])rotate([-90,0,0])cylinder(r=2.8/2,h=36,$fn=35);
 translate([-38.25+14-13.9,-70+30-10+8+5-10,22.5-8])rotate([-90,0,0])cylinder(r=8.5/2,h=4,$fn=35);
 translate([-38.25+14-13.9,-70+30-10+8+5-10-20,22.5+8])rotate([-90,0,0])cylinder(r=8.5/2,h=4+20,$fn=35);
 translate([-38.25+14-13.9-8,-70+30-10+8+5-10-20,22.5])rotate([-90,0,0])cylinder(r=8.5/2,h=4+20,$fn=35);
 translate([-38.25+14-13.9+8,-70+30-10+8+5-10-20,22.5])rotate([-90,0,0])cylinder(r=8.5/2,h=4+20,$fn=35);
+
+/*
+translate([-38.25+14-13.9,-70+30-10+8+5+5-16,22.5-8])rotate([-90,0,0])cylinder(r=2.8/2,h=36,$fn=35);
 translate([-38.25+14-13.9,-70+30-10+8+5-16,22.5+8])rotate([-90,0,0])cylinder(r=2.8/2,h=36,$fn=35);
 translate([-38.25+14-13.9-8,-70+30-10+8+5-16,22.5])rotate([-90,0,0])cylinder(r=2.8/2,h=36,$fn=35);
 translate([-38.25+14-13.9+8,-70+30-10+8+5-16,22.5])rotate([-90,0,0])cylinder(r=2.8/2,h=36,$fn=35);
+*/
+translate([-38.25+14-13.9,-70+30-10+8+5+5-16,22.5-8])rotate([-90,0,0])cylinder(r=3.7/2,h=36,$fn=35);
+translate([-38.25+14-13.9,-70+30-10+8+5-16,22.5+8])rotate([-90,0,0])cylinder(r=3.7/2,h=36,$fn=35);
+translate([-38.25+14-13.9-8,-70+30-10+8+5-16,22.5])rotate([-90,0,0])cylinder(r=3.7/2,h=36,$fn=35);
+translate([-38.25+14-13.9+8,-70+30-10+8+5-16,22.5])rotate([-90,0,0])cylinder(r=3.7/2,h=36,$fn=35);
+
+
 //translate([-38.25+14-13.9,-70+30-30,22.5])rotate([-90,0,0])cylinder(r=7.8/2,h=241);
-translate([-38.25+14-13.9,-70+30-30,22.5])rotate([-90,0,0])cylinder(r=10.8/2,h=241);
+translate([-38.25+14-13.9,-70+30-30,22.5])rotate([-90,0,0])cylinder(r=7.9/2,h=241,$fn=30);
+//translate([-38.25+14-13.9,-70+30-30,22.5])rotate([-90,0,0])cylinder(r=10.8/2,h=241);
 translate([-38.25+14-13.9,-70+30-30,22.5])rotate([-90,0,0])cylinder(r=15/2,h=27);
 for(i=[0:0]){
 translate([-38.25+14-13.9+13.7+11.9-i,-70+34-4,22.5+3.8-50])cylinder(r=3.7/2,h=120);
@@ -920,12 +935,13 @@ translate([-27/2+12/2-42-7.5+12,150+20,310-6+5-6])difference(){
 
 
 module multi_iverntech_railsystem(z){
-translate([-96,221.5,250])rotate([0,180,180])stepperconduitclamp();
+//translate([-96,221.5,250])rotate([0,180,180])stepperconduitclamp();
 translate([-80+19,159,322.8+13])rotate([90,0,-90]){
-translate([0,z-29,0])color("pink")multichannel_cameramount_tslot_part();
-translate([0,z-29,0])multichannel_cameramount_tipholder(z);
+//translate([0,z-29,0])color("lime")multichannel_cameramount_tslot_part();
+//translate([0,z-11-5.25,0+5])multichannel_cameramount_tipholder(z);
 }
-color("")lm8uu_zdriver_assay(z);
+//translate([-130,200-3,400-2])rotate([90,0,90])stepper_linear_m8nut_endstopflag(6);
+//color("")lm8uu_zdriver_assay(z);
 /*
 translate([-37.5,192.5,350-1])rotate([0,90,0])sandwich_delrinwheel();
 
@@ -933,12 +949,15 @@ translate([0,-28,0]){
 translate([43-25-55-10,206.5-15-41.5+28+19+300,-60+430-28])rotate([-0,90,-90])tslot20(552);
 }
 */
-color("Salmon")translate([-20+5-220-3+0.5,200+5-231.8,678.8])rotate([0,180,-90])slider_front_assy_multichannel_iverntech();
-color("Salmon")translate([-25.5,20,320-3])rotate([0,180,0])iverntech_slider_xshuttle_connect();
+color("lime")translate([-20+5-220-3+0.5,200+5-231.8,678.8])rotate([0,180,-90])slider_front_assy_multichannel_iverntech();
+color("lime")translate([-25.5,20,320-3])rotate([0,180,0])iverntech_slider_xshuttle_connect();
 color("Plum")translate([-25.5-31,20+167+1,320-8])rotate([90,0,90])import("beltclamp.stl");
 color("Plum")translate([-25.5-31,20+167+1+82,320-8])rotate([90,0,90])import("beltclamp.stl");
-//translate([-20+5-220-3+0.5,200+5-231.8,678.8])rotate([0,180,-90])shuttle_front_vertical_adjust_wider_slider_wall_beltfix();
 color("Olive")translate([-20+5-3,200+5,340])rotate([-90,0,-90])shuttle_back_fast();
+/*
+*/
+
+//translate([-20+5-220-3+0.5,200+5-231.8,678.8])rotate([0,180,-90])shuttle_front_vertical_adjust_wider_slider_wall_beltfix();
 /*
 translate([-27/2+12/2-48+6+12,55-60-30-60,310-6+5])color("black")cube([12,450,8]);
 translate([-27/2+12/2-42-7.5+12,150+20,310-6+5-6])difference(){
@@ -949,25 +968,89 @@ translate([-27/2+12/2-42-7.5+12,150+20,310-6+5-6])difference(){
  translate([27/2+10,45/2+10,-5-20])cylinder(r=3.7/2,h=60);
 }
 */
-translate([-15.5,-10,0]){
+translate([-15.5,-10+10,0]){
 translate([0-30,250,269-5])rotate([90,0,0])tslot20(120);
 translate([0-30-20,250,269-5])rotate([90,0,0])tslot20(120);
 //translate([0-30,250,269-5])rotate([90,0,0])tslot20(100);
 //translate([0-30-20,250,269-5])rotate([90,0,0])tslot20(100);
 }
+/*
+*/
+
+}
+
+module extruder_connector(){
+difference(){
+color("pink")translate([507-2+5,0-30-4,-25.75-1.0])cube([20,50,11]);
+color("pink")translate([507-2+5+2,0-30-4+25,-25.75-1.0-20])cylinder(r=20/2,h=100,$fn=30);
+color("pink")translate([507-2+5,0-30-4+25,-25.75-1.0-20])cylinder(r=20/2,h=100,$fn=30);
+
+translate([507-2-5-0.5,0-30-4+25-17.25,-25.75-1.0+5.5])rotate([0,90,0])cylinder(r=3.7/2,h=100,$fn=30);
+translate([507-2-5-0.5,0-30-4+25-17.25+35,-25.75-1.0+5.5])rotate([0,90,0])cylinder(r=3.7/2,h=100,$fn=30);
+
+translate([2,0,0]){
+translate([507-2-5-0.5,0-30-4+25-17.25,-25.75-1.0+5.5])rotate([0,90,0])cylinder(r=8/2,h=20,$fn=30);
+translate([507-2-5-0.5,0-30-4+25-17.25+35,-25.75-1.0+5.5])rotate([0,90,0])cylinder(r=8/2,h=20,$fn=30);
 }
 
 
+//translate([0,0-14,0])rotate([0,90,0])cylinder(r=7/2,h=1000,$fn=30);
+}
+//extruder_attach_motormountthin();
+}
+
+
+module extruder_attach_motormountthin(){
+ mmx = 42;
+ mmy = 42;
+ mmz = 6;
+ mmposx = 0;
+ mmposy = 19;
+ mmposz = -18.5;
+ m6rad = 6.5/2;
+ m3rad = 4/2;
+ motrad = 11.5;
+ //motrad = 4;
+ difference(){
+  union(){
+  translate([mmposx+20,mmposy,mmposz])cube([mmx-20,mmy,mmz]);
+  translate([mmposx+10,mmposy-25,mmposz])cube([18,90,mmz]);
+  }
+  translate([mmposx+mmx/2,mmposy+mmy/2,mmposz]){
+  //cylinder(r=motrad, h=9);
+  //cylinder(r=8.2/2, h=109);
+  //translate([0,0,-100])
+  //cylinder(r=4.3, h=400);
+  }
+  //m3 motor screws
+  //translate([mmposx+mmx/2-15.5,mmposy+mmy/2-15.5,mmposz-5])cylinder(r=m3rad, h=50);
+  //translate([mmposx+mmx/2-15.5,mmposy+mmy/2+15.5,mmposz-5])cylinder(r=m3rad, h=50);
+  translate([mmposx+mmx/2+15.5-1.5,mmposy+mmy/2+15.5,mmposz-5])cylinder(r=m3rad, h=90);
+  translate([mmposx+mmx/2+15.5-1.5,mmposy+mmy/2-15.5,mmposz-5])cylinder(r=m3rad, h=90);
+  /*
+  translate([0,0,11-2]){
+  translate([mmposx+mmx/2-15.5,mmposy+mmy/2-15.5,mmposz-5])cylinder(r=8/2, h=50);
+  translate([mmposx+mmx/2-15.5,mmposy+mmy/2+15.5,mmposz-5])cylinder(r=8/2, h=50);
+  translate([mmposx+mmx/2+15.5-1.5,mmposy+mmy/2+15.5,mmposz-5])cylinder(r=8/2, h=90);
+  translate([mmposx+mmx/2+15.5-1.5,mmposy+mmy/2-15.5,mmposz-5])cylinder(r=8/2, h=90);
+  }
+  */
+  translate([mmposx+mmx/2+15.5-1.5-16.5,mmposy+mmy/2-15.5-20,mmposz-5])cylinder(r=5.7/2, h=290);
+  translate([mmposx+mmx/2+15.5-1.5-16.5,mmposy+mmy/2-15.5+52,mmposz-5])cylinder(r=5.7/2, h=290);
+ }
+}
 
 
 module extruder_railsystem(z){
 //translate([-96,221.5,250])rotate([0,180,180])stepperconduitclamp();
 translate([-80+19,159,322.8+13])rotate([90,0,-90]){
+//translate([-10,z-39-22,41+6-15+2.5+2])rotate([-90,0,180])extruder_assy();
+
 //color("pink")multichannel_cameramount_tslot_part();
 //translate([0,z-29,0])multichannel_cameramount_tipholder();
-translate([0,z-39,41+6])rotate([-90,0,180])extruder_assy();
-translate([25,z-39-15,41-7])rotate([-90,0,180])rotate([0,90,0])tslot20(100);
-translate([25,z-39-15,41-7+20])rotate([-90,0,180])rotate([0,90,0])tslot20(100);
+
+//translate([25,z-39-15,41-7])rotate([-90,0,180])rotate([0,90,0])tslot20(100);
+//translate([25,z-39-15,41-7+20])rotate([-90,0,180])rotate([0,90,0])tslot20(100);
 }
 //color("")lm8uu_zdriver_assay(z);
 /*
@@ -976,12 +1059,17 @@ translate([0,-28,0]){
 translate([43-25-55-10,206.5-15-41.5+28+19+300,-60+430-28])rotate([-0,90,-90])tslot20(552);
 }
 */
+translate([-46-2,100-7.5+58,280+17.5])rotate([0,90,0])extruder_attach_motormountthin();
+//translate([-46-2,100-7.5+58,280+17.5])rotate([0,0,0])
+translate([-600,200,325])extruder_connector();
+/*
 color("Salmon")translate([-20+5-220-3+0.5,200+5-231.8,678.8])rotate([0,180,-90])slider_front_assy_multichannel_iverntech();
 color("Salmon")translate([-25.5,20,320-3])rotate([0,180,0])iverntech_slider_xshuttle_connect();
 color("Plum")translate([-25.5-31,20+167+1,320-8])rotate([90,0,90])import("beltclamp.stl");
 color("Plum")translate([-25.5-31,20+167+1+82,320-8])rotate([90,0,90])import("beltclamp.stl");
 //translate([-20+5-220-3+0.5,200+5-231.8,678.8])rotate([0,180,-90])shuttle_front_vertical_adjust_wider_slider_wall_beltfix();
 color("Olive")translate([-20+5-3,200+5,340])rotate([-90,0,-90])shuttle_back_fast();
+*/
 /*
 translate([-27/2+12/2-48+6+12,55-60-30-60,310-6+5])color("black")cube([12,450,8]);
 translate([-27/2+12/2-42-7.5+12,150+20,310-6+5-6])difference(){
@@ -992,36 +1080,13 @@ translate([-27/2+12/2-42-7.5+12,150+20,310-6+5-6])difference(){
  translate([27/2+10,45/2+10,-5-20])cylinder(r=3.7/2,h=60);
 }
 */
+/*
 translate([-15.5,-10,0]){
 translate([0-30,250,269-5])rotate([90,0,0])tslot20(120);
 translate([0-30-20,250,269-5])rotate([90,0,0])tslot20(120);
-//translate([0-30,250,269-5])rotate([90,0,0])tslot20(100);
-//translate([0-30-20,250,269-5])rotate([90,0,0])tslot20(100);
 }
+*/
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 module rfid_holder(){

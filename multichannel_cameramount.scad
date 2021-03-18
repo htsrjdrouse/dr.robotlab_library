@@ -1,3 +1,7 @@
+//multichannel_cameramount.scad
+//line 189 needs to be manually modified
+//module pipette_p1000_noextrusion(dia,fl,arg,z){
+
 
 
 //multichannel_pipette_holder_camera_example();
@@ -184,17 +188,25 @@ if (fl == 1){
 //this is for show pipette show
 //translate([0,0,200-100+80-80-11])rotate([0,180,0])color("lightgreen")pipette_p300_lts_model();
 
-/*
 //comment this out for printing
-translate([0,0,200-100+80-80-11-42])rotate([0,0,0])pipette_p20_cap_assy();
-translate([0,0,9-10])p1000_model_eppendorf();
+//The p20 or p1000 cap assay has the tube
+//translate([0,0,200-100+80-80-11-42])rotate([0,0,0])pipette_p20_cap_assy();
+//translate([0,0,200-100+80-80-11-42])rotate([0,0,0])pipette_p1000_cap_assy();
+
+/*
+translate([0,0,9-10+4])p1000_model_eppendorf();
 color("lightblue")translate([0,0,-6.7])cylinder(r=5.5/2,h=102-13-40,$fn=30);
-color("lightblue")translate([0,0,62-400+300-10-z*0.7+11])rotate([0,0,0])cylinder(r=2.5/2,h=333-300+10+z*0.7-12);
+*/
+
+//color("lightblue")translate([0,0,62-400+300-10-z*0.7-8])rotate([0,0,0])cylinder(r=2.5/2,h=333-300+10+z*0.7-12+20);
+/*
 */
 /*
 color("lightblue")translate([0,0,62])cylinder(r=2.5/2,h=13);
 color("lightblue")translate([0,0,52.3-10])cylinder(r2=2.5/2,r1=4.5/2,h=20);
 color("lightblue")translate([0,0,-36.7])cylinder(r=7.5/2,h=20);
+*/
+/*
 //here is the luer lock comment out for printing
 color("white")translate([0,0,-6.7-5])cylinder(r=8/2,h=3);
 color("white")translate([0,0,-6.7-3])cylinder(r=12/2,h=3);
@@ -220,7 +232,9 @@ union(){
 translate([0-15.5,17.4,0-3.4])cube([16+15.5+4,25,4+5+3.5]);
 //translate([0-15.5+15-15,17.4-15-7.5-1,0-3.4+5])cube([12+20+7-2,25+15+15+15+2,4+5+3.5-5]);
 //translate([0-15.5+15-15,17.4-15-7.5-1,0-3.4+5])cube([12+20+7-2-10,25+15+15+15+2,4+5+3.5-5]);
-translate([0-15.5+15-15-3-14,17.4-15-7.5-1,0-3.4+5-5])#cube([12+20+7-2-10+14-8,25+15+15+15+2,4+5+3.5-5+5]);
+translate([0-15.5+15-15-3-14,17.4-15-7.5-1,0-3.4+5-5])cube([12+20+7-2-10+14-8,25+15+15+15+2,4+5+3.5-5+5]);
+translate([0-15.5+15-15-3-14+2.95+0.25,17.4-15-7.5-1,0-3.4+5-5-2+0.3])cube([3,25+15+15+15+2,5]);
+translate([0-15.5+15-15-3-14+2.95+0.25+12.1,17.4-15-7.5-1,0-3.4+5-5-2+0.3])cube([3,25+15+15+15+2,5]);
 
 //translate([0-15.5+15-15+12.5,17.4-15-7.5-1+49.5,0-3.4+5-8])cube([12+20+7-2-10-15+2.5,25+15+15+15+2-35+4,4+5+3.5-5+8]);
 translate([0-15.5,17.4,0-3.4+7.5])cube([16+15.5+4+20,25,4+5+3.5-7.5]);
@@ -233,8 +247,8 @@ translate([0.35+0.75+40+6-83-2-0.1-7.5-0.3-14,75-1-5.35-38-1,-25-2.5+10])rotate(
 //for(i=[0,1,6,7]){
 for(i=[1,6]){
 for(y=[1.8:1.8]){
-#translate([-38.25+14-13.9+6.5+i*9,-70+30-10+8+5-16+1.5+y*9-3,22.5+8-8-2.5-4-50])rotate([-0,0,0])cylinder(r=4.8/2,h=112,$fn=35);
-#translate([-38.25+14-13.9+6.5+i*9,-70+30-10+8+5-16+1.5+y*9-3,22.5+8-8-2.5-4-2+4])rotate([-0,0,0])cylinder(r=9/2,h=30,$fn=35);
+translate([-38.25+14-13.9+6.5+i*9,-70+30-10+8+5-16+1.5+y*9-3,22.5+8-8-2.5-4-50])rotate([-0,0,0])cylinder(r=4.8/2,h=112,$fn=35);
+translate([-38.25+14-13.9+6.5+i*9,-70+30-10+8+5-16+1.5+y*9-3,22.5+8-8-2.5-4-2+4])rotate([-0,0,0])cylinder(r=9/2,h=30,$fn=35);
 }
 }
 }
@@ -292,8 +306,7 @@ module multichannel_pipette_holder_camera_example(z){
 color(""){
 //translate([-9,-6.6+8,-4])cube([6,13.2,12]);
 //translate([-9+76.5-0.3+1,-6.6+8,-4])cube([5,13.2,12]);
-
-
+//color("lime")translate([-7,3,30-15])pipettetip_aligner();
 color("pink")translate([-9-9,-6.6+8,-4])cube([6,13.2,12]);
 color("pink")translate([-9+76.5-0.3+1+9,-6.6+8,-4])cube([5,13.2,12]);
 }
@@ -371,3 +384,25 @@ translate([-4-11+70,-sh/2+3-5,-10])cylinder(r=5.5/2,h=80);
 */
 }
 }
+
+module stepper_linear_m8nut_endstopflag(thick){
+translate([0,-20-9,0])difference(){
+difference(){union(){
+translate([-38.25+14-13.9+20,-70+30.-5+4,22.5+3.8-1.0])cube([44.5-20,11,thick]);
+translate([-38.25+14-13.9+20-20,-70+30.-5-5+7,22.5+3.8-1.0])cube([44.5-20+20-23,5+10+5-7,thick]);
+translate([-38.25+14-13.9+20-20-4,-70+30.-5-5-4+7,22.5+3.8-1.0])cube([44.5-20+20-23,5+10+5+4-7,thick+5]);
+}
+translate([-90,-40+4,29])rotate([0,90,0])cylinder(r=3.6/2,h=73,$fn=30);
+}
+for(i=[0:0]){
+translate([-38.25+14-13.9+13.7+11.9-i,-70+34,22.5+3.8-50])cylinder(r=3.7/2,h=120);
+translate([-38.25+14-13.9+13.7+13+11.9-i,-70+34,22.5+3.8-50])cylinder(r=3.7/2,h=120);
+}
+}
+}
+
+
+
+
+
+

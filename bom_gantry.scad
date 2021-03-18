@@ -14,12 +14,77 @@ include<gripper_platecrane/microwell_gripper.scad>
 include<labautobox.scad>
 include<bom_zbed_moveup.scad>
 
+//import("extruder/MyDD_Back.stl");
 
+//extruder_assy();
 
-z = 40;
+//bearing_mount_smz();
+//extrusion_threadrod_clamp_noextrusion();
+
+/*
+difference(){
+cylinder(r=14/2,h=5,$fn=6);
+translate([0,0,-2])cylinder(r=7.8/2,h=10,$fn=30);
+}
+*/
+/*
+motormount_smz();
+translate([0,30,0])mirror([0,1,0])motormount_smz();
+*/
+//clamp_bottom_simple_m8_smoothrodholder_for_z();
+
+/*
+bearing_mount_smz();
+translate([0,45,0])mirror([0,1,0])
+bearing_mount_smz();
+*/
+//extruder_assy();
+
+// translate([-50,6,240])cable_support_extrusion();
+//iverntech_slider_xshuttle_connect();
+
+//multichannel_cameramount_tslot_part();
+//multichannel_cameramount_tipholder(10);
+//spring_stepper_linear_m8nut_coupler_lm8uu();
+//backspacer();
+
+//stepperconduitclamp();
+
+//zbedslot_516_smz_zbed_wider();
+//extrusion_threadrod_clamp();
+//conduitclamp();
+//lm8uu_smz_glider_wider();
+
+//zbedslot_516_smz_zbed_wider();
+//lm8uu_smz_glider_wider();
+//endstop_multichannel_syringe();
+//translate([0,-60,0])zbed_assy_wider_threadedrod_noextrusion(110-50);
+//zbedslot_516_smz_zbed_wider();
+
+//multichannel_cameramount_tslot_part();
+//slider_wall_holes_608bearing();
+//slider_wall_holes_bottomclamp();
+//spring_stepper_linear_m8nut_coupler_lm8uu();
+/*
+//color("lightblue")translate([0,0,62-102])cylinder(r=2.5/2,h=23,$fn=30);
+//color("lightblue")translate([0,0,52.3-10])cylinder(r2=2.5/2,r1=4.5/2,h=20,$fn=30);
+color("lightblue")translate([0,0,-36.7+20])cylinder(r=7/2,h=20,$fn=30);
+translate([0,0,0])p1000_model_eppendorf();
+//here is the luer lock comment out for printing
+translate([0,0,-10]){
+color("white")translate([0,0,-6.7-5])cylinder(r=8/2,h=3);
+color("white")translate([0,0,-6.7-3])cylinder(r=12/2,h=3);
+}
+color("lime")translate([-7,3,30-15])pipettetip_aligner();
+for(i=[0:7]){
+translate([1.1+i*9,8,15])rotate([0,180,0])pipette_p1000_cap_assy();
+}
+
 //translate([0,z-29,0])color("pink")multichannel_cameramount_tslot_part();
 //translate([0,z-29+13,5])multichannel_cameramount_tipholder(40);
-
+*/
+z = 40;
+labbot_pcr_config();
 
 //translate([0,z-29,0])multichannel_cameramount_tipholder(40);
 
@@ -30,7 +95,7 @@ z = 40;
 
 
 
-pcrtuberack_8();
+//pcrtuberack_8();
 
 
 /*
@@ -73,7 +138,6 @@ translate([50-10-20+x,200-14+30+y,700-50+37-35])rotate([180,0,90])multi_iverntec
 //pcrtube();
 //labbot_pcr_config();
 
-//extruder_assy();
 
 //imagingblock_lightingside();
 
@@ -129,7 +193,7 @@ module pipettetip_aligner_sm(){
  difference(){ 
   cube([80,10,5]);
   for(i=[0:7]){ 
-   translate([i*9+8,5,-0.1])#cylinder(r1=5/2,r2=3,h=5.1,$fn=30);
+   translate([i*9+8,5,-0.1])cylinder(r1=5/2,r2=3,h=5.1,$fn=30);
   }
  }
 }
@@ -140,8 +204,8 @@ module pipettetip_aligner(){
  difference(){ 
   translate([-9,-1,0])cube([80+18,12,8]);
   for(i=[-1:8]){ 
-   translate([i*9+8,5,-1])#cylinder(r=7.5/2,h=10,$fn=30);
-   #translate([i*9+8,5,4])rotate([90,0,0])cylinder(r=1.7/2,h=30,$fn=30);
+   translate([i*9+8,5,-1])cylinder(r=7.5/2,h=10,$fn=30);
+   translate([i*9+8,5,4])rotate([90,0,0])cylinder(r=1.7/2,h=30,$fn=30);
   }
  }
 }
@@ -150,8 +214,8 @@ module pipettetip_aligner(){
 module pipette_loading_module_casetop(){
 difference(){
 cylinder(r=18/2,h=8,$fn=30);
-translate([0,0,-2])#cylinder(r=(9.5)/2,h=18,$fn=30);
-translate([0,0,2])#cylinder(r=(14.3)/2,h=8,$fn=30);
+translate([0,0,-2])cylinder(r=(9.5)/2,h=18,$fn=30);
+translate([0,0,2])cylinder(r=(14.3)/2,h=8,$fn=30);
 }
 }
 
@@ -270,8 +334,8 @@ module brightfield_background(){
 difference(){
 translate([0,2,-23])cube([100,2,47]);
 for(i=[0,7]){
-translate([20+i*9,12,-15])rotate([90,0,0])#cylinder(r=4/2,h=40,$fn=30);
-translate([20+i*9,12,-15+20])rotate([90,0,0])#cylinder(r=4/2,h=40,$fn=30);
+translate([20+i*9,12,-15])rotate([90,0,0])cylinder(r=4/2,h=40,$fn=30);
+translate([20+i*9,12,-15+20])rotate([90,0,0])cylinder(r=4/2,h=40,$fn=30);
 }
 }
 }
@@ -289,8 +353,8 @@ translate([-35,-27,6.1])difference(){
 cube([80,15,5]);
 translate([-1,10.8,2.2])rotate([-0,0,0])cube([82,5,7]);
 translate([-1,2,3])rotate([-6,0,0])cube([82,9,7]);
-translate([28,45-9-18-5,-1])#cylinder(r=5/2,h=50,$fn=30);
-translate([28+25,45-9-18-5,-1])#cylinder(r=5/2,h=50,$fn=30);
+translate([28,45-9-18-5,-1])cylinder(r=5/2,h=50,$fn=30);
+translate([28+25,45-9-18-5,-1])cylinder(r=5/2,h=50,$fn=30);
 }
 }
 
@@ -301,8 +365,8 @@ translate([-5,20-8,0])cube([20,16+5,6]);
 translate([-5,20-8,0])cube([50,7,6]);
 translate([-5+50,20-8,0])cube([20,16+5,6]);
 }
-translate([18,45-9-18,0])#cylinder(r=4/2,h=50,$fn=30);
-translate([18+25,45-9-18,0])#cylinder(r=4/2,h=50,$fn=30);
+translate([18,45-9-18,0])cylinder(r=4/2,h=50,$fn=30);
+translate([18+25,45-9-18,0])cylinder(r=4/2,h=50,$fn=30);
 for(i=[-20:-18]){
 translate([5,45+i,3])cylinder(r=8.5/2,h=50,$fn=30);
 translate([5,45+i,0])cylinder(r=4/2,h=50,$fn=30);
@@ -469,22 +533,20 @@ color("white")translate([0,0,-6.7-3])cylinder(r=12/2,h=3);
 */
 module thermoblock_assy(){
 //translate([0,-2,8+36])color("lime")drillblock_1inch_lid();
-//color("LightSeaGreen")translate([-10.5,-5,-7])thermoblock_plate();
+color("LightSeaGreen")translate([-10.5,-5,-7])thermoblock_plate();
 //translate([0,0,9])actualthermoblock_1inch();
 
-translate([-2,0,0]){
-translate([0,-2,8])color("pink")drillblock_1inch();
+translate([-2-3,0,0]){
+translate([0,-2,8])color("")drillblock_1inch();
 translate([0,0,9])actualthermoblock_1inch();
 translate([0,-2,8+36])color("lime")drillblock_1inch_lid();
 
 //translate([0,-2,8])color("peru")drillblock_1inch_milling();
 //translate([0,-2,8+36+20])color("lime")drillblock_1inch_lid_milling();
 }
-color("LightSeaGreen")translate([-10.5,-5,-7])thermoblock_plate();
-/*
-*/
-translate([60-15,0,0]){
-translate([0,-2,8])color("pink")drillblock_1inch();
+//color("LightSeaGreen")translate([-10.5,-5,-7])thermoblock_plate();
+translate([60-15+7,0,0]){
+translate([0,-2,8])color("")drillblock_1inch();
 translate([0,-2,8+36])color("lime")drillblock_1inch_lid();
 translate([0,0,9])actualthermoblock_1inch();
 }
@@ -783,48 +845,58 @@ translate([-126,-11.4,97])rotate([-90,0,0])syringe_endstop_flag();
 
 //latest pcr setup
 module labbot_pcr_config(){
-//y = 20.5+118-3-97;//+251.5; //-9*11-116-50+13;//+80+6-32-45;//-40; //reagent reservoir
-y = 20.5+118-3-60-144-70;//+251.5; //-9*11-116-50+13;//+80+6-32-45;//-40; //reagent reservoir
-//x = 66-149-43+200-8+160-373+400-271;//-385; //+385-235;//+122;//-222.5-20;
-x = 66-149-43+200-8+160-373+400-381.5-13+345;//-385; //+385-235;//+122;//-222.5-20;
-z =  28;
+//y = 20.5+118-3-97+40-70+9+18+4.5+82-46-140-80;//+251.5; //-9*11-116-50+13;//+80+6-32-45;//-40; //reagent reservoir
+y = 20.5+118-3-60-144-70+240-180+202-200+10;//+251.5; //-9*11-116-50+13;//+80+6-32-45;//-40; //reagent reservoir
+x = 66-149-43+200-8+160-373+400-271+2-2-110-15+200;//-385; //+385-235;//+122;//-222.5-20;
+//x = 66-149-43+200-8+160-373+400-381.5-13+345-331.5-16.5;//-385; //+385-235;//+122;//-222.5-20;
+//x = 66-149-43+200-8+160-373+400-381.5-13+345+9.5-9+9;//-385; //+385-235;//+122;//-222.5-20;
+z =  28-0;
 mtz = 25-20-20+49-5;
-tz = 23+10-0+mtz-25;//+15;
-translate([0,0,z-40])plateobjects_nomastermix(z);
+tz = 23+10-0+mtz-25+26-20+2-10;//+15;
+//translate([0,0,z-40])plateobjects_nomastermix_tubes(z);
 
+/* Note have to hack little to show the up and down movement
+//multichannel_cameramount.scad
+//line 189 needs to be manually modified
+//module pipette_p1000_noextrusion(dia,fl,arg,z){
+*/
 translate([50-10-20+x,200-14+30+y,700-50+37-35])rotate([180,0,90])multi_iverntech_railsystem(tz);
+//translate([0,-60,0])zbed_assy_wider_threadedrod_noextrusion(110-50);
 
 //This is the extruder rendition
+//conduit_tubes_extruder(x,y,(tz+60-20-mtz*2));
+//translate([50-10-20+x,200-14+30+y,700-50+37-35])rotate([180,0,90])extruder_railsystem(tz+20);
+//translate([0,-60,0])zbed_assy_wider(110-50);
 /*
-conduit_tubes_extruder(x,y,(tz+60-20-mtz*2));
-translate([50-10-20+x,200-14+30+y,700-50+37-35])rotate([180,0,90])extruder_railsystem(tz+20);
-translate([0,-60,0])zbed_assy_wider(110);
-extruder_microfluidics_set();
+*/
+//extruder_microfluidics_set();
+/*
+and this function module stepper_driver_lm8uu_pla(z){ at 203 in the file xgantry_modular_fix.scad 
 */
 
-conduit_tubes(x,y,(tz+60-20-mtz*2));
-translate([0,0,-24])corexy_beltsetup_wider(x,y); 
+
 xshuttle_assy_wider(x,y);
-color("lightgrey")translate([-76,-96,300])rotate([0,90,180])PCR_cam_raspi();
-outside_frame_wider(tcl,thcl,x,y);
+translate([0,0,-24])corexy_beltsetup_wider(x,y); 
+translate([0,0,-29.5])xymotor_assy_wider();
 translate([-70,-25+50,z])zbed_multichannel_setup_wider(z);
+outside_frame_wider(tcl,thcl,x,y);
+/*
+color("lightgrey")translate([-76,-96,300])rotate([0,90,180])PCR_cam_raspi();
+conduit_tubes(x,y,(tz+60-20-mtz*2));
 translate([0,0,-10]){
 translate([-17,-18,8])color("Bisque")PCR_imagingmodule();
 washstation(); 
 gantry_shelves_wider(); 
 }
-translate([0,0,-29.5])xymotor_assy_wider();
+*/
 /*
 
 */
-
 
 //translate([0,0,-12])zbed_smz_wider_nomove();
 //microfluidics_set();
-//XYMotorMount_corexystack(x-235,y-80);
+XYMotorMount_corexystack(x-235+200,y-80+100);
 
-/*
-*/
 }
 /*
 */
@@ -1088,6 +1160,42 @@ module plateobjects(z){
 }
 
 
+
+module plateobjects_nomastermix_tubes(z){
+ for(i=[2:5]){
+ if(i>-1){
+ if(i==2){
+ //translate([-24+i*(85-8),-25+214-85,160])rotate([0,0,0])tipbox_model_missrow(z,-1);
+ //translate([-24+i*(85-8),-25+214-85,160])rotate([0,0,0])tipbox_model(z,-1);
+ translate([-24+i*(85-8),-25+214-85,160])rotate([0,0,0])tipbox_model_fluid(z,-1);
+ } else { 
+ //translate([-24+i*(85-8),-25+214-85,160])rotate([0,0,0])tipbox_model(z,-1);
+ translate([-24+i*(85-8),-25+214-85,160])rotate([0,0,0])tipbox_model_fluid(z,-1);
+ }
+ }
+ if (i>1){
+ if (i==5){
+  translate([-24+i*(85-8),-25+214-85-120,160])rotate([0,0,0])tipbox_model_smaller(z,-1);
+  translate([-24+i*(85-8),-25+214-85-120,160])rotate([0,0,0]) mineraloil_reservoir(z);
+ } 
+ else{
+  translate([-24+i*(85-8),-25+214-85-120,160])rotate([0,0,0])tipbox_model_fluid(z,-1);
+ }
+ }
+ }
+ /*
+ */
+
+ color("")translate([50-5,114+5.5+120,184+10]) rotate([0,0,-90])thermoblock_assy();
+ //translate([82+86,97-5,190])rotate([0,0,90])thermoblock();
+ //translate([82+86,97,190])rotate([0,0,90])plugblock();
+ //translate([82+50,97-60,190])rotate([0,0,90])imagingblock();
+}
+
+
+
+
+
 module plateobjects_nomastermix(z){
  for(i=[2:5]){
  if(i>-1){
@@ -1106,16 +1214,17 @@ module plateobjects_nomastermix(z){
   translate([-24+i*(85-8),-25+214-85-120,160])rotate([0,0,0])tipbox_model_smaller(z,-1);
  }
  }
-
  }
  /* 
  */
-
  color("")translate([50-5,114+5.5+120,184+10]) rotate([0,0,-90])thermoblock_assy();
  //translate([82+86,97-5,190])rotate([0,0,90])thermoblock();
  //translate([82+86,97,190])rotate([0,0,90])plugblock();
  //translate([82+50,97-60,190])rotate([0,0,90])imagingblock();
 }
+
+
+
 
 module plateobjects_nomastermix_nobox(z){
  translate([-24+0*(85-8),-25+214-85,160])rotate([0,0,0])tipbox_model_nobox(z,-1);
@@ -1761,6 +1870,9 @@ module conduit_tubes(x,y,z){
   //eight
   translate([105-13.5+8+9*7+x-91,-30-249+2+y-30,63+z-40])color("lightblue")rotate([-50,42,0])cylinder(r=3/2,h=42);
   translate([105-13.5+8+9*7+18+x-91,-30-249+32+y-30,(84+z-40)])color("lightblue")rotate([0,0,0])cylinder(r=3/2,h=(123-z));
+  /*
+  */
+
   /*
   translate([x-91,y-30,z-40]){
   //one

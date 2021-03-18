@@ -103,10 +103,10 @@ translate([-24,40-24,-10])rotate([0,90,0])cylinder(r=2.8/2,h=90,$fn=30);
 
 translate([-4+34/2+3-5+2-2+2.5+2-2-1,6.75+3-5-3,-20])cube([8+2+2,28,20]);
 for(i=[0:2]){
-#translate([-4+34/2+3-5+2-2+2.5+2-2+7.5-4.5,6.75+3-5-3+4+i*7+3.5,-20])cylinder(r=3/2,h=400,$fn=30);
+translate([-4+34/2+3-5+2-2+2.5+2-2+7.5-4.5,6.75+3-5-3+4+i*7+3.5,-20])cylinder(r=3/2,h=400,$fn=30);
 }
 for(i=[0:3]){
-#translate([-4+34/2+3-5+2-2+2.5+2-2+7.5,6.75+3-5-3+4+i*7,-20])cylinder(r=3/2,h=400,$fn=30);
+translate([-4+34/2+3-5+2-2+2.5+2-2+7.5,6.75+3-5-3+4+i*7,-20])cylinder(r=3/2,h=400,$fn=30);
 }
 
 /*
@@ -172,7 +172,7 @@ module drillblock_1inch_lid_milling(){
 difference(){
 union(){
 translate([-8-4+4,0-5-4+4+2,-8])cube([26+16+8-8,77.6+10+8-8-2-5,4]);
-//#translate([-8-4+0.0,0-5-4,-8-5])cube([3.7,77.6+10+8,4+5]);
+//translate([-8-4+0.0,0-5-4,-8-5])cube([3.7,77.6+10+8,4+5]);
 //translate([-8-4+26+16+8-3.6,0-5-4,-8-5])cube([3.6,77.6+10+8,4+5]);
 //translate([-8-4,0-5-4,-8-5])cube([26+16+8,3.5,4+5]);
 //translate([-8-4,0-5-4+77.6+10+8-3.5,-8-5])cube([26+16+8,3.5,4+5]);
@@ -185,8 +185,8 @@ cube([25.4+0.6,75,25.4+0.6]);
 //translate([-4+34/2+3-5+2-2+2.5-2,6.75+3-5-3,-20])cube([8,72+3,20]);
 //translate([-4+34/2+3-5+2-2+2.5,6.75+3-5-3,-20])cube([8,72+3,20]);
 for(i=[0:7]){
-#translate([-4+34/2+4.5,6.75+i*9+2-3,-20-100])cylinder(r=1.8/2,h=290,$fn=30);
-//#translate([-4+34/2+3,6.75+i*9+3,-20])cylinder(r=6.9/2,h=90,$fn=30);
+translate([-4+34/2+4.5,6.75+i*9+2-3,-20-100])cylinder(r=1.8/2,h=290,$fn=30);
+//translate([-4+34/2+3,6.75+i*9+3,-20])cylinder(r=6.9/2,h=90,$fn=30);
 }
 /*
 */
@@ -244,13 +244,13 @@ translate([-4+34-5-2-20,-12+25+53.5/2,-20])cylinder(r=5.5/2,h=90,$fn=30);
 
 
 translate([0,0,1.5-6]){
-#translate([12.25-4,-50,10+2])rotate([-90,0,0])cylinder(r=9/2,h=250,$fn=30);
-#translate([12.25-4,-50,10])rotate([-90,0,0])cylinder(r=9/2,h=250,$fn=30);
-#translate([12.25-4,-50,10-2])rotate([-90,0,0])cylinder(r=9/2,h=250,$fn=30);
+translate([12.25-4,-50,10+2])rotate([-90,0,0])cylinder(r=9/2,h=250,$fn=30);
+translate([12.25-4,-50,10])rotate([-90,0,0])cylinder(r=9/2,h=250,$fn=30);
+translate([12.25-4,-50,10-2])rotate([-90,0,0])cylinder(r=9/2,h=250,$fn=30);
 for(i=[-4:4]){
-#translate([-32.25,75/2+i,10])rotate([-0,90,0])cylinder(r=4/2,h=40,$fn=30);
-#translate([-32.25,10+i,10])rotate([-0,90,0])cylinder(r=5/2,h=50,$fn=30);
-#translate([-32.25,75-10+i,10])rotate([-0,90,0])cylinder(r=5/2,h=50,$fn=30);
+translate([-32.25,75/2+i,10])rotate([-0,90,0])cylinder(r=4/2,h=40,$fn=30);
+translate([-32.25,10+i,10])rotate([-0,90,0])cylinder(r=5/2,h=50,$fn=30);
+translate([-32.25,75-10+i,10])rotate([-0,90,0])cylinder(r=5/2,h=50,$fn=30);
 }
 }
 //translate([12.25-8,-50,10+10])rotate([-90,0,0])cylinder(r=2.8/2,h=250,$fn=30);
@@ -266,7 +266,7 @@ union(){
 translate([-8,-5+5,-8])cube([26+16,77.6+10-10,26+8+3.2]);
 //translate([-8,-5-15,-8])cube([26+16,77.6+10+32,5]);
 }
-#translate([0,-0.3+0.3,0+0.65])cube([25.4+0.6,77+0.6+0.4,25.4+0.7+2.5]);//with rubber gasket which is 2.5mm thick
+translate([0,-0.3+0.3,0+0.65])cube([25.4+0.6,77+0.6+0.4,25.4+0.7+2.5]);//with rubber gasket which is 2.5mm thick
 //translate([-1.5-0.2,-0.3-0.5,0])cube([25.4+0.6+3+0.4,77+0.6+1,25.4+0.7+4]);
 translate([-4,10,-20])cylinder(r=2.8/2,h=90,$fn=30);
 translate([-4,65,-20])cylinder(r=2.8/2,h=90,$fn=30);
@@ -280,12 +280,12 @@ translate([-4+34-30,65+26,-20])cylinder(r=4.2/2,h=90,$fn=30);
 translate([-4+34-5,-12,-20])cylinder(r=4.2/2,h=90,$fn=30);
 translate([-4+34-30,-12,-20])cylinder(r=4.2/2,h=90,$fn=30);
 
-#translate([-4+34-5-2,-12+25,-20])cylinder(r=2.7/2,h=90,$fn=30);
-#translate([-4+34-5-2-20,-12+25,-20])cylinder(r=2.7/2,h=90,$fn=30);
-#translate([-4+34-5-2,-12+25+53.5,-20])cylinder(r=2.7/2,h=90,$fn=30);
-#translate([-4+34-5-2-20,-12+25+53.5,-20])cylinder(r=2.7/2,h=90,$fn=30);
-#translate([-4+34-5-2,-12+25+53.5/2,-20])cylinder(r=2.7/2,h=90,$fn=30);
-#translate([-4+34-5-2-20,-12+25+53.5/2,-20])cylinder(r=2.7/2,h=90,$fn=30);
+translate([-4+34-5-2,-12+25,-20])cylinder(r=2.7/2,h=90,$fn=30);
+translate([-4+34-5-2-20,-12+25,-20])cylinder(r=2.7/2,h=90,$fn=30);
+translate([-4+34-5-2,-12+25+53.5,-20])cylinder(r=2.7/2,h=90,$fn=30);
+translate([-4+34-5-2-20,-12+25+53.5,-20])cylinder(r=2.7/2,h=90,$fn=30);
+translate([-4+34-5-2,-12+25+53.5/2,-20])cylinder(r=2.7/2,h=90,$fn=30);
+translate([-4+34-5-2-20,-12+25+53.5/2,-20])cylinder(r=2.7/2,h=90,$fn=30);
 
 translate([0,0,1.5]){
 translate([12.25-4,-50,10+2])rotate([-90,0,0])cylinder(r=9/2,h=250,$fn=30);
@@ -529,10 +529,10 @@ for(i=[0:7]){
 //translate([-4+34/2+4,6.25+i*9,1.5])cylinder(r=4/2,h=70,$fn=30);
 translate([-4+34/2+4,6.25+i*9,1.5])cylinder(r=6.3/2,h=70,$fn=30);
 }
-translate([12.25-4,-50,10])rotate([-90,0,0])cylinder(r=6.1/2,h=250,$fn=30);
-translate([-32.25,75/2,10])rotate([-0,90,0])cylinder(r=2/2,h=50,$fn=30);
-translate([-32.25,10,10])rotate([-0,90,0])cylinder(r=2.8/2,h=40,$fn=30);
-translate([-32.25,75-10,10])rotate([-0,90,0])cylinder(r=2.8/2,h=40,$fn=30);
+translate([12.25-4,-50,10-5])rotate([-90,0,0])cylinder(r=6.1/2,h=250,$fn=30);
+translate([-32.25,75/2,10-5.5])rotate([-0,90,0])cylinder(r=2/2,h=50,$fn=30);
+translate([-32.25,10,10-5.5])rotate([-0,90,0])cylinder(r=2.8/2,h=40,$fn=30);
+translate([-32.25,75-10,10-5.5])rotate([-0,90,0])cylinder(r=2.8/2,h=40,$fn=30);
 }
 }
 
@@ -776,7 +776,7 @@ module imagingblock_lid(){
  translate([11+7-5-2,16-4-2,38-3])cube([13,72+3,30]);
  /*
  for(i=[0:7]){
- #translate([11+7+2.15,16+i*9-1.5,23-15])cylinder(r=6.8/2,h=50,$fn=30);
+ translate([11+7+2.15,16+i*9-1.5,23-15])cylinder(r=6.8/2,h=50,$fn=30);
  }
  */
  translate([-51,24,13])rotate([0,90,0])cylinder(r=3.8/2,h=40,$fn=30);
@@ -1286,16 +1286,16 @@ union(){
 translate([10,5,7]){
 thermoblock_breadboard_slider();
 translate([0,103,0])thermoblock_breadboard_slider();
-//#translate([-1-20,-2+44,-4])cube([113,16,4]);
+//translate([-1-20,-2+44,-4])cube([113,16,4]);
 translate([25,-32,-7])cube([16,11,7]);
 translate([25,-32+130,-7])cube([16,11,7]);
 }
 translate([-1,-2,0])cube([93,115-26,7]);
 }
 translate([43,-32+9,-10])cylinder(r=3.8/2,h=30,$fn=30);
-translate([43,-32+9,5])#cylinder(r=8/2,h=2,$fn=30);
+translate([43,-32+9,5])cylinder(r=8/2,h=2.3,$fn=30);
 translate([43,-32+9+132,-10])cylinder(r=3.8/2,h=30,$fn=30);
-translate([43,-32+9+132,5])#cylinder(r=8/2,h=2,$fn=30);
+translate([43,-32+9+132,5])cylinder(r=8/2,h=2.3,$fn=30);
 translate([25-17,-15+25-7,-1])cube([92-50+32,115-50+14,10]);
 /*
    translate([7-3+9,12-40+16+3,-9])rotate([0,0,0])cylinder(r=2.9/2,h=159.1,$fn=30);
@@ -1317,15 +1317,18 @@ translate([25-17,-15+25-7,-1])cube([92-50+32,115-50+14,10]);
 module pcrtuberack_8(){
 translate([20,-9,0])rotate([0,0,90])difference(){
 union(){
-cube([80,20,10]);
-translate([-9.5,0,0])cube([80+20,20,4]);
+translate([0,-3,0])cube([80,20+6,10]);
+translate([-9.5,5,0])cube([80+20,10,4]);
 //pcrtube_stump();
 }
 for(i=[0:7]){
-translate([9+i*9,10,11-9])#pcrtube_stump();
+translate([9+i*9,10-4.5,11-9])pcrtube_stump();
 }
-translate([9+-1*9-5,10,-2])#cylinder(r=4.7/2,h=30,$fn=30);
-translate([9+8*9+5,10,-2])#cylinder(r=4.7/2,h=30,$fn=30);
+for(i=[-3:73]){
+translate([9+i*0.9,10+4.5,11-9])pcrtube_stump();
+}
+translate([9+-1*9-5,10,-2])cylinder(r=4.7/2,h=30,$fn=30);
+translate([9+8*9+5,10,-2])cylinder(r=4.7/2,h=30,$fn=30);
 
 
 }
@@ -1346,14 +1349,14 @@ translate([0,103-12,0])thermoblock_breadboard_slider();
 //translate([25,-32,-7])cube([16,11,7]);
 //translate([25,-32+130,-7])cube([16,11,7]);
 }
-translate([-1,-2,0])cube([93,115-26-7.5,7]);
+translate([-1,-2,0])cube([93,115-26-7.5-5,7]);
 }
-#translate([25-17,-15+25-7-4,-1])cube([92-50+32,115-50+14-4,10]);
+translate([25-17,-15+25-7-4,-1])cube([92-50+32,115-50+14-4,10]);
 /*
 translate([43,-32+9,-10])cylinder(r=3.8/2,h=30,$fn=30);
-translate([43,-32+9,5])#cylinder(r=8/2,h=2,$fn=30);
+translate([43,-32+9,5])cylinder(r=8/2,h=2,$fn=30);
 translate([43,-32+9+132,-10])cylinder(r=3.8/2,h=30,$fn=30);
-translate([43,-32+9+132,5])#cylinder(r=8/2,h=2,$fn=30);
+translate([43,-32+9+132,5])cylinder(r=8/2,h=2,$fn=30);
 */
 /*
    translate([7-3+9,12-40+16+3,-9])rotate([0,0,0])cylinder(r=2.9/2,h=159.1,$fn=30);
@@ -1698,7 +1701,7 @@ translate([19,-13,5-3]){translate([0,i,-2])cylinder(r=4.7/2,h=10+6);}
 }
   }
   for(i=[0:7]){
-   #translate([11,(i*9)+13,-0.1])cylinder(r=7/2,h=10,$fn=30);
+   translate([11,(i*9)+13,-0.1])cylinder(r=7/2,h=10,$fn=30);
    translate([11,(i*9)+11.5,4])rotate([0,25,0])cube([10,3,5]);
   }
   translate([18,9,-0.1])cube([8,70,6]);

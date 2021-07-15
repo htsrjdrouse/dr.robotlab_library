@@ -25,20 +25,20 @@ fan_position_y = 14; // the offset of the fan from the top
 fan_pin_distance = 31.5; // the distance between the mount holes
 
 
-// uncomment here what you dont want to generate
 /*
-*/
+// uncomment here what you dont want to generate
  translate([0,0,inhibitionzone_height + case_thickness + board_thickness]) rotate([0,180,0]) intersection(){ // top of case
   rpi4_case();
   topSelector();
 }
+*/
 
 /*
 
 difference(){
 translate([30,-20,-3])cube([85,20,3]);
 translate([30,-20,-3])for(i=[0:5]){
- translate([i*14+7,8,-1])#cylinder(r=4.1/2,h=30,$fn=30);
+ translate([i*14+7,8,-1])cylinder(r=4.1/2,h=30,$fn=30);
 }
 }
 
@@ -86,16 +86,16 @@ module rpi4(){
         cube([pil,pid,board_thickness]); // the board only (not the underpins)
       }
       // these are the big surface level components
-      #translate([-(2.81+extension),2.15,0]) cube([21.3+extension,16.3+36,13.6]);   // Ethenrnet port
-      #translate([-(2.81+extension),22.6,0]) cube([17.44+extension,13.5,15.6]);  // USB 3.0
-      #translate([-(2.81+extension),40.6,0]) cube([17.44+extension,13.5,15.6]);  // USB 2.0
-      #translate([27.36,1,0]) cube([50.7,5.0,8.6+extension]);                    // GPIO pins
-      #translate([27.36,1+45.5,0]) cube([50.7,5.0+3+2,8.6+extension]);             // Adafruit servo hat
+      translate([-(2.81+extension),2.15,0]) cube([21.3+extension,16.3+36,13.6]);   // Ethenrnet port
+      translate([-(2.81+extension),22.6,0]) cube([17.44+extension,13.5,15.6]);  // USB 3.0
+      translate([-(2.81+extension),40.6,0]) cube([17.44+extension,13.5,15.6]);  // USB 2.0
+      translate([27.36,1,0]) cube([50.7,5.0,8.6+extension]);                    // GPIO pins
+      translate([27.36,1+45.5,0]) cube([50.7,5.0+3+2,8.6+extension]);             // Adafruit servo hat
       translate([21,7.15,0]) cube([5.0,5.0,8.6+extension]);                     // Power over ethernet pins
       translate([48.0,16.3,0]) cube([15.0,15.0,2.5]);                           // cpu
       translate([67.5,6.8,0]) cube([10.8,13.1,1.8]);                            // onboard wifi
       translate([79,17.3,0]) cube([2.5,22.15,5.4+extension]);                   // display connector
-      #translate([79-17,17.3-5+3,10]) cube([2.5+23,15,5.4+extension]);         // 5v power jack
+      translate([79-17,17.3-5+3,10]) cube([2.5+23,15,5.4+extension]);         // 5v power jack
       translate([69.1,50,0]) cube([9.7,7.4+extension,3.6]);                     // USB type c power
       translate([55.0,50,0]) cube([7.95,7.8+extension,3.9]);                    // Micro HDMI0
       translate([41.2,50,0]) cube([7.95,7.8+extension,3.9]);                    // Micro HDMI1

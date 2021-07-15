@@ -1,4 +1,4 @@
-translate([45,0,0]) cube(size = [25.5,7.5,1.2]);
+translate([45,0,0]) #cube(size = [25.5,7.5,1.2]);
 
 difference() {
     translate([0,0,-3]) cube(size = [70.5,10.5,3]);

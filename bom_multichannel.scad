@@ -195,10 +195,6 @@ module multichannel_pipette_holder_linear_actuator_connect_cameramount(){
 
 
 
-
-
-
-
 module multichannel_assy(){
 color("")translate([-27.5,-38,-24])rotate([0,0,180])inductivesensorcap_aligner();
 color("")smaller_igus_slidermount_vertical_adjust_nema17();

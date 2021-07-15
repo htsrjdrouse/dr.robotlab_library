@@ -5,6 +5,7 @@ include <arducam-raspi.scad>
 //translate([-60-50+220,130-84-80+158,80-16+50-15])rotate([0,180,90])
 //translate([70-8-60,14-7+95+0,55+130-9.5])rotate([-90,0,0])servo_linear_assy();
 //translate([-72-0+10-2,120+12-120,-27.4-113+1])rotate([90,0,-90])raspi_mount_linact();
+servo_linear_assy_connectplate();
 
 
 /*

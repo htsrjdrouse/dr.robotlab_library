@@ -247,10 +247,46 @@ difference(){
 translate([14+(708.8*0.58)-1-475,19+(638.4*0.58)-470,13-7])
 linear_extrude(height = 5, center = true, convexity = 10)
    import (file = "bottom_x1_wider_a_ponoko.dxf", layer = "");
+}
+
+module bottom_x1_wider_a_enclosure(){
+/*
+ translate([14+(708.8*0.58)-1,19+(638.4*0.58),13-7])color(bcl)rotate([0,0,180])
+difference(){
+ union(){
+ bottom_x1_wider();
+ //translate([182,-30,0])#cube([301,500,5]);
+ }
+ translate([-3-114,-2-40,0-1])cube([(595+3)/2,(495+5)+30,3+4]);
+}
+*/
+translate([14+(708.8*0.58)-1-475,19+(638.4*0.58)-470,13-7])
+linear_extrude(height = 5, center = true, convexity = 10)
+   import (file = "bottom_x1_wider_a_ponoko.dxf", layer = "");
+}
 
 
+module bottom_x1_wider_b_enclosure(){
+ /*
+ translate([14+(708.8*0.58)-1,19+(638.4*0.58)-6,13-7])color(bcl)rotate([0,0,180])
+difference(){
+ union(){
+ bottom_x1_wider();
+ //translate([-115,-30,0])#cube([297,500,5]);
+ }
+ translate([-3+185,-2-40,0-1])cube([((595+3)/2)+5,(495+5)+36,3+4]);
+}
+ */
+
+translate([14+(708.8*0.58)-1-180,19+(638.4*0.58)-6-470,13-7])
+linear_extrude(height = 5, center = true, convexity = 10)
+   import (file = "bottom_x1_wider_b_ponoko.dxf", layer = "");
 
 }
+
+
+
+
 
 module bottom_x1_wider_b(){
  /*
@@ -268,8 +304,14 @@ translate([14+(708.8*0.58)-1-180,19+(638.4*0.58)-6-470,13-7])
 linear_extrude(height = 5, center = true, convexity = 10)
    import (file = "bottom_x1_wider_b_ponoko.dxf", layer = "");
 
-
 }
+
+
+
+
+
+
+
 
 
 

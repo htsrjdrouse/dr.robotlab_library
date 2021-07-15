@@ -4349,7 +4349,6 @@ translate([5+49,7.5,-1-50])cylinder(r=3.8/2,h=200);
 
 
 module m5bearing_washer(){
-
 difference(){union(){
 cylinder(r=19/2,h=2-0.5-0.3);
 translate([0,0,0])cylinder(r=8/2,h=3.5-1.75+0.3);

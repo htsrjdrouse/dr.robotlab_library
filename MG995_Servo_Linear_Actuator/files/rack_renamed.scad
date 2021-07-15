@@ -318,17 +318,32 @@ difference() {
 }
 
 
-
+module rack(){
 function rel_to_abs(list, i = 0, sum = [0,0], result = []) = 
     i == len(list) ? result : rel_to_abs(list, i + 1, sum + list[i], concat(result, [sum + list[i]]));
 
 //Generation of rack, and Relative positioning of gear and rack:
 
-union() {
-translate([0,-10,0]) translate([(-floor(n5/2)-floor(n1/2)+$t+n1/2-1/2), -height-backboard_height-d1-mm_per_tooth, 0]) rotate([0,0,0]) color([0.75,0.75,0.75]) InvoluteGear_rack(mm_per_tooth,n5,thickness,height,backboard_thickness,backboard_height,stop_height,left_stop_enable,right_stop_enable);   //rac - In the above 'translate' instruction, the middle parameter sets spacing between the rack and the pinion. I've set it to '-height-backboard_height-d1-mm_per_tooth' to give a proportionate offset that allows for ease of printing for most sets of gear & rack parameters. If you use a large negative backboard height the gear and rack may overlap. That can be fixed by substituting some other number/formula for '-height-backboard_height-d1-mm_per_tooth'. Try for example -3*d1, or just subtract an additional fixed offset from what's in there now (e.g. (-height-backboard_height-d1-mm_per_tooth)-14.)
+difference(){union() {
+translate([0,-10,0]) translate([(-floor(n5/2)-floor(n1/2)+$t+n1/2-1/2), -height-backboard_height-d1-mm_per_tooth, 0]) rotate([0,0,0]) color([0.75,0.75,0.75]) InvoluteGear_rack(mm_per_tooth,n5,thickness,height,backboard_thickness,backboard_height,stop_height,left_stop_enable,right_stop_enable);  
+
+difference(){
+union(){
+translate([0,-10+3.2,4.25]) translate([(-floor(n5/2)-floor(n1/2)+$t+n1/2-1/2), -height-backboard_height-d1-mm_per_tooth, 0]) rotate([0,0,0]) color("pink")cube([25,3,10]);
+translate([0,-10+3.2,4.25]) translate([(-floor(n5/2)-floor(n1/2)+$t+n1/2-1/2), -height-backboard_height-d1-mm_per_tooth, 0]) rotate([0,0,0]) color("pink")cube([25,4.5,10]);
+}
+for(i=[0:8]){
+translate([0-4,-10+3.2+5,4.25+i*0.5]) translate([(-floor(n5/2)-floor(n1/2)+$t+n1/2-1/2), -height-backboard_height-d1-mm_per_tooth, 0]) rotate([0,90,0]) cylinder(r=4/2,h=50,$fn=30);
+}
+}
+ //rac - In the above 'translate' instruction, the middle parameter sets spacing between the rack and the pinion. I've set it to '-height-backboard_height-d1-mm_per_tooth' to give a proportionate offset that allows for ease of printing for most sets of gear & rack parameters. If you use a large negative backboard height the gear and rack may overlap. That can be fixed by substituting some other number/formula for '-height-backboard_height-d1-mm_per_tooth'. Try for example -3*d1, or just subtract an additional fixed offset from what's in there now (e.g. (-height-backboard_height-d1-mm_per_tooth)-14.)
 
 //translate([100.5,-10,0]) translate([(-floor(n5/2)-floor(n1/2)+$t+n1/2-1/2), -height-backboard_height-d1-mm_per_tooth, 0]) rotate([0,0,0]) color([0.75,0.75,0.75]) InvoluteGear_rack(mm_per_tooth,n5,thickness,height,backboard_thickness,backboard_height,stop_height,left_stop_enable,right_stop_enable);
 }
+translate([0+7.5,-10+3.2+5-2.7,4.25-8]) translate([(-floor(n5/2)-floor(n1/2)+$t+n1/2-1/2), -height-backboard_height-d1-mm_per_tooth, 0]) rotate([0,0,0]) cylinder(r=2.35/2,h=50,$fn=30);
+translate([0+7.5+10,-10+3.2+5-2.7,4.25-8]) translate([(-floor(n5/2)-floor(n1/2)+$t+n1/2-1/2), -height-backboard_height-d1-mm_per_tooth, 0]) rotate([0,0,0]) cylinder(r=2.35/2,h=50,$fn=30);
+}
+
 /*
 difference() {
 translate([59.5, -48.1409, 0]) linear_extrude(4.25) polygon(rel_to_abs([[0,0],[0,4],[60,0],[0,-4]]));
@@ -343,6 +358,7 @@ translate([59.5, -48.1409,2.25]) translate([55,1.9,0]) cylinder(h = 2, r = 1.9, 
 translate([59.5, -48.1409,2.25]) translate([55,1.9,-10]) cylinder(h = 10, r = 1, $fn=50); 
 }
 */
+}
 
 //end of example rack and pinion 
 //////////////////////////////////////////////////////////////////////////////////////////////////

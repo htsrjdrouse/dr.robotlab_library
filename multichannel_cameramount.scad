@@ -186,30 +186,30 @@ translate([0,0+50-50+23-3,-50.2+46+8])rotate([90,0,0])cylinder(r=2.8/2,h=15,$fn=
 translate([0,0,-65+41]){
 if (fl == 1){
 //this is for show pipette show
-//translate([0,0,200-100+80-80-11])rotate([0,180,0])color("lightgreen")pipette_p300_lts_model();
+translate([0,0,200-100+80-80-11])rotate([0,180,0])color("lightgreen")pipette_p300_lts_model();
 
 //comment this out for printing
 //The p20 or p1000 cap assay has the tube
 //translate([0,0,200-100+80-80-11-42])rotate([0,0,0])pipette_p20_cap_assy();
 //translate([0,0,200-100+80-80-11-42])rotate([0,0,0])pipette_p1000_cap_assy();
 
-/*
 translate([0,0,9-10+4])p1000_model_eppendorf();
 color("lightblue")translate([0,0,-6.7])cylinder(r=5.5/2,h=102-13-40,$fn=30);
+/*
 */
 
-//color("lightblue")translate([0,0,62-400+300-10-z*0.7-8])rotate([0,0,0])cylinder(r=2.5/2,h=333-300+10+z*0.7-12+20);
+color("lightblue")translate([0,0,62-400+300-10-z*0.7-8])rotate([0,0,0])cylinder(r=2.5/2,h=333-300+10+z*0.7-12+20);
 /*
 */
-/*
 color("lightblue")translate([0,0,62])cylinder(r=2.5/2,h=13);
 color("lightblue")translate([0,0,52.3-10])cylinder(r2=2.5/2,r1=4.5/2,h=20);
 color("lightblue")translate([0,0,-36.7])cylinder(r=7.5/2,h=20);
-*/
 /*
+*/
 //here is the luer lock comment out for printing
 color("white")translate([0,0,-6.7-5])cylinder(r=8/2,h=3);
 color("white")translate([0,0,-6.7-3])cylinder(r=12/2,h=3);
+/*
 */
 //cylinder(r=12/2,h=3);
 //end luer lock

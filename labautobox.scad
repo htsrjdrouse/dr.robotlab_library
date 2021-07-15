@@ -229,7 +229,6 @@ translate([-50+280,-41,100-1])rotate([0,0,0])multichannel_syringe_to_labautobox_
 translate([-50+280,-41,100-1])rotate([90,0,0])multichannel_syringe_assy();
 //pressurecomp_to_valves();
 
-/*
 labautobox_pressurecompensation_tubing();
 labautobox_multichannel_syringe_tubing();
 labautobox_multichannel_syringe_tubing_to_pipettes();
@@ -251,6 +250,7 @@ translate([100,-270,-50])cylinder(r=8/2,h=270,$fn=30);
 translate([100,-270,220])rotate([-55-2,67,0])cylinder(r=8/2,h=325,$fn=30);
 }
 
+/*
 //bleach bottle
 translate([0,-400,0])color("lightblue"){
 translate([100,-270,-50])cylinder(r=180/2,h=200,$fn=30);

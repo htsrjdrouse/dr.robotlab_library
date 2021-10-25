@@ -1149,33 +1149,59 @@ module extruder_attach_motormountthin(){
   translate([mmposx+10,mmposy-25,mmposz])cube([18,90,mmz]);
   }
   translate([mmposx+mmx/2,mmposy+mmy/2,mmposz]){
-  //cylinder(r=motrad, h=9);
-  //cylinder(r=8.2/2, h=109);
-  //translate([0,0,-100])
-  //cylinder(r=4.3, h=400);
   }
-  //m3 motor screws
-  //translate([mmposx+mmx/2-15.5,mmposy+mmy/2-15.5,mmposz-5])cylinder(r=m3rad, h=50);
-  //translate([mmposx+mmx/2-15.5,mmposy+mmy/2+15.5,mmposz-5])cylinder(r=m3rad, h=50);
-
   translate([-6.5,0,0]){
   translate([mmposx+mmx/2+15.5-1.5,mmposy+mmy/2+15.5,mmposz-5])cylinder(r=m3rad, h=90);
-  translate([mmposx+mmx/2+15.5-1.5,mmposy+mmy/2+15.5,mmposz-5-68-3])cylinder(r=9.5/2, h=90);
+  translate([mmposx+mmx/2+15.5-1.5,mmposy+mmy/2+15.5,mmposz-5-68-3-3])cylinder(r=9.5/2, h=90);
   translate([mmposx+mmx/2+15.5-1.5,mmposy+mmy/2-15.5,mmposz-5])cylinder(r=m3rad, h=90);
-  translate([mmposx+mmx/2+15.5-1.5,mmposy+mmy/2-15.5,mmposz-5-68-3])cylinder(r=9.5/2, h=90);
+  translate([mmposx+mmx/2+15.5-1.5,mmposy+mmy/2-15.5,mmposz-5-68-3-3])cylinder(r=9.5/2, h=90);
   }
-  /*
-  translate([0,0,11-2]){
-  translate([mmposx+mmx/2-15.5,mmposy+mmy/2-15.5,mmposz-5])cylinder(r=8/2, h=50);
-  translate([mmposx+mmx/2-15.5,mmposy+mmy/2+15.5,mmposz-5])cylinder(r=8/2, h=50);
-  translate([mmposx+mmx/2+15.5-1.5,mmposy+mmy/2+15.5,mmposz-5])cylinder(r=8/2, h=90);
-  translate([mmposx+mmx/2+15.5-1.5,mmposy+mmy/2-15.5,mmposz-5])cylinder(r=8/2, h=90);
-  }
-  */
   translate([mmposx+mmx/2+15.5-1.5-16.5,mmposy+mmy/2-15.5-20,mmposz-5])cylinder(r=5.7/2, h=290);
   translate([mmposx+mmx/2+15.5-1.5-16.5,mmposy+mmy/2-15.5+52,mmposz-5])cylinder(r=5.7/2, h=290);
  }
 }
+
+
+module extruder_attach_motormountthin_ender(){
+ mmx = 42;
+ mmy = 42;
+ mmz = 6;
+ mmposx = 0;
+ mmposy = 19;
+ mmposz = -18.5;
+ m6rad = 6.5/2;
+ m3rad = 4/2;
+ motrad = 11.5;
+ //motrad = 4;
+ difference(){
+  union(){
+  translate([mmposx+20-10,mmposy,mmposz])cube([mmx-20+10-6.5,mmy,mmz+11]);
+  translate([mmposx+10,mmposy-25,mmposz])cube([18,90,mmz]);
+  }
+  translate([mmposx+mmx/2,mmposy+mmy/2,mmposz]){
+  }
+  translate([-6.5,0,0]){
+  translate([mmposx+mmx/2+15.5-1.5,mmposy+mmy/2+15.5,mmposz-5])cylinder(r=m3rad, h=90,$fn=30); 
+  translate([mmposx+mmx/2+15.5-1.5,mmposy+mmy/2+15.5,mmposz-5-68-3-3+6-2.5-2.5])#cylinder(r=9.5/2, h=90, $fn=30);
+  translate([mmposx+mmx/2+15.5-1.5,mmposy+mmy/2-15.5,mmposz-5])cylinder(r=m3rad, h=90, $fn=30); 
+  translate([mmposx+mmx/2+15.5-1.5,mmposy+mmy/2-15.5,mmposz-5-68-3-3+6-2.5-2.5])#cylinder(r=9.5/2, h=90, $fn=30);
+  }
+  translate([mmposx+mmx/2+15.5-1.5-16.5,mmposy+mmy/2-15.5-20,mmposz-5])cylinder(r=5.7/2, h=290, $fn=30);
+  translate([mmposx+mmx/2+15.5-1.5-16.5,mmposy+mmy/2-15.5+52,mmposz-5])cylinder(r=5.7/2, h=290, $fn=30);
+ }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 module extruder_railsystem(z){
@@ -1196,7 +1222,10 @@ translate([0,-28,0]){
 translate([43-25-55-10,206.5-15-41.5+28+19+300,-60+430-28])rotate([-0,90,-90])tslot20(552);
 }
 */
-translate([-46-2-30-1,100-7.5+58+80,280+17.5-0])rotate([0,90,180])extruder_attach_motormountthin();
+//translate([-46-2-30-1,100-7.5+58+80,280+17.5-0])rotate([0,90,180])extruder_attach_motormountthin();
+translate([-46-2-30-1,100-7.5+58+80,280+17.5-0])rotate([0,90,180])extruder_attach_motormountthin_ender();
+
+
 //translate([-46-2,100-7.5+58,280+17.5])rotate([0,0,0])
 translate([-600,200,325+6.5])extruder_connector();
 /*
@@ -1777,24 +1806,24 @@ translate([-9,-20,1])cube([18,25,15]);
 }
 translate([0,1,0])roundedRect([26,24,1],3.5);
 translate([0,1+2+2,0])roundedRect([26,20-4,5],3.5);
-translate([10.5,-1.5-1.5,0])cylinder(r=4/2,h=6);
+translate([10.5,-1.5-1.5,0])cylinder(r=4/2,h=6, $fn=30);
 translate([0,12.5,0]){
-translate([10.5,-1.5,0])cylinder(r=4/2,h=6);
+translate([10.5,-1.5,0])cylinder(r=4/2,h=6, $fn=30);
 }
 translate([-21,0,0]){
-translate([10.5,-1.5-1.5,0])cylinder(r=4/2,h=6);
+translate([10.5,-1.5-1.5,0])cylinder(r=4/2,h=6, $fn=30);
 translate([0,12.5,0]){
-translate([10.5,-1.5,0])cylinder(r=4/2,h=6);
+translate([10.5,-1.5,0])cylinder(r=4/2,h=6, $fn=30);
 }
 }
 }
-translate([10.5,-1.5-1.5,1.5])cylinder(r=1.8/2,h=18);
+translate([10.5,-1.5-1.5,1.5])cylinder(r=1.8/2,h=18, $fn=30);
 translate([0,12.5,1.5]){
-translate([10.5,-1.5,0])cylinder(r=1.8/2,h=18);
+translate([10.5,-1.5,0])cylinder(r=1.8/2,h=18, $fn=30);
 }
 translate([-21,0,1.5]){
 translate([10.5,-1.5-1.5,0])cylinder(r=1.8/2,h=18);
-translate([0,12.5,0])translate([10.5,-1.5,0])cylinder(r=1.8/2,h=18);
+translate([0,12.5,0])translate([10.5,-1.5,0])cylinder(r=1.8/2,h=18, $fn=30);
 }
 translate([0,4,-1])cylinder(r=14/2,h=20);
 translate([-12.5,1-0.5,1.5])cube([25,7,30]);

@@ -198,12 +198,12 @@ color("lightblue")translate([0,0,-6.7])cylinder(r=5.5/2,h=102-13-40,$fn=30);
 /*
 */
 
-color("lightblue")translate([0,0,62-400+300-10-z*0.7-8])rotate([0,0,0])cylinder(r=2.5/2,h=333-300+10+z*0.7-12+20);
+color("lightblue")translate([0,0,62-400+300-10-z*0.7-8+15])rotate([0,0,0])cylinder(r=2.5/2,h=333-300+10+z*0.7-12+20-20);
 /*
 */
 color("lightblue")translate([0,0,62])cylinder(r=2.5/2,h=13);
 color("lightblue")translate([0,0,52.3-10])cylinder(r2=2.5/2,r1=4.5/2,h=20);
-color("lightblue")translate([0,0,-36.7])cylinder(r=7.5/2,h=20);
+//#color("lightblue")translate([0,0,-36.7+10])cylinder(r=7.5/2,h=20);
 /*
 */
 //here is the luer lock comment out for printing
@@ -316,7 +316,7 @@ union(){
 for(i=[-1:8]){
 if (i==-1){
  translate([i*(9),0,0])
-  pipette_p1000_noextrusion(8.3,0,"n",z);
+  pipette_p1000_noextrusion(8.3,,"n",z);
  }
 else if (i==2){
  translate([i*(9),0,0])
@@ -374,8 +374,8 @@ translate([i*9,0,0])
 }
 }
 sh = 32;
-#translate([-4+11+2,sh/2-3+5,3.2])rotate([90,0,0])cylinder(r=2.8/2,h=13,$fn=30);
-#translate([-4+11+2+9*5,sh/2-3+5,3.2])rotate([90,0,0])cylinder(r=2.8/2,h=13,$fn=30);
+translate([-4+11+2,sh/2-3+5,3.2])rotate([90,0,0])cylinder(r=2.8/2,h=13,$fn=30);
+translate([-4+11+2+9*5,sh/2-3+5,3.2])rotate([90,0,0])cylinder(r=2.8/2,h=13,$fn=30);
 //translate([-4+11,sh/2-3+5,-10])cylinder(r=5.5/2,h=80,$fn=30);
 //translate([-4-11+(7*10),sh/2-3+5,-10])cylinder(r=5.5/2,h=80);
 /*

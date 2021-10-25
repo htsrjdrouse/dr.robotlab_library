@@ -1,0 +1,1 @@
+Universal stand-alone filament spool holder (Fully 3D-printable) by CreativeTools on Thingiverse: https://www.thingiverse.com/thing:508896

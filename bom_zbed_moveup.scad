@@ -16,7 +16,8 @@ threadrod_bed_joiner();
 module bed_attach_assy_tslot(){
 translate([-10,0,0])rotate([0,90,0]){
 //color("lime")back_threadrod_bed_adjustwheel();
-color("pink")front_threadrod_bed_adjustwheel_tslot();
+//color("pink")
+front_threadrod_bed_adjustwheel_tslot();
 //threadrod_bed_joiner();
 }
 }
@@ -212,23 +213,29 @@ translate([0,-40,0])cylinder(r=3.7/2,h=30,$fn=30);
 module bczamd_a8_hotbed_support(){
 difference(){
 union(){
-color("silver")cube([219,219,3]);
-translate([0,0,10])color("gold")cube([219,219,3]);
-translate([5,5,-1])cylinder(r=4.8/2,h=12,$fn=30);
-translate([5+(104.5*2),5,-1])cylinder(r=4.8/2,h=12,$fn=30);
-translate([0,209,0]){
-translate([5,5,-1])cylinder(r=4.8/2,h=12,$fn=30);
-translate([5+(104.5*2),5,-1])cylinder(r=4.8/2,h=12,$fn=30);
-}
-translate([5,5,-1-15])cylinder(r=20/2,h=3,$fn=30);
-translate([5+(104.5*2),5,-1-15])cylinder(r=20/2,h=3,$fn=30);
+//color("silver")cube([219,219,3]);
+//translate([0,0,10])color("gold")cube([219,219,3]);
 
+translate([0-90,0-80,10])color("gold")cube([400,300,3]); //inches 15.75 x 11.81
+//length 15.75, 11.81 inch;
+
+translate([5-75,5,-1])cylinder(r=4.8/2,h=12,$fn=30);
+translate([5+(104.5*2)+75,5,-1])cylinder(r=4.8/2,h=12,$fn=30);
+translate([0,209,0]){
+translate([5-75,5,-1])cylinder(r=4.8/2,h=12,$fn=30);
+translate([5+(104.5*2)+75,5,-1])cylinder(r=4.8/2,h=12,$fn=30);
+translate([5-75,5,-1-15])cylinder(r=20/2,h=3,$fn=30);
+translate([5+(104.5*2)+75,5,-1-15])cylinder(r=20/2,h=3,$fn=30);
 }
+translate([5-75,5,-1-15])cylinder(r=20/2,h=3,$fn=30);
+translate([5+(104.5*2)+75,5,-1-15])cylinder(r=20/2,h=3,$fn=30);
+}
+
+
 /*
 */
 /*
-#translate([5+104.5,5,-1])cylinder(r=4.8/2,h=30,$fn=30);
-
+translate([5+104.5,5,-1])cylinder(r=4.8/2,h=30,$fn=30);
 translate([104.5+5,104.5+5,0]){
 translate([-6,0,0])cylinder(r=4.8/2,h=30,$fn=30);
 translate([6,0,0])cylinder(r=4.8/2,h=30,$fn=30);
@@ -389,29 +396,24 @@ module zbed_smz_wider_threadedrods_noextrusions(){
  translate([125+1,50-15,150-10+5])rotate([0,0,0])bczamd_a8_hotbed_support();
 
 
- translate([30,0,0]){
+ translate([30-75,0,0]){
  translate([153-30,146-14,130-8])bed_attach_assy_tslot();
  translate([153-30,146-14+200,130-8])bed_attach_assy_tslot();
  translate([50-30,0,0]){
  translate([61,112,115+13])rotate([0,180,0])bed_bar_clamp();
  translate([61,112+84+3.5,115+13])rotate([0,180,0])bed_bar_clamp();
- translate([125-70-18,270,0+123])rotate([90,0,0])tslot20(250);
+ translate([125-70-18,270,0+123])rotate([90,0,0])tslot20(300);
  }
  }
-
- translate([30+270,0,0]){
- translate([153-30-102,146-14,130-8])mirror([1,0,0])bed_attach_assy_tslot();
- translate([153-30-102,146-14+200,130-8])mirror([1,0,0])bed_attach_assy_tslot();
+ translate([30+270+75,0,0]){
+ //translate([153-30-102,146-14,130-8])mirror([1,0,0])bed_attach_assy_tslot();
+ //translate([153-30-102,146-14+200,130-8])mirror([1,0,0])bed_attach_assy_tslot();
  translate([50-30,0,0]){
  translate([61,112,115+13])rotate([0,180,0])bed_bar_clamp();
  translate([61,112+84+3.5,115+13])rotate([0,180,0])bed_bar_clamp();
- translate([125-70-18,270,0+123])rotate([90,0,0])tslot20(250);
+ translate([125-70-18,270,0+123])rotate([90,0,0])tslot20(300);
  }
  }
-
-
-
-
  translate([15-65,120+100+35-54+15-84,141.5-20])rotate([0,90,0])color("silver")cylinder(r=8.7/2,h=582,$fn=30);
  translate([15-65,120+100+35-54+15+3.5,141.5-20])rotate([0,90,0])color("silver")cylinder(r=8.7/2,h=582,$fn=30);
  }
@@ -424,7 +426,6 @@ module zbed_smz_wider_threadedrods_noextrusions(){
  translate([35+370+120-29,134-49,105])color("pink")extrusion_threadrod_clamp_noextrusion();
  }
  }
-
  //translate([125,50,150-10-10])rotate([0,0,0])bczamd_a8_hotbed_support_attachplate();
  //translate([15-65,120-50,141.5])rotate([0,90,0])tslot20(582);
  //translate([15-65,120-50+15,141.5-20])color("silver")rotate([0,90,0])cylinder(r=8.7/2,h=582,$fn=30);
@@ -563,16 +564,18 @@ translate([50-0,40+10,10])mirror([0,1,0])motormount_smz();
 translate([74.5,315-305,172-180])rotate([0,0,0])nema17();
 //end 3d printed stuff
 }
-translate([10-39-35,102+107+35,75]){color("silver")cylinder(r=8/2,h=377);}
+translate([10-39-35,102+107+35,75-10]){
+color("silver")cylinder(r=8/2,h=375);
+}
 translate([-45,1.5,0]){
-translate([10+509-509-29,102-1.5+142-76,20]){color("silver")cylinder(r=8.7/2,h=437);}
+translate([10+509-509-29,102-1.5+142-76,20-4]){color("silver")cylinder(r=8.7/2,h=436);}
 translate([-54-29,169-1.5+142-76,130]){
 translate([40+44,-40,-114])rotate([0,0,180])color("")clamp_bottom_simple_m8_smoothrodholder_for_z();
 translate([84,-90-4,-114+437])rotate([0,180,0])color("")clamp_bottom_simple_m8_smoothrodholder_for_z();
 }
 }
 translate([-45,-0.-0.5,0]){
-translate([10-29,322-1.5,20]){color("silver")cylinder(r=8.7/2,h=437);}
+translate([10-29,322-1.5,20]){color("silver")cylinder(r=8.7/2,h=436);}
 translate([-54-29,169-1.5,130]){
 translate([40+44,180,-114])rotate([0,0,180])color("")clamp_bottom_simple_m8_smoothrodholder_for_z();
 translate([84,180-54,-114+437])rotate([0,180,0])color("")clamp_bottom_simple_m8_smoothrodholder_for_z();
@@ -663,6 +666,83 @@ module motormountthin(){
  }
 }
 
+
+
+module clamp_m8_smoothrodholder_for_bed(){
+difference(){
+translate([-8,17,0])cube([20,20,4]);
+translate([1,10-1+17,0-100])cylinder(r=3.8/2,h=180);
+}
+difference(){
+translate([20+6,27+8,12])rotate([90,0,0])cylinder(r=10/2,h=16);
+translate([20+7,27+10,12])rotate([90,0,0])cylinder(r=2.8/2,h=25);
+translate([20+2.5,27,-0.2])rotate([0,0,45])cylinder(r=11/2,h=50,$fn=4);
+translate([20+5,27,-0.2])rotate([0,0,45])cylinder(r=11/2,h=50,$fn=4);
+translate([20+10,27,-0.2])rotate([0,0,45])cylinder(r=11/2,h=50,$fn=4);
+translate([20+15,27,-0.2])rotate([0,0,45])cylinder(r=11/2,h=50,$fn=4);
+}
+difference(){
+union(){
+translate([20,27,0])cylinder(r=18/2,h=17);
+translate([20,27,0])cylinder(r=26/2,h=4);
+/*
+translate([20,10-1,0])cylinder(r=14/2,h=4);
+translate([20,45,0])cylinder(r=14/2,h=4);
+translate([21.5,8,0])rotate([0,0,-23])cube([5,14,4]);
+translate([13.0,8,0])rotate([0,0,23])cube([5,14,4]);
+translate([27,33,0])rotate([0,0,23])cube([5,14,4]);
+translate([7.5,33,0])rotate([0,0,-23])cube([5,14,4]);
+*/
+}
+//translate([-50,27.2,7.5])rotate([90,0,90])cylinder(r=3/2,h=80);
+translate([20,10-1,4.1])cylinder(r=8.9/2,h=38);
+translate([20,45,0-100])cylinder(r=5.7/2,h=180);
+translate([20,45,4.1])cylinder(r=8.9/2,h=38);
+//translate([20,27,1+5])cylinder(r=22.4/2,h=7);
+translate([20,27,-0.1])cylinder(r=8.1/2,h=50);
+translate([20+7,27+10,12])rotate([90,0,0])cylinder(r=3/2,h=25);
+//translate([20,27,5])rotate([0,0,45])cylinder(r=9/2,h=50,$fn=4);
+translate([20+5,27,-0.2])rotate([0,0,45])cylinder(r=11/2,h=50,$fn=4);
+translate([20+10,27,-0.2])rotate([0,0,45])cylinder(r=11/2,h=50,$fn=4);
+translate([20+15,27,-0.2])rotate([0,0,45])cylinder(r=11/2,h=50,$fn=4);
+translate([20,27,0])cylinder(r=5.7/2,h=2);
+translate([28,-27,-20])cube([50,150,100]);
+translate([-38,-27,-20])cube([50,150,100]);
+}
+//translate([0,17.5,-6.5])rotate([90,0,0])m4locknut();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 module clamp_bottom_simple_m8_smoothrodholder_for_z(){
 difference(){
 translate([20+6,27+8,12])rotate([90,0,0])cylinder(r=10/2,h=16);
@@ -701,6 +781,30 @@ translate([-38,-27,-20])cube([50,150,100]);
 }
 //translate([0,17.5,-6.5])rotate([90,0,0])m4locknut();
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //this is where I need to modify
 module zbed_smz_wider(){

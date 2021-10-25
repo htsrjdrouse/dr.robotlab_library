@@ -1,0 +1,1 @@
+Simple LCD housing for ender3 with  BIGTREETECH TFT35 by Tommykijima on Thingiverse: https://www.thingiverse.com/thing:4288030

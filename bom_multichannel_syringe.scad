@@ -211,10 +211,9 @@ translate([-115+190+100,365+141-24,295-42-14+115-144-69])rotate([0,0,0])color("l
 module wash_waste_tubing(){
 
 
-/*
 //water wash
 //translate([8,30-30,11])color("lightblue")rotate([180-60,0,0])cylinder(r=7/2,h=330,$fn=30);
-translate([8+30,30+15,11-45])color("lightblue")rotate([180-70.2,0,-5])cylinder(r=7/2,h=355,$fn=30);
+translate([8+30,30+15,11-45])color("lightblue")rotate([180-70.2+1,0,-5])cylinder(r=7/2,h=355-35,$fn=30);
 translate([0,223,0]){
 translate([8+13,30+40-203-100,11])color("lightblue")rotate([180,-20,0])cylinder(r=7/2,h=50,$fn=30);
 translate([8+13,30+40-203,11])color("lightblue")rotate([180,-20,0])cylinder(r=7/2,h=50,$fn=30);
@@ -222,18 +221,20 @@ translate([8+13,30+40-200-87,11])color("lightblue")rotate([180-90,0,0])cylinder(
 translate([8+13,30+40-200,11])color("lightblue")rotate([180-90,0,0])cylinder(r=7/2,h=20,$fn=30);
 translate([8+13+17,30+40-200,11-45])color("lightblue")rotate([180-90,0,0])cylinder(r=7/2,h=105,$fn=30);
 }
+/*
 */
 //waste collection
 translate([0,-30,0]){
 //translate([8+13,30+40+122,11-9])color("YellowGreen")rotate([180,0,0])cylinder(r=7/2,h=150,$fn=30);
 
-/*
-translate([8+13,30+40+122,11])color("lightblue")rotate([180,0,0])cylinder(r=7/2,h=50,$fn=30);
+//translate([8+13,30+40+122,11])color("lightblue")rotate([180,0,0])cylinder(r=7/2,h=50,$fn=30);
 translate([8+13,30+40,11])color("lightblue")rotate([180,0,0])cylinder(r=7/2,h=50,$fn=30);
-translate([8+13,30+40-3,11-50])color("lightblue")rotate([180+90,0,0])cylinder(r=7/2,h=127,$fn=30);
-translate([8+13,30+40-3,11-50])color("lightblue")rotate([180+90,0,0])cylinder(r=7/2,h=126,$fn=30);
+//#translate([8+13,30+40-3,11-50])color("lightblue")rotate([180+90,0,0])cylinder(r=7/2,h=127,$fn=30);
+translate([8+13,30+40-3,11-50])color("lightblue")rotate([180+90,0,0])cylinder(r=7/2,h=127-60,$fn=30);
+//translate([8+13,30+40-3,11-50])color("lightblue")rotate([180+90,0,0])cylinder(r=7/2,h=126,$fn=30);
 translate([8+13,30+40+63,11-50])color("lightblue")rotate([180,0,0])cylinder(r=7/2,h=137,$fn=30);
-translate([8+13,30+40+63,11-50-133])color("lightblue")rotate([180-90,0,0])cylinder(r=7/2,h=430,$fn=30);
+translate([8+13,30+40+63,11-50-133])color("lightblue")rotate([180-90,0,0])cylinder(r=7/2,h=430-30,$fn=30);
+/*
 */
 }
 

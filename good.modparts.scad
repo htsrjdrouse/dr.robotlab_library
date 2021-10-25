@@ -8,6 +8,12 @@ include <bom_zbed.scad>
 include <bom_syringe.scad>
 use<writescad/write.scad>
 
+//balladjust_openmv();
+//translate([-90,-5,0])rotate([90,0,0]) lasermount_connector_cap();
+
+//translate([-100+65-66-1+32,59+30-150-9+30,17.85-6-10])rotate([0,90,90])lasermount_assy();
+openmv_ball_adjust_set();
+
 //rightside_underneath_plate_x1();
 
 //leftside_underneath_plate_x1();
@@ -1575,8 +1581,8 @@ module lasermount_connector_cap(){
 difference(){
 translate([0,-5,0])cube([15,5+5,15]);
 translate([7.5,7.5,7.5])sphere(r=6.5);
-translate([7.5,7.5+20,7.5])rotate([90,90,0])cylinder(r=3.7/2,h=60);
-translate([7.5,-2.1,7.5])rotate([90,90,0])cylinder(r=7.8/2,h=3,$fn=6);
+translate([7.5,7.5+20,7.5])rotate([90,90,0])cylinder(r=2.8/2,h=60);
+//translate([7.5,-2.1,7.5])rotate([90,90,0])cylinder(r=7.8/2,h=3,$fn=6);
 }
 }
 
@@ -12010,7 +12016,6 @@ translate([-36+5+5,42-4,13])cube([15,12,15]);
 for(i=[-6,-5,-4,-3,-2,-1,0,1,2,3,4,5,6]){
 translate([-36+5+10+9,42-4+17,-2+i])rotate([90,90,0])cylinder(r=4.7/2,h=100);
 }
-
 /*
 translate([-36+5+10,42-4+17,13+10])rotate([90,90,0])cylinder(r=4.7/2,h=10);
 translate([-36+5+10,42-4+8,13+10])rotate([90,90,0])cylinder(r=10/2,h=10);
@@ -12029,7 +12034,6 @@ translate([-36+5+10,42-4+8,13+10])rotate([90,90,0])cylinder(r=10/2,h=10);
 module lasermount_assy(){
 //translate([-62.5,24,-10])rotate([90,0,0])import("stls/cap.stl"); //cap();
 //translate([10,40,-11])translate([10,-10,-10])rotate([0,0,0])lasermodule();
-
 //lasermount_connector();
 //rotate([0,180,0])import("stls/ballpart.stl");//ballpart();
 difference(){union(){
@@ -12045,36 +12049,27 @@ translate([-20,50,i])rotate([90,0,0])cylinder(r=3.7/2,h=200);
 }
 //translate([-15-10,25,-11])cube([35,10,10]);
 //translate([-15,25,-11])cube([25,10,10]);
-
 //laser holding part
 translate([-10,0,0])difference(){
 translate([10,20,-11])cube([20,20,20]);
 translate([10,20,-11])
 translate([10,10,-10])rotate([0,0,0])lasermodule();
 }
-
 }
-
-
 //www.dx.com
 //http://www.dx.com/p/100mw-532nm-green-laser-module-3v-11-9mm-26890.WKXIfxIrKRs
 //100mW 532nm Green Laser Module (3V 11.9mm)
 module lasermodule(){
-
 l = 2.44 * 24.5;
 diam = 0.47 * 24.5;
 diam = 13.4;
 cylinder(r=diam/2,h=l);
 }
-
-
 //translate([100,-50,100])rotate([90,0,0])nextgen_syringe10ml_assy();
 //TW_04_12_slider
 //color("lightgrey")translate([-56.5,200,104.45])rotate([90,90,0])syringe10ml_clipmount();
 //nbg = 0.4;color([nbg,nbg,nbg])translate([-22.85,1,2.5])rotate([0,180,0])stepper_linear_m8nut_coupler();
 //cbg = 0.55;color([cbg,cbg,cbg])translate([-25.75,123,-30])rotate([90,-90,0])syringeshuttle_clipbracket();
-
-
 
 //translate([28,21,5])syringe_pcb_holder_back();
 

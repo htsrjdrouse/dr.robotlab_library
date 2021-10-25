@@ -2206,6 +2206,62 @@ translate([-103,0,0])arducam_rotate_2mount_adjuster_nut();
 }
 }
 
+module 3dprint_dual_camera_assy_plate(){
+translate([0,0,-4])difference(){union(){
+ translate([3,0+8,0])cube([18,50-8,4]);
+ translate([20,30,0])cube([20,20,8]);
+}
+ translate([20+15,40,-20])cylinder(r=2.8/2,h=40,$fn=30);
+ translate([10,15,-20])cylinder(r=3.8/2,h=40,$fn=30);
+}
+}
+
+
+module 3dprint_dual_camera_assy(){
+//translate([-60-7+7-9,-4,0])rotate([0,0,0])arducam_rotate_case();
+//translate([-65+67-7+9,17,0])rotate([0,0,180])arducam_rotate_case();
+rotate([0,180,0]){
+//arducam_rotate_2mount_adjuster();
+3dprint_adjuster();
+//translate([-100,0,0])arducam_rotate_2mount_adjuster_nut();
+//translate([-103,0,0])arducam_rotate_2mount_adjuster_nut();
+}
+}
+
+module 3dprint_adjuster(){
+difference(){
+union(){
+translate([-4.5+22.0-15-22-15,-4+0,0])cube([60+44+30-94,20,8]);
+translate([3,0,5]){
+translate([-4.5+22.0-15-22-15+40,-4+12,0])rotate([90,0,0])cylinder(r=15/2,h=5,$fn=30);
+translate([-4.5+22.0-15-22-15+42,-4+12,0])rotate([90,0,0])cylinder(r=15/2,h=5,$fn=30);
+translate([-4.5+22.0-15-22-15+44,-4+12,0])rotate([90,0,0])cylinder(r=15/2,h=5,$fn=30);
+}
+//translate([-4.5+22.0-15-22-15+30,-4+0,0])#cube([10,20,8+10]);
+//translate([-4.5+22.0-15-22-15+40-4,-4+0,0])cube([4,20,8+10]);
+}
+translate([-4.5+22.0+15+10-28,-4+0+30,6])rotate([90,0,0])#cylinder(r=3.7/2,h=50,$fn=30);
+translate([-4.5+22.0-15-22-15,-4+0,-8])#cube([60+44+30-94+20,20,8]);
+for(i=[0:0]){
+translate([-4.5+22.0+15+10-70,-4+0+10,20+i*0.5-5])rotate([0,90,0])cylinder(r=3.7/2,h=50,$fn=30);
+}
+for(i=[65:68+28]){
+translate([-4.5+22.0+15+10+i*0.5,-4+0+10,-10])cylinder(r=3/2,h=50,$fn=30);
+translate([-4.5+22.0+15+10+i*0.5,-4+0+10,4])cylinder(r=9/2,h=50,$fn=30);
+translate([-4.5+22.0+15-10-i*0.5,-4+0+10,-10])cylinder(r=3/2,h=50,$fn=30);
+translate([-4.5+22.0+15-10-i*0.5,-4+0+10,4])cylinder(r=9/2,h=50,$fn=30);
+}
+}
+}
+
+
+
+
+
+
+
+
+
 
 module dual_camera_stand(){
 
@@ -2447,6 +2503,10 @@ color("pink")translate([-4.5+22.0+15+10,-4+0+10,-4.2])cylinder(r=2.4/2,h=14,$fn=
 }
 }
 
+
+
+
+
 module arducam_rotate_2mount_adjuster(){
 difference(){
 union(){
@@ -2461,13 +2521,10 @@ translate([5,0,0]){
 translate([-4.5+22.0+15,-4+0+10-15,-2])cylinder(r=3.7/2,h=40,$fn=30);
 translate([-4.5+22.0+15,-4+0+10-15,-2+1.9])cylinder(r=8.7/2,h=4,$fn=30);
 }
-
-
 translate([-5,0,0]){
 translate([-4.5+22.0+15,-4+0+10-15,-2])cylinder(r=3.7/2,h=40,$fn=30);
 translate([-4.5+22.0+15,-4+0+10-15,-2+1.9])cylinder(r=8.7/2,h=4,$fn=30);
 }
-
 for(i=[65:68+28]){
 translate([-4.5+22.0+15+10+i*0.5,-4+0+10,-10])cylinder(r=3/2,h=50,$fn=30);
 translate([-4.5+22.0+15+10+i*0.5,-4+0+10,4])cylinder(r=9/2,h=50,$fn=30);
@@ -2476,6 +2533,10 @@ translate([-4.5+22.0+15-10-i*0.5,-4+0+10,4])cylinder(r=9/2,h=50,$fn=30);
 }
 }
 }
+
+
+
+
 
 module arducam_rotate_2mount(){
 difference(){union(){
@@ -3891,7 +3952,6 @@ translate([-18+4,16-5+6,-32+49])cube([36-9,5,4]);
 }
 }
 
-
 module cytokinetics_miuzei_raspicam_base(){
 translate([-7,-25+8,0])rotate([0,0,-90])smd_justclip();
 translate([-10,-32,0])difference(){
@@ -3900,14 +3960,6 @@ translate([0,15,0])cube([20,5,2.5]);
 }
 translate([5,9,0])cube([10,5,6]);
 }
-/*
-translate([-21,0,0])difference(){cube([8,8,5]);
-translate([4,4,-1])cylinder(r=2.8/2,h=8);
-}
-translate([13,0,0])difference(){cube([8,8,5]);
-translate([4,4,-1])cylinder(r=2.8/2,h=26);
-}
-*/
 difference(){
 union(){
 difference(){
@@ -3917,24 +3969,24 @@ translate([-9,-20,1])cube([18,25,15]);
 }
 translate([0,1,0])roundedRect([26,24,1],3.5);
 translate([0,1+2+2,0])roundedRect([26,20-4,5],3.5);
-translate([10.5,-1.5-1.5,0])cylinder(r=4/2,h=6);
+translate([10.5,-1.5-1.5,0])cylinder(r=4/2,h=6, $fn=30);
 translate([0,12.5,0]){
-translate([10.5,-1.5,0])cylinder(r=4/2,h=6);
+translate([10.5,-1.5,0])cylinder(r=4/2,h=6, $fn=30);
 }
 translate([-21,0,0]){
-translate([10.5,-1.5-1.5,0])cylinder(r=4/2,h=6);
+translate([10.5,-1.5-1.5,0])cylinder(r=4/2,h=6, $fn=30);
 translate([0,12.5,0]){
-translate([10.5,-1.5,0])cylinder(r=4/2,h=6);
+translate([10.5,-1.5,0])cylinder(r=4/2,h=6, $fn=30);
 }
 }
 }
-translate([10.5,-1.5-1.5,1.5])cylinder(r=1.8/2,h=18);
+translate([10.5,-1.5-1.5,1.5])cylinder(r=1.8/2,h=18, $fn=30);
 translate([0,12.5,1.5]){
-translate([10.5,-1.5,0])cylinder(r=1.8/2,h=18);
+translate([10.5,-1.5,0])cylinder(r=1.8/2,h=18, $fn=30);
 }
 translate([-21,0,1.5]){
-translate([10.5,-1.5-1.5,0])cylinder(r=1.8/2,h=18);
-translate([0,12.5,0])translate([10.5,-1.5,0])cylinder(r=1.8/2,h=18);
+translate([10.5,-1.5-1.5,0])cylinder(r=1.8/2,h=18, $fn=30);
+translate([0,12.5,0])translate([10.5,-1.5,0])cylinder(r=1.8/2,h=18, $fn=30);
 }
 translate([0,4,-1])cylinder(r=14/2,h=20);
 translate([-12.5,1-0.5,1.5])cube([25,7,30]);
@@ -3944,6 +3996,84 @@ translate([0,1.7,1])roundedRect([11.5,20,10],3.5);
 }
 }
 
+
+
+module 3dprint_miuzei_raspicam_base(){
+translate([-7,-25+8,0])rotate([0,0,-90])smd_justclip();
+translate([-10,-32,0])difference(){
+union(){
+translate([0,16+2,0])cube([20,3-1,1+4]);
+translate([0,16+30,0])cube([20,5-1+18-5+10,3]);
+//translate([0,16+30+17,0])cube([20,5-1,3+15]);
+
+/*
+translate([0,15+3,0])cube([3,5-3,8]);
+translate([0+17,15+3,0])cube([3,5-3,8]);
+translate([2.145,15-3-2,0])cube([3,5+4,2.5+7.5-3]);
+translate([2.145,15-3-1,8-3])rotate([0,90,0])roundedRect([7,8,3.],2.8);
+translate([13,0,0]){
+translate([2.145,15-3-2,0])cube([3,5+4,2.5+7.5-3]);
+translate([2.145,15-3-1,8-3])rotate([0,90,0])roundedRect([7,8,3.],2.8);
+}
+*/
+
+}
+translate([5,9,0])cube([10,5,6]);
+translate([10,66,-50])rotate([0,0,0])cylinder(r=4/2,h=100,$fn=30);
+
+}
+difference(){
+union(){
+difference(){
+translate([0,1,0])roundedRect([26,24,10-2],3.5);
+translate([-13,-11.5,1])cube([26,25,15]);
+translate([-9,-20,1])cube([18,25,15]);
+}
+translate([0,1,0])roundedRect([26,24,1],3.5);
+translate([0,1+2+2,0])roundedRect([26,20-4,5],3.5);
+translate([10.5,-1.5-1.5,0])cylinder(r=4/2,h=6, $fn=30);
+translate([0,12.5,0]){
+translate([10.5,-1.5,0])cylinder(r=4/2,h=6, $fn=30);
+}
+translate([-21,0,0]){
+translate([10.5,-1.5-1.5,0])cylinder(r=4/2,h=6, $fn=30);
+translate([0,12.5,0]){
+translate([10.5,-1.5,0])cylinder(r=4/2,h=6, $fn=30);
+}
+}
+}
+translate([10.5,-1.5-1.5,1.5])cylinder(r=1.8/2,h=18, $fn=30);
+translate([0,12.5,1.5]){
+translate([10.5,-1.5,0])cylinder(r=1.8/2,h=18, $fn=30);
+}
+translate([-21,0,1.5]){
+translate([10.5,-1.5-1.5,0])cylinder(r=1.8/2,h=18, $fn=30);
+translate([0,12.5,0])translate([10.5,-1.5,0])cylinder(r=1.8/2,h=18, $fn=30);
+}
+translate([0,4,-1])cylinder(r=14/2,h=20);
+translate([-12.5,1-0.5,1.5])cube([25,7,30]);
+//translate([0,-1.5,-2])cylinder(r=17/2,h=30);
+translate([0,-1.5,1.5])rotate([0,0,45])cylinder(r=24.75/2,h=9,$fn=4);
+translate([0,1.7,1])roundedRect([11.5,20,10],3.5);
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+*/
 
 
 

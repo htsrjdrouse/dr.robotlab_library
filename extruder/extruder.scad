@@ -1,5 +1,6 @@
 //import("bowden_fitting.stl");
 
+extruder_assy();
 
 module extruder_assy(){
 color("grey")translate([21,2.5,53])rotate([90,0,0])import("BMG_M.stl");

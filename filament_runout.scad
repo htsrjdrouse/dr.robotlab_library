@@ -24,6 +24,13 @@ length = (walls * 2 + switchPadding + screwDiameter) * 2 + switchLength;
 width = walls * 2 + filamentDiameter + switchWidth + switchPadding;
 height = switchHeight / 2 + bottomHeight;
 
+filament_runout(length, width, height, filamentRadius, ptfeRadius,screwRadius,switchRadius, screwDiameter);
+translate([70,0,0])rotate([0,0,0])mirror([1,0,0])filament_runout(length, width, height, filamentRadius, ptfeRadius,2.8/2,0.1, screwDiameter);
+
+//translate([33,0,10])rotate([0,180,0])filament_runout(length, width, height, filamentRadius, ptfeRadius,2.8/2,0.1, screwDiameter);
+module filament_runout(length, width, height, filamentRadius, ptfeRadius,screwRadius,switchRadius, screwDiameter){
+
+
 difference() {
   hull() {
     translate([radius, -radius, 0])
@@ -48,13 +55,16 @@ difference() {
       cube([switchLength, switchWidth + 1, height]);
 
     translate([walls * 2 + screwDiameter, -width + walls, bottomHeight])
-      cube([switchLength + switchPadding * 2, width - walls * 2, height]);
+      #cube([switchLength + switchPadding * 2, width - walls * 2-1, height]);
   }
   
   // Filament
   translate([-1, -width + walls + screwDiameter + filamentRadius - 0.8, height])
     rotate([0, 90, 0])
       cylinder(r=filamentRadius, h= length + 2);
+  translate([-1+6, -width + walls + screwDiameter + filamentRadius - 0.8, height])
+    rotate([0, 90, 0])
+      #cylinder(r1=filamentRadius, r2=filamentRadius*2, h= 3);
 
   // PTFE tube holes
   group() {
@@ -81,11 +91,13 @@ difference() {
   
   // Switch Holes
   group() {
-    translate([walls * 2 + screwDiameter + switchPadding + switchOffsetX, -switchRadius - switchOffsetY, -1])
+    translate([walls * 2 + screwDiameter + switchPadding + switchOffsetX, -switchRadius - switchOffsetY-1, -1])
       cylinder(r=switchRadius, h=height);
 
-    translate([walls * 2 + screwDiameter + switchPadding + switchLength - switchOffsetX, -switchRadius - switchOffsetY, -1])
+    translate([walls * 2 + screwDiameter + switchPadding + switchLength - switchOffsetX, -switchRadius - switchOffsetY-1, -1])
       cylinder(r=switchRadius, h=height);
   
   }
+}
+
 }

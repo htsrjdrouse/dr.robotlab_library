@@ -2668,3 +2668,73 @@ translate([0,0,9])difference(){
 }
 }
 
+module iverntech_slider_zbed_connect(){
+//translate([0,125,33.1-4])rotate([0,90,0])tslot20(100);
+translate([-27/2+12/2,150,3+3]){
+translate([0,0,9])difference(){
+ union(){
+ translate([0,0,-1])color("")cube([27,45,9+4.9]);
+ //color("")translate([20+10,45/2-9,2+1.5])#cube([16-5,18,6+4.9-1.5]);
+ //color("")translate([20+10-3,45/2-7-30-9,2+1.5])cube([16+5-5,14+60+19,6+4.9-1.5]);
+ color("")translate([20+10-3-27,45/2-7-30-9+6,9-10])cube([16+5-5+11,30,4]);
+ color("")translate([20+10-3-27,45/2-7-30-9+6,9-10])cube([16+5-5+11+13,20,4]);
+ } //end union
+ /*
+ translate([27/2+23+2-8+5,45/2-2,-5+12.5-10+3])cylinder(r=17/2,h=10);
+ translate([27/2+23+2-8+8,45/2-2,-5+12.5-10+3])cylinder(r=17/2,h=10);
+ translate([27/2+23+2-8+5,45/2-0,-5+12.5-10+3])cylinder(r=17/2,h=10);
+ translate([27/2+23+2-8+8,45/2-0,-5+12.5-10+3])cylinder(r=17/2,h=10);
+ */
+// translate([27/2+23,45/2,-5])cylinder(r=5.7/2,h=20);
+// translate([27/2+23,45/2,2-0.1])cylinder(r=10/2,h=3);
+
+ //#translate([27/2+23+2-8+5,45/2-26-9+35,-5+12.5])cylinder(r=4.7/2,h=10, $fn=30);
+ #translate([27/2+23+2-8+(5-43)/2+20,45/2-26-9+35-32.5,-5+12.5-12])cylinder(r=4.7/2,h=10, $fn=30);
+ //#translate([27/2+23+2-8+4-43,45/2-26-9+35,-5+12.5])cylinder(r=4.7/2,h=10, $fn=30);
+
+ //#translate([27/2+23+2-8+2,45/2-26-9,-5+12.5-10])cylinder(r=10/2,h=10);
+ //translate([27/2+23+2-8+2,45/2+26+9,-5+12.5-10])cylinder(r=10/2,h=10, $fn=30);
+ translate([27/2+4+16.5,45/2-18,-5])cylinder(r=3.7/2,h=20);
+ translate([27/2+4+16.5,45/2-18,-5+14])cylinder(r=8.5/2,h=4);
+ translate([27/2+4+16.5,45/2+15,-5])cylinder(r=3.7/2,h=20);
+ translate([27/2+4+16.5,45/2+15,-5+14])cylinder(r=8.5/2,h=4);
+ translate([27/2-10,45/2-10,-4])cylinder(r=3.7/2,h=10);
+ translate([27/2-10,45/2-10,6])cylinder(r=8/2,h=10);
+ translate([27/2+10,45/2-10,-4])cylinder(r=3.7/2,h=10);
+ translate([27/2+10,45/2-10,6])cylinder(r=8/2,h=10);
+ translate([27/2-10,45/2+10,-4])cylinder(r=3.7/2,h=10);
+ translate([27/2-10,45/2+10,6])cylinder(r=8/2,h=10);
+ translate([27/2+10,45/2+10,-4])cylinder(r=3.7/2,h=10);
+ translate([27/2+10,45/2+10,6])cylinder(r=8/2,h=10);
+ translate([27/2+4,45/2,-5])cylinder(r=2.8/2,h=20);
+ translate([27/2-8,45/2,-5])cylinder(r=2.8/2,h=20);
+ translate([27/2+4,45/2,-1])cylinder(r=7/2,h=4,$fn=6);
+ translate([27/2-8,45/2,-1])cylinder(r=7/2,h=4,$fn=6);
+ translate([27/2-10,45/2-10,5])cylinder(r=6.5/2,h=3);
+ translate([27/2+10,45/2-10,5])cylinder(r=6.5/2,h=3);
+ translate([27/2-10,45/2+10,5])cylinder(r=6.5/2,h=3);
+ translate([27/2+10,45/2+10,5])cylinder(r=6.5/2,h=3);
+}
+}
+}
+
+
+module iverntech_railmodule(){
+translate([0,-5,0]){
+translate([-83.5,145,-231])rotate([0,90,0])tslot20(100);
+translate([-37.5,20,-274])rotate([0,0,0])iverntech_slider_zbed_connect();
+translate([-27/2+12/2-42-7.5+12,150+20,310-6+5-6])difference(){
+ color("silver")cube([27,45,9]);
+ translate([27/2-10,45/2-10,-5-20])cylinder(r=3.7/2,h=60);
+ translate([27/2+10,45/2-10,-5-20])cylinder(r=3.7/2,h=60);
+ translate([27/2-10,45/2+10,-5-20])cylinder(r=3.7/2,h=60);
+ translate([27/2+10,45/2+10,-5-20])cylinder(r=3.7/2,h=60);
+}
+}
+translate([-27/2+12/2-48+6+12,55-60-30-60,310-6+5])color("pink")cube([12,450,8]);
+
+}
+
+
+
+

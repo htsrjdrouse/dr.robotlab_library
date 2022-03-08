@@ -131,10 +131,10 @@ module valvemountplate_screwattach_smallersyringe(){
  translate([-3+19,18+0.1+2.5,12])cube([19.5,16,7+6]);
  translate([-3+19+5,18+0.1+2.5-10-4,12])cube([19.5-5,16+20+4,7+6]);
  }
- translate([4,0,-40])
- translate([30-5.5,10+1.5,40])cylinder(r=3.7/2,h=50,$fn=30);
- translate([4,0,-40])
- translate([30-5.5,10+1.5+30,40])cylinder(r=3.7/2,h=50,$fn=30);
+ translate([4,0,-40])#translate([30-5.5,10+1.5,40])cylinder(r=3.7/2,h=50,$fn=30);
+ translate([4,0,-40])translate([30-5.5,10+1.5+30,40])cylinder(r=3.7/2,h=50,$fn=30);
+ translate([4,0,-40])#translate([30-5.5,10+1.5,40])cylinder(r=8.7/2,h=25-4,$fn=30);
+ translate([4,0,-40])translate([30-5.5,10+1.5+30,40])#cylinder(r=8.7/2,h=25-4,$fn=30);
  }
  }
  translate([30+1,28-12.75+1,60-2-6.88+1])rotate([-90,-90,90])mirror([0,0,0]){

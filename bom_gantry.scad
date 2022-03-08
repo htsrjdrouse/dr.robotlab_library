@@ -16,18 +16,1358 @@ include<gripper_platecrane/microwell_gripper.scad>
 include<labautobox.scad>
 include<bom_zbed_moveup.scad>
 include<MG995_Servo_Linear_Actuator/files/caller.scad>
+include <The_Ultimate_box_maker/files/rearm_module.scad>
 
-//lasermount_connector_cap();
-//cameramount_connector_two();
-//camera_ball_adjust_cap();
-//camera_ball_adjust();
+
+//doormagnetholder_10by60by3();
+
+
+//framemagnetholder_10by60by3();
+
+//ycarriage_bearing_single();
+//translate([0,0,17+0.5-10])rotate([0,180,180])ycarriage_bearing_lid();
+//translate([0,0,17+0.5])rotate([0,180,180])ycarriage_bearing();
+//washer_m5_bearing();
+
+//carriage_yaxis_wall();
+
+//carriage_prototype_yaxis();
+
+//translate([0,0,2-0.5+1])zcarriage_bearing_single();
+//zcarriage_bearing();
+//carriage_prototype_zaxis_wall();
+//labbot_fff_config_higher();
+// translate([0+60,98.5,139])mirror([0,1,0])rotate([0,0,90])carriage_prototype_zaxis();
+ //translate([0+4,0+80-0.1,10])tslot20(280);
+
+//translate([0,-60,0-50])zbed_assy_wider_threadedrod_noextrusion_higher(110-50);
+//translate([480+3,0,0])mirror([1,0,0])moving_zbed_parts_higher();
+//zbed_smz_components_wider_threadedrod(0,0);
+
+//doormagnetholder_10by60by3();
+//cable_support_ghead_lid();
+//translate([-15+10,300-33,-70])rotate([90,0,0])cable_support_ghead_microswiss();
+//endstop_z();
+//zendstop_clamp();
+
+//import("MicroSwiss_DirectBLT_SMT_MOD_CR10SPROV2_mymod.stl");
+//microswiss_xcarriage_bearing();
+//carriage_prototype_xaxis_wall();
+//microswiss_extruder_assy();
+
+
+//carriage_prototype_xaxis_wall();
+//labbot_fff_config_higher();
+//carriage_prototype();
+//zcarriage_bearing_single();
+//xcarriage_bearing_single();
+//carriage_prototype_xaxis();
+//MicroSwiss_DirectBLT_SMT_MOD_CR10SPROV2_mymod();
+//translate([22,13,65])
+//translate([0,0,-100])conduit_support();
+
+
+//microswiss_xcarriage_bearing();
+
+
+module microswiss_extruder_assy(){
+translate([0,-10,0]){
+translate([-80,-37,-25])rotate([0,90,0])tslot20(100);
+translate([-80,-37-20,-25])rotate([0,90,0])tslot20(100);
+}
+microswiss_motormount();
+module microswiss_motormount(){
+translate([-46.7-2,0-51.5+23,-75.5-2-8])rotate([0,-90,0])union(){
+translate([0+4+5,0,0.5])color("silver")motormountthin_microswiss();
+translate([21+4+5,40,-18])nema17();
+}
+}
+/*
+*/
+//motormount_smz();
+translate([0-4,0,-6]){
+carriage_prototype_xaxis_wall();
+translate([0,0,17+0.5])rotate([0,180,180])microswiss_xcarriage_bearing();
+}
+translate([0+10,0,0])import("MicroSwiss_DirectBLT_SMT_MOD_CR10SPROV2_mymod.stl");
+//translate([0-44,3+13,0-36])rotate([180,0,180])MicroSwiss_DirectBLT_SMT_MOD_CR10SPROV2_mymod();
+translate([-21.7+10,0,23.2])rotate([0,180,0])microswiss_shuttle_v2();
+}
+/*
+*/
+/*
+*/
+//translate([30-51.7,0-0.25-1.8,30-1.5-91])rotate([0,0,0])mirror([0,1,0])
+//rotate([0,180,0])microswiss_shuttle_v2();
+//translate([30-51.7,0-0.25,30-1.5])rotate([0,180,0])microswiss_shuttle();
+
+//MicroSwiss_tempconnector();
+
+module microswiss_shuttle(){
+translate([22,0,0]){
+color("black")translate([0-22,20,40])rotate([0,-90,0])cylinder(r=22/2,h=10,$fn=30);
+color("black")translate([0-22,20-40,40])rotate([0,-90,0])cylinder(r=22/2,h=10,$fn=30);
+color("black")translate([0-22,20-20,40-40])rotate([0,-90,0])cylinder(r=22/2,h=10,$fn=30);
+}
+difference(){
+translate([3.5+18.5,0,0])union(){
+translate([-9,0,0])union(){
+color("silver")rotate([0,-90,0])cylinder(r=22/2,h=3.5,$fn=30);
+translate([-0.4,0,0])color("aqua")rotate([0,-90,0])cylinder(r=11/2,h=3.5+5.5+3.5,$fn=30); //adjuster nut
+}
+color("silver")translate([0,-30-4.5,40-40])rotate([0,-90,0])cube([50,60,3.5]);
+color("silver")translate([0,-30-4.5+18,40-40])rotate([0,-90,0])cube([12,60-18,3.5+9]);
+color("silver")translate([0,-20,40])rotate([0,-90,0])cylinder(r=22/2,h=3.5,$fn=30);
+color("silver")translate([0,20,40])rotate([0,-90,0])cylinder(r=22/2,h=3.5,$fn=30);
+color("silver")translate([0,-20,40])rotate([0,-90,0])cylinder(r=8.5/2,h=3.5+18.5,$fn=30);
+color("silver")translate([0,-20,40])rotate([0,-90,0])cylinder(r=13.5/2,h=9-5.5+6,$fn=30);
+color("silver")translate([0,20,40])rotate([0,-90,0])cylinder(r=8.5/2,h=3.5+18.5,$fn=30);
+color("silver")translate([0,20,40])rotate([0,-90,0])cylinder(r=13.5/2,h=9-5.5+6,$fn=30);
+}
+union(){
+color("black")rotate([0,-90,0])cylinder(r=22/2,h=11,$fn=30);
+translate([0,20,40])color("black")rotate([0,-90,0])cylinder(r=4.9/2,h=11,$fn=30);
+translate([0,-20,40])color("black")rotate([0,-90,0])cylinder(r=4.9/2,h=11,$fn=30);
+}
+
+color("silver")translate([30,0,-4])rotate([0,-90,0])cylinder(r=22/2,h=17,$fn=30);
+translate([-9+50,0-28.5,0+10+25])rotate([0,-90,0])cylinder(r=3.8/2,h=203.5,$fn=30);
+translate([-9+50,0-28.5+16-0.5,0+10+25+10])rotate([0,-90,0])cylinder(r=3.8/2,h=203.5,$fn=30);
+translate([-9+50,0-28.5,0+10])rotate([0,-90,0])cylinder(r=3.8/2,h=203.5,$fn=30);
+translate([-9+50,0-28.5+22.5-0.5,0+10+25+3])rotate([0,-90,0])cylinder(r=3.8/2,h=203.5,$fn=30);
+translate([-9+50,0-28.5+6,0+10+10.5-1])rotate([0,-90,0])cylinder(r=3.8/2,h=203.5,$fn=30);
+}
+}
+
+
+module microswiss_shuttle_v2(){
+translate([22+1,0,0]){
+color("black")translate([0-22+13,20,40])rotate([0,-90,0])cylinder(r=22/2,h=10,$fn=30);
+color("black")translate([0-22+13,20-40,40])rotate([0,-90,0])cylinder(r=22/2,h=10,$fn=30);
+color("black")translate([0-22+13,20-20,40-40])rotate([0,-90,0])cylinder(r=22/2,h=10,$fn=30);
+}
+difference(){
+translate([3.5+18.5,0,0])union(){
+translate([-9+9,0,0])union(){
+difference(){
+union(){
+color("silver")rotate([0,-90,0])cylinder(r=24.5/2,h=5.5,$fn=30);
+translate([0,0,30])color("silver")rotate([60,0,0])rotate([0,-90,0])cylinder(r=54.5/2,h=5.5,$fn=3);
+}
+difference(){
+translate([0,0,30])color("silver")rotate([60,0,0])rotate([0,-90,0])cylinder(r=40.5/2,h=15.5,$fn=3);
+color("silver")rotate([0,-90,0])cylinder(r=44.5/2,h=5.5,$fn=30);
+}
+translate([-4,0,0])color("silver")rotate([0,-90,0])cylinder(r=16.5/2,h=4,$fn=30);
+}
+color("silver")rotate([0,-90,0])cylinder(r=16.5/2,h=4,$fn=30);
+//translate([-0.4,0,0])color("aqua")rotate([0,-90,0])cylinder(r=11/2,h=3.5+5.5+3.5,$fn=30); //adjuster nut
+}
+color("silver")translate([0,-30-4.5+2,40-40])rotate([0,-90,0])cube([48,88,3]);
+//color("silver")translate([0,-30-4.5+18,40-40])rotate([0,-90,0])cube([12,60-18,3.5+9]);
+
+color("silver")translate([0,-20,40])rotate([0,-90,0])cylinder(r=22/2,h=3,$fn=30);
+color("silver")translate([0,20,40])rotate([0,-90,0])cylinder(r=22/2,h=3,$fn=30);
+
+//color("silver")translate([0,-20,40])rotate([0,-90,0])cylinder(r=8.5/2,h=3+18.5,$fn=30);
+color("silver")translate([0,-20,40])rotate([0,-90,0])cylinder(r=8.5/2,h=8,$fn=30);
+color("silver")translate([0,-20,40])rotate([0,-90,0])cylinder(r=13.5/2,h=5.5,$fn=30);
+//color("silver")translate([0,20,40])rotate([0,-90,0])cylinder(r=8.5/2,h=3+18.5,$fn=30);
+color("silver")translate([0,20,40])rotate([0,-90,0])cylinder(r=8.5/2,h=8,$fn=30);
+color("silver")translate([0,20,40])rotate([0,-90,0])cylinder(r=13.5/2,h=5.5,$fn=30);
+}
+union(){
+color("black")rotate([0,-90,0])cylinder(r=22/2,h=11,$fn=30);
+translate([0,20,40])color("black")rotate([0,-90,0])cylinder(r=4.9/2,h=11,$fn=30);
+translate([0,-20,40])color("black")rotate([0,-90,0])cylinder(r=4.9/2,h=11,$fn=30);
+}
+//color("silver")translate([30,0,-4])rotate([0,-90,0])cylinder(r=22/2,h=17,$fn=30);
+
+translate([40,0,0])rotate([0,-90,0])cylinder(r=5.3/2,h=40,$fn=30);
+color("silver")translate([25,20,40])rotate([0,-90,0])cylinder(r=4.8/2,h=43,$fn=30);
+color("silver")translate([25,-20,40])rotate([0,-90,0])cylinder(r=4.8/2,h=43,$fn=30);
+
+translate([0,0,-15+10]){
+translate([-9+50,0-28.5-4+5-5-0.1,0+10+5+7+0.4])rotate([0,-90,0])cube([2.7,8,34]);//cylinder(r=3.8/2,h=203.5,$fn=30);
+translate([-9+50,0-28.5-4+6,0+10+5])rotate([0,-90,0])cube([10,2.5,34]);//cylinder(r=3.8/2,h=203.5,$fn=30);
+}
+
+translate([0,0+23,-15+10])mirror([0,1,0]){
+translate([-9+50,0-28.5-4+5-5-0.1,0+10+5+7+0.4])rotate([0,-90,0])cube([2.7,8,34]);//cylinder(r=3.8/2,h=203.5,$fn=30);
+translate([-9+50,0-28.5-4+6,0+10+5])rotate([0,-90,0])cube([10,2.5,34]);//cylinder(r=3.8/2,h=203.5,$fn=30);
+}
+translate([-9+50,0-28.5-4+13,0+10-10+14])rotate([0,-90,0])cylinder(r=2.4/2,h=203.5,$fn=30);
+translate([-9+50+100,0-28.5-4+72,0+10-10+8])rotate([0,-90,0])cylinder(r=2.4/2,h=203.5,$fn=30);
+translate([-9+50+100,0-28.5-4+72,0+10-10+8+25])rotate([0,-90,0])cylinder(r=2.4/2,h=203.5,$fn=30);
+translate([-9+50+100,0-28.5-4+72-41.5,0+10-10+8+25])rotate([0,-90,0])cylinder(r=2.4/2,h=203.5,$fn=30);
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//import("/Users/richard/Downloads/MicroSwiss_DD+BLT_OEM_Fan_Shroud_for_CR10S_PPRO_V2_-_GonzoMod_v1_1.stl");
+//import("MicroSwissDirectDrive/files/Direct_Drive_Extruder_Body-MM.stl");
+/*
+translate([-55+5,-72,-28])rotate([0,0,90])
+color("pink")import("DIY_Probe_OptiServo_Z-Probe_Sensor_-_18mm_mounting/files/diy_probe_base_mod.stl");
+
+*/
+/*
+for(y=[0:3]){
+translate([0,y*25,0])cube([120,1,1]);
+}
+translate([0,3*25,0])cube([120,8,1]);
+translate([0,25,0])cube([2,25,1]);
+translate([120-2,0,0])cube([2,25,1]);
+translate([120-2,50,0])cube([2,25,1]);
+*/
+
+//MicroSwiss_DirectBLT_SMT_MOD_CR10SPROV2_mymod();
+
+module MicroSwiss_tempconnector(){
+translate([0,0,0])rotate([0,90,0])mirror([0,0,0])difference(){
+union(){
+translate([10+15-6.5,-55+10-30+8-11,0])cube([13,15.5+10,10]);
+translate([10+15-6.5,-55+10-30+8-11,0])cube([13+17,15.5+13+24,10-5.5]);
+translate([10+15-6.5,-55+10-30+8-11,0])cube([13,15.5+13,10-5.5]);
+translate([10+15-6.5-4,-55+10-30+8-11,0])cube([13+3,15.5+13+15,10-5.5]);
+}
+translate([10+15,-55+10-10,4+0.5])cube([20+3.5,15.5+2,40]);
+translate([10+15,-55+10-13.8,4+0.5-10])cylinder(r=2.8/2,h=30,$fn=30);
+translate([10+15,-55+10-13.8-15,4+0.5-10])cylinder(r=2.8/2,h=30,$fn=30);
+for(i=[-10:-6]){
+ translate([10+15+16.5-i*0.5,-55+10-13.8+23.3,4+0.5-10])cylinder(r=3.5/2,h=30,$fn=30);
+ //translate([10+15+16.5-i*0.5,-55+10-13.8+23.3,4+0.5-10+7])cylinder(r=7.5/2,h=30,$fn=30);
+ translate([10+15+16.5-i*0.5-16.5,-55+10-13.8+23.3-6.5+0.5,4+0.5-10])cylinder(r=3.5/2,h=30,$fn=30);
+ //translate([10+15+16.5-i*0.5-16.5,-55+10-13.8+23.3-6.5+0.5,4+0.5-10+7])cylinder(r=7.5/2,h=30,$fn=30);
+ translate([10+15+16.5-i*0.5-16.5,-55+10-13.8+23.3-6.5+1,4+0.5-10])cylinder(r=3.5/2,h=30,$fn=30);
+ //translate([10+15+16.5-i*0.5-16.5,-55+10-13.8+23.3-6.5+1,4+0.5-10+7])cylinder(r=7.5/2,h=30,$fn=30);
+}
+}
+}
+
+
+module MicroSwiss_DirectBLT_SMT_MOD_CR10SPROV2_mymod(){
+translate([0,0,0])rotate([0,90,0])mirror([0,0,0])difference(){
+union(){
+import("/Users/richard/Downloads/MicroSwiss_DD+BLT_OEM_Fan_Shroud_for_CR10S_PPRO_V2_-_GonzoMod_v1_1.stl");
+translate([10+15-6.5,-55+10-30+8-11,0])cube([13,15.5+10,10]);
+translate([10+15-6.5-4,-55+10-30+8-11,0])cube([13+17+4,15.5+13+24+9+1,10-5.5]);
+translate([10+15-6.5,-55+10-30+8-11,0])cube([13,15.5+13,10-5.5]);
+translate([10+15-6.5-4,-55+10-30+8-11,0])cube([13+3,15.5+13+15,10-5.5]);
+}
+
+translate([10+15-6.5-4+20,-55+10-30+8-11,0])cube([13+17+4-12,15.5+13+24+9+1-24,10-5.5]);
+
+
+translate([10+15,-55+10-10,4+0.5])cube([20+3.5,15.5+2,40]);
+translate([10+15,-55+10-13.8,4+0.5-10])cylinder(r=2.8/2,h=30,$fn=30);
+translate([10+15,-55+10-13.8-15,4+0.5-10])cylinder(r=2.8/2,h=30,$fn=30);
+for(i=[-10:-8]){
+ translate([10+15+16.5-i*0.5-0.8,-55+10-13.8+23.3,4+0.5-10+0])cylinder(r=3.5/2,h=30,$fn=30);
+ translate([10+15+16.5-i*0.5-16.5+0.4,-55+10-13.8+23.3-6.5+0.5,4+0.5-10+1])cylinder(r=3.5/2,h=30,$fn=30);
+ translate([10+15+16.5-i*0.5-16.5+0.4-10-1.5,-55+10-13.8+23.3-6.5+0.5+25-2-1-6.5+1.2,4+0.5-10+1-10+19])cylinder(r=9.5/2,h=150,$fn=30);
+ translate([10+15+16.5-i*0.5-16.5+0.4-10-1.5,-55+10-13.8+23.3-6.5+0.5+25-2-1-6.5+1.2,4+0.5-10+1-10])cylinder(r=3.5/2,h=150,$fn=30);
+ 
+ translate([10+15+16.5-i*0.5-16.5+0.4-10-1.5+7.5-2,-55+10-13.8+23.3-6.5+0.5+25-2-1-6.5+1.2+6.8,4+0.5-10+1-10+19])cylinder(r=9.5/2,h=150,$fn=30);
+ translate([10+15+16.5-i*0.5-16.5+0.4-10-1.5+7.5,-55+10-13.8+23.3-6.5+0.5+25-2-1-6.5+1.2+6.8,4+0.5-10+1-10+19])cylinder(r=9.5/2,h=150,$fn=30);
+ translate([10+15+16.5-i*0.5-16.5+0.4-10-1.5+7.5,-55+10-13.8+23.3-6.5+0.5+25-2-1-6.5+1.2+6.8,4+0.5-10+1-10])cylinder(r=3.5/2,h=150,$fn=30);
+ //translate([10+15+16.5-i*0.5,-55+10-13.8+23.3,4+0.5-10+7])cylinder(r=7.5/2,h=30,$fn=30);
+ //translate([10+15+16.5-i*0.5-16.5+0.4-3-1.5,-55+10-13.8+23.3-6.5+0.5+25-2-1+1.2,4+0.5-10+1-10])cylinder(r=3.5/2,h=50,$fn=30);
+ //translate([10+15+16.5-i*0.5-16.5,-55+10-13.8+23.3-6.5+0.5,4+0.5-10+7])cylinder(r=7.5/2,h=30,$fn=30);
+ //translate([10+15+16.5-i*0.5-16.5,-55+10-13.8+23.3-6.5+1,4+0.5-10+2])cylinder(r=3.5/2,h=30,$fn=30);
+ //translate([10+15+16.5-i*0.5-16.5,-55+10-13.8+23.3-6.5+1,4+0.5-10+7])cylinder(r=7.5/2,h=30,$fn=30);
+}
+}
+}
+
+
+//doormagnetholder_10by60by3();
+//framemagnetholder_10by60by3();
+
+//import("beltclamp.stl");
+
+/*
+cube([20,20,1]);
+x = 4;
+g = -1;
+color("pink")translate([-x/2,-x/2,0])difference(){
+translate([0,0,0])cube([20+x,20+x,0.2]);
+translate([x/2+g/2,x/2+g/2,-0.5])cube([20-g,20-g,10]);
+}
+*/
+
+
+//beltclamp();
+//smallsyringe_valvesupportmodule_plate();
+//valveconnectpart();
+//valvemountplate_screwattach_smallersyringe();
+//valvemountplate_screwattach_smallersyringe_vertical_attach();
+//longer_endstop_x();
+
+
+/*
+*/
+//washer_m5_bearing();
+//translate([0,0,17+0.5])rotate([0,180,180])zcarriage_bearing();
+//zcarriage_bearing_single();
+//translate([0,0,17+0.5])rotate([0,180,180])
+//ycarriage_bearing();
+//zcarriage_bearing_single();
+//carriage_prototype_zaxis();
+
+//translate([0,140,0])mirror([0,1,0])carriage_prototype_zaxis();
+//translate([0,0,17+0.5])rotate([0,180,180])zcarriage_bearing();
+//translate([0,0,17+0.5-10])rotate([0,180,180])ycarriage_bearing_lid();
+//translate([0,0,2-0.5])ycarriage_bearing_single();
+//carriage_prototype_yaxis();
+//translate([0,-60,0-50])zbed_assy_wider_threadedrod_noextrusion_higher(110-50);
+//labbot_fff_config_higher();
+//translate([0,0,2-0.5])ycarriage_bearing_single();
+//carriage_yaxis_wall();
+
+//carriage_prototype_zaxis_wall();
+//zcarriage_bearing();
+//translate([0,0,2-0.5])zcarriage_bearing_single();
+//translate([450,134,450+0.8])rotate([180,0,90])carriage_prototype_zaxis();
+//translate([450-54-130,134,450+0.8])rotate([180,0,90])carriage_prototype_xaxis();
+//xcarriage_bearing();
+//carriage_prototype_backwall_3wheel_xaxis();
+//carriage_prototype_xaxis_wall();
+//labbot_fff_config_higher();
+//bearing_mount_smz();
+//translate([50-0,40+10,10])mirror([0,1,0])motormount_smz();
+
+/*
+y = 20.5+118-3-60-144-70+240-180+202-200+10;//+251.5; //-9*11-116-50+13;//+80+6-32-45;//-40; //reagent reservoir
+x = 66-149-43+200-8+160-373+400-271+2-2-110-15+200;//-385; //+385-235;//+122;//-222.5-20;
+z =  28-0;
+translate([50-10-20+x,200-14+30+y,700-50+37-35+114])rotate([180,0,90])multi_iverntech_railsystem_directdrive(tz);
+translate([0,0,114])xshuttle_assy_wider(x,y);
+*/
+//translate([0,0,2-0.5])zcarriage_bearing_single();
+//carriage_prototype_zaxis_wall();
+
+
+//carriage_prototype_yaxis();
+
+//carriage_prototype_zaxis_wall();
+
+//translate([0,0,17+0.5])rotate([0,180,180])zcarriage_bearing();
+/*
+translate([0-30-3.5,0-0.5,2-0.5+16.5-0.5])color("pink")rotate([0,180,0])zcarriage_bearing_top();
+translate([0-30-3.5,0+0.5,2-0.5+16.5-0.5-16])color("")rotate([0,0,180])zcarriage_bearing_top_single();
+translate([0-30-3.5-10,0-0.5,2-0.5+16.5-0.5])color("peru")rotate([0,180,0])carriage_prototype_backwall_3wheel();
+carriage_prototype_zaxis_wall();
+translate([0-30-3.5,0-0.5,2-0.5+16.5-0.5])color("pink")rotate([0,180,0])zcarriage_bearing_top();
+translate([0,0,2-0.5])zcarriage_bearing_single();
+translate([0,0,17+0.5])rotate([0,180,180])zcarriage_bearing();
+*/
+
+//ycarriage_bearing_lid();
+
+
+//translate([-49+21+0.25,57+20-30+60+10,410-6.5+14.5+4.5])rotate([0,180,180])carriage_prototype_yaxis();
+
+//zbedslot_516_smz_zbed_wider();
+//translate([-70,86.5,0])zbed_multichannel_setup_wider_combine(100);
+//zcarriage_bearing_top();
+//carriage_prototype_backwall();
+//carriage_prototype_zaxis_wall();
+//translate([-49+21+0.25-21,57+20-30+60+10+102-80,410-6.5+14.5+4.5-339])rotate([-90,180,180])carriage_prototype_zaxis();
+//translate([-49+21+0.25,57+20-30+60+10,410-6.5+14.5+4.5])rotate([0,180,180])carriage_prototype_yaxis();
+//translate([-49+21+0.25,57+20-30+60,410-6.5+14.5+4.5])rotate([0,180,180])zcarriage_bearing_lid();
+//translate([-49+21+0.25,57+20-30+60,410-6.5+14.5+4.5])rotate([0,180,180])carriage_yaxis_wall();
+//translate([0,0,17+0.5])rotate([0,180,180])zcarriage_bearing();
+//translate([0,0,2-0.5])zcarriage_bearing_single();
+
+/*
+translate([0,0,17+0.5-10])rotate([0,180,180])zcarriage_bearing_lid();
+translate([0,0,17+0.5])rotate([0,180,180])zcarriage_bearing();
+translate([0,0,2-0.5])zcarriage_bearing_single();
+*/
+
+//translate([0,-60,0-50])zbed_assy_wider_threadedrod_noextrusion_higher(110-50);
+//zbed_smz_wider_threadedrods_noextrusions();
+//zbed_smz_wider_threadedrods_extrusions();
+// translate([125+1,50-15+80,150-10+5])rotate([0,0,0])bczamd_a8_hotbed_support();
+//import("MicroSwissDirectDrive/files/Direct_Drive_Extruder_Body-MM.stl");
+
+//translate([-30.75,100,-6.5])rotate([90,0,0])tslot20(200);
+
+
+
+module longer_endstop_x(){
+ union(){
+ import("files/endstop_x.stl");
+ translate([-45,-12,0])cube([25,6,5]);
+ }
+}
+
+module beltclamp(){
+translate([-25,0,0])
+difference(){
+color("pink")translate([-20,2,0])cube([10,22,9]);
+translate([-20+5,2+5,-3])cylinder(r=3.8/2,h=30,$fn=30);
+translate([-20+5,2+12+5,-3])cylinder(r=3.8/2,h=30,$fn=30);
+}
+}
+
+
+
+module washer_m5_bearing(){
+difference(){
+union(){
+cylinder(r=19/2,h=0.7,$fn=30);
+cylinder(r=8/2,h=(0.7+0.4+1),$fn=30);
+}
+translate([0,0,-4])cylinder(r=5.7/2,h=10.7,$fn=30);
+}
+}
+
+//carriage_prototype_yaxis();
+//carriage_yaxis_wall();
+
+module carriage_yaxis_wall(){
+difference(){
+ union(){
+  translate([0,-1,0.5]){
+  translate([-10+1.5-11.8+15.5,20+20-55-2-10-3,-10+28+8-32])color("lime")cube([14.5+5,31+23+8,29+1]);
+  }
+ }
+translate([-10+1.5-11.8+15.5+5+8.5+0.5,20+20-48-8-10-0.5,-10+28+8-32-50])cylinder(r=4.8/2,h=250,$fn=30);
+translate([-10+1.5-11.8+15.5+5+8.5+0.5,20+20-48+18+8+7.5+0.5,-10+28+8-32-50])cylinder(r=4.8/2,h=250,$fn=30);
+translate([-10+1.5-11.8+15.5+5,20+20-48-8+2,-10+28+8-32-50])cylinder(r=4.8/2,h=250,$fn=30);
+translate([-10+1.5-11.8+15.5+5,20+20-48+18+8-2,-10+28+8-32-50])cylinder(r=4.8/2,h=250,$fn=30);
+}
+}
+
+
+
+//this is the latest yaxis
+//carriage_prototype_yaxis();
+module carriage_prototype_yaxis(){
+//color("")translate([-10+1.5-11.8+15.5-20-6-0.45,20+20-55+100-100,-10+28+8-32+0.5+2])rotate([0,90,0])tslot20(300);
+//color("")translate([-10+1.5-11.8+15.5-20-6-0.45,20+20-55+100,-10+28+8-32+0.5])rotate([90,0,0])tslot20(300);
+/*
+*/
+
+carriage_yaxis_wall();
+
+
+difference(){union(){
+difference(){union(){
+translate([0,-1,0.5]){
+//translate([-10+1.5-11.8+15.5,20+20-55-2-10,-10+28+8-32])color("lime")cube([14.5,31+23,29+1]);
+}
+}
+//translate([-10+1.5-11.8+15.5+5-0+4,20+20-48-100,-10+28+8-32+15])rotate([-90,0,0])cylinder(r=4.5/2,h=250,$fn=30);
+}
+difference(){union(){
+//translate([0-30-3.5-10,0-0.5,2-0.5+16.5-0.5])color("peru")rotate([0,180,0])carriage_prototype_backwall();
+//translate([0-30-3.5-10,0-0.5,2-0.5+16.5-0.5])color("peru")rotate([0,180,0])carriage_prototype_backwall_3wheel();
+//translate([0-30-3.5,0-0.5,2-0.5+16.5-0.5])color("pink")rotate([0,180,0])zcarriage_bearing_top();
+//translate([0-30-3.5,0+0.5,2-0.5+16.5-0.5-16])color("")rotate([0,0,180])zcarriage_bearing_top_single();
+
+translate([0,0,2-0.5])ycarriage_bearing_single();
+translate([0,0,17+0.5-10])rotate([0,180,180])ycarriage_bearing_lid();
+translate([0,0,17+0.5])rotate([0,180,180])ycarriage_bearing();
+/*
+*/
+
+}
+/*
+translate([-10+1.5-11.8+15.5+5,20+20-48-8,-10+28+8-32-50])cylinder(r=5.5/2,h=250,$fn=30);
+translate([-10+1.5-11.8+15.5+5,20+20-48+18+8,-10+28+8-32-50])cylinder(r=5.5/2,h=250,$fn=30);
+translate([-10+1.5-11.8+15.5+5,20+20-48+18+8,-10+28+8-32-50-8-19])cylinder(r=9.5/2,h=50,$fn=30);
+translate([-10+1.5-11.8+15.5+5,20+20-48+8,-10+28+8-32-50-8-19])cylinder(r=5.7/2,h=50,$fn=30);
+translate([-10+1.5-11.8+15.5+5,20+20-48-8,-10+28+8-32-50-8-19])cylinder(r=9.5/2,h=50,$fn=30);
+*/
+translate([0,0,87+8]){
+//translate([-10+1.5-11.8+15.5+5,20+20-48+18,-10+28+8-32-50-8])cylinder(r=9.5/2,h=50,$fn=30);
+//translate([-10+1.5-11.8+15.5+5,20+20-48,-10+28+8-32-50-8])cylinder(r=9.5/2,h=50,$fn=30);
+}
+}
+}
+color("red")translate([-10+1.5-11.8+15.5-20-6-0.45,20+20-55+100-100+5-0.3,-10+28+8-32+0.5+2-5])rotate([0,90,0])cube([20+0.5,20.6,300]);
+//translate([-10+1.5-11.8+15.5+5,20+20-48-8,-10+28+8-32-50])cylinder(r=4.9/2,h=250,$fn=30);
+//translate([-10+1.5-11.8+15.5+5,20+20-48+18+8,-10+28+8-32-50])cylinder(r=4.9/2,h=250,$fn=30);
+
+}
+}
+
+
+module carriage_prototype_zaxis_wall(){
+difference(){
+translate([0,-1,0.5]){
+union(){
+translate([-10+1.5-11.8+15.5,20+20-55+43,-10+28+8-32])color("lime")cube([15,4,29+1]);
+translate([-10+1.5-11.8+15.5,20+20-55-2,-10+28+8-32])color("lime")cube([14.5,31,29+1+1]);
+translate([-10+1.5-11.8+15.5,20+20-55+43-15,-10+28+8-32])color("lime")cube([4,14,29+1]);
+translate([-10+1.5-11.8+15.5,20+20-55+43-3,-10+28+8-32])color("lime")cube([15,4,11]);
+translate([-10+1.5-11.8+15.5,20+20-55+43-3,-10+28+8-32+19])color("lime")cube([15,4,11]);
+}
+}
+translate([-10+1.5-11.8+15.5+5+20-16.5,20+20,-10+28+8-32+15.5])rotate([90,0,0])cylinder(r=5.5/2,h=250,$fn=30);
+translate([0,-2,0]){
+translate([-10+1.5-11.8+15.5+5,20+20-48,-10+28+8-32-50])cylinder(r=4.9/2,h=250,$fn=30);
+translate([-10+1.5-11.8+15.5+5,20+20-48+18,-10+28+8-32-50])cylinder(r=4.9/2,h=250,$fn=30);
+translate([-10+1.5-11.8+15.5+5,20+20-48,-10+28+8-32-50])cylinder(r=5.5/2,h=250,$fn=30);
+translate([-10+1.5-11.8+15.5+5,20+20-48+18,-10+28+8-32-50])cylinder(r=5.5/2,h=250,$fn=30);
+}
+translate([-10+1.5-11.8+15.5+5,20+20-48+18,-10+28+8-32-50-8])cylinder(r=9.5/2,h=50,$fn=30);
+translate([-10+1.5-11.8+15.5+5,20+20-48,-10+28+8-32-50-8])cylinder(r=9.5/2,h=50,$fn=30);
+translate([0,0,87+8]){
+translate([-10+1.5-11.8+15.5+5,20+20-48+18,-10+28+8-32-50-8])cylinder(r=9.5/2,h=50,$fn=30);
+translate([-10+1.5-11.8+15.5+5,20+20-48,-10+28+8-32-50-8])cylinder(r=9.5/2,h=50,$fn=30);
+}
+}
+}
+
+module carriage_prototype_xaxis_wall(){
+difference(){
+translate([0,-1,0.5]){
+union(){
+//translate([-10+1.5-11.8+15.5,20+20-55+43,-10+28+8-32])color("lime")cube([15,4,29+1]);
+translate([-10+1.5-11.8+15.5,20+20-55-4,-10+28+8-32])color("")cube([14.5,31+2+4,29+1+1+5]);
+//translate([-10+1.5-11.8+15.5,20+20-55-2-5,-10+28+8-21])color("")cube([14.5+3,31-20,29+1+1-24]);
+//translate([-10+1.5-11.8+15.5,20+20-55-4.5-5,-10+28+8-13.2-8])color("lime")cube([14.5+3,31-24.5,29+1+1-24+8]);
+translate([-10+1.5-11.8+15.5,20+20-55+43-15-58,-10+28+8-32])color("")cube([6,14+78,29+2-5.5]);
+translate([-10,-82+1,5.5]){
+translate([-10+1.5+18.2+2-20.5+25-11,0.25+20+20-2-7+10.3+29-5,-10-1+13-0.4+4.5+16])color("")rotate([0,90,0])cylinder(r=9/2,h=17.5,$fn=30);
+translate([-10+1.5+18.2+2-20.5+25-11,0.25+20+20-2-7+10.3+29-5,-10-1+13-0.4+4.5+16-19])color("")rotate([0,90,0])cylinder(r=9/2,h=17.5,$fn=30);
+}
+//translate([-10+1.5-11.8+15.5,20+20-55+43-3,-10+28+8-32])color("lime")cube([15,4,11]);
+//translate([-10+1.5-11.8+15.5,20+20-55+43-3,-10+28+8-32+19])color("lime")cube([15,4,11]);
+}
+}
+
+translate([-10,0,3]){
+translate([-10+1.5+18.2+2-20.5,0.25+20+20-2-7+10.3,-10-1+13-0.4])color("pink")rotate([0,90,0])cylinder(r=2.8/2,h=100,$fn=30);
+translate([-10+1.5+18.2+2-20.5,0.25+20+20-2-7+10.3,-10-1+13+12-0.4])color("pink")rotate([0,90,0])cylinder(r=2.8/2,h=100,$fn=30);
+translate([-10+1.5+18.2+2-20.5+10,0.25+20+20-2-7,-10-1+14])color("pink")rotate([0,-0,0])cube([15,4.5,8.5]);
+}
+
+translate([-10,-82,3]){
+translate([-10+1.5+18.2+2-20.5,0.25+20+20-2-7+10.3+29-5,-10-1+13-0.4+4.5])color("pink")rotate([0,90,0])cylinder(r=2.8/2,h=100,$fn=30);
+translate([-10+1.5+18.2+2-20.5,0.25+20+20-2-7+10.3+29-5,-10-1+13-0.4+4.5+19])color("pink")rotate([0,90,0])cylinder(r=2.8/2,h=100,$fn=30);
+
+translate([-10+1.5+18.2+2-20.5,0.25+20+20-2-7+10.3,-10-1+13-0.4])color("pink")rotate([0,90,0])cylinder(r=2.8/2,h=100,$fn=30);
+translate([-10+1.5+18.2+2-20.5,0.25+20+20-2-7+10.3,-10-1+13+12-0.4])color("pink")rotate([0,90,0])cylinder(r=2.8/2,h=100,$fn=30);
+translate([-10+1.5+18.2+2-20.5+10,0.25+20+20-2-7+15,-10-1+14])color("pink")rotate([0,-0,0])cube([15,4.5,8.5]);
+}
+
+//translate([-10+1.5-11.8+15.5+5+20-16.5,20+20,-10+28+8-32+15.5])rotate([90,0,0])cylinder(r=5.5/2,h=250,$fn=30);
+translate([0,-2,0]){
+translate([-10+1.5-11.8+15.5+5,20+20-48,-10+28+8-32-50])cylinder(r=4.9/2,h=250,$fn=30);
+translate([-10+1.5-11.8+15.5+5,20+20-48+18,-10+28+8-32-50])cylinder(r=4.9/2,h=250,$fn=30);
+translate([-10+1.5-11.8+15.5+5,20+20-48,-10+28+8-32-50])cylinder(r=5.5/2,h=250,$fn=30);
+translate([-10+1.5-11.8+15.5+5,20+20-48,-10+28+8-32+31-8-5])cylinder(r=10/2,h=250,$fn=30);
+translate([-10+1.5-11.8+15.5+5,20+20-48+18,-10+28+8-32-50])cylinder(r=5.5/2,h=250,$fn=30);
+translate([-10+1.5-11.8+15.5+5,20+20-48+18,-10+28+8-32+31-8-5])cylinder(r=10/2,h=250,$fn=30);
+}
+/*
+translate([-10+1.5-11.8+15.5+5,20+20-48+18,-10+28+8-32-50-8])cylinder(r=9.5/2,h=50,$fn=30);
+translate([-10+1.5-11.8+15.5+5,20+20-48,-10+28+8-32-50-8])cylinder(r=9.5/2,h=50,$fn=30);
+translate([0,0,87+8]){
+translate([-10+1.5-11.8+15.5+5,20+20-48+18,-10+28+8-32-50-8])cylinder(r=9.5/2,h=50,$fn=30);
+translate([-10+1.5-11.8+15.5+5,20+20-48,-10+28+8-32-50-8])cylinder(r=9.5/2,h=50,$fn=30);
+}
+*/
+}
+}
+
+
+
+
+
+
+
+
+
+
+module carriage_prototype_xaxis(){
+translate([0-19+0.25,-35,10+4.3]){
+color("")translate([-10+1.5-11.8+15.5-20-6-0.45,20+20-55+100,-10+28+8-32+0.5-60])rotate([90,0,0])tslot20(100);
+color("")translate([-10+1.5-11.8+15.5-20-6-0.45+20,20+20-55+100,-10+28+8-32+0.5-60])rotate([90,0,0])tslot20(100);
+}
+carriage_prototype_xaxis_wall();
+difference(){union(){
+translate([0-30-3.5-10,0-0.5,2-0.5+16.5-0.5])color("peru")rotate([0,180,0])carriage_prototype_backwall_3wheel_xaxis();
+translate([0-30-3.5,0-0.5,2-0.5+16.5-0.5])color("pink")rotate([0,180,0])zcarriage_bearing_top();
+translate([0-30-3.5,0+0.5,2-0.5+16.5-0.5-16])color("")rotate([0,0,180])zcarriage_bearing_top_single();
+translate([0,0,2-0.5+1])zcarriage_bearing_single();
+translate([0,0,17+0.5])rotate([0,180,180])xcarriage_bearing();
+}
+/*
+translate([-10+1.5-11.8+15.5+5,20+20-48,-10+28+8-32-50])cylinder(r=5.5/2,h=250,$fn=30);
+translate([-10+1.5-11.8+15.5+5,20+20-48+18,-10+28+8-32-50])cylinder(r=5.5/2,h=250,$fn=30);
+translate([-10+1.5-11.8+15.5+5,20+20-48+18,-10+28+8-32-50-8])cylinder(r=9.5/2,h=50,$fn=30);
+translate([-10+1.5-11.8+15.5+5,20+20-48,-10+28+8-32-50-8])cylinder(r=9.5/2,h=50,$fn=30);
+translate([0,0,87+8]){
+translate([-10+1.5-11.8+15.5+5,20+20-48+18,-10+28+8-32-50-8])cylinder(r=9.5/2,h=50,$fn=30);
+translate([-10+1.5-11.8+15.5+5,20+20-48,-10+28+8-32-50-8])cylinder(r=9.5/2,h=50,$fn=30);
+}
+*/
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+module carriage_prototype_zaxis(){
+//color("")translate([-10+1.5-11.8+15.5-20-6-0.45,20+20-55+100,-10+28+8-32+0.5])rotate([90,0,0])tslot20(300);
+carriage_prototype_zaxis_wall();
+
+difference(){union(){
+translate([0,0,17+0.5])rotate([0,180,180])zcarriage_bearing();
+translate([0,0,2-0.5+1])zcarriage_bearing_single();
+translate([0-30-3.5,0+0.5,2-0.5+16.5-0.5-16])color("")rotate([0,0,180])zcarriage_bearing_top_single();
+translate([0-30-3.5,0-0.5,2-0.5+16.5-0.5])color("pink")rotate([0,180,0])zcarriage_bearing_top();
+translate([0-30-3.5-10,0-0.5,2-0.5+16.5-0.5])color("peru")rotate([0,180,0])carriage_prototype_backwall_3wheel();
+/*
+*/
+}
+}
+}
+
+
+
+
+
+
+//xcarriage_bearing();
+
+module carriage_prototype(){
+color("lime")translate([-10+1.5-11.8+15.5-20-6-0.45,20+20-55+100,-10+28+8-32+0.5])rotate([90,0,0])tslot20(300);
+difference(){union(){
+difference(){union(){
+translate([0,-1,0.5]){
+translate([-10+1.5-11.8+15.5,20+20-55-2,-10+28+8-32])color("lime")cube([14.5,31,29+1]);
+//translate([-10+1.5-11.8+15.5,20+20-55-1,-10+28+8-32+0.5])color("lime")cube([4,31+16+1,29]);
+/*
+translate([-10+1.5-11.8+15.5,20+20-55+43,-10+28+8-32])color("lime")cube([15,4,29+1]);
+translate([-10+1.5-11.8+15.5,20+20-55+43-3,-10+28+8-32])color("lime")cube([15,4,11]);
+translate([-10+1.5-11.8+15.5,20+20-55+43-3,-10+28+8-32+19])color("lime")cube([15,4,11]);
+*/
+}
+}
+//translate([-10+1.5-11.8+15.5+5-0+4,20+20-48-100,-10+28+8-32+15])rotate([-90,0,0])cylinder(r=4.5/2,h=250,$fn=30);
+}
+difference(){union(){
+//translate([0-30-3.5-10,0-0.5,2-0.5+16.5-0.5])color("peru")rotate([0,180,0])carriage_prototype_backwall();
+//translate([0-30-3.5-10,0-0.5,2-0.5+16.5-0.5])color("peru")rotate([0,180,0])carriage_prototype_backwall_3wheel();
+//translate([0-30-3.5,0-0.5,2-0.5+16.5-0.5])color("pink")rotate([0,180,0])zcarriage_bearing_top();
+translate([0-30-3.5,0+0.5,2-0.5+16.5-0.5-16])color("")rotate([0,0,180])zcarriage_bearing_top_single();
+translate([0,0,2-0.5])zcarriage_bearing_single();
+translate([0,0,17+0.5])rotate([0,180,180])zcarriage_bearing();
+/*
+*/
+}
+translate([-10+1.5-11.8+15.5+5,20+20-48,-10+28+8-32-50])cylinder(r=5.5/2,h=250,$fn=30);
+translate([-10+1.5-11.8+15.5+5,20+20-48+18,-10+28+8-32-50])cylinder(r=5.5/2,h=250,$fn=30);
+translate([-10+1.5-11.8+15.5+5,20+20-48+18,-10+28+8-32-50-8])cylinder(r=9.5/2,h=50,$fn=30);
+translate([-10+1.5-11.8+15.5+5,20+20-48,-10+28+8-32-50-8])cylinder(r=9.5/2,h=50,$fn=30);
+translate([0,0,87+8]){
+translate([-10+1.5-11.8+15.5+5,20+20-48+18,-10+28+8-32-50-8])cylinder(r=9.5/2,h=50,$fn=30);
+translate([-10+1.5-11.8+15.5+5,20+20-48,-10+28+8-32-50-8])cylinder(r=9.5/2,h=50,$fn=30);
+}
+}
+}
+translate([-10+1.5-11.8+15.5+5,20+20-48,-10+28+8-32-50])cylinder(r=4.9/2,h=250,$fn=30);
+translate([-10+1.5-11.8+15.5+5,20+20-48+18,-10+28+8-32-50])cylinder(r=4.9/2,h=250,$fn=30);
+}
+
+}
+
+module carriage_prototype_backwall(){
+difference(){
+translate([-10+1.5-11.8+5,0.25+20-52+0.7,-10+28+5-44.4])color("")cube([30-22,62,21.36-7+44.5]);
+translate([-10+1.5+18.2+2,0.25+20,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=5.7/2,h=125,$fn=30);
+translate([-10+1.5+18.2+2-9,0.25+20,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=9.7/2,h=14,$fn=30);
+translate([-10+1.5+18.20+2,0.25-20,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=5.7/2,h=125,,$fn=30);
+translate([-10+1.5+18.20+2+2-11,0.25-20,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=9.7/2,h=14,$fn=30);
+
+translate([0,0.5,-42]){
+translate([-10+1.5+18.2+2,0.25+20,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=5.7/2,h=125,$fn=30);
+translate([-10+1.5+18.2+2-9,0.25+20,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=9.7/2,h=14,$fn=30);
+translate([-10+1.5+18.20+2,0.25-20,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=5.7/2,h=125,,$fn=30);
+translate([-10+1.5+18.20+2+2-11,0.25-20,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=9.7/2,h=14,$fn=30);
+}
+}
+}
+
+module carriage_prototype_backwall_3wheel(){
+difference(){
+union(){
+translate([-10+1.5-11.8+5,0.25+20-52+0.7,-10+28+5-44.4+15])color("")cube([30-22,62,21.36-7+44.5-15]);
+translate([-10+1.5-11.8+5,0.25+20-52+0.7+15,-10+28+5-44.4])color("")cube([30-22,62-30,21.36-7+44.5-40]);
+//translate([-10+1.5-11.8+5,0.25+20-52+0.7,-10+28+5-44.4])color("")cube([30-22,62,21.36-7+44.5]);
+}
+/*
+*/
+
+translate([0,4,0]){
+translate([-10+1.5+18.2+2,0.25+20,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=5.7/2,h=125,$fn=30);
+translate([-10+1.5+18.2+2-9,0.25+20,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=9.7/2,h=14,$fn=30);
+}
+
+translate([0,-4,0]){
+translate([-10+1.5+18.20+2,0.25-20,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=5.7/2,h=125,,$fn=30);
+translate([-10+1.5+18.20+2+2-11,0.25-20,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=9.7/2,h=14,$fn=30);
+}
+
+translate([0,0.5,-42]){
+translate([-10+1.5+18.2+2,0.25,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=5.7/2,h=125,$fn=30);
+translate([-10+1.5+18.2+2-9,0.25,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=9.7/2,h=14,$fn=30);
+/*
+translate([-10+1.5+18.2+2,0.25+20,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=5.7/2,h=125,$fn=30);
+translate([-10+1.5+18.2+2-9,0.25+20,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=9.7/2,h=14,$fn=30);
+translate([-10+1.5+18.20+2,0.25-20,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=5.7/2,h=125,,$fn=30);
+translate([-10+1.5+18.20+2+2-11,0.25-20,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=9.7/2,h=14,$fn=30);
+ */
+}
+}
+}
+
+
+module carriage_prototype_backwall_3wheel_xaxis(){
+difference(){
+union(){
+translate([-10+1.5-11.8+5,0.25+20-52+0.7,-10+28+5-44.4+15])color("")cube([30-22,62,21.36-7+44.5-15+6.25]);
+translate([-10+1.5-11.8+5,0.25+20-52+0.7-16,-10+28+5-44.4+15])color("")cube([30-22,62+32,21.36-7+44.5-15+6.25-24]);
+
+translate([-10+1.5-11.8+5,0.25+20-52+0.7-16+29.02,-10+28+5-44.4+15-26])color("")cube([30-22+18.3,8.6,21.36-7+44.5-15+56.25-24]);
+translate([-10+1.5-11.8+5,0.25+20-52+0.7-16+29.02+32.75,-10+28+5-44.4+15-26])color("")cube([30-22+18.3,8.6,21.36-7+44.5-15+56.25-24]);
+
+translate([-10+1.5-11.8+5,0.25+20-52+0.7-15+3,-10+28+5-44.4+15+46])color("")cube([30-22+8,20-5+15,21.36-7+44.5-15+6.25-46]);
+translate([-10+1.5-11.8+5,0.25+20-52+0.7-15+72+2-10,-10+28+5-44.4+15+46])color("")cube([30-22+8,20-5+10,21.36-7+44.5-15+6.25-46]);
+translate([-10+1.5-11.8+5,0.25+20-52+0.7+15,-10+28+5-44.4])color("")cube([30-22,62-30,21.36-7+44.5-40]);
+}
+/*
+*/
+
+translate([1.9,-1.1,-20]){
+translate([-10+1.5+18.2+2-20.5,0.25+20+20-2-7+10.3-21-0.4,-10-1+13-0.4-28.7])color("pink")rotate([0,0,0])cylinder(r=2.8/2,h=60,$fn=30);
+translate([-10+1.5+18.2+2-20.5,0.25+20+20-2-7+10.3-21-0.4-33.1,-10-1+13-0.4-28.7])color("pink")rotate([0,0,0])cylinder(r=2.8/2,h=60,$fn=30);
+}
+translate([-2,0,0]){
+translate([-10+1.5+18.2+2-20.5,0.25+20+20-2-7+10.3-21-0.4,-10-1+13-0.4-28.7])color("pink")rotate([0,90,0])cylinder(r=2.8/2,h=100,$fn=30);
+translate([-10+1.5+18.2+2-20.5,0.25+20+20-2-7+10.3-21-0.4,-10-1+13-0.4-28.7+12.5])color("pink")rotate([0,90,0])cylinder(r=2.8/2,h=100,$fn=30);
+translate([-10+1.5+18.2+2-20.5,0.25+20+20-2-7+10.3-21-0.4,-10-1+13-0.4-28.7+12.5+24.5])color("pink")rotate([0,90,0])cylinder(r=2.8/2,h=100,$fn=30);
+translate([-10+1.5+18.2+2-20.5,0.25+20+20-2-7+10.3-21-0.4,-10-1+13-0.4-28.7+12.5+24.5+12.5])color("pink")rotate([0,90,0])cylinder(r=2.8/2,h=100,$fn=30);
+translate([-10+1.5+18.2+2-20.5,0.25+20+20-2-7+10.3-21-0.4,-10-1+13-0.4-28.7+12.5+24.5+12.5+6.5])color("pink")rotate([0,90,0])cylinder(r=2.8/2,h=100,$fn=30);
+}
+
+translate([-2,-35,0]){
+translate([-10+1.5+18.2+2-20.5,0.25+20+20-2-7+10.3-21-0.4,-10-1+13-0.4-28.7])color("pink")rotate([0,90,0])cylinder(r=2.8/2,h=100,$fn=30);
+translate([-10+1.5+18.2+2-20.5,0.25+20+20-2-7+10.3-21-0.4,-10-1+13-0.4-28.7+12.5])color("pink")rotate([0,90,0])cylinder(r=2.8/2,h=100,$fn=30);
+translate([-10+1.5+18.2+2-20.5,0.25+20+20-2-7+10.3-21-0.4,-10-1+13-0.4-28.7+12.5+24.5])color("pink")rotate([0,90,0])cylinder(r=2.8/2,h=100,$fn=30);
+translate([-10+1.5+18.2+2-20.5,0.25+20+20-2-7+10.3-21-0.4,-10-1+13-0.4-28.7+12.5+24.5+12.5])color("pink")rotate([0,90,0])cylinder(r=2.8/2,h=100,$fn=30);
+translate([-10+1.5+18.2+2-20.5,0.25+20+20-2-7+10.3-21-0.4,-10-1+13-0.4-28.7+12.5+24.5+12.5+6.5])color("pink")rotate([0,90,0])cylinder(r=2.8/2,h=100,$fn=30);
+}
+
+
+
+
+translate([-10,0,0]){
+translate([-10+1.5+18.2+2-20.5,0.25+20+20-2-7+10.3,-10-1+13-0.4])color("pink")rotate([0,90,0])cylinder(r=2.8/2,h=100,$fn=30);
+translate([-10+1.5+18.2+2-20.5,0.25+20+20-2-7+10.3,-10-1+13+12-0.4])color("pink")rotate([0,90,0])cylinder(r=2.8/2,h=100,$fn=30);
+translate([-10+1.5+18.2+2-20.5,0.25+20+20-2-7,-10-1+14])color("pink")rotate([0,-0,0])cube([15,4.5,8.5]);
+
+
+translate([-10+1.5+18.2+2-20.5,0.25+20+20-2-7-64,-10-1+14])color("pink")rotate([0,-0,0])cube([15,4.5,8.5]);
+translate([1,-82,-0.4]){
+translate([-10+1.5+18.2+2-20.5,0.25+20+20-2-7+10.3,-10-1+13])color("pink")rotate([0,90,0])cylinder(r=2.8/2,h=100,$fn=30);
+translate([-10+1.5+18.2+2-20.5,0.25+20+20-2-7+10.3,-10-1+13+12])color("pink")rotate([0,90,0])cylinder(r=2.8/2,h=100,$fn=30);
+}
+}
+
+translate([0.5,0,0]){
+translate([-10+1.5+18.2+2-20.5,0.25+20+20-2,-10-1+40])color("pink")rotate([0,-0,0])cylinder(r=4.7/2,h=125,$fn=30);
+translate([-10+1.5+18.2+2-20.5,0.25+20+20-2-75,-10-1+40])color("pink")rotate([0,-0,0])cylinder(r=4.7/2,h=125,$fn=30);
+}
+translate([0,4,0]){
+translate([-10+1.5+18.2+2,0.25+20,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=5.7/2,h=125,$fn=30);
+translate([-10+1.5+18.2+2-9+10,0.25+20,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=9.7/2,h=14+10,$fn=30);
+}
+
+translate([0,-4,0]){
+translate([-10+1.5+18.20+2,0.25-20,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=5.7/2,h=125,,$fn=30);
+translate([-10+1.5+18.20+2+2-11,0.25-20,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=9.7/2,h=14,$fn=30);
+}
+
+translate([0,0.5,-42]){
+translate([-10+1.5+18.2+2,0.25,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=5.7/2,h=125,$fn=30);
+translate([-10+1.5+18.2+2-9,0.25,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=9.7/2,h=14,$fn=30);
+/*
+translate([-10+1.5+18.2+2,0.25+20,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=5.7/2,h=125,$fn=30);
+translate([-10+1.5+18.2+2-9,0.25+20,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=9.7/2,h=14,$fn=30);
+translate([-10+1.5+18.20+2,0.25-20,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=5.7/2,h=125,,$fn=30);
+translate([-10+1.5+18.20+2+2-11,0.25-20,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=9.7/2,h=14,$fn=30);
+ */
+}
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+module ycarriage_bearing_lid(){
+difference(){
+union(){
+translate([-10+1.5-11.8+10,0.25+20-52+0.7,-10+28+5+12+1.4-4.9])color("lime")cube([30-10+8,62,21.36-7+9-10-6+5]);
+//translate([-10+1.5-11.8+10+8,0.25+20-52+15+7,-10+28-20-21+10])color("pink")cube([30-10-8,20,21.36+22+7]);
+//translate([-10+1.5+5.23,0,-10])color("pink")rotate([0,90,0])cylinder(r=20/2,h=4.8+8,$fn=30);
+
+/*
+translate([-10+1.5+18.2,0.25+24,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=10/2,h=21.36,$fn=30);
+translate([-10+1.5+18.2,0.25-24,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=10/2,h=21.36,$fn=30);
+translate([-10+1.5+18.20-20-0.5-0.9,0.25-24,-10-1+40])color("black")rotate([0,-90,0])cylinder(r=22/2,h=10,$fn=30);
+translate([-10+1.5+18.2-20-0.5-0.9,0.25+24,-10-1+40])color("black")rotate([0,-90,0])cylinder(r=22/2,h=10,$fn=30);
+*/
+}
+
+translate([0,0,55]){
+color("red")translate([-10+1.5-11.8+15.5-20-6-0.45,20+20-55+100-100+5-0.3,-10+28+8-32+0.5+2-5-10])rotate([0,90,0])cube([20+0.5,20.6,300]);
+/*
+translate([-10+1.5-11.8+15.5+5,20+20-48-8-2+2,-10+28+8-32-50])cylinder(r=5.3/2,h=250,$fn=30);
+translate([-10+1.5-11.8+15.5+5,20+20-48-8-2+2,-10+28+8-32-50-8-19+135-55])cylinder(r=9.5/2,h=50,$fn=30);
+translate([-10+1.5-11.8+15.5+5,20+20-48+18+8-2-2,-10+28+8-32-50])cylinder(r=5.3/2,h=250,$fn=30);
+*/
+translate([-10+1.5-11.8+15.5+5,20+20-48-8-2+34-2,-10+28+8-32-50-8-19+135-55])cylinder(r=9.5/2,h=50,$fn=30);
+}
+
+
+
+translate([0,-2,0]){
+//translate([-10+1.5-11.8+15.5+5,20+20-48-8+2,-10+28+8-32-50])cylinder(r=5.5/2,h=250,$fn=30);
+//translate([-10+1.5-11.8+15.5+5,20+20-48+18+8-2,-10+28+8-32-50])cylinder(r=5.5/2,h=250,$fn=30);
+
+/*
+translate([0,0,96]){
+translate([-10+1.5-11.8+15.5+5,20+20-48-8+2,-10+28+8-32-50])cylinder(r=9.5/2,h=24+15-4,$fn=30);
+translate([-10+1.5-11.8+15.5+5,20+20-48+18+8-2,-10+28+8-32-50])cylinder(r=9.5/2,h=20+15-4,$fn=30);
+}
+*/
+
+//translate([-10+1.5-11.8+15.5+5,20+20-48+18+8,-10+28+8-32-50])cylinder(r=5.5/2,h=250,$fn=30);
+//translate([-10+1.5-11.8+15.5+5,20+20-48+18+8,-10+28+8-32-50-8-19+127-5])cylinder(r=9.5/2,h=50,$fn=30);
+translate([-10+1.5-11.8+15.5+5+8+0.5+0.5,20+20-48+18+8+10+0.5,-10+28+8-32-50])cylinder(r=5.5/2,h=250,$fn=30);
+translate([-10+1.5-11.8+15.5+5+8+0.5+0.5,20+20-48-8-7.5-0.5,-10+28+8-32-50])cylinder(r=5.5/2,h=250,$fn=30);
+//translate([-10+1.5-11.8+15.5+5+8+0.5,20+20-48-8-7.5,-10+28+8-32-50+100-5])cylinder(r=9.5/2,h=250,$fn=30);
+/*
+*/
+}
+translate([-10+1.5-11.8+15.5+5,20+20-48+8,-10+28+8-32-50-8-19+125-15])cylinder(r=5.7/2,h=50,$fn=30);
+}
+}
+
+
+
+
+
+
+
+module zcarriage_bearing_lid(){
+difference(){
+union(){
+translate([-10+1.5-11.8+10,0.25+20-52+0.7,-10+28+5+12+1.4])color("lime")cube([30-10+8,62,21.36-7+9-10-6]);
+//translate([-10+1.5-11.8+10+8,0.25+20-52+15+7,-10+28-20-21+10])color("pink")cube([30-10-8,20,21.36+22+7]);
+//translate([-10+1.5+5.23,0,-10])color("pink")rotate([0,90,0])cylinder(r=20/2,h=4.8+8,$fn=30);
+
+/*
+translate([-10+1.5+18.2,0.25+24,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=10/2,h=21.36,$fn=30);
+translate([-10+1.5+18.2,0.25-24,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=10/2,h=21.36,$fn=30);
+translate([-10+1.5+18.20-20-0.5-0.9,0.25-24,-10-1+40])color("black")rotate([0,-90,0])cylinder(r=22/2,h=10,$fn=30);
+translate([-10+1.5+18.2-20-0.5-0.9,0.25+24,-10-1+40])color("black")rotate([0,-90,0])cylinder(r=22/2,h=10,$fn=30);
+*/
+}
+translate([0,-2,0]){
+//translate([-10+1.5-11.8+15.5+5,20+20-48+18+8,-10+28+8-32-50])cylinder(r=5.5/2,h=250,$fn=30);
+//translate([-10+1.5-11.8+15.5+5,20+20-48+18+8,-10+28+8-32-50-8-19+127-5])cylinder(r=9.5/2,h=50,$fn=30);
+translate([-10+1.5-11.8+15.5+5+8+0.5,20+20-48+18+8+10,-10+28+8-32-50])cylinder(r=5.5/2,h=250,$fn=30);
+translate([-10+1.5-11.8+15.5+5+8+0.5,20+20-48-8-7.5,-10+28+8-32-50])cylinder(r=5.5/2,h=250,$fn=30);
+//translate([-10+1.5-11.8+15.5+5+8+0.5,20+20-48-8-7.5,-10+28+8-32-50+100-5])cylinder(r=9.5/2,h=250,$fn=30);
+/*
+*/
+}
+translate([-10+1.5-11.8+15.5+5,20+20-48+8,-10+28+8-32-50-8-19+125-15])cylinder(r=5.7/2,h=50,$fn=30);
+}
+}
+
+
+
+
+
+
+
+module ycarriage_bearing(){
+difference(){
+union(){
+translate([-10+1.5-11.8+10,0.25+20-52+0.7,-10+28+5])color("")cube([30-10+8,62,21.36-7+9-4.865]);
+//translate([-10+1.5-11.8+10+8,0.25+20-52+15+7,-10+28-20-21+10])color("pink")cube([30-10-8,20,21.36+22+7]);
+//translate([-10+1.5+5.23,0,-10])color("pink")rotate([0,90,0])cylinder(r=20/2,h=4.8+8,$fn=30);
+translate([-10+1.5+18.2,0.25+24,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=10/2,h=21.36,$fn=30);
+translate([-10+1.5+18.2,0.25-24,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=10/2,h=21.36,$fn=30);
+//translate([-10+1.5+18.20-20-0.5-0.9,0.25-24,-10-1+40])color("black")rotate([0,-90,0])cylinder(r=22/2,h=10,$fn=30);
+//translate([-10+1.5+18.2-20-0.5-0.9,0.25+24,-10-1+40])color("black")rotate([0,-90,0])cylinder(r=22/2,h=10,$fn=30);
+}
+
+translate([0,0,55]){
+color("red")translate([-10+1.5-11.8+15.5-20-6-0.45,20+20-55+100-100+5-0.3,-10+28+8-32+0.5+2-5])rotate([0,90,0])cube([20+0.5,20.6,300]);
+//translate([-10+1.5-11.8+15.5+5,20+20-48-8-2+2,-10+28+8-32-50])cylinder(r=5.3/2,h=250,$fn=30);
+translate([-10+1.5-11.8+15.5+5,20+20-48-8-2+2,-10+28+8-32-50-8-19+135-55])cylinder(r=9.5/2,h=50,$fn=30);
+//translate([-10+1.5-11.8+15.5+5,20+20-48+18+8-2-2,-10+28+8-32-50])cylinder(r=5.3/2,h=250,$fn=30);
+translate([-10+1.5-11.8+15.5+5,20+20-48-8-2+34-2,-10+28+8-32-50-8-19+135-55])cylinder(r=9.5/2,h=50,$fn=30);
+}
+
+translate([-10+1.5-11.8+10+10-2+5+5,0.25+20-52+0.7-0.1,-10+28+5+9])color("")cube([30-13+10,62-46+2.5-5+2,21.36-12+0.2]);
+translate([-10+1.5-11.8+9+20+0.5,0.25+20-52+0.7+5.5-0.5,-10+28+5+9])color("")cylinder(r=22.8/2,h=10-0.5,$fn=30);
+
+translate([-10+1.5-11.8+10+10-2+7,0.25+20-52+0.7+44+3,-10+28+5+9])color("")cube([30-13+30,62-46+2.5,21.36-12+0.2]);
+translate([-10+1.5-11.8+9+20+0.5,0.25+20-52+0.7+5.5+51.5+0.5,-10+28+5+9])color("")cylinder(r=22.8/2,h=10-0.5,$fn=30);
+
+translate([-10+1.5-11.8+9+20+0.5,0.25+20-52+0.7+5.5-0.5,-10+28+5+9-10-100])color("")cylinder(r=5.8/2,h=240,$fn=30);
+translate([-10+1.5-11.8+9+20+0.5,0.25+20-52+0.7+5.5+51.5+0.5,-10+28+5+9-100])color("")cylinder(r=5.8/2,h=240,$fn=30);
+//translate([-10+1.5-10+4,0.25,-10-1])color("pink")rotate([0,90,0])cylinder(r=4.8/2,h=25,$fn=30);
+translate([-10+1.5+18.2+2-6,0.25+24,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=4.8/2,h=125,$fn=30);
+translate([-10+1.5+18.20+2-6,0.25-24,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=4.8/2,h=125,$fn=30);
+}
+}
+
+
+
+
+
+
+
+module zcarriage_bearing(){
+difference(){
+union(){
+translate([-10+1.5-11.8+10,0.25+20-52+0.7,-10+28+5])color("")cube([30-10+8-8,62-50,21.36-7+9+13]);
+translate([-10+1.5-11.8+10,0.25+20-52+0.7,-10+28+5])color("")cube([30-10+8-8,62,21.36-7+9]);
+//translate([-10+1.5-11.8+10+8,0.25+20-52+15+7,-10+28-20-21+10])color("pink")cube([30-10-8,20,21.36+22+7]);
+//translate([-10+1.5+5.23,0,-10])color("pink")rotate([0,90,0])cylinder(r=20/2,h=4.8+8,$fn=30);
+translate([-10+1.5+18.2,0.25+24,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=10/2,h=21.36,$fn=30);
+translate([-10+1.5+18.2,0.25-24,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=10/2,h=21.36,$fn=30);
+translate([-10+1.5+18.20-20-0.5-0.9,0.25-24,-10-1+40])color("black")rotate([0,-90,0])cylinder(r=22/2,h=10,$fn=30);
+translate([-10+1.5+18.2-20-0.5-0.9,0.25+24,-10-1+40])color("black")rotate([0,-90,0])cylinder(r=22/2,h=10,$fn=30);
+/*
+*/
+
+}
+//translate([-10+1.5-11.8+9+20,0.25+20-52+0.7+5.5,-10+28+5+9-10-100])color("")cylinder(r=5.8/2,h=240,$fn=30);
+//translate([-10+1.5-11.8+9+20,0.25+20-52+0.7+5.5,-10+28+5+9-10+5])color("")cylinder(r=9.5/2,h=40,$fn=30);
+//translate([-10+1.5-11.8+10+10-2,0.25+20-52+0.7,-10+28+5+9])color("")cube([30-13+10,62-46+2.5,21.36-12]);
+//translate([-10+1.5-11.8+9+20,0.25+20-52+0.7+5.5+51.5,-10+28+5+9-100])color("")cylinder(r=5.8/2,h=240,$fn=30);
+//translate([-10+1.5-11.8+9+20,0.25+20-52+0.7+5.5+51.5,-10+28+5+9-10+5])color("")cylinder(r=9.5/2,h=40,$fn=30);
+//translate([-10+1.5-11.8+10+10-2,0.25+20-52+0.7+44,-10+28+5+9])color("")cube([30-13+30,62-46+2.5,21.36-12]);
+//translate([-10+1.5-10+4,0.25,-10-1])color("pink")rotate([0,90,0])cylinder(r=4.8/2,h=25,$fn=30);
+translate([-10+1.5-11.8+15.5+8.5,20+20-48,-10+28+8-32+59])rotate([90,0,0])cylinder(r=4.8/2,h=250,$fn=30);
+translate([-10+1.5-11.8+15.5+8.5,20+20-48,-10+28+8-32+59])rotate([90,0,0])cylinder(r=8.5/2,h=23.1-4,$fn=30);
+translate([0,0,0]){
+translate([-10+1.5-11.8+15.5+5,20+20-48,-10+28+8-32-50])cylinder(r=4.8/2,h=250,$fn=30);
+translate([-10+1.5-11.8+15.5+5,20+20-48+18,-10+28+8-32-50])cylinder(r=4.8/2,h=250,$fn=30);
+}
+translate([-10+1.5+18.2+2+60,0.25+24,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=4.8/2,h=125,$fn=30);
+//translate([-10+1.5+18.2+2+3+5,0.25+24,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=9.5/2,h=25,$fn=30);
+translate([-10+1.5+18.20+2+60,0.25-24,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=4.8/2,h=125,,$fn=30);
+//translate([-10+1.5+18.20+2+3+5,0.25-24,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=9.5/2,h=25,,$fn=30);
+}
+}
+
+
+module xcarriage_bearing(){
+difference(){
+union(){
+translate([-10+1.5-11.8+10,0.25+20-52+0.7,-10+28+5])color("")cube([30-10+8-8,62,21.36-7+9-2.75]);
+translate([-10+1.5-11.8+10+5.5,0.25+20-52+0.7,-10+28+5])color("")cube([4,62,21.36-7+9+14]);
+//translate([-10+1.5-11.8+10+8,0.25+20-52+15+7,-10+28-20-21+10])color("pink")cube([30-10-8,20,21.36+22+7]);
+//translate([-10+1.5+5.23,0,-10])color("pink")rotate([0,90,0])cylinder(r=20/2,h=4.8+8,$fn=30);
+translate([-10+1.5+18.2,0.25+24,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=10/2,h=21.36,$fn=30);
+translate([-10+1.5+18.2,0.25-24,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=10/2,h=21.36,$fn=30);
+translate([-10+1.5+18.20-20-0.5-0.9,0.25-24,-10-1+40])color("black")rotate([0,-90,0])cylinder(r=22/2,h=10,$fn=30);
+translate([-10+1.5+18.2-20-0.5-0.9,0.25+24,-10-1+40])color("black")rotate([0,-90,0])cylinder(r=22/2,h=10,$fn=30);
+}
+//translate([-10+1.5-11.8+9+20,0.25+20-52+0.7+5.5,-10+28+5+9-10-100])color("")cylinder(r=5.8/2,h=240,$fn=30);
+//translate([-10+1.5-11.8+9+20,0.25+20-52+0.7+5.5,-10+28+5+9-10+5])color("")cylinder(r=9.5/2,h=40,$fn=30);
+//translate([-10+1.5-11.8+10+10-2,0.25+20-52+0.7,-10+28+5+9])color("")cube([30-13+10,62-46+2.5,21.36-12]);
+//translate([-10+1.5-11.8+9+20,0.25+20-52+0.7+5.5+51.5,-10+28+5+9-100])color("")cylinder(r=5.8/2,h=240,$fn=30);
+//translate([-10+1.5-11.8+9+20,0.25+20-52+0.7+5.5+51.5,-10+28+5+9-10+5])color("")cylinder(r=9.5/2,h=40,$fn=30);
+//translate([-10+1.5-11.8+10+10-2,0.25+20-52+0.7+44,-10+28+5+9])color("")cube([30-13+30,62-46+2.5,21.36-12]);
+//translate([-10+1.5-10+4,0.25,-10-1])color("pink")rotate([0,90,0])cylinder(r=4.8/2,h=25,$fn=30);
+translate([0,0,0]){
+translate([-10+1.5-11.8+15.5+5,20+20-48,-10+28+8-32-50])cylinder(r=4.8/2,h=95,$fn=30);
+translate([-10+1.5-11.8+15.5+5,20+20-48+18,-10+28+8-32-50])cylinder(r=4.8/2,h=95,$fn=30);
+}
+translate([-10+1.5+18.2+2+60,0.25+24,-10-1+64.5])color("pink")rotate([0,-90,0])cylinder(r=4.8/2,h=125,$fn=30);
+translate([-10+1.5+18.2+2+60,0.25-24,-10-1+64.5])color("pink")rotate([0,-90,0])cylinder(r=4.8/2,h=125,$fn=30);
+
+translate([-10+1.5+18.2+2+60,0.25+24,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=4.8/2,h=125,$fn=30);
+//translate([-10+1.5+18.2+2+3+5,0.25+24,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=9.5/2,h=25,$fn=30);
+translate([-10+1.5+18.20+2+60,0.25-24,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=4.8/2,h=125,,$fn=30);
+//translate([-10+1.5+18.20+2+3+5,0.25-24,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=9.5/2,h=25,,$fn=30);
+}
+}
+
+
+
+
+
+module microswiss_xcarriage_bearing(){
+difference(){
+union(){
+translate([-10+1.5-11.8+10,0.25+20-52+0.7-10,-10+28+5])color("")cube([30-10+8-8,62+10,21.36-7+9-2.75-6]);
+translate([-10+1.5-11.8+10,0.25+20-52+0.7+55,-10+28+5])color("")cube([30-10+8-8+10,38-2,21.36-7+9-2.75-6+4]);
+translate([-10+1.5-11.8+10-5.5,0.25+20-52+0.7+5-45-4,-10+28+5])color("")cube([30-10+8-8+10-4.5,38-2+4,21.36-7+9-2.75-6+4+14.5+15]);
+//translate([-10+1.5-11.8+10+5.5,0.25+20-52+0.7,-10+28+5])color("")cube([4,62,21.36-7+9+14]);
+//translate([-10+1.5-11.8+10+8,0.25+20-52+15+7,-10+28-20-21+10])color("pink")cube([30-10-8,20,21.36+22+7]);
+//translate([-10+1.5+5.23,0,-10])color("pink")rotate([0,90,0])cylinder(r=20/2,h=4.8+8,$fn=30);
+translate([-10+1.5+18.2,0.25+20,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=10/2,h=21.36,$fn=30);
+translate([-10+1.5+18.2,0.25-20,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=10/2,h=21.36,$fn=30);
+//translate([-10+1.5+18.20-20-0.5-0.9,0.25-20,-10-1+40])color("black")rotate([0,-90,0])cylinder(r=22/2,h=10,$fn=30);
+//translate([-10+1.5+18.2-20-0.5-0.9,0.25+20,-10-1+40])color("black")rotate([0,-90,0])cylinder(r=22/2,h=10,$fn=30);
+}
+translate([12+30-100+48-2,25-80,20])rotate([0,0,0])cylinder(r=25/2,h=100);
+translate([12+30-100+48-2+60,25-80-16,65])rotate([0,-90,0])cylinder(r=2.8/2,h=100,$fn=30);
+translate([12+30-100+48-2+60,25-80+16,65])rotate([0,-90,0])cylinder(r=2.8/2,h=100,$fn=30);
+
+
+//translate([-10+1.5-11.8+9+20,0.25+20-52+0.7+5.5,-10+28+5+9-10-100])color("")cylinder(r=5.8/2,h=240,$fn=30);
+//translate([-10+1.5-11.8+9+20,0.25+20-52+0.7+5.5,-10+28+5+9-10+5])color("")cylinder(r=9.5/2,h=40,$fn=30);
+//translate([-10+1.5-11.8+10+10-2,0.25+20-52+0.7,-10+28+5+9])color("")cube([30-13+10,62-46+2.5,21.36-12]);
+//translate([-10+1.5-11.8+9+20,0.25+20-52+0.7+5.5+51.5,-10+28+5+9-100])color("")cylinder(r=5.8/2,h=240,$fn=30);
+//translate([-10+1.5-11.8+9+20,0.25+20-52+0.7+5.5+51.5,-10+28+5+9-10+5])color("")cylinder(r=9.5/2,h=40,$fn=30);
+//translate([-10+1.5-11.8+10+10-2,0.25+20-52+0.7+44,-10+28+5+9])color("")cube([30-13+30,62-46+2.5,21.36-12]);
+//translate([-10+1.5-10+4,0.25,-10-1])color("pink")rotate([0,90,0])cylinder(r=4.8/2,h=25,$fn=30);
+translate([-10+1.5-11.8+15.5+5+12,20+20-48+18+42,-10+28+8-32-50+10])cylinder(r=4.8/2,h=95,$fn=30);
+translate([-10+1.5-11.8+15.5+5+12,20+20-48+18+42-20,-10+28+8-32-50+10])cylinder(r=4.8/2,h=95,$fn=30);
+translate([-10+1.5-11.8+15.5+5+12,20+20-48+18+42,-10+28+8-32-50+10-10])cylinder(r=10/2,h=95,$fn=30);
+translate([-10+1.5-11.8+15.5+5+12,20+20-48+18+42-20,-10+28+8-32-50+10-10])cylinder(r=10/2,h=95,$fn=30);
+
+translate([0,0,0]){
+translate([-10+1.5-11.8+15.5+5,20+20-48,-10+28+8-32-50])cylinder(r=4.8/2,h=95,$fn=30);
+translate([-10+1.5-11.8+15.5+5,20+20-48+18,-10+28+8-32-50])cylinder(r=4.8/2,h=95,$fn=30);
+}
+translate([-10+1.5+18.2+2+60,0.25+20,-10-1+64.5])color("pink")rotate([0,-90,0])cylinder(r=4.8/2,h=125,$fn=30);
+translate([-10+1.5+18.2+2+60,0.25-20,-10-1+64.5])color("pink")rotate([0,-90,0])cylinder(r=4.8/2,h=125,$fn=30);
+translate([-10+1.5+18.2+2+60,0.25+20,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=5.8/2,h=125,$fn=30);
+translate([-10+1.5+18.2+2+3+5,0.25+20,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=10.2/2,h=25,$fn=30);
+translate([-10+1.5+18.20+2+60,0.25-20,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=5.8/2,h=125,,$fn=30);
+translate([-10+1.5+18.20+2+3+5,0.25-20,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=10.2/2,h=25,,$fn=30);
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+module ycarriage_bearing_single(){
+difference(){
+union(){
+translate([-10+1.5-11.8+10,0.25+20-52+0.7+10,-10+28+5])color("")cube([30-10,62-20+2,21.36-7]);
+translate([-10+1.5+18.2,0.25,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=10/2,h=21.36,$fn=30);
+//translate([-10+1.5+18.2-20-0.5-0.9,0.25,-10-1+40])color("black")rotate([0,-90,0])cylinder(r=22/2,h=10,$fn=30);
+}
+translate([-10+1.5+18.2+2,0.25,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=4.8/2,h=125,$fn=30);
+
+translate([-10+1.5-11.8+15.5+5,20+20-48-8+2,-10+28+8-32-50])cylinder(r=5.5/2,h=250,$fn=30);
+translate([-10+1.5-11.8+15.5+5,20+20-48+18+8-2,-10+28+8-32-50])cylinder(r=5.5/2,h=250,$fn=30);
+
+
+//translate([-10+1.5-11.8+15.5+5,20+20-48,-10+28+8-32-50])cylinder(r=5.5/2,h=250,$fn=30);
+//translate([-10+1.5-11.8+15.5+5,20+20-48+18,-10+28+8-32-50])cylinder(r=5.5/2,h=250,$fn=30);
+translate([-10+1.5-11.8+15.5+5,20+20-48+18,-10+28+8-32-50-8])cylinder(r=9.5/2,h=50,$fn=30);
+translate([0,0,87+8]){
+translate([-10+1.5-11.8+15.5+5,20+20-48+18+8-2,-10+28+8-32-50-8])cylinder(r=9.5/2,h=50,$fn=30);
+translate([-10+1.5-11.8+15.5+5,20+20-48-8+2,-10+28+8-32-50-8])cylinder(r=9.5/2,h=50,$fn=30);
+}
+
+//translate([-10+1.5-11.8+15.5+5,20+20-48-8,-10+28+8-32-50])cylinder(r=5.3/2,h=250,$fn=30);
+//translate([-10+1.5-11.8+15.5+5,20+20-48+18+8,-10+28+8-32-50])cylinder(r=5.3/2,h=250,$fn=30);
+}
+}
+
+
+
+
+module xcarriage_bearing_single(){
+difference(){
+union(){
+//translate([-10+1.5-11.8+10,0.25+20-52+0.7+52.05,-10+28+5])color("")cube([30-10,10,21.36-7+15]);
+translate([-10+1.5-11.8+10,0.25+20-52+0.7+10,-10+28+5])color("")cube([30-10,62-20+2,21.36-7]);
+translate([-10+1.5+18.2,0.25,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=10/2,h=21.36,$fn=30);
+//translate([-10+1.5+18.2-20-0.5-0.9,0.25,-10-1+40])color("black")rotate([0,-90,0])cylinder(r=22/2,h=10,$fn=30);
+}
+translate([-10+1.5+18.2+2,0.25,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=4.8/2,h=125,$fn=30);
+translate([-10+1.5+18.2+2-8,0.25,-10-1+40+16])color("pink")rotate([-90,0,0])cylinder(r=4.8/2,h=125,$fn=30);
+translate([-10+1.5+18.2+2-8,0.25,-10-1+40+16])color("pink")rotate([-90,0,0])cylinder(r=9/2,h=31-4,$fn=30);
+
+//translate([0,-2,0])(
+translate([-10+1.5-11.8+15.5+5,20+20-48-2,-10+28+8-32-50])cylinder(r=5.5/2,h=250,$fn=30);
+translate([-10+1.5-11.8+15.5+5,20+20-48+18-2,-10+28+8-32-50])cylinder(r=5.5/2,h=250,$fn=30);
+//}
+translate([-10+1.5-11.8+15.5+5,20+20-48+18,-10+28+8-32-50-8])cylinder(r=9.5/2,h=50,$fn=30);
+translate([-10+1.5-11.8+15.5+5,20+20-48,-10+28+8-32-50-8])cylinder(r=9.5/2,h=50,$fn=30);
+translate([0,0-2,87+8]){
+translate([-10+1.5-11.8+15.5+5,20+20-48+18,-10+28+8-32-50-8-4])cylinder(r=9.5/2,h=50,$fn=30);
+translate([-10+1.5-11.8+15.5+5,20+20-48,-10+28+8-32-50-8-4])cylinder(r=9.5/2,h=50,$fn=30);
+}
+
+//translate([-10+1.5-11.8+15.5+5,20+20-48-8,-10+28+8-32-50])cylinder(r=5.3/2,h=250,$fn=30);
+//translate([-10+1.5-11.8+15.5+5,20+20-48+18+8,-10+28+8-32-50])cylinder(r=5.3/2,h=250,$fn=30);
+}
+}
+
+
+
+
+
+
+
+
+module zcarriage_bearing_single(){
+difference(){
+union(){
+translate([-10+1.5-11.8+10,0.25+20-52+0.7+52.05,-10+28+5])color("")cube([30-10,10,21.36-7+15]);
+translate([-10+1.5-11.8+10,0.25+20-52+0.7+10,-10+28+5])color("")cube([30-10,62-20+2,21.36-7]);
+translate([-10+1.5+18.2,0.25,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=10/2,h=21.36,$fn=30);
+//translate([-10+1.5+18.2-20-0.5-0.9,0.25,-10-1+40])color("black")rotate([0,-90,0])cylinder(r=22/2,h=10,$fn=30);
+}
+translate([-10+1.5+18.2+2,0.25,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=4.8/2,h=125,$fn=30);
+translate([-10+1.5+18.2+2-8,0.25,-10-1+40+16])color("pink")rotate([-90,0,0])cylinder(r=4.8/2,h=125,$fn=30);
+translate([-10+1.5+18.2+2-8,0.25,-10-1+40+16])color("pink")rotate([-90,0,0])cylinder(r=9/2,h=31-4,$fn=30);
+
+//translate([0,-2,0])(
+translate([-10+1.5-11.8+15.5+5,20+20-48-2,-10+28+8-32-50])cylinder(r=5.5/2,h=250,$fn=30);
+translate([-10+1.5-11.8+15.5+5,20+20-48+18-2,-10+28+8-32-50])cylinder(r=5.5/2,h=250,$fn=30);
+//}
+translate([-10+1.5-11.8+15.5+5,20+20-48+18,-10+28+8-32-50-8])cylinder(r=9.5/2,h=50,$fn=30);
+translate([-10+1.5-11.8+15.5+5,20+20-48,-10+28+8-32-50-8])cylinder(r=9.5/2,h=50,$fn=30);
+translate([0,0-2,87+8]){
+translate([-10+1.5-11.8+15.5+5,20+20-48+18,-10+28+8-32-50-8-4])cylinder(r=9.5/2,h=50,$fn=30);
+translate([-10+1.5-11.8+15.5+5,20+20-48,-10+28+8-32-50-8-4])cylinder(r=9.5/2,h=50,$fn=30);
+}
+
+//translate([-10+1.5-11.8+15.5+5,20+20-48-8,-10+28+8-32-50])cylinder(r=5.3/2,h=250,$fn=30);
+//translate([-10+1.5-11.8+15.5+5,20+20-48+18+8,-10+28+8-32-50])cylinder(r=5.3/2,h=250,$fn=30);
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+module zcarriage_bearing_top(){
+difference(){
+union(){
+translate([-10+1.5-11.8+10,0.25+20-52+0.7,-10+28+5])color("")cube([30-25,62,21.36-7]);
+//translate([-10+1.5-11.8+10+8,0.25+20-52+15+7,-10+28-20-21+10])color("pink")cube([30-10-8,20,21.36+22+7]);
+//translate([-10+1.5+5.23,0,-10])color("pink")rotate([0,90,0])cylinder(r=20/2,h=4.8+8,$fn=30);
+translate([-10+1.5+18.2,0.25+20,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=10/2,h=21.36,$fn=30);
+translate([-10+1.5+18.2,0.25-20,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=10/2,h=21.36,$fn=30);
+translate([-10+1.5+18.20-20-0.5-0.9,0.25,-10-1+40])color("black")rotate([0,-90,0])cylinder(r=22/2,h=10,$fn=30);
+}
+//translate([-10+1.5-10+4,0.25,-10-1])color("pink")rotate([0,90,0])cylinder(r=4.8/2,h=25,$fn=30);
+translate([-10+1.5+18.2+2,0.25+20,-10-1])color("pink")rotate([0,-90,0])cylinder(r=4.8/2,h=125,$fn=30);
+}
+}
+*/
+
+
+
+module zcarriage_bearing_top_single(){
+difference(){
+union(){
+//translate([-10+1.5-11.8+10,0.25+20-52+0.7+16,-10+28+5])color("")cube([30-25,62-30,21.36-7]);
+//translate([-10+1.5-11.8+10+8,0.25+20-52+15+7,-10+28-20-21+10])color("pink")cube([30-10-8,20,21.36+22+7]);
+//translate([-10+1.5+5.23,0,-10])color("pink")rotate([0,90,0])cylinder(r=20/2,h=4.8+8,$fn=30);
+translate([-10+1.5+18.2-12-1.4-3+1.4,0.25,-10-1+40])color("")rotate([0,-90,0])cylinder(r=17/2,h=8-3.5,$fn=30);
+translate([-10+1.5+18.2-12-1.4-3,0.25,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=10/2,h=8-3,$fn=30);
+translate([-10+1.5+18.20-20-0.5-1,0.25,-10-1+40])color("black")rotate([0,-90,0])cylinder(r=22/2,h=10,$fn=30);
+}
+//translate([-10+1.5-10+4,0.25,-10-1])color("pink")rotate([0,90,0])cylinder(r=4.8/2,h=25,$fn=30);
+translate([-10+1.5+18.2+2,0.25,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=5.7/2,h=25,$fn=30);
+translate([-10+1.5+18.2+2+3,0.25,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=9.7/2,h=14,$fn=30);
+//translate([-10+1.5+18.20+2,0.25-20,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=5.7/2,h=25,,$fn=30);
+//translate([-10+1.5+18.20+2+3,0.25-20,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=9.7/2,h=14,$fn=30);
+}
+}
+
+
+
+
+
+
+module zcarriage_bearing_top(){
+difference(){
+union(){
+translate([-10+1.5-11.8+10,0.25+20-52+0.7,-10+28+5])color("")cube([30-25,62,21.36-7]);
+//translate([-10+1.5-11.8+10+8,0.25+20-52+15+7,-10+28-20-21+10])color("pink")cube([30-10-8,20,21.36+22+7]);
+//translate([-10+1.5+5.23,0,-10])color("pink")rotate([0,90,0])cylinder(r=20/2,h=4.8+8,$fn=30);
+//translate([-10+1.5+18.2-12-1.4-3,0.25,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=10/2,h=8-3,$fn=30);
+
+translate([0,4,0]){
+translate([-10+1.5+18.2-12-1.4-3,0.25+20,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=10/2,h=8-3,$fn=30);
+}
+
+translate([0,-4,0]){
+translate([-10+1.5+18.2-12-1.4-3,0.25-20,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=10/2,h=8-3,$fn=30);
+}
+//translate([-10+1.5+18.20-20-0.5,0.25-20,-10-1+40])color("black")rotate([0,-90,0])cylinder(r=22/2,h=10,$fn=30);
+//translate([-10+1.5+18.2-20-0.5,0.25+20,-10-1+40])color("black")rotate([0,-90,0])cylinder(r=22/2,h=10,$fn=30);
+}
+//translate([-10+1.5-10+4,0.25,-10-1])color("pink")rotate([0,90,0])cylinder(r=4.8/2,h=25,$fn=30);
+
+translate([0,4,0]){
+translate([-10+1.5+18.2+2,0.25+20,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=4.8/2,h=25,$fn=30);
+}
+
+translate([0,-4,0]){
+translate([-10+1.5+18.2+2,0.25-20,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=4.8/2,h=25,$fn=30);
+}
+//translate([-10+1.5+18.2+2+3,0.25,-10-1+40])color("pink")rotate([0,-90,0])cylinder(r=9.7/2,h=14,$fn=30);
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+//iverntech_slider_zbed_connect();
+//zbedslot_516_smz_zbed_wider();
+//zbedslot_516_smz_zbed_wider_lid();
+//zbedslot_516_smz_zbed_wider();
+//motormount_smz();
+//translate([50,0,0])mirror([1,0,0])motormount_smz();
+//translate([125+1,50-15+80,150-10+5])
+
+/*
+translate([0,0,0])difference(){
+translate([125+1-85,50-15+80-38,150-10+5-35])rotate([0,0,0])
+union(){
+//translate([0,0,-10])color("pink")cube([30,50,4]);
+translate([0,240,-10])color("pink")cube([30,60,4]);
+//color("silver")cube([30,300,4]);
+//translate([369,0,0])color("silver")cube([30,300,4]);
+}
+translate([216,209+115.3,0]){
+translate([5-75-90,5+37.3,-1-80])cylinder(r=4.8/2,h=242,$fn=30);
+translate([5-75-90,5,-1-80])cylinder(r=3.8/2,h=242,$fn=30);
+translate([5-75-90,5-209.5-33.2,-1-80])cylinder(r=3.8/2,h=242,$fn=30);
+translate([5-75-90,5-209.5,-1-80])cylinder(r=3.8/2,h=242,$fn=30);
+translate([5+(104.5*2-80)+75,5+37.3,-1-80])cylinder(r=4.8/2,h=242,$fn=30);
+translate([5+(104.5*2-80)+75,5,-1-80])cylinder(r=3.8/2,h=242,$fn=30);
+translate([5+(104.5*2-80)+75,5-209.5,-1-80])cylinder(r=3.8/2,h=242,$fn=30);
+translate([5+(104.5*2-80)+75,5-209.5-33.2,-1-80])cylinder(r=4.8/2,h=242,$fn=30);
+}
+}
+*/
+
+
+
+
+//clamp_m8_smoothrodholder_for_bed();
+//endstop_z();
+//zendstop_clamp();
+//translate([0,0,180])zbedslot_516_smz_zbed_wider_lid();
+//lm8uu_smz_glider_wider();
+//framemagnetholder_10by60by3();
+
+//doormagnetholder_10by60by3();
+ // translate([526-2.5+31,-155,300])rotate([-90,90,0])doormagnetholder_10by60by3();
+  //translate([526-2.5,-155+12.5,300-30])rotate([90,0,0])framemagnetholder_10by60by3();
+
+
+// panel_higher();
+
+
+//rearm_modular_box();
+
+//import("3dprint_dual_camera_assy.stl");
 //3dprint_dual_camera_assy();
+//arducam_rotate_2mount_adjuster_nut();
+//3dprint_dual_camera_assy_tslotattach();
+//color("green")translate([13.5,-30+6+44,15])rotate([-90,0,0])arducam_labbot_octoprint();
+//camera_rotate_plate();
 //translate([200-3.5,-29,400-13])rotate([0,180,0])labbot_camera();
 //rpi4_case(); // the whole unsplit case
 //raspi4_top();
-raspi4_standoffs();
+//raspi4_standoffs();
+//labbot_camera();
 //import("raspi4_top.stl");
-//camera_rotate_plate();
+
+
+//bowdentube_clamp();
+
+module bowdentube_clamp(){
+difference(){
+union(){
+translate([7,0,0])rotate([0,0,45])cylinder(r=18/2,h=8,$fn=30);
+cube([14,28,4]);
+}
+translate([7,0,-10])cylinder(r=9.8/2,h=28,$fn=30);
+translate([7,23,-10])cylinder(r=4.7/2,h=28,$fn=30);
+}
+}
+
 
 module camera_rotate_plate(){
 difference(){
@@ -36,8 +1376,8 @@ cube([8,12,15]);
 cube([18,20,4]);
 translate([9,20,0])cylinder(r=18/2,h=4,$fn=30);
 }
-translate([-15,6,10])rotate([0,90,0])#cylinder(r=2.85/2,h=30,$fn=30);
-translate([9,23,-4])#cylinder(r=4.7/2,h=30,$fn=30);
+translate([-15,6,10])rotate([0,90,0])cylinder(r=2.85/2,h=30,$fn=30);
+translate([9,23,-4])cylinder(r=4.7/2,h=30,$fn=30);
 }
 }
 
@@ -73,10 +1413,10 @@ translate([0,0,-1])cylinder(r=5/2,h=40,$fn=30);
 //import("E3D_v6_Direct_Drive_Extruder/E3D_extruder_mod/idler.stl");
 rotate([0,0,-3.3]){
 rotate([0,0,33.3])import("Tripod_base.stl");
-//translate([-60+22.85,-70+9.6+116.6,-10])#cylinder(r=5/2,h=30,$fn=30);
+//translate([-60+22.85,-70+9.6+116.6,-10])cylinder(r=5/2,h=30,$fn=30);
 }
 */
-//translate([-60+29.75,-70+9.6,-10])#cylinder(r=5/2,h=30,$fn=30);
+//translate([-60+29.75,-70+9.6,-10])cylinder(r=5/2,h=30,$fn=30);
 
 
 
@@ -115,7 +1455,7 @@ module ender_clamp(){
 difference(){
 union(){
 cube([64,20,4]);
-//#translate([64-14,0,0])cube([14,20,4+21]);
+//translate([64-14,0,0])cube([14,20,4+21]);
 translate([64-42,0,0])cube([14+8,20,4+15-5]);
 }
 translate([12,0,0]){
@@ -123,13 +1463,11 @@ translate([0,10,-1])cylinder(r=5.7/2, $fn=30, h=40);
 translate([40,10,-1])cylinder(r=5.7/2, $fn=30, h=40);
 translate([40,10,4])cylinder(r=10/2, $fn=30, h=40);
 translate([40-18,10-3,-1])cylinder(r=8/2, $fn=30, h=40);
-//translate([40-10,10-0,2])rotate([0,90,0])#cylinder(r=2.8/2, $fn=30, h=40);
-//translate([40-10,10-0,2+15])rotate([0,90,0])#cylinder(r=2.8/2, $fn=30, h=40);
+//translate([40-10,10-0,2])rotate([0,90,0])cylinder(r=2.8/2, $fn=30, h=40);
+//translate([40-10,10-0,2+15])rotate([0,90,0])cylinder(r=2.8/2, $fn=30, h=40);
 
-translate([40-19-7.5,10-0,-2])rotate([0,0,0])#cylinder(r=3/2, $fn=30, h=40);
-translate([40-19+7.5,10,-2])rotate([0,0,0])#cylinder(r=3/2, $fn=30, h=40);
-
-
+translate([40-19-7.5,10-0,-2])rotate([0,0,0])cylinder(r=3/2, $fn=30, h=40);
+translate([40-19+7.5,10,-2])rotate([0,0,0])cylinder(r=3/2, $fn=30, h=40);
 
 }
 }
@@ -145,17 +1483,17 @@ translate([-65-20,-68+30,-3])cube([20+20,135-60,4]);
 //translate([-65,-68,-3])cube([40,135,4]);
 }
 translate([-65-20+15,-68+30+12,-6])cube([30,50,14]);
-translate([-60+26.0,-70+9.6+119.0,-10])#cylinder(r=5/2,h=30,$fn=30);
-translate([-60+26,-70+9.6+2.1,-10])#cylinder(r=5/2,h=30,$fn=30);
-translate([-60+26.0-25-20,-70+9.6+119.0/2+30,-10])#cylinder(r=5.7/2,h=30,$fn=30);
-translate([-60+26.0-25-20,-70+9.6+119.0/2-30,-10])#cylinder(r=5.7/2,h=30,$fn=30);
+translate([-60+26.0,-70+9.6+119.0,-10])cylinder(r=5/2,h=30,$fn=30);
+translate([-60+26,-70+9.6+2.1,-10])cylinder(r=5/2,h=30,$fn=30);
+translate([-60+26.0-25-20,-70+9.6+119.0/2+30,-10])cylinder(r=5.7/2,h=30,$fn=30);
+translate([-60+26.0-25-20,-70+9.6+119.0/2-30,-10])cylinder(r=5.7/2,h=30,$fn=30);
 }
 //cylinder(r=8/2,h=3,$fn=30);
 }
 /*
 difference(){
 import("E3D_v6_Direct_Drive_Extruder/E3D_extruder_mod/idler.stl");
-translate([-10,0,0])#cylinder(r=2.3/2,h=30,$fn=30);
+translate([-10,0,0])cylinder(r=2.3/2,h=30,$fn=30);
 }
 */
 //washstation();
@@ -190,9 +1528,131 @@ labautobox();
 
 //REArm_Housing_Top_rr_mod();
 //REArm_Housing_Housing_rr_mod();
+//translate([123,81,0])rotate([0,0,90])import("rearm_ramps_enclosure/RE-Arm_Housing_rr_mod.stl");
 
 //import("rearm_ramps_enclosure/RE-Arm_Housing_Top_rr_mod.stl");
-//translate([0,0,-5])REArm_Housing_Top_grill();
+
+
+//translate([123,81-53,115])rotate([0,0,90])translate([0,0,0])REArm_Housing_Top_grill();
+
+module rearm_modular_box(){
+
+difference(){
+union(){
+
+difference(){
+topbox();
+translate([123,81-53+54,-20])rotate([0,0,90]){
+translate([-70+3,2-4+5,67-4])color("pink")cube([80,103,20]);
+translate([-70+3,2-4,67-4])color("pink")cylinder(r=2.3/2,h=115,$fn=30);
+translate([-70+3+80,2-4,67-4])color("pink")cylinder(r=2.3/2,h=15,$fn=30);
+translate([0,113,0]){
+translate([-70+3,2-4,67-4])color("pink")cylinder(r=2.3/2,h=15,$fn=30);
+translate([-70+3+80,2-4,67-4])color("pink")cylinder(r=2.3/2,h=15,$fn=30);
+}
+}
+}
+
+
+/*
+bottombox();
+translate([-2,-24,0])difference(){
+translate([30,50,1])cylinder(r2=4/2,r1=6,h=4.2,$fn=30);
+translate([30,50,0.5])cylinder(r=2.2/2,h=14.2,$fn=30);
+}
+translate([-2,-24+56.8,0])difference(){
+translate([30,50,1])cylinder(r2=4/2,r1=6,h=4.2,$fn=30);
+translate([30,50,0.5])cylinder(r=2.2/2,h=14.2,$fn=30);
+}
+translate([64,0,0]){
+translate([-2,-24,0])difference(){
+translate([30,50,1])cylinder(r2=4/2,r1=6,h=4.2,$fn=30);
+translate([30,50,0.5])cylinder(r=2.2/2,h=14.2,$fn=30);
+}
+translate([-2,-24+56.8,0])difference(){
+translate([30,50,1])cylinder(r2=4/2,r1=6,h=4.2,$fn=30);
+translate([30,50,0.5])cylinder(r=2.2/2,h=14.2,$fn=30);
+}
+}
+*/
+
+/*
+*/
+for(i=[0:20]){
+translate([100-i,0,35])rotate([90,0,0])cylinder(r=(20)/2,h=20,$fn=30);
+}
+}
+for(i=[0:20]){
+translate([100-i,20,35])rotate([90,0,0])cylinder(r=(15)/2,h=140,$fn=30);
+}
+/*
+*/
+
+translate([9,0,0]){
+translate([22,120,12])rotate([90,0,0])cylinder(r=(17)/2,h=30,$fn=30);
+translate([20,120,12])rotate([90,0,0])cylinder(r=(17)/2,h=30,$fn=30);
+//translate([25,120,12])rotate([90,0,0])cylinder(r=(17)/2,h=40,$fn=30);
+}
+}
+}
+
+module topbox(){
+if(TShell==1)
+// Coque haut - Top Shell
+        color( Couleur1,1){
+            translate([0,Width,Height+0.2]){
+                rotate([0,180,180]){
+        		Coque();
+                        }
+                }
+        }
+
+/*
+if(BShell==1)
+// Coque bas - Bottom shell
+        color(Couleur1){
+        //Coque();
+        Coque(Width,Height,Length);
+        }
+*/
+}
+
+
+module bottombox(){
+/*
+if(TShell==1)
+// Coque haut - Top Shell
+        color( Couleur1,1){
+            translate([0,Width,Height+0.2]){
+                rotate([0,180,180]){
+        		Coque();
+                        }
+                }
+        }
+
+*/
+if(BShell==1)
+// Coque bas - Bottom shell
+        color(Couleur1){
+        //Coque();
+      	Coque(Width,Height,Length);
+        }
+}
+
+
+
+module switch(){
+ cube([98,93,28]);
+}
+
+
+
+
+
+
+
+
+
 
 module REArm_Housing_Top_grill(){
 rotate([0,180,0]){
@@ -213,9 +1673,6 @@ translate([-70+3+80,2-4,67-4])color("pink")cylinder(r=3.2/2,h=15,$fn=30);
 }
 }
 }
-
-
-
 
 
 module REArm_Housing_Top_rr_mod(){
@@ -299,7 +1756,6 @@ translate([40,0,0])import("bfptouch/BFPTouchPoorsmanBLtouch/files/BFPTouch_Main_
 */
 
 
-//bfptouch_assy();
 
 module bfptouch_assy(){
 import("bfptouch/BFPTouchPoorsmanBLtouch/files/BFPTouch_Main_Clean.stl");
@@ -624,7 +2080,8 @@ translate([17,17,-1])cylinder(r=3.8/2,h=35,$fn=30);
 module raspi4_standoffs(){
 difference(){
 cylinder(r=9/2,h=17,$fn=30);
-translate([0,0,-1])cylinder(r=2.9/2,h=20,$fn=30);
+translate([0,0,-1])cylinder(r=2.9/2,h=10,$fn=30);
+translate([0,0,-1])cylinder(r=2.4/2,h=30,$fn=30);
 }
 }
 module raspi4_top(){
@@ -645,7 +2102,7 @@ translate([40-10+26.5+14.5+14,-5-2+3+2+61-3-1,10-2.6])cube([8.3,4,2+2]);
 translate([40-10+26.5+14.5+14+14,-5-2+3+2+61-3-1,10-2.6])cube([8.3+2,4,2+2]);
 translate([40-10+26.5+14.5+14+14+20-10,-5-2+3+2+61-3-1-33,10-2.6-5-2])cube([8.3+2,4+8,2+4]);
 */
-#translate([40-10+26.5+14.5+14+14+20-10-60+(0*10)+10,-5-2+3+2+61-3-1-33-15+42,10-2.6-5-2])cube([3+40,7.5,2+4]);
+translate([40-10+26.5+14.5+14+14+20-10-60+(0*10)+10,-5-2+3+2+61-3-1-33-15+42,10-2.6-5-2])cube([3+40,7.5,2+4]);
 for(i=[0:6]){
 translate([40-10+26.5+14.5+14+14+20-10-60+(i*10),-5-2+3+2+61-3-1-33-15,10-2.6-5-2])cube([3,4+8+23,2+4]);
 }
@@ -778,8 +2235,8 @@ translate([3+1,0,6-3.25])rotate([90,45,0])cylinder(r=7.8/2,h=7,$fn=4);
 }
 translate([2,2,3])cube([33-4-5,31-4,12.5-3-2-2+0.2]);
 translate([2,2+10,3+2])cube([33-4-5+10,6,12.5-3-2-4]);
-#translate([15.5,31-6,-20])cylinder(r=3.5/2,$fn=30,h=65.5);
-#translate([15.5,5,-20])cylinder(r=3.5/2,$fn=30,h=65.5);
+translate([15.5,31-6,-20])cylinder(r=3.5/2,$fn=30,h=65.5);
+translate([15.5,5,-20])cylinder(r=3.5/2,$fn=30,h=65.5);
 translate([33,31,-1])cylinder(r=6,$fn=30,h=15.5);
 translate([33-2,-0.1,-1])cube([2.2,5.6,14.5]);
 translate([3+1,0+50,6])rotate([90,0,0])cylinder(r=2.5/2,h=116,$fn=30);
@@ -793,8 +2250,8 @@ translate([11.5-4,0,-10])color("lime")cube([15,40,8]);
 translate([11.5-4,0+40-12,-10-25])color("lime")cube([15,12,8+17]);
 translate([11.5-4-10,0+40-12,-10-25])color("lime")cube([35,12,4]);
 }
-#translate([15.5+13,31-6+8,-40])cylinder(r=4.7/2,$fn=30,h=65.5);
-#translate([15.5+12-25-1,31-6+8,-40])cylinder(r=4.7/2,$fn=30,h=65.5);
+translate([15.5+13,31-6+8,-40])cylinder(r=4.7/2,$fn=30,h=65.5);
+translate([15.5+12-25-1,31-6+8,-40])cylinder(r=4.7/2,$fn=30,h=65.5);
 translate([15.5,31-6,-20])cylinder(r=2.8/2,$fn=30,h=65.5);
 translate([15.5,5,-20])cylinder(r=2.8/2,$fn=30,h=65.5);
 }
@@ -808,8 +2265,8 @@ translate([0,0,12.5/2])cube([33,31,5.7]);
 }
 translate([3+1,0+0.5,6])rotate([90,0,0])cylinder(r=6.2/2,h=7,$fn=30);
 translate([3+1,0+0.5,6-3])rotate([90,45,0])cylinder(r=8.5/2,h=7,$fn=4);
-//#translate([2,2+5,3+5])cube([5,31-4-10,12.5-3-2-2+0.2]);
-#translate([2,2,3])cube([33-4-5,31-4,12.5-3-2-2+0.2]);
+//translate([2,2+5,3+5])cube([5,31-4-10,12.5-3-2-2+0.2]);
+translate([2,2,3])cube([33-4-5,31-4,12.5-3-2-2+0.2]);
 translate([2,2+10,3+2])cube([33-4-5+10,6,12.5-3-2-4]);
 translate([15.5,31-6,-20])cylinder(r=3.5/2,$fn=30,h=65.5);
 translate([15.5,5,-20])cylinder(r=3.5/2,$fn=30,h=65.5);
@@ -1191,6 +2648,76 @@ translate([15-15+17.5/2+6.5,15-21+6+29,4.1-2.5-10])cylinder(r=2.8/2,h=30,$fn=30)
 
 
 
+
+module framemagnetholder_10by60by3(){
+/*
+translate([-5,-15,10-0.8+1]){
+translate([15-15+17.5/2+6.5,15-21+6,4.1-2.5-5])color("silver")cube([10,60,3]);
+translate([15-15+17.5/2+6.5,15-21+6,4.1-2.5-5-1.5])color("white")cube([10,60,1.5]);
+}
+*/
+/*
+difference(){
+union(){
+translate([15-15+17.5/2+6.5,15-21+6,4.1-2.5-5])cylinder(r=8/2,h=5+3.5,$fn=30);
+translate([15-15+17.5/2+6.5,15-21+6+29,4.1-2.5-5])cylinder(r=8/2,h=5+3.5,$fn=30);
+}
+translate([15-15+17.5/2+6.5,15-21+6,4.1-2.5-10])cylinder(r=2.8/2,h=30,$fn=30);
+translate([15-15+17.5/2+6.5,15-21+6+29,4.1-2.5-10])cylinder(r=2.8/2,h=30,$fn=30);
+}
+*/
+difference(){
+union(){
+//translate([0,0,-4])cube([30,30,4+4]);
+translate([0+6.5+1-3.5,0-5-9-3+2.2,-4-3.5+8.2-3])cube([20+3,65-5,4+4+3]);
+//translate([0+26.7,0-12,-4-3.5])cube([5,13,8]);
+translate([0+26.7,0-12-5-2-12,-4-3.5+5.2])cube([5,10+4+13+65,15-4]);
+//translate([0+26.7,0-12+44+5-2,-4-3.5])cube([5,10+4+13,15+2]);
+//translate([0+26.7,0-12+38,-4-3.5])cube([5,13,8]);
+}
+
+translate([-5,-15,10-0.8+1]){
+translate([15-15+17.5/2+6.5-0.2+0.15/2,15-21+6-20-0.2,4.1-2.5-5])color("silver")cube([10.4-0.15,60+40.4,3.2]);
+translate([15-15+17.5/2+6.5-0.2+0.15/2,15-21+6-20-0.2,4.1-2.5-5-1.5])color("white")cube([10.4-0.15,60+40.4,1.5]);
+}
+
+
+
+//translate([15-30,15+26-4+5,4.1-2.5+1])rotate([0,90,0])cylinder(r=3.8/2,h=62.5,$fn=30);
+//translate([15-30,15+26-48-5,4.1-2.5+1])rotate([0,90,0])cylinder(r=3.8/2,h=62.5,$fn=30);
+
+translate([15-30,15+26-4+5+13,4.1-2.5+1])rotate([0,90,0])cylinder(r=3.8/2,h=62.5,$fn=30);
+translate([15-30,15+26-48-5-13,4.1-2.5+1])rotate([0,90,0])cylinder(r=3.8/2,h=62.5,$fn=30);
+
+//translate([15,15,4.1-2.5])cylinder(r=13.2/2,h=2.5);
+//translate([15-15+6.5,15-21,4.1-2.5+3])cube([17.5,41.5,2.5]);
+/*
+translate([15-15+17.5/2+6.5-8,15-21+6-10,4.1-2.5-10])cylinder(r=2.8/2,h=30,$fn=30);
+translate([15-15+17.5/2+6.5-8,15-21+6+29+10,4.1-2.5-10])cylinder(r=2.8/2,h=30,$fn=30);
+translate([15-15+17.5/2+6.5+8,15-21+6-10,4.1-2.5-10])cylinder(r=2.8/2,h=30,$fn=30);
+translate([15-15+17.5/2+6.5+8,15-21+6+29+10,4.1-2.5-10])cylinder(r=2.8/2,h=30,$fn=30);
+*/
+}
+//translate([0,0,4.1-2.5])color("black")translate([15,15,4.1-2.5])cylinder(r=13.2/2,h=3);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 module doormagnetholder_handleside(){
 translate([0,0,0])difference(){
 union(){
@@ -1251,7 +2778,22 @@ translate([15-19,15-7.1,4.1-2.5+1])cube([38,15.2,1.5]);
 //translate([0,0,4.1-2.5])color("pink")translate([15,15,4.1-2.5])cylinder(r=13.2/2,h=3);
 }
 
+module doormagnetholder_10by60by3(){
 
+//translate([-10,9,4-0.4572])color("silver")cube([50,12.7,0.4572]);
+difference(){
+union(){
+translate([7.5,0,0])cube([15,30,4-1.4]);
+translate([-4-11,5,0])cube([30+8+22,20,4-1.4]);
+}
+translate([-10,9-0.15,4-0.4572-1.4])cube([50.3,12.7+0.3,0.4572]);
+translate([15,15-11,-10])cylinder(r=2.8/2,h=22.5,$fn=30);
+translate([15,15+11,-10])cylinder(r=2.8/2,h=22.5,$fn=30);
+//translate([15,15,4.1-2.5])cylinder(r=13.2/2,h=2.5);
+//translate([15-19,15-7.1,4.1-2.5+1])cube([38,15.2,1.5]);
+}
+//translate([0,0,4.1-2.5])color("pink")translate([15,15,4.1-2.5])cylinder(r=13.2/2,h=3);
+}
 
 
 
@@ -2133,8 +3675,8 @@ translate([20-1-45,-30-6+5,0])cube([10,10,24]);
 }
 translate([16,42.5,-3])cylinder(r=2.8/2,h=30,$fn=30);
 translate([16,42.5+20,-3])cylinder(r=2.8/2,h=30,$fn=30);
-translate([20,-30-6+10.5,0+5])rotate([0,90,0])#cylinder(r=2.8/2,h=40,$fn=30);
-translate([20,-30-6+10.5,0+5+15])rotate([0,90,0])#cylinder(r=2.8/2,h=40,$fn=30);
+translate([20,-30-6+10.5,0+5])rotate([0,90,0])cylinder(r=2.8/2,h=40,$fn=30);
+translate([20,-30-6+10.5,0+5+15])rotate([0,90,0])cylinder(r=2.8/2,h=40,$fn=30);
 translate([20-70,-30-6+10.5,0+5])rotate([0,90,0])cylinder(r=2.8/2,h=40,$fn=30);
 translate([20-70,-30-6+10.5,0+5+15])rotate([0,90,0])cylinder(r=2.8/2,h=40,$fn=30);
 }
@@ -2875,13 +4417,13 @@ module labbot_fff_config_higher(){
 //y = 20.5+118-3-97+40-70+9+18+4.5+82-46-140-80;//+251.5; //-9*11-116-50+13;//+80+6-32-45;//-40; //reagent reservoir
 y = 20.5+118-3-60-144-70+240-180+202-200+10;//+251.5; //-9*11-116-50+13;//+80+6-32-45;//-40; //reagent reservoir
 x = 66-149-43+200-8+160-373+400-271+2-2-110-15+200;//-385; //+385-235;//+122;//-222.5-20;
+z =  28-0;
 //x = 66-149-43+200-8+160-373+400-381.5-13+345-331.5-16.5;//-385; //+385-235;//+122;//-222.5-20;
 //x = 66-149-43+200-8+160-373+400-381.5-13+345+9.5-9+9;//-385; //+385-235;//+122;//-222.5-20;
-z =  28-0;
 mtz = 25-20-20+49-5;
 tz = 23+10-0+mtz-25+26-20+2-10;//+15;
-translate([0,0,114])pcb_extruder_higher();
-translate([50-10-20+x,200-14+30+y,700-50+37-35+114])rotate([180,0,90])multi_iverntech_railsystem_directdrive(tz);
+//translate([0,0,114])pcb_extruder_higher();
+//translate([50-10-20+x,200-14+30+y,700-50+37-35+114])rotate([180,0,90])multi_iverntech_railsystem_directdrive(tz);
 translate([0,0,114])xshuttle_assy_wider(x,y);
 //translate([-70,-25+50,z+100])zbed_multichannel_setup_wider_combine(z);
 translate([0,0,-24+114])corexy_beltsetup_wider(x,y); 
@@ -2934,9 +4476,6 @@ translate([-17,-18,8])color("Bisque")PCR_imagingmodule();
 washstation(); 
 translate([0,5,0])gantry_shelves_wider(); 
 }
-
-
-
 //translate([-54-20+20,410-0.5,505-114+80+40-30+114])rotate([0,90,0])tslot20(630-40); // 20
 }
 
@@ -3597,6 +5136,29 @@ translate([-40,15,200-4])rotate([0,90,0])cylinder(r=2.8/2,h=40);
 translate([-40,15,200-4+32])rotate([0,90,0])cylinder(r=2.8/2,h=40);
 }
 }
+
+
+
+module cable_support_ghead_microswiss(){
+//tslot20(300);
+difference(){
+union(){
+//translate([-175,3,200])rotate([0,0,0])tslot20innerbracket();
+translate([-15,5,200-8])cube([30-10,20,40]);
+//translate([0,5,200-8-40+5])cube([5,20,20]);
+translate([0,5+15,200-8-40+5+15+27])cube([45,5,25]);
+}
+translate([-23,5,200-8])
+translate([12,25,20])rotate([90,90,0])cylinder(r=25/2,h=30);
+translate([-35,5-1,200-3-10])cube([30-10,30,30]);
+translate([-40+53,15+80,200-19-17+48+7])rotate([90,0,0])cylinder(r=5.7/2,h=300,$fn=30);
+translate([-40+53,15+80,200-19-17+48-7])rotate([90,0,0])cylinder(r=5.7/2,h=300,$fn=30);
+//translate([-40+77,15+80,200-19-17+48])rotate([90,0,0])cylinder(r=5.7/2,h=300,$fn=30);
+translate([-40,15,200-4])rotate([0,90,0])cylinder(r=2.8/2,h=40);
+translate([-40,15,200-4+32])rotate([0,90,0])cylinder(r=2.8/2,h=40);
+}
+}
+
 
 
 module cable_support_ghead(){
@@ -4345,14 +5907,14 @@ module panel_higher(){
  //translate([14+(708.8*0.58)-1+60-542-18-15+664/2,19+(638.4*0.58)-44-4-478+20+550-593,13-7-5])cube([324,3,656-30]); //rtfront
  //translate([14+(708.8*0.58)-1+60-542-18-15+8,19+(638.4*0.58)-44-4-478+20+550-593,13-7-5])cube([324,3,656-30]); //lffront
 
- /*
  right_panel();
+ /*
  left_panel();
  back_panel();
  front_panel();
  top_panel();
  */
- bottom_panel();
+ //bottom_panel();
 
 
 
@@ -5011,7 +6573,7 @@ translate([-36+5+5,42-4+8,13])cube([15,12-8,15+5]);
 for(i=[-6,-5,-4,-3,-2,-1,0,1,2,3,4,5,6]){
 translate([-36+5+10+9,42-4+17,-2+i])rotate([90,90,0])cylinder(r=4.7/2,h=100);
 }
-translate([-36+5+10+9-7,42-4+17,-2+28])#rotate([90,90,0])cylinder(r=4.7/2,h=100, $fn=30);
+translate([-36+5+10+9-7,42-4+17,-2+28])rotate([90,90,0])cylinder(r=4.7/2,h=100, $fn=30);
 /*
 translate([-36+5+10,42-4+17,13+10])rotate([90,90,0])cylinder(r=4.7/2,h=10);
 translate([-36+5+10,42-4+8,13+10])rotate([90,90,0])cylinder(r=10/2,h=10);

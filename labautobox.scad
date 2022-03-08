@@ -2217,6 +2217,22 @@ translate([0,0,-4])difference(){union(){
 }
 
 
+
+module 3dprint_dual_camera_assy_tslotattach(){
+//translate([-60-7+7-9,-4,0])rotate([0,0,0])arducam_rotate_case();
+//translate([-65+67-7+9,17,0])rotate([0,0,180])arducam_rotate_case();
+rotate([0,180,0]){
+//arducam_rotate_2mount_adjuster();
+3dprint_adjuster_octoprint();
+//translate([-100,0,0])arducam_rotate_2mount_adjuster_nut();
+//translate([-103,0,0])arducam_rotate_2mount_adjuster_nut();
+}
+}
+
+
+
+
+
 module 3dprint_dual_camera_assy(){
 //translate([-60-7+7-9,-4,0])rotate([0,0,0])arducam_rotate_case();
 //translate([-65+67-7+9,17,0])rotate([0,0,180])arducam_rotate_case();
@@ -2253,6 +2269,39 @@ translate([-4.5+22.0+15-10-i*0.5,-4+0+10,4])cylinder(r=9/2,h=50,$fn=30);
 }
 }
 }
+
+
+module 3dprint_adjuster_octoprint(){
+difference(){
+union(){
+translate([-4.5+22.0-15-22-15+3,-4+0,0])cube([35,20,8]);
+translate([-4.5+22.0-15-22-15+3,-4+0,0])cube([55,20,4]);
+/*
+translate([3,0,5]){
+translate([-4.5+22.0-15-22-15+40,-4+12,0])rotate([90,0,0])cylinder(r=15/2,h=5,$fn=30);
+translate([-4.5+22.0-15-22-15+42,-4+12,0])rotate([90,0,0])cylinder(r=15/2,h=5,$fn=30);
+translate([-4.5+22.0-15-22-15+44,-4+12,0])rotate([90,0,0])cylinder(r=15/2,h=5,$fn=30);
+}
+*/
+//translate([-4.5+22.0-15-22-15+30,-4+0,0])#cube([10,20,8+10]);
+//translate([-4.5+22.0-15-22-15+40-4,-4+0,0])cube([4,20,8+10]);
+}
+translate([-4.5+22.0+15+10-28+9-10,-4+0+10,6-15])rotate([0,0,0])#cylinder(r=3.7/2,h=50,$fn=30);
+translate([-4.5+22.0-15-22-15,-4+0,-8])cube([60+44+30-94+20,20,8]);
+for(i=[0:0]){
+translate([-4.5+22.0+15+10-70,-4+0+10,20+i*0.5-5])rotate([0,90,0])cylinder(r=3.7/2,h=50,$fn=30);
+}
+for(i=[55:68+28]){
+translate([-4.5+22.0+15+10+i*0.5,-4+0+10,-10])cylinder(r=3/2,h=50,$fn=30);
+translate([-4.5+22.0+15+10+i*0.5,-4+0+10,4])cylinder(r=9/2,h=50,$fn=30);
+translate([-4.5+22.0+15-10-i*0.5,-4+0+10,-10])cylinder(r=3/2,h=50,$fn=30);
+translate([-4.5+22.0+15-10-i*0.5,-4+0+10,4])cylinder(r=9/2,h=50,$fn=30);
+}
+}
+}
+
+
+
 
 
 

@@ -1675,6 +1675,12 @@ color("pink")translate([180/2,175/2,108]) {
 }
 }
 
+
+
+
+
+
+
 module dual_camera_assy(){
 //translate([-60-7+7-9,-4,0])rotate([0,0,0])arducam_rotate_case();
 //translate([-65+67-7+9,17,0])rotate([0,0,180])arducam_rotate_case();

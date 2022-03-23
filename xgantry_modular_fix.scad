@@ -2480,8 +2480,9 @@ translate([50,-10,0])difference(){cube([11,10,10.5]);for(a=[0:0]){translate([5.5
 */
 }
 
-module iverntech_slider_tslot_connector(){
 
+
+module iverntech_slider_tslot_connector(){
 /*
 */
 //bearings for corexy example
@@ -2552,6 +2553,12 @@ translate([9-5,9,-34])cylinder(r=5/2,h=40);
 translate([9-5,9,6])cylinder(r=9.5/2,h=40,$fn=6);
 }
 }
+
+
+
+
+
+
 
 
 

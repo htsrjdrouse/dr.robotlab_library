@@ -410,6 +410,7 @@ module zbed_smz_wider_threadedrods_noextrusions(){
  //translate([61,112+84+3.5,115+13])rotate([0,180,0])bed_bar_clamp();
  //translate([125-70-18,270,0+123])rotate([90,0,0])tslot20(300);
  translate([125-70-18-65,270-34,0+123-2])rotate([0,0,0])bed_crossclamp();
+ translate([125-70-18-65,270-34-210,0+123-2])rotate([0,0,0])bed_crossclamp();
  }
  }
  translate([30+270+75,0,0]){

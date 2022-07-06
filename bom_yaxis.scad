@@ -85,22 +85,24 @@ translate([0,0,9])difference(){
  color("")translate([20+10,45/2-9,2])cube([16-5,18,6]);
  color("")translate([20+10-3,45/2-7-30,2])cube([16+5-5,14+60,6]);
  }
- translate([27/2+23,45/2,-5])cylinder(r=5.7/2,h=20);
- translate([27/2+23,45/2,2-0.1])cylinder(r=10/2,h=3);
- translate([27/2+23+2-8,45/2-26,-5])cylinder(r=5.7/2,h=20);
- translate([27/2+23+2-8,45/2+26,-5])cylinder(r=5.7/2,h=20);
- translate([27/2-10,45/2-10,-5])cylinder(r=3.7/2,h=20);
- translate([27/2+10,45/2-10,-5])cylinder(r=3.7/2,h=20);
- translate([27/2-10,45/2+10,-5])cylinder(r=3.7/2,h=20);
- translate([27/2+10,45/2+10,-5])cylinder(r=3.7/2,h=20);
- translate([27/2+4,45/2,-5])cylinder(r=2.8/2,h=20);
- translate([27/2-8,45/2,-5])cylinder(r=2.8/2,h=20);
- translate([27/2+4,45/2,-1])cylinder(r=7/2,h=4,$fn=6);
- translate([27/2-8,45/2,-1])cylinder(r=7/2,h=4,$fn=6);
- translate([27/2-10,45/2-10,5])cylinder(r=6.5/2,h=3);
- translate([27/2+10,45/2-10,5])cylinder(r=6.5/2,h=3);
- translate([27/2-10,45/2+10,5])cylinder(r=6.5/2,h=3);
- translate([27/2+10,45/2+10,5])cylinder(r=6.5/2,h=3);
+ translate([27/2+23,45/2,-5])cylinder(r=5.7/2,h=20, $fn=30);
+ translate([27/2+23,45/2,2-0.1])cylinder(r=10/2,h=3, $fn=30);
+ translate([27/2+23+2-8,45/2-26,-5])cylinder(r=5.7/2,h=20, $fn=30);
+ translate([27/2+23+2-8,45/2+26,-5])cylinder(r=5.7/2,h=20, $fn=30);
+ translate([27/2-10,45/2-10,-5])cylinder(r=3.7/2,h=20, $fn=30);
+ translate([27/2+10,45/2-10,-5])cylinder(r=3.7/2,h=20, $fn=30);
+ translate([27/2-10,45/2+10,-5])cylinder(r=3.7/2,h=20, $fn=30);
+ translate([27/2+10,45/2+10,-5])cylinder(r=3.7/2,h=20, $fn=30);
+ /*
+ #translate([27/2+4,45/2,-5])cylinder(r=2.8/2,h=20, $fn=30);
+ #translate([27/2-8,45/2,-5])cylinder(r=2.8/2,h=20, $fn=30);
+ #translate([27/2+4,45/2,-1])cylinder(r=7/2,h=4,$fn=30);
+ #translate([27/2-8,45/2,-1])cylinder(r=7/2,h=4,$fn=30);
+ */
+ translate([27/2-10,45/2-10,5])cylinder(r=6.5/2,h=3, $fn=30);
+ translate([27/2+10,45/2-10,5])cylinder(r=6.5/2,h=3, $fn=30);
+ translate([27/2-10,45/2+10,5])cylinder(r=6.5/2,h=3, $fn=30);
+ translate([27/2+10,45/2+10,5])cylinder(r=6.5/2,h=3, $fn=30);
 }
 }
 }

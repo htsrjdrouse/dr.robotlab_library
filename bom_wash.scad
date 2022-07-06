@@ -743,23 +743,15 @@ module imagingblock_base(){
 
 
 module imagingblock_lid(){
- //translate([-40,42,18-4])rotate([90,0,90])color("dodgerbblue")import("arducam_case.stl"); 
- //color("lightblue")cube([22,(79*2),27]);
  difference(){
  color("grey")union(){
- //translate([-3-33,-3+20,-3])cube([40+8,(15),24]);
- //translate([-3-33,-3+65,-3])cube([40+8,(15),24]);
  translate([-3-20-5,-3,-3+40])cube([40+8+10,((77*1.2)+8),5]);
  translate([-3-20-5-50-35,-3+35,-3+40])cube([40+8+10+50+35,30,4]);
  translate([-3-20-5-50-35+20,-3+35+10,-3+40])cube([40+8+10+50+35-65,10,4+5]);
- //translate([-51+19,24+45/2+0.4,22])rotate([0,90,0])cylinder(r=(13.5+16)/2,h=40,$fn=30);
  }
  translate([11-80-35,38,23])cylinder(r=4.7/2,h=50,$fn=30);
  translate([11-80-35,37+18,23])cylinder(r=4.7/2,h=50,$fn=30);
 
-
- //translate([-3-20+8,-3+7,-3+4])cube([40-8,((77*1.2))-6,40]);
- //translate([-3-20+8-10,-3+7+7,-3+4+8])cube([70-8-5,((77*1.2))-6-14,18+13]);
  translate([20-22-60,1+7-2,23+8])rotate([0,90,0])cylinder(r=2.9/2,h=250,$fn=30);
  translate([20-22-60,1+7+80,23+8])rotate([0,90,0])cylinder(r=2.9/2,h=250,$fn=30);
  translate([0,0,-27]){
@@ -772,13 +764,7 @@ module imagingblock_lid(){
  translate([20,1,23])cylinder(r=4.9/2,h=50,$fn=30);
  translate([20,1+93,23])cylinder(r=4.9/2,h=50,$fn=30);
  }
- //cube([22,(79*2),27]);
  translate([11+7-5-2,16-4-2,38-3])cube([13,72+3,30]);
- /*
- for(i=[0:7]){
- translate([11+7+2.15,16+i*9-1.5,23-15])cylinder(r=6.8/2,h=50,$fn=30);
- }
- */
  translate([-51,24,13])rotate([0,90,0])cylinder(r=3.8/2,h=40,$fn=30);
  translate([-51,24+45/2+0.4,22])rotate([0,90,0])cylinder(r=13.5/2,h=40,$fn=30);
  translate([-51,24+45,13])rotate([0,90,0])cylinder(r=3.8/2,h=40,$fn=30);
@@ -808,47 +794,31 @@ module imagingblock_lid(){
 
 
 module imagingblock_imagingside(){
- //translate([-40,42,18-4])rotate([90,0,90])color("LemonChiffon")import("arducam_case.stl"); 
- //translate([-40,42,18-4])rotate([90,0,90])color("LemonChiffon")arducam_case_rtPCR();
- //color("lightblue")cube([22,(79*2),27]);
  difference(){
  color("")union(){
- //translate([-3-33,-3+20,-3])cube([40+8,(15),24]);
- //translate([-3-33,-3+65,-3])cube([40+8,(15),24]);
  translate([-3-20-5,-3,-3])cube([5,((77*1.2)+8),40]);
- //translate([-51+19,24+45/2+0.4,22])rotate([0,90,0])cylinder(r=(13.5+16)/2,h=40,$fn=30);
- /*
- for(i=[0:0]){
- translate([-51+24,24+45/2+0.4+i+0.2,22-4.5])rotate([0,-90,0])cylinder(r=20/2,h=6,$fn=30);
- }
- */
  translate([-51+24.4,24+45/2+0.4+0+0.2-25-11.,22+14])rotate([0,-180,-40])cube([6+1+12,6,16+15]);
  translate([-51+24-10.5,24+45/2+0.4+0+0.2-25,22+14])rotate([0,-180,-0])cube([4+12+12,6,16+15]);
  translate([-51+24+5,24+45/2+0.4+0+0.2-25+43.5+13,22+14])rotate([0,-180,40])cube([6+1+13,6,16+15]);
  translate([-51+24-10.5,24+45/2+0.4+0+0.2-25+43.5,22+14])rotate([0,-180,0])cube([4+12+12,6,16+15]);
- //translate([-51+24,24+45/2+0.4+0+0.2-25+43.5,22+14])rotate([0,-180,0])cube([6+1+8,6,16+15]);
  translate([-51+24,24+45/2+0.4+0+0.2-25+43.5-40-3.5-8,22+14+1])rotate([0,-180,0])cube([6+1+7.5,49.5+17,3]);
  translate([-51+24,24+45/2+0.4+0+0.2-25+43.5-40-3.5-8+8,22+14+1])rotate([0,-180,0])cube([6+1+7.5+12+12,49.5+17-17,3]);
  translate([-51+24,24+45/2+0.4+0+0.2-25+43.5-40-3.5-8,22+14+1-32])rotate([0,-180,0])cube([6+1+7.5,49.5+17,3]);
  translate([-51+24,24+45/2+0.4+0+0.2-25+43.5-40-3.5-8+8,22+14+1-32])rotate([0,-180,0])cube([6+1+7.5+12+12,49.5+17-17,3]);
 }
  translate([-3-20-5+5,-3,-3])cube([5,((77*1.2)+8),40]);
- //translate([-3-20+8,-3+7,-3+4])cube([40-8,((77*1.2))-6,40]);
- //translate([-3-20+8-10,-3+7+7,-3+4+8])cube([70-8-5,((77*1.2))-6-14,18+13]);
  translate([20-22-60,1+7-2,23+8])rotate([0,90,0])cylinder(r=3.9/2,h=250,$fn=30);
  translate([20-22-60,1+7+80,23+8])rotate([0,90,0])cylinder(r=3.9/2,h=250,$fn=30);
  translate([0,0,-27]){
  translate([20-22-60,1+7-2,23+8])rotate([0,90,0])cylinder(r=3.9/2,h=250,$fn=30);
  translate([20-22-60,1+7+80,23+8])rotate([0,90,0])cylinder(r=3.9/2,h=250,$fn=30);
  }
- //cube([22,(79*2),27]);
  for(i=[0:7]){
  translate([11,14+i*9,23])cylinder(r=5.5/2,h=50,$fn=30);
  }
  translate([-51-20,24+1,13])rotate([0,90,0])cylinder(r=3.8/2,h=140,$fn=30);
  translate([-51-20,24+1,13+18])rotate([0,90,0])cylinder(r=3.8/2,h=140,$fn=30);
  for(i=[-4:4]){
- //translate([-51,24+45/2+0.4+i+0.2,22-4.5])rotate([0,90,0])cylinder(r=30/2,h=40,$fn=30);
  translate([-51+22,24+45/2+0.4+i+0.2-5.5-9.5-7.5,22-4.5-13])cube([25+6,25+4.5+14.5,29.5]);
  }
  translate([-51-20,24+45-0.4,13])rotate([0,90,0])cylinder(r=3.8/2,h=140,$fn=30);
@@ -871,18 +841,9 @@ module imagingblock_lightingside_diffuser(){
 }
 
 module imagingblock_lightingside(){
- //translate([-40,42,18-4])rotate([90,0,90])color("grey")import("arducam_case.stl"); 
- //color("lightblue")cube([22,(79*2),27]);
- //translate([-16,6,40-10])rotate([0,180,0])multitip_imager();
-
-
  difference(){
  color("")union(){
- //translate([-3-33,-3+20,-3])cube([40+8,(15),24]);
- //translate([-3-33,-3+65,-3])cube([40+8,(15),24]);
  translate([-3-20-5,-3,-3])cube([5,((77*1.2)+8),40]);
- //translate([-51+19,24+45/2+0.4,22])rotate([0,90,0])cylinder(r=(13.5+16)/2,h=40,$fn=30);
-
   translate([0,0,5]){
   difference(){
   union(){
@@ -901,23 +862,8 @@ module imagingblock_lightingside(){
   }
   }
   }
- 
   gg = 54;
-  /*
-  translate([-16-16,6+0,40-10+2])rotate([0,180,0])
-  for(i=[0:7]){
-   difference(){
-   translate([12-3+gg/2-45,8.8-7.1+10-8+gg-40.3+(i*9)-12.5,14])rotate([-90,45,-90])cylinder(r=3.4/2,h=9.5,$fn=30);
-   //translate([12-3+gg/2-45,8.8-7.1+10-8+gg-40.3+(i*9)-13-2,14-1.75])rotate([-90,45,-90])cylinder(r=1.4/2,h=15.5,$fn=30);
-   }
-  }
-  */
-
-
  }
- 
- //translate([-16-16+10-10.8,10.5-2-10,40-10+2-12.5-1.4])rotate([-90,0,0])cylinder(r=1.4/2,h=100,$fn=30);
-
  translate([0,0,5])for(i=[0:7]){
   //translate([-16-16+10,10.5+i*9-2,40-10+2-12.5-1.4])rotate([0,180,0])translate([12-3+gg/2-45,8.8-7.1+10-8+gg-40.3-13,14-1.75])rotate([-90,45,-90])cylinder(r=1.4/2,h=15.5,$fn=30);
   translate([-16-16+10,10.5+i*9-0.4,40-10+2-12.5-1.4-9])rotate([0,180,0])translate([12-3+gg/2-45,8.8-7.1+10-8+gg-40.3-13,14-1.75])rotate([-90,45,-90])cylinder(r=1.4/2,h=15.5,$fn=30);
@@ -943,8 +889,6 @@ module imagingblock_lightingside(){
  }
 }
 }
-
-
  translate([20-22-60,1+7-2,23+8])rotate([0,90,0])cylinder(r=3.9/2,h=250,$fn=30);
  translate([20-22-21-2,1+7-2,23+8])rotate([0,90,0])cylinder(r=8.3/2,h=250,$fn=30);
  translate([20-22-60,1+7+80,23+8])rotate([0,90,0])cylinder(r=3.9/2,h=250,$fn=30);
@@ -959,9 +903,38 @@ module imagingblock_lightingside(){
  for(i=[0:7]){
  translate([11,14+i*9,23])cylinder(r=5.5/2,h=50,$fn=30);
  }
-
  }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 module imagingblock_diffuser_bluewhite(){
@@ -1457,7 +1430,6 @@ module multichannel_tipremoval(){
 translate([-148,85,-150])difference(){
 union(){
 translate([-75.5-5+22-5-34+12,-40,0])cube([29+36-12,90,5]);
-//translate([-75.5-5+22-5-34+12+10,-40+2,-1])color("white")cube([29+36-12-20,90-4,2]);
 translate([-75.5-5+45-7,-40-10,0])cube([20,90+20,5+5]);
 translate([-75.5-5+45-7-20-10,-40-10-10+20,0])cube([30,90,5+5]);
 }
@@ -1499,13 +1471,6 @@ module washbowl_8tip_base(){
   }
   translate([-6-1.5,14,5])cylinder(r=3.8/2,h=30);
   translate([-6-1.5,14+66,5])cylinder(r=3.8/2,h=30);
-  /*
-  for(i=[0:7]){
-   translate([11,(i*9)+13,-0.1])cylinder(r=5/2,h=13);
-   //translate([11,(i*9)+11.5,4])rotate([0,25,0])cube([10,3,5]);
-  }
-  */
-  //translate([18,9+4,3])cube([8,70,6]);
   translate([18,9+4-4,6])cube([10,73,20]);
   translate([18+2.5,9+4-4,6+1])rotate([-8,0,0])cube([5,73/2,20]);
   translate([18+2.5,9+4-4+73/2,6-4])rotate([8,0,0])cube([5,73/2,20]);

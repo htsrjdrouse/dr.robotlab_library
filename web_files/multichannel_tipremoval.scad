@@ -1,0 +1,22 @@
+module multichannel_tipremoval(){
+translate([-148,85,-150])difference(){
+union(){
+translate([-75.5-5+22-5-34+12,-40,0])cube([29+36-12,90,5]);
+translate([-75.5-5+45-7,-40-10,0])cube([20,90+20,5+5]);
+translate([-75.5-5+45-7-20-10,-40-10-10+20,0])cube([30,90,5+5]);
+}
+translate([-33,-66,-20])rotate([0,0,90]){
+translate([0,-31+65-12,0])
+for(j=[0:7]){
+for(k=[0:3]){
+ translate([19+7+(j*9)+5+2,2.5-10+33-(k*1),2])translate([6.8,25/2-8,-0.1])cylinder(r=7/2,h=40);
+}}
+translate([19+7,2.5-10,2])translate([7.5-10,25/2-8,14])cylinder(r=5.7/2,h=240);
+translate([19+7,2.5-10,2])translate([7.5-10,25/2-8,24])cylinder(r=10/2,h=240);
+translate([19+7+37,2.5-10,2])translate([7.5,25/2-8,14])cylinder(r=5.7/2,h=40);
+translate([19+7+37,2.5-10,2])translate([7.5,25/2-8,24])cylinder(r=10/2,h=40);
+translate([19+7+75,2.5-10,2])translate([7.5+10,25/2-8,14])cylinder(r=5.7/2,h=240);
+translate([19+7+75,2.5-10,2])translate([7.5+10,25/2-8,24])cylinder(r=10/2,h=240);
+}
+}
+}

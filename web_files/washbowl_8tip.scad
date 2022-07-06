@@ -1,0 +1,35 @@
+module washbowl_8tip(){
+ difference(){
+  union(){
+translate([-3,-3,0])cube([35+6,90+6,5]);
+translate([55,32,10])rotate([0,180,-90])difference(){
+translate([0,-21,5])cube([25,20+13+30,5]);
+translate([0,3+30,0])for(i=[0:15]){
+translate([6,-13,5-3]){translate([0,i,-2])cylinder(r=4.7/2,h=10+6);}
+translate([19,-13,5-3]){translate([0,i,-2])cylinder(r=4.7/2,h=10+6);}
+}
+}
+  }
+  for(i=[0:7]){
+   translate([11,(i*9)+13,-0.1])cylinder(r=7/2,h=10,$fn=30);
+   translate([11,(i*9)+11.5,4])rotate([0,25,0])cube([10,3,5]);
+  }
+  translate([18,9,-0.1])cube([8,70,6]);
+  translate([35/2,3.5,-0.1])cylinder(r=3.7/2,h=10);
+  translate([35/2,3.5,2])cylinder(r=6.5/2,h=3.1);
+  translate([2,3.5,-0.1])cylinder(r=3.7/2,h=10);
+  translate([2,3.5,2])cylinder(r=6.5/2,h=3.1);
+  translate([35-2,3.5,-0.1])cylinder(r=3.7/2,h=10);
+  translate([35-2,3.5,2])cylinder(r=6.5/2,h=3.1);
+  translate([35/2,90-3.5,-0.1])cylinder(r=3.7/2,h=10);
+  translate([35/2,90-3.5,2])cylinder(r=6.5/2,h=3.1);
+  translate([2,90-3.5,-0.1])cylinder(r=3.7/2,h=10);
+  translate([2,90-3.5,2])cylinder(r=6.5/2,h=3.1);
+  translate([35-2,90-3.5,-0.1])cylinder(r=3.7/2,h=10);
+  translate([35-2,90-3.5,2])cylinder(r=6.5/2,h=3.1);
+  translate([35-2,90/2,-0.1])cylinder(r=3.7/2,h=10);
+  translate([35-2,90/2,2])cylinder(r=6.5/2,h=3.1);
+  translate([2,90/2,-0.1])cylinder(r=3.7/2,h=10);
+  translate([2,90/2,2])cylinder(r=6.5/2,h=3.1);
+ }
+}

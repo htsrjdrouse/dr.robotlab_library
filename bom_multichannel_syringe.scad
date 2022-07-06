@@ -546,13 +546,11 @@ eight_multichannel_assay();
 translate([-100,160,0])nextgen_syringe1ml_multichannel_assy();
 //translate([0,70,-0.1])multichannel_syringe1ml_clamp_luerlock();
 multichannel_plunger_clamp();
-
 translate([0,12,0]){
 translate([-100,160,0])
 //color("gainsboro")
 translate([-25.75,123,-30])rotate([90,-90,0])multichannel_syringeshuttle_clipbracket();
 }
-
 }
 
 

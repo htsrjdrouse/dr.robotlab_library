@@ -360,7 +360,8 @@ module FPanL(){
     rotate([90,0,90]){
         color(Couleur2){
 //                     <- Cutting shapes from here ->  
-        SquareHole  (1,20,20,15,10,1); //(On/Off, Xpos,Ypos,Length,Width,Filet)
+        SquareHole  (1,30,5,15,18,1); //(On/Off, Xpos,Ypos,Length,Width,Filet)
+        /*
         SquareHole  (1,40,20,15,10,1);
         SquareHole  (1,60,20,15,10,1); 
         CylinderHole(1,27,40,8);       //(On/Off, Xpos, Ypos, Diameter)
@@ -368,6 +369,7 @@ module FPanL(){
         CylinderHole(1,67,40,8);
         SquareHole  (1,20,50,80,30,3);
         CylinderHole(1,93,30,10);
+        */
         SquareHole  (1,120,20,30,60,3);
 //                            <- To here -> 
            }
@@ -378,10 +380,11 @@ module FPanL(){
         translate ([-.5,0,0])
         rotate([90,0,90]){
 //                      <- Adding text from here ->          
-        LText(1,20,83,"Arial Black",4,"Digital Screen");//(On/Off, Xpos, Ypos, "Font", Size, "Text")
-        LText(1,120,83,"Arial Black",4,"Level");
-        LText(1,20,11,"Arial Black",6,"  1     2      3");
-        CText(1,93,29,"Arial Black",4,10,180,0,"1 . 2 . 3 . 4 . 5 . 6");//(On/Off, Xpos, Ypos, "Font", Size, Diameter, Arc(Deg), Starting Angle(Deg),"Text")
+        //LText(1,20,83,"Arial Black",4,"Digital Screen");//(On/Off, Xpos, Ypos, "Font", Size, "Text")
+        //LText(1,120,83,"Arial Black",4,"Level");
+        //LText(1,20,11,"Arial Black",6,"  1     2      3");
+        LText(1,15,29,"Arial Black",6," LabBot RAMPS ");
+        //CText(1,93,29,"Arial Black",4,10,180,0,"1 . 2 . 3 . 4 . 5 . 6");//(On/Off, Xpos, Ypos, "Font", Size, Diameter, Arc(Deg), Starting Angle(Deg),"Text")
 //                            <- To here ->
             }
       }
@@ -415,9 +418,9 @@ if (PCBFeet==1)
         }
 
 */
-/*
 // Panneau avant - Front panel  <<<<<< Text and holes only on this one.
 //rotate([0,-90,-90]) 
+/*
 if(FPanL==1)
         translate([Length-(Thick*2+m/2),Thick+m/2,Thick+m/2])
         FPanL();

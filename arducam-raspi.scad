@@ -348,6 +348,28 @@ translate([4.5+21,12.5+4+12.5,0.5])cylinder(r=2/2,h=10,$fn=30);
 */
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 module arducam_labbot_mount(){
 difference(){
 union(){

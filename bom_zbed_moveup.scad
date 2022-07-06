@@ -23,9 +23,6 @@ front_threadrod_bed_adjustwheel_tslot();
 }
 
 
-
-
-
 module back_threadrod_bed_adjustwheel(){
 difference(){
 union(){
@@ -425,7 +422,7 @@ module zbed_smz_wider_threadedrods_noextrusions(){
  }
  }
  translate([50,60,140])rotate([-90,90,0]){
- translate([0-50+24,0+29,0+5])rotate([0,0,0])zbed_smz_components_wider_threadedrod(0,0);
+ translate([0-50+24,0+29+2-4,0+5])rotate([0,0,0])zbed_smz_components_wider_threadedrod(0,0);
  translate([0,-340+1-29-42,0+5])mirror([0,1,0])zbed_smz_components_wider_threadedrod(0,0);
  translate([0+60,98.5,139])mirror([0,1,0])rotate([0,0,90])carriage_prototype_zaxis();
  translate([0+4,0+80-0.1,10])tslot20(280);
@@ -606,11 +603,11 @@ module moving_zbed_parts_higher(){
 translate([-54,169,90-20])rotate([0,0,90]){
 //begin 3d printed stuff
 //translate([50,80-30,180+20+159])rotate([0,180,180])color("")bearing_mount_smz();
-translate([50,40+10,10])mirror([0,1,0])motormount_smz();
-translate([74.5+5,315-305,172-180])rotate([0,0,0])nema17();
+translate([50,40+10-82,10-28])mirror([0,1,0])rotate([0,180,180])motormount_smz();
+translate([74.5+5,315-305-2,172-180])rotate([0,0,0])nema17();
 //end 3d printed stuff
 }
-translate([10-39-35,102+107+35+5,75-10]){
+translate([10-39-35+2,102+107+35+5,75-10]){
 color("silver")cylinder(r=8/2,h=375);
 }
 /*
@@ -670,8 +667,12 @@ translate([0+4+5,0,0.5])color("")motormountthin();
 translate([0,32,-18])color("")cube([5+5,22,8]);
 translate([0,32,-18])color("")cube([5,22,30]);
 //translate([-17,32+19,-18])color("")cube([22,5,20]);
+for(i=[-15.15:-5]){
+translate([0-5,32+9,-5+10-5+i])rotate([0,90,0]){cylinder(r=5.7/2,h=10,$fn=30);}
 }
-translate([0,32+9,-5+10])rotate([0,90,0]){cylinder(r=5.7/2,h=20);translate([0,0,5-2])cylinder(r=9.7/2,h=2);}
+}
+#translate([0,32+9,-5+10])rotate([0,90,0]){cylinder(r=5.7/2,h=20,$fn=30);}
+//translate([0,0,5-2])cylinder(r=9.7/2,h=2);
 translate([-10,32+9,-5])rotate([0,-90,-90]){cylinder(r=5.7/2,h=200);translate([0,0,13])cylinder(r=9.7/2,h=2);}
 }
 }
@@ -720,7 +721,7 @@ module motormountthin_microswiss(){
 module motormountthin(){
  mmx = 42;
  mmy = 42;
- mmz = 5;
+ mmz = 5+3;
  mmposx = 0;
  mmposy = 19;
  mmposz = -18.5;
@@ -729,26 +730,28 @@ module motormountthin(){
  motrad = 11.5;
  //motrad = 4;
  difference(){
-  translate([mmposx,mmposy,mmposz])
-  cube([mmx,mmy,mmz]);
+  translate([mmposx,mmposy+1,mmposz])
+  cube([mmx,mmy-2,mmz]);
   translate([mmposx+mmx/2,mmposy+mmy/2,mmposz]){
-  cylinder(r=motrad, h=9);
+  cylinder(r=motrad, h=9,$fn=30);
   cylinder(r=8.2/2, h=109);
   translate([0,0,-100])
   cylinder(r=4.3, h=400);
   }
   //m3 motor screws
-  translate([mmposx+mmx/2-15.5,mmposy+mmy/2-15.5,mmposz-5])
-  cylinder(r=m3rad, h=50);
-  translate([mmposx+mmx/2-15.5,mmposy+mmy/2+15.5,mmposz-5])
-  cylinder(r=m3rad, h=50);
-  translate([mmposx+mmx/2+15.5-1.5,mmposy+mmy/2+15.5,mmposz-5]){
-  cylinder(r=m3rad, h=90);
+  translate([mmposx+mmx/2-15.5,mmposy+mmy/2-15.5,mmposz-5])  cylinder(r=m3rad, h=50, $fn=30);
+  translate([mmposx+mmx/2-15.5,mmposy+mmy/2-15.5,mmposz-5+4.9])  #cylinder(r=10/2, h=3, $fn=30);
+  translate([mmposx+mmx/2-15.5,mmposy+mmy/2+15.5,mmposz-5])  cylinder(r=m3rad, h=50, $fn=30);
+  translate([mmposx+mmx/2-15.5,mmposy+mmy/2+15.5,mmposz-5+4.9])  cylinder(r=10/2, h=3, $fn=30);
+  translate([mmposx+mmx/2+15.5-1.5,mmposy+mmy/2+15.5,mmposz-5]){  cylinder(r=m3rad, h=90, $fn=30);  }
+  translate([mmposx+mmx/2+15.5-1.5,mmposy+mmy/2+15.5,mmposz-5+4.9]){ for(i=[-7:0]){ translate([0-i,0,0])cylinder(r=10/2, h=3, $fn=30);}  }
+  translate([mmposx+mmx/2+15.5-1.5,mmposy+mmy/2-15.5,mmposz-5+4.9]){  for(i=[-7:0]){ translate([0-i,0,0])cylinder(r=10/2, h=3, $fn=30); }}
+  translate([mmposx+mmx/2+15.5-1.5,mmposy+mmy/2+15.5,mmposz-5]){  
   translate([0,-2.25,0])
   cube([8,4.5,90]);
   }
   translate([mmposx+mmx/2+15.5-1.5,mmposy+mmy/2-15.5,mmposz-5]){
-  cylinder(r=m3rad, h=90);
+  cylinder(r=m3rad, h=90, $fn=30);
   translate([0,-2.25,0])
   cube([8,4.5,90]);
   }
@@ -814,16 +817,27 @@ translate([20+15,27,-0.2])rotate([0,0,45])cylinder(r=11/2,h=50,$fn=4);
 */
 translate([0,0,5])difference(){
 union(){
-translate([-2-4-10,28-2,0])cube([24+8,10,7]);
-translate([-2-4-2+18+2,28+4,0])cube([15,4,3+7+48]);
+translate([-2-4-10,28-2,0-29])cube([8+35,10,7]);
+translate([-2-4-2+18+2,28+4-4,0-29])cube([15,8,3+7+48-20+29]);
+translate([-2-4-2+18+2,28+4-20-10+5+5,30])cube([15,4+20,8]);
+for(i=[-2]){
+translate([10-20+32.5-3,47-27+10+i,2+28])rotate([0,0,0])cylinder(r=5.0/2,h=8+2.5,$fn=30);
 }
-translate([-3,0,0]){
-translate([10,47,2])rotate([90,0,0])cylinder(r=2.8/2,h=50,$fn=30);
+translate([10-20+32.5-3-2.5,47-27+10-5+2+1,2+28+8])rotate([0,0,0])#cube([5,8,2.5]);
+}
+translate([-3,-2,0]){
+translate([10-20+32.5,47-27,2+28])rotate([0,0,0])cylinder(r=4.7/2,h=50,$fn=30);
+translate([10-20+32.5,47-27,2+28])rotate([0,0,0])cylinder(r=10/2,h=4,$fn=30);
+translate([0,0,0]){
+#translate([10,47,2-29])rotate([90,0,0])cylinder(r=3/2,h=50,$fn=30);
+#translate([10-20,47,2-29])rotate([90,0,0])cylinder(r=3/2,h=50,$fn=30);
+}
 //translate([10-8+23,47,2+11-8])rotate([90,0,0])cylinder(r=3.8/2,h=50,$fn=30);
-for(z=[-1:14]){
-translate([10-8+23,47,2+11-8+31+z])rotate([90,0,0])cylinder(r=3.8/2,h=50,$fn=30);
+/*
+for(z=[-18:-2]){
+#translate([10-8+23,47,2+11-8+31+z])rotate([90,0,0])cylinder(r=3.8/2,h=50,$fn=30);
 }
-translate([10-20,47,2])rotate([90,0,0])cylinder(r=2.8/2,h=50,$fn=30);
+*/
 }
 }
 /*
@@ -849,8 +863,6 @@ translate([-38,-27,-20])cube([50,150,100]);
 }
 */
 //translate([0,17.5,-6.5])rotate([90,0,0])m4locknut();
-
-
 }
 
 
@@ -1154,7 +1166,7 @@ cylinder(r=31/2,h=4);
 //cylinder(r=31/2,h=8);
 }
 translate([0,0,-3])cylinder(r=10/2,h=40);
-translate([-21+5,2-45.5,-25])cube([30,35,50]);
+translate([-21+5,2-45.5+2,-25])cube([30,35,50]);
 //translate([0,0,5])cylinder(r1=23/2,r2=22.5/2,h=19);
 //translate([0,0,5])cylinder(r1=23/2,r2=23/2,h=3.1);
 //translate([0,0,5])cylinder(r1=15/2,r2=15/2,h=19);
@@ -1182,30 +1194,23 @@ module zbedslot_516_smz_zbed_wider(){
   tx = 200;
   ctx = 380;
   ty = 20;
-  translate([-12,-14.5,200])  rotate([0,0,90])
+  translate([-12,-14.5,200+20])  rotate([0,0,90])
   {
   difference(){
   translate([18,2,33])rotate([0,180,0])pololu_screw_nobacklash();
-  translate([-21,2-18,-25])cube([30,35,50]);
+  //translate([-21+1,2-18,-25])cube([30,35,50]);
+  translate([-21+1-0.5-1,2-18,-25+4])cube([30,35,50]);
   } 
   //translate([-20-15,-4.5,23])
   translate([-24+7+4,-23/2+6,25])
   difference(){
    union(){
-   translate([-1+3,0,0])cube([28-3-6,15,8]);
-   //translate([-1-25+20,0,0-5])cube([28-3+22-20,15,13]);
-   //translate([15,13,0]) rotate([0,0,-30])cube([9,10,8]);
-   //translate([19,-7,0]) rotate([0,0,30])cube([10,10,8]);
    translate([0,-5-2.5,0])
-   translate([-1-40+40+3-17+17,5,0])cube([28-4-3+40-40-3+17-17,30-10,8]);
-   //translate([-1-40-3+40-10,-7.5,-4])cube([28-4-3+40-40-9+2,30,8+4]);
+   translate([-1-40+40+3-17+17-5-3,5,0+4])cube([28-4-3+40-40-3+17-17+5+3,30-10,4]);
    }
-   //translate([43-1.5,-27.5-4-3,0-20-5])rotate([0,0,-0])cylinder(r=8.7/2,h=60);
-   //translate([-1-40+36,0+30,1.5])rotate([90,0,0])cylinder(r=8.7/2,h=60,$fn=30);
    translate([16.5-18+17,-2,0]){
-   for(i=[0:3]){
-   translate([-1-40+36-0-1+i,0+30-20,1.5-20])rotate([0,0,0])cylinder(r=3.2/2,h=160,$fn=30);
-   translate([-1-40+36-0-1+i,0+30-20,1.5-1.5+4])rotate([0,0,0])cylinder(r=8/2,h=30,$fn=30);
+   for(i=[-7:6]){
+   translate([-1-40+36-0-1+i,0+30-20,1.5-20])rotate([0,0,0])cylinder(r=4.7/2,h=160,$fn=30);
    }
    }
    translate([31,7.5,-22])cylinder(r=31/2,h=30);
@@ -1236,19 +1241,15 @@ module pololu_screw_nobacklash(){
 difference(){
 union(){
 cylinder(r=31/2,h=23);
-//cylinder(r=31/2,h=8);
 }
-//translate([0,0,5])cylinder(r1=23/2,r2=22.5/2,h=19);
-translate([0,0,5])cylinder(r1=23/2,r2=23/2,h=3.1);
+//#translate([0,0,5])cylinder(r1=23/2,r2=23/2,h=3.1);
 translate([0,0,5])cylinder(r1=15/2,r2=15/2,h=19);
-//translate([0,0,5])cylinder(r1=23/2,r2=23/2,h=4);
-//translate([0,0,5+10])cylinder(r=22.5/2,h=19);
-translate([0,0,-0.2])cylinder(r=11.5/2,h=25);
+translate([0,0,-0.2-20])cylinder(r=11.5/2,h=125,$fn=30);
 translate([0,0,-0.2])cylinder(r=8.7/2,h=205);
-translate([0,-8,-0.2])cylinder(r=2.8/2,h=15,$fn=30);
-translate([0,8,-0.2])cylinder(r=2.8/2,h=15,$fn=30);
-translate([-8,0,-0.2])cylinder(r=2.8/2,h=15,$fn=30);
-translate([8,0,-0.2])cylinder(r=2.8/2,h=6,$fn=30);
+translate([0,-8,-0.2-20])cylinder(r=2.8/2,h=35,$fn=30);
+translate([0,8,-0.2-20])cylinder(r=2.8/2,h=35,$fn=30);
+translate([-8,0,-0.2-20])cylinder(r=2.8/2,h=35,$fn=30);
+translate([8,0,-0.2-20])cylinder(r=2.8/2,h=35,$fn=30);
 translate([0,-11,5])cylinder(r=2.8/2,h=35,$fn=30);
 translate([0,11,5])cylinder(r=2.8/2,h=35,$fn=30);
 }
